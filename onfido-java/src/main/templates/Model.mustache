@@ -1,0 +1,152 @@
+package com.onfido.models;
+
+import java.time.LocalDate;
+import java.time.OffsetDateTime;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+
+import com.onfido.api.ApiClient;
+import com.onfido.api.ApiJson;
+import com.onfido.api.FileParam;
+import com.onfido.exceptions.OnfidoException;
+import com.squareup.moshi.Json;
+
+public final class {{className}} {
+  private static final ApiJson<{{className}}> JSON = new ApiJson<{{className}}>({{className}}.class);
+
+  {{#responseProperties}}
+  @Json(name = "{{originalName}}") private final {{{type}}} {{camelCaseName}};
+  {{/responseProperties}}
+
+  private {{className}}() {
+    {{#responseProperties}}
+    {{camelCaseName}} = {{notSetValue}};
+    {{/responseProperties}}
+  }
+
+  public static final class Request {
+    private static final ApiJson<Request> REQUEST_JSON = new ApiJson<Request>(Request.class);
+
+    {{#requestProperties}}{{!
+      We use the boxed type for request properties because primitive types will override the default. For example, if we used boolean here instead of Boolean for live photo's advanced_validation, it would default to false, but Boolean will default to null client-side and true on the backend. }}
+    @Json(name = "{{originalName}}") private {{{requestType}}} {{camelCaseName}};
+    {{/requestProperties}}
+
+    private Request() {}
+    {{#actions}}
+    {{#create}}
+
+    public {{className}} create() throws OnfidoException {
+      return JSON.parse(ApiClient.post("{{path}}/", toJson()));
+    }
+    {{/create}}
+    {{#upload}}
+
+    public {{className}} upload() throws OnfidoException {
+      Map<String, Object> params = new HashMap<String, Object>();
+      {{#requestProperties}}
+      params.put("{{originalName}}", {{camelCaseName}});
+      {{/requestProperties}}
+      return JSON.parse(ApiClient.postUpload("{{path}}", params));
+    }
+    {{/upload}}
+    {{/actions}}
+
+    public String toJson() {
+      return REQUEST_JSON.toJson(this);
+    }
+
+    @Override
+    public String toString() {
+      return toJson();
+    }
+    {{#requestProperties}}
+
+    /**
+    * {{{description}}}
+    * @param {{camelCaseName}} {{{description}}}
+    * @return The {{className}} request object.
+    */
+    {{#nonListRequestType}}
+    public Request {{camelCaseName}}(List<{{{nonListRequestType}}}> {{camelCaseName}}) {
+      this.{{camelCaseName}} = {{camelCaseName}}.toArray(new {{{nonListRequestType}}}[0]);
+      return this;
+    }
+
+    /**
+    * {{{description}}}
+    * @param {{camelCaseName}} {{{description}}}
+    * @return The {{className}} request object
+    */
+    public Request {{camelCaseName}}({{{nonListRequestType}}}... {{camelCaseName}}) {
+    {{/nonListRequestType}}
+    {{^nonListRequestType}}
+    public Request {{camelCaseName}}({{{requestType}}} {{camelCaseName}}) {
+    {{/nonListRequestType}}
+      this.{{camelCaseName}} = {{camelCaseName}};
+      return this;
+    }
+    {{/requestProperties}}
+  }
+
+  public static Request request() {
+    return new Request();
+  }
+  {{#actions}}
+  {{#list}}
+
+  public static List<{{className}}> list(String applicantId) throws OnfidoException {
+    return JSON.parseWrappedList(ApiClient.get("{{path}}?applicant_id=" + applicantId), "{{path}}");
+  }
+  {{/list}}
+  {{#download}}
+
+  //public static void download(String id) throws OnfidoException {
+  //  return ApiClient.get("{{path}}/" + id);
+  //}
+  {{/download}}
+  {{/actions}}
+  {{#responseProperties}}
+
+  /**
+   * {{{description}}}
+   * @return {{{description}}}
+   */
+  public {{{type}}} get{{titleCaseName}}() {
+    return {{camelCaseName}};
+  }
+  {{/responseProperties}}
+
+  @Override
+  public String toString() {
+    return "{{className}} " + JSON.toPrettyJson(this);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(
+      {{#responseProperties}}
+      {{camelCaseName}},
+      {{/responseProperties}}
+      ""
+    );
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    } else if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+
+    {{className}} other = ({{className}}) o;
+    return
+      {{#responseProperties}}
+      Objects.equals({{camelCaseName}}, other.{{camelCaseName}}) &&
+      {{/responseProperties}}
+      true;
+  }
+}

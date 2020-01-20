@@ -12,8 +12,6 @@ public class Model {
   public final List<Property> requestProperties;
   public final List<Property> responseProperties;
 
-  public final Map<String, Boolean> actions = new HashMap<String, Boolean>();
-
   protected Model(ModelJson json, List<Property> properties) {
     className = json.title;
     path = json.path;
@@ -25,9 +23,5 @@ public class Model {
     responseProperties = properties.stream()
       .filter(property -> property.isSentInResponses)
       .collect(Collectors.toList());
-
-    for (String action : json.actions) {
-      actions.put(action, true);
-    }
   }
 }

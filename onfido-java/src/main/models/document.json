@@ -1,12 +1,6 @@
 {
   "title": "Document",
   "path": "documents",
-  "actions": [
-    "upload",
-    "find",
-    "list",
-    "download"
-  ],
   "properties": {
     "id": {
       "type": "string",

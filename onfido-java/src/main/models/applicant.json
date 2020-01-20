@@ -1,14 +1,6 @@
 {
   "title": "Applicant",
   "path": "applicants",
-  "actions": [
-    "create",
-    "find",
-    "update",
-    "delete",
-    "restore",
-    "listApplicantSpecific"
-  ],
   "properties": {
     "id": {
       "type": "string",

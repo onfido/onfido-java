@@ -1,11 +1,6 @@
 {
   "title": "Check",
   "path": "checks",
-  "actions": [
-    "create",
-    "find",
-    "list"
-  ],
   "properties": {
     "id": {
       "type": "string",

@@ -40,7 +40,7 @@ public final class ApiClient {
   }
 
   public static FileParam download(String path) throws OnfidoException {
-      throw OnfidoException.networkError(null);
+    throw OnfidoException.networkError(null);
   }
 
   public static String postUpload(String path, Map<String, Object> params) throws OnfidoException {

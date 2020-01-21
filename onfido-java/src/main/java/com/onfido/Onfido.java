@@ -1,6 +1,5 @@
 package com.onfido;
 
-import com.onfido.api.Resources;
 import com.onfido.managers.ApplicantManager;
 
 public final class Onfido {
@@ -14,7 +13,7 @@ public final class Onfido {
 
   private Onfido(Builder builder) {
     config = new Config(builder);
-    applicant = new ApplicantManager(this);
+    applicant = new ApplicantManager(this.config);
   }
 
   public static final class Builder {
@@ -32,8 +31,8 @@ public final class Onfido {
       return this;
     }
 
-    public Builder apiUrl(String apiUrl) {
-      this.apiUrl = apiUrl;
+    public Builder regionUS() {
+      this.apiUrl = US_API_URL;
       return this;
     }
   }

@@ -3,7 +3,7 @@ package com.onfido.api;
 import java.io.IOException;
 import java.util.Map;
 
-import com.onfido.Onfido;
+import com.onfido.Config;
 import com.onfido.exceptions.ApiException;
 import com.onfido.exceptions.OnfidoException;
 
@@ -17,15 +17,15 @@ import okio.BufferedSink;
 import okio.Okio;
 import okio.Source;
 
-public class Resources {
+public class ResourceManager {
 
-  private final Onfido onfido;
+  private final Config config;
 
   private static final OkHttpClient CLIENT = new OkHttpClient();
   private static final MediaType JSON = MediaType.get("application/json; charset=utf-8");
 
-  public Resources(Onfido onfido) {
-    this.onfido = onfido;
+  public ResourceManager(Config config) {
+    this.config = config;
   }
 
   public static void shutdown() {
@@ -34,7 +34,7 @@ public class Resources {
   }
 
   public String post(String path, String body) throws OnfidoException {
-    Request request = requestBuilder(path, onfido)
+    Request request = requestBuilder(path)
       .post(RequestBody.create(body, JSON))
       .build();
 
@@ -42,7 +42,7 @@ public class Resources {
   }
 
   public String get(String path) throws OnfidoException {
-    Request request = requestBuilder(path, onfido).build();
+    Request request = requestBuilder(path).build();
     return performRequest(request);
   }
 
@@ -63,7 +63,7 @@ public class Resources {
       }
     }
 
-    Request request = requestBuilder(path, onfido)
+    Request request = requestBuilder(path)
       .post(builder.build())
       .build();
 
@@ -86,17 +86,13 @@ public class Resources {
     };
   }
 
-  private Request.Builder requestBuilder(String path, Onfido onfido) {
+  private Request.Builder requestBuilder(String path) {
 
     return new Request.Builder()
-      .url(onfido.config.getApiUrl() + path)
-      .header("Authorization", "Token token=" + onfido.config.getApiToken())
+      .url(config.getApiUrl() + path)
+      .header("Authorization", "Token token=" + config.getApiToken())
       .header("User-Agent", "OnfidoJava")
       .header("Accept", "application/json");
-  }
-
-  private Request.Builder requestBuilder(String path) {
-    return requestBuilder(path, onfido);
   }
 
   private static String performRequest(Request request) throws OnfidoException {

@@ -3,7 +3,7 @@ package com.onfido.api;
 import java.io.IOException;
 import java.util.Map;
 
-import com.onfido.RequestOptions;
+import com.onfido.Onfido;
 import com.onfido.exceptions.ApiException;
 import com.onfido.exceptions.OnfidoException;
 
@@ -17,33 +17,40 @@ import okio.BufferedSink;
 import okio.Okio;
 import okio.Source;
 
-public final class ApiClient {
+public class Resources {
+
+  private final Onfido onfido;
+
   private static final OkHttpClient CLIENT = new OkHttpClient();
   private static final MediaType JSON = MediaType.get("application/json; charset=utf-8");
+
+  public Resources(Onfido onfido) {
+    this.onfido = onfido;
+  }
 
   public static void shutdown() {
     CLIENT.dispatcher().executorService().shutdown();
     CLIENT.connectionPool().evictAll();
   }
 
-  public static String post(String path, String body) throws OnfidoException {
-    Request request = requestBuilder(path)
+  public String post(String path, String body) throws OnfidoException {
+    Request request = requestBuilder(path, onfido)
       .post(RequestBody.create(body, JSON))
       .build();
 
     return performRequest(request);
   }
 
-  public static String get(String path) throws OnfidoException {
-    Request request = requestBuilder(path).build();
+  public String get(String path) throws OnfidoException {
+    Request request = requestBuilder(path, onfido).build();
     return performRequest(request);
   }
 
-  public static FileParam download(String path) throws OnfidoException {
+  public FileParam download(String path) throws OnfidoException {
     throw OnfidoException.networkError(null);
   }
 
-  public static String postUpload(String path, Map<String, Object> params) throws OnfidoException {
+  public String postUpload(String path, Map<String, Object> params) throws OnfidoException {
     MultipartBody.Builder builder = new MultipartBody.Builder().setType(MultipartBody.FORM);
 
     for (Map.Entry<String, Object> entry : params.entrySet()) {
@@ -56,7 +63,7 @@ public final class ApiClient {
       }
     }
 
-    Request request = requestBuilder(path)
+    Request request = requestBuilder(path, onfido)
       .post(builder.build())
       .build();
 
@@ -79,14 +86,17 @@ public final class ApiClient {
     };
   }
 
-  private static Request.Builder requestBuilder(String path) {
-    RequestOptions options = RequestOptions.getDefaults();
+  private Request.Builder requestBuilder(String path, Onfido onfido) {
 
     return new Request.Builder()
-      .url(options.getApiUrl() + path)
-      .header("Authorization", "Token token=" + options.getApiToken())
+      .url(onfido.config.getApiUrl() + path)
+      .header("Authorization", "Token token=" + onfido.config.getApiToken())
       .header("User-Agent", "OnfidoJava")
       .header("Accept", "application/json");
+  }
+
+  private Request.Builder requestBuilder(String path) {
+    return requestBuilder(path, onfido);
   }
 
   private static String performRequest(Request request) throws OnfidoException {

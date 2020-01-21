@@ -7,3 +7,11 @@ bin/
 .project
 .classpath
 .factorypath
+
+# IntelliJ
+.DS_Store
+.idea
+*.iml
+
+# Test Class
+/onfido-java/src/main/java/com/onfido/TestClass.java

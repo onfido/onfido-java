@@ -2,8 +2,6 @@ package com.onfido.integration;
 
 import java.io.IOException;
 
-import com.onfido.RequestOptions;
-
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
@@ -29,12 +27,6 @@ class ApiIntegrationTest {
     server = new MockWebServer();
     server.enqueue(new MockResponse().setBody(response));
     server.start();
-
-    RequestOptions options = RequestOptions.builder()
-      .unknownApiUrl(server.url("").toString())
-      .build();
-
-    RequestOptions.setDefaults(options);
 
     return server;
   }

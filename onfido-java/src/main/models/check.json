@@ -1,0 +1,86 @@
+{
+  "title": "Check",
+  "path": "checks",
+  "properties": {
+    "id": {
+      "type": "string",
+      "readOnly": true,
+      "description": "The unique identifier for the check. Read-only."
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "readOnly": true,
+      "description": "The date and time when this check was created. Read-only."
+    },
+    "href": {
+      "type": "string",
+      "readOnly": true,
+      "description": "The uri of this resource. Read-only."
+    },
+    "status": {
+      "type": "string",
+      "readOnly": true,
+      "description": "The current state of the check in the checking process. Read-only."
+    },
+    "result": {
+      "type": "string",
+      "readOnly": true,
+      "description": "The overall result of the check, based on the results of the constituent reports. Read-only."
+    },
+    "download_uri": {
+      "type": "string",
+      "readOnly": true,
+      "description": "A link to a PDF output of the check results. Append `.pdf` to get the pdf file. Read-only."
+    },
+    "form_uri": {
+      "type": "string",
+      "readOnly": true,
+      "description": "A link to the applicant form, if `applicant_provides_data` is `true`. Read-only."
+    },
+    "redirect_uri": {
+      "type": "string",
+      "readOnly": true,
+      "description": "For checks where `applicant_provides_data` is `true`, redirect to this URI when the applicant has submitted their data. Read-only."
+    },
+    "results_uri": {
+      "type": "string",
+      "readOnly": true,
+      "description": "A link to the corresponding results page on the Onfido dashboard."
+    },
+    "report_names": {
+      "description": "An array of report names (strings).",
+      "writeOnly": true,
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Array of tags being assigned to this check."
+    },
+    "applicant_provides_data": {
+      "type": "boolean",
+      "writeOnly": true,
+      "description": "Send an applicant form to applicant to complete to proceed with check. Defaults to false.\n"
+    },
+    "suppress_form_emails": {
+      "type": "boolean",
+      "writeOnly": true,
+      "description": "For checks where `applicant_provides_data` is `true`, applicant form will not be automatically sent if `suppress_form_emails` is set to `true`. You can manually send the form at any time after the check has been created, using the link found in the form_uri attribute of the check object. Write-only. Defaults to false.\n"
+    },
+    "asynchronous": {
+      "type": "boolean",
+      "writeOnly": true,
+      "description": "Defaults to `true`. Write-only. If set to `false`, you will only receive a response when all reports in your check have completed.\n"
+    },
+    "applicant_id": {
+      "type": "string",
+      "description": "The ID of the applicant to do the check on."
+    }
+  }
+}

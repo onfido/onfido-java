@@ -43,6 +43,23 @@ public class ResourceManager {
 
   public String get(String path) throws OnfidoException {
     Request request = requestBuilder(path).build();
+
+    return performRequest(request);
+  }
+
+  public String put(String path, String body) throws OnfidoException {
+    Request request = requestBuilder(path)
+            .put(RequestBody.create(body, JSON))
+            .build();
+
+    return performRequest(request);
+  }
+
+  public String delete(String path) throws OnfidoException {
+    Request request = requestBuilder(path)
+            .delete()
+            .build();
+
     return performRequest(request);
   }
 

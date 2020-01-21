@@ -14,11 +14,11 @@ public class ApplicantManager extends ResourceManager {
     private ApiJson<Applicant.Request> requestParser = new ApiJson<>(Applicant.Request.class);
 
     public ApplicantManager(Config config) {
-        super(config);
+        super("applicants/", config);
     }
 
     public Applicant create(Applicant.Request request) throws OnfidoException {
-        return applicantParser.parse(post("applicants", requestParser.toJson(request)));
+        return applicantParser.parse(post("", requestParser.toJson(request)));
     }
 
     public Applicant find(String id) throws OnfidoException {
@@ -29,15 +29,18 @@ public class ApplicantManager extends ResourceManager {
         return applicantParser.parse(put(id, requestParser.toJson(request)));
     }
 
-    public Applicant deleteApplicant(String id) throws OnfidoException {
-        return applicantParser.parse(delete(id));
+    public void delete(String id) throws OnfidoException {
+        deleteRequest(id);
     }
 
-    public Applicant restore(String id) throws OnfidoException {
-        return applicantParser.parse(post(id + "/restore", ""));
+    public void restore(String id) throws OnfidoException {
+        post(id + "/restore", "");
     }
 
-//    public List<Applicant> list(int page, int perPage, boolean includedDeleted) {
-//        applicantParser.parseWrappedList(get())
-//    }
+    public List<Applicant> list(int page, int perPage, boolean includedDeleted) throws OnfidoException {
+        return applicantParser.parseWrappedList(get(
+                "?page=" + page +
+                "&per_page=" + perPage +
+                "&include_deleted=" + includedDeleted), "applicants");
+    }
 }

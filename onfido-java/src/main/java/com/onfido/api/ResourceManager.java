@@ -20,11 +20,13 @@ import okio.Source;
 public class ResourceManager {
 
   private final Config config;
+  private final String basePath;
 
   private static final OkHttpClient CLIENT = new OkHttpClient();
   private static final MediaType JSON = MediaType.get("application/json; charset=utf-8");
 
-  public ResourceManager(Config config) {
+  public ResourceManager(String basePath, Config config) {
+    this.basePath = basePath;
     this.config = config;
   }
 
@@ -55,7 +57,7 @@ public class ResourceManager {
     return performRequest(request);
   }
 
-  public String delete(String path) throws OnfidoException {
+  public String deleteRequest(String path) throws OnfidoException {
     Request request = requestBuilder(path)
             .delete()
             .build();
@@ -106,7 +108,7 @@ public class ResourceManager {
   private Request.Builder requestBuilder(String path) {
 
     return new Request.Builder()
-      .url(config.getApiUrl() + path)
+      .url(config.getApiUrl() + basePath + path)
       .header("Authorization", "Token token=" + config.getApiToken())
       .header("User-Agent", "OnfidoJava")
       .header("Accept", "application/json");

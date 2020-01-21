@@ -33,7 +33,7 @@ public class ApplicantManagerTest extends ApiIntegrationTest {
 
         // Correct path
         RecordedRequest request = server.takeRequest();
-        assertEquals("/applicants", request.getPath());
+        assertEquals("/applicants/", request.getPath());
 
         // Correct request body
         String json = request.getBody().readUtf8();

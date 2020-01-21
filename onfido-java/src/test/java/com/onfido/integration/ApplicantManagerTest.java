@@ -22,7 +22,7 @@ public class ApplicantManagerTest extends ApiIntegrationTest {
 
         Onfido onfido = Onfido.builder()
                 .apiToken("token")
-                .apiUrl(server.url("/").toString())
+                .unknownApiUrl(server.url("/").toString())
                 .build();
 
         Applicant applicant = onfido.applicant.create(Applicant.request()

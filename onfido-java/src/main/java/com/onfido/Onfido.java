@@ -35,6 +35,11 @@ public final class Onfido {
       this.apiUrl = US_API_URL;
       return this;
     }
+
+    public Builder unknownApiUrl(String url) {
+      this.apiUrl = url;
+      return this;
+    }
   }
 
   public static Builder builder() {

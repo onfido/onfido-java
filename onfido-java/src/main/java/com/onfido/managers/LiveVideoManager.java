@@ -31,6 +31,6 @@ public class LiveVideoManager extends ResourceManager {
     }
 
     public List<LiveVideo> list(String applicantId) throws OnfidoException {
-        return liveVideoParser.parseWrappedList(get("?applicant_id=" + applicantId), "live_photos");
+        return liveVideoParser.parseWrappedList(get("?applicant_id=" + applicantId), "live_videos");
     }
 }

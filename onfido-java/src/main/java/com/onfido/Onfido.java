@@ -1,8 +1,7 @@
 package com.onfido;
 
 import com.onfido.api.Config;
-import com.onfido.managers.ApplicantManager;
-import com.onfido.managers.DocumentManager;
+import com.onfido.managers.*;
 
 public final class Onfido {
 
@@ -13,11 +12,19 @@ public final class Onfido {
 
   public final ApplicantManager applicant;
   public final DocumentManager document;
+  public final CheckManager check;
+  public final ReportManager report;
+  public final LivePhotoManager livePhoto;
+  public final LiveVideoManager liveVideo;
 
   private Onfido(Builder builder) {
     config = new Config(builder);
     applicant = new ApplicantManager(this.config);
     document = new DocumentManager(this.config);
+    check = new CheckManager(this.config);
+    report = new ReportManager(this.config);
+    livePhoto = new LivePhotoManager(this.config);
+    liveVideo = new LiveVideoManager(this.config);
   }
 
   public static final class Builder {

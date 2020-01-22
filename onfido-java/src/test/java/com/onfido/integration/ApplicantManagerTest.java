@@ -12,6 +12,7 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 
 public class ApplicantManagerTest extends ApiIntegrationTest {
+
     @Test
     public void createApplicant() throws Exception {
         String response = new JsonObject()
@@ -42,7 +43,7 @@ public class ApplicantManagerTest extends ApiIntegrationTest {
     }
 
     @Test
-    public void findApplicant() throws Exception{
+    public void findApplicant() throws Exception {
         String response = new JsonObject()
                 .add("first_name", "First")
                 .toJson();

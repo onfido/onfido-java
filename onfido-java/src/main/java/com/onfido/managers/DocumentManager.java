@@ -1,8 +1,10 @@
 package com.onfido.managers;
 
+import com.onfido.api.ApiJson;
 import com.onfido.api.Config;
 import com.onfido.api.ResourceManager;
 import com.onfido.exceptions.OnfidoException;
+import com.onfido.models.Applicant;
 import com.onfido.models.Document;
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
@@ -11,8 +13,12 @@ import okhttp3.RequestBody;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URLConnection;
+import java.util.List;
 
 public class DocumentManager extends ResourceManager {
+
+    private ApiJson<Document> documentParser = new ApiJson<>(Document.class);
+    private ApiJson<Document.Request> requestParser = new ApiJson<>(Document.Request.class);
 
     public DocumentManager(Config config) {
         super("documents/", config);
@@ -28,6 +34,14 @@ public class DocumentManager extends ResourceManager {
         .build();
 
         upload("", requestBody);
+    }
+
+    public Document retrieveDocument(String documentId) throws OnfidoException {
+        return documentParser.parse(get(documentId));
+    }
+
+    public List<Document> listDocumentsForApplicant(String applicantId) throws OnfidoException {
+        return documentParser.parseWrappedList(get("?applicant_id=" + applicantId), "documents");
     }
 
     public InputStream downloadDocument(String documentId) throws IOException {

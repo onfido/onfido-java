@@ -56,21 +56,20 @@ public class ResourceManager {
     return performRequest(request);
   }
 
-  protected void upload(String path, RequestBody requestBody) throws OnfidoException {
+  protected String uploadRequest(String path, RequestBody requestBody) throws OnfidoException {
     Request request = requestBuilder(path)
             .post(requestBody)
             .build();
 
-    performRequest(request);
+    return performRequest(request);
   }
 
-  protected InputStream download(String path) throws IOException {
+  protected FileDownload downloadRequest(String path) throws OnfidoException {
     Request request = requestBuilder(path)
             .get()
             .build();
 
-    Response response = CLIENT.newCall(request).execute();
-    return response.body().byteStream();
+    return performDownload(request);
   }
 
   protected byte[] readInputStream(InputStream inputStream) throws IOException {
@@ -98,6 +97,18 @@ public class ResourceManager {
     try (Response response = CLIENT.newCall(request).execute()) {
       if (response.isSuccessful()) {
         return response.body().string();
+      } else {
+        throw ApiException.fromResponseBody(response.body().string(), response.code());
+      }
+    } catch (IOException e) {
+      throw OnfidoException.networkError(e);
+    }
+  }
+
+  private static FileDownload performDownload(Request request) throws OnfidoException {
+    try (Response response = CLIENT.newCall(request).execute()) {
+      if (response.isSuccessful()) {
+        return new FileDownload(response.body().byteStream(), response.header("content-type"));
       } else {
         throw ApiException.fromResponseBody(response.body().string(), response.code());
       }

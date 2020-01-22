@@ -1,6 +1,7 @@
 package com.onfido.integration;
 
 import com.onfido.Onfido;
+import com.onfido.exceptions.ApiException;
 import com.onfido.models.Document;
 import okhttp3.mockwebserver.MockWebServer;
 import okhttp3.mockwebserver.RecordedRequest;
@@ -28,7 +29,7 @@ public class DocumentManagerTest extends ApiIntegrationTest{
 
         InputStream inputStream = new ByteArrayInputStream("testing testing 1 2".getBytes());
         Document.Request documentRequest = Document.request().applicantId("test id").issuingCountry("USA").side("front").type("passport");
-        onfido.document.uploadDocument(inputStream, "file.png", documentRequest);
+        onfido.document.upload(inputStream, "file.png", documentRequest);
 
         // Correct path
         RecordedRequest request = server.takeRequest();
@@ -56,7 +57,7 @@ public class DocumentManagerTest extends ApiIntegrationTest{
                 .unknownApiUrl(server.url("/").toString())
                 .build();
 
-        InputStream inputStream = onfido.document.downloadDocument("document id");
+        InputStream inputStream = onfido.document.download("document id").content;
 
         // Correct path
         RecordedRequest request = server.takeRequest();
@@ -64,5 +65,22 @@ public class DocumentManagerTest extends ApiIntegrationTest{
 
         // Correct response body
         assertTrue(inputStream != null);
+    }
+
+    @Test
+    public void downloadError() throws Exception{
+        MockWebServer server = mockErrorResponse("error");
+
+        Onfido onfido = Onfido.builder()
+                .apiToken("token")
+                .unknownApiUrl(server.url("/").toString())
+                .build();
+
+        try {
+            onfido.document.download("document id");
+            Assert.fail();
+        } catch (ApiException ex) {
+            Assert.assertEquals(403, ex.getStatusCode());
+        }
     }
 }

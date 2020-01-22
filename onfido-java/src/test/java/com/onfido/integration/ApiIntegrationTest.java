@@ -41,4 +41,12 @@ class ApiIntegrationTest {
 
     return server;
   }
+
+  protected MockWebServer mockErrorResponse(String response) throws IOException {
+    server = new MockWebServer();
+    server.enqueue(new MockResponse().setBody(response).setResponseCode(403));
+    server.start();
+
+    return server;
+  }
 }

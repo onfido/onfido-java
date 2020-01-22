@@ -1,4 +1,6 @@
-package com.onfido;
+package com.onfido.api;
+
+import com.onfido.Onfido;
 
 public class Config {
 

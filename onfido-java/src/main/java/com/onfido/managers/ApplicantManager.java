@@ -1,6 +1,6 @@
 package com.onfido.managers;
 
-import com.onfido.Config;
+import com.onfido.api.Config;
 import com.onfido.api.ResourceManager;
 import com.onfido.api.ApiJson;
 import com.onfido.exceptions.OnfidoException;

@@ -1,6 +1,8 @@
 package com.onfido;
 
+import com.onfido.api.Config;
 import com.onfido.managers.ApplicantManager;
+import com.onfido.managers.DocumentManager;
 
 public final class Onfido {
 
@@ -10,10 +12,12 @@ public final class Onfido {
   public final Config config;
 
   public final ApplicantManager applicant;
+  public final DocumentManager document;
 
   private Onfido(Builder builder) {
     config = new Config(builder);
     applicant = new ApplicantManager(this.config);
+    document = new DocumentManager(this.config);
   }
 
   public static final class Builder {

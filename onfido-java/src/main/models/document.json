@@ -13,11 +13,6 @@
       "description": "The date and time at which the document was uploaded",
       "readOnly": true
     },
-    "file": {
-      "type": "string",
-      "format": "binary",
-      "writeOnly": true
-    },
     "applicant_id": {
       "type": "string",
       "writeOnly": true

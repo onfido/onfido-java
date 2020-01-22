@@ -9,7 +9,6 @@ import java.util.Objects;
 
 import com.onfido.api.ResourceManager;
 import com.onfido.api.ApiJson;
-import com.onfido.api.FileParam;
 import com.onfido.exceptions.OnfidoException;
 import com.squareup.moshi.Json;
 
@@ -69,6 +68,16 @@ public final class {{className}} {
     {{/nonListRequestType}}
       this.{{camelCaseName}} = {{camelCaseName}};
       return this;
+    }
+    {{/requestProperties}}
+    {{#requestProperties}}
+
+    /**
+    * {{{description}}}
+    * @return {{{description}}}
+    */
+    public {{{requestType}}} get{{titleCaseName}}() {
+        return {{camelCaseName}};
     }
     {{/requestProperties}}
   }

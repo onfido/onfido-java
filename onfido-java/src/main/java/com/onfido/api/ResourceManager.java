@@ -2,7 +2,11 @@ package com.onfido.api;
 
 import com.onfido.exceptions.ApiException;
 import com.onfido.exceptions.OnfidoException;
-import okhttp3.*;
+import okhttp3.MediaType;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;

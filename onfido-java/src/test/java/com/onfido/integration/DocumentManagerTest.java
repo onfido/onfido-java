@@ -1,5 +1,6 @@
 package com.onfido.integration;
 
+import com.onfido.JsonObject;
 import com.onfido.Onfido;
 import com.onfido.exceptions.ApiException;
 import com.onfido.models.Document;
@@ -18,7 +19,9 @@ public class DocumentManagerTest extends ApiIntegrationTest{
 
     @Test
     public void uploadDocument() throws Exception {
-        String response = "";
+        String response = new JsonObject()
+                .add("file_name", "file.png")
+                .toJson();
 
         MockWebServer server = mockRequestResponse(response);
 
@@ -29,7 +32,7 @@ public class DocumentManagerTest extends ApiIntegrationTest{
 
         InputStream inputStream = new ByteArrayInputStream("testing testing 1 2".getBytes());
         Document.Request documentRequest = Document.request().applicantId("test id").issuingCountry("USA").side("front").type("passport");
-        onfido.document.upload(inputStream, "file.png", documentRequest);
+        Document document = onfido.document.upload(inputStream, "file.png", documentRequest);
 
         // Correct path
         RecordedRequest request = server.takeRequest();
@@ -46,6 +49,9 @@ public class DocumentManagerTest extends ApiIntegrationTest{
         Assert.assertTrue(requestBody.contains("type"));
         Assert.assertTrue(requestBody.contains("passport"));
         Assert.assertTrue(requestBody.contains("testing testing 1 2"));
+
+        // Correct response body
+        assertEquals("file.png", document.getFileName());
     }
 
     @Test

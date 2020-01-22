@@ -71,6 +71,16 @@ public final class {{className}} {
       return this;
     }
     {{/requestProperties}}
+    {{#requestProperties}}
+
+    /**
+    * {{{description}}}
+    * @return {{{description}}}
+    */
+    public {{{requestType}}} get{{titleCaseName}}() {
+        return {{camelCaseName}};
+    }
+    {{/requestProperties}}
   }
 
   public static Request request() {

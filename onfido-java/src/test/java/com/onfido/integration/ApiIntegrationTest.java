@@ -2,6 +2,7 @@ package com.onfido.integration;
 
 import java.io.IOException;
 
+import okio.Buffer;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
@@ -26,6 +27,16 @@ class ApiIntegrationTest {
   protected MockWebServer mockRequestResponse(String response) throws IOException {
     server = new MockWebServer();
     server.enqueue(new MockResponse().setBody(response));
+    server.start();
+
+    return server;
+  }
+
+  protected MockWebServer mockFileRequestResponse() throws IOException {
+    Buffer buffer = new Buffer();
+    buffer.writeInt(5);
+    server = new MockWebServer();
+    server.enqueue(new MockResponse().setBody(buffer));
     server.start();
 
     return server;

@@ -1,5 +1,8 @@
 package com.onfido.api;
 
+import com.onfido.exceptions.OnfidoException;
+import com.squareup.moshi.*;
+
 import java.io.IOException;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Type;
@@ -9,16 +12,6 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-
-import com.onfido.exceptions.OnfidoException;
-import com.squareup.moshi.FromJson;
-import com.squareup.moshi.JsonAdapter;
-import com.squareup.moshi.JsonDataException;
-import com.squareup.moshi.JsonReader;
-import com.squareup.moshi.JsonWriter;
-import com.squareup.moshi.Moshi;
-import com.squareup.moshi.ToJson;
-import com.squareup.moshi.Types;
 
 /**
  * A wrapper around Moshi's JsonAdapter for parsing and formatting JSON for Onfido's API.
@@ -45,19 +38,6 @@ public final class ApiJson<T> {
     @FromJson
     OffsetDateTime fromJson(String dateTimeString) {
       return dateTimeString == null ? null : OffsetDateTime.parse(dateTimeString);
-    }
-  }
-
-  // We don't upload files via JSON, this is for implementing toString() on Request classes.
-  private static final class FileParamAdapter {
-    @ToJson
-    String toJson(FileParam fileParam) {
-      return fileParam == null ? null : fileParam.toString();
-    }
-
-    @FromJson
-    FileParam fromJson(String json) {
-      throw new JsonDataException("Cannot convert JSON to FileParam");
     }
   }
 
@@ -95,7 +75,6 @@ public final class ApiJson<T> {
   private static final Moshi MOSHI = new Moshi.Builder()
     .add(new OffsetDateTimeAdapter())
     .add(new LocalDateAdapter())
-    .add(new FileParamAdapter())
     .add(new ImmutableAdapterFactory())
     .build();
 

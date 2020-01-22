@@ -37,6 +37,14 @@
       "type": "string",
       "description": "The file type of the uploaded file",
       "readOnly": true
+    },
+    "applicant_id": {
+      "type": "string",
+      "description": ""
+    },
+    "advanced_validation": {
+      "type": "boolean",
+      "description": ""
     }
   }
 }

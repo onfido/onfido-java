@@ -5,7 +5,6 @@ import com.onfido.api.Config;
 import com.onfido.api.FileDownload;
 import com.onfido.api.ResourceManager;
 import com.onfido.exceptions.OnfidoException;
-import com.onfido.models.Applicant;
 import com.onfido.models.Document;
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
@@ -51,15 +50,11 @@ public class DocumentManager extends ResourceManager {
         return downloadRequest(documentId + "/download");
     }
 
-    public Document retrieveDocument(String documentId) throws OnfidoException {
+    public Document find(String documentId) throws OnfidoException {
         return documentParser.parse(get(documentId));
     }
 
-    public List<Document> listDocumentsForApplicant(String applicantId) throws OnfidoException {
+    public List<Document> list(String applicantId) throws OnfidoException {
         return documentParser.parseWrappedList(get("?applicant_id=" + applicantId), "documents");
-    }
-
-    public InputStream downloadDocument(String documentId) throws IOException {
-        return download(documentId + "/download");
     }
 }

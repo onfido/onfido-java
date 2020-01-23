@@ -37,7 +37,7 @@ public class AddressManagerTest extends ApiIntegrationTest {
 
         // Correct path
         RecordedRequest request = server.takeRequest();
-        assertEquals("/addresses/pick?post-code=postcode", request.getPath());
+        assertEquals("/addresses/pick?postcode=postcode", request.getPath());
 
         // Correct response body
         assertEquals("postcode1", addresses.get(0).getPostcode());

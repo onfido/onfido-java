@@ -21,20 +21,20 @@ public class ApplicantManager extends ResourceManager {
         return applicantParser.parse(post("", requestParser.toJson(request)));
     }
 
-    public Applicant find(String id) throws OnfidoException {
-        return applicantParser.parse(get(id));
+    public Applicant find(String applicantId) throws OnfidoException {
+        return applicantParser.parse(get(applicantId));
     }
 
-    public Applicant update(String id, Applicant.Request request) throws OnfidoException {
-        return applicantParser.parse(put(id, requestParser.toJson(request)));
+    public Applicant update(String applicantId, Applicant.Request request) throws OnfidoException {
+        return applicantParser.parse(put(applicantId, requestParser.toJson(request)));
     }
 
-    public void delete(String id) throws OnfidoException {
-        deleteRequest(id);
+    public void delete(String applicantId) throws OnfidoException {
+        deleteRequest(applicantId);
     }
 
-    public void restore(String id) throws OnfidoException {
-        post(id + "/restore", "");
+    public void restore(String applicantId) throws OnfidoException {
+        post(applicantId + "/restore", "");
     }
 
     public List<Applicant> list(int page, int perPage, boolean includedDeleted) throws OnfidoException {

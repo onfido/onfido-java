@@ -1,8 +1,15 @@
 package com.onfido;
 
 import com.onfido.api.Config;
+import com.onfido.managers.AddressManager;
 import com.onfido.managers.ApplicantManager;
+import com.onfido.managers.CheckManager;
 import com.onfido.managers.DocumentManager;
+import com.onfido.managers.LivePhotoManager;
+import com.onfido.managers.LiveVideoManager;
+import com.onfido.managers.ReportManager;
+import com.onfido.managers.SdkTokenManager;
+import com.onfido.managers.WebhookManager;
 
 public final class Onfido {
 
@@ -13,11 +20,25 @@ public final class Onfido {
 
   public final ApplicantManager applicant;
   public final DocumentManager document;
+  public final CheckManager check;
+  public final ReportManager report;
+  public final LivePhotoManager livePhoto;
+  public final LiveVideoManager liveVideo;
+  public final AddressManager address;
+  public final SdkTokenManager sdkToken;
+  public final WebhookManager webhook;
 
   private Onfido(Builder builder) {
     config = new Config(builder);
     applicant = new ApplicantManager(this.config);
     document = new DocumentManager(this.config);
+    check = new CheckManager(this.config);
+    report = new ReportManager(this.config);
+    livePhoto = new LivePhotoManager(this.config);
+    liveVideo = new LiveVideoManager(this.config);
+    address = new AddressManager(this.config);
+    sdkToken = new SdkTokenManager(this.config);
+    webhook = new WebhookManager(this.config);
   }
 
   public static final class Builder {

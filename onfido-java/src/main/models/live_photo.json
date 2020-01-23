@@ -1,0 +1,50 @@
+{
+  "title": "LivePhoto",
+  "path": "live_photos",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "The unique identifier of the live photo",
+      "readOnly": true
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "The date and time at which the live photo was uploaded",
+      "readOnly": true
+    },
+    "href": {
+      "type": "string",
+      "description": "The URI of this resource",
+      "readOnly": true
+    },
+    "download_href": {
+      "type": "string",
+      "description": "The URI that can be used to download the live photo",
+      "readOnly": true
+    },
+    "file_name": {
+      "type": "string",
+      "description": "The name of the uploaded file",
+      "readOnly": true
+    },
+    "file_size": {
+      "type": "integer",
+      "description": "The size of the file in bytes",
+      "readOnly": true
+    },
+    "file_type": {
+      "type": "string",
+      "description": "The file type of the uploaded file",
+      "readOnly": true
+    },
+    "applicant_id": {
+      "type": "string",
+      "description": ""
+    },
+    "advanced_validation": {
+      "type": "boolean",
+      "description": ""
+    }
+  }
+}

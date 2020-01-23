@@ -1,0 +1,24 @@
+{
+  "title": "SdkToken",
+  "properties": {
+    "token": {
+      "type": "string",
+      "readOnly": true
+    },
+    "applicant_id": {
+      "type": "string",
+      "description": "Specifies the applicant for the SDK instance",
+      "writeOnly": true
+    },
+    "application_id":{
+      "type": "string",
+      "description": "The application ID (or “application bundle ID”) - used with the iOS and Android SDKs",
+      "writeOnly": true
+    },
+    "referrer": {
+      "type": "string",
+      "description": "The referrer URL pattern - used with the Web SDK",
+      "writeOnly": true
+    }
+  }
+}

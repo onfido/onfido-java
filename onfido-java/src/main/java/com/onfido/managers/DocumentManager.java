@@ -13,6 +13,7 @@ import okhttp3.RequestBody;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URLConnection;
+import java.util.List;
 
 public class DocumentManager extends ResourceManager {
 
@@ -47,5 +48,13 @@ public class DocumentManager extends ResourceManager {
 
     public FileDownload download(String documentId) throws OnfidoException {
         return downloadRequest(documentId + "/download");
+    }
+
+    public Document find(String documentId) throws OnfidoException {
+        return documentParser.parse(get(documentId));
+    }
+
+    public List<Document> list(String applicantId) throws OnfidoException {
+        return documentParser.parseWrappedList(get("?applicant_id=" + applicantId), "documents");
     }
 }

@@ -7,6 +7,7 @@ import okhttp3.mockwebserver.MockWebServer;
 import okhttp3.mockwebserver.RecordedRequest;
 import org.testng.annotations.Test;
 
+import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
@@ -15,16 +16,10 @@ public class AddressManagerTest extends ApiIntegrationTest {
 
     @Test
     public void pickTest() throws Exception {
-        String addresss1 = new JsonObject()
-                .add("postcode", "postcode1").toJson();
-
-        String addresss2 = new JsonObject()
-                .add("postcode", "postcode2").toJson();
-
-        String response = new JsonObject().add("addresses", new String[]{addresss1, addresss2}).toJson()
-                .replace("\\", "")
-                .replace("\"{", "{")
-                .replace("}\"", "}");
+        String response = new JsonObject().add("addresses", Arrays.asList(
+                new JsonObject().add("postcode", "postcode1").map,
+                new JsonObject().add("postcode", "postcode2").map))
+                .toJson();
 
         MockWebServer server = mockRequestResponse(response);
 
@@ -37,7 +32,7 @@ public class AddressManagerTest extends ApiIntegrationTest {
 
         // Correct path
         RecordedRequest request = server.takeRequest();
-        assertEquals("/addresses/pick?post-code=postcode", request.getPath());
+        assertEquals("/addresses/pick?postcode=postcode", request.getPath());
 
         // Correct response body
         assertEquals("postcode1", addresses.get(0).getPostcode());

@@ -7,6 +7,7 @@ import okhttp3.mockwebserver.MockWebServer;
 import okhttp3.mockwebserver.RecordedRequest;
 import org.testng.annotations.Test;
 
+import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
@@ -66,19 +67,10 @@ public class CheckManagerTest extends ApiIntegrationTest {
 
     @Test
     public void listChecks() throws Exception {
-
-        String check1 = new JsonObject()
-                .add("applicant_id", "id")
+        String response = new JsonObject().add("checks", Arrays.asList(
+                new JsonObject().add("applicant_id", "id").map,
+                new JsonObject().add("applicant_id", "id").map))
                 .toJson();
-
-        String check2 = new JsonObject()
-                .add("applicant_id", "id")
-                .toJson();
-
-        String response = new JsonObject().add("checks", new String[]{check1, check2}).toJson()
-                .replace("\\", "")
-                .replace("\"{", "{")
-                .replace("}\"", "}");
 
         MockWebServer server = mockRequestResponse(response);
 

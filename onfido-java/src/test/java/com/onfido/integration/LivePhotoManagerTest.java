@@ -11,6 +11,7 @@ import org.testng.annotations.Test;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
+import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.Assert.*;
@@ -110,17 +111,10 @@ public class LivePhotoManagerTest extends ApiIntegrationTest {
 
     @Test
     public void listLivePhotos() throws Exception {
-
-        String livePhoto1 = new JsonObject()
-                .add("file_name", "file1.png").toJson();
-
-        String livePhoto2 = new JsonObject()
-                .add("file_name", "file2.png").toJson();
-
-        String response = new JsonObject().add("live_photos", new String[]{livePhoto1, livePhoto2}).toJson()
-                .replace("\\", "")
-                .replace("\"{", "{")
-                .replace("}\"", "}");
+        String response = new JsonObject().add("live_photos", Arrays.asList(
+                new JsonObject().add("file_name", "file1.png").map,
+                new JsonObject().add("file_name", "file2.png").map))
+                .toJson();
 
         MockWebServer server = mockRequestResponse(response);
 

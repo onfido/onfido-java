@@ -12,7 +12,7 @@ public final class JsonObject {
   private static final JsonAdapter<Map<String, Object>> ADAPTOR = new Moshi.Builder().build()
       .adapter(Types.newParameterizedType(Map.class, String.class, Object.class));
 
-  private Map<String, Object> map;
+  public Map<String, Object> map;
 
   public JsonObject() {
     map = new HashMap<String, Object>();

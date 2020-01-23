@@ -1,7 +1,15 @@
 package com.onfido;
 
 import com.onfido.api.Config;
-import com.onfido.managers.*;
+import com.onfido.managers.AddressManager;
+import com.onfido.managers.ApplicantManager;
+import com.onfido.managers.CheckManager;
+import com.onfido.managers.DocumentManager;
+import com.onfido.managers.LivePhotoManager;
+import com.onfido.managers.LiveVideoManager;
+import com.onfido.managers.ReportManager;
+import com.onfido.managers.SdkTokenManager;
+import com.onfido.managers.WebhookManager;
 
 public final class Onfido {
 

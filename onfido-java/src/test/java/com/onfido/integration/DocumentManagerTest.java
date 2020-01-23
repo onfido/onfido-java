@@ -16,6 +16,7 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
+
 public class DocumentManagerTest extends ApiIntegrationTest {
 
     @Test
@@ -76,6 +77,7 @@ public class DocumentManagerTest extends ApiIntegrationTest {
 
     @Test
     public void downloadError() throws Exception {
+
         MockWebServer server = mockErrorResponse("error");
 
         Onfido onfido = Onfido.builder()

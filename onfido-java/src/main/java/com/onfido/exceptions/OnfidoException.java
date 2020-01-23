@@ -7,6 +7,10 @@ public class OnfidoException extends Exception {
     super(message, cause);
   }
 
+  public OnfidoException(String message) {
+    super(message);
+  }
+
   public static OnfidoException networkError(Throwable cause) {
     return new OnfidoException("Network or timeout error", cause);
   }

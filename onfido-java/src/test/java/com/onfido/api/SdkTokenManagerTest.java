@@ -1,8 +1,7 @@
-package com.onfido.integration;
+package com.onfido.api;
 
 import com.onfido.JsonObject;
 import com.onfido.Onfido;
-import com.onfido.models.Applicant;
 import com.onfido.models.SdkToken;
 import okhttp3.mockwebserver.MockWebServer;
 import okhttp3.mockwebserver.RecordedRequest;

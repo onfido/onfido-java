@@ -35,7 +35,7 @@ public class CheckManagerTest extends ApiIntegrationTest {
         // Correct request body
         String json = request.getBody().readUtf8();
         JsonObject jsonObject = JsonObject.parse(json);
-        assertEquals("id", jsonObject.get("check_id"));
+        assertEquals("id", jsonObject.get("applicant_id"));
 
         // Correct response body
         assertEquals("id", check.getApplicantId());

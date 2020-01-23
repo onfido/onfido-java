@@ -16,6 +16,9 @@ public final class Onfido {
   public final ReportManager report;
   public final LivePhotoManager livePhoto;
   public final LiveVideoManager liveVideo;
+  public final AddressManager address;
+  public final SdkTokenManager sdkToken;
+  public final WebhookManager webhook;
 
   private Onfido(Builder builder) {
     config = new Config(builder);
@@ -25,6 +28,9 @@ public final class Onfido {
     report = new ReportManager(this.config);
     livePhoto = new LivePhotoManager(this.config);
     liveVideo = new LiveVideoManager(this.config);
+    address = new AddressManager(this.config);
+    sdkToken = new SdkTokenManager(this.config);
+    webhook = new WebhookManager(this.config);
   }
 
   public static final class Builder {

@@ -1,4 +1,4 @@
-package com.onfido.integration;
+package com.onfido.api;
 
 import com.onfido.JsonObject;
 import com.onfido.Onfido;

@@ -105,11 +105,6 @@ public final class ApiJson<T> {
     return parse(adapter, json);
   }
 
-  public T parseWrappedObject(String json, String path) throws OnfidoException {
-    String test = json.substring(path.length() + 4, json.length() - 1);
-    return parse(adapter, test);
-  }
-
   public List<T> parseWrappedList(String json, String path) throws OnfidoException {
     if (wrappedListAdapter == null) {
       Type listType = Types.newParameterizedType(List.class, type);

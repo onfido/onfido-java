@@ -2,11 +2,31 @@ package com.onfido.api;
 
 import com.squareup.moshi.Json;
 
+import java.util.Objects;
+
 public class WebhookEvent {
 
-    @Json(name = "resource_type") public String resourceType;
-    @Json(name = "action") public String action;
-    @Json(name = "object") public WebhookObject object;
+    @Json(name = "resource_type") private final String resourceType;
+    @Json(name = "action") private final String action;
+    @Json(name = "object") private final WebhookObject object;
+
+    protected WebhookEvent(String resourceType, String action, WebhookObject object) {
+        this.resourceType = resourceType;
+        this.action = action;
+        this.object = object;
+    }
+
+    public String getResourceType() {
+        return resourceType;
+    }
+
+    public String getAction() {
+        return action;
+    }
+
+    public WebhookObject getObject() {
+        return object;
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -17,8 +37,13 @@ public class WebhookEvent {
             return false;
         }
         WebhookEvent event = (WebhookEvent) o;
-        return resourceType.equals(event.resourceType) &&
-                action.equals(event.action) &&
-                object.equals(event.object);
+        return getResourceType().equals(event.getResourceType()) &&
+                getAction().equals(event.getAction()) &&
+                getObject().equals(event.getObject());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(resourceType, action, object);
     }
 }

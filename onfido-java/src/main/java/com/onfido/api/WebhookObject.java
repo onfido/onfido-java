@@ -2,12 +2,37 @@ package com.onfido.api;
 
 import com.squareup.moshi.Json;
 
+import java.util.Objects;
+
 public class WebhookObject {
 
-    @Json(name = "id") public String id;
-    @Json(name = "status") public String status;
-    @Json(name = "href") public String href;
-    @Json(name = "completed_at_iso8601") public String completedAtIso8601;
+    @Json(name = "id") private final String id;
+    @Json(name = "status") private final String status;
+    @Json(name = "href") private final String href;
+    @Json(name = "completed_at_iso8601") private final String completedAtIso8601;
+
+    protected WebhookObject(String id, String status, String href, String completedAtIso8601) {
+        this.id = id;
+        this.status = status;
+        this.href = href;
+        this.completedAtIso8601 = completedAtIso8601;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public String getHref() {
+        return href;
+    }
+
+    public String getCompletedAtIso8601() {
+        return completedAtIso8601;
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -18,9 +43,14 @@ public class WebhookObject {
             return false;
         }
         WebhookObject object = (WebhookObject) o;
-        return id.equals(object.id) &&
-                status.equals(object.status) &&
-                href.equals(object.href) &&
-                completedAtIso8601.equals(object.completedAtIso8601);
+        return getId().equals(object.getId()) &&
+                getStatus().equals(object.getStatus()) &&
+                getHref().equals(object.getHref()) &&
+                getCompletedAtIso8601().equals(object.getCompletedAtIso8601());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, href, status, completedAtIso8601);
     }
 }

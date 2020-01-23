@@ -1,8 +1,6 @@
-package com.onfido.integration;
+package com.onfido.api;
 
 import com.onfido.WebhookEventVerifier;
-import com.onfido.api.WebhookEvent;
-import com.onfido.api.WebhookObject;
 import com.onfido.exceptions.OnfidoException;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;

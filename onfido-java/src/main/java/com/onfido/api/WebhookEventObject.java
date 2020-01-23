@@ -4,14 +4,14 @@ import com.squareup.moshi.Json;
 
 import java.util.Objects;
 
-public class WebhookObject {
+public class WebhookEventObject {
 
     @Json(name = "id") private final String id;
     @Json(name = "status") private final String status;
     @Json(name = "href") private final String href;
     @Json(name = "completed_at_iso8601") private final String completedAtIso8601;
 
-    protected WebhookObject(String id, String status, String href, String completedAtIso8601) {
+    protected WebhookEventObject(String id, String status, String href, String completedAtIso8601) {
         this.id = id;
         this.status = status;
         this.href = href;
@@ -42,7 +42,7 @@ public class WebhookObject {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        WebhookObject object = (WebhookObject) o;
+        WebhookEventObject object = (WebhookEventObject) o;
         return getId().equals(object.getId()) &&
                 getStatus().equals(object.getStatus()) &&
                 getHref().equals(object.getHref()) &&

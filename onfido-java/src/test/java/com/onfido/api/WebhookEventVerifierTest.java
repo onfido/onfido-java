@@ -17,7 +17,7 @@ public class WebhookEventVerifierTest {
 
     @BeforeMethod
     public void setup() {
-        WebhookObject object = new WebhookObject(
+        WebhookEventObject object = new WebhookEventObject(
                 "check-123",
                 "complete",
                 "https://api.onfido.com/v3/checks/check-123",

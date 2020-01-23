@@ -8,9 +8,9 @@ public class WebhookEvent {
 
     @Json(name = "resource_type") private final String resourceType;
     @Json(name = "action") private final String action;
-    @Json(name = "object") private final WebhookObject object;
+    @Json(name = "object") private final WebhookEventObject object;
 
-    protected WebhookEvent(String resourceType, String action, WebhookObject object) {
+    protected WebhookEvent(String resourceType, String action, WebhookEventObject object) {
         this.resourceType = resourceType;
         this.action = action;
         this.object = object;
@@ -24,7 +24,7 @@ public class WebhookEvent {
         return action;
     }
 
-    public WebhookObject getObject() {
+    public WebhookEventObject getObject() {
         return object;
     }
 

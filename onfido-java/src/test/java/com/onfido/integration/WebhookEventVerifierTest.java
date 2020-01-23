@@ -1,0 +1,55 @@
+package com.onfido.integration;
+
+import com.onfido.WebhookEventVerifier;
+import com.onfido.api.WebhookEvent;
+import com.onfido.api.WebhookObject;
+import com.onfido.exceptions.OnfidoException;
+import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+public class WebhookEventVerifierTest {
+
+    String webhookToken = "_ABC123abc123ABC123abc123ABC123_";
+    WebhookEventVerifier verifier = new WebhookEventVerifier(webhookToken);
+
+    String rawEvent = "{\"payload\":{\"resource_type\":\"check\",\"action\":\"check.completed\",\"object\":{\"id\":\"check-123\",\"status\":\"complete\",\"completed_at_iso8601\":\"2020-01-01T00:00:00Z\",\"href\":\"https://api.onfido.com/v3/checks/check-123\"}}}";
+
+    WebhookEvent expectedEvent;
+
+    @BeforeMethod
+    public void setup() {
+        WebhookObject object = new WebhookObject();
+        object.id = "check-123";
+        object.href = "https://api.onfido.com/v3/checks/check-123";
+        object.status = "complete";
+        object.completedAtIso8601 = "2020-01-01T00:00:00Z";
+
+        expectedEvent = new WebhookEvent();
+        expectedEvent.action = "check.completed";
+        expectedEvent.resourceType = "check";
+        expectedEvent.object = object;
+    }
+
+    @Test
+    public void readValidPayload() throws OnfidoException {
+        String signature = "a0082d7481f9f0a2907583dbe1f344d6d4c0d9989df2fd804f98479f60cd760e";
+
+        WebhookEvent event = verifier.readPayload(rawEvent, signature);
+
+        Assert.assertEquals(expectedEvent, event);
+    }
+
+    @Test
+    public void readInvalidPayload() throws OnfidoException {
+        try {
+            String signature = "b0082d7481f9f0a2907583dbe1f344d6d4c0d9989df2fd804f98479f60cd760e";
+
+            verifier.readPayload(rawEvent, signature);
+
+            Assert.fail();
+        } catch (OnfidoException ex) {
+            Assert.assertEquals(ex.getMessage(), "Invalid signature for webhook event");
+        }
+    }
+}

@@ -19,16 +19,18 @@ public class WebhookEventVerifierTest {
 
     @BeforeMethod
     public void setup() {
-        WebhookObject object = new WebhookObject();
-        object.id = "check-123";
-        object.href = "https://api.onfido.com/v3/checks/check-123";
-        object.status = "complete";
-        object.completedAtIso8601 = "2020-01-01T00:00:00Z";
+        WebhookObject object = new WebhookObject(
+                "check-123",
+                "complete",
+                "https://api.onfido.com/v3/checks/check-123",
+                "2020-01-01T00:00:00Z"
+        );
 
-        expectedEvent = new WebhookEvent();
-        expectedEvent.action = "check.completed";
-        expectedEvent.resourceType = "check";
-        expectedEvent.object = object;
+        expectedEvent = new WebhookEvent(
+                "check",
+                "check.completed",
+                object
+        );
     }
 
     @Test

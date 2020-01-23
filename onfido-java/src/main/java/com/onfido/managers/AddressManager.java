@@ -18,6 +18,6 @@ public class AddressManager extends ResourceManager {
     }
 
     public List<Address> pick(String postcode) throws OnfidoException {
-        return addressParser.parseWrappedList(get("pick?post-code=" + postcode), "addresses");
+        return addressParser.parseWrappedList(get("pick?postcode=" + postcode), "addresses");
     }
 }

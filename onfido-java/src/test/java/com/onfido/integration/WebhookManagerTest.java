@@ -7,6 +7,7 @@ import okhttp3.mockwebserver.MockWebServer;
 import okhttp3.mockwebserver.RecordedRequest;
 import org.testng.annotations.Test;
 
+import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
@@ -111,17 +112,10 @@ public class WebhookManagerTest extends ApiIntegrationTest {
 
     @Test
     public void listWebhooks() throws Exception {
-
-        String webhook1 = new JsonObject()
-                .add("url", "url1").toJson();
-
-        String webhook2 = new JsonObject()
-                .add("url", "url2").toJson();
-
-        String response = new JsonObject().add("webhooks", new String[]{webhook1, webhook2}).toJson()
-                .replace("\\", "")
-                .replace("\"{", "{")
-                .replace("}\"", "}");
+        String response = new JsonObject().add("webhooks", Arrays.asList(
+                new JsonObject().add("url", "url1").map,
+                new JsonObject().add("url", "url2").map))
+                .toJson();
 
         MockWebServer server = mockRequestResponse(response);
 

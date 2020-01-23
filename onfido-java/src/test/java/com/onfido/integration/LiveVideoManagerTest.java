@@ -10,6 +10,7 @@ import org.junit.Assert;
 import org.testng.annotations.Test;
 
 import java.io.InputStream;
+import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
@@ -97,17 +98,10 @@ public class LiveVideoManagerTest extends ApiIntegrationTest {
 
     @Test
     public void listLiveVideos() throws Exception {
-
-        String liveVideo1 = new JsonObject()
-                .add("file_name", "file1.png").toJson();
-
-        String liveVideo2 = new JsonObject()
-                .add("file_name", "file2.png").toJson();
-
-        String response = new JsonObject().add("live_videos", new String[]{liveVideo1, liveVideo2}).toJson()
-                .replace("\\", "")
-                .replace("\"{", "{")
-                .replace("}\"", "}");
+        String response = new JsonObject().add("live_videos", Arrays.asList(
+                new JsonObject().add("file_name", "file1.png").map,
+                new JsonObject().add("file_name", "file2.png").map))
+                .toJson();
 
         MockWebServer server = mockRequestResponse(response);
 

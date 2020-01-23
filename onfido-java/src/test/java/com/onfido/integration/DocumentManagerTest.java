@@ -11,6 +11,7 @@ import org.testng.annotations.Test;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
+import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
@@ -118,17 +119,10 @@ public class DocumentManagerTest extends ApiIntegrationTest {
 
     @Test
     public void listDocuments() throws Exception {
-
-        String document1 = new JsonObject()
-                .add("file_name", "file1.png").toJson();
-
-        String document2 = new JsonObject()
-                .add("file_name", "file2.png").toJson();
-
-        String response = new JsonObject().add("documents", new String[]{document1, document2}).toJson()
-                .replace("\\", "")
-                .replace("\"{", "{")
-                .replace("}\"", "}");
+        String response = new JsonObject().add("documents", Arrays.asList(
+                new JsonObject().add("file_name", "file1.png").map,
+                new JsonObject().add("file_name", "file2.png").map))
+                .toJson();
 
         MockWebServer server = mockRequestResponse(response);
 

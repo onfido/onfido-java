@@ -12,8 +12,16 @@ import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
+/**
+ * The type Applicant manager test.
+ */
 public class ApplicantManagerTest extends ApiIntegrationTest {
 
+    /**
+     * Create applicant.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void createApplicant() throws Exception {
         String response = new JsonObject()
@@ -43,6 +51,11 @@ public class ApplicantManagerTest extends ApiIntegrationTest {
         assertEquals("First", applicant.getFirstName());
     }
 
+    /**
+     * Find applicant.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void findApplicant() throws Exception {
         String response = new JsonObject()
@@ -66,6 +79,11 @@ public class ApplicantManagerTest extends ApiIntegrationTest {
         assertEquals("First", applicant.getFirstName());
     }
 
+    /**
+     * Update applicant.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void updateApplicant() throws Exception {
         String response = new JsonObject()
@@ -96,6 +114,11 @@ public class ApplicantManagerTest extends ApiIntegrationTest {
     }
 
 
+    /**
+     * Delete applicant.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void deleteApplicant() throws Exception {
         MockWebServer server = mockRequestResponse("");
@@ -112,6 +135,11 @@ public class ApplicantManagerTest extends ApiIntegrationTest {
         assertEquals("/applicants/id", request.getPath());
     }
 
+    /**
+     * Restore applicant.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void restoreApplicant() throws Exception {
         MockWebServer server = mockRequestResponse("");
@@ -128,6 +156,11 @@ public class ApplicantManagerTest extends ApiIntegrationTest {
         assertEquals("/applicants/id/restore", request.getPath());
     }
 
+    /**
+     * List applicants.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void listApplicants() throws Exception {
         String response = new JsonObject().add("applicants", Arrays.asList(

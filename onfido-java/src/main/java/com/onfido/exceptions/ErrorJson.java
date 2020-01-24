@@ -5,13 +5,25 @@ import java.util.Map;
 
 import com.onfido.api.ApiJson;
 
+/**
+ * The type Error json.
+ */
 final class ErrorJson {
   private static final ApiJson<ErrorJson> JSON = new ApiJson<ErrorJson>(ErrorJson.class);
 
   private static final class InnerErrorJson {
-    final String type;
-    final String message;
-    final Map<String, Object> fields;
+      /**
+       * The Type.
+       */
+      final String type;
+      /**
+       * The Message.
+       */
+      final String message;
+      /**
+       * The Fields.
+       */
+      final Map<String, Object> fields;
 
     private InnerErrorJson() {
       this.type = "unknown";
@@ -26,7 +38,13 @@ final class ErrorJson {
     this.error = new InnerErrorJson();
   }
 
-  protected static ErrorJson fromJson(String json) {
+    /**
+     * From json error json.
+     *
+     * @param json the json
+     * @return the error json
+     */
+    protected static ErrorJson fromJson(String json) {
     try {
       return JSON.parse(json);
     } catch (OnfidoException e) {
@@ -34,15 +52,30 @@ final class ErrorJson {
     }
   }
 
-  protected String getType() {
+    /**
+     * Gets type.
+     *
+     * @return the type
+     */
+    protected String getType() {
     return error.type;
   }
 
-  protected String getMessage() {
+    /**
+     * Gets message.
+     *
+     * @return the message
+     */
+    protected String getMessage() {
     return error.message;
   }
 
-  protected Map<String, Object> getFields() {
+    /**
+     * Gets fields.
+     *
+     * @return the fields
+     */
+    protected Map<String, Object> getFields() {
     return error.fields;
   }
 }

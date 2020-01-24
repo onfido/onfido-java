@@ -6,8 +6,14 @@ import com.onfido.JsonObject;
 
 import org.testng.annotations.*;
 
+/**
+ * The type Applicant test.
+ */
 public class ApplicantTest {
-  @Test
+    /**
+     * Converts to json.
+     */
+    @Test
   public void convertsToJson() {
     String json = Applicant.request()
       .firstName("First")

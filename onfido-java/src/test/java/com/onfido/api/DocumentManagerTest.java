@@ -17,8 +17,16 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
+/**
+ * The type Document manager test.
+ */
 public class DocumentManagerTest extends ApiIntegrationTest {
 
+    /**
+     * Upload document.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void uploadDocument() throws Exception {
         String response = new JsonObject()
@@ -56,6 +64,11 @@ public class DocumentManagerTest extends ApiIntegrationTest {
         assertEquals("file.png", document.getFileName());
     }
 
+    /**
+     * Download document.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void downloadDocument() throws Exception {
         MockWebServer server = mockFileRequestResponse();
@@ -75,6 +88,11 @@ public class DocumentManagerTest extends ApiIntegrationTest {
         assertTrue(inputStream != null);
     }
 
+    /**
+     * Download error.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void downloadError() throws Exception {
 
@@ -93,6 +111,11 @@ public class DocumentManagerTest extends ApiIntegrationTest {
         }
     }
 
+    /**
+     * Find document.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void findDocument() throws Exception {
         String response = new JsonObject()
@@ -116,6 +139,11 @@ public class DocumentManagerTest extends ApiIntegrationTest {
         assertEquals("file.png", document.getFileName());
     }
 
+    /**
+     * List documents.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void listDocuments() throws Exception {
         String response = new JsonObject().add("documents", Arrays.asList(

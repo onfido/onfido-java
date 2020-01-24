@@ -12,8 +12,16 @@ import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
+/**
+ * The type Report manager test.
+ */
 public class ReportManagerTest extends ApiIntegrationTest {
 
+    /**
+     * Find report.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void findReport() throws Exception {
         String response = new JsonObject()
@@ -37,6 +45,11 @@ public class ReportManagerTest extends ApiIntegrationTest {
         assertEquals("name", report.getName());
     }
 
+    /**
+     * List reports.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void listReports() throws Exception {
         String response = new JsonObject().add("reports", Arrays.asList(
@@ -62,6 +75,11 @@ public class ReportManagerTest extends ApiIntegrationTest {
         assertEquals("name2", reports.get(1).getName());
     }
 
+    /**
+     * Resume report.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void resumeReport() throws Exception {
         MockWebServer server = mockRequestResponse("");
@@ -78,6 +96,11 @@ public class ReportManagerTest extends ApiIntegrationTest {
         assertEquals("/reports/id/resume", request.getPath());
     }
 
+    /**
+     * Cancel report.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void cancelReport() throws Exception {
         MockWebServer server = mockRequestResponse("");

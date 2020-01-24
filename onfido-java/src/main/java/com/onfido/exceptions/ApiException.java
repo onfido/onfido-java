@@ -2,6 +2,9 @@ package com.onfido.exceptions;
 
 import java.util.Map;
 
+/**
+ * The type Api exception.
+ */
 public final class ApiException extends OnfidoException {
   private static final long serialVersionUID = 1;
 
@@ -16,7 +19,14 @@ public final class ApiException extends OnfidoException {
     this.fields = fields;
   }
 
-  public static ApiException fromResponseBody(String body, int statusCode) {
+    /**
+     * Extracts an exception from the response body.
+     *
+     * @param body       the body
+     * @param statusCode the status code
+     * @return the api exception
+     */
+    public static ApiException fromResponseBody(String body, int statusCode) {
     ErrorJson error = ErrorJson.fromJson(body);
     return new ApiException(error.getMessage(), statusCode, error.getType(), error.getFields());
   }
@@ -32,19 +42,39 @@ public final class ApiException extends OnfidoException {
     return String.format("%s | Field errors: %s", message, fields);
   }
 
-  public int getStatusCode() {
+    /**
+     * Gets status code.
+     *
+     * @return the status code
+     */
+    public int getStatusCode() {
     return statusCode;
   }
 
-  public boolean isClientError() {
+    /**
+     * Is client error boolean.
+     *
+     * @return the boolean
+     */
+    public boolean isClientError() {
     return statusCode < 500;
   }
 
-  public String getType() {
+    /**
+     * Gets type.
+     *
+     * @return the type
+     */
+    public String getType() {
     return type;
   }
 
-  public Map<String, Object> getFields() {
+    /**
+     * Gets fields.
+     *
+     * @return the fields
+     */
+    public Map<String, Object> getFields() {
     return fields;
   }
 }

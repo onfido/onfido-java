@@ -11,16 +11,32 @@ import javax.crypto.spec.SecretKeySpec;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 
+/**
+ * Contains a public method for verifying webhook responses.
+ */
 public class WebhookEventVerifier {
 
     private ApiJson<WebhookPayload> parser = new ApiJson<>(WebhookPayload.class);
     private final String webhookToken;
 
 
+    /**
+     * Instantiates a new WebhookEventVerifier.
+     *
+     * @param webhookToken the webhook token
+     */
     public WebhookEventVerifier(String webhookToken) {
         this.webhookToken = webhookToken;
     }
 
+    /**
+     * Takes in a webhook response and signature and verifies it against the instance's token
+     *
+     * @param rawEventBody the raw event body
+     * @param hexSignature the hex signature
+     * @return the webhook event
+     * @throws OnfidoException the onfido exception
+     */
     public WebhookEvent readPayload(String rawEventBody, String hexSignature) throws OnfidoException {
         Mac sha256Hmac;
         SecretKeySpec secretKey;

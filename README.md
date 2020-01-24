@@ -72,9 +72,6 @@ onfido.applicant.find(<APPLICANT_ID_HERE>)                           # => Finds 
 onfido.applicant.list()                                              # => Returns all applicants
 ```
 
-**Note:** Calling `onfido.applicant.destroy()` adds the applicant and all associated documents, photos, videos, checks, and reports to the deletion queue. They will be deleted 20 days after the request is made. An applicant that is scheduled for deletion can be restored but applicants that have been permanently deleted cannot.
-See https://documentation.onfido.com/#delete-applicant for more information.
-
 #### Documents
 
 Documents provide supporting evidence for Onfido checks.

@@ -33,13 +33,13 @@ public class WebhookEventVerifier {
             throw new OnfidoException("Invalid webhook token", ex);
         }
 
-            String eventSignature = new String(Hex.encodeHex(sha256Hmac.doFinal(rawEventBody.getBytes(StandardCharsets.UTF_8))));
+        String eventSignature = new String(Hex.encodeHex(sha256Hmac.doFinal(rawEventBody.getBytes(StandardCharsets.UTF_8))));
 
-            // MessageDigest.isEqual() is a time safe comparison
-            if (!MessageDigest.isEqual(eventSignature.getBytes(), hexSignature.getBytes())) {
-                throw new OnfidoException("Invalid signature for webhook event");
-            }
+        // MessageDigest.isEqual() is a time safe comparison
+        if (!MessageDigest.isEqual(eventSignature.getBytes(), hexSignature.getBytes())) {
+            throw new OnfidoException("Invalid signature for webhook event");
+        }
 
-            return parser.parse(rawEventBody).getPayload();
+        return parser.parse(rawEventBody).getPayload();
     }
 }

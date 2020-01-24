@@ -138,7 +138,7 @@ Onfido allows you to generate JSON Web Tokens via the API in order to authentica
 with Onfido"s [Web SDK](https://github.com/onfido/onfido-sdk-ui).
 
 ```java
-onfido.sdk_token.create(applicant_id: <APPLICANT_ID_HERE>, referrer: "referrer")
+onfido.sdk_token.create(<APPLICANT_ID_HERE>, <REFFERER_HERE>)
 ```
 
 ## Webhooks

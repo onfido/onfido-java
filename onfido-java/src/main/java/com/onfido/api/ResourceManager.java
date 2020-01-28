@@ -3,6 +3,7 @@ package com.onfido.api;
 import com.onfido.exceptions.ApiException;
 import com.onfido.exceptions.OnfidoException;
 import okhttp3.MediaType;
+import okhttp3.MultipartBody;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
@@ -86,6 +87,13 @@ public class ResourceManager {
 
     buffer.flush();
     return buffer.toByteArray();
+  }
+
+  protected MultipartBody.Builder addFormDataParam(MultipartBody.Builder builder, String key, String value) {
+    if (value != null) {
+      builder.addFormDataPart(key, value);
+    }
+    return builder;
   }
 
   private Request.Builder requestBuilder(String path) {

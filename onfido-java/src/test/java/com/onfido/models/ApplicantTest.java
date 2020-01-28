@@ -7,7 +7,7 @@ import com.onfido.JsonObject;
 import org.testng.annotations.*;
 
 public class ApplicantTest {
-    @Test
+  @Test
   public void convertsToJson() {
     String json = Applicant.request()
       .firstName("First")

@@ -12,9 +12,9 @@ public final class JsonObject {
   private static final JsonAdapter<Map<String, Object>> ADAPTOR = new Moshi.Builder().build()
       .adapter(Types.newParameterizedType(Map.class, String.class, Object.class));
 
-    public Map<String, Object> map;
+  public Map<String, Object> map;
 
-    public JsonObject() {
+  public JsonObject() {
     map = new HashMap<String, Object>();
   }
 
@@ -22,7 +22,7 @@ public final class JsonObject {
     this.map = map;
   }
 
-    public static JsonObject parse(String json) {
+  public static JsonObject parse(String json) {
     try {
       Map<String, Object> map = ADAPTOR.fromJson(json);
       return new JsonObject(map);
@@ -31,16 +31,16 @@ public final class JsonObject {
     }
   }
 
-    public JsonObject add(String key, Object value) {
+  public JsonObject add(String key, Object value) {
     map.put(key, value);
     return this;
   }
 
-    public Object get(String key) {
+  public Object get(String key) {
     return map.get(key);
   }
 
-    public String toJson() {
+  public String toJson() {
     return ADAPTOR.toJson(map);
   }
 }

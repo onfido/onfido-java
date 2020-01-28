@@ -110,7 +110,7 @@ public final class Onfido {
     }
 
     /**
-     * Region us attribute.
+     * Sets the object to use the US region API.
      *
      * @return the builder
      */
@@ -120,7 +120,7 @@ public final class Onfido {
     }
 
     /**
-     * Unknown api url attribute.
+     * Sets the object to use the specified URL for the api. Used for testing.
      *
      * @param url the url
      * @return the builder

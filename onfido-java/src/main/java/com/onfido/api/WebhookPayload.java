@@ -3,7 +3,7 @@ package com.onfido.api;
 import com.squareup.moshi.Json;
 
 /**
- * The type Webhook payload.
+ * A wrapper class for parsing webhook event responses.
  */
 public class WebhookPayload {
 

@@ -1,13 +1,13 @@
 package com.onfido.exceptions;
 
 /**
- * The type Onfido exception.
+ * An exception thrown by this client library.
  */
 public class OnfidoException extends Exception {
   private static final long serialVersionUID = 1L;
 
     /**
-     * Instantiates a new Onfido exception.
+     * Instantiates a new OnfidoException.
      *
      * @param message the message
      * @param cause   the cause
@@ -17,7 +17,7 @@ public class OnfidoException extends Exception {
   }
 
     /**
-     * Instantiates a new Onfido exception.
+     * Instantiates a new OnfidoException.
      *
      * @param message the message
      */
@@ -26,7 +26,7 @@ public class OnfidoException extends Exception {
   }
 
     /**
-     * Network error onfido exception.
+     * Throws a new OnfidoException with a network timeout message.
      *
      * @param cause the cause
      * @return the onfido exception

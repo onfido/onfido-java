@@ -6,7 +6,7 @@ import java.util.Map;
 import com.onfido.api.ApiJson;
 
 /**
- * The type Error json.
+ * Object representation for the json returned in Onfido API errors.
  */
 final class ErrorJson {
   private static final ApiJson<ErrorJson> JSON = new ApiJson<ErrorJson>(ErrorJson.class);
@@ -39,10 +39,10 @@ final class ErrorJson {
   }
 
     /**
-     * From json error json.
+     * Converts a json string to an ErrorJson object.
      *
      * @param json the json
-     * @return the error json
+     * @return the ErrorJson
      */
     protected static ErrorJson fromJson(String json) {
     try {

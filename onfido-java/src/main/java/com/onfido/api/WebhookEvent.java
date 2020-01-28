@@ -5,7 +5,7 @@ import com.squareup.moshi.Json;
 import java.util.Objects;
 
 /**
- * The type Webhook event.
+ * The response from Webhook events.
  */
 public class WebhookEvent {
 
@@ -14,7 +14,7 @@ public class WebhookEvent {
     @Json(name = "object") private final WebhookEventObject object;
 
     /**
-     * Instantiates a new Webhook event.
+     * Instantiates a new WebhookEvent.
      *
      * @param resourceType the resource type
      * @param action       the action
@@ -36,7 +36,7 @@ public class WebhookEvent {
     }
 
     /**
-     * Gets action.
+     * Gets the action.
      *
      * @return the action
      */

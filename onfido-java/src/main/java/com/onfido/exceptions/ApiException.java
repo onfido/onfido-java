@@ -3,7 +3,7 @@ package com.onfido.exceptions;
 import java.util.Map;
 
 /**
- * The type Api exception.
+ * Wrapper class for the error response returned from the Onfido API.
  */
 public final class ApiException extends OnfidoException {
   private static final long serialVersionUID = 1;

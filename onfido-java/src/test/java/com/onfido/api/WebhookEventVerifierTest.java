@@ -6,9 +6,6 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-/**
- * The type Webhook event verifier test.
- */
 public class WebhookEventVerifierTest {
 
     String webhookToken = "_ABC123abc123ABC123abc123ABC123_";
@@ -18,9 +15,6 @@ public class WebhookEventVerifierTest {
 
     WebhookEvent expectedEvent;
 
-    /**
-     * Sets .
-     */
     @BeforeMethod
     public void setup() {
         WebhookEventObject object = new WebhookEventObject(
@@ -37,11 +31,6 @@ public class WebhookEventVerifierTest {
         );
     }
 
-    /**
-     * Read valid payload.
-     *
-     * @throws OnfidoException the onfido exception
-     */
     @Test
     public void readValidPayload() throws OnfidoException {
         String signature = "a0082d7481f9f0a2907583dbe1f344d6d4c0d9989df2fd804f98479f60cd760e";
@@ -51,11 +40,6 @@ public class WebhookEventVerifierTest {
         Assert.assertEquals(expectedEvent, event);
     }
 
-    /**
-     * Read invalid payload.
-     *
-     * @throws OnfidoException the onfido exception
-     */
     @Test
     public void readInvalidPayload() throws OnfidoException {
         try {

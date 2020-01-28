@@ -16,16 +16,8 @@ import java.util.List;
 
 import static org.junit.Assert.*;
 
-/**
- * The type Live photo manager test.
- */
 public class LivePhotoManagerTest extends ApiIntegrationTest {
 
-    /**
-     * Upload live photo.
-     *
-     * @throws Exception the exception
-     */
     @Test
     public void uploadLivePhoto() throws Exception {
         String response = new JsonObject()
@@ -58,11 +50,6 @@ public class LivePhotoManagerTest extends ApiIntegrationTest {
         assertEquals("file.png", livePhoto.getFileName());
     }
 
-    /**
-     * Download live photo.
-     *
-     * @throws Exception the exception
-     */
     @Test
     public void downloadLivePhoto() throws Exception {
         MockWebServer server = mockFileRequestResponse();
@@ -82,11 +69,6 @@ public class LivePhotoManagerTest extends ApiIntegrationTest {
         assertNotNull(inputStream);
     }
 
-    /**
-     * Download error.
-     *
-     * @throws Exception the exception
-     */
     @Test
     public void downloadError() throws Exception {
         MockWebServer server = mockErrorResponse("error");
@@ -104,11 +86,6 @@ public class LivePhotoManagerTest extends ApiIntegrationTest {
         }
     }
 
-    /**
-     * Find live photo.
-     *
-     * @throws Exception the exception
-     */
     @Test
     public void findLivePhoto() throws Exception {
         String response = new JsonObject()
@@ -132,11 +109,6 @@ public class LivePhotoManagerTest extends ApiIntegrationTest {
         assertEquals("file.png", livePhoto.getFileName());
     }
 
-    /**
-     * List live photos.
-     *
-     * @throws Exception the exception
-     */
     @Test
     public void listLivePhotos() throws Exception {
         String response = new JsonObject().add("live_photos", Arrays.asList(

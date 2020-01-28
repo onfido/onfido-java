@@ -9,16 +9,8 @@ import org.testng.annotations.Test;
 
 import static org.junit.Assert.assertEquals;
 
-/**
- * The type Sdk token manager test.
- */
 public class SdkTokenManagerTest extends ApiIntegrationTest {
 
-    /**
-     * Generate test.
-     *
-     * @throws Exception the exception
-     */
     @Test
     public void generateTest() throws Exception{
         String response = new JsonObject()

@@ -12,16 +12,8 @@ import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
-/**
- * The type Webhook manager test.
- */
 public class WebhookManagerTest extends ApiIntegrationTest {
 
-    /**
-     * Create webhook.
-     *
-     * @throws Exception the exception
-     */
     @Test
     public void createWebhook() throws Exception {
         String response = new JsonObject()
@@ -50,11 +42,6 @@ public class WebhookManagerTest extends ApiIntegrationTest {
         assertEquals("url", webhook.getUrl());
     }
 
-    /**
-     * Find webhook.
-     *
-     * @throws Exception the exception
-     */
     @Test
     public void findWebhook() throws Exception {
         String response = new JsonObject()
@@ -78,11 +65,6 @@ public class WebhookManagerTest extends ApiIntegrationTest {
         assertEquals("url", webhook.getUrl());
     }
 
-    /**
-     * Update webhook.
-     *
-     * @throws Exception the exception
-     */
     @Test
     public void updateWebhook() throws Exception {
         String response = new JsonObject()
@@ -112,11 +94,6 @@ public class WebhookManagerTest extends ApiIntegrationTest {
     }
 
 
-    /**
-     * Delete webhook.
-     *
-     * @throws Exception the exception
-     */
     @Test
     public void deleteWebhook() throws Exception {
         MockWebServer server = mockRequestResponse("");
@@ -133,11 +110,6 @@ public class WebhookManagerTest extends ApiIntegrationTest {
         assertEquals("/webhooks/id", request.getPath());
     }
 
-    /**
-     * List webhooks.
-     *
-     * @throws Exception the exception
-     */
     @Test
     public void listWebhooks() throws Exception {
         String response = new JsonObject().add("webhooks", Arrays.asList(

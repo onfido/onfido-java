@@ -45,9 +45,9 @@ public class WebhookEvent {
     }
 
     /**
-     * Gets object.
+     * Gets the event object.
      *
-     * @return the object
+     * @return the WebHookEventObject
      */
     public WebhookEventObject getObject() {
         return object;

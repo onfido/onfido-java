@@ -16,16 +16,8 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
-/**
- * The type Live video manager test.
- */
 public class LiveVideoManagerTest extends ApiIntegrationTest {
 
-    /**
-     * Download live video.
-     *
-     * @throws Exception the exception
-     */
     @Test
     public void downloadLiveVideo() throws Exception {
         MockWebServer server = mockFileRequestResponse();
@@ -45,11 +37,6 @@ public class LiveVideoManagerTest extends ApiIntegrationTest {
         assertNotNull(inputStream);
     }
 
-    /**
-     * Download live video frame.
-     *
-     * @throws Exception the exception
-     */
     @Test
     public void downloadLiveVideoFrame() throws Exception {
         MockWebServer server = mockFileRequestResponse();
@@ -69,11 +56,6 @@ public class LiveVideoManagerTest extends ApiIntegrationTest {
         assertNotNull(inputStream);
     }
 
-    /**
-     * Download error.
-     *
-     * @throws Exception the exception
-     */
     @Test
     public void downloadError() throws Exception {
         MockWebServer server = mockErrorResponse("error");
@@ -91,11 +73,6 @@ public class LiveVideoManagerTest extends ApiIntegrationTest {
         }
     }
 
-    /**
-     * Find live video.
-     *
-     * @throws Exception the exception
-     */
     @Test
     public void findLiveVideo() throws Exception {
         String response = new JsonObject()
@@ -119,11 +96,6 @@ public class LiveVideoManagerTest extends ApiIntegrationTest {
         assertEquals("file.png", liveVideo.getFileName());
     }
 
-    /**
-     * List live videos.
-     *
-     * @throws Exception the exception
-     */
     @Test
     public void listLiveVideos() throws Exception {
         String response = new JsonObject().add("live_videos", Arrays.asList(

@@ -12,16 +12,8 @@ import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
-/**
- * The type Address manager test.
- */
 public class AddressManagerTest extends ApiIntegrationTest {
 
-    /**
-     * Pick test.
-     *
-     * @throws Exception the exception
-     */
     @Test
     public void pickTest() throws Exception {
         String response = new JsonObject().add("addresses", Arrays.asList(

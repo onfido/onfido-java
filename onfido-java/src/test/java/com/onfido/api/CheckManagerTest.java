@@ -12,16 +12,8 @@ import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
-/**
- * The type Check manager test.
- */
 public class CheckManagerTest extends ApiIntegrationTest {
 
-    /**
-     * Create check.
-     *
-     * @throws Exception the exception
-     */
     @Test
     public void createCheck() throws Exception {
         String response = new JsonObject()
@@ -50,11 +42,6 @@ public class CheckManagerTest extends ApiIntegrationTest {
         assertEquals("id", check.getApplicantId());
     }
 
-    /**
-     * Find check.
-     *
-     * @throws Exception the exception
-     */
     @Test
     public void findCheck() throws Exception {
         String response = new JsonObject()
@@ -78,11 +65,6 @@ public class CheckManagerTest extends ApiIntegrationTest {
         assertEquals("id", check.getApplicantId());
     }
 
-    /**
-     * List checks.
-     *
-     * @throws Exception the exception
-     */
     @Test
     public void listChecks() throws Exception {
         String response = new JsonObject().add("checks", Arrays.asList(
@@ -108,11 +90,6 @@ public class CheckManagerTest extends ApiIntegrationTest {
         assertEquals("id", checks.get(1).getApplicantId());
     }
 
-    /**
-     * Resume check.
-     *
-     * @throws Exception the exception
-     */
     @Test
     public void resumeCheck() throws Exception {
         MockWebServer server = mockRequestResponse("");

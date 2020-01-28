@@ -11,23 +11,11 @@ import org.testng.annotations.Test;
  */
 public class WebhookEventVerifierTest {
 
-    /**
-     * The Webhook token.
-     */
     String webhookToken = "_ABC123abc123ABC123abc123ABC123_";
-    /**
-     * The Verifier.
-     */
     WebhookEventVerifier verifier = new WebhookEventVerifier(webhookToken);
 
-    /**
-     * The Raw event.
-     */
     String rawEvent = "{\"payload\":{\"resource_type\":\"check\",\"action\":\"check.completed\",\"object\":{\"id\":\"check-123\",\"status\":\"complete\",\"completed_at_iso8601\":\"2020-01-01T00:00:00Z\",\"href\":\"https://api.onfido.com/v3/checks/check-123\"}}}";
 
-    /**
-     * The Expected event.
-     */
     WebhookEvent expectedEvent;
 
     /**

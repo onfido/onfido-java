@@ -3,7 +3,8 @@
   "properties": {
     "token": {
       "type": "string",
-      "readOnly": true
+      "readOnly": true,
+      "description": "The generated token"
     },
     "applicant_id": {
       "type": "string",

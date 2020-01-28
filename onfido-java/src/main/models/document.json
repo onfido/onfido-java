@@ -15,7 +15,8 @@
     },
     "applicant_id": {
       "type": "string",
-      "writeOnly": true
+      "writeOnly": true,
+      "description": "The ID of the associated applicant"
     },
     "file_name": {
       "type": "string",

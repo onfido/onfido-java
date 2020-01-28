@@ -89,11 +89,10 @@ public class ResourceManager {
     return buffer.toByteArray();
   }
 
-  protected MultipartBody.Builder addFormDataParam(MultipartBody.Builder builder, String key, String value) {
+  protected void addFormDataParam(MultipartBody.Builder builder, String key, String value) {
     if (value != null) {
       builder.addFormDataPart(key, value);
     }
-    return builder;
   }
 
   private Request.Builder requestBuilder(String path) {

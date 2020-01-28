@@ -48,7 +48,7 @@ public class WebhookEventVerifier {
         } catch (Exception ex) {
             throw new OnfidoException("Invalid webhook token", ex);
         }
-
+      
         String eventSignature = new String(Hex.encodeHex(sha256Hmac.doFinal(rawEventBody.getBytes(StandardCharsets.UTF_8))));
 
         // MessageDigest.isEqual() is a time safe comparison

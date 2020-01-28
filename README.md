@@ -12,13 +12,13 @@ _Coming soon_
 
 ## Getting Started
 
-Import the `Onfido.java` object, this is the main object used for interfacing with the API:
+Import the `Onfido` object, this is the main object used for interfacing with the API:
 
 ```java
 import com.onfido.Onfido;
 ```
 
-Instantiate and configure an `Onfido.java` instance with your API token, and region if necessary:
+Instantiate and configure an `Onfido` instance with your API token, and region if necessary:
 
 ```java
 Onfido onfido = Onfido.builder()
@@ -29,27 +29,35 @@ Onfido onfido = Onfido.builder()
 
 ## Making a call to the API
 
-Using your configured and instantiated instance of the `Onfido.java` object you can make calls to the API by calling one of the methods on the resources inside of it. For example, to create an applicant:
+Using your configured and instantiated instance of the `Onfido` object you can make calls to the API by calling one of the methods on the resources inside of it. For example, to create an applicant:
 
 ```java
 onfido.applicant.create(<REQUEST_BODY_HERE>);
 ```
 
-All request bodies can be created using a builder pattern on the `Request.java` subclass of the desired resource. For example in the request above an `Applicant.Request.java` object is needed as the body, this would look something like:
+All request bodies can be created using a builder pattern on the `Request` subclass of the desired resource. For example in the request above an `Applicant.Request` object is needed as the body, this would look something like:
 
 ```java
 Applicant.request().firstName("First").lastName("Last");
 ```
 
-The above will return an `Applicant.Request.java` object that can be provided to the `create()` method as the request body, so a full call to to the API will look something like:
+The above will return an `Applicant.Request` object that can be provided to the `create()` method as the request body, so a full call to to the API will look something like:
 
 ```java
-Applicant newApplicant = onfido.applicant.create(
-    Applicant.request().firstName("First").lastName("Last")
-);
+try {
+    Applicant newApplicant = onfido.applicant.create(
+            Applicant.request().firstName("First").lastName("Last")
+    );
+} catch (OnfidoException ex) {
+    // An error response was received from the Onfido API.
+    System.out.println(ex.getMessage());
+} catch (Exception ex) {
+    // No response was received for some reason e.g. a network error.
+    throw ex;
+}
 ```
 
-The above method will return the corresponding resource object, as most methods will. In this particular case an `Applicant.java` object will return with all information present for the newly created applicant. To access the information call the getter of the desired property on the object, for example:
+The above method will return the corresponding resource object, as most methods will. In this particular case an `Applicant` object will return with all information present for the newly created applicant. To access the information call the getter of the desired property on the object, for example:
 
 ```java
 newApplicant.getFirstName();

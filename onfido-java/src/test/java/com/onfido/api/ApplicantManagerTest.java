@@ -1,8 +1,8 @@
-package com.onfido.integration;
+package com.onfido.api;
 
 import com.onfido.JsonObject;
 import com.onfido.Onfido;
-import com.onfido.models.Webhook;
+import com.onfido.models.Applicant;
 import okhttp3.mockwebserver.MockWebServer;
 import okhttp3.mockwebserver.RecordedRequest;
 import org.testng.annotations.Test;
@@ -12,12 +12,12 @@ import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
-public class WebhookManagerTest extends ApiIntegrationTest {
+public class ApplicantManagerTest extends ApiIntegrationTest {
 
     @Test
-    public void createWebhook() throws Exception {
+    public void createApplicant() throws Exception {
         String response = new JsonObject()
-                .add("url", "url")
+                .add("first_name", "First")
                 .toJson();
 
         MockWebServer server = mockRequestResponse(response);
@@ -27,25 +27,26 @@ public class WebhookManagerTest extends ApiIntegrationTest {
                 .unknownApiUrl(server.url("/").toString())
                 .build();
 
-        Webhook webhook = onfido.webhook.create(Webhook.request().url("url"));
+        Applicant applicant = onfido.applicant.create(Applicant.request()
+                .firstName("First"));
 
         // Correct path
         RecordedRequest request = server.takeRequest();
-        assertEquals("/webhooks/", request.getPath());
+        assertEquals("/applicants/", request.getPath());
 
         // Correct request body
         String json = request.getBody().readUtf8();
         JsonObject jsonObject = JsonObject.parse(json);
-        assertEquals("url", jsonObject.get("url"));
+        assertEquals("First", jsonObject.get("first_name"));
 
         // Correct response body
-        assertEquals("url", webhook.getUrl());
+        assertEquals("First", applicant.getFirstName());
     }
 
     @Test
-    public void findWebhook() throws Exception {
+    public void findApplicant() throws Exception {
         String response = new JsonObject()
-                .add("url", "url")
+                .add("first_name", "First")
                 .toJson();
 
         MockWebServer server = mockRequestResponse(response);
@@ -55,20 +56,20 @@ public class WebhookManagerTest extends ApiIntegrationTest {
                 .unknownApiUrl(server.url("/").toString())
                 .build();
 
-        Webhook webhook = onfido.webhook.find("id");
+        Applicant applicant = onfido.applicant.find("id");
 
         // Correct path
         RecordedRequest request = server.takeRequest();
-        assertEquals("/webhooks/id", request.getPath());
+        assertEquals("/applicants/id", request.getPath());
 
         // Correct response body
-        assertEquals("url", webhook.getUrl());
+        assertEquals("First", applicant.getFirstName());
     }
 
     @Test
-    public void updateWebhook() throws Exception {
+    public void updateApplicant() throws Exception {
         String response = new JsonObject()
-                .add("url", "url")
+                .add("first_name", "First")
                 .toJson();
 
         MockWebServer server = mockRequestResponse(response);
@@ -78,24 +79,25 @@ public class WebhookManagerTest extends ApiIntegrationTest {
                 .unknownApiUrl(server.url("/").toString())
                 .build();
 
-        Webhook webhook = onfido.webhook.update("id", Webhook.request().url("url"));
+        Applicant applicant = onfido.applicant.update("id", Applicant.request()
+                .firstName("First"));
 
         // Correct path
         RecordedRequest request = server.takeRequest();
-        assertEquals("/webhooks/id", request.getPath());
+        assertEquals("/applicants/id", request.getPath());
 
         // Correct request body
         String json = request.getBody().readUtf8();
         JsonObject jsonObject = JsonObject.parse(json);
-        assertEquals("url", jsonObject.get("url"));
+        assertEquals("First", jsonObject.get("first_name"));
 
         // Correct response body
-        assertEquals("url", webhook.getUrl());
+        assertEquals("First", applicant.getFirstName());
     }
 
 
     @Test
-    public void deleteWebhook() throws Exception {
+    public void deleteApplicant() throws Exception {
         MockWebServer server = mockRequestResponse("");
 
         Onfido onfido = Onfido.builder()
@@ -103,18 +105,34 @@ public class WebhookManagerTest extends ApiIntegrationTest {
                 .unknownApiUrl(server.url("/").toString())
                 .build();
 
-        onfido.webhook.delete("id");
+        onfido.applicant.delete("id");
 
         // Correct path
         RecordedRequest request = server.takeRequest();
-        assertEquals("/webhooks/id", request.getPath());
+        assertEquals("/applicants/id", request.getPath());
     }
 
     @Test
-    public void listWebhooks() throws Exception {
-        String response = new JsonObject().add("webhooks", Arrays.asList(
-                new JsonObject().add("url", "url1").map,
-                new JsonObject().add("url", "url2").map))
+    public void restoreApplicant() throws Exception {
+        MockWebServer server = mockRequestResponse("");
+
+        Onfido onfido = Onfido.builder()
+                .apiToken("token")
+                .unknownApiUrl(server.url("/").toString())
+                .build();
+
+        onfido.applicant.restore("id");
+
+        // Correct path
+        RecordedRequest request = server.takeRequest();
+        assertEquals("/applicants/id/restore", request.getPath());
+    }
+
+    @Test
+    public void listApplicants() throws Exception {
+        String response = new JsonObject().add("applicants", Arrays.asList(
+                new JsonObject().add("first_name", "First1").map,
+                new JsonObject().add("first_name", "First2").map))
                 .toJson();
 
         MockWebServer server = mockRequestResponse(response);
@@ -124,14 +142,14 @@ public class WebhookManagerTest extends ApiIntegrationTest {
                 .unknownApiUrl(server.url("/").toString())
                 .build();
 
-        List<Webhook> webhooks = onfido.webhook.list();
+        List<Applicant> applicants = onfido.applicant.list(1, 20, true);
 
         // Correct path
         RecordedRequest request = server.takeRequest();
-        assertEquals("/webhooks/", request.getPath());
+        assertEquals("/applicants/?page=1&per_page=20&include_deleted=true", request.getPath());
 
         // Correct response body
-        assertEquals("url1", webhooks.get(0).getUrl());
-        assertEquals("url2", webhooks.get(1).getUrl());
+        assertEquals("First1", applicants.get(0).getFirstName());
+        assertEquals("First2", applicants.get(1).getFirstName());
     }
 }

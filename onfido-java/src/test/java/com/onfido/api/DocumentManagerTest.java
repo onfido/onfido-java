@@ -1,9 +1,9 @@
-package com.onfido.integration;
+package com.onfido.api;
 
 import com.onfido.JsonObject;
 import com.onfido.Onfido;
 import com.onfido.exceptions.ApiException;
-import com.onfido.models.LivePhoto;
+import com.onfido.models.Document;
 import okhttp3.mockwebserver.MockWebServer;
 import okhttp3.mockwebserver.RecordedRequest;
 import org.junit.Assert;
@@ -14,12 +14,13 @@ import java.io.InputStream;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
-public class LivePhotoManagerTest extends ApiIntegrationTest {
+public class DocumentManagerTest extends ApiIntegrationTest {
 
     @Test
-    public void uploadLivePhoto() throws Exception {
+    public void uploadDocument() throws Exception {
         String response = new JsonObject()
                 .add("file_name", "file.png")
                 .toJson();
@@ -32,26 +33,31 @@ public class LivePhotoManagerTest extends ApiIntegrationTest {
                 .build();
 
         InputStream inputStream = new ByteArrayInputStream("testing testing 1 2".getBytes());
-        LivePhoto.Request livePhotoRequest = LivePhoto.request().applicantId("test id").advancedValidation(true);
-        LivePhoto livePhoto = onfido.livePhoto.upload(inputStream, "file.png", livePhotoRequest);
+        Document.Request documentRequest = Document.request().applicantId("test id").issuingCountry("USA").side("front").type("passport");
+        Document document = onfido.document.upload(inputStream, "file.png", documentRequest);
 
         // Correct path
         RecordedRequest request = server.takeRequest();
-        assertEquals("/live_photos/", request.getPath());
+        assertEquals("/documents/", request.getPath());
 
         // Correct request body
         String requestBody = request.getBody().readUtf8();
         Assert.assertTrue(requestBody.contains("applicant_id"));
         Assert.assertTrue(requestBody.contains("test id"));
-        Assert.assertTrue(requestBody.contains("advanced_validation"));
-        Assert.assertTrue(requestBody.contains("true"));
+        Assert.assertTrue(requestBody.contains("issuing_country"));
+        Assert.assertTrue(requestBody.contains("USA"));
+        Assert.assertTrue(requestBody.contains("side"));
+        Assert.assertTrue(requestBody.contains("front"));
+        Assert.assertTrue(requestBody.contains("type"));
+        Assert.assertTrue(requestBody.contains("passport"));
+        Assert.assertTrue(requestBody.contains("testing testing 1 2"));
 
         // Correct response body
-        assertEquals("file.png", livePhoto.getFileName());
+        assertEquals("file.png", document.getFileName());
     }
 
     @Test
-    public void downloadLivePhoto() throws Exception {
+    public void downloadDocument() throws Exception {
         MockWebServer server = mockFileRequestResponse();
 
         Onfido onfido = Onfido.builder()
@@ -59,18 +65,19 @@ public class LivePhotoManagerTest extends ApiIntegrationTest {
                 .unknownApiUrl(server.url("/").toString())
                 .build();
 
-        InputStream inputStream = onfido.livePhoto.download("live photo id").content;
+        InputStream inputStream = onfido.document.download("document id").content;
 
         // Correct path
         RecordedRequest request = server.takeRequest();
-        assertEquals("/live_photos/live%20photo%20id/download", request.getPath());
+        assertEquals("/documents/document%20id/download", request.getPath());
 
         // Correct response body
-        assertNotNull(inputStream);
+        assertTrue(inputStream != null);
     }
 
     @Test
     public void downloadError() throws Exception {
+
         MockWebServer server = mockErrorResponse("error");
 
         Onfido onfido = Onfido.builder()
@@ -79,7 +86,7 @@ public class LivePhotoManagerTest extends ApiIntegrationTest {
                 .build();
 
         try {
-            onfido.livePhoto.download("live photo id");
+            onfido.document.download("document id");
             Assert.fail();
         } catch (ApiException ex) {
             Assert.assertEquals(403, ex.getStatusCode());
@@ -87,7 +94,7 @@ public class LivePhotoManagerTest extends ApiIntegrationTest {
     }
 
     @Test
-    public void findLivePhoto() throws Exception {
+    public void findDocument() throws Exception {
         String response = new JsonObject()
                 .add("file_name", "file.png")
                 .toJson();
@@ -99,19 +106,19 @@ public class LivePhotoManagerTest extends ApiIntegrationTest {
                 .unknownApiUrl(server.url("/").toString())
                 .build();
 
-        LivePhoto livePhoto = onfido.livePhoto.find("id");
+        Document document = onfido.document.find("id");
 
         // Correct path
         RecordedRequest request = server.takeRequest();
-        assertEquals("/live_photos/id", request.getPath());
+        assertEquals("/documents/id", request.getPath());
 
         // Correct response body
-        assertEquals("file.png", livePhoto.getFileName());
+        assertEquals("file.png", document.getFileName());
     }
 
     @Test
-    public void listLivePhotos() throws Exception {
-        String response = new JsonObject().add("live_photos", Arrays.asList(
+    public void listDocuments() throws Exception {
+        String response = new JsonObject().add("documents", Arrays.asList(
                 new JsonObject().add("file_name", "file1.png").map,
                 new JsonObject().add("file_name", "file2.png").map))
                 .toJson();
@@ -123,14 +130,14 @@ public class LivePhotoManagerTest extends ApiIntegrationTest {
                 .unknownApiUrl(server.url("/").toString())
                 .build();
 
-        List<LivePhoto> livePhotos = onfido.livePhoto.list("id");
+        List<Document> documents = onfido.document.list("id");
 
         // Correct path
         RecordedRequest request = server.takeRequest();
-        assertEquals("/live_photos/?applicant_id=id", request.getPath());
+        assertEquals("/documents/?applicant_id=id", request.getPath());
 
         // Correct response body
-        assertEquals("file1.png", livePhotos.get(0).getFileName());
-        assertEquals("file2.png", livePhotos.get(1).getFileName());
+        assertEquals("file1.png", documents.get(0).getFileName());
+        assertEquals("file2.png", documents.get(1).getFileName());
     }
 }

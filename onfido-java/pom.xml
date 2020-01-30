@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.onfido</groupId>
-  <artifactId>onfido-java</artifactId>
+  <artifactId>onfido-api-java</artifactId>
   <version>1.0.0</version>
 
   <name>Onfido API Java Client</name>
@@ -26,16 +26,10 @@
 
   <developers>
     <developer>
-      <name>Ciaran Lawlor</name>
-      <email>ciaran.lawlor@onfido.com</email>
+      <name>Onfido</name>
+      <email>api@onfido.com</email>
       <organization>Onfido</organization>
-      <organizationUrl>http://www.onfido.com</organizationUrl>
-    </developer>
-    <developer>
-      <name>Jake Batchelor</name>
-      <email>jake.batchelor@onfido.com</email>
-      <organization>Onfido</organization>
-      <organizationUrl>http://www.onfido.com</organizationUrl>
+      <organizationUrl>http://onfido.com</organizationUrl>
     </developer>
   </developers>
 

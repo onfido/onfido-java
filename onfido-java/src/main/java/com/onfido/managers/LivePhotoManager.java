@@ -29,18 +29,16 @@ public class LivePhotoManager extends ResourceManager {
 
         MultipartBody.Builder builder = new MultipartBody.Builder().setType(MultipartBody.FORM);
 
-                addFormDataParam(builder, "applicant_id", request.getApplicantId());
-                addFormDataParam(builder,"advanced_validation", request.getAdvancedValidation());
+        addFormDataParam(builder, "applicant_id", request.getApplicantId());
+        addFormDataParam(builder,"advanced_validation", request.getAdvancedValidation());
 
-                builder.addFormDataPart(
-                        "file",
-                        fileName,
-                        RequestBody.create(
-                                readInputStream(inputStream),
-                                MediaType.get(URLConnection.guessContentTypeFromName(fileName)
-                                )))
-
-                .build();
+        builder.addFormDataPart(
+                "file",
+                fileName,
+                RequestBody.create(
+                        readInputStream(inputStream),
+                        MediaType.get(URLConnection.guessContentTypeFromName(fileName)
+                        )));
 
         return livePhotoParser.parse(uploadRequest("", builder.build()));
     }

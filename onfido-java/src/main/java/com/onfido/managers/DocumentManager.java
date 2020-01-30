@@ -28,18 +28,18 @@ public class DocumentManager extends ResourceManager {
 
         MultipartBody.Builder builder = new MultipartBody.Builder().setType(MultipartBody.FORM);
 
-                addFormDataParam(builder, "applicant_id", request.getApplicantId());
-                addFormDataParam(builder, "type", request.getType());
-                addFormDataParam(builder, "side", request.getSide());
-                addFormDataParam(builder, "issuing_country", request.getIssuingCountry());
+        addFormDataParam(builder, "applicant_id", request.getApplicantId());
+        addFormDataParam(builder, "type", request.getType());
+        addFormDataParam(builder, "side", request.getSide());
+        addFormDataParam(builder, "issuing_country", request.getIssuingCountry());
 
-                builder.addFormDataPart(
-                        "file",
-                        fileName,
-                        RequestBody.create(
-                                readInputStream(inputStream),
-                                MediaType.get(URLConnection.guessContentTypeFromName(fileName)
-                                )));
+        builder.addFormDataPart(
+                "file",
+                fileName,
+                RequestBody.create(
+                        readInputStream(inputStream),
+                        MediaType.get(URLConnection.guessContentTypeFromName(fileName)
+                        )));
 
         return documentParser.parse(uploadRequest("", builder.build()));
     }

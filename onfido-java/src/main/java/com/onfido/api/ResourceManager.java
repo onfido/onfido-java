@@ -12,6 +12,7 @@ import okhttp3.Response;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Objects;
 
 public class ResourceManager {
 
@@ -89,9 +90,9 @@ public class ResourceManager {
     return buffer.toByteArray();
   }
 
-  protected void addFormDataParam(MultipartBody.Builder builder, String key, String value) {
+  protected void addFormDataParam(MultipartBody.Builder builder, String key, Object value) {
     if (value != null) {
-      builder.addFormDataPart(key, value);
+      builder.addFormDataPart(key, value.toString());
     }
   }
 

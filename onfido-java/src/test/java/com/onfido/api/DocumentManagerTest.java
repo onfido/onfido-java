@@ -140,4 +140,29 @@ public class DocumentManagerTest extends ApiIntegrationTest {
         assertEquals("file1.png", documents.get(0).getFileName());
         assertEquals("file2.png", documents.get(1).getFileName());
     }
+
+    @Test
+    public void nullParamRequest() throws Exception {
+        String response = new JsonObject()
+                .add("file_name", "file.png")
+                .toJson();
+
+        MockWebServer server = mockRequestResponse(response);
+
+        Onfido onfido = Onfido.builder()
+                .apiToken("token")
+                .unknownApiUrl(server.url("/").toString())
+                .build();
+
+        InputStream inputStream = new ByteArrayInputStream("testing testing 1 2".getBytes());
+        Document.Request documentRequest = Document.request();
+        Document document = onfido.document.upload(inputStream, "file.png", documentRequest);
+
+        // Correct path
+        RecordedRequest request = server.takeRequest();
+        assertEquals("/documents/", request.getPath());
+
+        // Correct response body
+        assertEquals("file.png", document.getFileName());
+    }
 }

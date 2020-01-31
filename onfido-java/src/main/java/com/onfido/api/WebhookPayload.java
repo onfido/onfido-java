@@ -19,7 +19,7 @@ public class WebhookPayload {
     }
 
     /**
-     * Gets payload.
+     * Gets Webhook payload.
      *
      * @return the payload
      */

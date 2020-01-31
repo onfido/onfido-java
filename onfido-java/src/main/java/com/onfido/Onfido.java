@@ -110,7 +110,7 @@ public final class Onfido {
     }
 
     /**
-     * Sets the object to use the US region API.
+     * Sets the object to use the US region base URL.
      *
      * @return the builder
      */

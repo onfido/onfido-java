@@ -21,14 +21,28 @@ import java.util.Set;
 
 /**
  * A wrapper around Moshi's JsonAdapter for parsing and formatting JSON for Onfido's API.
+ *
+ * @param <T> the type parameter
  */
 public final class ApiJson<T> {
   private static final class LocalDateAdapter {
+    /**
+     * Converts a LocalDate to a json string.
+     *
+     * @param date the date
+     * @return the json string
+     */
     @ToJson
     String toJson(LocalDate date) {
       return date == null ? null : date.toString();
     }
 
+    /**
+     * Converts a json string to a LocalDate.
+     *
+     * @param dateString the date string
+     * @return the local date
+     */
     @FromJson
     LocalDate fromJson(String dateString) {
       return dateString == null ? null : LocalDate.parse(dateString);
@@ -36,11 +50,23 @@ public final class ApiJson<T> {
   }
 
   private static final class OffsetDateTimeAdapter {
+    /**
+     * Converts a OffsetDateTime to a json string.
+     *
+     * @param dateTime the date time
+     * @return the json string
+     */
     @ToJson
     String toJson(OffsetDateTime dateTime) {
       return dateTime == null ? null : dateTime.toString();
     }
 
+    /**
+     * Converts a json string to a OffsetDateTime.
+     *
+     * @param dateTimeString the date time string
+     * @return the offset date time
+     */
     @FromJson
     OffsetDateTime fromJson(String dateTimeString) {
       return dateTimeString == null ? null : OffsetDateTime.parse(dateTimeString);
@@ -88,23 +114,55 @@ public final class ApiJson<T> {
   private final Class<T> type;
   private JsonAdapter<Map<String, List<T>>> wrappedListAdapter;
 
+  /**
+   * Instantiates a new ApiJson object.
+   *
+   * @param type the type
+   */
   public ApiJson(Class<T> type) {
     this.adapter = MOSHI.adapter(type);
     this.type = type;
   }
 
+  /**
+   * Coverts the provided object of type T to a json string.
+   *
+   * @param t the object to be converted
+   * @return the json string
+   */
   public String toJson(T t) {
     return adapter.toJson(t);
   }
 
+  /**
+   * Coverts the provided object of type T to a human readable json string.
+   *
+   * @param t the object to be converted
+   * @return the string
+   */
   public String toPrettyJson(T t) {
     return adapter.indent("  ").toJson(t);
   }
 
+  /**
+   * Coverts the provided json string to an object of type T
+   *
+   * @param json the json string to be converted
+   * @return the object made from the json string
+   * @throws OnfidoException the onfido exception
+   */
   public T parse(String json) throws OnfidoException {
     return parse(adapter, json);
   }
 
+  /**
+   * Parses a json array into a list of type T.
+   *
+   * @param json the json string to be converted
+   * @param path the path to the json array
+   * @return the list made from the json string
+   * @throws OnfidoException the onfido exception
+   */
   public List<T> parseWrappedList(String json, String path) throws OnfidoException {
     if (wrappedListAdapter == null) {
       Type listType = Types.newParameterizedType(List.class, type);

@@ -44,22 +44,20 @@ public class LivePhotoManager extends ResourceManager {
      */
     public LivePhoto upload(InputStream inputStream, String fileName, LivePhoto.Request request) throws IOException, OnfidoException {
 
-        RequestBody requestBody = new MultipartBody.Builder().setType(MultipartBody.FORM)
+        MultipartBody.Builder builder = new MultipartBody.Builder().setType(MultipartBody.FORM);
 
-                .addFormDataPart("applicant_id", request.getApplicantId())
-                .addFormDataPart("advanced_validation", request.getAdvancedValidation().toString())
+        addFormDataParam(builder, "applicant_id", request.getApplicantId());
+        addFormDataParam(builder,"advanced_validation", request.getAdvancedValidation());
 
-                .addFormDataPart(
-                        "file",
-                        fileName,
-                        RequestBody.create(
-                                readInputStream(inputStream),
-                                MediaType.get(URLConnection.guessContentTypeFromName(fileName)
-                                )))
+        builder.addFormDataPart(
+                "file",
+                fileName,
+                RequestBody.create(
+                        readInputStream(inputStream),
+                        MediaType.get(URLConnection.guessContentTypeFromName(fileName)
+                        )));
 
-                .build();
-
-        return livePhotoParser.parse(uploadRequest("", requestBody));
+        return livePhotoParser.parse(uploadRequest("", builder.build()));
     }
 
     /**

@@ -3,6 +3,7 @@ package com.onfido.api;
 import com.onfido.exceptions.ApiException;
 import com.onfido.exceptions.OnfidoException;
 import okhttp3.MediaType;
+import okhttp3.MultipartBody;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
@@ -11,6 +12,7 @@ import okhttp3.Response;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Objects;
 
 /**
  * Manager class for all resource types. Contains methods for interacting with the API.
@@ -150,6 +152,12 @@ public class ResourceManager {
 
     buffer.flush();
     return buffer.toByteArray();
+  }
+
+  protected void addFormDataParam(MultipartBody.Builder builder, String key, Object value) {
+    if (value != null) {
+      builder.addFormDataPart(key, value.toString());
+    }
   }
 
   private Request.Builder requestBuilder(String path) {

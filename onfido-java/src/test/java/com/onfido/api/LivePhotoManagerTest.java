@@ -133,4 +133,29 @@ public class LivePhotoManagerTest extends ApiIntegrationTest {
         assertEquals("file1.png", livePhotos.get(0).getFileName());
         assertEquals("file2.png", livePhotos.get(1).getFileName());
     }
+
+    @Test
+    public void nullParamRequest() throws Exception {
+        String response = new JsonObject()
+                .add("file_name", "file.png")
+                .toJson();
+
+        MockWebServer server = mockRequestResponse(response);
+
+        Onfido onfido = Onfido.builder()
+                .apiToken("token")
+                .unknownApiUrl(server.url("/").toString())
+                .build();
+
+        InputStream inputStream = new ByteArrayInputStream("testing testing 1 2".getBytes());
+        LivePhoto.Request livePhotoRequest = LivePhoto.request();
+        LivePhoto livePhoto = onfido.livePhoto.upload(inputStream, "file.png", livePhotoRequest);
+
+        // Correct path
+        RecordedRequest request = server.takeRequest();
+        assertEquals("/live_photos/", request.getPath());
+
+        // Correct response body
+        assertEquals("file.png", livePhoto.getFileName());
+    }
 }

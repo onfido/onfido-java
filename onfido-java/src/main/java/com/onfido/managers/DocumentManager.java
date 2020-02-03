@@ -44,24 +44,22 @@ public class DocumentManager extends ResourceManager {
      */
     public Document upload(InputStream inputStream, String fileName, Document.Request request) throws IOException, OnfidoException {
 
-        RequestBody requestBody = new MultipartBody.Builder().setType(MultipartBody.FORM)
+        MultipartBody.Builder builder = new MultipartBody.Builder().setType(MultipartBody.FORM);
 
-                .addFormDataPart("applicant_id", request.getApplicantId())
-                .addFormDataPart("type", request.getType())
-                .addFormDataPart("side", request.getSide())
-                .addFormDataPart("issuing_country", request.getIssuingCountry())
+        addFormDataParam(builder, "applicant_id", request.getApplicantId());
+        addFormDataParam(builder, "type", request.getType());
+        addFormDataParam(builder, "side", request.getSide());
+        addFormDataParam(builder, "issuing_country", request.getIssuingCountry());
 
-                .addFormDataPart(
-                        "file",
-                        fileName,
-                        RequestBody.create(
-                                readInputStream(inputStream),
-                                MediaType.get(URLConnection.guessContentTypeFromName(fileName)
-                                )))
+        builder.addFormDataPart(
+                "file",
+                fileName,
+                RequestBody.create(
+                        readInputStream(inputStream),
+                        MediaType.get(URLConnection.guessContentTypeFromName(fileName)
+                        )));
 
-        .build();
-
-        return documentParser.parse(uploadRequest("", requestBody));
+        return documentParser.parse(uploadRequest("", builder.build()));
     }
 
     /**

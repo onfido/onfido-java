@@ -67,10 +67,9 @@ newApplicant.getFirstName();
 
 1. Fork it ( https://github.com/onfido/onfido/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Increment the incremental version in `onfido-java/onfido-java/pom.xml` i.e `<version>1.0.0</version>` to `<version>1.0.1</version`
-4. Commit your changes (`git commit -am 'Add some feature'`)
-5. Push to the branch (`git push origin my-new-feature`)
-6. Create a new Pull Request
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create a new Pull Request
 
 
 ## More Documentation

@@ -14,6 +14,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Objects;
 
+/**
+ * Manager class for all resource types. Contains methods for interacting with the API.
+ */
 public class ResourceManager {
 
   private final Config config;
@@ -22,17 +25,34 @@ public class ResourceManager {
   private static final OkHttpClient CLIENT = new OkHttpClient();
   private static final MediaType JSON = MediaType.get("application/json; charset=utf-8");
 
-  public ResourceManager(String basePath, Config config) {
+    /**
+     * Instantiates a new ResourceManager object.
+     *
+     * @param basePath the base path for the resource endpoints
+     * @param config   the configuration for the Onfido object
+     */
+    public ResourceManager(String basePath, Config config) {
     this.basePath = basePath;
     this.config = config;
   }
 
-  public static void shutdown() {
+    /**
+     * Shuts down the client
+     */
+    public static void shutdown() {
     CLIENT.dispatcher().executorService().shutdown();
     CLIENT.connectionPool().evictAll();
   }
 
-  protected String post(String path, String body) throws OnfidoException {
+    /**
+     * Makes a POST http call to the specified path and request body.
+     *
+     * @param path the path to the desired endpoint
+     * @param body the request body for the http call
+     * @return the response as a json string
+     * @throws OnfidoException the onfido exception
+     */
+    protected String post(String path, String body) throws OnfidoException {
     Request request = requestBuilder(path)
       .post(RequestBody.create(body, JSON))
       .build();
@@ -40,13 +60,28 @@ public class ResourceManager {
     return performRequest(request);
   }
 
-  protected String get(String path) throws OnfidoException {
+    /**
+     * Makes a GET http call to the specified path
+     *
+     * @param path the path to the desired endpoint
+     * @return the response as a json string
+     * @throws OnfidoException the onfido exception
+     */
+    protected String get(String path) throws OnfidoException {
     Request request = requestBuilder(path).build();
 
     return performRequest(request);
   }
 
-  protected String put(String path, String body) throws OnfidoException {
+    /**
+     * Makes a PUT http call to the specified path and request body.
+     *
+     * @param path the path to the desired endpoint
+     * @param body the request body for the http call
+     * @return the response as a json string
+     * @throws OnfidoException the onfido exception
+     */
+    protected String put(String path, String body) throws OnfidoException {
     Request request = requestBuilder(path)
             .put(RequestBody.create(body, JSON))
             .build();
@@ -54,7 +89,14 @@ public class ResourceManager {
     return performRequest(request);
   }
 
-  protected String deleteRequest(String path) throws OnfidoException {
+    /**
+     * Makes a DELETE http call to the specified path
+     *
+     * @param path the path to the desired endpoint
+     * @return the response as a json string
+     * @throws OnfidoException the onfido exception
+     */
+    protected String deleteRequest(String path) throws OnfidoException {
     Request request = requestBuilder(path)
             .delete()
             .build();
@@ -62,15 +104,30 @@ public class ResourceManager {
     return performRequest(request);
   }
 
-  protected String uploadRequest(String path, RequestBody requestBody) throws OnfidoException {
+    /**
+     * Makes a POST http call to the specified path and multipart request body.
+     *
+     * @param path the path to the desired endpoint
+     * @param body the request body for the http call
+     * @return the response as a json string
+     * @throws OnfidoException the onfido exception
+     */
+    protected String uploadRequest(String path, RequestBody body) throws OnfidoException {
     Request request = requestBuilder(path)
-            .post(requestBody)
+            .post(body)
             .build();
 
     return performRequest(request);
   }
 
-  protected FileDownload downloadRequest(String path) throws OnfidoException {
+    /**
+     * Makes a GET http call to the specified path
+     *
+     * @param path the path to the desired endpoint
+     * @return the file content and type in the form of a FileDownload object
+     * @throws OnfidoException the onfido exception
+     */
+    protected FileDownload downloadRequest(String path) throws OnfidoException {
     Request request = requestBuilder(path)
             .get()
             .build();
@@ -78,7 +135,14 @@ public class ResourceManager {
     return performDownload(request);
   }
 
-  protected byte[] readInputStream(InputStream inputStream) throws IOException {
+    /**
+     * Converts an InputStream to a byte[] to be sent as part of a multipart request body
+     *
+     * @param inputStream the InputStream
+     * @return the byte[] made from the InputStream
+     * @throws IOException the io exception
+     */
+    protected byte[] readInputStream(InputStream inputStream) throws IOException {
     ByteArrayOutputStream buffer = new ByteArrayOutputStream();
     int nRead;
     byte[] data = new byte[1024];

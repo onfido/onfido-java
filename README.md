@@ -8,7 +8,19 @@ Documentation can be found at <https://documentation.onfido.com>
 
 ## Installation
 
-_Coming soon_
+For Maven projects, add the below to your pom file:
+```xml
+<dependency>
+      <groupId>com.onfido</groupId>
+      <artifactId>onfido-api-java</artifactId>
+      <version>4.2.2</version>
+</dependency>
+```
+
+For Gradle projects add the below to your build.gradle file:
+```xml
+implementation 'com.onfido:onfido-api-java:1.0.0'
+```
 
 ## Getting Started
 

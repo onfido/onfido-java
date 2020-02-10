@@ -14,83 +14,77 @@ import static org.junit.Assert.assertEquals;
 
 public class ReportManagerTest extends ApiIntegrationTest {
 
-    @Test
-    public void findReport() throws Exception {
-        String response = new JsonObject()
-                .add("name", "name")
-                .toJson();
+  @Test
+  public void findReport() throws Exception {
+    String response = new JsonObject().add("name", "name").toJson();
 
-        MockWebServer server = mockRequestResponse(response);
+    MockWebServer server = mockRequestResponse(response);
 
-        Onfido onfido = Onfido.builder()
-                .apiToken("token")
-                .unknownApiUrl(server.url("/").toString())
-                .build();
+    Onfido onfido =
+        Onfido.builder().apiToken("token").unknownApiUrl(server.url("/").toString()).build();
 
-        Report report = onfido.report.find("id");
+    Report report = onfido.report.find("id");
 
-        // Correct path
-        RecordedRequest request = server.takeRequest();
-        assertEquals("/reports/id", request.getPath());
+    // Correct path
+    RecordedRequest request = server.takeRequest();
+    assertEquals("/reports/id", request.getPath());
 
-        // Correct response body
-        assertEquals("name", report.getName());
-    }
+    // Correct response body
+    assertEquals("name", report.getName());
+  }
 
-    @Test
-    public void listReports() throws Exception {
-        String response = new JsonObject().add("reports", Arrays.asList(
-                new JsonObject().add("name", "name1").map,
-                new JsonObject().add("name", "name2").map))
-                .toJson();
+  @Test
+  public void listReports() throws Exception {
+    String response =
+        new JsonObject()
+            .add(
+                "reports",
+                Arrays.asList(
+                    new JsonObject().add("name", "name1").map,
+                    new JsonObject().add("name", "name2").map))
+            .toJson();
 
-        MockWebServer server = mockRequestResponse(response);
+    MockWebServer server = mockRequestResponse(response);
 
-        Onfido onfido = Onfido.builder()
-                .apiToken("token")
-                .unknownApiUrl(server.url("/").toString())
-                .build();
+    Onfido onfido =
+        Onfido.builder().apiToken("token").unknownApiUrl(server.url("/").toString()).build();
 
-        List<Report> reports = onfido.report.list("id");
+    List<Report> reports = onfido.report.list("id");
 
-        // Correct path
-        RecordedRequest request = server.takeRequest();
-        assertEquals("/reports/?check_id=id", request.getPath());
+    // Correct path
+    RecordedRequest request = server.takeRequest();
+    assertEquals("/reports/?check_id=id", request.getPath());
 
-        // Correct response body
-        assertEquals("name1", reports.get(0).getName());
-        assertEquals("name2", reports.get(1).getName());
-    }
+    // Correct response body
+    assertEquals("name1", reports.get(0).getName());
+    assertEquals("name2", reports.get(1).getName());
+  }
 
-    @Test
-    public void resumeReport() throws Exception {
-        MockWebServer server = mockRequestResponse("");
+  @Test
+  public void resumeReport() throws Exception {
+    MockWebServer server = mockRequestResponse("");
 
-        Onfido onfido = Onfido.builder()
-                .apiToken("token")
-                .unknownApiUrl(server.url("/").toString())
-                .build();
+    Onfido onfido =
+        Onfido.builder().apiToken("token").unknownApiUrl(server.url("/").toString()).build();
 
-        onfido.report.resume("id");
+    onfido.report.resume("id");
 
-        // Correct path
-        RecordedRequest request = server.takeRequest();
-        assertEquals("/reports/id/resume", request.getPath());
-    }
+    // Correct path
+    RecordedRequest request = server.takeRequest();
+    assertEquals("/reports/id/resume", request.getPath());
+  }
 
-    @Test
-    public void cancelReport() throws Exception {
-        MockWebServer server = mockRequestResponse("");
+  @Test
+  public void cancelReport() throws Exception {
+    MockWebServer server = mockRequestResponse("");
 
-        Onfido onfido = Onfido.builder()
-                .apiToken("token")
-                .unknownApiUrl(server.url("/").toString())
-                .build();
+    Onfido onfido =
+        Onfido.builder().apiToken("token").unknownApiUrl(server.url("/").toString()).build();
 
-        onfido.report.cancel("id");
+    onfido.report.cancel("id");
 
-        // Correct path
-        RecordedRequest request = server.takeRequest();
-        assertEquals("/reports/id/cancel", request.getPath());
-    }
+    // Correct path
+    RecordedRequest request = server.takeRequest();
+    assertEquals("/reports/id/cancel", request.getPath());
+  }
 }

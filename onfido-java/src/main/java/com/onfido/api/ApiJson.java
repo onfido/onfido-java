@@ -104,11 +104,12 @@ public final class ApiJson<T> {
     }
   }
 
-  private static final Moshi MOSHI = new Moshi.Builder()
-    .add(new OffsetDateTimeAdapter())
-    .add(new LocalDateAdapter())
-    .add(new ImmutableAdapterFactory())
-    .build();
+  private static final Moshi MOSHI =
+      new Moshi.Builder()
+          .add(new OffsetDateTimeAdapter())
+          .add(new LocalDateAdapter())
+          .add(new ImmutableAdapterFactory())
+          .build();
 
   private final JsonAdapter<T> adapter;
   private final Class<T> type;

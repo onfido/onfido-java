@@ -11,54 +11,32 @@ import com.onfido.managers.ReportManager;
 import com.onfido.managers.SdkTokenManager;
 import com.onfido.managers.WebhookManager;
 
-/**
- * The main class used for accessing instances of the manager classes.
- */
+/** The main class used for accessing instances of the manager classes. */
 public final class Onfido {
 
   private static final String DEFAULT_API_URL = "https://api.onfido.com/v3/";
   private static final String US_API_URL = "https://api.us.onfido.com/v3/";
 
-  /**
-   * The Configuration for the instance.
-   */
+  /** The Configuration for the instance. */
   public final Config config;
 
-  /**
-   * The manager class for the Applicant resource.
-   */
+  /** The manager class for the Applicant resource. */
   public final ApplicantManager applicant;
-  /**
-   * The manager class for the Document resource.
-   */
+  /** The manager class for the Document resource. */
   public final DocumentManager document;
-  /**
-   * The manager class for the Check resource.
-   */
+  /** The manager class for the Check resource. */
   public final CheckManager check;
-  /**
-   * The manager class for the Report resource.
-   */
+  /** The manager class for the Report resource. */
   public final ReportManager report;
-  /**
-   * The manager class for the Live photo resource.
-   */
+  /** The manager class for the Live photo resource. */
   public final LivePhotoManager livePhoto;
-  /**
-   * The manager class for the Live video resource.
-   */
+  /** The manager class for the Live video resource. */
   public final LiveVideoManager liveVideo;
-  /**
-   * The manager class for the Address resource
-   */
+  /** The manager class for the Address resource */
   public final AddressManager address;
-  /**
-   * The manager class for the Sdk token resource.
-   */
+  /** The manager class for the Sdk token resource. */
   public final SdkTokenManager sdkToken;
-  /**
-   * The manager class for the Webhook resource.
-   */
+  /** The manager class for the Webhook resource. */
   public final WebhookManager webhook;
 
   private Onfido(Builder builder) {
@@ -74,17 +52,11 @@ public final class Onfido {
     webhook = new WebhookManager(this.config);
   }
 
-  /**
-   * The Builder for the Onfido object.
-   */
+  /** The Builder for the Onfido object. */
   public static final class Builder {
-    /**
-     * The Api token.
-     */
+    /** The Api token. */
     public String apiToken = "";
-    /**
-     * The Api url.
-     */
+    /** The Api url. */
     public String apiUrl = DEFAULT_API_URL;
 
     private Builder() {}

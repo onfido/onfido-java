@@ -1,16 +1,18 @@
 package com.onfido;
 
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
-
 import com.squareup.moshi.JsonAdapter;
 import com.squareup.moshi.Moshi;
 import com.squareup.moshi.Types;
 
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+
 public final class JsonObject {
-  private static final JsonAdapter<Map<String, Object>> ADAPTOR = new Moshi.Builder().build()
-      .adapter(Types.newParameterizedType(Map.class, String.class, Object.class));
+  private static final JsonAdapter<Map<String, Object>> ADAPTOR =
+      new Moshi.Builder()
+          .build()
+          .adapter(Types.newParameterizedType(Map.class, String.class, Object.class));
 
   public Map<String, Object> map;
 

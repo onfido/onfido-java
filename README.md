@@ -13,7 +13,7 @@ For Maven projects, add the below to your pom file:
 <dependency>
       <groupId>com.onfido</groupId>
       <artifactId>onfido-api-java</artifactId>
-      <version>4.2.2</version>
+      <version>1.0.0</version>
 </dependency>
 ```
 

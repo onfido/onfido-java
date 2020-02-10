@@ -1,5 +1,19 @@
 package com.onfido;
 
+import com.github.mustachejava.DefaultMustacheFactory;
+import com.github.mustachejava.Mustache;
+import com.github.mustachejava.MustacheFactory;
+import com.onfido.models.Model;
+import com.onfido.models.ModelJsonAdapter;
+import com.squareup.moshi.JsonAdapter;
+import com.squareup.moshi.Moshi;
+import org.apache.maven.plugin.AbstractMojo;
+import org.apache.maven.plugin.MojoExecutionException;
+import org.apache.maven.plugins.annotations.LifecyclePhase;
+import org.apache.maven.plugins.annotations.Mojo;
+import org.apache.maven.plugins.annotations.Parameter;
+import org.apache.maven.project.MavenProject;
+
 import java.io.File;
 import java.io.IOException;
 import java.io.Writer;
@@ -10,21 +24,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
-
-import com.github.mustachejava.DefaultMustacheFactory;
-import com.github.mustachejava.Mustache;
-import com.github.mustachejava.MustacheFactory;
-import com.onfido.models.Model;
-import com.onfido.models.ModelJsonAdapter;
-import com.squareup.moshi.JsonAdapter;
-import com.squareup.moshi.Moshi;
-
-import org.apache.maven.plugin.AbstractMojo;
-import org.apache.maven.plugin.MojoExecutionException;
-import org.apache.maven.project.MavenProject;
-import org.apache.maven.plugins.annotations.LifecyclePhase;
-import org.apache.maven.plugins.annotations.Mojo;
-import org.apache.maven.plugins.annotations.Parameter;
 
 @Mojo(name = "generate", defaultPhase = LifecyclePhase.GENERATE_SOURCES)
 public class GenerateModelsMojo extends AbstractMojo {
@@ -63,7 +62,7 @@ public class GenerateModelsMojo extends AbstractMojo {
           writeRenderedTemplate(fileName, templateEntry.getValue(), model);
         }
       }
-    } catch(IOException e) {
+    } catch (IOException e) {
       throw new MojoExecutionException(e.getMessage(), e);
     }
 
@@ -97,8 +96,8 @@ public class GenerateModelsMojo extends AbstractMojo {
 
   private List<Path> getFilePaths(Path directory, String extension) throws IOException {
     return Files.list(directory)
-      .filter(path -> path.toString().endsWith(extension))
-      .collect(Collectors.toList());
+        .filter(path -> path.toString().endsWith(extension))
+        .collect(Collectors.toList());
   }
 
   private Model readJson(Path path) throws IOException {
@@ -106,7 +105,8 @@ public class GenerateModelsMojo extends AbstractMojo {
     return jsonAdapter.fromJson(rawJson);
   }
 
-  private void writeRenderedTemplate(String fileName, Mustache template, Model model) throws IOException {
+  private void writeRenderedTemplate(String fileName, Mustache template, Model model)
+      throws IOException {
     Path path = packageOutputDirectoryPath.resolve(fileName);
     Writer writer = Files.newBufferedWriter(path);
     template.execute(writer, model).close();

@@ -1,13 +1,13 @@
 package com.onfido.integration;
 
+import static org.junit.Assert.assertEquals;
+
 import com.onfido.JsonObject;
 import com.onfido.Onfido;
 import com.onfido.models.SdkToken;
 import okhttp3.mockwebserver.MockWebServer;
 import okhttp3.mockwebserver.RecordedRequest;
 import org.testng.annotations.Test;
-
-import static org.junit.Assert.assertEquals;
 
 public class SdkTokenManagerTest extends ApiIntegrationTest {
 

@@ -1,21 +1,20 @@
 package com.onfido.integration;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+
 import com.onfido.JsonObject;
 import com.onfido.Onfido;
 import com.onfido.exceptions.ApiException;
 import com.onfido.models.LivePhoto;
-import okhttp3.mockwebserver.MockWebServer;
-import okhttp3.mockwebserver.RecordedRequest;
-import org.junit.Assert;
-import org.testng.annotations.Test;
-
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.util.Arrays;
 import java.util.List;
-
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
+import okhttp3.mockwebserver.MockWebServer;
+import okhttp3.mockwebserver.RecordedRequest;
+import org.junit.Assert;
+import org.testng.annotations.Test;
 
 public class LivePhotoManagerTest extends ApiIntegrationTest {
 

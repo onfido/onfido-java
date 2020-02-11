@@ -6,10 +6,8 @@ import com.onfido.api.FileDownload;
 import com.onfido.api.ResourceManager;
 import com.onfido.exceptions.OnfidoException;
 import com.onfido.models.LiveVideo;
-
-import okhttp3.OkHttpClient;
-
 import java.util.List;
+import okhttp3.OkHttpClient;
 
 /**
  * Manager class for the Live video resource type. Contains resource-specific methods for

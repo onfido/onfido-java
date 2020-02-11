@@ -1,7 +1,6 @@
 package com.onfido;
 
 import com.onfido.api.Config;
-
 import okhttp3.OkHttpClient;
 
 /** The main class used for accessing instances of the manager classes. */

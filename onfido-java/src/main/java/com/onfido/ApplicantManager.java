@@ -5,10 +5,8 @@ import com.onfido.api.Config;
 import com.onfido.api.ResourceManager;
 import com.onfido.exceptions.OnfidoException;
 import com.onfido.models.Applicant;
-
-import okhttp3.OkHttpClient;
-
 import java.util.List;
+import okhttp3.OkHttpClient;
 
 /**
  * Manager class for the Applicant resource type. Contains resource-specific methods for interacting

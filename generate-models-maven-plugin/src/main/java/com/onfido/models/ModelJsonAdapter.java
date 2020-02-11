@@ -1,7 +1,6 @@
 package com.onfido.models;
 
 import com.squareup.moshi.FromJson;
-
 import java.util.List;
 import java.util.stream.Collectors;
 

@@ -5,7 +5,6 @@ import com.onfido.api.Config;
 import com.onfido.api.ResourceManager;
 import com.onfido.exceptions.OnfidoException;
 import com.onfido.models.SdkToken;
-
 import okhttp3.OkHttpClient;
 
 /**

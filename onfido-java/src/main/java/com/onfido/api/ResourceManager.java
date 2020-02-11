@@ -2,16 +2,15 @@ package com.onfido.api;
 
 import com.onfido.exceptions.ApiException;
 import com.onfido.exceptions.OnfidoException;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
-
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
 
 /** Manager class for all resource types. Contains methods for interacting with the API. */
 public abstract class ResourceManager {

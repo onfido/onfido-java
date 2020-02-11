@@ -2,9 +2,7 @@ package com.onfido.exceptions;
 
 import java.util.Map;
 
-/**
- * Wrapper class for the error response returned from the Onfido API.
- */
+/** Wrapper class for the error response returned from the Onfido API. */
 public final class ApiException extends OnfidoException {
   private static final long serialVersionUID = 1;
 
@@ -19,14 +17,14 @@ public final class ApiException extends OnfidoException {
     this.fields = fields;
   }
 
-    /**
-     * Extracts an exception from the response body.
-     *
-     * @param body       the body
-     * @param statusCode the status code
-     * @return the api exception
-     */
-    public static ApiException fromResponseBody(String body, int statusCode) {
+  /**
+   * Extracts an exception from the response body.
+   *
+   * @param body the body
+   * @param statusCode the status code
+   * @return the api exception
+   */
+  public static ApiException fromResponseBody(String body, int statusCode) {
     ErrorJson error = ErrorJson.fromJson(body);
     return new ApiException(error.getMessage(), statusCode, error.getType(), error.getFields());
   }
@@ -42,39 +40,39 @@ public final class ApiException extends OnfidoException {
     return String.format("%s | Field errors: %s", message, fields);
   }
 
-    /**
-     * Gets status code.
-     *
-     * @return the status code
-     */
-    public int getStatusCode() {
+  /**
+   * Gets status code.
+   *
+   * @return the status code
+   */
+  public int getStatusCode() {
     return statusCode;
   }
 
-    /**
-     * Is client error boolean.
-     *
-     * @return the boolean
-     */
-    public boolean isClientError() {
+  /**
+   * Is client error boolean.
+   *
+   * @return the boolean
+   */
+  public boolean isClientError() {
     return statusCode < 500;
   }
 
-    /**
-     * Gets type.
-     *
-     * @return the type
-     */
-    public String getType() {
+  /**
+   * Gets type.
+   *
+   * @return the type
+   */
+  public String getType() {
     return type;
   }
 
-    /**
-     * Gets fields.
-     *
-     * @return the fields
-     */
-    public Map<String, Object> getFields() {
+  /**
+   * Gets fields.
+   *
+   * @return the fields
+   */
+  public Map<String, Object> getFields() {
     return fields;
   }
 }

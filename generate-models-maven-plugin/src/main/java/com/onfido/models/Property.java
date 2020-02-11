@@ -44,12 +44,11 @@ public final class Property {
     public final String nonListRequestType;
 
     private TypeInfo(
-      String type,
-      String boxedType,
-      String requestType,
-      String notSetValue,
-      String nonListRequestType
-    ) {
+        String type,
+        String boxedType,
+        String requestType,
+        String notSetValue,
+        String nonListRequestType) {
       this.type = type;
       this.boxedType = boxedType;
       this.requestType = requestType;

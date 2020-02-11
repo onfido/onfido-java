@@ -23,6 +23,7 @@ implementation 'com.onfido:onfido-api-java:LATEST_VERSION_HERE'
 ```
 
 The latest version can be found at: https://search.maven.org/artifact/com.onfido/onfido-api-java
+>>>>>>> 904c109b7eee0048a8eb6332bdf08ea48b0a3f2c
 
 ## Getting Started
 

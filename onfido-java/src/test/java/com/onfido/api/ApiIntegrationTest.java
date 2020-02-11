@@ -1,13 +1,12 @@
 package com.onfido.api;
 
-import java.io.IOException;
-
+import okhttp3.mockwebserver.MockResponse;
+import okhttp3.mockwebserver.MockWebServer;
 import okio.Buffer;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
-import okhttp3.mockwebserver.MockResponse;
-import okhttp3.mockwebserver.MockWebServer;
+import java.io.IOException;
 
 class ApiIntegrationTest {
   private MockWebServer server;

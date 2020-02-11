@@ -9,7 +9,9 @@ public class PropertyJson {
   protected final String description;
   protected final boolean readOnly;
   protected final boolean writeOnly;
-  @Json(name = "$ref") protected final String ref;
+
+  @Json(name = "$ref")
+  protected final String ref;
 
   private PropertyJson() {
     type = "";

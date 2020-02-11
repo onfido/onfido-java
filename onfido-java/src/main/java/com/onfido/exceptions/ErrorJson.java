@@ -1,29 +1,21 @@
 package com.onfido.exceptions;
 
+import com.onfido.api.ApiJson;
+
 import java.util.Collections;
 import java.util.Map;
 
-import com.onfido.api.ApiJson;
-
-/**
- * Object representation for the json returned in Onfido API errors.
- */
+/** Object representation for the json returned in Onfido API errors. */
 final class ErrorJson {
   private static final ApiJson<ErrorJson> JSON = new ApiJson<ErrorJson>(ErrorJson.class);
 
   private static final class InnerErrorJson {
-      /**
-       * The Type.
-       */
-      final String type;
-      /**
-       * The Message.
-       */
-      final String message;
-      /**
-       * The Fields.
-       */
-      final Map<String, Object> fields;
+    /** The Type. */
+    final String type;
+    /** The Message. */
+    final String message;
+    /** The Fields. */
+    final Map<String, Object> fields;
 
     private InnerErrorJson() {
       this.type = "unknown";
@@ -38,13 +30,13 @@ final class ErrorJson {
     this.error = new InnerErrorJson();
   }
 
-    /**
-     * Converts a json string to an ErrorJson object.
-     *
-     * @param json the json
-     * @return the ErrorJson
-     */
-    protected static ErrorJson fromJson(String json) {
+  /**
+   * Converts a json string to an ErrorJson object.
+   *
+   * @param json the json
+   * @return the ErrorJson
+   */
+  protected static ErrorJson fromJson(String json) {
     try {
       return JSON.parse(json);
     } catch (OnfidoException e) {
@@ -52,30 +44,30 @@ final class ErrorJson {
     }
   }
 
-    /**
-     * Gets type.
-     *
-     * @return the type
-     */
-    protected String getType() {
+  /**
+   * Gets type.
+   *
+   * @return the type
+   */
+  protected String getType() {
     return error.type;
   }
 
-    /**
-     * Gets message.
-     *
-     * @return the message
-     */
-    protected String getMessage() {
+  /**
+   * Gets message.
+   *
+   * @return the message
+   */
+  protected String getMessage() {
     return error.message;
   }
 
-    /**
-     * Gets fields.
-     *
-     * @return the fields
-     */
-    protected Map<String, Object> getFields() {
+  /**
+   * Gets fields.
+   *
+   * @return the fields
+   */
+  protected Map<String, Object> getFields() {
     return error.fields;
   }
 }

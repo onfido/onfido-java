@@ -11,7 +11,7 @@
       "description": "Specifies the applicant for the SDK instance",
       "writeOnly": true
     },
-    "application_id":{
+    "application_id": {
       "type": "string",
       "description": "The application ID (or “application bundle ID”) - used with the iOS and Android SDKs",
       "writeOnly": true

@@ -1,4 +1,4 @@
-package com.onfido.api;
+package com.onfido.webhooks;
 
 import com.squareup.moshi.Json;
 

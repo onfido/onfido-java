@@ -1,10 +1,12 @@
-package com.onfido.managers;
+package com.onfido;
 
 import com.onfido.api.ApiJson;
 import com.onfido.api.Config;
 import com.onfido.api.ResourceManager;
 import com.onfido.exceptions.OnfidoException;
 import com.onfido.models.Report;
+
+import okhttp3.OkHttpClient;
 
 import java.util.List;
 
@@ -13,17 +15,15 @@ import java.util.List;
  * with the API.
  */
 public class ReportManager extends ResourceManager {
-
   private ApiJson<Report> reportParser = new ApiJson<>(Report.class);
-  private ApiJson<Report.Request> requestParser = new ApiJson<>(Report.Request.class);
 
   /**
    * Instantiates a new ReportManager.
    *
    * @param config the config
    */
-  public ReportManager(Config config) {
-    super("reports/", config);
+  protected ReportManager(Config config, OkHttpClient client) {
+    super("reports/", config, client);
   }
 
   /**

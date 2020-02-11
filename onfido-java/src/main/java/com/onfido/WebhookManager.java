@@ -1,10 +1,12 @@
-package com.onfido.managers;
+package com.onfido;
 
 import com.onfido.api.ApiJson;
 import com.onfido.api.Config;
 import com.onfido.api.ResourceManager;
 import com.onfido.exceptions.OnfidoException;
 import com.onfido.models.Webhook;
+
+import okhttp3.OkHttpClient;
 
 import java.util.List;
 
@@ -13,17 +15,16 @@ import java.util.List;
  * with the API.
  */
 public class WebhookManager extends ResourceManager {
-
   private ApiJson<Webhook> webhookParser = new ApiJson<>(Webhook.class);
-  private ApiJson<Webhook.Request> requestParser = new ApiJson<>(Webhook.Request.class);
+  private ApiJson<Webhook.Request> requestFormatter = new ApiJson<>(Webhook.Request.class);
 
   /**
    * Instantiates a new WebhookManager.
    *
    * @param config the configuration for the parent Onfido object
    */
-  public WebhookManager(Config config) {
-    super("webhooks/", config);
+  protected WebhookManager(Config config, OkHttpClient client) {
+    super("webhooks/", config, client);
   }
 
   /**
@@ -34,7 +35,7 @@ public class WebhookManager extends ResourceManager {
    * @throws OnfidoException the onfido exception
    */
   public Webhook create(Webhook.Request request) throws OnfidoException {
-    return webhookParser.parse(post("", requestParser.toJson(request)));
+    return webhookParser.parse(post("", requestFormatter.toJson(request)));
   }
 
   /**
@@ -57,7 +58,7 @@ public class WebhookManager extends ResourceManager {
    * @throws OnfidoException the onfido exception
    */
   public Webhook update(String webhookId, Webhook.Request request) throws OnfidoException {
-    return webhookParser.parse(put(webhookId, requestParser.toJson(request)));
+    return webhookParser.parse(put(webhookId, requestFormatter.toJson(request)));
   }
 
   /**

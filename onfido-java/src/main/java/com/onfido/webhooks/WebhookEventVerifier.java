@@ -1,8 +1,6 @@
-package com.onfido;
+package com.onfido.webhooks;
 
 import com.onfido.api.ApiJson;
-import com.onfido.api.WebhookEvent;
-import com.onfido.api.WebhookPayload;
 import com.onfido.exceptions.OnfidoException;
 import org.apache.commons.codec.binary.Hex;
 

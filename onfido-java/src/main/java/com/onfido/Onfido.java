@@ -1,18 +1,12 @@
 package com.onfido;
 
 import com.onfido.api.Config;
-import com.onfido.managers.AddressManager;
-import com.onfido.managers.ApplicantManager;
-import com.onfido.managers.CheckManager;
-import com.onfido.managers.DocumentManager;
-import com.onfido.managers.LivePhotoManager;
-import com.onfido.managers.LiveVideoManager;
-import com.onfido.managers.ReportManager;
-import com.onfido.managers.SdkTokenManager;
-import com.onfido.managers.WebhookManager;
+
+import okhttp3.OkHttpClient;
 
 /** The main class used for accessing instances of the manager classes. */
 public final class Onfido {
+  private static final OkHttpClient CLIENT = new OkHttpClient();
 
   private static final String DEFAULT_API_URL = "https://api.onfido.com/v3/";
   private static final String US_API_URL = "https://api.us.onfido.com/v3/";
@@ -41,15 +35,15 @@ public final class Onfido {
 
   private Onfido(Builder builder) {
     config = new Config(builder);
-    applicant = new ApplicantManager(this.config);
-    document = new DocumentManager(this.config);
-    check = new CheckManager(this.config);
-    report = new ReportManager(this.config);
-    livePhoto = new LivePhotoManager(this.config);
-    liveVideo = new LiveVideoManager(this.config);
-    address = new AddressManager(this.config);
-    sdkToken = new SdkTokenManager(this.config);
-    webhook = new WebhookManager(this.config);
+    applicant = new ApplicantManager(this.config, CLIENT);
+    document = new DocumentManager(this.config, CLIENT);
+    check = new CheckManager(this.config, CLIENT);
+    report = new ReportManager(this.config, CLIENT);
+    livePhoto = new LivePhotoManager(this.config, CLIENT);
+    liveVideo = new LiveVideoManager(this.config, CLIENT);
+    address = new AddressManager(this.config, CLIENT);
+    sdkToken = new SdkTokenManager(this.config, CLIENT);
+    webhook = new WebhookManager(this.config, CLIENT);
   }
 
   /** The Builder for the Onfido object. */
@@ -110,5 +104,13 @@ public final class Onfido {
    */
   public static Builder builder() {
     return new Builder();
+  }
+
+  /**
+   * Shuts down the client across all Onfido instances, causing all future API calls to be rejected.
+   */
+  public static void shutdown() {
+    CLIENT.dispatcher().executorService().shutdown();
+    CLIENT.connectionPool().evictAll();
   }
 }

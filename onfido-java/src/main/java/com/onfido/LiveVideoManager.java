@@ -1,4 +1,4 @@
-package com.onfido.managers;
+package com.onfido;
 
 import com.onfido.api.ApiJson;
 import com.onfido.api.Config;
@@ -7,6 +7,8 @@ import com.onfido.api.ResourceManager;
 import com.onfido.exceptions.OnfidoException;
 import com.onfido.models.LiveVideo;
 
+import okhttp3.OkHttpClient;
+
 import java.util.List;
 
 /**
@@ -14,17 +16,15 @@ import java.util.List;
  * interacting with the API.
  */
 public class LiveVideoManager extends ResourceManager {
-
   private ApiJson<LiveVideo> liveVideoParser = new ApiJson<>(LiveVideo.class);
-  private ApiJson<LiveVideo.Request> requestParser = new ApiJson<>(LiveVideo.Request.class);
 
   /**
    * Instantiates a new LiveVideoManager.
    *
    * @param config the configuration of the parent onfido object
    */
-  public LiveVideoManager(Config config) {
-    super("live_videos/", config);
+  protected LiveVideoManager(Config config, OkHttpClient client) {
+    super("live_videos/", config, client);
   }
 
   /**

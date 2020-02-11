@@ -1,4 +1,4 @@
-package com.onfido.api;
+package com.onfido.integration;
 
 import okhttp3.mockwebserver.MockResponse;
 import okhttp3.mockwebserver.MockWebServer;

@@ -1,29 +1,23 @@
-package com.onfido.managers;
+package com.onfido;
 
 import com.onfido.api.ApiJson;
 import com.onfido.api.Config;
 import com.onfido.api.ResourceManager;
 import com.onfido.exceptions.OnfidoException;
 import com.onfido.models.Check;
-
 import java.util.List;
+import okhttp3.OkHttpClient;
 
 /**
  * Manager class for the Check resource type. Contains resource-specific methods for interacting
  * with the API.
  */
 public class CheckManager extends ResourceManager {
-
   private ApiJson<Check> checkParser = new ApiJson<>(Check.class);
-  private ApiJson<Check.Request> requestParser = new ApiJson<>(Check.Request.class);
+  private ApiJson<Check.Request> requestFormatter = new ApiJson<>(Check.Request.class);
 
-  /**
-   * Instantiates a new Check manager.
-   *
-   * @param config the config
-   */
-  public CheckManager(Config config) {
-    super("checks/", config);
+  protected CheckManager(Config config, OkHttpClient client) {
+    super("checks/", config, client);
   }
 
   /**
@@ -34,7 +28,7 @@ public class CheckManager extends ResourceManager {
    * @throws OnfidoException the onfido exception
    */
   public Check create(Check.Request request) throws OnfidoException {
-    return checkParser.parse(post("", requestParser.toJson(request)));
+    return checkParser.parse(post("", requestFormatter.toJson(request)));
   }
 
   /**

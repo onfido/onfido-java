@@ -1,13 +1,11 @@
-package com.onfido.api;
+package com.onfido.webhooks;
 
-import com.onfido.WebhookEventVerifier;
 import com.onfido.exceptions.OnfidoException;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class WebhookEventVerifierTest {
-
   String webhookToken = "_ABC123abc123ABC123abc123ABC123_";
   WebhookEventVerifier verifier = new WebhookEventVerifier(webhookToken);
 

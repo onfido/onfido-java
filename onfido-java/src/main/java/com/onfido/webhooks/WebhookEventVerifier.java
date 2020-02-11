@@ -1,15 +1,12 @@
-package com.onfido;
+package com.onfido.webhooks;
 
 import com.onfido.api.ApiJson;
-import com.onfido.api.WebhookEvent;
-import com.onfido.api.WebhookPayload;
 import com.onfido.exceptions.OnfidoException;
-import org.apache.commons.codec.binary.Hex;
-
-import javax.crypto.Mac;
-import javax.crypto.spec.SecretKeySpec;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
+import javax.crypto.Mac;
+import javax.crypto.spec.SecretKeySpec;
+import org.apache.commons.codec.binary.Hex;
 
 /** Contains a public method for verifying webhook responses. */
 public class WebhookEventVerifier {

@@ -1,29 +1,22 @@
-package com.onfido.managers;
+package com.onfido;
 
 import com.onfido.api.ApiJson;
 import com.onfido.api.Config;
 import com.onfido.api.ResourceManager;
 import com.onfido.exceptions.OnfidoException;
 import com.onfido.models.Address;
-
 import java.util.List;
+import okhttp3.OkHttpClient;
 
 /**
  * Manager class for the Address resource type. Contains resource-specific methods for interacting
  * with the API.
  */
 public class AddressManager extends ResourceManager {
-
   private ApiJson<Address> addressParser = new ApiJson<>(Address.class);
-  private ApiJson<Address.Request> requestParser = new ApiJson<>(Address.Request.class);
 
-  /**
-   * Instantiates a new AddressManager object.
-   *
-   * @param config the configuration from the parent Onfido object
-   */
-  public AddressManager(Config config) {
-    super("addresses/", config);
+  protected AddressManager(Config config, OkHttpClient client) {
+    super("addresses/", config, client);
   }
 
   /**

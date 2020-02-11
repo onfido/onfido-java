@@ -1,4 +1,4 @@
-package com.onfido.managers;
+package com.onfido;
 
 import com.onfido.api.ApiJson;
 import com.onfido.api.Config;
@@ -6,31 +6,24 @@ import com.onfido.api.FileDownload;
 import com.onfido.api.ResourceManager;
 import com.onfido.exceptions.OnfidoException;
 import com.onfido.models.LivePhoto;
-import okhttp3.MediaType;
-import okhttp3.MultipartBody;
-import okhttp3.RequestBody;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URLConnection;
 import java.util.List;
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.OkHttpClient;
+import okhttp3.RequestBody;
 
 /**
  * Manager class for the Live photo resource type. Contains resource-specific methods for
  * interacting with the API.
  */
 public class LivePhotoManager extends ResourceManager {
-
   private ApiJson<LivePhoto> livePhotoParser = new ApiJson<>(LivePhoto.class);
-  private ApiJson<LivePhoto.Request> requestParser = new ApiJson<>(LivePhoto.Request.class);
 
-  /**
-   * Instantiates a new LivePhotoManager.
-   *
-   * @param config the configuration form the parent onfido object
-   */
-  public LivePhotoManager(Config config) {
-    super("live_photos/", config);
+  protected LivePhotoManager(Config config, OkHttpClient client) {
+    super("live_photos/", config, client);
   }
 
   /**

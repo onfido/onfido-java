@@ -2,6 +2,9 @@ package com.onfido.api;
 
 import com.onfido.exceptions.ApiException;
 import com.onfido.exceptions.OnfidoException;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
 import okhttp3.OkHttpClient;
@@ -9,34 +12,18 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-
 /** Manager class for all resource types. Contains methods for interacting with the API. */
-public class ResourceManager {
-
+public abstract class ResourceManager {
+  private final OkHttpClient client;
   private final Config config;
   private final String basePath;
 
-  private static final OkHttpClient CLIENT = new OkHttpClient();
   private static final MediaType JSON = MediaType.get("application/json; charset=utf-8");
 
-  /**
-   * Instantiates a new ResourceManager object.
-   *
-   * @param basePath the base path for the resource endpoints
-   * @param config the configuration for the Onfido object
-   */
-  public ResourceManager(String basePath, Config config) {
+  protected ResourceManager(String basePath, Config config, OkHttpClient client) {
     this.basePath = basePath;
     this.config = config;
-  }
-
-  /** Shuts down the client */
-  public static void shutdown() {
-    CLIENT.dispatcher().executorService().shutdown();
-    CLIENT.connectionPool().evictAll();
+    this.client = client;
   }
 
   /**
@@ -154,8 +141,8 @@ public class ResourceManager {
         .header("Accept", "application/json");
   }
 
-  private static String performRequest(Request request) throws OnfidoException {
-    try (Response response = CLIENT.newCall(request).execute()) {
+  private String performRequest(Request request) throws OnfidoException {
+    try (Response response = client.newCall(request).execute()) {
       if (response.isSuccessful()) {
         return response.body().string();
       } else {
@@ -166,8 +153,8 @@ public class ResourceManager {
     }
   }
 
-  private static FileDownload performDownload(Request request) throws OnfidoException {
-    try (Response response = CLIENT.newCall(request).execute()) {
+  private FileDownload performDownload(Request request) throws OnfidoException {
+    try (Response response = client.newCall(request).execute()) {
       if (response.isSuccessful()) {
         return new FileDownload(response.body().byteStream(), response.header("content-type"));
       } else {

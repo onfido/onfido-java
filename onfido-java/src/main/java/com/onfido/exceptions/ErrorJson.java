@@ -1,7 +1,6 @@
 package com.onfido.exceptions;
 
 import com.onfido.api.ApiJson;
-
 import java.util.Collections;
 import java.util.Map;
 

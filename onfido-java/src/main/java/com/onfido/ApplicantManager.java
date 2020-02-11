@@ -1,29 +1,23 @@
-package com.onfido.managers;
+package com.onfido;
 
 import com.onfido.api.ApiJson;
 import com.onfido.api.Config;
 import com.onfido.api.ResourceManager;
 import com.onfido.exceptions.OnfidoException;
 import com.onfido.models.Applicant;
-
 import java.util.List;
+import okhttp3.OkHttpClient;
 
 /**
  * Manager class for the Applicant resource type. Contains resource-specific methods for interacting
  * with the API.
  */
 public class ApplicantManager extends ResourceManager {
-
   private ApiJson<Applicant> applicantParser = new ApiJson<>(Applicant.class);
-  private ApiJson<Applicant.Request> requestParser = new ApiJson<>(Applicant.Request.class);
+  private ApiJson<Applicant.Request> requestFormatter = new ApiJson<>(Applicant.Request.class);
 
-  /**
-   * Instantiates a new ApplicantManager.
-   *
-   * @param config the configuration of the parent Onfido object
-   */
-  public ApplicantManager(Config config) {
-    super("applicants/", config);
+  protected ApplicantManager(Config config, OkHttpClient client) {
+    super("applicants/", config, client);
   }
 
   /**
@@ -34,7 +28,7 @@ public class ApplicantManager extends ResourceManager {
    * @throws OnfidoException the onfido exception
    */
   public Applicant create(Applicant.Request request) throws OnfidoException {
-    return applicantParser.parse(post("", requestParser.toJson(request)));
+    return applicantParser.parse(post("", requestFormatter.toJson(request)));
   }
 
   /**
@@ -57,7 +51,7 @@ public class ApplicantManager extends ResourceManager {
    * @throws OnfidoException the onfido exception
    */
   public Applicant update(String applicantId, Applicant.Request request) throws OnfidoException {
-    return applicantParser.parse(put(applicantId, requestParser.toJson(request)));
+    return applicantParser.parse(put(applicantId, requestFormatter.toJson(request)));
   }
 
   /**

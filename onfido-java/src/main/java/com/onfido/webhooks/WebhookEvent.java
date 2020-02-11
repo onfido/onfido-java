@@ -1,7 +1,6 @@
-package com.onfido.api;
+package com.onfido.webhooks;
 
 import com.squareup.moshi.Json;
-
 import java.util.Objects;
 
 /** The response from Webhook events. */

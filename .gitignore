@@ -12,7 +12,3 @@ bin/
 .DS_Store
 .idea
 *.iml
-
-# Test Class
-/onfido-java/src/main/java/com/onfido/TestClass.java
-/onfido-java/src/main/java/com/onfido/doc.png

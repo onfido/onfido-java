@@ -1,4 +1,4 @@
-package com.onfido.managers;
+package com.onfido;
 
 import com.onfido.api.ApiJson;
 import com.onfido.api.Config;
@@ -6,31 +6,24 @@ import com.onfido.api.FileDownload;
 import com.onfido.api.ResourceManager;
 import com.onfido.exceptions.OnfidoException;
 import com.onfido.models.Document;
-import okhttp3.MediaType;
-import okhttp3.MultipartBody;
-import okhttp3.RequestBody;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URLConnection;
 import java.util.List;
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.OkHttpClient;
+import okhttp3.RequestBody;
 
 /**
  * Manager class for the Document resource type. Contains resource-specific methods for interacting
  * with the API.
  */
 public class DocumentManager extends ResourceManager {
-
   private ApiJson<Document> documentParser = new ApiJson<>(Document.class);
-  private ApiJson<Document.Request> requestParser = new ApiJson<>(Document.Request.class);
 
-  /**
-   * Instantiates a new DocumentManager.
-   *
-   * @param config the configuration object of the parent onfido object
-   */
-  public DocumentManager(Config config) {
-    super("documents/", config);
+  protected DocumentManager(Config config, OkHttpClient client) {
+    super("documents/", config, client);
   }
 
   /**

@@ -48,8 +48,13 @@ public class LivePhotoManager extends ResourceManager {
 
     MultipartBody.Builder builder = new MultipartBody.Builder().setType(MultipartBody.FORM);
 
+<<<<<<< HEAD
     addFormDataParam(builder, "applicant_id", request.getApplicantId());
     addFormDataParam(builder, "advanced_validation", request.getAdvancedValidation());
+=======
+        addFormDataParam(builder, "applicant_id", request.getApplicantId());
+        addFormDataParam(builder, "advanced_validation", request.getAdvancedValidation());
+>>>>>>> 904c109b7eee0048a8eb6332bdf08ea48b0a3f2c
 
     builder.addFormDataPart(
         "file",

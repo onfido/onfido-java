@@ -13,14 +13,17 @@ For Maven projects, add the below to your pom file:
 <dependency>
       <groupId>com.onfido</groupId>
       <artifactId>onfido-api-java</artifactId>
-      <version>1.0.0</version>
+      <version>LATEST_VERSION_HERE</version>
 </dependency>
 ```
 
 For Gradle projects add the below to your build.gradle file:
 ```xml
-implementation 'com.onfido:onfido-api-java:1.0.0'
+implementation 'com.onfido:onfido-api-java:LATEST_VERSION_HERE'
 ```
+
+The latest version can be found at: https://search.maven.org/artifact/com.onfido/onfido-api-java
+>>>>>>> 904c109b7eee0048a8eb6332bdf08ea48b0a3f2c
 
 ## Getting Started
 

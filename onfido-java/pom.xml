@@ -10,7 +10,6 @@
     <description>Official Java API client library for the Onfido API</description>
     <url>https://documentation.onfido.com</url>
 
-
     <scm>
         <connection>scm:git:git://github.com/onfido/onfido-java.git</connection>
         <developerConnection>scm:git:git://github.com/onfido/onfido-java.git</developerConnection>

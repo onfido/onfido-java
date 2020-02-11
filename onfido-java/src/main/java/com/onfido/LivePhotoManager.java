@@ -22,11 +22,6 @@ import okhttp3.RequestBody;
 public class LivePhotoManager extends ResourceManager {
   private ApiJson<LivePhoto> livePhotoParser = new ApiJson<>(LivePhoto.class);
 
-  /**
-   * Instantiates a new LivePhotoManager.
-   *
-   * @param config the configuration form the parent onfido object
-   */
   protected LivePhotoManager(Config config, OkHttpClient client) {
     super("live_photos/", config, client);
   }

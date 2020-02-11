@@ -16,11 +16,6 @@ public class WebhookManager extends ResourceManager {
   private ApiJson<Webhook> webhookParser = new ApiJson<>(Webhook.class);
   private ApiJson<Webhook.Request> requestFormatter = new ApiJson<>(Webhook.Request.class);
 
-  /**
-   * Instantiates a new WebhookManager.
-   *
-   * @param config the configuration for the parent Onfido object
-   */
   protected WebhookManager(Config config, OkHttpClient client) {
     super("webhooks/", config, client);
   }

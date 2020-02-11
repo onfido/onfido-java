@@ -15,11 +15,6 @@ public class SdkTokenManager extends ResourceManager {
   private ApiJson<SdkToken> sdkTokenParser = new ApiJson<>(SdkToken.class);
   private ApiJson<SdkToken.Request> requestFormatter = new ApiJson<>(SdkToken.Request.class);
 
-  /**
-   * Instantiates a new Sdk token manager.
-   *
-   * @param config the config
-   */
   protected SdkTokenManager(Config config, OkHttpClient client) {
     super("sdk_token/", config, client);
   }

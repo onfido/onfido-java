@@ -16,11 +16,6 @@ public class ApplicantManager extends ResourceManager {
   private ApiJson<Applicant> applicantParser = new ApiJson<>(Applicant.class);
   private ApiJson<Applicant.Request> requestFormatter = new ApiJson<>(Applicant.Request.class);
 
-  /**
-   * Instantiates a new ApplicantManager.
-   *
-   * @param config the configuration of the parent Onfido object
-   */
   protected ApplicantManager(Config config, OkHttpClient client) {
     super("applicants/", config, client);
   }

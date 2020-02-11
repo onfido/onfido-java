@@ -16,11 +16,6 @@ import okhttp3.OkHttpClient;
 public class LiveVideoManager extends ResourceManager {
   private ApiJson<LiveVideo> liveVideoParser = new ApiJson<>(LiveVideo.class);
 
-  /**
-   * Instantiates a new LiveVideoManager.
-   *
-   * @param config the configuration of the parent onfido object
-   */
   protected LiveVideoManager(Config config, OkHttpClient client) {
     super("live_videos/", config, client);
   }

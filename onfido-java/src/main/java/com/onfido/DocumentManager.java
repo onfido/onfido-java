@@ -22,11 +22,6 @@ import okhttp3.RequestBody;
 public class DocumentManager extends ResourceManager {
   private ApiJson<Document> documentParser = new ApiJson<>(Document.class);
 
-  /**
-   * Instantiates a new DocumentManager.
-   *
-   * @param config the configuration object of the parent onfido object
-   */
   protected DocumentManager(Config config, OkHttpClient client) {
     super("documents/", config, client);
   }

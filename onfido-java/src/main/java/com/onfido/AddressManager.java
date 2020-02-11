@@ -15,11 +15,6 @@ import okhttp3.OkHttpClient;
 public class AddressManager extends ResourceManager {
   private ApiJson<Address> addressParser = new ApiJson<>(Address.class);
 
-  /**
-   * Instantiates a new AddressManager object.
-   *
-   * @param config the configuration from the parent Onfido object
-   */
   protected AddressManager(Config config, OkHttpClient client) {
     super("addresses/", config, client);
   }

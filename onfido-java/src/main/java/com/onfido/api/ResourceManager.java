@@ -20,12 +20,6 @@ public abstract class ResourceManager {
 
   private static final MediaType JSON = MediaType.get("application/json; charset=utf-8");
 
-  /**
-   * Instantiates a new ResourceManager object.
-   *
-   * @param basePath the base path for the resource endpoints
-   * @param config the configuration for the Onfido object
-   */
   protected ResourceManager(String basePath, Config config, OkHttpClient client) {
     this.basePath = basePath;
     this.config = config;

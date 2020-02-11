@@ -16,11 +16,6 @@ public class CheckManager extends ResourceManager {
   private ApiJson<Check> checkParser = new ApiJson<>(Check.class);
   private ApiJson<Check.Request> requestFormatter = new ApiJson<>(Check.Request.class);
 
-  /**
-   * Instantiates a new Check manager.
-   *
-   * @param config the config
-   */
   protected CheckManager(Config config, OkHttpClient client) {
     super("checks/", config, client);
   }

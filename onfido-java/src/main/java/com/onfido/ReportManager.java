@@ -15,11 +15,6 @@ import okhttp3.OkHttpClient;
 public class ReportManager extends ResourceManager {
   private ApiJson<Report> reportParser = new ApiJson<>(Report.class);
 
-  /**
-   * Instantiates a new ReportManager.
-   *
-   * @param config the config
-   */
   protected ReportManager(Config config, OkHttpClient client) {
     super("reports/", config, client);
   }

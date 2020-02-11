@@ -47,13 +47,15 @@
       "description": "The applicant’s date of birth"
     },
     "address": {
-      "$ref": "../address/address.yaml"
+      "$ref": "../address/address.yaml",
+      "description": "The applicants address"
     },
     "id_numbers": {
       "type": "array",
       "items": {
         "$ref": "id_number.yaml"
-      }
+      },
+      "description": "The applicants ID numbers"
     }
   }
 }

@@ -40,11 +40,11 @@
     },
     "applicant_id": {
       "type": "string",
-      "description": ""
+      "description": "The ID of the applicant"
     },
     "advanced_validation": {
       "type": "boolean",
-      "description": ""
+      "description": "Boolean flag for enabling advanced validation"
     }
   }
 }

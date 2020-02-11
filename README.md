@@ -28,6 +28,9 @@ Import the `Onfido` object, this is the main object used for interfacing with th
 
 ```java
 import com.onfido.Onfido;
+
+import com.onfido.exceptions.ApiException;
+import com.onfido.exceptions.OnfidoException;
 ```
 
 Instantiate and configure an `Onfido` instance with your API token, and region if necessary:
@@ -60,12 +63,14 @@ try {
     Applicant newApplicant = onfido.applicant.create(
             Applicant.request().firstName("First").lastName("Last")
     );
-} catch (OnfidoException ex) {
-    // An error response was received from the Onfido API.
-    System.out.println(ex.getMessage());
-} catch (Exception ex) {
+} catch (ApiException e) {
+    // An error response was received from the Onfido API, extra info is available.
+    System.out.println(e.getMessage());
+    System.out.println(e.getType());
+    System.out.println(e.isClientError());
+} catch (OnfidoException e) {
     // No response was received for some reason e.g. a network error.
-    throw ex;
+    System.out.println(e.getMessage());
 }
 ```
 
@@ -77,14 +82,12 @@ newApplicant.getFirstName();
 
 ## Contributing
 
-1. Fork it ( https://github.com/onfido/onfido/fork )
+1. Fork it (<https://github.com/onfido/onfido/fork>)
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create a new Pull Request
 
-
 ## More Documentation
 
 More documentation and code examples can be found at <https://documentation.onfido.com>
-

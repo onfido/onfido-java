@@ -106,13 +106,10 @@ newApplicant.getFirstName();
     ```
    This will install all necessary dependencies and build the model classes used by the project.
    
-#### Local Testing
+#### Testing
 
-1. For local testing create a new Java class with a `public static void main()` method for easy running.
-2. Inside of the above method instantiate an instance of the `Onfido` object, see the "Getting Started" instructions for how to do so.
-3. Use the "Making a call to the API" section and linked documentation to make the calls necessary to test.
-4. Run the new class using the `main()` method when ready to test.
-5. Remove the created class from the project when done.
+1. Run `mvn verify` to run all existing automated tests.
+2. View tests in `src/test/java/com/onfido` for examples of writing tests of your own.
 
 ## More Documentation
 

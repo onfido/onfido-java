@@ -108,7 +108,7 @@ newApplicant.getFirstName();
    
 #### Testing
 
-1. Run `mvn verify` to run all existing automated tests.
+1. Run `mvn test` to run all existing automated tests.
 2. View tests in `src/test/java/com/onfido` for examples of writing tests of your own.
 
 ## More Documentation

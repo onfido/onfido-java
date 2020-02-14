@@ -1,8 +1,6 @@
-# Work In Progress - Onfido Java Library
+# Onfido Java Library
 
 The official Java library for integrating with the Onfido API.
-
-:warning: Under Construction :warning:
 
 Documentation can be found at <https://documentation.onfido.com>
 
@@ -84,11 +82,34 @@ newApplicant.getFirstName();
 
 ## Contributing
 
-1. Fork it (<https://github.com/onfido/onfido/fork>)
+1. Fork it (<https://github.com/onfido/onfido-java/fork>)
 2. Create your feature branch (`git checkout -b my-new-feature`)
+4. Make your changes, see below sections for project setup and testing.
+4. Before you commit your changes, run [google-java-format](https://github.com/google/google-java-format) for the whole project. See the README in the linked repository for install and running instructions.
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create a new Pull Request
+
+#### Project Setup
+
+1. Install JDK 1.8 or above, details for which can be found below:
+    - Setup a Oracle account for JDK download: <https://profile.oracle.com/myprofile/account/create-account.jspx>
+    - Download the JDK: <https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html>
+    - Follow the install instructions: <https://docs.oracle.com/javase/8/docs/technotes/guides/install/install_overview.html>
+    - Set the JAVA_HOME variable: https://www.baeldung.com/java-home-on-windows-7-8-10-mac-os-x-linux
+2. Install Apache Maven, details for which can be found below:
+    - Download the proper binary archive, `.zip` for Windows and Mac, or `.tar` for Linux: <http://maven.apache.org/download.cgi>
+    - Follow the install instructions: <http://maven.apache.org/install.html>
+3. Inside of the top level directory of the project run the following command:
+    ```sh
+    mvn clean install
+    ```
+   This will install all necessary dependencies and build the model classes used by the project.
+   
+#### Testing
+
+1. Run `mvn test` to run all existing automated tests.
+2. View tests in `onfido-java/src/test/java/com/onfido` for examples of writing tests of your own.
 
 ## More Documentation
 

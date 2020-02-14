@@ -101,7 +101,7 @@ newApplicant.getFirstName();
     - Download the proper binary archive, `.zip` for Windows and Mac, or `.tar` for Linux: <http://maven.apache.org/download.cgi>
     - Follow the install instructions: <http://maven.apache.org/install.html>
 3. Inside of the top level directory of the project run the following command:
-    ```shell script
+    ```sh
     mvn clean install
     ```
    This will install all necessary dependencies and build the model classes used by the project.

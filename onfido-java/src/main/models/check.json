@@ -81,6 +81,14 @@
     "applicant_id": {
       "type": "string",
       "description": "The ID of the applicant to do the check on."
+    },
+    "report_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "readOnly": true,
+      "description": "The list of report object ids associated with the check."
     }
   }
 }

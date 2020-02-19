@@ -47,6 +47,8 @@ Onfido onfido = Onfido.builder()
 Using your configured and instantiated instance of the `Onfido` object you can make calls to the API by calling one of the methods on the resources inside of it. For example, to create an applicant:
 
 ```java
+import com.onfido.models.Applicant;
+
 onfido.applicant.create(<REQUEST_BODY_HERE>);
 ```
 

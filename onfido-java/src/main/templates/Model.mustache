@@ -13,119 +13,117 @@ import com.onfido.exceptions.OnfidoException;
 import com.squareup.moshi.Json;
 
 public final class {{className}} {
-private static final ApiJson<{{className}}> JSON = new ApiJson<{{className}}>({{className}}.class);
+  private static final ApiJson<{{className}}> JSON = new ApiJson<{{className}}>({{className}}.class);
 
-{{#responseProperties}}
-    @Json(name = "{{originalName}}") private final {{{type}}} {{camelCaseName}};
-{{/responseProperties}}
+  {{#responseProperties}}
+  @Json(name = "{{originalName}}") private final {{{type}}} {{camelCaseName}};
+  {{/responseProperties}}
 
-private {{className}}() {
-{{#responseProperties}}
+  private {{className}}() {
+    {{#responseProperties}}
     {{camelCaseName}} = {{notSetValue}};
-{{/responseProperties}}
-}
+    {{/responseProperties}}
+  }
 
-public static final class Request {
-private static final ApiJson
-<Request> REQUEST_JSON = new ApiJson
-    <Request>(Request.class);
+  public static final class Request {
+    private static final ApiJson<Request> REQUEST_JSON = new ApiJson<Request>(Request.class);
 
-        {{#requestProperties}}{{!
+    {{#requestProperties}}{{!
       We use the boxed type for request properties because primitive types will override the default. For example, if we used boolean here instead of Boolean for live photo's advanced_validation, it would default to false, but Boolean will default to null client-side and true on the backend. }}
-            @Json(name = "{{originalName}}") private {{{requestType}}} {{camelCaseName}};
-        {{/requestProperties}}
+    @Json(name = "{{originalName}}") private {{{requestType}}} {{camelCaseName}};
+    {{/requestProperties}}
 
-        private Request() {}
+    private Request() {}
 
-        public String toJson() {
-        return REQUEST_JSON.toJson(this);
-        }
+    public String toJson() {
+      return REQUEST_JSON.toJson(this);
+    }
 
-        @Override
-        public String toString() {
-        return toJson();
-        }
-        {{#requestProperties}}
+    @Override
+    public String toString() {
+      return toJson();
+    }
+    {{#requestProperties}}
 
-            /**
-            * {{{description}}}
-            * @param {{camelCaseName}} {{{description}}}
-            * @return The {{className}} request object.
-            */
-            {{#nonListRequestType}}
-                public Request {{camelCaseName}}(List<{{{nonListRequestType}}}> {{camelCaseName}}) {
-                this.{{camelCaseName}} = {{camelCaseName}}.toArray(new {{{nonListRequestType}}}[0]);
-                return this;
-                }
+    /**
+    * {{{description}}}
+    * @param {{camelCaseName}} {{{description}}}
+    * @return The {{className}} request object.
+    */
+    {{#nonListRequestType}}
+    public Request {{camelCaseName}}(List<{{{nonListRequestType}}}> {{camelCaseName}}) {
+      this.{{camelCaseName}} = {{camelCaseName}}.toArray(new {{{nonListRequestType}}}[0]);
+      return this;
+    }
 
-                /**
-                * {{{description}}}
-                * @param {{camelCaseName}} {{{description}}}
-                * @return The {{className}} request object
-                */
-                public Request {{camelCaseName}}({{{nonListRequestType}}}... {{camelCaseName}}) {
-            {{/nonListRequestType}}
-            {{^nonListRequestType}}
-                public Request {{camelCaseName}}({{{requestType}}} {{camelCaseName}}) {
-            {{/nonListRequestType}}
-            this.{{camelCaseName}} = {{camelCaseName}};
-            return this;
-            }
-        {{/requestProperties}}
-        {{#requestProperties}}
+    /**
+    * {{{description}}}
+    * @param {{camelCaseName}} {{{description}}}
+    * @return The {{className}} request object
+    */
+    public Request {{camelCaseName}}({{{nonListRequestType}}}... {{camelCaseName}}) {
+    {{/nonListRequestType}}
+    {{^nonListRequestType}}
+    public Request {{camelCaseName}}({{{requestType}}} {{camelCaseName}}) {
+    {{/nonListRequestType}}
+      this.{{camelCaseName}} = {{camelCaseName}};
+      return this;
+    }
+    {{/requestProperties}}
+    {{#requestProperties}}
 
-            /**
-            * {{{description}}}
-            * @return {{{description}}}
-            */
-            public {{{requestType}}} get{{titleCaseName}}() {
-            return {{camelCaseName}};
-            }
-        {{/requestProperties}}
-        }
+    /**
+    * {{{description}}}
+    * @return {{{description}}}
+    */
+    public {{{requestType}}} get{{titleCaseName}}() {
+        return {{camelCaseName}};
+    }
+    {{/requestProperties}}
+  }
 
-        public static Request request() {
-        return new Request();
-        }
-        {{#responseProperties}}
+  public static Request request() {
+    return new Request();
+  }
+  {{#responseProperties}}
 
-            /**
-            * {{{description}}}
-            * @return {{{description}}}
-            */
-            public {{{type}}} get{{titleCaseName}}() {
-            return {{camelCaseName}};
-            }
-        {{/responseProperties}}
+  /**
+   * {{{description}}}
+   * @return {{{description}}}
+   */
+  public {{{type}}} get{{titleCaseName}}() {
+    return {{camelCaseName}};
+  }
+  {{/responseProperties}}
 
-        @Override
-        public String toString() {
-        return "{{className}} " + JSON.toPrettyJson(this);
-        }
+  @Override
+  public String toString() {
+    return "{{className}} " + JSON.toPrettyJson(this);
+  }
 
-        @Override
-        public int hashCode() {
-        return Objects.hash(
-        {{#responseProperties}}
-            {{camelCaseName}},
-        {{/responseProperties}}
-        ""
-        );
-        }
+  @Override
+  public int hashCode() {
+    return Objects.hash(
+      {{#responseProperties}}
+      {{camelCaseName}},
+      {{/responseProperties}}
+      ""
+    );
+  }
 
-        @Override
-        public boolean equals(Object o) {
-        if (this == o) {
-        return true;
-        } else if (o == null || getClass() != o.getClass()) {
-        return false;
-        }
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    } else if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
 
-        {{className}} other = ({{className}}) o;
-        return
-        {{#responseProperties}}
-            Objects.equals({{camelCaseName}}, other.{{camelCaseName}}) &&
-        {{/responseProperties}}
-        true;
-        }
-        }
+    {{className}} other = ({{className}}) o;
+    return
+      {{#responseProperties}}
+      Objects.equals({{camelCaseName}}, other.{{camelCaseName}}) &&
+      {{/responseProperties}}
+      true;
+  }
+}

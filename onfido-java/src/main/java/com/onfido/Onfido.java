@@ -63,7 +63,7 @@ public final class Onfido {
      * @return the Onfido
      */
     public Onfido build() {
-      if (apiToken.isEmpty()) {
+      if (apiToken == null || apiToken.isEmpty()) {
         throw new RuntimeException("Please provide an apiToken");
       }
 

@@ -31,6 +31,8 @@ public final class Onfido {
   public final SdkTokenManager sdkToken;
   /** The manager class for the Webhook resource. */
   public final WebhookManager webhook;
+  /** The manager class for the Webhook resource. */
+  public final ExtractionManager extraction;
 
   private Onfido(Builder builder) {
     config = new Config(builder);
@@ -43,6 +45,7 @@ public final class Onfido {
     address = new AddressManager(this.config, CLIENT);
     sdkToken = new SdkTokenManager(this.config, CLIENT);
     webhook = new WebhookManager(this.config, CLIENT);
+    extraction = new ExtractionManager(this.config, CLIENT);
   }
 
   /** The Builder for the Onfido object. */

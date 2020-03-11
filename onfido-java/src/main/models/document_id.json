@@ -1,0 +1,10 @@
+{
+  "title": "DocumentId",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "The unique identifier for the document",
+      "readOnly": true
+    }
+  }
+}

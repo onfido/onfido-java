@@ -1,0 +1,118 @@
+{
+  "title": "ExtractedData",
+  "properties": {
+    "document_number": {
+      "type": "string",
+      "description": "The official document number",
+      "readOnly": true
+    },
+    "document_type": {
+      "type": "string",
+      "description": "The document type",
+      "readOnly": true
+    },
+    "first_name": {
+      "type": "string",
+      "description": "First name",
+      "readOnly": true
+    },
+    "last_name": {
+      "type": "string",
+      "description": "Last name",
+      "readOnly": true
+    },
+    "middle_name": {
+      "type": "string",
+      "description": "Middle name",
+      "readOnly": true
+    },
+    "full_name": {
+      "type": "string",
+      "description": "Full name",
+      "readOnly": true
+    },
+    "gender": {
+      "type": "string",
+      "description": "Gender. Valid values are Male and Female.",
+      "readOnly": true
+    },
+    "date_of_birth": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of birth in yyyy-mm-dd format",
+      "readOnly": true
+    },
+    "date_of_expiry": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of expiry in yyyy-mm-dd format",
+      "readOnly": true
+    },
+    "issuing_country": {
+      "type": "string",
+      "description": "Issuing country",
+      "readOnly": true
+    },
+    "issuing_state": {
+      "type": "string",
+      "description": "Issuing country",
+      "readOnly": true
+    },
+    "issuing_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of issuing in yyyy-mm-dd format",
+      "readOnly": true
+    },
+    "nationality": {
+      "type": "string",
+      "description": "Nationality in 3-letter ISO code",
+      "readOnly": true
+    },
+    "real_id_classification": {
+      "type": "string",
+      "description": "Real Id Classification",
+      "readOnly": true
+    },
+    "mrz_line1": {
+      "type": "string",
+      "description": "Line 1 of the MRZ code",
+      "readOnly": true
+    },
+    "mrz_line2": {
+      "type": "string",
+      "description": "Line 2 of the MRZ code",
+      "readOnly": true
+    },
+    "mrz_line3": {
+      "type": "string",
+      "description": "Line 3 of the MRZ code",
+      "readOnly": true
+    },
+    "address_line_1": {
+      "type": "string",
+      "description": "Line 1 of the address",
+      "readOnly": true
+    },
+    "address_line_2": {
+      "type": "string",
+      "description": "Line 2 of the address",
+      "readOnly": true
+    },
+    "address_line_3": {
+      "type": "string",
+      "description": "Line 3 of the address",
+      "readOnly": true
+    },
+    "address_line_4": {
+      "type": "string",
+      "description": "Line 4 of the address",
+      "readOnly": true
+    },
+    "address_line_5": {
+      "type": "string",
+      "description": "Line 5 of the address",
+      "readOnly": true
+    }
+  }
+}

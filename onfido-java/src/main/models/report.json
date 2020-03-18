@@ -49,7 +49,7 @@
     "documents": {
       "type": "array",
       "items": {
-        "$ref": "document_id.yaml"
+        "type": "string"
       },
       "description": "The document IDs that were processed. Only for Document reports",
       "readOnly": true

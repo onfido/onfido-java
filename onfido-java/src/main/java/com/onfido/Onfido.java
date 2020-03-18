@@ -5,7 +5,6 @@ import okhttp3.OkHttpClient;
 
 /** The main class used for accessing instances of the manager classes. */
 public final class Onfido {
-  private static final OkHttpClient DEFAULT_CLIENT = new OkHttpClient();
   private static final String DEFAULT_API_URL = "https://api.onfido.com/v3/";
   private static final String US_API_URL = "https://api.us.onfido.com/v3/";
 
@@ -35,7 +34,7 @@ public final class Onfido {
 
   private Onfido(Builder builder) {
     config = new Config(builder);
-    client = builder.client;
+    client = builder.client != null ? builder.client : new OkHttpClient();
     applicant = new ApplicantManager(this.config, this.client);
     document = new DocumentManager(this.config, this.client);
     check = new CheckManager(this.config, this.client);
@@ -53,8 +52,8 @@ public final class Onfido {
     public String apiToken = "";
     /** The Api url. */
     public String apiUrl = DEFAULT_API_URL;
-    /** The Api url. */
-    public OkHttpClient client = DEFAULT_CLIENT;
+    /** The HTTP client. */
+    private OkHttpClient client;
 
     private Builder() {}
 

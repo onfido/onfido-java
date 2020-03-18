@@ -7,4 +7,9 @@ public class OnfidoTest {
   public void throwsExceptionForMissingApiToken() {
     Onfido.builder().build();
   }
+
+  @Test(expectedExceptions = RuntimeException.class)
+  public void throwsExceptionForNullApiToken() {
+    Onfido.builder().apiToken(null).build();
+  }
 }

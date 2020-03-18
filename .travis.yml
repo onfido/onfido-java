@@ -2,13 +2,13 @@ language: java
 cache:
   directories:
     - "$HOME/.cache"
-before_install:
-  - echo $GPG_SECRET_KEYS | base64 --decode | $GPG_EXECUTABLE --import --no-tty --batch --yes
-  - echo $GPG_OWNERTRUST | base64 --decode | $GPG_EXECUTABLE --import-ownertrust --no-tty --batch --yes
 deploy:
   provider: script
-  script: "cd onfido-java &&
-           mvn clean deploy --settings ../.maven.xml -Prelease -Dgpg.passphrase=$GPG_PASSPHRASE"
+  script: >-
+    echo $GPG_SECRET_KEYS | base64 --decode | $GPG_EXECUTABLE --import --no-tty --batch --yes &&
+    echo $GPG_OWNERTRUST | base64 --decode | $GPG_EXECUTABLE --import-ownertrust --no-tty --batch --yes &&
+    cd onfido-java &&
+    mvn clean deploy --settings ../.maven.xml -Prelease -Dgpg.passphrase=$GPG_PASSPHRASE
   skip_cleanup: true
   on:
     branch: master

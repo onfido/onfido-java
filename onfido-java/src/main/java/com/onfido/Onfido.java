@@ -5,13 +5,14 @@ import okhttp3.OkHttpClient;
 
 /** The main class used for accessing instances of the manager classes. */
 public final class Onfido {
-  private static final OkHttpClient CLIENT = new OkHttpClient();
-
+  private static final OkHttpClient DEFAULT_CLIENT = new OkHttpClient();
   private static final String DEFAULT_API_URL = "https://api.onfido.com/v3/";
   private static final String US_API_URL = "https://api.us.onfido.com/v3/";
 
   /** The Configuration for the instance. */
   public final Config config;
+  /** The HTTP Client for the instance. */
+  public final OkHttpClient client;
 
   /** The manager class for the Applicant resource. */
   public final ApplicantManager applicant;
@@ -34,15 +35,16 @@ public final class Onfido {
 
   private Onfido(Builder builder) {
     config = new Config(builder);
-    applicant = new ApplicantManager(this.config, CLIENT);
-    document = new DocumentManager(this.config, CLIENT);
-    check = new CheckManager(this.config, CLIENT);
-    report = new ReportManager(this.config, CLIENT);
-    livePhoto = new LivePhotoManager(this.config, CLIENT);
-    liveVideo = new LiveVideoManager(this.config, CLIENT);
-    address = new AddressManager(this.config, CLIENT);
-    sdkToken = new SdkTokenManager(this.config, CLIENT);
-    webhook = new WebhookManager(this.config, CLIENT);
+    client = builder.client;
+    applicant = new ApplicantManager(this.config, this.client);
+    document = new DocumentManager(this.config, this.client);
+    check = new CheckManager(this.config, this.client);
+    report = new ReportManager(this.config, this.client);
+    livePhoto = new LivePhotoManager(this.config, this.client);
+    liveVideo = new LiveVideoManager(this.config, this.client);
+    address = new AddressManager(this.config, this.client);
+    sdkToken = new SdkTokenManager(this.config, this.client);
+    webhook = new WebhookManager(this.config, this.client);
   }
 
   /** The Builder for the Onfido object. */
@@ -51,6 +53,8 @@ public final class Onfido {
     public String apiToken = "";
     /** The Api url. */
     public String apiUrl = DEFAULT_API_URL;
+    /** The Api url. */
+    public OkHttpClient client = DEFAULT_CLIENT;
 
     private Builder() {}
 
@@ -75,6 +79,17 @@ public final class Onfido {
      */
     public Builder apiToken(String apiToken) {
       this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * HTTP client attribute.
+     *
+     * @param client the HTTP client
+     * @return the builder
+     */
+    public Builder client(OkHttpClient client) {
+      this.client = client;
       return this;
     }
 
@@ -110,10 +125,10 @@ public final class Onfido {
   }
 
   /**
-   * Shuts down the client across all Onfido instances, causing all future API calls to be rejected.
+   * Shuts down the client, causing all future API calls to be rejected for the instance.
    */
-  public static void shutdown() {
-    CLIENT.dispatcher().executorService().shutdown();
-    CLIENT.connectionPool().evictAll();
+  public void shutdown() {
+    this.client.dispatcher().executorService().shutdown();
+    this.client.connectionPool().evictAll();
   }
 }

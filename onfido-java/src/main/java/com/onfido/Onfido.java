@@ -1,17 +1,18 @@
 package com.onfido;
 
 import com.onfido.api.Config;
+import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 
 /** The main class used for accessing instances of the manager classes. */
 public final class Onfido {
+  private static final OkHttpClient CLIENT = new OkHttpClient();
+
   private static final String DEFAULT_API_URL = "https://api.onfido.com/v3/";
   private static final String US_API_URL = "https://api.us.onfido.com/v3/";
 
   /** The Configuration for the instance. */
   public final Config config;
-  /** The HTTP Client for the instance. */
-  public final OkHttpClient client;
 
   /** The manager class for the Applicant resource. */
   public final ApplicantManager applicant;
@@ -34,16 +35,23 @@ public final class Onfido {
 
   private Onfido(Builder builder) {
     config = new Config(builder);
-    client = builder.client != null ? builder.client : new OkHttpClient();
-    applicant = new ApplicantManager(this.config, this.client);
-    document = new DocumentManager(this.config, this.client);
-    check = new CheckManager(this.config, this.client);
-    report = new ReportManager(this.config, this.client);
-    livePhoto = new LivePhotoManager(this.config, this.client);
-    liveVideo = new LiveVideoManager(this.config, this.client);
-    address = new AddressManager(this.config, this.client);
-    sdkToken = new SdkTokenManager(this.config, this.client);
-    webhook = new WebhookManager(this.config, this.client);
+    OkHttpClient client = CLIENT;
+    if (builder.hasClientAttributes()) {
+      OkHttpClient.Builder clientBuilder = CLIENT.newBuilder();
+      if (builder.clientInterceptor != null) {
+        clientBuilder.addInterceptor(builder.clientInterceptor);
+      }
+      client = clientBuilder.build();
+    }
+    applicant = new ApplicantManager(this.config, client);
+    document = new DocumentManager(this.config, client);
+    check = new CheckManager(this.config, client);
+    report = new ReportManager(this.config, client);
+    livePhoto = new LivePhotoManager(this.config, client);
+    liveVideo = new LiveVideoManager(this.config, client);
+    address = new AddressManager(this.config, client);
+    sdkToken = new SdkTokenManager(this.config, client);
+    webhook = new WebhookManager(this.config, client);
   }
 
   /** The Builder for the Onfido object. */
@@ -52,8 +60,8 @@ public final class Onfido {
     public String apiToken = "";
     /** The Api url. */
     public String apiUrl = DEFAULT_API_URL;
-    /** The HTTP client. */
-    private OkHttpClient client;
+    /** The HTTP client interceptor. */
+    private Interceptor clientInterceptor;
 
     private Builder() {}
 
@@ -82,13 +90,13 @@ public final class Onfido {
     }
 
     /**
-     * HTTP client attribute.
+     * Interceptor attribute.
      *
-     * @param client the HTTP client
+     * @param interceptor the HTTP interceptor
      * @return the builder
      */
-    public Builder client(OkHttpClient client) {
-      this.client = client;
+    public Builder clientInterceptor(Interceptor interceptor) {
+      this.clientInterceptor = interceptor;
       return this;
     }
 
@@ -112,6 +120,10 @@ public final class Onfido {
       this.apiUrl = url;
       return this;
     }
+
+    private boolean hasClientAttributes() {
+      return clientInterceptor != null;
+    }
   }
 
   /**
@@ -124,10 +136,10 @@ public final class Onfido {
   }
 
   /**
-   * Shuts down the client, causing all future API calls to be rejected for the instance.
+   * Shuts down the client across all Onfido instances, causing all future API calls to be rejected.
    */
-  public void shutdown() {
-    this.client.dispatcher().executorService().shutdown();
-    this.client.connectionPool().evictAll();
+  public static void shutdown() {
+    CLIENT.dispatcher().executorService().shutdown();
+    CLIENT.connectionPool().evictAll();
   }
 }

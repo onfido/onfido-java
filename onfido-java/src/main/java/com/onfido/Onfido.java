@@ -1,6 +1,7 @@
 package com.onfido;
 
 import com.onfido.api.Config;
+import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 
 /** The main class used for accessing instances of the manager classes. */
@@ -34,15 +35,23 @@ public final class Onfido {
 
   private Onfido(Builder builder) {
     config = new Config(builder);
-    applicant = new ApplicantManager(this.config, CLIENT);
-    document = new DocumentManager(this.config, CLIENT);
-    check = new CheckManager(this.config, CLIENT);
-    report = new ReportManager(this.config, CLIENT);
-    livePhoto = new LivePhotoManager(this.config, CLIENT);
-    liveVideo = new LiveVideoManager(this.config, CLIENT);
-    address = new AddressManager(this.config, CLIENT);
-    sdkToken = new SdkTokenManager(this.config, CLIENT);
-    webhook = new WebhookManager(this.config, CLIENT);
+    OkHttpClient client = CLIENT;
+    if (builder.hasClientAttributes()) {
+      OkHttpClient.Builder clientBuilder = CLIENT.newBuilder();
+      if (builder.clientInterceptor != null) {
+        clientBuilder.addInterceptor(builder.clientInterceptor);
+      }
+      client = clientBuilder.build();
+    }
+    applicant = new ApplicantManager(this.config, client);
+    document = new DocumentManager(this.config, client);
+    check = new CheckManager(this.config, client);
+    report = new ReportManager(this.config, client);
+    livePhoto = new LivePhotoManager(this.config, client);
+    liveVideo = new LiveVideoManager(this.config, client);
+    address = new AddressManager(this.config, client);
+    sdkToken = new SdkTokenManager(this.config, client);
+    webhook = new WebhookManager(this.config, client);
   }
 
   /** The Builder for the Onfido object. */
@@ -51,6 +60,8 @@ public final class Onfido {
     public String apiToken = "";
     /** The Api url. */
     public String apiUrl = DEFAULT_API_URL;
+    /** The HTTP client interceptor. */
+    private Interceptor clientInterceptor;
 
     private Builder() {}
 
@@ -79,6 +90,17 @@ public final class Onfido {
     }
 
     /**
+     * Interceptor attribute.
+     *
+     * @param interceptor the HTTP interceptor
+     * @return the builder
+     */
+    public Builder clientInterceptor(Interceptor interceptor) {
+      this.clientInterceptor = interceptor;
+      return this;
+    }
+
+    /**
      * Sets the object to use the US region base URL.
      *
      * @return the builder
@@ -97,6 +119,10 @@ public final class Onfido {
     public Builder unknownApiUrl(String url) {
       this.apiUrl = url;
       return this;
+    }
+
+    private boolean hasClientAttributes() {
+      return clientInterceptor != null;
     }
   }
 

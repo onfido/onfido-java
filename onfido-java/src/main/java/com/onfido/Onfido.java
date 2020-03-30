@@ -54,7 +54,7 @@ public final class Onfido {
     address = new AddressManager(this.config, client);
     sdkToken = new SdkTokenManager(this.config, client);
     webhook = new WebhookManager(this.config, client);
-    extraction = new ExtractionManager(this.config, client);
+    extraction = new ExtractionManager(this.config, CLIENT);
   }
 
   /** The Builder for the Onfido object. */

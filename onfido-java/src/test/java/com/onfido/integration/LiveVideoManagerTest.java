@@ -1,13 +1,12 @@
 package com.onfido.integration;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
 
 import com.onfido.JsonObject;
 import com.onfido.Onfido;
+import com.onfido.api.FileDownload;
 import com.onfido.exceptions.ApiException;
 import com.onfido.models.LiveVideo;
-import java.io.InputStream;
 import java.util.Arrays;
 import java.util.List;
 import okhttp3.mockwebserver.MockWebServer;
@@ -19,36 +18,38 @@ public class LiveVideoManagerTest extends ApiIntegrationTest {
 
   @Test
   public void downloadLiveVideo() throws Exception {
-    MockWebServer server = mockFileRequestResponse();
+    MockWebServer server = mockFileRequestResponse("test", "video/mp4");
 
     Onfido onfido =
         Onfido.builder().apiToken("token").unknownApiUrl(server.url("/").toString()).build();
 
-    InputStream inputStream = onfido.liveVideo.download("live video id").content;
+    FileDownload download = onfido.liveVideo.download("live video id");
 
     // Correct path
     RecordedRequest request = server.takeRequest();
     assertEquals("/live_videos/live%20video%20id/download", request.getPath());
 
     // Correct response body
-    assertNotNull(inputStream);
+    assertEquals("test", new String(download.content));
+    assertEquals("video/mp4", download.contentType);
   }
 
   @Test
   public void downloadLiveVideoFrame() throws Exception {
-    MockWebServer server = mockFileRequestResponse();
+    MockWebServer server = mockFileRequestResponse("test", "image/png");
 
     Onfido onfido =
         Onfido.builder().apiToken("token").unknownApiUrl(server.url("/").toString()).build();
 
-    InputStream inputStream = onfido.liveVideo.downloadFrame("live video id").content;
+    FileDownload download = onfido.liveVideo.downloadFrame("live video id");
 
     // Correct path
     RecordedRequest request = server.takeRequest();
     assertEquals("/live_videos/live%20video%20id/frame", request.getPath());
 
     // Correct response body
-    assertNotNull(inputStream);
+    assertEquals("test", new String(download.content));
+    assertEquals("image/png", download.contentType);
   }
 
   @Test

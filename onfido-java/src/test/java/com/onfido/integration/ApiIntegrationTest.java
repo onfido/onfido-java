@@ -30,11 +30,9 @@ class ApiIntegrationTest {
     return server;
   }
 
-  protected MockWebServer mockFileRequestResponse() throws IOException {
-    Buffer buffer = new Buffer();
-    buffer.writeInt(5);
+  protected MockWebServer mockFileRequestResponse(String content, String type) throws IOException {
     server = new MockWebServer();
-    server.enqueue(new MockResponse().setBody(buffer));
+    server.enqueue(new MockResponse().setBody(content).addHeader("content-type", type));
     server.start();
 
     return server;

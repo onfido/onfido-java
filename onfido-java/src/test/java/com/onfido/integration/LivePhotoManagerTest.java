@@ -1,10 +1,10 @@
 package com.onfido.integration;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
 
 import com.onfido.JsonObject;
 import com.onfido.Onfido;
+import com.onfido.api.FileDownload;
 import com.onfido.exceptions.ApiException;
 import com.onfido.models.LivePhoto;
 import java.io.ByteArrayInputStream;
@@ -49,19 +49,20 @@ public class LivePhotoManagerTest extends ApiIntegrationTest {
 
   @Test
   public void downloadLivePhoto() throws Exception {
-    MockWebServer server = mockFileRequestResponse();
+    MockWebServer server = mockFileRequestResponse("test", "image/png");
 
     Onfido onfido =
         Onfido.builder().apiToken("token").unknownApiUrl(server.url("/").toString()).build();
 
-    InputStream inputStream = onfido.livePhoto.download("live photo id").content;
+    FileDownload download = onfido.livePhoto.download("live photo id");
 
     // Correct path
     RecordedRequest request = server.takeRequest();
     assertEquals("/live_photos/live%20photo%20id/download", request.getPath());
 
     // Correct response body
-    assertNotNull(inputStream);
+    assertEquals("test", new String(download.content));
+    assertEquals("image/png", download.contentType);
   }
 
   @Test

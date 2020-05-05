@@ -5,6 +5,7 @@ import static org.junit.Assert.assertTrue;
 
 import com.onfido.JsonObject;
 import com.onfido.Onfido;
+import com.onfido.api.FileDownload;
 import com.onfido.exceptions.ApiException;
 import com.onfido.models.Document;
 import java.io.ByteArrayInputStream;
@@ -58,19 +59,20 @@ public class DocumentManagerTest extends ApiIntegrationTest {
 
   @Test
   public void downloadDocument() throws Exception {
-    MockWebServer server = mockFileRequestResponse();
+    MockWebServer server = mockFileRequestResponse("test", "image/png");
 
     Onfido onfido =
         Onfido.builder().apiToken("token").unknownApiUrl(server.url("/").toString()).build();
 
-    InputStream inputStream = onfido.document.download("document id").content;
+    FileDownload download = onfido.document.download("document id");
 
     // Correct path
     RecordedRequest request = server.takeRequest();
     assertEquals("/documents/document%20id/download", request.getPath());
 
     // Correct response body
-    assertTrue(inputStream != null);
+    assertEquals("test", new String(download.content));
+    assertEquals("image/png", download.contentType);
   }
 
   @Test

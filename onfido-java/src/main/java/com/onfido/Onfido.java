@@ -4,6 +4,8 @@ import com.onfido.api.Config;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 
+import java.util.concurrent.TimeUnit;
+
 /** The main class used for accessing instances of the manager classes. */
 public final class Onfido {
   private static final OkHttpClient CLIENT = new OkHttpClient();
@@ -43,6 +45,9 @@ public final class Onfido {
       if (builder.clientInterceptor != null) {
         clientBuilder.addInterceptor(builder.clientInterceptor);
       }
+      if (builder.connectTimeout != null) {
+        clientBuilder.connectTimeout(builder.connectTimeout, TimeUnit.MILLISECONDS);
+      }
       client = clientBuilder.build();
     }
     applicant = new ApplicantManager(this.config, client);
@@ -65,6 +70,8 @@ public final class Onfido {
     public String apiUrl = DEFAULT_API_URL;
     /** The HTTP client interceptor. */
     private Interceptor clientInterceptor;
+    /** The HTTP connect timeout in milliseconds. */
+    private Long connectTimeout;
 
     private Builder() {}
 
@@ -104,6 +111,17 @@ public final class Onfido {
     }
 
     /**
+     * ConnectTimeout attribute.
+     *
+     * @param connectTimeout the HTTP connect timeout in milliseconds
+     * @return the builder
+     */
+    public Builder connectTimeout(Long connectTimeout) {
+      this.connectTimeout = connectTimeout;
+      return this;
+    }
+
+    /**
      * Sets the object to use the US region base URL.
      *
      * @return the builder
@@ -125,7 +143,7 @@ public final class Onfido {
     }
 
     private boolean hasClientAttributes() {
-      return clientInterceptor != null;
+      return clientInterceptor != null || connectTimeout != null;
     }
   }
 

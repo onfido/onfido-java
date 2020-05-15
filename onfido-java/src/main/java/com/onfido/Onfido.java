@@ -45,8 +45,14 @@ public final class Onfido {
       if (builder.clientInterceptor != null) {
         clientBuilder.addInterceptor(builder.clientInterceptor);
       }
-      if (builder.connectTimeout != null) {
-        clientBuilder.connectTimeout(builder.connectTimeout, TimeUnit.MILLISECONDS);
+      if (builder.clientConnectTimeout != null) {
+        clientBuilder.connectTimeout(builder.clientConnectTimeout, TimeUnit.MILLISECONDS);
+      }
+      if (builder.clientReadTimeout != null) {
+        clientBuilder.readTimeout(builder.clientReadTimeout, TimeUnit.MILLISECONDS);
+      }
+      if (builder.clientWriteTimeout != null) {
+        clientBuilder.writeTimeout(builder.clientWriteTimeout, TimeUnit.MILLISECONDS);
       }
       client = clientBuilder.build();
     }
@@ -71,7 +77,11 @@ public final class Onfido {
     /** The HTTP client interceptor. */
     private Interceptor clientInterceptor;
     /** The HTTP connect timeout in milliseconds. */
-    private Long connectTimeout;
+    private Long clientConnectTimeout;
+    /** The HTTP write timeout in milliseconds. */
+    private Long clientWriteTimeout;
+    /** The HTTP read timeout in milliseconds. */
+    private Long clientReadTimeout;
 
     private Builder() {}
 
@@ -116,8 +126,30 @@ public final class Onfido {
      * @param connectTimeout the HTTP connect timeout in milliseconds
      * @return the builder
      */
-    public Builder connectTimeout(Long connectTimeout) {
-      this.connectTimeout = connectTimeout;
+    public Builder clientConnectTimeout(Long connectTimeout) {
+      this.clientConnectTimeout = connectTimeout;
+      return this;
+    }
+
+    /**
+     * WriteTimeout attribute.
+     *
+     * @param writeTimeout the HTTP write timeout in milliseconds
+     * @return the builder
+     */
+    public Builder clientWriteTimeout(Long writeTimeout) {
+      this.clientWriteTimeout = writeTimeout;
+      return this;
+    }
+
+    /**
+     * ReadTimeout attribute.
+     *
+     * @param readTimeout the HTTP read timeout in milliseconds
+     * @return the builder
+     */
+    public Builder clientReadTimeout(Long readTimeout) {
+      this.clientReadTimeout = readTimeout;
       return this;
     }
 
@@ -143,7 +175,7 @@ public final class Onfido {
     }
 
     private boolean hasClientAttributes() {
-      return clientInterceptor != null || connectTimeout != null;
+      return clientInterceptor != null || clientConnectTimeout != null || clientWriteTimeout != null || clientReadTimeout != null;
     }
   }
 

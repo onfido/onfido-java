@@ -31,7 +31,7 @@
       "type": "string",
       "description": "The result of the report"
     },
-    "subResult": {
+    "sub_result": {
       "type": "string",
       "description": "The sub_result of the report. It gives a more detailed result for Document reports only, and will be null otherwise",
       "readOnly": true
@@ -52,6 +52,11 @@
         "$ref": "document_id.yaml"
       },
       "description": "The document IDs that were processed. Only for Document reports",
+      "readOnly": true
+    },
+    "check_id": {
+      "type": "string",
+      "description": "The unique identifier for the check id",
       "readOnly": true
     }
   }

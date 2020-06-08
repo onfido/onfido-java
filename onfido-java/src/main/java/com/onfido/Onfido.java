@@ -10,6 +10,7 @@ public final class Onfido {
 
   private static final String DEFAULT_API_URL = "https://api.onfido.com/v3/";
   private static final String US_API_URL = "https://api.us.onfido.com/v3/";
+  private static final String CA_API_URL = "https://api.ca.onfido.com/v3/";
 
   /** The Configuration for the instance. */
   public final Config config;
@@ -107,6 +108,16 @@ public final class Onfido {
      */
     public Builder regionUS() {
       this.apiUrl = US_API_URL;
+      return this;
+    }
+
+    /**
+     * Sets the object to use the Canada region base URL.
+     *
+     * @return the builder
+     */
+    public Builder regionCA() {
+      this.apiUrl = CA_API_URL;
       return this;
     }
 

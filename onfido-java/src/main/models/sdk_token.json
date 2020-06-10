@@ -20,6 +20,11 @@
       "type": "string",
       "description": "The referrer URL pattern - used with the Web SDK",
       "writeOnly": true
+    },
+    "cross_device_url": {
+      "type": "string",
+      "description": "Enterprise feature: The URL to be used for the cross device flow of the Web SDK",
+      "writeOnly": true
     }
   }
 }

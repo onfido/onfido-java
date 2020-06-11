@@ -4,7 +4,6 @@ import com.onfido.Onfido;
 
 /** The Configuration class for the Onfido object. */
 public class Config {
-
   private final String apiToken;
   private final String apiUrl;
 

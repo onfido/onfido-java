@@ -51,12 +51,12 @@
       "items": {
         "$ref": "document_id.yaml"
       },
-      "description": "The document IDs that were processed. Only for Document reports",
+      "description": "The document IDs that were processed. Populated for Document reports, otherwise an empty array.",
       "readOnly": true
     },
     "check_id": {
       "type": "string",
-      "description": "The unique identifier for the check id",
+      "description": "The ID of the check to which the report belongs.",
       "readOnly": true
     }
   }

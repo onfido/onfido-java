@@ -35,10 +35,11 @@ import com.onfido.exceptions.OnfidoException;
 
 Instantiate and configure an `Onfido` instance with your API token, and region if necessary:
 
-```java
+```
 Onfido onfido = Onfido.builder()
                 .apiToken(<YOUR_API_TOKEN_HERE>)
-                .regionUS() // Defaults to EU region, add this to switch to US
+                // Defaults to Region.EU (api.onfido.com), supports Region.US and Region.CA
+                // .regionUS()
                 .build();
 ```
 

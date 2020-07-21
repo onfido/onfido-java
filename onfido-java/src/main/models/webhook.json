@@ -32,9 +32,9 @@
       "description": "The URI of this resource",
       "readOnly": true
     },
-    "environment": {
+    "environments": {
       "type": "array",
-      "description": "The environment to be used",
+      "description": "The environments to be used",
       "items": {
         "type": "string"
       }

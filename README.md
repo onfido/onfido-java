@@ -37,8 +37,9 @@ Instantiate and configure an `Onfido` instance with your API token, and region i
 
 ```java
 Onfido onfido = Onfido.builder()
-                .apiToken(<YOUR_API_TOKEN_HERE>)
-                .regionUS() // Defaults to EU region, add this to switch to US
+                .apiToken(System.getenv("ONFIDO_API_TOKEN"))
+                // Defaults to api.onfido.com, supports .regionUS() and .regionCA()
+                // .regionUS()
                 .build();
 ```
 

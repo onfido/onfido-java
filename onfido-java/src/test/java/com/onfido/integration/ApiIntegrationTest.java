@@ -3,7 +3,6 @@ package com.onfido.integration;
 import java.io.IOException;
 import okhttp3.mockwebserver.MockResponse;
 import okhttp3.mockwebserver.MockWebServer;
-import okio.Buffer;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
@@ -30,11 +29,9 @@ class ApiIntegrationTest {
     return server;
   }
 
-  protected MockWebServer mockFileRequestResponse() throws IOException {
-    Buffer buffer = new Buffer();
-    buffer.writeInt(5);
+  protected MockWebServer mockFileRequestResponse(String content, String type) throws IOException {
     server = new MockWebServer();
-    server.enqueue(new MockResponse().setBody(buffer));
+    server.enqueue(new MockResponse().setBody(content).addHeader("content-type", type));
     server.start();
 
     return server;

@@ -156,7 +156,7 @@ public abstract class ResourceManager {
   private FileDownload performDownload(Request request) throws OnfidoException {
     try (Response response = client.newCall(request).execute()) {
       if (response.isSuccessful()) {
-        return new FileDownload(response.body().byteStream(), response.header("content-type"));
+        return new FileDownload(response.body().bytes(), response.header("content-type"));
       } else {
         throw ApiException.fromResponseBody(response.body().string(), response.code());
       }

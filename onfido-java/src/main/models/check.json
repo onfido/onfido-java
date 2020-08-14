@@ -56,6 +56,14 @@
         "type": "string"
       }
     },
+    "document_ids": {
+      "description": "An array of document ids (strings).",
+      "writeOnly": true,
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
     "tags": {
       "type": "array",
       "items": {

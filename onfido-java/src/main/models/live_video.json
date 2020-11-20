@@ -39,7 +39,10 @@
       "readOnly": true
     },
     "challenge": {
-      "type": "object",
+      "type": "array",
+      "items": {
+        "type": "object"
+      },
       "description": "Challenge the end user was asked to perform during the video recording",
       "readOnly": true
     }

@@ -1,0 +1,20 @@
+{
+  "title": "DocumentClassification",
+  "properties": {
+    "issuing_country": {
+      "type": "string",
+      "description": "Document country in 3-letter ISO code",
+      "readOnly": true
+    },
+    "document_type": {
+      "type": "string",
+      "description": "The type of document",
+      "readOnly": true
+    },
+    "issuing_state": {
+      "type": "string",
+      "description": "The state that issued the document",
+      "readOnly": true
+    }
+  }
+}

@@ -55,7 +55,7 @@
     },
     "issuing_state": {
       "type": "string",
-      "description": "Issuing country",
+      "description": "Issuing state",
       "readOnly": true
     },
     "issuing_date": {

@@ -6,11 +6,6 @@
       "description": "The official document number",
       "readOnly": true
     },
-    "document_type": {
-      "type": "string",
-      "description": "The document type",
-      "readOnly": true
-    },
     "first_name": {
       "type": "string",
       "description": "First name",
@@ -48,30 +43,9 @@
       "description": "Date of expiry in yyyy-mm-dd format",
       "readOnly": true
     },
-    "issuing_country": {
-      "type": "string",
-      "description": "Issuing country",
-      "readOnly": true
-    },
-    "issuing_state": {
-      "type": "string",
-      "description": "Issuing state",
-      "readOnly": true
-    },
-    "issuing_date": {
-      "type": "string",
-      "format": "date",
-      "description": "Date of issuing in yyyy-mm-dd format",
-      "readOnly": true
-    },
     "nationality": {
       "type": "string",
       "description": "Nationality in 3-letter ISO code",
-      "readOnly": true
-    },
-    "real_id_classification": {
-      "type": "string",
-      "description": "Real Id Classification",
       "readOnly": true
     },
     "mrz_line1": {

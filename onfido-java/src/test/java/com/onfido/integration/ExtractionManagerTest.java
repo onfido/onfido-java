@@ -14,7 +14,7 @@ import static org.junit.Assert.assertEquals;
 public class ExtractionManagerTest extends ApiIntegrationTest {
 
     @Test
-    public void createExtraction() throws Exception {
+    public void preformExtraction() throws Exception {
         String response = new JsonObject().add("document_id", "id").toJson();
 
         MockWebServer server = mockRequestResponse(response);
@@ -22,7 +22,7 @@ public class ExtractionManagerTest extends ApiIntegrationTest {
         Onfido onfido =
                 Onfido.builder().apiToken("token").unknownApiUrl(server.url("/").toString()).build();
 
-        Extraction extraction = onfido.extraction.create(Extraction.request().documentId("id"));
+        Extraction extraction = onfido.extraction.perform("id");
 
         // Correct path
         RecordedRequest request = server.takeRequest();

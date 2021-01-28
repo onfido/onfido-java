@@ -4,7 +4,8 @@
   "properties": {
     "document_id": {
       "type": "string",
-      "description": "The unique identifier of the uploaded document to run extraction on"
+      "description": "The unique identifier of the uploaded document to run extraction on",
+      "readOnly": true
     },
     "document_classification": {
       "$ref": "document_classification.yaml",

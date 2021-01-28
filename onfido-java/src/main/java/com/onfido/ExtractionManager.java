@@ -15,7 +15,6 @@ import okhttp3.OkHttpClient;
  */
 public class ExtractionManager extends ResourceManager {
     private ApiJson<Extraction> extractionParser = new ApiJson<>(Extraction.class);
-    private ApiJson<Extraction.Request> requestFormatter = new ApiJson<>(Extraction.Request.class);
 
     protected ExtractionManager(Config config, OkHttpClient client) {
         super("extractions/", config, client);
@@ -24,12 +23,12 @@ public class ExtractionManager extends ResourceManager {
     /**
      * Initiates an extraction for a document.
      *
-     * @param request the request body
+     * @param document_id the unique identifier of the uploaded document to run extraction on
      * @return the Extraction
      * @throws OnfidoException the onfido exception
      */
-    public Extraction create(Extraction.Request request) throws OnfidoException {
-        return extractionParser.parse(post("", requestFormatter.toJson(request)));
+    public Extraction perform(String document_id) throws OnfidoException {
+        return extractionParser.parse(post("", String.format("{ document_id: %s }", document_id)));
     }
 
 }

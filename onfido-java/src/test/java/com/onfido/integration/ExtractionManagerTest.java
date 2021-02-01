@@ -28,6 +28,11 @@ public class ExtractionManagerTest extends ApiIntegrationTest {
         RecordedRequest request = server.takeRequest();
         assertEquals("/extractions/", request.getPath());
 
+        // Correct request body
+        String json = request.getBody().readUtf8();
+        JsonObject jsonObject = JsonObject.parse(json);
+        assertEquals("id", jsonObject.get("document_id"));
+
         // Correct response body
         assertEquals("id", extraction.getDocumentId());
     }

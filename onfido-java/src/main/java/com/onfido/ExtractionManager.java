@@ -28,7 +28,7 @@ public class ExtractionManager extends ResourceManager {
      * @throws OnfidoException the onfido exception
      */
     public Extraction perform(String document_id) throws OnfidoException {
-        return extractionParser.parse(post("", String.format("{ document_id: %s }", document_id)));
+        return extractionParser.parse(post("", String.format("{ \"document_id\": \"%s\" }", document_id)));
     }
 
 }

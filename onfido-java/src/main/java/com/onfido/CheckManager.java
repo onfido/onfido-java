@@ -2,6 +2,7 @@ package com.onfido;
 
 import com.onfido.api.ApiJson;
 import com.onfido.api.Config;
+import com.onfido.api.FileDownload;
 import com.onfido.api.ResourceManager;
 import com.onfido.exceptions.OnfidoException;
 import com.onfido.models.Check;

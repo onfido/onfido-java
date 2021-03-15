@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import com.onfido.JsonObject;
 import com.onfido.Onfido;
+import com.onfido.api.FileDownload;
 import com.onfido.models.Check;
 import java.util.Arrays;
 import java.util.List;

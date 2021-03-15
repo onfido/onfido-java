@@ -8,9 +8,9 @@ import okhttp3.OkHttpClient;
 public final class Onfido {
   private static final OkHttpClient CLIENT = new OkHttpClient();
 
-  private static final String DEFAULT_API_URL = "https://api.onfido.com/v3/";
-  private static final String US_API_URL = "https://api.us.onfido.com/v3/";
-  private static final String CA_API_URL = "https://api.ca.onfido.com/v3/";
+  private static final String DEFAULT_API_URL = "https://api.onfido.com/v3.1/";
+  private static final String US_API_URL = "https://api.us.onfido.com/v3.1/";
+  private static final String CA_API_URL = "https://api.ca.onfido.com/v3.1/";
 
   /** The Configuration for the instance. */
   public final Config config;

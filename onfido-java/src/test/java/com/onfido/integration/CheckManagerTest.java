@@ -97,4 +97,22 @@ public class CheckManagerTest extends ApiIntegrationTest {
     RecordedRequest request = server.takeRequest();
     assertEquals("/checks/id/resume", request.getPath());
   }
+
+  @Test
+  public void downloadCheck() throws Exception {
+    MockWebServer server = mockFileRequestResponse("test", "application/pdf");
+
+    Onfido onfido =
+        Onfido.builder().apiToken("token").unknownApiUrl(server.url("/").toString()).build();
+
+    FileDownload download = onfido.check.download("check id");
+
+    // Correct path
+    RecordedRequest request = server.takeRequest();
+    assertEquals("/checks/check%20id/download", request.getPath());
+
+    // Correct response body
+    assertEquals("test", new String(download.content));
+    assertEquals("application/pdf", download.contentType);
+  }
 }

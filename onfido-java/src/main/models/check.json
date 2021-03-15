@@ -100,8 +100,14 @@
     },
     "privacy_notices_read_consent_given": {
       "type": "boolean",
-      "writeOnly": true,
       "description": "Indicates that the privacy notices and terms of service have been read and, where specific laws require, that consent has been given for Onfido."
+    },
+    "webhook_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Array of strings describing which webhooks to trigger for a check."
     }
   }
 }

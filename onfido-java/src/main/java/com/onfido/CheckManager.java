@@ -62,4 +62,15 @@ public class CheckManager extends ResourceManager {
   public void resume(String checkId) throws OnfidoException {
     post(checkId + "/resume", "");
   }
+
+  /**
+   * Downloads a check.
+   *
+   * @param checkId the check id
+   * @return the downloaded file as a FileDownload
+   * @throws OnfidoException the onfido exception
+   */
+  public FileDownload download(String checkId) throws OnfidoException {
+    return downloadRequest(checkId + "/download");
+  }
 }

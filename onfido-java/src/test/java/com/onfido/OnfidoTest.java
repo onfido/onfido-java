@@ -18,12 +18,12 @@ public class OnfidoTest {
   @Test()
   public void usesUSRegionApiUrl() {
     Onfido onfido = Onfido.builder().apiToken("token").regionUS().build();
-    assertEquals("https://api.us.onfido.com/v3/", onfido.config.getApiUrl());
+    assertEquals("https://api.us.onfido.com/v3.1/", onfido.config.getApiUrl());
   }
 
   @Test()
   public void usesCanadaRegionApiUrl() {
     Onfido onfido = Onfido.builder().apiToken("token").regionCA().build();
-    assertEquals("https://api.ca.onfido.com/v3/", onfido.config.getApiUrl());
+    assertEquals("https://api.ca.onfido.com/v3.1/", onfido.config.getApiUrl());
   }
 }

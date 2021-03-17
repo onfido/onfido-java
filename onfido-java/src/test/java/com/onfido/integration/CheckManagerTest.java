@@ -106,11 +106,11 @@ public class CheckManagerTest extends ApiIntegrationTest {
     Onfido onfido =
         Onfido.builder().apiToken("token").unknownApiUrl(server.url("/").toString()).build();
 
-    FileDownload download = onfido.check.download("check id");
+    FileDownload download = onfido.check.download("check_id");
 
     // Correct path
     RecordedRequest request = server.takeRequest();
-    assertEquals("/checks/check%20id/download", request.getPath());
+    assertEquals("/checks/check_id/download", request.getPath());
 
     // Correct response body
     assertEquals("test", new String(download.content));

@@ -10,7 +10,7 @@ public class WebhookEventVerifierTest {
   WebhookEventVerifier verifier = new WebhookEventVerifier(webhookToken);
 
   String rawEvent =
-      "{\"payload\":{\"resource_type\":\"check\",\"action\":\"check.completed\",\"object\":{\"id\":\"check-123\",\"status\":\"complete\",\"completed_at_iso8601\":\"2020-01-01T00:00:00Z\",\"href\":\"https://api.onfido.com/v3.1/checks/check-123\"}}}";
+      "{\"payload\":{\"resource_type\":\"check\",\"action\":\"check.completed\",\"object\":{\"id\":\"check-123\",\"status\":\"complete\",\"completed_at_iso8601\":\"2020-01-01T00:00:00Z\",\"href\":\"https://api.onfido.com/v3/checks/check-123\"}}}";
 
   WebhookEvent expectedEvent;
 
@@ -20,7 +20,7 @@ public class WebhookEventVerifierTest {
         new WebhookEventObject(
             "check-123",
             "complete",
-            "https://api.onfido.com/v3.1/checks/check-123",
+            "https://api.onfido.com/v3/checks/check-123",
             "2020-01-01T00:00:00Z");
 
     expectedEvent = new WebhookEvent("check", "check.completed", object);

@@ -1,8 +1,8 @@
 # Onfido Java Library
 
-The official Java library for integrating with the Onfido API.
+The official Java library for integrating with the Onfido API. Refer to the full [API documentation](https://documentation.onfido.com) for details of expected requests and responses for all resources.
 
-Documentation can be found at <https://documentation.onfido.com>
+This version uses Onfido API v3.1. Refer to our [API versioning guide](https://developers.onfido.com/guide/api-versioning-policy#client-libraries) for details of which client library versions use which versions of the API. 
 
 ## Installation
 
@@ -38,7 +38,7 @@ Instantiate and configure an `Onfido` instance with your API token, and region i
 ```java
 Onfido onfido = Onfido.builder()
                 .apiToken(System.getenv("ONFIDO_API_TOKEN"))
-                // Defaults to api.onfido.com, supports .regionUS() and .regionCA()
+                // Defaults to api.eu.onfido.com. Supports .regionUS() and .regionCA()
                 // .regionUS()
                 .build();
 ```

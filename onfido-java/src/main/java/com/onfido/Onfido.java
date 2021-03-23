@@ -79,6 +79,10 @@ public final class Onfido {
         throw new RuntimeException("Please provide an apiToken");
       }
 
+      if (apiUrl == null || apiUrl.isEmpty()) {
+        throw new RuntimeException("Please specify a region with .regionEU(), .regionUS(), or .regionCA()");
+      }
+
       return new Onfido(this);
     }
 

@@ -8,7 +8,7 @@ import okhttp3.OkHttpClient;
 public final class Onfido {
   private static final OkHttpClient CLIENT = new OkHttpClient();
 
-  private static final String DEFAULT_API_URL = "https://api.eu.onfido.com/v3.1/";
+  private static final String EU_API_URL = "https://api.eu.onfido.com/v3.1/";
   private static final String US_API_URL = "https://api.us.onfido.com/v3.1/";
   private static final String CA_API_URL = "https://api.ca.onfido.com/v3.1/";
 
@@ -63,7 +63,7 @@ public final class Onfido {
     /** The Api token. */
     public String apiToken = "";
     /** The Api url. */
-    public String apiUrl = DEFAULT_API_URL;
+    public String apiUrl = EU_API_URL;
     /** The HTTP client interceptor. */
     private Interceptor clientInterceptor;
 
@@ -101,6 +101,16 @@ public final class Onfido {
      */
     public Builder clientInterceptor(Interceptor interceptor) {
       this.clientInterceptor = interceptor;
+      return this;
+    }
+
+    /**
+     * Sets the object to use the EU region base URL.
+     *
+     * @return the builder
+     */
+    public Builder regionEU() {
+      this.apiUrl = EU_API_URL;
       return this;
     }
 

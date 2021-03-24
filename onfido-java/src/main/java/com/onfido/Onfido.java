@@ -63,7 +63,7 @@ public final class Onfido {
     /** The Api token. */
     public String apiToken = "";
     /** The Api url. */
-    public String apiUrl = EU_API_URL;
+    public String apiUrl = "";
     /** The HTTP client interceptor. */
     private Interceptor clientInterceptor;
 

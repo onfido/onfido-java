@@ -80,7 +80,11 @@ public final class Onfido {
       }
 
       if (apiUrl == null || apiUrl.isEmpty()) {
-        throw new RuntimeException("Please specify a region with .regionEU(), .regionUS(), or .regionCA()");
+        throw new RuntimeException(
+          "Please specify a region with .regionEU(), .regionUS(), or .regionCA(). " +
+          "We previously defaulted to the EU region, so if you previously didn’t set a region or " +
+          "used api.onfido.com, please set your region using .regionEU()"
+        );
       }
 
       return new Onfido(this);

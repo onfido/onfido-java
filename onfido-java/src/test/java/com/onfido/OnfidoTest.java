@@ -7,12 +7,17 @@ import org.testng.annotations.Test;
 public class OnfidoTest {
   @Test(expectedExceptions = RuntimeException.class)
   public void throwsExceptionForMissingApiToken() {
-    Onfido.builder().build();
+    Onfido.builder().regionEU().build();
   }
 
   @Test(expectedExceptions = RuntimeException.class)
   public void throwsExceptionForNullApiToken() {
-    Onfido.builder().apiToken(null).build();
+    Onfido.builder().regionEU().apiToken(null).build();
+  }
+
+  @Test(expectedExceptions = RuntimeException.class)
+  public void throwsExceptionForMissingRegion() {
+    Onfido.builder().apiToken("token").build();
   }
 
   @Test()

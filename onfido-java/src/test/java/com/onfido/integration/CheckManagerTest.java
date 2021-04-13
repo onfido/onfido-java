@@ -16,7 +16,11 @@ public class CheckManagerTest extends ApiIntegrationTest {
 
   @Test
   public void createCheck() throws Exception {
-    String response = new JsonObject().add("applicant_id", "id").toJson();
+    String response =
+        new JsonObject()
+            .add("applicant_id", "id")
+            .add("webhook_ids", null)
+            .toJson();
 
     MockWebServer server = mockRequestResponse(response);
 
@@ -37,6 +41,7 @@ public class CheckManagerTest extends ApiIntegrationTest {
 
     // Correct response body
     assertEquals("id", check.getApplicantId());
+    assertEquals(null, check.getWebhookIds());
   }
 
   @Test

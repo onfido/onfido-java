@@ -1,8 +1,10 @@
 package com.onfido;
 
 import com.squareup.moshi.JsonAdapter;
+import com.squareup.moshi.JsonWriter;
 import com.squareup.moshi.Moshi;
 import com.squareup.moshi.Types;
+import okio.Buffer;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
@@ -42,6 +44,18 @@ public final class JsonObject {
   }
 
   public String toJson() {
-    return ADAPTOR.toJson(map);
+    Buffer buffer = new Buffer();
+    JsonWriter jsonWriter = JsonWriter.of(buffer);
+
+    // Include null values in the generated JSON.
+    jsonWriter.setSerializeNulls(true);
+
+    try {
+      ADAPTOR.toJson(jsonWriter, map);
+    } catch (IOException e) {
+      throw new RuntimeException(e);
+    }
+
+    return buffer.readUtf8();
   }
 }

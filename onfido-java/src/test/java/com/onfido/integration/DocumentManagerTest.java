@@ -63,11 +63,11 @@ public class DocumentManagerTest extends ApiIntegrationTest {
     Onfido onfido =
         Onfido.builder().apiToken("token").unknownApiUrl(server.url("/").toString()).build();
 
-    FileDownload download = onfido.document.download("document id");
+    FileDownload download = onfido.document.download("document_id");
 
     // Correct path
     RecordedRequest request = server.takeRequest();
-    assertEquals("/documents/document%20id/download", request.getPath());
+    assertEquals("/documents/document_id/download", request.getPath());
 
     // Correct response body
     assertEquals("test", new String(download.content));

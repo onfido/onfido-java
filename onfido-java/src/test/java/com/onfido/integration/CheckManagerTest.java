@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import com.onfido.JsonObject;
 import com.onfido.Onfido;
+import com.onfido.api.FileDownload;
 import com.onfido.models.Check;
 import java.util.Arrays;
 import java.util.List;
@@ -15,7 +16,11 @@ public class CheckManagerTest extends ApiIntegrationTest {
 
   @Test
   public void createCheck() throws Exception {
-    String response = new JsonObject().add("applicant_id", "id").toJson();
+    String response =
+        new JsonObject()
+            .add("applicant_id", "id")
+            .add("webhook_ids", null)
+            .toJson();
 
     MockWebServer server = mockRequestResponse(response);
 
@@ -36,6 +41,7 @@ public class CheckManagerTest extends ApiIntegrationTest {
 
     // Correct response body
     assertEquals("id", check.getApplicantId());
+    assertEquals(null, check.getWebhookIds());
   }
 
   @Test
@@ -96,5 +102,23 @@ public class CheckManagerTest extends ApiIntegrationTest {
     // Correct path
     RecordedRequest request = server.takeRequest();
     assertEquals("/checks/id/resume", request.getPath());
+  }
+
+  @Test
+  public void downloadCheck() throws Exception {
+    MockWebServer server = mockFileRequestResponse("test", "application/pdf");
+
+    Onfido onfido =
+        Onfido.builder().apiToken("token").unknownApiUrl(server.url("/").toString()).build();
+
+    FileDownload download = onfido.check.download("check_id");
+
+    // Correct path
+    RecordedRequest request = server.takeRequest();
+    assertEquals("/checks/check_id/download", request.getPath());
+
+    // Correct response body
+    assertEquals("test", new String(download.content));
+    assertEquals("application/pdf", download.contentType);
   }
 }

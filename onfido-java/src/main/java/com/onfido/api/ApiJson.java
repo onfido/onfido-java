@@ -88,7 +88,9 @@ public final class ApiJson<T> {
         public Object fromJson(JsonReader reader) throws IOException {
           Object value = adapter.fromJson(reader);
 
-          if (value instanceof List) {
+          if (value == null) {
+            return null;
+          } else if (value instanceof List) {
             return Collections.unmodifiableList((List<?>) value);
           } else {
             return Collections.unmodifiableMap((Map<?, ?>) value);

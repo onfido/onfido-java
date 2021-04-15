@@ -2,6 +2,7 @@ package com.onfido;
 
 import com.onfido.api.ApiJson;
 import com.onfido.api.Config;
+import com.onfido.api.FileDownload;
 import com.onfido.api.ResourceManager;
 import com.onfido.exceptions.OnfidoException;
 import com.onfido.models.Check;
@@ -61,5 +62,16 @@ public class CheckManager extends ResourceManager {
    */
   public void resume(String checkId) throws OnfidoException {
     post(checkId + "/resume", "");
+  }
+
+  /**
+   * Downloads a check.
+   *
+   * @param checkId the check id
+   * @return the downloaded file as a FileDownload
+   * @throws OnfidoException the onfido exception
+   */
+  public FileDownload download(String checkId) throws OnfidoException {
+    return downloadRequest(checkId + "/download");
   }
 }

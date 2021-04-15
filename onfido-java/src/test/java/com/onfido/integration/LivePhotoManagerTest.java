@@ -54,11 +54,11 @@ public class LivePhotoManagerTest extends ApiIntegrationTest {
     Onfido onfido =
         Onfido.builder().apiToken("token").unknownApiUrl(server.url("/").toString()).build();
 
-    FileDownload download = onfido.livePhoto.download("live photo id");
+    FileDownload download = onfido.livePhoto.download("live_photo_id");
 
     // Correct path
     RecordedRequest request = server.takeRequest();
-    assertEquals("/live_photos/live%20photo%20id/download", request.getPath());
+    assertEquals("/live_photos/live_photo_id/download", request.getPath());
 
     // Correct response body
     assertEquals("test", new String(download.content));
@@ -73,7 +73,7 @@ public class LivePhotoManagerTest extends ApiIntegrationTest {
         Onfido.builder().apiToken("token").unknownApiUrl(server.url("/").toString()).build();
 
     try {
-      onfido.livePhoto.download("live photo id");
+      onfido.livePhoto.download("live_photo_id");
       Assert.fail();
     } catch (ApiException ex) {
       Assert.assertEquals(403, ex.getStatusCode());

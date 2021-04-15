@@ -8,9 +8,9 @@ import okhttp3.OkHttpClient;
 public final class Onfido {
   private static final OkHttpClient CLIENT = new OkHttpClient();
 
-  private static final String DEFAULT_API_URL = "https://api.onfido.com/v3/";
-  private static final String US_API_URL = "https://api.us.onfido.com/v3/";
-  private static final String CA_API_URL = "https://api.ca.onfido.com/v3/";
+  private static final String EU_API_URL = "https://api.eu.onfido.com/v3.1/";
+  private static final String US_API_URL = "https://api.us.onfido.com/v3.1/";
+  private static final String CA_API_URL = "https://api.ca.onfido.com/v3.1/";
 
   /** The Configuration for the instance. */
   public final Config config;
@@ -63,7 +63,7 @@ public final class Onfido {
     /** The Api token. */
     public String apiToken = "";
     /** The Api url. */
-    public String apiUrl = DEFAULT_API_URL;
+    public String apiUrl = "";
     /** The HTTP client interceptor. */
     private Interceptor clientInterceptor;
 
@@ -77,6 +77,14 @@ public final class Onfido {
     public Onfido build() {
       if (apiToken == null || apiToken.isEmpty()) {
         throw new RuntimeException("Please provide an apiToken");
+      }
+
+      if (apiUrl == null || apiUrl.isEmpty()) {
+        throw new RuntimeException(
+          "Please specify a region with .regionEU(), .regionUS(), or .regionCA(). " +
+          "We previously defaulted to the EU region, so if you previously didn’t set a region or " +
+          "used api.onfido.com, please set your region using .regionEU()"
+        );
       }
 
       return new Onfido(this);
@@ -101,6 +109,16 @@ public final class Onfido {
      */
     public Builder clientInterceptor(Interceptor interceptor) {
       this.clientInterceptor = interceptor;
+      return this;
+    }
+
+    /**
+     * Sets the object to use the EU region base URL.
+     *
+     * @return the builder
+     */
+    public Builder regionEU() {
+      this.apiUrl = EU_API_URL;
       return this;
     }
 

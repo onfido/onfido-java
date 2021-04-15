@@ -23,11 +23,11 @@ public class LiveVideoManagerTest extends ApiIntegrationTest {
     Onfido onfido =
         Onfido.builder().apiToken("token").unknownApiUrl(server.url("/").toString()).build();
 
-    FileDownload download = onfido.liveVideo.download("live video id");
+    FileDownload download = onfido.liveVideo.download("live_video_id");
 
     // Correct path
     RecordedRequest request = server.takeRequest();
-    assertEquals("/live_videos/live%20video%20id/download", request.getPath());
+    assertEquals("/live_videos/live_video_id/download", request.getPath());
 
     // Correct response body
     assertEquals("test", new String(download.content));
@@ -41,11 +41,11 @@ public class LiveVideoManagerTest extends ApiIntegrationTest {
     Onfido onfido =
         Onfido.builder().apiToken("token").unknownApiUrl(server.url("/").toString()).build();
 
-    FileDownload download = onfido.liveVideo.downloadFrame("live video id");
+    FileDownload download = onfido.liveVideo.downloadFrame("live_video_id");
 
     // Correct path
     RecordedRequest request = server.takeRequest();
-    assertEquals("/live_videos/live%20video%20id/frame", request.getPath());
+    assertEquals("/live_videos/live_video_id/frame", request.getPath());
 
     // Correct response body
     assertEquals("test", new String(download.content));

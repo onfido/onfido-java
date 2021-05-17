@@ -11,6 +11,7 @@ import java.util.List;
 import okhttp3.mockwebserver.MockWebServer;
 import okhttp3.mockwebserver.RecordedRequest;
 import org.testng.annotations.Test;
+import java.util.ArrayList;
 
 public class CheckManagerTest extends ApiIntegrationTest {
 
@@ -20,6 +21,7 @@ public class CheckManagerTest extends ApiIntegrationTest {
         new JsonObject()
             .add("applicant_id", "id")
             .add("webhook_ids", null)
+            .add("privacy_notices_read_consent_given", true)
             .toJson();
 
     MockWebServer server = mockRequestResponse(response);
@@ -28,7 +30,7 @@ public class CheckManagerTest extends ApiIntegrationTest {
         Onfido.builder().apiToken("token").unknownApiUrl(server.url("/").toString()).build();
 
     Check check =
-        onfido.check.create(Check.request().applicantId("id").reportNames("report_name_1"));
+        onfido.check.create(Check.request().applicantId("id").reportNames("report_name_1").privacyNoticesReadConsentGiven(true));
 
     // Correct path
     RecordedRequest request = server.takeRequest();
@@ -38,10 +40,72 @@ public class CheckManagerTest extends ApiIntegrationTest {
     String json = request.getBody().readUtf8();
     JsonObject jsonObject = JsonObject.parse(json);
     assertEquals("id", jsonObject.get("applicant_id"));
+    assertEquals(true, jsonObject.get("privacy_notices_read_consent_given"));
 
     // Correct response body
     assertEquals("id", check.getApplicantId());
     assertEquals(null, check.getWebhookIds());
+    assertEquals(true, check.getPrivacyNoticesReadConsentGiven());
+  }
+
+  @Test
+  public void createSubResultCheck() throws Exception {
+    String response =
+        new JsonObject()
+            .add("applicant_id", "id")
+            .toJson();
+
+    MockWebServer server = mockRequestResponse(response);
+
+    Onfido onfido =
+        Onfido.builder().apiToken("token").unknownApiUrl(server.url("/").toString()).build();
+
+    Check check =
+        onfido.check.create(Check.request().applicantId("id").reportNames("document").subResult("rejected"));
+
+    // Correct path
+    RecordedRequest request = server.takeRequest();
+    assertEquals("/checks/", request.getPath());
+
+    // Correct request body
+    String json = request.getBody().readUtf8();
+    JsonObject jsonObject = JsonObject.parse(json);
+    assertEquals("id", jsonObject.get("applicant_id"));
+    assertEquals("rejected", jsonObject.get("sub_result"));
+
+    // Correct response body
+    assertEquals("id", check.getApplicantId());
+  }
+
+@Test
+  public void createConsiderCheck() throws Exception {
+    String response =
+        new JsonObject()
+            .add("applicant_id", "id")
+            .toJson();
+
+    MockWebServer server = mockRequestResponse(response);
+
+    Onfido onfido =
+        Onfido.builder().apiToken("token").unknownApiUrl(server.url("/").toString()).build();
+
+    Check check =
+        onfido.check.create(Check.request().applicantId("id").reportNames("document", "identity_enhanced").consider("identity_enhanced"));
+
+    // Correct path
+    RecordedRequest request = server.takeRequest();
+    assertEquals("/checks/", request.getPath());
+
+    // Correct request body
+    String json = request.getBody().readUtf8();
+    JsonObject jsonObject = JsonObject.parse(json);
+    assertEquals("id", jsonObject.get("applicant_id"));
+    ArrayList<String> expectedConsiderArrayList = new ArrayList<>();
+    expectedConsiderArrayList.add("identity_enhanced");
+    assertEquals(expectedConsiderArrayList, jsonObject.get("consider"));
+
+    // Correct response body
+    assertEquals("id", check.getApplicantId());
   }
 
   @Test

@@ -108,6 +108,19 @@
         "type": "string"
       },
       "description": "Array of strings describing which webhooks to trigger for a check."
+    },
+    "sub_result": {
+      "type": "string",
+      "writeOnly": true,
+      "description": "Triggers responses for particular sub-results for sandbox Document reports."
+    },
+    "consider": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "writeOnly": true,
+      "description": "Triggers a pre-determined 'consider' report result in the sandbox for reports specified in the array."
     }
   }
 }

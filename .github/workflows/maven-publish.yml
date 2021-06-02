@@ -34,6 +34,7 @@ jobs:
           server-password: MAVEN_PASSWORD
       - name: Publish package
         run: |
+          mvn install
           cd onfido-java
           mvn --batch-mode deploy
         env:

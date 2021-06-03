@@ -22,7 +22,7 @@ jobs:
       - id: install-secret-key
         name: Install gpg secret key
         run: |
-          echo -e $GPG_SECRET_KEY > key.asc
+          echo -e ${{ secrets.GPG_SECRET_KEY }} > key.asc
           gpg --import key.asc
       - name: Publish package
         run: |

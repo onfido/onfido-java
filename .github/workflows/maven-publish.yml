@@ -23,7 +23,7 @@ jobs:
         name: Install gpg secret key
         run: |
           echo "$GPG_KEY" > key.asc
-          gpg --import key.asc
+          gpg --import --no-tty --batch --yes key.asc
         shell: bash
         env:
           GPG_KEY: ${{secrets.GPG_SECRET_KEY}}

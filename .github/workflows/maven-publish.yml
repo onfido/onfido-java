@@ -22,7 +22,7 @@ jobs:
       - id: install-secret-key
         name: Install gpg secret key
         run: |
-          'echo "$GPG_KEY" > key.asc'
+          echo "$GPG_KEY" > key.asc
           gpg --import key.asc
         shell: bash
         env:

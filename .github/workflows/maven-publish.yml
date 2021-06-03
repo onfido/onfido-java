@@ -29,6 +29,7 @@ jobs:
           GPG_KEY: ${{secrets.GPG_SECRET_KEY}}
       - name: Publish package
         run: |
+          export GPG_TTY=$(tty) &&
           mvn install &&
           cd onfido-java &&
           mvn clean deploy --settings ../.maven.xml -Prelease -Dgpg.passphrase=$GPG_PASSPHRASE

@@ -40,8 +40,8 @@
     },
     "redirect_uri": {
       "type": "string",
-      "readOnly": true,
-      "description": "For checks where `applicant_provides_data` is `true`, redirect to this URI when the applicant has submitted their data. Read-only."
+      "readOnly": false,
+      "description": "For checks where `applicant_provides_data` is `true`, redirect to this URI when the applicant has submitted their data."
     },
     "results_uri": {
       "type": "string",

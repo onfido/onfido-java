@@ -36,6 +36,18 @@
     "state": {
       "type": "string",
       "description": "The address state. US states must use the USPS abbreviation (see also ISO 3166-2:US), for example AK, CA, or TX."
+    },
+    "line1": {
+      "type": "string",
+      "description": "Line 1 of the address (ID Enhanced reports)."
+    },
+    "line2": {
+      "type": "string",
+      "description": "Line 2 of the address (ID Enhanced reports)."
+    },
+    "line3": {
+      "type": "string",
+      "description": "Line 3 of the address (ID Enhanced reports)."
     }
   }
 }

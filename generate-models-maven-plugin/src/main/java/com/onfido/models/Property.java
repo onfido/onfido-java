@@ -84,6 +84,8 @@ public final class Property {
     switch (propertyJson.type) {
       case "boolean":
         return TypeInfo.primitiveType("boolean", "Boolean", "false");
+      case "Boolean":
+        return TypeInfo.primitiveType("Boolean", "Boolean", "null");
       case "integer":
         return TypeInfo.primitiveType("int", "Integer", "0");
       case "object":

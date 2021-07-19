@@ -76,8 +76,8 @@ public final class Onfido {
     public String apiUrl = "";
     /** The HTTP client interceptor. */
     private Interceptor clientInterceptor;
-    /** Read timeout duration, defaults to 15 seconds. */
-    private Duration httpClientReadTimeout = Duration.ofSeconds(15);
+    /** Read timeout duration, defaults to 30 seconds. */
+    private Duration httpClientReadTimeout = Duration.ofSeconds(30);
     /** HttpClient Proxy */
     private Proxy httpClientProxy;
 

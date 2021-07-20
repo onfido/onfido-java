@@ -4,6 +4,9 @@ import com.onfido.api.Config;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 
+import java.net.Proxy;
+import java.time.Duration;
+
 /** The main class used for accessing instances of the manager classes. */
 public final class Onfido {
   private static final OkHttpClient CLIENT = new OkHttpClient();
@@ -38,14 +41,21 @@ public final class Onfido {
 
   private Onfido(Builder builder) {
     config = new Config(builder);
-    OkHttpClient client = CLIENT;
-    if (builder.hasClientAttributes()) {
-      OkHttpClient.Builder clientBuilder = CLIENT.newBuilder();
-      if (builder.clientInterceptor != null) {
-        clientBuilder.addInterceptor(builder.clientInterceptor);
-      }
-      client = clientBuilder.build();
+    OkHttpClient.Builder clientBuilder = CLIENT.newBuilder();
+
+    if (builder.clientInterceptor != null) {
+      clientBuilder.addInterceptor(builder.clientInterceptor);
     }
+
+    if (builder.httpClientReadTimeout != null) {
+      clientBuilder.readTimeout(builder.httpClientReadTimeout);
+    }
+
+    if (builder.httpClientProxy != null) {
+      clientBuilder.proxy(builder.httpClientProxy);
+    }
+
+    final OkHttpClient client = clientBuilder.build();
     applicant = new ApplicantManager(this.config, client);
     document = new DocumentManager(this.config, client);
     check = new CheckManager(this.config, client);
@@ -66,6 +76,10 @@ public final class Onfido {
     public String apiUrl = "";
     /** The HTTP client interceptor. */
     private Interceptor clientInterceptor;
+    /** Read timeout duration, defaults to 30 seconds. */
+    private Duration httpClientReadTimeout = Duration.ofSeconds(30);
+    /** HttpClient Proxy */
+    private Proxy httpClientProxy;
 
     private Builder() {}
 
@@ -113,6 +127,26 @@ public final class Onfido {
     }
 
     /**
+     * The read timeout duration that will be used to configure the HttpClient
+     * @param readTimeout the readTimeout
+     * @return the builder
+     */
+    public Builder clientReadTimeout(Duration readTimeout) {
+      this.httpClientReadTimeout = readTimeout;
+      return this;
+    }
+
+    /**
+     * The proxy that will be used to configure the HttpClient with
+     * @param proxy the proxy
+     * @return the proxy
+     */
+    public Builder clientProxy(Proxy proxy) {
+      this.httpClientProxy = proxy;
+      return this;
+    }
+
+    /**
      * Sets the object to use the EU region base URL.
      *
      * @return the builder
@@ -151,10 +185,6 @@ public final class Onfido {
     public Builder unknownApiUrl(String url) {
       this.apiUrl = url;
       return this;
-    }
-
-    private boolean hasClientAttributes() {
-      return clientInterceptor != null;
     }
   }
 

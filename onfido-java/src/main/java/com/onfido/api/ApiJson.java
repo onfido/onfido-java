@@ -44,7 +44,7 @@ public final class ApiJson<T> {
      */
     @FromJson
     LocalDate fromJson(String dateString) {
-      return dateString == null ? null : LocalDate.parse(dateString);
+      return dateString == null || dateString.isEmpty() ? null : LocalDate.parse(dateString);
     }
   }
 

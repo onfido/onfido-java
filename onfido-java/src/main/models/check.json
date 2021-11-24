@@ -121,6 +121,11 @@
       },
       "writeOnly": true,
       "description": "Triggers a pre-determined 'consider' report result in the sandbox for reports specified in the array."
+    },
+    "us_driving_licence": {
+      "$ref": "./driving_licence.json",
+      "description": "An object that contains all accepted fields for the Driver's License Data Verification report.",
+      "writeOnly": true
     }
   }
 }

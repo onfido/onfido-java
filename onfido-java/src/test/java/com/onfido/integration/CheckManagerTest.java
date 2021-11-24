@@ -8,6 +8,8 @@ import com.onfido.api.FileDownload;
 import com.onfido.models.Check;
 import java.util.Arrays;
 import java.util.List;
+
+import com.onfido.models.DrivingLicence;
 import okhttp3.mockwebserver.MockWebServer;
 import okhttp3.mockwebserver.RecordedRequest;
 import org.testng.annotations.Test;
@@ -103,6 +105,38 @@ public class CheckManagerTest extends ApiIntegrationTest {
     ArrayList<String> expectedConsiderArrayList = new ArrayList<>();
     expectedConsiderArrayList.add("identity_enhanced");
     assertEquals(expectedConsiderArrayList, jsonObject.get("consider"));
+
+    // Correct response body
+    assertEquals("id", check.getApplicantId());
+  }
+
+  @Test
+  public void createDrivingLicenceCheck() throws Exception {
+    String response =
+            new JsonObject()
+                    .add("applicant_id", "id")
+                    .toJson();
+
+    MockWebServer server = mockRequestResponse(response);
+
+    Onfido onfido =
+            Onfido.builder().apiToken("token").unknownApiUrl(server.url("/").toString()).build();
+
+    Check check =
+            onfido.check.create(Check.request()
+                    .applicantId("id")
+                    .reportNames("us_driving_licence")
+                    .usDrivingLicence(DrivingLicence.request().idNumber("12345").stateCode("GA"))
+            );
+
+    // Correct path
+    RecordedRequest request = server.takeRequest();
+    assertEquals("/checks/", request.getPath());
+
+    // Correct request body
+    String json = request.getBody().readUtf8();
+    JsonObject jsonObject = JsonObject.parse(json);
+    assertEquals("id", jsonObject.get("applicant_id"));
 
     // Correct response body
     assertEquals("id", check.getApplicantId());

@@ -19,7 +19,7 @@
     },
     "city": {
       "type": "string",
-      "description": "Date of birth in yyyy-mm-dd format"
+      "description": "The city of the owner's address"
     },
     "date_of_birth": {
       "type": "string",
@@ -33,7 +33,7 @@
     "expiration_date": {
       "type": "string",
       "format": "date",
-      "description": "Date of birth in yyyy-mm-dd format"
+      "description": "Expiration date of the driving licence in yyyy-mm-dd format"
     },
     "eye_color_code": {
       "type": "string",
@@ -41,7 +41,7 @@
     },
     "first_name": {
       "type": "string",
-      "description": "The applicant’s first name"
+      "description": "The owner’s first name"
     },
     "gender": {
       "type": "string",
@@ -50,7 +50,7 @@
     },
     "height_measure_feet": {
       "type": "integer",
-      "description": "Height feet",
+      "description": "Height, feet",
       "readOnly": true
     },
     "height_measure_inches": {
@@ -69,7 +69,7 @@
     },
     "middle_name": {
       "type": "string",
-      "description": "The owner’s middle"
+      "description": "The owner’s middle name"
     },
     "name_suffix": {
       "type": "string",
@@ -81,7 +81,7 @@
     },
     "state": {
       "type": "string",
-      "description": "The address state. US states must use the USPS abbreviation, e.g. AK, CA, or TX."
+      "description": "The state of the owner's address. US states must use the USPS abbreviation, e.g. AK, CA, or TX."
     },
     "weight_measure": {
       "type": "integer",

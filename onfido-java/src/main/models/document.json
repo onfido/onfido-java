@@ -54,6 +54,11 @@
       "type": "string",
       "description": "The uri that can be used to download the document",
       "readOnly": true
+    },
+    "validate_image_quality": {
+      "type": "boolean",
+      "description": "When true the submitted image will undergo an image quality validation",
+      "writeOnly": true
     }
   }
 }

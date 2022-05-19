@@ -59,6 +59,10 @@
       "type": "boolean",
       "description": "When true the submitted image will undergo an image quality validation",
       "writeOnly": true
+    },
+    "location": {
+      "$ref": "../location/location.yaml",
+      "description": "The applicant's location"
     }
   }
 }

@@ -23,7 +23,6 @@ public class CheckManagerTest extends ApiIntegrationTest {
         new JsonObject()
             .add("applicant_id", "id")
             .add("webhook_ids", null)
-            .add("privacy_notices_read_consent_given", true)
             .toJson();
 
     MockWebServer server = mockRequestResponse(response);
@@ -32,7 +31,7 @@ public class CheckManagerTest extends ApiIntegrationTest {
         Onfido.builder().apiToken("token").unknownApiUrl(server.url("/").toString()).build();
 
     Check check =
-        onfido.check.create(Check.request().applicantId("id").reportNames("report_name_1").privacyNoticesReadConsentGiven(true));
+        onfido.check.create(Check.request().applicantId("id").reportNames("report_name_1"));
 
     // Correct path
     RecordedRequest request = server.takeRequest();
@@ -42,12 +41,10 @@ public class CheckManagerTest extends ApiIntegrationTest {
     String json = request.getBody().readUtf8();
     JsonObject jsonObject = JsonObject.parse(json);
     assertEquals("id", jsonObject.get("applicant_id"));
-    assertEquals(true, jsonObject.get("privacy_notices_read_consent_given"));
 
     // Correct response body
     assertEquals("id", check.getApplicantId());
     assertEquals(null, check.getWebhookIds());
-    assertEquals(true, check.getPrivacyNoticesReadConsentGiven());
   }
 
   @Test

@@ -56,6 +56,21 @@
         "$ref": "id_number.yaml"
       },
       "description": "The applicants ID numbers"
+    },
+    "phone_number": {
+      "type": "string",
+      "description": "The applicant’s phone number"
+    },
+    "location": {
+      "$ref": "../location/location.yaml",
+      "description": "The applicant's location"
+    },
+    "consents": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "The applicant’s consents"
     }
   }
 }

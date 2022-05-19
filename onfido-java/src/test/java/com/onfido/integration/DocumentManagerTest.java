@@ -7,6 +7,7 @@ import com.onfido.Onfido;
 import com.onfido.api.FileDownload;
 import com.onfido.exceptions.ApiException;
 import com.onfido.models.Document;
+import com.onfido.models.Location;
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.util.Arrays;
@@ -28,12 +29,20 @@ public class DocumentManagerTest extends ApiIntegrationTest {
         Onfido.builder().apiToken("token").unknownApiUrl(server.url("/").toString()).build();
 
     InputStream inputStream = new ByteArrayInputStream("testing testing 1 2".getBytes());
+
+    Location.Request locationRequest =
+        Location.request()
+            .ipAddress("127.0.0.1")
+            .countryOfResidence("GBR");
+
     Document.Request documentRequest =
         Document.request()
             .applicantId("test id")
             .issuingCountry("USA")
             .side("front")
-            .type("passport");
+            .type("passport")
+            .location(locationRequest);
+
     Document document = onfido.document.upload(inputStream, "file.png", documentRequest);
 
     // Correct path
@@ -51,6 +60,7 @@ public class DocumentManagerTest extends ApiIntegrationTest {
     Assert.assertTrue(requestBody.contains("type"));
     Assert.assertTrue(requestBody.contains("passport"));
     Assert.assertTrue(requestBody.contains("testing testing 1 2"));
+    Assert.assertTrue(requestBody.contains("{\"country_of_residence\":\"GBR\",\"ip_address\":\"127.0.0.1\"}"));
 
     // Correct response body
     assertEquals("file.png", document.getFileName());

@@ -70,7 +70,8 @@
       "items": {
         "type": "string"
       },
-      "description": "The applicant’s consents"
+      "description": "The applicant’s consents",
+      "writeOnly": true
     }
   }
 }

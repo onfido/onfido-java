@@ -62,7 +62,8 @@
     },
     "location": {
       "$ref": "../location/location.yaml",
-      "description": "The applicant's location"
+      "description": "The applicant's location",
+      "writeOnly": true
     }
   }
 }

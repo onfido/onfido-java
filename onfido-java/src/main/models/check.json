@@ -98,6 +98,10 @@
       "readOnly": true,
       "description": "The list of report object ids associated with the check."
     },
+    "privacy_notices_read_consent_given": {
+      "type": "Boolean",
+      "description": "Indicates that the privacy notices and terms of service have been read and, where specific laws require, that consent has been given for Onfido."
+    },
     "webhook_ids": {
       "type": "array",
       "items": {

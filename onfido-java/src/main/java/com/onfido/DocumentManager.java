@@ -46,6 +46,7 @@ public class DocumentManager extends ResourceManager {
     addFormDataParam(builder, "side", request.getSide());
     addFormDataParam(builder, "issuing_country", request.getIssuingCountry());
     addFormDataParam(builder, "validate_image_quality", request.getValidateImageQuality());
+    addFormDataParam(builder, "location", request.getLocation());
 
     builder.addFormDataPart(
         "file",

@@ -1,0 +1,13 @@
+{
+  "title": "Consent",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "The name of the consent"
+    },
+    "granted": {
+      "type": "boolean",
+      "description": "Flag to identify if the consent was granted. If false the check creation will fail with a validation error."
+    }
+  }
+}

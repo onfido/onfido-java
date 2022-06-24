@@ -68,7 +68,7 @@
     "consents": {
       "type": "array",
       "items": {
-        "type": "string"
+        "$ref": "consent.yaml"
       },
       "description": "The applicant’s consents",
       "writeOnly": true

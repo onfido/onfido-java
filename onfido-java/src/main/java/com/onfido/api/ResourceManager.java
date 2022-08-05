@@ -133,11 +133,12 @@ public abstract class ResourceManager {
   }
 
   private Request.Builder requestBuilder(String path) {
+    String version = getClass().getPackage().getImplementationVersion();
 
     return new Request.Builder()
         .url(config.getApiUrl() + basePath + path)
         .header("Authorization", "Token token=" + config.getApiToken())
-        .header("User-Agent", "OnfidoJava")
+        .header("User-Agent", "onfido-java/" + version)
         .header("Accept", "application/json");
   }
 

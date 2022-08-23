@@ -26,6 +26,21 @@
       "description": "Full name",
       "readOnly": true
     },
+    "spouse_name": {
+      "type": "string",
+      "description": "Spouse name",
+      "readOnly": true
+    },
+    "widow_name": {
+      "type": "string",
+      "description": "Widow name",
+      "readOnly": true
+    },
+    "alias_name": {
+      "type": "string",
+      "description": "Alias name",
+      "readOnly": true
+    },
     "gender": {
       "type": "string",
       "description": "Gender. Valid values are Male and Female.",
@@ -38,6 +53,12 @@
       "readOnly": true
     },
     "date_of_expiry": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of expiry in yyyy-mm-dd format",
+      "readOnly": true
+    },
+    "expiry_date": {
       "type": "string",
       "format": "date",
       "description": "Date of expiry in yyyy-mm-dd format",
@@ -86,6 +107,36 @@
     "address_line_5": {
       "type": "string",
       "description": "Line 5 of the address",
+      "readOnly": true
+    },
+    "issuing_authority": {
+      "type": "string",
+      "description": "Issuing authority",
+      "readOnly": true
+    },
+    "issuing_country": {
+      "type": "string",
+      "description": "Document country in 3-letter ISO code",
+      "readOnly": true
+    },
+    "document_type": {
+      "type": "string",
+      "description": "Type of document",
+      "readOnly": true
+    },
+    "place_of_birth": {
+      "type": "string",
+      "description": "Place of birth",
+      "readOnly": true
+    },
+    "issuing_state": {
+      "type": "string",
+      "description": "The state that issued the document",
+      "readOnly": true
+    },
+    "personal_number": {
+      "type": "string",
+      "description": "The owner's unique identification number",
       "readOnly": true
     }
   }

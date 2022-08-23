@@ -15,6 +15,16 @@
       "type": "string",
       "description": "The state that issued the document",
       "readOnly": true
+    },
+    "subtype": {
+      "type": "string",
+      "description": "The document subtype",
+      "readOnly": true
+    },
+    "version": {
+      "type": "string",
+      "description": "The document issuing version",
+      "readOnly": true
     }
   }
 }

@@ -35,7 +35,15 @@ public final class JsonObject {
   }
 
   public JsonObject add(String key, Object value) {
-    map.put(key, value);
+    if (value instanceof JsonObject) {
+      // Extract internal map from it
+      map.put(key, ((JsonObject)value).map);
+    }
+    else
+    {
+      map.put(key, value);
+    }
+
     return this;
   }
 

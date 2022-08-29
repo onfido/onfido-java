@@ -119,6 +119,12 @@
       "description": "Document country in 3-letter ISO code",
       "readOnly": true
     },
+    "issuing_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Issuing date in yyyy-mm-dd format",
+      "readOnly": true
+    },
     "document_type": {
       "type": "string",
       "description": "Type of document",

@@ -7,131 +7,132 @@ import com.onfido.Onfido;
 import com.onfido.models.Applicant;
 import java.util.Arrays;
 import java.util.List;
+import java.io.IOException;
+import java.util.Comparator;
+import java.util.stream.Collectors;
 import okhttp3.mockwebserver.MockWebServer;
 import okhttp3.mockwebserver.RecordedRequest;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 public class ApplicantManagerTest extends ApiIntegrationTest {
 
+  public Applicant getApplicant( String first_name, int id ) throws Exception {
+    prepareMock(new JsonObject().add("first_name", first_name)
+                                .add("last_name", "Last")
+                                .add("id", String.valueOf(id)));
+
+    Applicant applicant = onfido.applicant.create(
+               Applicant.request().firstName(first_name)
+                                  .lastName("Last"));
+
+    takeRequest("/applicants/");
+
+    return applicant;
+  }
+
+  public Applicant getApplicant() throws Exception {
+    return getApplicant("First", 1);
+  }
+
+  @AfterTest()
+  public void cleanUp() throws Exception {
+    String sampleApplicantId = System.getenv("ONFIDO_SAMPLE_APPLICANT_ID");
+
+    if ( mockingEnabled() ) {
+      return;
+    }
+
+    for (Applicant applicant : onfido.applicant.list(1, 20, false)) {
+      if ( applicant.getId() != sampleApplicantId ) {
+        onfido.applicant.delete(applicant.getId());
+      }
+    }
+  }
+
   @Test
   public void createApplicant() throws Exception {
-    String response = new JsonObject().add("first_name", "First").toJson();
+    Applicant applicant = getApplicant();
 
-    MockWebServer server = mockRequestResponse(response);
-
-    Onfido onfido =
-        Onfido.builder().apiToken("token").unknownApiUrl(server.url("/").toString()).build();
-
-    Applicant applicant = onfido.applicant.create(Applicant.request().firstName("First"));
-
-    // Correct path
-    RecordedRequest request = server.takeRequest();
-    assertEquals("/applicants/", request.getPath());
-
-    // Correct request body
-    String json = request.getBody().readUtf8();
-    JsonObject jsonObject = JsonObject.parse(json);
-    assertEquals("First", jsonObject.get("first_name"));
-
-    // Correct response body
+    assertRequestField("first_name", "First");
     assertEquals("First", applicant.getFirstName());
+    assertEquals("Last", applicant.getLastName());
   }
 
   @Test
   public void findApplicant() throws Exception {
-    String response = new JsonObject().add("first_name", "First").toJson();
+    Applicant applicant = getApplicant();
 
-    MockWebServer server = mockRequestResponse(response);
+    prepareMock(new JsonObject().add("first_name", "First")
+                                .add("last_name", "Last"));
 
-    Onfido onfido =
-        Onfido.builder().apiToken("token").unknownApiUrl(server.url("/").toString()).build();
+    Applicant lookupApplicant = onfido.applicant.find(applicant.getId());
 
-    Applicant applicant = onfido.applicant.find("id");
+    takeRequest("/applicants/" + applicant.getId());
 
-    // Correct path
-    RecordedRequest request = server.takeRequest();
-    assertEquals("/applicants/id", request.getPath());
-
-    // Correct response body
     assertEquals("First", applicant.getFirstName());
+    assertEquals("Last", applicant.getLastName());
   }
 
   @Test
   public void updateApplicant() throws Exception {
-    String response = new JsonObject().add("first_name", "First").toJson();
+    Applicant applicant = getApplicant();
 
-    MockWebServer server = mockRequestResponse(response);
+    prepareMock(new JsonObject().add("first_name", "Updated")
+                                .add("last_name", "Last"));
 
-    Onfido onfido =
-        Onfido.builder().apiToken("token").unknownApiUrl(server.url("/").toString()).build();
+    Applicant updatedApplicant = onfido.applicant.update(applicant.getId(),
+                                                         Applicant.request().firstName("Updated"));
 
-    Applicant applicant = onfido.applicant.update("id", Applicant.request().firstName("First"));
+    takeRequest("/applicants/" + applicant.getId());
 
-    // Correct path
-    RecordedRequest request = server.takeRequest();
-    assertEquals("/applicants/id", request.getPath());
-
-    // Correct request body
-    String json = request.getBody().readUtf8();
-    JsonObject jsonObject = JsonObject.parse(json);
-    assertEquals("First", jsonObject.get("first_name"));
-
-    // Correct response body
-    assertEquals("First", applicant.getFirstName());
+    assertRequestField("first_name", "Updated");
+    assertEquals("Updated", updatedApplicant.getFirstName());
   }
 
   @Test
   public void deleteApplicant() throws Exception {
-    MockWebServer server = mockRequestResponse("");
+    Applicant applicant = getApplicant();
 
-    Onfido onfido =
-        Onfido.builder().apiToken("token").unknownApiUrl(server.url("/").toString()).build();
-
-    onfido.applicant.delete("id");
-
-    // Correct path
-    RecordedRequest request = server.takeRequest();
-    assertEquals("/applicants/id", request.getPath());
+    prepareMock(new JsonObject());
+    onfido.applicant.delete(applicant.getId());
+    takeRequest("/applicants/" + applicant.getId());
   }
 
   @Test
   public void restoreApplicant() throws Exception {
-    MockWebServer server = mockRequestResponse("");
+    Applicant applicant = getApplicant();
 
-    Onfido onfido =
-        Onfido.builder().apiToken("token").unknownApiUrl(server.url("/").toString()).build();
+    prepareMock(new JsonObject());
+    onfido.applicant.delete(applicant.getId());
+    takeRequest("/applicants/" + applicant.getId());
 
-    onfido.applicant.restore("id");
-
-    // Correct path
-    RecordedRequest request = server.takeRequest();
-    assertEquals("/applicants/id/restore", request.getPath());
+    prepareMock(new JsonObject());
+    onfido.applicant.restore(applicant.getId());
+    takeRequest("/applicants/" + applicant.getId() + "/restore");
   }
 
   @Test
   public void listApplicants() throws Exception {
-    String response =
+    Applicant applicant1 = getApplicant("Applicant1", 1);
+    Applicant applicant2 = getApplicant("Applicant2", 2);
+
+    prepareMock(
         new JsonObject()
             .add(
                 "applicants",
                 Arrays.asList(
-                    new JsonObject().add("first_name", "First1").map,
-                    new JsonObject().add("first_name", "First2").map))
-            .toJson();
+                    new JsonObject().add("first_name", "Applicant1").map,
+                    new JsonObject().add("first_name", "Applicant2").map)));
 
-    MockWebServer server = mockRequestResponse(response);
+    List<Applicant> applicants = onfido.applicant.list(1, 20, false).stream()
+                                                 .sorted(Comparator.comparing(Applicant::getFirstName))
+                                                 .collect(Collectors.toList());
 
-    Onfido onfido =
-        Onfido.builder().apiToken("token").unknownApiUrl(server.url("/").toString()).build();
+    takeRequest("/applicants/?page=1&per_page=20&include_deleted=false");
 
-    List<Applicant> applicants = onfido.applicant.list(1, 20, true);
-
-    // Correct path
-    RecordedRequest request = server.takeRequest();
-    assertEquals("/applicants/?page=1&per_page=20&include_deleted=true", request.getPath());
-
-    // Correct response body
-    assertEquals("First1", applicants.get(0).getFirstName());
-    assertEquals("First2", applicants.get(1).getFirstName());
+    assertEquals("Applicant1", applicants.get(0).getFirstName());
+    assertEquals("Applicant2", applicants.get(1).getFirstName());
   }
 }

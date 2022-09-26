@@ -1,23 +1,78 @@
 package com.onfido.integration;
 
 import java.io.IOException;
+import com.onfido.Onfido;
+import com.onfido.Onfido.Builder;
+import com.onfido.JsonObject;
+
+import static org.junit.Assert.assertEquals;
+
 import okhttp3.mockwebserver.MockResponse;
 import okhttp3.mockwebserver.MockWebServer;
+import okhttp3.mockwebserver.RecordedRequest;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
 class ApiIntegrationTest {
+
+  private String apiToken = System.getenv("ONFIDO_API_TOKEN");
+  private Onfido.Builder builder = Onfido.builder();
+  protected Onfido onfido;
+
+  private RecordedRequest request;
   private MockWebServer server;
 
-  @BeforeTest
-  public void clearServer() {
-    server = null;
+  protected ApiIntegrationTest() {
+    if ( ! mockingEnabled() )
+    {
+      onfido = builder.apiToken(apiToken).regionEU().build();
+    }
   }
 
+  @BeforeTest
+  private void setup() {}
+
   @AfterTest
-  public void shutdownServer() throws IOException {
-    if (server != null) {
+  private void tearDown() throws IOException {
+    if ( mockingEnabled() && server != null )
+    {
       server.shutdown();
+    }
+  }
+
+  protected boolean mockingEnabled()
+  {
+    return ( apiToken == null );
+  }
+
+  public void prepareMock(JsonObject mockedResponse) throws IOException
+  {
+    if ( mockingEnabled() )
+    {
+      server = new MockWebServer();
+      server.enqueue(new MockResponse().setBody(mockedResponse.toJson()));
+      server.start();
+
+      onfido = builder.apiToken("token").unknownApiUrl(server.url("/").toString()).build();
+    }
+  }
+
+  public void takeRequest(String path) throws java.lang.InterruptedException
+  {
+    if ( mockingEnabled() )
+    {
+      request = server.takeRequest();
+      assertEquals(path, request.getPath());
+    }
+  }
+
+  public void assertRequestField(String field, String expectedValue)
+  {
+    if ( mockingEnabled() )
+    {
+      String json = request.getBody().readUtf8();
+      JsonObject jsonObject = JsonObject.parse(json);
+      assertEquals(expectedValue, jsonObject.get(field));
     }
   }
 

@@ -40,7 +40,7 @@ public class ApplicantManagerTest extends ApiIntegrationTest {
   public void cleanUp() throws Exception {
     String sampleApplicantId = System.getenv("ONFIDO_SAMPLE_APPLICANT_ID");
 
-    if ( mockingEnabled() ) {
+    if ( isMockingEnabled() ) {
       return;
     }
 

@@ -23,17 +23,14 @@ class ApiIntegrationTest {
   private MockWebServer server;
 
   public ApiIntegrationTest() {
-    if (!mockingEnabled()) {
+    if (!isMockingEnabled()) {
       onfido = builder.apiToken(apiToken).regionEU().build();
     }
   }
 
-  @BeforeTest
-  private void setup() {}
-
   @AfterTest
   private void tearDown() throws IOException {
-    if (mockingEnabled() && server != null) {
+    if (isMockingEnabled() && server != null) {
       server.shutdown();
     }
   }
@@ -44,7 +41,7 @@ class ApiIntegrationTest {
 
   public void prepareMock(JsonObject mockedResponse) throws IOException
   {
-    if ( mockingEnabled() )
+    if ( isMockingEnabled() )
     {
       server = new MockWebServer();
       server.enqueue(new MockResponse().setBody(mockedResponse.toJson()));
@@ -56,7 +53,7 @@ class ApiIntegrationTest {
 
   public void takeRequest(String path) throws java.lang.InterruptedException
   {
-    if ( mockingEnabled() )
+    if ( isMockingEnabled() )
     {
       request = server.takeRequest();
       assertEquals(path, request.getPath());
@@ -65,7 +62,7 @@ class ApiIntegrationTest {
 
   public void assertRequestField(String field, String expectedValue)
   {
-    if ( mockingEnabled() )
+    if ( isMockingEnabled() )
     {
       String json = request.getBody().readUtf8();
       JsonObject jsonObject = JsonObject.parse(json);

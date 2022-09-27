@@ -33,8 +33,7 @@ class ApiIntegrationTest {
 
   @AfterTest
   private void tearDown() throws IOException {
-    if ( mockingEnabled() && server != null )
-    {
+    if (mockingEnabled() && server != null) {
       server.shutdown();
     }
   }

@@ -39,10 +39,8 @@ class ApiIntegrationTest {
     return apiToken == null;
   }
 
-  public void prepareMock(JsonObject mockedResponse) throws IOException
-  {
-    if ( isMockingEnabled() )
-    {
+  public void prepareMock(JsonObject mockedResponse) throws IOException {
+    if (isMockingEnabled()) {
       server = new MockWebServer();
       server.enqueue(new MockResponse().setBody(mockedResponse.toJson()));
       server.start();
@@ -51,19 +49,15 @@ class ApiIntegrationTest {
     }
   }
 
-  public void takeRequest(String path) throws java.lang.InterruptedException
-  {
-    if ( isMockingEnabled() )
-    {
+  public void takeRequest(String path) throws java.lang.InterruptedException {
+    if (isMockingEnabled()) {
       request = server.takeRequest();
       assertEquals(path, request.getPath());
     }
   }
 
-  public void assertRequestField(String field, String expectedValue)
-  {
-    if ( isMockingEnabled() )
-    {
+  public void assertRequestField(String field, String expectedValue) {
+    if (isMockingEnabled()) {
       String json = request.getBody().readUtf8();
       JsonObject jsonObject = JsonObject.parse(json);
       assertEquals(expectedValue, jsonObject.get(field));

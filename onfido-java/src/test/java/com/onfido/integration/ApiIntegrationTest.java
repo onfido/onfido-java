@@ -38,9 +38,8 @@ class ApiIntegrationTest {
     }
   }
 
-  protected boolean mockingEnabled()
-  {
-    return ( apiToken == null );
+  protected boolean isMockingEnabled() {
+    return apiToken == null;
   }
 
   public void prepareMock(JsonObject mockedResponse) throws IOException

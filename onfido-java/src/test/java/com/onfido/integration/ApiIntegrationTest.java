@@ -22,9 +22,8 @@ class ApiIntegrationTest {
   private RecordedRequest request;
   private MockWebServer server;
 
-  protected ApiIntegrationTest() {
-    if ( ! mockingEnabled() )
-    {
+  public ApiIntegrationTest() {
+    if (!mockingEnabled()) {
       onfido = builder.apiToken(apiToken).regionEU().build();
     }
   }

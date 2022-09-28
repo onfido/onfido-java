@@ -27,3 +27,8 @@ jobs:
         distribution: 'adopt'
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+    - name: E2E testing
+      run: mvn test
+      env:
+        ONFIDO_API_TOKEN: ${{secrets.ONFIDO_API_TOKEN}}
+        ONFIDO_SAMPLE_APPLICANT_ID: ${{secrets.ONFIDO_SAMPLE_APPLICANT_ID}}

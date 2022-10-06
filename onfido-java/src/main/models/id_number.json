@@ -3,7 +3,7 @@
   "properties": {
     "type": {
       "type": "string",
-      "description": "Type of ID number. Valid values are `ssn`, `social_insurance`, `tax_id`, `identity_card`, `passport` and `driving_license`"
+      "description": "Type of ID number. Valid values are `ssn`, `social_insurance`, `tax_id`, `identity_card`, `passport`, `driving_license`, `voter_id`, `other` and `share_code`"
     },
     "value": {
       "type": "string",

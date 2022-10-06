@@ -1,222 +1,141 @@
 package com.onfido.integration;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import com.onfido.JsonObject;
 import com.onfido.Onfido;
 import com.onfido.api.FileDownload;
+import com.onfido.models.Applicant;
 import com.onfido.models.Check;
+import com.onfido.models.Document;
+
 import java.util.Arrays;
 import java.util.List;
 
 import com.onfido.models.DrivingLicence;
+
 import okhttp3.mockwebserver.MockWebServer;
 import okhttp3.mockwebserver.RecordedRequest;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+
 import java.util.ArrayList;
 
-public class CheckManagerTest extends ApiIntegrationTest {
+public class CheckManagerTest extends TestsHelper {
+  private Applicant applicant;
+  private Document document;
+
+  @BeforeMethod
+  public void setup() throws Exception {
+    applicant = createApplicant();
+    document = uploadDocument(applicant, "file.png");
+  }
 
   @Test
-  public void createCheck() throws Exception {
-    String response =
-        new JsonObject()
-            .add("applicant_id", "id")
-            .add("webhook_ids", null)
-            .add("privacy_notices_read_consent_given", true)
-            .toJson();
+  public void createCheckTest() throws Exception {
+    Check check = createCheck(applicant, document,
+      Check.request().reportNames("document"));
 
-    MockWebServer server = mockRequestResponse(response);
+    assertRequestField("applicant_id", applicant.getId());
+    assertRequestField("privacy_notices_read_consent_given", true);
 
-    Onfido onfido =
-        Onfido.builder().apiToken("token").unknownApiUrl(server.url("/").toString()).build();
-
-    Check check =
-        onfido.check.create(Check.request().applicantId("id").reportNames("report_name_1").privacyNoticesReadConsentGiven(true));
-
-    // Correct path
-    RecordedRequest request = server.takeRequest();
-    assertEquals("/checks/", request.getPath());
-
-    // Correct request body
-    String json = request.getBody().readUtf8();
-    JsonObject jsonObject = JsonObject.parse(json);
-    assertEquals("id", jsonObject.get("applicant_id"));
-    assertEquals(true, jsonObject.get("privacy_notices_read_consent_given"));
-
-    // Correct response body
-    assertEquals("id", check.getApplicantId());
+    assertEquals(applicant.getId(), check.getApplicantId());
     assertEquals(null, check.getWebhookIds());
-    assertEquals(true, check.getPrivacyNoticesReadConsentGiven());
+    assertTrue(check.getPrivacyNoticesReadConsentGiven());
   }
 
   @Test
-  public void createSubResultCheck() throws Exception {
-    String response =
-        new JsonObject()
-            .add("applicant_id", "id")
-            .toJson();
+  public void createSubResultCheckTest() throws Exception {
+    Check check = createCheck(applicant, document,
+      Check.request().reportNames("document").subResult("rejected"));
 
-    MockWebServer server = mockRequestResponse(response);
+    assertRequestField("applicant_id", applicant.getId());
+    assertRequestField("sub_result", "rejected");
 
-    Onfido onfido =
-        Onfido.builder().apiToken("token").unknownApiUrl(server.url("/").toString()).build();
-
-    Check check =
-        onfido.check.create(Check.request().applicantId("id").reportNames("document").subResult("rejected"));
-
-    // Correct path
-    RecordedRequest request = server.takeRequest();
-    assertEquals("/checks/", request.getPath());
-
-    // Correct request body
-    String json = request.getBody().readUtf8();
-    JsonObject jsonObject = JsonObject.parse(json);
-    assertEquals("id", jsonObject.get("applicant_id"));
-    assertEquals("rejected", jsonObject.get("sub_result"));
-
-    // Correct response body
-    assertEquals("id", check.getApplicantId());
-  }
-
-@Test
-  public void createConsiderCheck() throws Exception {
-    String response =
-        new JsonObject()
-            .add("applicant_id", "id")
-            .toJson();
-
-    MockWebServer server = mockRequestResponse(response);
-
-    Onfido onfido =
-        Onfido.builder().apiToken("token").unknownApiUrl(server.url("/").toString()).build();
-
-    Check check =
-        onfido.check.create(Check.request().applicantId("id").reportNames("document", "identity_enhanced").consider("identity_enhanced"));
-
-    // Correct path
-    RecordedRequest request = server.takeRequest();
-    assertEquals("/checks/", request.getPath());
-
-    // Correct request body
-    String json = request.getBody().readUtf8();
-    JsonObject jsonObject = JsonObject.parse(json);
-    assertEquals("id", jsonObject.get("applicant_id"));
-    ArrayList<String> expectedConsiderArrayList = new ArrayList<>();
-    expectedConsiderArrayList.add("identity_enhanced");
-    assertEquals(expectedConsiderArrayList, jsonObject.get("consider"));
-
-    // Correct response body
-    assertEquals("id", check.getApplicantId());
+    assertEquals(applicant.getId(), check.getApplicantId());
   }
 
   @Test
-  public void createDrivingLicenceCheck() throws Exception {
-    String response =
-            new JsonObject()
-                    .add("applicant_id", "id")
-                    .toJson();
+  public void createConsiderCheckTest() throws Exception {
+    Check check = createCheck(applicant, document,
+      Check.request().reportNames("document", "identity_enhanced")
+                     .consider("identity_enhanced"));
 
-    MockWebServer server = mockRequestResponse(response);
+    assertRequestField("applicant_id", applicant.getId());
+    assertRequestField("consider", List.of("identity_enhanced"));
 
-    Onfido onfido =
-            Onfido.builder().apiToken("token").unknownApiUrl(server.url("/").toString()).build();
-
-    Check check =
-            onfido.check.create(Check.request()
-                    .applicantId("id")
-                    .reportNames("us_driving_licence")
-                    .usDrivingLicence(DrivingLicence.request().idNumber("12345").stateCode("GA"))
-            );
-
-    // Correct path
-    RecordedRequest request = server.takeRequest();
-    assertEquals("/checks/", request.getPath());
-
-    // Correct request body
-    String json = request.getBody().readUtf8();
-    JsonObject jsonObject = JsonObject.parse(json);
-    assertEquals("id", jsonObject.get("applicant_id"));
-
-    // Correct response body
-    assertEquals("id", check.getApplicantId());
+    assertEquals(applicant.getId(), check.getApplicantId());
   }
 
   @Test
-  public void findCheck() throws Exception {
-    String response = new JsonObject().add("applicant_id", "id").toJson();
+  public void createDrivingLicenceCheckTest() throws Exception {
+    if (isMockingEnabled()) {
+      Check check = createCheck(applicant, document,
+        Check.request().reportNames("document")
+                      .consider("identity_enhanced")
+                      .reportNames("us_driving_licence")
+                      .usDrivingLicence(DrivingLicence.request().idNumber("12345")
+                                                                .state("GA")));
 
-    MockWebServer server = mockRequestResponse(response);
+      assertRequestField("applicant_id", applicant.getId());
 
-    Onfido onfido =
-        Onfido.builder().apiToken("token").unknownApiUrl(server.url("/").toString()).build();
+      assertEquals(applicant.getId(), check.getApplicantId());
+    }
+  }
 
-    Check check = onfido.check.find("id");
+  @Test
+  public void findCheckTest() throws Exception {
+    Check check = createCheck(applicant, document,
+      Check.request().reportNames("document"));
 
-    // Correct path
-    RecordedRequest request = server.takeRequest();
-    assertEquals("/checks/id", request.getPath());
+    prepareMock(new JsonObject().add("applicant_id", applicant.getId()));
 
-    // Correct response body
-    assertEquals("id", check.getApplicantId());
+    Check lookupCheck = onfido.check.find(check.getId());
+
+    takeRequest("/checks/" + check.getId());
+
+    assertEquals(check.getApplicantId(), lookupCheck.getApplicantId());
   }
 
   @Test
   public void listChecks() throws Exception {
-    String response =
-        new JsonObject()
-            .add(
-                "checks",
-                Arrays.asList(
-                    new JsonObject().add("applicant_id", "id").map,
-                    new JsonObject().add("applicant_id", "id").map))
-            .toJson();
+    Check check = createCheck(applicant, document,
+      Check.request().reportNames("document"));
 
-    MockWebServer server = mockRequestResponse(response);
+    prepareMock(new JsonObject().add("checks",
+      Arrays.asList(new JsonObject().add("applicant_id", applicant.getId()).map)));
 
-    Onfido onfido =
-        Onfido.builder().apiToken("token").unknownApiUrl(server.url("/").toString()).build();
+    List<Check> checks = onfido.check.list(applicant.getId());
 
-    List<Check> checks = onfido.check.list("id");
+    takeRequest("/checks/?applicant_id=" + applicant.getId());
 
-    // Correct path
-    RecordedRequest request = server.takeRequest();
-    assertEquals("/checks/?applicant_id=id", request.getPath());
-
-    // Correct response body
-    assertEquals("id", checks.get(0).getApplicantId());
-    assertEquals("id", checks.get(1).getApplicantId());
+    assertEquals(applicant.getId(), checks.get(0).getApplicantId());
+    assertEquals(1, checks.size());
   }
 
   @Test
-  public void resumeCheck() throws Exception {
-    MockWebServer server = mockRequestResponse("");
+  public void resumeCheckTest() throws Exception {
+    Check check = createCheck(applicant, document,
+      Check.request().reportNames("document"));
 
-    Onfido onfido =
-        Onfido.builder().apiToken("token").unknownApiUrl(server.url("/").toString()).build();
-
-    onfido.check.resume("id");
-
-    // Correct path
-    RecordedRequest request = server.takeRequest();
-    assertEquals("/checks/id/resume", request.getPath());
+    prepareMock(new JsonObject());
+    onfido.check.resume(check.getId());
+    takeRequest("/checks/" + check.getId() + "/resume");
   }
 
   @Test
-  public void downloadCheck() throws Exception {
-    MockWebServer server = mockFileRequestResponse("test", "application/pdf");
+  public void downloadCheckTest() throws Exception {
+    Check check = createCheck(applicant, document,
+      Check.request().reportNames("document"));
 
-    Onfido onfido =
-        Onfido.builder().apiToken("token").unknownApiUrl(server.url("/").toString()).build();
+    prepareMock("test", "application/pdf", 200);
 
-    FileDownload download = onfido.check.download("check_id");
+    FileDownload download = onfido.check.download(check.getId());
 
-    // Correct path
-    RecordedRequest request = server.takeRequest();
-    assertEquals("/checks/check_id/download", request.getPath());
+    takeRequest("/checks/" + check.getId() + "/download");
 
-    // Correct response body
-    assertEquals("test", new String(download.content));
     assertEquals("application/pdf", download.contentType);
+    assertTrue(download.content.length > 0);
   }
 }

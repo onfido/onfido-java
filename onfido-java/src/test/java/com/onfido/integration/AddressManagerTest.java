@@ -11,32 +11,20 @@ import okhttp3.mockwebserver.MockWebServer;
 import okhttp3.mockwebserver.RecordedRequest;
 import org.testng.annotations.Test;
 
-public class AddressManagerTest extends ApiIntegrationTest {
+public class AddressManagerTest extends TestsHelper {
 
   @Test
   public void pickTest() throws Exception {
-    String response =
-        new JsonObject()
-            .add(
-                "addresses",
-                Arrays.asList(
-                    new JsonObject().add("postcode", "postcode1").map,
-                    new JsonObject().add("postcode", "postcode2").map))
-            .toJson();
+    prepareMock(new JsonObject().add("addresses",
+                                     Arrays.asList(
+                                         new JsonObject().add("postcode", "S2 2DF").map,
+                                         new JsonObject().add("postcode", "S2 2DF").map)));
 
-    MockWebServer server = mockRequestResponse(response);
+    List<Address> addresses = onfido.address.pick("S2 2DF");
 
-    Onfido onfido =
-        Onfido.builder().apiToken("token").unknownApiUrl(server.url("/").toString()).build();
+    takeRequest("/addresses/pick?postcode=S2%202DF");
 
-    List<Address> addresses = onfido.address.pick("postcode");
-
-    // Correct path
-    RecordedRequest request = server.takeRequest();
-    assertEquals("/addresses/pick?postcode=postcode", request.getPath());
-
-    // Correct response body
-    assertEquals("postcode1", addresses.get(0).getPostcode());
-    assertEquals("postcode2", addresses.get(1).getPostcode());
+    assertEquals("S2 2DF", addresses.get(0).getPostcode());
+    assertEquals("S2 2DF", addresses.get(1).getPostcode());
   }
 }

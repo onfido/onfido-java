@@ -1,33 +1,32 @@
 package com.onfido.integration;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import com.onfido.JsonObject;
 import com.onfido.Onfido;
+
+import com.onfido.models.Applicant;
 import com.onfido.models.SdkToken;
+
 import okhttp3.mockwebserver.MockWebServer;
 import okhttp3.mockwebserver.RecordedRequest;
 import org.testng.annotations.Test;
 
-public class SdkTokenManagerTest extends ApiIntegrationTest {
+public class SdkTokenManagerTest extends TestsHelper {
 
   @Test
-  public void generateTest() throws Exception {
-    String response = new JsonObject().add("token", "123").toJson();
+  public void generateTokenTest() throws Exception {
+    Applicant applicant = createApplicant();
 
-    MockWebServer server = mockRequestResponse(response);
+    prepareMock(new JsonObject().add("token", "123"));
 
-    Onfido onfido =
-        Onfido.builder().apiToken("token").unknownApiUrl(server.url("/").toString()).build();
+    String token = onfido.sdkToken.generate(
+      SdkToken.request().applicantId(applicant.getId())
+                        .referrer("https://*.example.com/example_page/*"));
 
-    String token =
-        onfido.sdkToken.generate(SdkToken.request().applicantId("appId").referrer("refId"));
+    takeRequest("/sdk_token/");
 
-    // Correct path
-    RecordedRequest request = server.takeRequest();
-    assertEquals("/sdk_token/", request.getPath());
-
-    // Correct response body
-    assertEquals("123", token);
+    assertTrue(token.length() > 0);
   }
 }

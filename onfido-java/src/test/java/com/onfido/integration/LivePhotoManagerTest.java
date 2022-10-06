@@ -1,149 +1,144 @@
 package com.onfido.integration;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import com.onfido.JsonObject;
 import com.onfido.Onfido;
 import com.onfido.api.FileDownload;
 import com.onfido.exceptions.ApiException;
+import com.onfido.models.Applicant;
 import com.onfido.models.LivePhoto;
+
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.util.Arrays;
 import java.util.List;
+import java.util.UUID;
+import java.io.File;
+import java.io.FileInputStream;
+import java.util.Comparator;
+import java.util.stream.Collectors;
+
 import okhttp3.mockwebserver.MockWebServer;
 import okhttp3.mockwebserver.RecordedRequest;
+
 import org.junit.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class LivePhotoManagerTest extends ApiIntegrationTest {
+public class LivePhotoManagerTest extends TestsHelper {
+
+  private Applicant applicant;
+  private LivePhoto livePhoto;
+
+  @BeforeMethod
+  public void setupTest() throws Exception {
+    applicant = createApplicant();
+    livePhoto = uploadLivePhoto(applicant, "file.png");
+  }
+
+  private LivePhoto uploadLivePhoto(LivePhoto.Request livePhotoRequest, String filename) throws Exception {
+    prepareMock(new JsonObject().add("file_name", filename)
+                                .add("id", UUID.randomUUID().toString()));
+
+    File file = new File("media/sample_photo.png");
+    InputStream inputStream = new FileInputStream(file);
+
+    LivePhoto livePhoto = onfido.livePhoto.upload(inputStream, filename, livePhotoRequest);
+    takeRequest("/live_photos/");
+
+    return livePhoto;
+  }
+
+  private LivePhoto uploadLivePhoto(Applicant applicant, String filename) throws Exception {
+    LivePhoto livePhoto = uploadLivePhoto(LivePhoto.request()
+                                            .applicantId(applicant.getId())
+                                            .advancedValidation(true),
+                                          filename);
+
+    assertRequestBodyContains("applicant_id");
+    assertRequestBodyContains(applicant.getId());
+    assertRequestBodyContains("advanced_validation");
+    assertRequestBodyContains("true");
+
+    return livePhoto;
+  }
 
   @Test
-  public void uploadLivePhoto() throws Exception {
-    String response = new JsonObject().add("file_name", "file.png").toJson();
-
-    MockWebServer server = mockRequestResponse(response);
-
-    Onfido onfido =
-        Onfido.builder().apiToken("token").unknownApiUrl(server.url("/").toString()).build();
-
-    InputStream inputStream = new ByteArrayInputStream("testing testing 1 2".getBytes());
-    LivePhoto.Request livePhotoRequest =
-        LivePhoto.request().applicantId("test id").advancedValidation(true);
-    LivePhoto livePhoto = onfido.livePhoto.upload(inputStream, "file.png", livePhotoRequest);
-
-    // Correct path
-    RecordedRequest request = server.takeRequest();
-    assertEquals("/live_photos/", request.getPath());
-
-    // Correct request body
-    String requestBody = request.getBody().readUtf8();
-    Assert.assertTrue(requestBody.contains("applicant_id"));
-    Assert.assertTrue(requestBody.contains("test id"));
-    Assert.assertTrue(requestBody.contains("advanced_validation"));
-    Assert.assertTrue(requestBody.contains("true"));
-
-    // Correct response body
+  public void uploadLivePhotoTest() throws Exception {
     assertEquals("file.png", livePhoto.getFileName());
   }
 
   @Test
-  public void downloadLivePhoto() throws Exception {
-    MockWebServer server = mockFileRequestResponse("test", "image/png");
+  public void downloadLivePhotoTest() throws Exception {
+    prepareMock("test", "image/png", 200);
 
-    Onfido onfido =
-        Onfido.builder().apiToken("token").unknownApiUrl(server.url("/").toString()).build();
+    FileDownload download = onfido.livePhoto.download(livePhoto.getId());
 
-    FileDownload download = onfido.livePhoto.download("live_photo_id");
+    takeRequest("/live_photos/" + livePhoto.getId() + "/download");
 
-    // Correct path
-    RecordedRequest request = server.takeRequest();
-    assertEquals("/live_photos/live_photo_id/download", request.getPath());
-
-    // Correct response body
-    assertEquals("test", new String(download.content));
+    assertTrue(download.content.length > 0);
     assertEquals("image/png", download.contentType);
   }
 
   @Test
-  public void downloadError() throws Exception {
-    MockWebServer server = mockErrorResponse("error");
-
-    Onfido onfido =
-        Onfido.builder().apiToken("token").unknownApiUrl(server.url("/").toString()).build();
+  public void downloadErrorTest() throws Exception {
+    prepareMock("error", "image/png", 404);
 
     try {
-      onfido.livePhoto.download("live_photo_id");
+      onfido.livePhoto.download("wrong-id");
       Assert.fail();
     } catch (ApiException ex) {
-      Assert.assertEquals(403, ex.getStatusCode());
+      takeRequest("/live_photos/wrong-id/download");
+      Assert.assertEquals(404, ex.getStatusCode());
     }
   }
 
   @Test
-  public void findLivePhoto() throws Exception {
-    String response = new JsonObject().add("file_name", "file.png").toJson();
+  public void findLivePhotoTest() throws Exception {
+    prepareMock(new JsonObject().add("file_name", "file.png")
+                                .add("id", livePhoto.getId()));
 
-    MockWebServer server = mockRequestResponse(response);
+    LivePhoto lookupLivePhoto = onfido.livePhoto.find(livePhoto.getId());
 
-    Onfido onfido =
-        Onfido.builder().apiToken("token").unknownApiUrl(server.url("/").toString()).build();
+    takeRequest("/live_photos/" + livePhoto.getId());
 
-    LivePhoto livePhoto = onfido.livePhoto.find("id");
-
-    // Correct path
-    RecordedRequest request = server.takeRequest();
-    assertEquals("/live_photos/id", request.getPath());
-
-    // Correct response body
-    assertEquals("file.png", livePhoto.getFileName());
+    assertEquals("file.png", lookupLivePhoto.getFileName());
   }
 
   @Test
-  public void listLivePhotos() throws Exception {
-    String response =
-        new JsonObject()
-            .add(
-                "live_photos",
+  public void listLivePhotosTest() throws Exception {
+    LivePhoto anotherLivePhoto = uploadLivePhoto(applicant, "anotherFile.png");
+
+    prepareMock(new JsonObject()
+      .add("live_photos",
                 Arrays.asList(
-                    new JsonObject().add("file_name", "file1.png").map,
-                    new JsonObject().add("file_name", "file2.png").map))
-            .toJson();
+                    new JsonObject().add("file_name", "anotherFile.png").map,
+                    new JsonObject().add("file_name", "file.png").map)));
 
-    MockWebServer server = mockRequestResponse(response);
+    List<LivePhoto> livePhotos = onfido.livePhoto.list(applicant.getId()).stream()
+                                                 .sorted(Comparator.comparing(LivePhoto::getFileName))
+                                                 .collect(Collectors.toList());
 
-    Onfido onfido =
-        Onfido.builder().apiToken("token").unknownApiUrl(server.url("/").toString()).build();
+    takeRequest("/live_photos/?applicant_id=" + applicant.getId());
 
-    List<LivePhoto> livePhotos = onfido.livePhoto.list("id");
-
-    // Correct path
-    RecordedRequest request = server.takeRequest();
-    assertEquals("/live_photos/?applicant_id=id", request.getPath());
-
-    // Correct response body
-    assertEquals("file1.png", livePhotos.get(0).getFileName());
-    assertEquals("file2.png", livePhotos.get(1).getFileName());
+    assertEquals("anotherFile.png", livePhotos.get(0).getFileName());
+    assertEquals("file.png", livePhotos.get(1).getFileName());
   }
 
   @Test
-  public void nullParamRequest() throws Exception {
-    String response = new JsonObject().add("file_name", "file.png").toJson();
-
-    MockWebServer server = mockRequestResponse(response);
-
-    Onfido onfido =
-        Onfido.builder().apiToken("token").unknownApiUrl(server.url("/").toString()).build();
+  public void nullParamRequestTest() throws Exception {
+    prepareMock("error", null, 404);
 
     InputStream inputStream = new ByteArrayInputStream("testing testing 1 2".getBytes());
-    LivePhoto.Request livePhotoRequest = LivePhoto.request();
-    LivePhoto livePhoto = onfido.livePhoto.upload(inputStream, "file.png", livePhotoRequest);
 
-    // Correct path
-    RecordedRequest request = server.takeRequest();
-    assertEquals("/live_photos/", request.getPath());
-
-    // Correct response body
-    assertEquals("file.png", livePhoto.getFileName());
+    try {
+      onfido.livePhoto.upload(inputStream, "file.png", LivePhoto.request());
+      Assert.fail();
+    } catch (ApiException ex) {
+      takeRequest("/live_photos/");
+      Assert.assertEquals(404, ex.getStatusCode());
+    }
   }
 }

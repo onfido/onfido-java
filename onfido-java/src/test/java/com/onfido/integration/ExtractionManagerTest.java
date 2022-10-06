@@ -3,168 +3,142 @@ package com.onfido.integration;
 import com.onfido.JsonObject;
 import com.onfido.Onfido;
 import com.onfido.models.Extraction;
+import com.onfido.models.Applicant;
+import com.onfido.models.Document;
+
 import okhttp3.mockwebserver.MockWebServer;
 import okhttp3.mockwebserver.RecordedRequest;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+
 import java.time.LocalDate;
 
 import static org.junit.Assert.assertEquals;
 
 // Authored by akrasnoshchok
 
-public class ExtractionManagerTest extends ApiIntegrationTest {
+public class ExtractionManagerTest extends TestsHelper {
+  private Applicant applicant;
+  private Document document;
 
-    @Test
-    public void preformExtraction() throws Exception {
-        String response = new JsonObject().add("document_id", "id").toJson();
+  @BeforeMethod
+  public void setup() throws Exception {
+    applicant = createApplicant();
+    document = uploadDocument(applicant, "file.png");
+  }
 
-        MockWebServer server = mockRequestResponse(response);
+  @Test
+  public void performExtractionTest() throws Exception {
+    prepareMock(new JsonObject().add("document_id", document.getId())
+                                .add("document_classification", new JsonObject()
+                                  .add("document_type", "driving_licence")
+                                  .add("issuing_country", "GBR"))
+                                .add("extracted_data", new JsonObject()
+                                  .add("date_of_birth", "1976-03-11")
+                                  .add("date_of_expiry", "2023-01-18")));
 
-        Onfido onfido =
-                Onfido.builder().apiToken("token").unknownApiUrl(server.url("/").toString()).build();
+    Extraction extraction = onfido.extraction.perform(document.getId());
 
-        Extraction extraction = onfido.extraction.perform("id");
+    takeRequest("/extractions/");
 
-        // Correct path
-        RecordedRequest request = server.takeRequest();
-        assertEquals("/extractions/", request.getPath());
+    assertRequestField("document_id", document.getId());
+    assertEquals(document.getId(), extraction.getDocumentId());
+    assertEquals("driving_licence", extraction.getDocumentClassification().getDocumentType());
+    assertEquals("GBR", extraction.getDocumentClassification().getIssuingCountry());
+    assertEquals(LocalDate.of(1976, 3, 11), extraction.getExtractedData().getDateOfBirth());
+    assertEquals(LocalDate.of(2023, 1, 18), extraction.getExtractedData().getDateOfExpiry());
+  }
 
-        // Correct request body
-        String json = request.getBody().readUtf8();
-        JsonObject jsonObject = JsonObject.parse(json);
-        assertEquals("id", jsonObject.get("document_id"));
+  @Test
+  public void performExtractionWhenJsonDateOfBirthOrDateOfExpiryIsNullTest() throws Exception {
+    if (isMockingEnabled()) {
+      prepareMock(new JsonObject().add("document_id", document.getId())
+                                  .add("extracted_data", new JsonObject()
+                                    .add("date_of_birth", null)
+                                    .add("date_of_expiry", null)));
 
-        // Correct response body
-        assertEquals("id", extraction.getDocumentId());
+      Extraction extraction = onfido.extraction.perform(document.getId());
+
+      takeRequest("/extractions/");
+
+      assertRequestField("document_id", document.getId());
+      assertEquals(document.getId(), extraction.getDocumentId());
+      assertEquals(null, extraction.getExtractedData().getDateOfBirth());
+      assertEquals(null, extraction.getExtractedData().getDateOfExpiry());
     }
+  }
 
-    @Test
-    public void preformExtractionWhenJsonDateOfBirthOrDateOfExpiryIsNullThenSetNull() throws Exception {
-        String response = new JsonObject()
-                .add("document_id", "id")
-                .add("extracted_data", new JsonObject()
-                        .add("date_of_birth", null)
-                        .add("date_of_expiry", null))
-                .toJson();
+  @Test
+  public void performExtractionWhenJsonDateOfBirthOrDateOfExpiryIsEmptyTest() throws Exception {
+    if (isMockingEnabled()) {
+      prepareMock(new JsonObject().add("document_id", document.getId())
+                                  .add("extracted_data", new JsonObject()
+                                    .add("date_of_birth", "")
+                                    .add("date_of_expiry", "")));
 
-        MockWebServer server = mockRequestResponse(response);
+      Extraction extraction = onfido.extraction.perform(document.getId());
 
-        Onfido onfido =
-                Onfido.builder().apiToken("token").unknownApiUrl(server.url("/").toString()).build();
+      takeRequest("/extractions/");
 
-        Extraction extraction = onfido.extraction.perform("id");
-
-        // Correct path
-        RecordedRequest request = server.takeRequest();
-        assertEquals("/extractions/", request.getPath());
-
-        // Correct request body
-        String json = request.getBody().readUtf8();
-        JsonObject jsonObject = JsonObject.parse(json);
-        assertEquals("id", jsonObject.get("document_id"));
-
-        // Correct response body
-        assertEquals("id", extraction.getDocumentId());
-        assertEquals(null, extraction.getExtractedData().getDateOfBirth());
-        assertEquals(null, extraction.getExtractedData().getDateOfExpiry());
+      assertRequestField("document_id", document.getId());
+      assertEquals(document.getId(), extraction.getDocumentId());
+      assertEquals(null, extraction.getExtractedData().getDateOfBirth());
+      assertEquals(null, extraction.getExtractedData().getDateOfExpiry());
     }
+  }
 
-    @Test
-    public void preformExtractionWhenJsonDateOfBirthOrDateOfExpiryIsEmptyThenSetNull() throws Exception {
-        String response = new JsonObject()
-                .add("document_id", "id")
-                .add("extracted_data", new JsonObject()
-                        .add("date_of_birth", "")
-                        .add("date_of_expiry", ""))
-                .toJson();
+  @Test
+  public void performExtractionWithAdditionalFieldsTest() throws Exception {
+    if (isMockingEnabled()) {
+      prepareMock(new JsonObject().add("document_id", document.getId())
+                                  .add("document_classification", new JsonObject()
+                                      .add("document_type", "national_identity_card")
+                                      .add("issuing_country", "USA")
+                                      .add("subtype", "subtype")
+                                      .add("version", "2022"))
+                                  .add("extracted_data", new JsonObject()
+                                      .add("spouse_name", "Spouse name")
+                                      .add("widow_name", "Widow name")
+                                      .add("alias_name", "Alias name")
+                                      .add("date_of_birth", "2000-08-30")
+                                      .add("date_of_expiry", "2024-08-30")
+                                      .add("expiry_date", "2024-08-30")
+                                      .add("issuing_authority", "auth01")
+                                      .add("document_type", "national_identity_card")
+                                      .add("issuing_state", "CA")
+                                      .add("issuing_country", "USA")
+                                      .add("issuing_date", "2014-08-30")
+                                      .add("personal_number", "20-10563145-8")
+                                      .add("place_of_birth", "San Francisco")));
 
-        MockWebServer server = mockRequestResponse(response);
+      Extraction extraction = onfido.extraction.perform(document.getId());
 
-        Onfido onfido =
-                Onfido.builder().apiToken("token").unknownApiUrl(server.url("/").toString()).build();
+      takeRequest("/extractions/");
 
-        Extraction extraction = onfido.extraction.perform("id");
+      assertRequestField("document_id", document.getId());
+      assertEquals(document.getId(), extraction.getDocumentId());
 
-        // Correct path
-        RecordedRequest request = server.takeRequest();
-        assertEquals("/extractions/", request.getPath());
+      // Check response body: document classification
+      assertEquals("national_identity_card", extraction.getDocumentClassification().getDocumentType());
+      assertEquals("USA", extraction.getDocumentClassification().getIssuingCountry());
+      assertEquals("subtype", extraction.getDocumentClassification().getSubtype());
+      assertEquals("2022", extraction.getDocumentClassification().getVersion());
 
-        // Correct request body
-        String json = request.getBody().readUtf8();
-        JsonObject jsonObject = JsonObject.parse(json);
-        assertEquals("id", jsonObject.get("document_id"));
-
-        // Correct response body
-        assertEquals("id", extraction.getDocumentId());
-        assertEquals(null, extraction.getExtractedData().getDateOfBirth());
-        assertEquals(null, extraction.getExtractedData().getDateOfExpiry());
+      // Check response body: extracted data
+      assertEquals("Spouse name", extraction.getExtractedData().getSpouseName());
+      assertEquals("Widow name", extraction.getExtractedData().getWidowName());
+      assertEquals("Alias name", extraction.getExtractedData().getAliasName());
+      assertEquals(LocalDate.of(2000, 8, 30), extraction.getExtractedData().getDateOfBirth());
+      assertEquals(LocalDate.of(2024, 8, 30), extraction.getExtractedData().getDateOfExpiry());
+      assertEquals(LocalDate.of(2024, 8, 30), extraction.getExtractedData().getExpiryDate());
+      assertEquals("auth01", extraction.getExtractedData().getIssuingAuthority());
+      assertEquals("national_identity_card", extraction.getExtractedData().getDocumentType());
+      assertEquals("CA", extraction.getExtractedData().getIssuingState());
+      assertEquals("USA", extraction.getExtractedData().getIssuingCountry());
+      assertEquals(LocalDate.of(2014, 8, 30), extraction.getExtractedData().getIssuingDate());
+      assertEquals("20-10563145-8", extraction.getExtractedData().getPersonalNumber());
+      assertEquals("San Francisco", extraction.getExtractedData().getPlaceOfBirth());
     }
-
-    @Test
-    public void preformExtractionWithAdditionalFields() throws Exception {
-        String response = new JsonObject()
-                .add("document_id", "id")
-                .add("document_classification", new JsonObject()
-                        .add("document_type", "national_identity_card")
-                        .add("issuing_country", "USA")
-                        .add("subtype", "subtype")
-                        .add("version", "2022"))
-                .add("extracted_data", new JsonObject()
-                        .add("spouse_name", "Spouse name")
-                        .add("widow_name", "Widow name")
-                        .add("alias_name", "Alias name")
-                        .add("date_of_birth", "2000-08-30")
-                        .add("date_of_expiry", "2024-08-30")
-                        .add("expiry_date", "2024-08-30")
-                        .add("issuing_authority", "auth01")
-                        .add("document_type", "national_identity_card")
-                        .add("issuing_state", "CA")
-                        .add("issuing_country", "USA")
-                        .add("issuing_date", "2014-08-30")
-                        .add("personal_number", "20-10563145-8")
-                        .add("place_of_birth", "San Francisco"))
-                .toJson();
-
-        MockWebServer server = mockRequestResponse(response);
-
-        Onfido onfido =
-                Onfido.builder().apiToken("token").unknownApiUrl(server.url("/").toString()).build();
-
-        Extraction extraction = onfido.extraction.perform("id");
-
-        // Correct path
-        RecordedRequest request = server.takeRequest();
-        assertEquals("/extractions/", request.getPath());
-
-        // Correct request body
-        String json = request.getBody().readUtf8();
-
-        JsonObject jsonObject = JsonObject.parse(json);
-        assertEquals("id", jsonObject.get("document_id"));
-
-        // Check response body
-        assertEquals("id", extraction.getDocumentId());
-
-        // Check response body: document classification
-        assertEquals("national_identity_card", extraction.getDocumentClassification().getDocumentType());
-        assertEquals("USA", extraction.getDocumentClassification().getIssuingCountry());
-        assertEquals("subtype", extraction.getDocumentClassification().getSubtype());
-        assertEquals("2022", extraction.getDocumentClassification().getVersion());
-
-        // Check response body: extracted data
-        assertEquals("Spouse name", extraction.getExtractedData().getSpouseName());
-        assertEquals("Widow name", extraction.getExtractedData().getWidowName());
-        assertEquals("Alias name", extraction.getExtractedData().getAliasName());
-        assertEquals(LocalDate.of(2000, 8, 30), extraction.getExtractedData().getDateOfBirth());
-        assertEquals(LocalDate.of(2024, 8, 30), extraction.getExtractedData().getDateOfExpiry());
-        assertEquals(LocalDate.of(2024, 8, 30), extraction.getExtractedData().getExpiryDate());
-        assertEquals("auth01", extraction.getExtractedData().getIssuingAuthority());
-        assertEquals("national_identity_card", extraction.getExtractedData().getDocumentType());
-        assertEquals("CA", extraction.getExtractedData().getIssuingState());
-        assertEquals("USA", extraction.getExtractedData().getIssuingCountry());
-        assertEquals(LocalDate.of(2014, 8, 30), extraction.getExtractedData().getIssuingDate());
-        assertEquals("20-10563145-8", extraction.getExtractedData().getPersonalNumber());
-        assertEquals("San Francisco", extraction.getExtractedData().getPlaceOfBirth());
-    }
+  }
 
 }

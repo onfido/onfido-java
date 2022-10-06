@@ -18,7 +18,7 @@ import okhttp3.mockwebserver.RecordedRequest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class WebhookManagerTest extends TestsHelper {
+public class WebhookManagerTest extends TestBase {
   private Webhook webhook;
 
   @BeforeMethod

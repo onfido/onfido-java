@@ -22,7 +22,7 @@ import org.testng.annotations.Test;
 
 import java.util.ArrayList;
 
-public class CheckManagerTest extends TestsHelper {
+public class CheckManagerTest extends TestBase {
   private Applicant applicant;
   private Document document;
 
@@ -70,18 +70,18 @@ public class CheckManagerTest extends TestsHelper {
 
   @Test
   public void createDrivingLicenceCheckTest() throws Exception {
-    if (isMockingEnabled()) {
-      Check check = createCheck(applicant, document,
-        Check.request().reportNames("document")
-                      .consider("identity_enhanced")
-                      .reportNames("us_driving_licence")
-                      .usDrivingLicence(DrivingLicence.request().idNumber("12345")
-                                                                .state("GA")));
+    skipTestIfMockingNotEnabled();
 
-      assertRequestField("applicant_id", applicant.getId());
+    Check check = createCheck(applicant, document,
+      Check.request().reportNames("document")
+                    .consider("identity_enhanced")
+                    .reportNames("us_driving_licence")
+                    .usDrivingLicence(DrivingLicence.request().idNumber("12345")
+                                                              .state("GA")));
 
-      assertEquals(applicant.getId(), check.getApplicantId());
-    }
+    assertRequestField("applicant_id", applicant.getId());
+
+    assertEquals(applicant.getId(), check.getApplicantId());
   }
 
   @Test

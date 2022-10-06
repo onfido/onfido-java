@@ -20,7 +20,7 @@ import okhttp3.mockwebserver.RecordedRequest;
 import org.junit.Assert;
 import org.testng.annotations.Test;
 
-public class LiveVideoManagerTest extends TestsHelper {
+public class LiveVideoManagerTest extends TestBase {
 
   static private String sampleLiveVideoId1 = System.getenv("ONFIDO_SAMPLE_VIDEO_ID_1");
   static private String sampleLiveVideoId2 = System.getenv("ONFIDO_SAMPLE_VIDEO_ID_2");

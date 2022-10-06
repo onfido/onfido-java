@@ -27,7 +27,7 @@ import org.junit.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class LivePhotoManagerTest extends TestsHelper {
+public class LivePhotoManagerTest extends TestBase {
 
   private Applicant applicant;
   private LivePhoto livePhoto;

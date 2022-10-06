@@ -21,7 +21,7 @@ import okhttp3.mockwebserver.RecordedRequest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class ReportManagerTest extends TestsHelper {
+public class ReportManagerTest extends TestBase {
   private Applicant applicant;
   private Document document;
   private Check check;

@@ -11,7 +11,7 @@ import okhttp3.mockwebserver.MockWebServer;
 import okhttp3.mockwebserver.RecordedRequest;
 import org.testng.annotations.Test;
 
-public class AddressManagerTest extends TestsHelper {
+public class AddressManagerTest extends TestBase {
 
   @Test
   public void pickTest() throws Exception {

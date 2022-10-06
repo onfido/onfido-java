@@ -19,7 +19,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.testng.annotations.AfterMethod;
 
-public class ApplicantManagerTest extends TestsHelper {
+public class ApplicantManagerTest extends TestBase {
   private Applicant applicant;
 
   @BeforeMethod

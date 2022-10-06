@@ -13,7 +13,7 @@ import okhttp3.mockwebserver.MockWebServer;
 import okhttp3.mockwebserver.RecordedRequest;
 import org.testng.annotations.Test;
 
-public class SdkTokenManagerTest extends TestsHelper {
+public class SdkTokenManagerTest extends TestBase {
 
   @Test
   public void generateTokenTest() throws Exception {

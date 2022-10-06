@@ -1,6 +1,7 @@
 package com.onfido.integration;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import com.onfido.JsonObject;
 import com.onfido.Onfido;
@@ -24,7 +25,7 @@ import org.junit.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class DocumentManagerTest extends TestsHelper {
+public class DocumentManagerTest extends TestBase {
   private Applicant applicant;
   private Document document;
 
@@ -57,14 +58,7 @@ public class DocumentManagerTest extends TestsHelper {
 
     takeRequest("/documents/" + document.getId() + "/download");
 
-    if (isMockingEnabled()) {
-      assertEquals("test", new String(download.content));
-    }
-    else
-    {
-      assertEquals(361_771, download.content.length);
-    }
-
+    assertTrue(download.content.length > 0);
     assertEquals("image/png", download.contentType);
   }
 
@@ -119,8 +113,6 @@ public class DocumentManagerTest extends TestsHelper {
     InputStream inputStream = new ByteArrayInputStream("testing testing 1 2".getBytes());
 
     try {
-      // uploadDocument(Document.request(), filename);
-
       onfido.document.upload(inputStream, "file.png", Document.request());
       Assert.fail();
     } catch (ApiException ex) {

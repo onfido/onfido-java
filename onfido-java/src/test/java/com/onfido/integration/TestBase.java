@@ -25,10 +25,11 @@ import static org.junit.Assert.assertTrue;
 import okhttp3.mockwebserver.MockResponse;
 import okhttp3.mockwebserver.MockWebServer;
 import okhttp3.mockwebserver.RecordedRequest;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
 
-class TestsHelper {
+import org.testng.annotations.AfterTest;
+import org.testng.SkipException;
+
+public class TestBase {
 
   static private String apiToken = System.getenv("ONFIDO_API_TOKEN");
   static protected String sampleApplicantId = System.getenv("ONFIDO_SAMPLE_APPLICANT_ID");
@@ -39,7 +40,7 @@ class TestsHelper {
   private MockWebServer server;
   private String request;
 
-  public TestsHelper() {
+  public TestBase() {
     if (!isMockingEnabled()) {
       onfido = builder.apiToken(apiToken).regionEU().build();
     }
@@ -57,6 +58,12 @@ class TestsHelper {
 
   static protected boolean isMockingEnabled() {
     return apiToken == null;
+  }
+
+  protected void skipTestIfMockingNotEnabled() {
+    if (!isMockingEnabled()) {
+      throw new SkipException("Skipping test because mocking is not enabled.");
+     }
   }
 
   protected void prepareMock(String content, String contentType, int status) throws IOException {

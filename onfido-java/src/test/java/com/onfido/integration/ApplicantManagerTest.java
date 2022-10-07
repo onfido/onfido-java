@@ -5,55 +5,38 @@ import static org.junit.Assert.assertEquals;
 import com.onfido.JsonObject;
 import com.onfido.Onfido;
 import com.onfido.models.Applicant;
+
 import java.util.Arrays;
 import java.util.List;
 import java.io.IOException;
 import java.util.Comparator;
 import java.util.stream.Collectors;
+
 import okhttp3.mockwebserver.MockWebServer;
 import okhttp3.mockwebserver.RecordedRequest;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import org.testng.annotations.AfterMethod;
 
-public class ApplicantManagerTest extends ApiIntegrationTest {
+public class ApplicantManagerTest extends TestBase {
+  private Applicant applicant;
 
-  public Applicant getApplicant( String first_name, int id ) throws Exception {
-    prepareMock(new JsonObject().add("first_name", first_name)
-                                .add("last_name", "Last")
-                                .add("id", String.valueOf(id)));
-
-    Applicant applicant = onfido.applicant.create(
-               Applicant.request().firstName(first_name)
-                                  .lastName("Last"));
-
-    takeRequest("/applicants/");
-
-    return applicant;
+  @BeforeMethod
+  public void setup() throws Exception {
+    applicant = createApplicant();
   }
 
-  public Applicant getApplicant() throws Exception {
-    return getApplicant("First", 1);
-  }
-
-  @AfterTest()
+  @AfterMethod
   public void cleanUp() throws Exception {
-    String sampleApplicantId = System.getenv("ONFIDO_SAMPLE_APPLICANT_ID");
-
-    if ( isMockingEnabled() ) {
-      return;
-    }
-
-    for (Applicant applicant : onfido.applicant.list(1, 20, false)) {
-      if ( applicant.getId() != sampleApplicantId ) {
-        onfido.applicant.delete(applicant.getId());
-      }
+    if (!isMockingEnabled()) {
+      onfido.applicant.delete(applicant.getId());
     }
   }
 
   @Test
-  public void createApplicant() throws Exception {
-    Applicant applicant = getApplicant();
+  public void createApplicantTest() throws Exception {
+    Applicant applicant = createApplicant();
 
     assertRequestField("first_name", "First");
     assertEquals("First", applicant.getFirstName());
@@ -61,8 +44,8 @@ public class ApplicantManagerTest extends ApiIntegrationTest {
   }
 
   @Test
-  public void findApplicant() throws Exception {
-    Applicant applicant = getApplicant();
+  public void findApplicantTest() throws Exception {
+    Applicant applicant = createApplicant();
 
     prepareMock(new JsonObject().add("first_name", "First")
                                 .add("last_name", "Last"));
@@ -76,8 +59,8 @@ public class ApplicantManagerTest extends ApiIntegrationTest {
   }
 
   @Test
-  public void updateApplicant() throws Exception {
-    Applicant applicant = getApplicant();
+  public void updateApplicantTest() throws Exception {
+    Applicant applicant = createApplicant();
 
     prepareMock(new JsonObject().add("first_name", "Updated")
                                 .add("last_name", "Last"));
@@ -92,8 +75,8 @@ public class ApplicantManagerTest extends ApiIntegrationTest {
   }
 
   @Test
-  public void deleteApplicant() throws Exception {
-    Applicant applicant = getApplicant();
+  public void deleteApplicantTest() throws Exception {
+    Applicant applicant = createApplicant();
 
     prepareMock(new JsonObject());
     onfido.applicant.delete(applicant.getId());
@@ -101,8 +84,8 @@ public class ApplicantManagerTest extends ApiIntegrationTest {
   }
 
   @Test
-  public void restoreApplicant() throws Exception {
-    Applicant applicant = getApplicant();
+  public void restoreApplicantTest() throws Exception {
+    Applicant applicant = createApplicant();
 
     prepareMock(new JsonObject());
     onfido.applicant.delete(applicant.getId());
@@ -115,8 +98,8 @@ public class ApplicantManagerTest extends ApiIntegrationTest {
 
   @Test
   public void listApplicants() throws Exception {
-    Applicant applicant1 = getApplicant("Applicant1", 1);
-    Applicant applicant2 = getApplicant("Applicant2", 2);
+    Applicant applicant1 = createApplicant("Applicant1");
+    Applicant applicant2 = createApplicant("Applicant2");
 
     prepareMock(
         new JsonObject()

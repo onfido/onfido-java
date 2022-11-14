@@ -135,10 +135,13 @@ public final class Onfido {
 
     /**
      * Interceptor attribute.
+     * @deprecated
+     * Use {@link Builder#clientInterceptors(List)} instead.
      *
      * @param interceptor the HTTP interceptor
      * @return the builder
      */
+    @Deprecated
      public Builder clientInterceptor(Interceptor interceptor) {
        this.clientInterceptors = Collections.singletonList(interceptor);
        return this;

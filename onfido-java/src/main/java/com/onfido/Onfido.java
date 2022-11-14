@@ -8,6 +8,8 @@ import javax.net.ssl.SSLSocketFactory;
 import javax.net.ssl.X509TrustManager;
 import java.net.Proxy;
 import java.time.Duration;
+import java.util.Collections;
+import java.util.List;
 
 /** The main class used for accessing instances of the manager classes. */
 public final class Onfido {
@@ -45,8 +47,8 @@ public final class Onfido {
     config = new Config(builder);
     OkHttpClient.Builder clientBuilder = CLIENT.newBuilder();
 
-    if (builder.clientInterceptor != null) {
-      clientBuilder.addInterceptor(builder.clientInterceptor);
+    if (builder.clientInterceptors != null) {
+      builder.clientInterceptors.forEach(clientBuilder::addInterceptor);
     }
 
     if (builder.httpClientReadTimeout != null) {
@@ -80,8 +82,8 @@ public final class Onfido {
     public String apiToken = "";
     /** The Api url. */
     public String apiUrl = "";
-    /** The HTTP client interceptor. */
-    private Interceptor clientInterceptor;
+    /** The HTTP client interceptors. */
+    private List<Interceptor> clientInterceptors;
     /** Read timeout duration, defaults to 30 seconds. */
     private Duration httpClientReadTimeout = Duration.ofSeconds(30);
     /** HttpClient Proxy */
@@ -137,8 +139,19 @@ public final class Onfido {
      * @param interceptor the HTTP interceptor
      * @return the builder
      */
-    public Builder clientInterceptor(Interceptor interceptor) {
-      this.clientInterceptor = interceptor;
+     public Builder clientInterceptor(Interceptor interceptor) {
+       this.clientInterceptors = Collections.singletonList(interceptor);
+       return this;
+     }
+
+    /**
+     * Interceptors attribute.
+     *
+     * @param interceptors the HTTP interceptors that will be used to configure the HttpClient
+     * @return the builder
+     */
+    public Builder clientInterceptors(List<Interceptor> interceptors) {
+      this.clientInterceptors = interceptors;
       return this;
     }
 

@@ -57,7 +57,7 @@ public class TestBase {
   }
 
   static protected boolean isMockingEnabled() {
-    return apiToken == null;
+    return apiToken == null || "".equals(apiToken);
   }
 
   protected void skipTestIfMockingNotEnabled() {

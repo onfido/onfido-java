@@ -64,14 +64,14 @@ public class DocumentManagerTest extends TestBase {
 
   @Test
   public void downloadErrorTest() throws Exception {
-    prepareMock("error", null, 404);
+    prepareMock("error", null, 400);
 
     try {
       onfido.document.download("document-id");
       Assert.fail();
     } catch (ApiException ex) {
       takeRequest("/documents/document-id/download");
-      Assert.assertEquals(404, ex.getStatusCode());
+      Assert.assertEquals(400, ex.getStatusCode());
     }
   }
 

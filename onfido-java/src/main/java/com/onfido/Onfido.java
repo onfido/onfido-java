@@ -4,6 +4,8 @@ import com.onfido.api.Config;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 
+import javax.net.ssl.SSLSocketFactory;
+import javax.net.ssl.X509TrustManager;
 import java.net.Proxy;
 import java.time.Duration;
 
@@ -55,6 +57,10 @@ public final class Onfido {
       clientBuilder.proxy(builder.httpClientProxy);
     }
 
+    if (builder.sslSocketFactory != null) {
+      clientBuilder.sslSocketFactory(builder.sslSocketFactory, builder.x509TrustManager);
+    }
+
     final OkHttpClient client = clientBuilder.build();
     applicant = new ApplicantManager(this.config, client);
     document = new DocumentManager(this.config, client);
@@ -80,6 +86,16 @@ public final class Onfido {
     private Duration httpClientReadTimeout = Duration.ofSeconds(30);
     /** HttpClient Proxy */
     private Proxy httpClientProxy;
+    /**
+     * The socket factory used to secure HTTPS connections. If unset, the system defaults will be
+     * used.
+     */
+    private SSLSocketFactory sslSocketFactory;
+    /**
+     * The trust manager used to secure HTTPS connections. If unset, the system defaults will be
+     * used.
+     */
+    private X509TrustManager x509TrustManager;
 
     private Builder() {}
 
@@ -184,6 +200,21 @@ public final class Onfido {
      */
     public Builder unknownApiUrl(String url) {
       this.apiUrl = url;
+      return this;
+    }
+
+    /**
+     * The ssl socket factory and the X509 trust manager that will be used to configure the
+     * HttpClient
+     *
+     * @param sslSocketFactory the ssl socket factory
+     * @param x509TrustManager the X509 trust manager - a system one will be used on a null value
+     * @return the builder
+     */
+    public Builder sslSocketFactory(
+        SSLSocketFactory sslSocketFactory, X509TrustManager x509TrustManager) {
+      this.sslSocketFactory = sslSocketFactory;
+      this.x509TrustManager = x509TrustManager;
       return this;
     }
   }

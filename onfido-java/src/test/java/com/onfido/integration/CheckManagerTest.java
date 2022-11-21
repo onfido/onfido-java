@@ -11,6 +11,7 @@ import com.onfido.models.Check;
 import com.onfido.models.Document;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 import com.onfido.models.DrivingLicence;
@@ -63,7 +64,7 @@ public class CheckManagerTest extends TestBase {
                      .consider("identity_enhanced"));
 
     assertRequestField("applicant_id", applicant.getId());
-    assertRequestField("consider", List.of("identity_enhanced"));
+    assertRequestField("consider", Collections.singletonList("identity_enhanced"));
 
     assertEquals(applicant.getId(), check.getApplicantId());
   }

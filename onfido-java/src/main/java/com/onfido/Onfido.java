@@ -34,6 +34,8 @@ public final class Onfido {
   public final LivePhotoManager livePhoto;
   /** The manager class for the Live video resource. */
   public final LiveVideoManager liveVideo;
+  /** The manager class for the Motion capture resource. */
+  public final MotionCaptureManager motionCapture;
   /** The manager class for the Address resource */
   public final AddressManager address;
   /** The manager class for the Sdk token resource. */
@@ -70,6 +72,7 @@ public final class Onfido {
     report = new ReportManager(this.config, client);
     livePhoto = new LivePhotoManager(this.config, client);
     liveVideo = new LiveVideoManager(this.config, client);
+    motionCapture = new MotionCaptureManager(this.config, client);
     address = new AddressManager(this.config, client);
     sdkToken = new SdkTokenManager(this.config, client);
     webhook = new WebhookManager(this.config, client);

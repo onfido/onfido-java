@@ -12,6 +12,7 @@ import com.onfido.Onfido;
 import com.onfido.Onfido.Builder;
 import com.onfido.JsonObject;
 import com.onfido.exceptions.OnfidoException;
+import com.onfido.exceptions.ApiException;
 
 import com.onfido.models.Applicant;
 import com.onfido.models.Check;
@@ -166,15 +167,25 @@ public class TestBase {
     return check;
   }
 
+  private boolean isAValidUuid( String uuid )
+  {
+    return uuid != null && uuid.length() == 36;
+  }
+
   public void cleanUpApplicants() throws IOException, OnfidoException {
-    // Don't perform any clean-up when mocking is enabled or sample applicant id is not good
-    if ( isMockingEnabled() || sampleApplicantId == null || sampleApplicantId.length() != 36 ) {
+    // Don't perform any clean-up when mocking is enabled or sample applicant id is not valid
+    if ( isMockingEnabled() && !isAValidUuid(sampleApplicantId) ) {
       return;
     }
 
     for (Applicant applicant : onfido.applicant.list(1, 100, false)) {
       if ( ! applicant.getId().equals(sampleApplicantId) ) {
-        onfido.applicant.delete(applicant.getId());
+        try {
+          onfido.applicant.delete(applicant.getId());
+        } catch (ApiException e)
+        {
+          // Just ignore any failure during clean up
+        }
       }
     }
   }

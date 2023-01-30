@@ -5,6 +5,7 @@ import static org.junit.Assert.assertEquals;
 import com.onfido.JsonObject;
 import com.onfido.Onfido;
 import com.onfido.models.Webhook;
+import com.onfido.exceptions.OnfidoException;
 
 import java.util.Arrays;
 import java.util.List;
@@ -16,6 +17,7 @@ import okhttp3.mockwebserver.MockWebServer;
 import okhttp3.mockwebserver.RecordedRequest;
 
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
 public class WebhookManagerTest extends TestBase {
@@ -24,6 +26,11 @@ public class WebhookManagerTest extends TestBase {
   @BeforeMethod
   public void setup() throws Exception {
     webhook = createWebhook("https://example.com/webhook");
+  }
+
+  @AfterMethod
+  public void tearDown() throws Exception {
+    cleanUpWebhooks();
   }
 
   private Webhook createWebhook(String url) throws Exception {
@@ -87,7 +94,8 @@ public class WebhookManagerTest extends TestBase {
     prepareMock(new JsonObject().add("webhooks",
                                      Arrays.asList(
                                         new JsonObject().add("url", "https://example.com/firstWebhook").map,
-                                        new JsonObject().add("url", "https://example.com/secondWebhook").map)));
+                                        new JsonObject().add("url", "https://example.com/secondWebhook").map,
+                                        new JsonObject().add("url", "https://example.com/webhook").map)));
 
     List<Webhook> webhooks = onfido.webhook.list().stream()
                                            .sorted(Comparator.comparing(Webhook::getUrl))
@@ -95,6 +103,7 @@ public class WebhookManagerTest extends TestBase {
 
     takeRequest("/webhooks/");
 
+    assertEquals(3, webhooks.size());
     assertEquals("https://example.com/firstWebhook", webhooks.get(0).getUrl());
     assertEquals("https://example.com/secondWebhook", webhooks.get(1).getUrl());
   }

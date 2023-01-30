@@ -35,7 +35,7 @@ public class ExtractionManagerTest extends TestBase {
                                   .add("issuing_country", "GBR"))
                                 .add("extracted_data", new JsonObject()
                                   .add("date_of_birth", "1976-03-11")
-                                  .add("date_of_expiry", "2023-01-18")));
+                                  .add("date_of_expiry", "2031-05-28")));
 
     Extraction extraction = onfido.extraction.perform(document.getId());
 
@@ -46,7 +46,7 @@ public class ExtractionManagerTest extends TestBase {
     assertEquals("driving_licence", extraction.getDocumentClassification().getDocumentType());
     assertEquals("GBR", extraction.getDocumentClassification().getIssuingCountry());
     assertEquals(LocalDate.of(1976, 3, 11), extraction.getExtractedData().getDateOfBirth());
-    assertEquals(LocalDate.of(2023, 1, 18), extraction.getExtractedData().getDateOfExpiry());
+    assertEquals(LocalDate.of(2031, 5, 28), extraction.getExtractedData().getDateOfExpiry());
   }
 
   @Test

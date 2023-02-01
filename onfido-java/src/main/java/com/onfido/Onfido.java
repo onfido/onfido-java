@@ -15,9 +15,9 @@ import java.util.List;
 public final class Onfido {
   private static final OkHttpClient CLIENT = new OkHttpClient();
 
-  private static final String EU_API_URL = "https://api.eu.onfido.com/v3.5/";
-  private static final String US_API_URL = "https://api.us.onfido.com/v3.5/";
-  private static final String CA_API_URL = "https://api.ca.onfido.com/v3.5/";
+  private static final String EU_API_URL = "https://api.eu.onfido.com/v3.6/";
+  private static final String US_API_URL = "https://api.us.onfido.com/v3.6/";
+  private static final String CA_API_URL = "https://api.ca.onfido.com/v3.6/";
 
   /** The Configuration for the instance. */
   public final Config config;

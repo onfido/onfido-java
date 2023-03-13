@@ -39,14 +39,14 @@ public class LiveVideoManagerTest extends TestBase {
 
   @Test
   public void downloadLiveVideoFrameTest() throws Exception {
-    prepareMock("test", "image/png", 200);
+    prepareMock("<[����JFIF��C...", "image/jpeg", 200);
 
     try {
       FileDownload download = onfido.liveVideo.downloadFrame(sampleLiveVideoId1);
       takeRequest("/live_videos/" + sampleLiveVideoId1 + "/frame");
 
-      assertEquals("test", new String(download.content));
-      assertEquals("image/png", download.contentType);
+      assertTrue(new String(download.content).contains("JFIF"));
+      assertEquals("image/jpeg", download.contentType);
     } catch (ApiException ex) {
       Assert.assertFalse(isMockingEnabled());
       Assert.assertEquals(422, ex.getStatusCode());

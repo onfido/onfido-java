@@ -44,6 +44,8 @@ public final class Onfido {
   public final WebhookManager webhook;
   /** The manager class for the Extraction resource. */
   public final ExtractionManager extraction;
+  /** The manager class for the WorkflowRun resource. */
+  public final WorkflowRunManager workflowRun;
 
   private Onfido(Builder builder) {
     config = new Config(builder);
@@ -77,6 +79,7 @@ public final class Onfido {
     sdkToken = new SdkTokenManager(this.config, client);
     webhook = new WebhookManager(this.config, client);
     extraction = new ExtractionManager(this.config, client);
+    workflowRun = new WorkflowRunManager(this.config, client);
   }
 
   /** The Builder for the Onfido object. */

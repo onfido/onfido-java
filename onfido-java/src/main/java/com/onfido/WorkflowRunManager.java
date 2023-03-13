@@ -41,27 +41,4 @@ public class WorkflowRunManager extends ResourceManager {
   public WorkflowRun find(String workflowRunId) throws OnfidoException {
     return workflowRunParser.parse(get(workflowRunId));
   }
-
-   /**
-   * Lists all workflow runs you’ve created, sorted by completion date in descending order.
-   *
-   * @param page the page
-   * @param status list of comma separated status values to filter the results
-   * @param createdAtGt a ISO-8601 date to filter results with a created date greater than (after) the one provided
-   * @param createdAtLt a ISO-8601 date to filter results with a created date less than (before) the one provided
-   * @param sort a string with the value desc or asc that allows to sort the returned list by the completed datetime
-   * @return the list of WorkflowRuns
-   * @throws OnfidoException the onfido exception
-   */
-  public List<WorkflowRun> list(int page, String status, String createdAtGt, String createdAtLt, 
-    String sort)
-      throws OnfidoException {
-    return workflowRunParser.parseWrappedList(
-        get("?page=" + page +
-            "&status=" + status +
-            "&created_at_gt=" + createdAtGt +
-            "&created_at_lt=" + createdAtLt +
-            "&sort=" + sort),
-        "applicants");
-  }
 }

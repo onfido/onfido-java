@@ -38,7 +38,7 @@ public class WorkflowRunManagerTest extends TestBase {
                                 .add("applicant_id", applicantId)
                                 .add("id", UUID.randomUUID().toString()));
 
-    WorkflowRun workflowRun = onfido.workflowRun.create(WorkflowRun.request().workflowId(workflowId).applicantId(applicantId));
+    WorkflowRun workflowRun = onfido.getWorkflowRunManager().create(WorkflowRun.request().workflowId(workflowId).applicantId(applicantId));
 
     takeRequest("/workflow_runs/");
 
@@ -58,7 +58,7 @@ public class WorkflowRunManagerTest extends TestBase {
   public void findWorkflowRunTest() throws Exception {
     prepareMock(new JsonObject().add("workflow_id", WORKFLOW_ID).add("applicant_id", applicant.getId()));
 
-    WorkflowRun lookupWorkflowRun = onfido.workflowRun.find(workflowRun.getId());
+    WorkflowRun lookupWorkflowRun = onfido.getWorkflowRunManager().find(workflowRun.getId());
 
     takeRequest("/workflow_runs/" + workflowRun.getId());
 

@@ -29,7 +29,7 @@ public class LiveVideoManagerTest extends TestBase {
   public void downloadLiveVideoTest() throws Exception {
     prepareMock("test", "video/quicktime", 200);
 
-    FileDownload download = onfido.liveVideo.download(sampleLiveVideoId1);
+    FileDownload download = onfido.getLiveVideoManager().download(sampleLiveVideoId1);
 
     takeRequest("/live_videos/" + sampleLiveVideoId1 + "/download");
 
@@ -42,7 +42,7 @@ public class LiveVideoManagerTest extends TestBase {
     prepareMock("<[����JFIF��C...", "image/jpeg", 200);
 
     try {
-      FileDownload download = onfido.liveVideo.downloadFrame(sampleLiveVideoId1);
+      FileDownload download = onfido.getLiveVideoManager().downloadFrame(sampleLiveVideoId1);
       takeRequest("/live_videos/" + sampleLiveVideoId1 + "/frame");
 
       assertTrue(new String(download.content).contains("JFIF"));
@@ -59,7 +59,7 @@ public class LiveVideoManagerTest extends TestBase {
     prepareMock("error", "video/quicktime", 404);
 
     try {
-      onfido.liveVideo.download("wrong-id");
+      onfido.getLiveVideoManager().download("wrong-id");
       Assert.fail();
     } catch (ApiException ex) {
       takeRequest("/live_videos/wrong-id/download");
@@ -71,7 +71,7 @@ public class LiveVideoManagerTest extends TestBase {
   public void findLiveVideoTest() throws Exception {
     prepareMock(new JsonObject().add("file_name", "video.mov"));
 
-    LiveVideo liveVideo = onfido.liveVideo.find(sampleLiveVideoId1);
+    LiveVideo liveVideo = onfido.getLiveVideoManager().find(sampleLiveVideoId1);
 
     takeRequest("/live_videos/" + sampleLiveVideoId1);
 
@@ -85,7 +85,7 @@ public class LiveVideoManagerTest extends TestBase {
                                        new JsonObject().add("file_name", "video.mov").map,
                                        new JsonObject().add("file_name", "video.mov").map)));
 
-    List<LiveVideo> liveVideos = onfido.liveVideo.list(sampleApplicantId);
+    List<LiveVideo> liveVideos = onfido.getLiveVideoManager().list(sampleApplicantId);
 
     takeRequest("/live_videos/?applicant_id=" + sampleApplicantId);
 

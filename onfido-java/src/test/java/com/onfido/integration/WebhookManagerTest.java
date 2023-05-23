@@ -37,7 +37,7 @@ public class WebhookManagerTest extends TestBase {
     prepareMock(new JsonObject().add("url", url)
                                 .add("id", UUID.randomUUID().toString()));
 
-    Webhook webhook = onfido.webhook.create(Webhook.request().url(url));
+    Webhook webhook = onfido.getWebhookManager().create(Webhook.request().url(url));
 
     takeRequest("/webhooks/");
 
@@ -55,7 +55,7 @@ public class WebhookManagerTest extends TestBase {
   public void findWebhookTest() throws Exception {
     prepareMock(new JsonObject().add("url", "https://example.com/webhook"));
 
-    Webhook lookupWebhook = onfido.webhook.find(webhook.getId());
+    Webhook lookupWebhook = onfido.getWebhookManager().find(webhook.getId());
 
     takeRequest("/webhooks/" + webhook.getId());
 
@@ -67,7 +67,7 @@ public class WebhookManagerTest extends TestBase {
     prepareMock(new JsonObject().add("url", "https://example.com/webhook/updated"));
 
     Webhook updatedWebhook =
-      onfido.webhook.update(webhook.getId(),
+      onfido.getWebhookManager().update(webhook.getId(),
                             Webhook.request().url("https://example.com/webhook/updated"));
 
     takeRequest("/webhooks/" + webhook.getId());
@@ -81,7 +81,7 @@ public class WebhookManagerTest extends TestBase {
   public void deleteWebhookTest() throws Exception {
     prepareMock("", null, 204);
 
-    onfido.webhook.delete(webhook.getId());
+    onfido.getWebhookManager().delete(webhook.getId());
 
     takeRequest("/webhooks/" + webhook.getId());
   }
@@ -97,7 +97,7 @@ public class WebhookManagerTest extends TestBase {
                                         new JsonObject().add("url", "https://example.com/secondWebhook").map,
                                         new JsonObject().add("url", "https://example.com/webhook").map)));
 
-    List<Webhook> webhooks = onfido.webhook.list().stream()
+    List<Webhook> webhooks = onfido.getWebhookManager().list().stream()
                                            .sorted(Comparator.comparing(Webhook::getUrl))
                                            .collect(Collectors.toList());
 

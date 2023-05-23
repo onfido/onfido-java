@@ -22,7 +22,7 @@ public class MotionCaptureManagerTest extends TestBase {
   public void downloadMotionCaptureTest() throws Exception {
     prepareMock("test", "video/mp4", 200);
 
-    FileDownload download = onfido.motionCapture.download(EXAMPLE_ID_1);
+    FileDownload download = onfido.getMotionCaptureManager().download(EXAMPLE_ID_1);
 
     takeRequest("/motion_captures/" + EXAMPLE_ID_1 + "/download");
 
@@ -35,7 +35,7 @@ public class MotionCaptureManagerTest extends TestBase {
     prepareMock("test", "image/jpeg", 200);
 
     try {
-      FileDownload download = onfido.motionCapture.downloadFrame(EXAMPLE_ID_1);
+      FileDownload download = onfido.getMotionCaptureManager().downloadFrame(EXAMPLE_ID_1);
       takeRequest("/motion_captures/" + EXAMPLE_ID_1 + "/frame");
 
       assertTrue(download.contentType.contains("image/jpeg"));
@@ -51,7 +51,7 @@ public class MotionCaptureManagerTest extends TestBase {
     prepareMock("error", "video/mp4", 404);
 
     try {
-      onfido.motionCapture.download(NON_EXISTING_ID);
+      onfido.getMotionCaptureManager().download(NON_EXISTING_ID);
       Assert.fail();
     } catch (ApiException ex) {
       takeRequest(String.format("/motion_captures/%s/download", NON_EXISTING_ID));
@@ -65,7 +65,7 @@ public class MotionCaptureManagerTest extends TestBase {
 
     prepareMock(new JsonObject().add("file_name", expectedFilename));
 
-    MotionCapture motionCapture = onfido.motionCapture.find(EXAMPLE_ID_1);
+    MotionCapture motionCapture = onfido.getMotionCaptureManager().find(EXAMPLE_ID_1);
 
     takeRequest("/motion_captures/" + EXAMPLE_ID_1);
     assertEquals(expectedFilename, motionCapture.getFileName());
@@ -78,7 +78,7 @@ public class MotionCaptureManagerTest extends TestBase {
                                        new JsonObject().add("id", "id-1").map,
                                        new JsonObject().add("id", "id-2").map)));
 
-    List<MotionCapture> motionCaptures = onfido.motionCapture.list(sampleApplicantId);
+    List<MotionCapture> motionCaptures = onfido.getMotionCaptureManager().list(sampleApplicantId);
 
     takeRequest("/motion_captures/?applicant_id=" + sampleApplicantId);
 

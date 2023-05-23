@@ -45,7 +45,7 @@ public class LivePhotoManagerTest extends TestBase {
     File file = new File("media/sample_photo.png");
     InputStream inputStream = new FileInputStream(file);
 
-    LivePhoto livePhoto = onfido.livePhoto.upload(inputStream, filename, livePhotoRequest);
+    LivePhoto livePhoto = onfido.getLivePhotoManager().upload(inputStream, filename, livePhotoRequest);
     takeRequest("/live_photos/");
 
     return livePhoto;
@@ -74,7 +74,7 @@ public class LivePhotoManagerTest extends TestBase {
   public void downloadLivePhotoTest() throws Exception {
     prepareMock("test", "image/png", 200);
 
-    FileDownload download = onfido.livePhoto.download(livePhoto.getId());
+    FileDownload download = onfido.getLivePhotoManager().download(livePhoto.getId());
 
     takeRequest("/live_photos/" + livePhoto.getId() + "/download");
 
@@ -87,7 +87,7 @@ public class LivePhotoManagerTest extends TestBase {
     prepareMock("error", "image/png", 404);
 
     try {
-      onfido.livePhoto.download("wrong-id");
+      onfido.getLivePhotoManager().download("wrong-id");
       Assert.fail();
     } catch (ApiException ex) {
       takeRequest("/live_photos/wrong-id/download");
@@ -100,7 +100,7 @@ public class LivePhotoManagerTest extends TestBase {
     prepareMock(new JsonObject().add("file_name", "file.png")
                                 .add("id", livePhoto.getId()));
 
-    LivePhoto lookupLivePhoto = onfido.livePhoto.find(livePhoto.getId());
+    LivePhoto lookupLivePhoto = onfido.getLivePhotoManager().find(livePhoto.getId());
 
     takeRequest("/live_photos/" + livePhoto.getId());
 
@@ -117,7 +117,7 @@ public class LivePhotoManagerTest extends TestBase {
                     new JsonObject().add("file_name", "anotherFile.png").map,
                     new JsonObject().add("file_name", "file.png").map)));
 
-    List<LivePhoto> livePhotos = onfido.livePhoto.list(applicant.getId()).stream()
+    List<LivePhoto> livePhotos = onfido.getLivePhotoManager().list(applicant.getId()).stream()
                                                  .sorted(Comparator.comparing(LivePhoto::getFileName))
                                                  .collect(Collectors.toList());
 
@@ -134,7 +134,7 @@ public class LivePhotoManagerTest extends TestBase {
     InputStream inputStream = new ByteArrayInputStream("testing testing 1 2".getBytes());
 
     try {
-      onfido.livePhoto.upload(inputStream, "file.png", LivePhoto.request());
+      onfido.getLivePhotoManager().upload(inputStream, "file.png", LivePhoto.request());
       Assert.fail();
     } catch (ApiException ex) {
       takeRequest("/live_photos/");

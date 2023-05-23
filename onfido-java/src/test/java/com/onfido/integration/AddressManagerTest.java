@@ -20,7 +20,7 @@ public class AddressManagerTest extends TestBase {
                                          new JsonObject().add("postcode", "S2 2DF").map,
                                          new JsonObject().add("postcode", "S2 2DF").map)));
 
-    List<Address> addresses = onfido.address.pick("S2 2DF");
+    List<Address> addresses = onfido.getAddressManager().pick("S2 2DF");
 
     takeRequest("/addresses/pick?postcode=S2%202DF");
 

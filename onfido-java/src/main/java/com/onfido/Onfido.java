@@ -19,36 +19,33 @@ public final class Onfido {
   private static final String US_API_URL = "https://api.us.onfido.com/v3.6/";
   private static final String CA_API_URL = "https://api.ca.onfido.com/v3.6/";
 
-  /** The Configuration for the instance. */
-  public final Config config;
-
   /** The manager class for the Applicant resource. */
-  public final ApplicantManager applicant;
+  private final ApplicantManager applicant;
   /** The manager class for the Document resource. */
-  public final DocumentManager document;
+  private final DocumentManager document;
   /** The manager class for the Check resource. */
-  public final CheckManager check;
+  private final CheckManager check;
   /** The manager class for the Report resource. */
-  public final ReportManager report;
+  private final ReportManager report;
   /** The manager class for the Live photo resource. */
-  public final LivePhotoManager livePhoto;
+  private final LivePhotoManager livePhoto;
   /** The manager class for the Live video resource. */
-  public final LiveVideoManager liveVideo;
+  private final LiveVideoManager liveVideo;
   /** The manager class for the Motion capture resource. */
-  public final MotionCaptureManager motionCapture;
+  private final MotionCaptureManager motionCapture;
   /** The manager class for the Address resource */
-  public final AddressManager address;
+  private final AddressManager address;
   /** The manager class for the Sdk token resource. */
-  public final SdkTokenManager sdkToken;
+  private final SdkTokenManager sdkToken;
   /** The manager class for the Webhook resource. */
-  public final WebhookManager webhook;
+  private final WebhookManager webhook;
   /** The manager class for the Extraction resource. */
-  public final ExtractionManager extraction;
+  private final ExtractionManager extraction;
   /** The manager class for the WorkflowRun resource. */
-  public final WorkflowRunManager workflowRun;
+  private final WorkflowRunManager workflowRun;
 
   private Onfido(Builder builder) {
-    config = new Config(builder);
+    Config config = new Config(builder);
     OkHttpClient.Builder clientBuilder = CLIENT.newBuilder();
 
     if (builder.clientInterceptors != null) {
@@ -68,18 +65,18 @@ public final class Onfido {
     }
 
     final OkHttpClient client = clientBuilder.build();
-    applicant = new ApplicantManager(this.config, client);
-    document = new DocumentManager(this.config, client);
-    check = new CheckManager(this.config, client);
-    report = new ReportManager(this.config, client);
-    livePhoto = new LivePhotoManager(this.config, client);
-    liveVideo = new LiveVideoManager(this.config, client);
-    motionCapture = new MotionCaptureManager(this.config, client);
-    address = new AddressManager(this.config, client);
-    sdkToken = new SdkTokenManager(this.config, client);
-    webhook = new WebhookManager(this.config, client);
-    extraction = new ExtractionManager(this.config, client);
-    workflowRun = new WorkflowRunManager(this.config, client);
+    applicant = new ApplicantManager(config, client);
+    document = new DocumentManager(config, client);
+    check = new CheckManager(config, client);
+    report = new ReportManager(config, client);
+    livePhoto = new LivePhotoManager(config, client);
+    liveVideo = new LiveVideoManager(config, client);
+    motionCapture = new MotionCaptureManager(config, client);
+    address = new AddressManager(config, client);
+    sdkToken = new SdkTokenManager(config, client);
+    webhook = new WebhookManager(config, client);
+    extraction = new ExtractionManager(config, client);
+    workflowRun = new WorkflowRunManager(config, client);
   }
 
   /** The Builder for the Onfido object. */
@@ -239,6 +236,102 @@ public final class Onfido {
       this.x509TrustManager = x509TrustManager;
       return this;
     }
+  }
+
+  /**
+   * Accessor for applicant manager.
+   * @return Applicant Manager
+   */
+  public ApplicantManager getApplicantManager() {
+    return applicant;
+  }
+
+  /**
+   * Accessor for document manager.
+   * @return Document Manager
+   */
+  public DocumentManager getDocumentManager() {
+    return document;
+  }
+
+  /**
+   * Accessor for check manager.
+   * @return check Manager
+   */
+  public CheckManager getCheckManager() {
+    return check;
+  }
+
+  /**
+   * Accessor for report manager.
+   * @return Report Manager
+   */
+  public ReportManager getReportManager() {
+    return report;
+  }
+
+  /**
+   * Accessor for live photo manager.
+   * @return Live Photo Manager
+   */
+  public LivePhotoManager getLivePhotoManager() {
+    return livePhoto;
+  }
+
+  /**
+   * Accessor for live video manager.
+   * @return Live Video Manager
+   */
+  public LiveVideoManager getLiveVideoManager() {
+    return liveVideo;
+  }
+
+  /**
+   * Accessor for motion capture manager.
+   * @return Motion Capture Manager
+   */
+  public MotionCaptureManager getMotionCaptureManager() {
+    return motionCapture;
+  }
+
+  /**
+   * Accessor for address manager.
+   * @return Address Manager
+   */
+  public AddressManager getAddressManager() {
+    return address;
+  }
+
+  /**
+   * Accessor for SDK token manager.
+   * @return SDK Token Manager
+   */
+  public SdkTokenManager getSdkTokenManager() {
+    return sdkToken;
+  }
+
+  /**
+   * Accessor for webhook manager.
+   * @return Webhook Manager
+   */
+  public WebhookManager getWebhookManager() {
+    return webhook;
+  }
+
+  /**
+   * Accessor for extraction manager.
+   * @return Extraction Manager
+   */
+  public ExtractionManager getExtractionManager() {
+    return extraction;
+  }
+
+  /**
+   * Accessor for workflow run manager.
+   * @return WorkFlow Run Manager
+   */
+  public WorkflowRunManager getWorkflowRunManager() {
+    return workflowRun;
   }
 
   /**

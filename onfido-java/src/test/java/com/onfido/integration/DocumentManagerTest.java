@@ -54,7 +54,7 @@ public class DocumentManagerTest extends TestBase {
   public void downloadDocumentTest() throws Exception {
     prepareMock("test", "image/png", 0);
 
-    FileDownload download = onfido.document.download(document.getId());
+    FileDownload download = onfido.getDocumentManager().download(document.getId());
 
     takeRequest("/documents/" + document.getId() + "/download");
 
@@ -67,7 +67,7 @@ public class DocumentManagerTest extends TestBase {
     prepareMock("error", null, 400);
 
     try {
-      onfido.document.download("document-id");
+      onfido.getDocumentManager().download("document-id");
       Assert.fail();
     } catch (ApiException ex) {
       takeRequest("/documents/document-id/download");
@@ -79,7 +79,7 @@ public class DocumentManagerTest extends TestBase {
   public void findDocumentTest() throws Exception {
     prepareMock(new JsonObject().add("file_name", document.getFileName()));
 
-    Document lookupDocument = onfido.document.find(document.getId());
+    Document lookupDocument = onfido.getDocumentManager().find(document.getId());
 
     takeRequest("/documents/" + document.getId());
 
@@ -96,7 +96,7 @@ public class DocumentManagerTest extends TestBase {
                         new JsonObject().add("file_name", "anotherFile.png").map,
                         new JsonObject().add("file_name", "file.png").map)));
 
-    List<Document> documents = onfido.document.list(applicant.getId()).stream()
+    List<Document> documents = onfido.getDocumentManager().list(applicant.getId()).stream()
                                               .sorted(Comparator.comparing(Document::getFileName))
                                               .collect(Collectors.toList());
 
@@ -113,7 +113,7 @@ public class DocumentManagerTest extends TestBase {
     InputStream inputStream = new ByteArrayInputStream("testing testing 1 2".getBytes());
 
     try {
-      onfido.document.upload(inputStream, "file.png", Document.request());
+      onfido.getDocumentManager().upload(inputStream, "file.png", Document.request());
       Assert.fail();
     } catch (ApiException ex) {
       takeRequest("/documents/");

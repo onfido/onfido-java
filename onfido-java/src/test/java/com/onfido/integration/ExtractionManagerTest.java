@@ -37,7 +37,7 @@ public class ExtractionManagerTest extends TestBase {
                                   .add("date_of_birth", "1976-03-11")
                                   .add("date_of_expiry", "2031-05-28")));
 
-    Extraction extraction = onfido.extraction.perform(document.getId());
+    Extraction extraction = onfido.getExtractionManager().perform(document.getId());
 
     takeRequest("/extractions/");
 
@@ -58,7 +58,7 @@ public class ExtractionManagerTest extends TestBase {
                                   .add("date_of_birth", null)
                                   .add("date_of_expiry", null)));
 
-    Extraction extraction = onfido.extraction.perform(document.getId());
+    Extraction extraction = onfido.getExtractionManager().perform(document.getId());
 
     takeRequest("/extractions/");
 
@@ -77,7 +77,7 @@ public class ExtractionManagerTest extends TestBase {
                                   .add("date_of_birth", "")
                                   .add("date_of_expiry", "")));
 
-    Extraction extraction = onfido.extraction.perform(document.getId());
+    Extraction extraction = onfido.getExtractionManager().perform(document.getId());
 
     takeRequest("/extractions/");
 
@@ -112,7 +112,7 @@ public class ExtractionManagerTest extends TestBase {
                                     .add("personal_number", "20-10563145-8")
                                     .add("place_of_birth", "San Francisco")));
 
-    Extraction extraction = onfido.extraction.perform(document.getId());
+    Extraction extraction = onfido.getExtractionManager().perform(document.getId());
 
     takeRequest("/extractions/");
 

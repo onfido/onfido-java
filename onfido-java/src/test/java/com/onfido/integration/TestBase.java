@@ -126,7 +126,7 @@ public class TestBase {
     File file = new File("media/sample_driving_licence.png");
     InputStream inputStream = new FileInputStream(file);
 
-    Document document = onfido.document.upload(inputStream, filename, documentRequest);
+    Document document = onfido.getDocumentManager().upload(inputStream, filename, documentRequest);
 
     takeRequest("/documents/");
 
@@ -196,8 +196,8 @@ public class TestBase {
       return;
     }
 
-    for (Webhook webhook : onfido.webhook.list()) {
-      onfido.webhook.delete(webhook.getId());
+    for (Webhook webhook : onfido.getWebhookManager().list()) {
+      onfido.getWebhookManager().delete(webhook.getId());
     }
   }
 

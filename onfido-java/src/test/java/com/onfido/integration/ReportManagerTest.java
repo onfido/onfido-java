@@ -36,7 +36,7 @@ public class ReportManagerTest extends TestBase {
 
   private Report findReport(String reportId, String mockedReportName) throws Exception {
     prepareMock(new JsonObject().add("name", mockedReportName));
-    Report report = onfido.report.find(reportId);
+    Report report = onfido.getReportManager().find(reportId);
     takeRequest("/reports/" + reportId);
 
     return report;
@@ -61,7 +61,7 @@ public class ReportManagerTest extends TestBase {
                             new JsonObject().add("name", "document").map,
                             new JsonObject().add("name", "identity_enhanced").map)));
 
-    List<Report> reports = onfido.report.list(check.getId()).stream()
+    List<Report> reports = onfido.getReportManager().list(check.getId()).stream()
                                         .sorted(Comparator.comparing(Report::getName))
                                         .collect(Collectors.toList());
 
@@ -76,7 +76,7 @@ public class ReportManagerTest extends TestBase {
     Report report = findReport(check.getReportIds().get(0), "document");
 
     prepareMock("", null, 204);
-    onfido.report.resume(report.getId());
+    onfido.getReportManager().resume(report.getId());
     takeRequest("/reports/" + report.getId() + "/resume");
   }
 
@@ -85,7 +85,7 @@ public class ReportManagerTest extends TestBase {
     Report report = findReport(check.getReportIds().get(0), "document");
 
     prepareMock("", null, 204);
-    onfido.report.cancel(report.getId());
+    onfido.getReportManager().cancel(report.getId());
     takeRequest("/reports/" + report.getId() + "/cancel");
   }
 }

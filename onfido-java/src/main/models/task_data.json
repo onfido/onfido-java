@@ -1,0 +1,10 @@
+{
+  "title": "TaskData",
+  "properties": {
+    "data": {
+      "type": "object",
+      "description": "Data for task completion.",
+      "readOnly": true
+    }
+  }
+}

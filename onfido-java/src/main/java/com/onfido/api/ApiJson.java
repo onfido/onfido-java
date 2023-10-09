@@ -116,6 +116,8 @@ public final class ApiJson<T> {
   private final Class<T> type;
   private JsonAdapter<Map<String, List<T>>> wrappedListAdapter;
 
+  private JsonAdapter<List<T>> listAdapter;
+
   /**
    * Instantiates a new ApiJson object.
    *
@@ -179,6 +181,22 @@ public final class ApiJson<T> {
 
     return list;
   }
+
+
+  public List<T> parseList(String json) throws OnfidoException {
+    if (listAdapter == null) {
+      Type listType = Types.newParameterizedType(List.class, type);
+      listAdapter = MOSHI.adapter(listType);
+    }
+
+    List<T> list = parse(listAdapter, json);
+    if (list == null) {
+      throw new OnfidoException("Expected response to contain a list of items", null);
+    }
+
+    return list;
+  }
+
 
   private static <T> T parse(JsonAdapter<T> adapter, String json) throws OnfidoException {
     try {

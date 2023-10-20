@@ -46,6 +46,8 @@ public final class Onfido {
   public final ExtractionManager extraction;
   /** The manager class for the WorkflowRun resource. */
   public final WorkflowRunManager workflowRun;
+  /** The manager class for the Task resource. */
+  public final TaskManager task;
 
   private Onfido(Builder builder) {
     config = new Config(builder);
@@ -80,6 +82,7 @@ public final class Onfido {
     webhook = new WebhookManager(this.config, client);
     extraction = new ExtractionManager(this.config, client);
     workflowRun = new WorkflowRunManager(this.config, client);
+    task = new TaskManager(this.config, client);
   }
 
   /** The Builder for the Onfido object. */

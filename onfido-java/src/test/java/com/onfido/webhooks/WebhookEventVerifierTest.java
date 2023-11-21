@@ -20,10 +20,13 @@ public class WebhookEventVerifierTest {
         new WebhookEventObject(
             "check-123",
             "complete",
+            "profile_4f4b2",
+            "profile",
+            "e25b19f5-a96e-4c15-8f80-fb6cad1a1ce5",
             "https://api.onfido.com/v3/checks/check-123",
             "2020-01-01T00:00:00Z");
 
-    expectedEvent = new WebhookEvent("check", "check.completed", object);
+    expectedEvent = new WebhookEvent("check", "check.completed", object, null);
   }
 
   @Test

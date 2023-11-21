@@ -12,6 +12,15 @@ public class WebhookEventObject {
   @Json(name = "status")
   private final String status;
 
+  @Json(name = "task_spec_id")
+  private final String taskSpecId;
+
+  @Json(name = "task_def_id")
+  private final String taskDefId;
+
+  @Json(name = "workflow_run_id")
+  private final String workflowRunId;
+
   @Json(name = "href")
   private final String href;
 
@@ -23,12 +32,25 @@ public class WebhookEventObject {
    *
    * @param id the id
    * @param status the status
+   * @param taskSpecId the taskSpecId
+   * @param taskDefId the taskDefId
+   * @param workflowRunId the workflowRunId
    * @param href the href
    * @param completedAtIso8601 the completed at iso 8601
    */
-  protected WebhookEventObject(String id, String status, String href, String completedAtIso8601) {
+  protected WebhookEventObject(
+      String id,
+      String status,
+      String taskSpecId,
+      String taskDefId,
+      String workflowRunId,
+      String href,
+      String completedAtIso8601) {
     this.id = id;
     this.status = status;
+    this.taskSpecId = taskSpecId;
+    this.taskDefId = taskDefId;
+    this.workflowRunId = workflowRunId;
     this.href = href;
     this.completedAtIso8601 = completedAtIso8601;
   }
@@ -49,6 +71,33 @@ public class WebhookEventObject {
    */
   public String getStatus() {
     return status;
+  }
+
+  /**
+   * Gets taskSpecId.
+   *
+   * @return the taskSpecId
+   */
+  public String getTaskSpecId() {
+    return taskSpecId;
+  }
+
+  /**
+   * Gets taskDefId.
+   *
+   * @return the taskDefId.
+   */
+  public String getTaskDefId() {
+    return taskDefId;
+  }
+
+  /**
+   * get workflowRunId.
+   *
+   * @return the workflowRunId
+   */
+  public String getWorkflowRunId() {
+    return workflowRunId;
   }
 
   /**

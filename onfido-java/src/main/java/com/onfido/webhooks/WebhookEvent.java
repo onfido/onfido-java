@@ -1,5 +1,6 @@
 package com.onfido.webhooks;
 
+import com.onfido.models.Task;
 import com.squareup.moshi.Json;
 import java.util.Objects;
 
@@ -15,6 +16,9 @@ public class WebhookEvent {
   @Json(name = "object")
   private final WebhookEventObject object;
 
+  @Json(name = "resource")
+  private final Task resource;
+
   /**
    * Instantiates a new WebhookEvent.
    *
@@ -22,10 +26,11 @@ public class WebhookEvent {
    * @param action the action
    * @param object the object
    */
-  protected WebhookEvent(String resourceType, String action, WebhookEventObject object) {
+  protected WebhookEvent(String resourceType, String action, WebhookEventObject object, Task resource) {
     this.resourceType = resourceType;
     this.action = action;
     this.object = object;
+    this.resource = resource;
   }
 
   /**
@@ -55,6 +60,15 @@ public class WebhookEvent {
     return object;
   }
 
+  /**
+   * Gets the event resource.
+   *
+   * @return the Task
+   */
+  public Task getResource() {
+    return resource;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -66,7 +80,8 @@ public class WebhookEvent {
     WebhookEvent event = (WebhookEvent) o;
     return getResourceType().equals(event.getResourceType())
         && getAction().equals(event.getAction())
-        && getObject().equals(event.getObject());
+        && getObject().equals(event.getObject())
+        && ((getResource() == null && event.getResource() == null) || getResource().equals(event.getResource()));
   }
 
   @Override

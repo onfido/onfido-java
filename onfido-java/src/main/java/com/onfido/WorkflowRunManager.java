@@ -9,7 +9,8 @@ import java.util.List;
 import okhttp3.OkHttpClient;
 
 /**
- * Manager class for the WorkflowRun resource type. Contains resource-specific methods for interacting
+ * Manager class for the WorkflowRun resource type. Contains resource-specific
+ * methods for interacting
  * with the API.
  */
 public class WorkflowRunManager extends ResourceManager {
@@ -41,4 +42,16 @@ public class WorkflowRunManager extends ResourceManager {
   public WorkflowRun find(String workflowRunId) throws OnfidoException {
     return workflowRunParser.parse(get(workflowRunId));
   }
+
+  /**
+   * Retrieves a Workflow Run signed evidence file.
+   *
+   * @param workflowRunId the workflow run id
+   * @return byte array of the evidence file (PDF)
+   * @throws OnfidoException the onfido exception
+   */
+  public byte[] evidence(String workflowRunId) throws OnfidoException {
+    return get(workflowRunId + "/signed_evidence_file").getBytes();
+  }
+
 }

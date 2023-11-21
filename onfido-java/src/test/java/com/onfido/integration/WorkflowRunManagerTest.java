@@ -8,6 +8,7 @@ import com.onfido.models.WorkflowRun;
 import com.onfido.models.Applicant;
 import com.onfido.exceptions.OnfidoException;
 
+import java.beans.Transient;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Comparator;
@@ -35,10 +36,11 @@ public class WorkflowRunManagerTest extends TestBase {
 
   private WorkflowRun createWorkflowRun(String workflowId, String applicantId) throws Exception {
     prepareMock(new JsonObject().add("workflow_id", workflowId)
-                                .add("applicant_id", applicantId)
-                                .add("id", UUID.randomUUID().toString()));
+        .add("applicant_id", applicantId)
+        .add("id", UUID.randomUUID().toString()));
 
-    WorkflowRun workflowRun = onfido.workflowRun.create(WorkflowRun.request().workflowId(workflowId).applicantId(applicantId));
+    WorkflowRun workflowRun = onfido.workflowRun
+        .create(WorkflowRun.request().workflowId(workflowId).applicantId(applicantId));
 
     takeRequest("/workflow_runs/");
 
@@ -64,5 +66,16 @@ public class WorkflowRunManagerTest extends TestBase {
 
     assertEquals(WORKFLOW_ID, lookupWorkflowRun.getWorkflowId());
     assertEquals(applicant.getId(), lookupWorkflowRun.getApplicantId());
+  }
+
+  @Test
+  public void evidenceWorkflowRunTest() throws Exception {
+    prepareMock(new JsonObject().add("workflow_id", WORKFLOW_ID).add("applicant_id", applicant.getId()));
+
+    byte[] evidence = onfido.workflowRun.evidence(workflowRun.getId());
+
+    takeRequest("/workflow_runs/" + workflowRun.getId() + "/signed_evidence_file");
+
+    assertEquals(0, evidence.length);
   }
 }

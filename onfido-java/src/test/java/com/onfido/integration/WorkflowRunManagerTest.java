@@ -70,12 +70,12 @@ public class WorkflowRunManagerTest extends TestBase {
 
   @Test
   public void evidenceWorkflowRunTest() throws Exception {
-    prepareMock(new JsonObject().add("workflow_id", WORKFLOW_ID).add("applicant_id", applicant.getId()));
+    prepareMock("PDF", "application/pdf", 200);
 
     byte[] evidence = onfido.workflowRun.evidence(workflowRun.getId());
 
     takeRequest("/workflow_runs/" + workflowRun.getId() + "/signed_evidence_file");
 
-    assertEquals(0, evidence.length);
+    assertEquals(3, evidence.length);
   }
 }

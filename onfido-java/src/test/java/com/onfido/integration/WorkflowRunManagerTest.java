@@ -1,12 +1,14 @@
 package com.onfido.integration;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import com.onfido.JsonObject;
 import com.onfido.Onfido;
 import com.onfido.models.WorkflowRun;
 import com.onfido.models.Applicant;
 import com.onfido.exceptions.OnfidoException;
+import com.onfido.api.FileDownload;
 
 import java.beans.Transient;
 import java.util.Arrays;
@@ -72,10 +74,11 @@ public class WorkflowRunManagerTest extends TestBase {
   public void evidenceWorkflowRunTest() throws Exception {
     prepareMock("PDF", "application/pdf", 200);
 
-    byte[] evidence = onfido.workflowRun.evidence(workflowRun.getId());
+    FileDownload download = onfido.workflowRun.evidence(workflowRun.getId());
 
     takeRequest("/workflow_runs/" + workflowRun.getId() + "/signed_evidence_file");
 
-    assertEquals(3, evidence.length);
+    assertEquals("application/pdf", download.contentType);
+    assertTrue(download.content.length > 0);
   }
 }

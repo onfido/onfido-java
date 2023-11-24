@@ -1,13 +1,16 @@
 package com.onfido.integration;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import com.onfido.JsonObject;
 import com.onfido.Onfido;
 import com.onfido.models.WorkflowRun;
 import com.onfido.models.Applicant;
 import com.onfido.exceptions.OnfidoException;
+import com.onfido.api.FileDownload;
 
+import java.beans.Transient;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Comparator;
@@ -35,10 +38,11 @@ public class WorkflowRunManagerTest extends TestBase {
 
   private WorkflowRun createWorkflowRun(String workflowId, String applicantId) throws Exception {
     prepareMock(new JsonObject().add("workflow_id", workflowId)
-                                .add("applicant_id", applicantId)
-                                .add("id", UUID.randomUUID().toString()));
+        .add("applicant_id", applicantId)
+        .add("id", UUID.randomUUID().toString()));
 
-    WorkflowRun workflowRun = onfido.workflowRun.create(WorkflowRun.request().workflowId(workflowId).applicantId(applicantId));
+    WorkflowRun workflowRun = onfido.workflowRun
+        .create(WorkflowRun.request().workflowId(workflowId).applicantId(applicantId));
 
     takeRequest("/workflow_runs/");
 
@@ -64,5 +68,17 @@ public class WorkflowRunManagerTest extends TestBase {
 
     assertEquals(WORKFLOW_ID, lookupWorkflowRun.getWorkflowId());
     assertEquals(applicant.getId(), lookupWorkflowRun.getApplicantId());
+  }
+
+  @Test
+  public void evidenceWorkflowRunTest() throws Exception {
+    prepareMock("PDF", "application/pdf", 200);
+
+    FileDownload download = onfido.workflowRun.evidence(workflowRun.getId());
+
+    takeRequest("/workflow_runs/" + workflowRun.getId() + "/signed_evidence_file");
+
+    assertEquals("application/pdf", download.contentType);
+    assertTrue(download.content.length > 0);
   }
 }

@@ -7,9 +7,11 @@ import com.onfido.exceptions.OnfidoException;
 import com.onfido.models.WorkflowRun;
 import java.util.List;
 import okhttp3.OkHttpClient;
+import com.onfido.api.FileDownload;
 
 /**
- * Manager class for the WorkflowRun resource type. Contains resource-specific methods for interacting
+ * Manager class for the WorkflowRun resource type. Contains resource-specific
+ * methods for interacting
  * with the API.
  */
 public class WorkflowRunManager extends ResourceManager {
@@ -41,4 +43,16 @@ public class WorkflowRunManager extends ResourceManager {
   public WorkflowRun find(String workflowRunId) throws OnfidoException {
     return workflowRunParser.parse(get(workflowRunId));
   }
+
+  /**
+   * Downloads a Workflow Run signed evidence file.
+   *
+   * @param workflowRunId the workflow run id
+   * @return the downloaded file as a FileDownload
+   * @throws OnfidoException the onfido exception
+   */
+  public FileDownload evidence(String workflowRunId) throws OnfidoException {
+    return downloadRequest(workflowRunId + "/signed_evidence_file");
+  }
+
 }

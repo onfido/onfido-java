@@ -68,6 +68,13 @@
       "format": "date-time",
       "description": "The date and time when the workflow run was last updated",
       "readOnly": true
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Array of tags being assigned to this workflow run."
     }
   }
 }

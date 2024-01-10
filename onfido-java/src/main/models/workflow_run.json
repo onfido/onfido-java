@@ -74,7 +74,7 @@
       "items": {
         "type": "string"
       },
-      "description": "Array of tags being assigned to this check."
+      "description": "Array of tags being assigned to this workflow run."
     }
   }
 }

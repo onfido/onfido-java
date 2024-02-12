@@ -5,6 +5,7 @@ import com.onfido.api.Config;
 import com.onfido.api.ResourceManager;
 import com.onfido.exceptions.OnfidoException;
 import com.onfido.models.Webhook;
+import com.onfido.models.WebhookResend;
 import java.util.List;
 import okhttp3.OkHttpClient;
 
@@ -15,6 +16,7 @@ import okhttp3.OkHttpClient;
 public class WebhookManager extends ResourceManager {
   private ApiJson<Webhook> webhookParser = new ApiJson<>(Webhook.class);
   private ApiJson<Webhook.Request> requestFormatter = new ApiJson<>(Webhook.Request.class);
+  private ApiJson<WebhookResend.Request> resendRequestFormatter = new ApiJson<>(WebhookResend.Request.class);
 
   protected WebhookManager(Config config, OkHttpClient client) {
     super("webhooks/", config, client);
@@ -72,5 +74,15 @@ public class WebhookManager extends ResourceManager {
    */
   public List<Webhook> list() throws OnfidoException {
     return webhookParser.parseWrappedList(get(""), "webhooks");
+  }
+
+  /**
+   * Resends a list of webhooks. If successful, returns a 204 No Content response.
+   *
+   * @param request the request body
+   * @throws OnfidoException the onfido exception
+   */
+  public void resend(WebhookResend.Request request) throws OnfidoException {
+    post("resend", resendRequestFormatter.toJson(request));
   }
 }

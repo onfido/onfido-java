@@ -5,6 +5,8 @@ import static org.junit.Assert.assertEquals;
 import com.onfido.JsonObject;
 import com.onfido.Onfido;
 import com.onfido.models.Webhook;
+import com.onfido.models.WebhookResend;
+import com.onfido.models.WebhookResendObject;
 import com.onfido.exceptions.OnfidoException;
 
 import java.util.Arrays;
@@ -106,5 +108,19 @@ public class WebhookManagerTest extends TestBase {
     assertEquals(3, webhooks.size());
     assertEquals("https://example.com/firstWebhook", webhooks.get(0).getUrl());
     assertEquals("https://example.com/secondWebhook", webhooks.get(1).getUrl());
+  }
+
+  @Test
+  public void resendWebhooksTest() throws Exception {
+    prepareMock("", null, 204);
+
+    onfido.webhook.resend(
+      WebhookResend.request().data(
+        WebhookResendObject.request().resourceType("check").resourceId("check_id_1").event("check.completed"),
+        WebhookResendObject.request().resourceType("check").resourceId("check_id_2").event("check.completed")
+      )
+    );
+
+    takeRequest("/webhooks/resend");
   }
 }

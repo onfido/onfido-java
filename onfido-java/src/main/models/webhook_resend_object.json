@@ -1,0 +1,20 @@
+{
+  "title": "WebhookResendObject",
+  "properties": {
+    "resource_type": {
+      "type": "string",
+      "description": "The resource type to resend.",
+      "writeOnly": true
+    },
+    "resource_id": {
+      "type": "string",
+      "description": "The resource id to resend.",
+      "writeOnly": true
+    },
+    "event": {
+      "type": "string",
+      "description": "The event that should be resent.",
+      "writeOnly": true
+    }
+  }
+}

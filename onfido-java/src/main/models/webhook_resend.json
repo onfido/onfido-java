@@ -1,0 +1,13 @@
+{
+  "title": "WebhookResend",
+  "properties": {
+    "data": {
+      "type": "array",
+      "description": "Data object",
+      "items": {
+        "$ref": "webhook_resend_object.yaml"
+      },
+      "writeOnly": true
+    }
+  }
+}

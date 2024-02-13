@@ -39,6 +39,19 @@
       "type": "object",
       "description": "Output data associated with the task",
       "readOnly": true
+    },
+    "status": {
+      "type": "string",
+      "description": "Status of the task",
+      "readOnly": true
+    },
+    "reasons": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Reasons of the task",
+      "readOnly": true
     }
   }
 }

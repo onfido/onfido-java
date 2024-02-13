@@ -89,7 +89,7 @@ public final class Property {
       case "integer":
         return TypeInfo.primitiveType("int", "Integer", "0");
       case "object":
-        return TypeInfo.objectType("Map<String, Object>");
+        return TypeInfo.objectType("Object");
       case "array":
         return TypeInfo.listOf(typeInfoFor(propertyJson.items));
       case "string":

@@ -1,17 +1,15 @@
 package com.onfido.integration;
 
+import com.onfido.ApiException;
+import com.onfido.model.Applicant;
+import com.onfido.model.Document;
 import java.io.File;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
-
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import com.onfido.ApiException;
-import com.onfido.model.Applicant;
-import com.onfido.model.Document;
 
 public class DocumentTest extends TestBase {
   private Applicant applicant;
@@ -56,9 +54,10 @@ public class DocumentTest extends TestBase {
   public void listDocumentsTest() throws Exception {
     uploadDocument(applicant, "another_sample_driving_licence.png", "driving_licence");
 
-    List<Document> documents = onfido.listDocuments(applicant.getId()).getDocuments().stream()
-                                              .sorted(Comparator.comparing(Document::getFileName))
-                                              .collect(Collectors.toList());
+    List<Document> documents =
+        onfido.listDocuments(applicant.getId()).getDocuments().stream()
+            .sorted(Comparator.comparing(Document::getFileName))
+            .collect(Collectors.toList());
 
     Assertions.assertEquals("another_sample_driving_licence.png", documents.get(0).getFileName());
     Assertions.assertEquals("sample_driving_licence.png", documents.get(1).getFileName());
@@ -72,7 +71,7 @@ public class DocumentTest extends TestBase {
       onfido.uploadDocument(null, null, null, "file.png", null, null, null, null);
       Assertions.fail();
     } catch (ApiException ex) {
-        Assertions.assertEquals(400, ex.getCode());
+      Assertions.assertEquals(400, ex.getCode());
     }
   }
 }

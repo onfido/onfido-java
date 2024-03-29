@@ -1,16 +1,14 @@
 package com.onfido.integration;
 
+import com.onfido.model.Applicant;
+import com.onfido.model.ApplicantUpdater;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
-
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import com.onfido.model.Applicant;
-import com.onfido.model.ApplicantUpdater;
 
 public class ApplicantTest extends TestBase {
   private Applicant applicant;
@@ -44,8 +42,8 @@ public class ApplicantTest extends TestBase {
 
   @Test
   public void updateApplicantTest() throws Exception {
-    Applicant updatedApplicant = onfido.updateApplicant(applicant.getId(),
-                                                        new ApplicantUpdater().firstName("Updated"));
+    Applicant updatedApplicant =
+        onfido.updateApplicant(applicant.getId(), new ApplicantUpdater().firstName("Updated"));
 
     Assertions.assertEquals("Updated", updatedApplicant.getFirstName());
     Assertions.assertEquals("Last", updatedApplicant.getLastName());
@@ -64,16 +62,17 @@ public class ApplicantTest extends TestBase {
 
     onfido.deleteApplicant(applicant.getId());
     onfido.restoreApplicant(applicant.getId());
-    }
+  }
 
   @Test
   public void listApplicants() throws Exception {
     createApplicant("Applicant1");
     createApplicant("Applicant2");
 
-    List<Applicant> applicants = onfido.listApplicants(1, 20, false).getApplicants().stream()
-                                                 .sorted(Comparator.comparing(Applicant::getFirstName))
-                                                 .collect(Collectors.toList());
+    List<Applicant> applicants =
+        onfido.listApplicants(1, 20, false).getApplicants().stream()
+            .sorted(Comparator.comparing(Applicant::getFirstName))
+            .collect(Collectors.toList());
 
     Assertions.assertEquals("Applicant1", applicants.get(0).getFirstName());
     Assertions.assertEquals("Applicant2", applicants.get(1).getFirstName());

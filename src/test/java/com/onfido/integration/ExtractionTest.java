@@ -1,11 +1,5 @@
 package com.onfido.integration;
 
-import java.time.LocalDate;
-
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-
 import com.onfido.model.Applicant;
 import com.onfido.model.CountryCodes;
 import com.onfido.model.Document;
@@ -15,6 +9,10 @@ import com.onfido.model.Extraction;
 import com.onfido.model.ExtractionDocumentClassification;
 import com.onfido.model.ExtractionExtractedData;
 import com.onfido.model.ExtractionExtractedData.GenderEnum;
+import java.time.LocalDate;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 // Authored by akrasnoshchok
 
@@ -34,12 +32,14 @@ public class ExtractionTest extends TestBase {
 
     Assertions.assertEquals(document.getId(), extraction.getDocumentId());
 
-    ExtractionDocumentClassification documentClassification = extraction.getDocumentClassification();
+    ExtractionDocumentClassification documentClassification =
+        extraction.getDocumentClassification();
     ExtractionExtractedData extractedData = extraction.getExtractedData();
 
     // Check response body: document classification
     Assertions.assertNotNull(documentClassification);
-    Assertions.assertEquals(DocumentTypes.DRIVING_LICENCE, documentClassification.getDocumentType());
+    Assertions.assertEquals(
+        DocumentTypes.DRIVING_LICENCE, documentClassification.getDocumentType());
     Assertions.assertEquals(CountryCodes.GBR, documentClassification.getIssuingCountry());
 
     // Check response body: extracted data

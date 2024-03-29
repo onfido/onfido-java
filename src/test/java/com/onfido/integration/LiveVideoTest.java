@@ -1,23 +1,18 @@
 package com.onfido.integration;
 
-import java.io.BufferedReader;
+import com.onfido.ApiException;
+import com.onfido.model.LiveVideo;
 import java.io.File;
-import java.io.FileOutputStream;
-import java.io.OutputStream;
 import java.nio.file.Files;
 import java.util.List;
 import java.util.UUID;
-
-import org.apache.commons.codec.Charsets;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import com.onfido.ApiException;
-import com.onfido.model.LiveVideo;
-
 public class LiveVideoTest extends TestBase {
 
-  static private UUID sampleLiveVideoId1 = UUID.fromString(System.getenv("ONFIDO_SAMPLE_VIDEO_ID_1"));
+  private static UUID sampleLiveVideoId1 =
+      UUID.fromString(System.getenv("ONFIDO_SAMPLE_VIDEO_ID_1"));
 
   @Test
   public void downloadLiveVideoTest() throws Exception {
@@ -25,6 +20,7 @@ public class LiveVideoTest extends TestBase {
 
     Assertions.assertTrue(download.length() > 0);
   }
+
   @Test
   public void downloadLiveVideoFrameTest() throws Exception {
     try {
@@ -34,7 +30,8 @@ public class LiveVideoTest extends TestBase {
       Assertions.assertEquals("JFIF", new String(content, 6, 4));
     } catch (ApiException ex) {
       Assertions.assertEquals(422, ex.getCode());
-      Assertions.assertEquals("Failed to extract a frame from the provided video (status code 422)", ex.getMessage());
+      Assertions.assertEquals(
+          "Failed to extract a frame from the provided video (status code 422)", ex.getMessage());
     }
   }
 

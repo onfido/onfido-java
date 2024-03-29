@@ -1,17 +1,15 @@
 package com.onfido.integration;
 
+import com.onfido.ApiException;
+import com.onfido.model.Applicant;
+import com.onfido.model.LivePhoto;
 import java.io.File;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
-
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import com.onfido.ApiException;
-import com.onfido.model.Applicant;
-import com.onfido.model.LivePhoto;
 
 public class LivePhotoTest extends TestBase {
 
@@ -61,9 +59,10 @@ public class LivePhotoTest extends TestBase {
   public void listLivePhotosTest() throws Exception {
     uploadLivePhoto(applicant, "another_sample_photo.png");
 
-    List<LivePhoto> livePhotos = onfido.listLivePhotos(applicant.getId()).getLivePhotos().stream()
-                                                 .sorted(Comparator.comparing(LivePhoto::getFileName))
-                                                 .collect(Collectors.toList());
+    List<LivePhoto> livePhotos =
+        onfido.listLivePhotos(applicant.getId()).getLivePhotos().stream()
+            .sorted(Comparator.comparing(LivePhoto::getFileName))
+            .collect(Collectors.toList());
 
     Assertions.assertEquals("another_sample_photo.png", livePhotos.get(0).getFileName());
     Assertions.assertEquals("sample_photo.png", livePhotos.get(1).getFileName());

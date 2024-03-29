@@ -1,16 +1,14 @@
 package com.onfido.integration;
 
-import java.io.File;
-import java.nio.file.Files;
-import java.util.UUID;
-
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-
 import com.onfido.model.Applicant;
 import com.onfido.model.WorkflowRun;
 import com.onfido.model.WorkflowRunBuilder;
+import java.io.File;
+import java.nio.file.Files;
+import java.util.UUID;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class WorkflowRunTest extends TestBase {
   private WorkflowRun workflowRun;
@@ -25,7 +23,8 @@ public class WorkflowRunTest extends TestBase {
   }
 
   private WorkflowRun createWorkflowRun(UUID workflowId, UUID applicantId) throws Exception {
-    return onfido.createWorkflowRun(new WorkflowRunBuilder().workflowId(workflowId).applicantId(applicantId));
+    return onfido.createWorkflowRun(
+        new WorkflowRunBuilder().workflowId(workflowId).applicantId(applicantId));
   }
 
   @Test

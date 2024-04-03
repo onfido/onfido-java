@@ -1,61 +1,48 @@
 package com.onfido.integration;
 
-import com.onfido.JsonObject;
-import com.onfido.api.FileDownload;
-import com.onfido.exceptions.ApiException;
-import com.onfido.models.MotionCapture;
-import org.junit.Assert;
-import org.testng.annotations.Test;
-
-import java.util.Arrays;
+import java.io.File;
+import java.nio.file.Files;
 import java.util.List;
+import java.util.UUID;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
-public class MotionCaptureManagerTest extends TestBase {
+import com.onfido.ApiException;
+import com.onfido.model.MotionCapture;
 
-  static private final String EXAMPLE_ID_1 = System.getenv("ONFIDO_SAMPLE_MOTION_ID_1");
-  static private final String NON_EXISTING_ID = "00000000-0000-0000-0000-000000000000";
+public class MotionCaptureTest extends TestBase {
+
+  static private final UUID EXAMPLE_ID_1 = UUID.fromString(System.getenv("ONFIDO_SAMPLE_MOTION_ID_1"));
 
   @Test
   public void downloadMotionCaptureTest() throws Exception {
-    prepareMock("test", "video/mp4", 200);
+    File download = onfido.downloadMotionCapture(EXAMPLE_ID_1);
 
-    FileDownload download = onfido.motionCapture.download(EXAMPLE_ID_1);
-
-    takeRequest("/motion_captures/" + EXAMPLE_ID_1 + "/download");
-
-    assertTrue(download.content.length > 0);
-    assertTrue(download.contentType.contains("video/mp4"));
+    Assertions.assertTrue(download.length() > 0);
   }
 
   @Test
   public void downloadMotionCaptureFrameTest() throws Exception {
-    prepareMock("test", "image/jpeg", 200);
-
     try {
-      FileDownload download = onfido.motionCapture.downloadFrame(EXAMPLE_ID_1);
-      takeRequest("/motion_captures/" + EXAMPLE_ID_1 + "/frame");
+      File download = onfido.downloadMotionCaptureFrame(EXAMPLE_ID_1);
+      byte[] content = Files.readAllBytes(download.toPath());
 
-      assertTrue(download.contentType.contains("image/jpeg"));
+      Assertions.assertTrue(download.length()>0);
+      Assertions.assertEquals("JFIF", new String(content, 6, 4));
     } catch (ApiException ex) {
-      Assert.assertFalse(isMockingEnabled());
-      Assert.assertEquals(422, ex.getStatusCode());
-      Assert.assertEquals("Failed to extract a frame from the provided motion capture (status code 422)", ex.getMessage());
+      Assertions.assertEquals(422, ex.getCode());
+      Assertions.assertEquals("Failed to extract a frame from the provided motion capture (status code 422)", ex.getMessage());
     }
   }
 
   @Test
   public void downloadErrorTest() throws Exception {
-    prepareMock("error", "video/mp4", 404);
-
     try {
-      onfido.motionCapture.download(NON_EXISTING_ID);
-      Assert.fail();
+      onfido.downloadMotionCapture(nonExistingId);
+      Assertions.fail();
     } catch (ApiException ex) {
-      takeRequest(String.format("/motion_captures/%s/download", NON_EXISTING_ID));
-      Assert.assertEquals(404, ex.getStatusCode());
+      Assertions.assertEquals(404, ex.getCode());
     }
   }
 
@@ -63,25 +50,15 @@ public class MotionCaptureManagerTest extends TestBase {
   public void findMotionCaptureTest() throws Exception {
     String expectedFilename = EXAMPLE_ID_1 + ".mp4";
 
-    prepareMock(new JsonObject().add("file_name", expectedFilename));
+    MotionCapture motionCapture = onfido.findMotionCapture(EXAMPLE_ID_1);
 
-    MotionCapture motionCapture = onfido.motionCapture.find(EXAMPLE_ID_1);
-
-    takeRequest("/motion_captures/" + EXAMPLE_ID_1);
-    assertEquals(expectedFilename, motionCapture.getFileName());
+    Assertions.assertEquals(expectedFilename, motionCapture.getFileName());
   }
 
   @Test
   public void listMotionCapturesTest() throws Exception {
-    prepareMock(new JsonObject().add("motion_captures",
-                                     Arrays.asList(
-                                       new JsonObject().add("id", "id-1").map,
-                                       new JsonObject().add("id", "id-2").map)));
+    List<MotionCapture> motionCaptures = onfido.listMotionCaptures(sampleApplicantId).getMotionCaptures();
 
-    List<MotionCapture> motionCaptures = onfido.motionCapture.list(sampleApplicantId);
-
-    takeRequest("/motion_captures/?applicant_id=" + sampleApplicantId);
-
-    assertEquals(2, motionCaptures.size());
+    Assertions.assertEquals(2, motionCaptures.size());
   }
 }

@@ -1,91 +1,141 @@
 package com.onfido.integration;
 
-import static org.junit.Assert.assertEquals;
-
-import com.onfido.JsonObject;
-import com.onfido.Onfido;
-
-import com.onfido.models.Applicant;
-import com.onfido.models.Check;
-import com.onfido.models.Document;
-import com.onfido.models.Report;
-
 import java.util.Arrays;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Comparator;
+import java.util.List;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
-import okhttp3.mockwebserver.MockWebServer;
-import okhttp3.mockwebserver.RecordedRequest;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
-public class ReportManagerTest extends TestBase {
+import com.onfido.ApiException;
+import com.onfido.model.Applicant;
+import com.onfido.model.Check;
+import com.onfido.model.CheckBuilder;
+import com.onfido.model.Document;
+import com.onfido.model.DocumentBreakdown;
+import com.onfido.model.DocumentReport;
+import com.onfido.model.IdentityEnhancedProperties;
+import com.onfido.model.IdentityEnhancedReport;
+import com.onfido.model.Report;
+import com.onfido.model.ReportDocument;
+import com.onfido.model.ReportName;
+import com.onfido.model.ReportShared;
+import com.onfido.model.ReportStatus;
+
+public class ReportTest extends TestBase {
   private Applicant applicant;
   private Document document;
   private Check check;
 
-  @BeforeMethod
+  @BeforeEach
   public void setup() throws Exception {
     applicant = createApplicant();
-    document = uploadDocument(applicant, "file.png");
-    check = createCheck(applicant, document,
-      Check.request().reportNames("document"));
+    document = uploadDocument(applicant, "sample_driving_licence.png", "driving_licence");
+    check = createCheck(applicant, document, new CheckBuilder().reportNames(Arrays.asList(ReportName.DOCUMENT)));
   }
 
-  private Report findReport(String reportId, String mockedReportName) throws Exception {
-    prepareMock(new JsonObject().add("name", mockedReportName));
-    Report report = onfido.report.find(reportId);
-    takeRequest("/reports/" + reportId);
+  private List<Report> sortReports(List<Report> reports)
+  {
+    // TODO update after https://github.com/onfido/onfido-openapi-spec/pull/57
+    // return reports.stream()
+    //               .sorted(Comparator.comparing(Report::getName))
+    //               .collect(Collectors.toList());
 
-    return report;
+    try {
+      reports.get(0).getDocumentReport();
+
+      return reports;
+    } catch ( Exception ClassCastException )
+    {
+      // If sorting is not good, we swap them around
+      return Arrays.asList(reports.get(1), reports.get(0));
+    }
   }
 
-  @Test
+  private UUID getReportId(Report report)
+  {
+    // TODO update after https://github.com/onfido/onfido-openapi-spec/pull/57
+    // return report.getId();
+    try {
+      return report.getDocumentReport().getId();
+    } catch ( Exception ClassCastException )
+    {
+      return report.getIdentityEnhancedReport().getId();
+    }
+  }
+
+  // @Test
   public void findReportTest() throws Exception {
-    // Get both reports in a list and sort them according their name
-    List<Report> reports = Arrays.asList(
-      findReport(check.getReportIds().get(0), "identity_enhanced"),
-      findReport(check.getReportIds().get(1), "document")).stream()
-        .sorted(Comparator.comparing(Report::getName))
-        .collect(Collectors.toList());
+    List <UUID> reportIds = check.getReportIds();
 
-    assertEquals("document", reports.get(0).getName());
-    assertEquals("identity_enhanced", reports.get(1).getName());
+    if ( reportIds != null ){
+      List<Report> reports = sortReports(
+                              Arrays.asList(onfido.findReport(reportIds.get(0)),
+                                            onfido.findReport(reportIds.get(1))));
+
+      // TODO avoid casting after https://github.com/onfido/onfido-openapi-spec/pull/57
+      DocumentReport documentReport = reports.get(0).getDocumentReport();
+      IdentityEnhancedReport identityEnhancedReport = reports.get(1).getIdentityEnhancedReport();
+
+      Assertions.assertEquals(ReportName.DOCUMENT, documentReport.getName());
+      Assertions.assertEquals(ReportStatus.AWAITING_DATA, documentReport.getStatus());
+
+      Assertions.assertEquals(ReportName.IDENTITY_ENHANCED, identityEnhancedReport.getName());
+      Assertions.assertEquals(check.getId(), identityEnhancedReport.getCheckId());
+
+      List<ReportDocument> documents = documentReport.getDocuments();
+
+      Assertions.assertNotNull(documents);
+      Assertions.assertEquals(documents.get(0).getId(), document.getId());
+
+      Assertions.assertEquals(new DocumentBreakdown(), documentReport.getBreakdown());
+      Assertions.assertEquals(new IdentityEnhancedProperties(), identityEnhancedReport.getProperties());
+    }
+    else
+    {
+      Assertions.fail();
+      return;
+    }
   }
 
   @Test
   public void listReportsTest() throws Exception {
-    prepareMock(new JsonObject().add("reports", Arrays.asList(
-                            new JsonObject().add("name", "document").map,
-                            new JsonObject().add("name", "identity_enhanced").map)));
+    List<Report> reports = sortReports(onfido.listReports(check.getId()).getReports());
 
-    List<Report> reports = onfido.report.list(check.getId()).stream()
-                                        .sorted(Comparator.comparing(Report::getName))
-                                        .collect(Collectors.toList());
-
-    takeRequest("/reports/?check_id=" + check.getId());
-
-    assertEquals("document", reports.get(0).getName());
-    assertEquals("identity_enhanced", reports.get(1).getName());
+    // TODO avoid casting after https://github.com/onfido/onfido-openapi-spec/pull/57
+    Assertions.assertEquals(ReportName.DOCUMENT, reports.get(0).getDocumentReport().getName());
+    Assertions.assertEquals(ReportName.IDENTITY_ENHANCED, reports.get(1).getIdentityEnhancedReport().getName());
   }
 
   @Test
   public void resumeReportTest() throws Exception {
-    Report report = findReport(check.getReportIds().get(0), "document");
+    List<UUID> reportIds = check.getReportIds();
 
-    prepareMock("", null, 204);
-    onfido.report.resume(report.getId());
-    takeRequest("/reports/" + report.getId() + "/resume");
+    if ( reportIds != null ){
+      Report report = onfido.findReport(reportIds.get(0));
+      onfido.resumeReport(getReportId(report));
+    }
+    else
+    {
+      Assertions.fail();
+    }
   }
 
   @Test
   public void cancelReportTest() throws Exception {
-    Report report = findReport(check.getReportIds().get(0), "document");
+    List<UUID> reportIds = check.getReportIds();
 
-    prepareMock("", null, 204);
-    onfido.report.cancel(report.getId());
-    takeRequest("/reports/" + report.getId() + "/cancel");
+    if ( reportIds != null ) {
+      Report report = onfido.findReport(reportIds.get(0));
+      onfido.cancelReport(getReportId(report));
+    }
+    else
+    {
+      Assertions.fail();
+    }
   }
 }

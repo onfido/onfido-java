@@ -1,121 +1,81 @@
 package com.onfido.integration;
 
-import static org.junit.Assert.assertEquals;
-
-import com.onfido.JsonObject;
-import com.onfido.Onfido;
-import com.onfido.models.Applicant;
-
-import java.util.Arrays;
-import java.util.List;
-import java.io.IOException;
 import java.util.Comparator;
+import java.util.List;
 import java.util.stream.Collectors;
 
-import okhttp3.mockwebserver.MockWebServer;
-import okhttp3.mockwebserver.RecordedRequest;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
-import org.testng.annotations.AfterMethod;
+import com.onfido.model.Applicant;
+import com.onfido.model.ApplicantUpdater;
 
-public class ApplicantManagerTest extends TestBase {
+public class ApplicantTest extends TestBase {
   private Applicant applicant;
 
-  @BeforeMethod
+  @BeforeEach
   public void setup() throws Exception {
     applicant = createApplicant();
   }
 
-  @AfterMethod
+  @AfterEach
   public void cleanUp() throws Exception {
-    if (!isMockingEnabled()) {
-      onfido.applicant.delete(applicant.getId());
-    }
+    onfido.deleteApplicant(applicant.getId());
   }
 
   @Test
   public void createApplicantTest() throws Exception {
     Applicant applicant = createApplicant();
 
-    assertRequestField("first_name", "First");
-    assertEquals("First", applicant.getFirstName());
-    assertEquals("Last", applicant.getLastName());
+    Assertions.assertEquals("First", applicant.getFirstName());
+    Assertions.assertEquals("Last", applicant.getLastName());
   }
 
   @Test
   public void findApplicantTest() throws Exception {
     Applicant applicant = createApplicant();
+    Applicant lookupApplicant = onfido.findApplicant(applicant.getId());
 
-    prepareMock(new JsonObject().add("first_name", "First")
-                                .add("last_name", "Last"));
-
-    Applicant lookupApplicant = onfido.applicant.find(applicant.getId());
-
-    takeRequest("/applicants/" + applicant.getId());
-
-    assertEquals("First", applicant.getFirstName());
-    assertEquals("Last", applicant.getLastName());
+    Assertions.assertEquals("First", lookupApplicant.getFirstName());
+    Assertions.assertEquals("Last", lookupApplicant.getLastName());
   }
 
   @Test
   public void updateApplicantTest() throws Exception {
-    Applicant applicant = createApplicant();
+    Applicant updatedApplicant = onfido.updateApplicant(applicant.getId(),
+                                                        new ApplicantUpdater().firstName("Updated"));
 
-    prepareMock(new JsonObject().add("first_name", "Updated")
-                                .add("last_name", "Last"));
-
-    Applicant updatedApplicant = onfido.applicant.update(applicant.getId(),
-                                                         Applicant.request().firstName("Updated"));
-
-    takeRequest("/applicants/" + applicant.getId());
-
-    assertRequestField("first_name", "Updated");
-    assertEquals("Updated", updatedApplicant.getFirstName());
+    Assertions.assertEquals("Updated", updatedApplicant.getFirstName());
+    Assertions.assertEquals("Last", updatedApplicant.getLastName());
   }
 
   @Test
   public void deleteApplicantTest() throws Exception {
     Applicant applicant = createApplicant();
 
-    prepareMock(new JsonObject());
-    onfido.applicant.delete(applicant.getId());
-    takeRequest("/applicants/" + applicant.getId());
+    onfido.deleteApplicant(applicant.getId());
   }
 
   @Test
   public void restoreApplicantTest() throws Exception {
     Applicant applicant = createApplicant();
 
-    prepareMock(new JsonObject());
-    onfido.applicant.delete(applicant.getId());
-    takeRequest("/applicants/" + applicant.getId());
-
-    prepareMock(new JsonObject());
-    onfido.applicant.restore(applicant.getId());
-    takeRequest("/applicants/" + applicant.getId() + "/restore");
-  }
+    onfido.deleteApplicant(applicant.getId());
+    onfido.restoreApplicant(applicant.getId());
+    }
 
   @Test
   public void listApplicants() throws Exception {
-    Applicant applicant1 = createApplicant("Applicant1");
-    Applicant applicant2 = createApplicant("Applicant2");
+    createApplicant("Applicant1");
+    createApplicant("Applicant2");
 
-    prepareMock(
-        new JsonObject()
-            .add(
-                "applicants",
-                Arrays.asList(
-                    new JsonObject().add("first_name", "Applicant1").map,
-                    new JsonObject().add("first_name", "Applicant2").map)));
-
-    List<Applicant> applicants = onfido.applicant.list(1, 20, false).stream()
+    List<Applicant> applicants = onfido.listApplicants(1, 20, false).getApplicants().stream()
                                                  .sorted(Comparator.comparing(Applicant::getFirstName))
                                                  .collect(Collectors.toList());
 
-    takeRequest("/applicants/?page=1&per_page=20&include_deleted=false");
-
-    assertEquals("Applicant1", applicants.get(0).getFirstName());
-    assertEquals("Applicant2", applicants.get(1).getFirstName());
+    Assertions.assertEquals("Applicant1", applicants.get(0).getFirstName());
+    Assertions.assertEquals("Applicant2", applicants.get(1).getFirstName());
   }
 }

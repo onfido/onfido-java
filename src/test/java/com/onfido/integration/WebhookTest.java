@@ -1,126 +1,88 @@
 package com.onfido.integration;
 
-import static org.junit.Assert.assertEquals;
-
-import com.onfido.JsonObject;
-import com.onfido.Onfido;
-import com.onfido.models.Webhook;
-import com.onfido.models.WebhookResend;
-import com.onfido.models.WebhookResendObject;
-import com.onfido.exceptions.OnfidoException;
-
 import java.util.Arrays;
-import java.util.List;
 import java.util.Comparator;
-import java.util.stream.Collectors;
+import java.util.List;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
-import okhttp3.mockwebserver.MockWebServer;
-import okhttp3.mockwebserver.RecordedRequest;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.Test;
+import com.onfido.model.Webhook;
+import com.onfido.model.WebhookBuilder;
+import com.onfido.model.WebhookEventType;
+import com.onfido.model.WebhookResend;
+import com.onfido.model.WebhookUpdater;
+import com.onfido.model.WebhooksResendItem;
 
-public class WebhookManagerTest extends TestBase {
+public class WebhookTest extends TestBase {
   private Webhook webhook;
 
-  @BeforeMethod
+  @BeforeEach
   public void setup() throws Exception {
     webhook = createWebhook("https://example.com/webhook");
   }
 
-  @AfterMethod
+  @AfterEach
   public void tearDown() throws Exception {
     cleanUpWebhooks();
   }
 
   private Webhook createWebhook(String url) throws Exception {
-    prepareMock(new JsonObject().add("url", url)
-                                .add("id", UUID.randomUUID().toString()));
-
-    Webhook webhook = onfido.webhook.create(Webhook.request().url(url));
-
-    takeRequest("/webhooks/");
-
-    assertRequestField("url", url);
-
-    return webhook;
+    return onfido.createWebhook(new WebhookBuilder().url(url));
   }
 
   @Test
   public void createWebhookTest() throws Exception {
-    assertEquals("https://example.com/webhook", webhook.getUrl());
+    Assertions.assertEquals("https://example.com/webhook", webhook.getUrl());
   }
 
   @Test
   public void findWebhookTest() throws Exception {
-    prepareMock(new JsonObject().add("url", "https://example.com/webhook"));
+    Webhook lookupWebhook = onfido.findWebhook(webhook.getId());
 
-    Webhook lookupWebhook = onfido.webhook.find(webhook.getId());
-
-    takeRequest("/webhooks/" + webhook.getId());
-
-    assertEquals("https://example.com/webhook", lookupWebhook.getUrl());
+    Assertions.assertEquals("https://example.com/webhook", lookupWebhook.getUrl());
   }
 
   @Test
   public void updateWebhookTest() throws Exception {
-    prepareMock(new JsonObject().add("url", "https://example.com/webhook/updated"));
-
     Webhook updatedWebhook =
-      onfido.webhook.update(webhook.getId(),
-                            Webhook.request().url("https://example.com/webhook/updated"));
+      onfido.updateWebhook(webhook.getId(),
+                           new WebhookUpdater().url("https://example.com/webhook/updated"));
 
-    takeRequest("/webhooks/" + webhook.getId());
-
-    assertRequestField("url", "https://example.com/webhook/updated");
-
-    assertEquals("https://example.com/webhook/updated", updatedWebhook.getUrl());
+    Assertions.assertEquals("https://example.com/webhook/updated", updatedWebhook.getUrl());
   }
 
   @Test
   public void deleteWebhookTest() throws Exception {
-    prepareMock("", null, 204);
-
-    onfido.webhook.delete(webhook.getId());
-
-    takeRequest("/webhooks/" + webhook.getId());
+    onfido.deleteWebhook(webhook.getId());
   }
 
   @Test
   public void listWebhooksTest() throws Exception {
-    Webhook firstWebhook = createWebhook("https://example.com/firstWebhook");
-    Webhook secondWebhook = createWebhook("https://example.com/secondWebhook");
+    createWebhook("https://example.com/firstWebhook");
+    createWebhook("https://example.com/secondWebhook");
 
-    prepareMock(new JsonObject().add("webhooks",
-                                     Arrays.asList(
-                                        new JsonObject().add("url", "https://example.com/firstWebhook").map,
-                                        new JsonObject().add("url", "https://example.com/secondWebhook").map,
-                                        new JsonObject().add("url", "https://example.com/webhook").map)));
-
-    List<Webhook> webhooks = onfido.webhook.list().stream()
+    List<Webhook> webhooks = onfido.listWebhooks().getWebhooks().stream()
                                            .sorted(Comparator.comparing(Webhook::getUrl))
                                            .collect(Collectors.toList());
 
-    takeRequest("/webhooks/");
-
-    assertEquals(3, webhooks.size());
-    assertEquals("https://example.com/firstWebhook", webhooks.get(0).getUrl());
-    assertEquals("https://example.com/secondWebhook", webhooks.get(1).getUrl());
+    Assertions.assertEquals(3, webhooks.size());
+    Assertions.assertEquals("https://example.com/firstWebhook", webhooks.get(0).getUrl());
+    Assertions.assertEquals("https://example.com/secondWebhook", webhooks.get(1).getUrl());
   }
 
   @Test
   public void resendWebhooksTest() throws Exception {
-    prepareMock("", null, 204);
-
-    onfido.webhook.resend(
-      WebhookResend.request().data(
-        WebhookResendObject.request().resourceType("check").resourceId("check_id_1").event("check.completed"),
-        WebhookResendObject.request().resourceType("check").resourceId("check_id_2").event("check.completed")
+    onfido.resendWebhooks(new WebhookResend().data(Arrays.asList(
+        new WebhooksResendItem().resourceId(UUID.randomUUID()).event(WebhookEventType.CHECK_COMPLETED),
+        new WebhooksResendItem().resourceId(UUID.randomUUID()).event(WebhookEventType.CHECK_COMPLETED)
+        )
       )
     );
 
-    takeRequest("/webhooks/resend");
-  }
+      }
 }

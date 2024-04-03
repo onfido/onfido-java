@@ -1,84 +1,53 @@
 package com.onfido.integration;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
-
-import com.onfido.JsonObject;
-import com.onfido.Onfido;
-import com.onfido.models.WorkflowRun;
-import com.onfido.models.Applicant;
-import com.onfido.exceptions.OnfidoException;
-import com.onfido.api.FileDownload;
-
-import java.beans.Transient;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Comparator;
-import java.util.stream.Collectors;
+import java.io.File;
+import java.nio.file.Files;
 import java.util.UUID;
 
-import okhttp3.mockwebserver.MockWebServer;
-import okhttp3.mockwebserver.RecordedRequest;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.Test;
+import com.onfido.model.Applicant;
+import com.onfido.model.WorkflowRun;
+import com.onfido.model.WorkflowRunBuilder;
 
-public class WorkflowRunManagerTest extends TestBase {
+public class WorkflowRunTest extends TestBase {
   private WorkflowRun workflowRun;
   private Applicant applicant;
 
-  static final String WORKFLOW_ID = "e8c921eb-0495-44fe-b655-bcdcaffdafe5";
+  static final UUID WORKFLOW_ID = UUID.fromString("e8c921eb-0495-44fe-b655-bcdcaffdafe5");
 
-  @BeforeMethod
+  @BeforeEach
   public void setup() throws Exception {
     applicant = createApplicant();
     workflowRun = createWorkflowRun(WORKFLOW_ID, applicant.getId());
   }
 
-  private WorkflowRun createWorkflowRun(String workflowId, String applicantId) throws Exception {
-    prepareMock(new JsonObject().add("workflow_id", workflowId)
-        .add("applicant_id", applicantId)
-        .add("id", UUID.randomUUID().toString()));
-
-    WorkflowRun workflowRun = onfido.workflowRun
-        .create(WorkflowRun.request().workflowId(workflowId).applicantId(applicantId));
-
-    takeRequest("/workflow_runs/");
-
-    assertRequestField("workflow_id", workflowId);
-    assertRequestField("applicant_id", applicantId);
-
-    return workflowRun;
+  private WorkflowRun createWorkflowRun(UUID workflowId, UUID applicantId) throws Exception {
+    return onfido.createWorkflowRun(new WorkflowRunBuilder().workflowId(workflowId).applicantId(applicantId));
   }
 
   @Test
   public void createWorkflowRunTest() throws Exception {
-    assertEquals(WORKFLOW_ID, workflowRun.getWorkflowId());
-    assertEquals(applicant.getId(), workflowRun.getApplicantId());
+    Assertions.assertEquals(WORKFLOW_ID, workflowRun.getWorkflowId());
+    Assertions.assertEquals(applicant.getId(), workflowRun.getApplicantId());
   }
 
   @Test
   public void findWorkflowRunTest() throws Exception {
-    prepareMock(new JsonObject().add("workflow_id", WORKFLOW_ID).add("applicant_id", applicant.getId()));
+    WorkflowRun lookupWorkflowRun = onfido.findWorkflowRun(workflowRun.getId());
 
-    WorkflowRun lookupWorkflowRun = onfido.workflowRun.find(workflowRun.getId());
-
-    takeRequest("/workflow_runs/" + workflowRun.getId());
-
-    assertEquals(WORKFLOW_ID, lookupWorkflowRun.getWorkflowId());
-    assertEquals(applicant.getId(), lookupWorkflowRun.getApplicantId());
+    Assertions.assertEquals(WORKFLOW_ID, lookupWorkflowRun.getWorkflowId());
+    Assertions.assertEquals(applicant.getId(), lookupWorkflowRun.getApplicantId());
   }
 
   @Test
   public void evidenceWorkflowRunTest() throws Exception {
-    prepareMock("PDF", "application/pdf", 200);
+    File download = onfido.downloadSignedEvidenceFile(workflowRun.getId());
+    byte[] content = Files.readAllBytes(download.toPath());
 
-    FileDownload download = onfido.workflowRun.evidence(workflowRun.getId());
-
-    takeRequest("/workflow_runs/" + workflowRun.getId() + "/signed_evidence_file");
-
-    assertEquals("application/pdf", download.contentType);
-    assertTrue(download.content.length > 0);
+    Assertions.assertEquals("%PDF", new String(content, 0, 4));
+    Assertions.assertTrue(download.length() > 0);
   }
 }

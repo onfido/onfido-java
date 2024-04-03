@@ -1,40 +1,61 @@
 package com.onfido;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import org.testng.annotations.Test;
+import java.util.UUID;
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+
+import com.onfido.ApiClient.Region;
+import com.onfido.api.DefaultApi;
 
 public class OnfidoTest {
-  @Test(expectedExceptions = RuntimeException.class)
+
+  @Test
   public void throwsExceptionForMissingApiToken() {
-    Onfido.builder().regionEU().build();
+    ApiException thrown = assertThrows(
+        ApiException.class,
+           () -> new DefaultApi(Configuration.getDefaultApiClient()).findApplicant(UUID.fromString("839d4812-7c49-4008-8d83-bbd7610f0fec")),
+           "Expected to throw, but it didn't"
+    );
+
+    assertTrue(thrown.getMessage().contains("authorization_error"));
   }
 
-  @Test(expectedExceptions = RuntimeException.class)
+  @Test
   public void throwsExceptionForNullApiToken() {
-    Onfido.builder().regionEU().apiToken(null).build();
+    ApiException thrown = assertThrows(
+      ApiException.class,
+      () -> new DefaultApi(Configuration.getDefaultApiClient().setApiToken(null)).findApplicant(UUID.fromString("839d4812-7c49-4008-8d83-bbd7610f0fec")),
+      "Expected to throw, but it didn't"
+    );
+
+    assertTrue(thrown.getMessage().contains("authorization_error"));
   }
 
-  @Test(expectedExceptions = RuntimeException.class)
-  public void throwsExceptionForMissingRegion() {
-    Onfido.builder().apiToken("token").build();
+  @Test
+  public void usesDefaultRegionApiUrl() {
+    DefaultApi onfido = new DefaultApi(Configuration.getDefaultApiClient().setApiToken("token"));
+    Assertions.assertEquals("https://api.eu.onfido.com/v3.6", onfido.getApiClient().getBasePath());
   }
 
-  @Test()
+  @Test
   public void usesEURegionApiUrl() {
-    Onfido onfido = Onfido.builder().apiToken("token").regionEU().build();
-    assertEquals("https://api.eu.onfido.com/v3.6/", onfido.config.getApiUrl());
+    DefaultApi onfido = new DefaultApi(Configuration.getDefaultApiClient().setRegion(Region.EU).setApiToken("token"));
+    Assertions.assertEquals("https://api.eu.onfido.com/v3.6", onfido.getApiClient().getBasePath());
   }
 
   @Test()
   public void usesUSRegionApiUrl() {
-    Onfido onfido = Onfido.builder().apiToken("token").regionUS().build();
-    assertEquals("https://api.us.onfido.com/v3.6/", onfido.config.getApiUrl());
+    DefaultApi onfido = new DefaultApi(Configuration.getDefaultApiClient().setRegion(Region.US).setApiToken("token"));
+    Assertions.assertEquals("https://api.us.onfido.com/v3.6", onfido.getApiClient().getBasePath());
   }
 
   @Test()
-  public void usesCanadaRegionApiUrl() {
-    Onfido onfido = Onfido.builder().apiToken("token").regionCA().build();
-    assertEquals("https://api.ca.onfido.com/v3.6/", onfido.config.getApiUrl());
+  public void usesCARegionApiUrl() {
+    DefaultApi onfido = new DefaultApi(Configuration.getDefaultApiClient().setRegion(Region.CA).setApiToken("token"));
+    Assertions.assertEquals("https://api.ca.onfido.com/v3.6", onfido.getApiClient().getBasePath());
   }
 }

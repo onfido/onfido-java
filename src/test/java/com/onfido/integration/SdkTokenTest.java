@@ -1,32 +1,24 @@
 package com.onfido.integration;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
-import com.onfido.JsonObject;
-import com.onfido.Onfido;
 
-import com.onfido.models.Applicant;
-import com.onfido.models.SdkToken;
+import com.onfido.model.Applicant;
+import com.onfido.model.SdkToken;
+import com.onfido.model.SdkTokenBuilder;
 
-import okhttp3.mockwebserver.MockWebServer;
-import okhttp3.mockwebserver.RecordedRequest;
-import org.testng.annotations.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
-public class SdkTokenManagerTest extends TestBase {
+public class SdkTokenTest extends TestBase {
 
   @Test
   public void generateTokenTest() throws Exception {
     Applicant applicant = createApplicant();
 
-    prepareMock(new JsonObject().add("token", "123"));
+    SdkToken token = onfido.generateSdkToken(
+      new SdkTokenBuilder().applicantId(applicant.getId())
+                            .referrer("https://*.example.com/example_page/*"));
 
-    String token = onfido.sdkToken.generate(
-      SdkToken.request().applicantId(applicant.getId())
-                        .referrer("https://*.example.com/example_page/*"));
-
-    takeRequest("/sdk_token/");
-
-    assertTrue(token.length() > 0);
+    Assertions.assertTrue(token.getToken().length() > 0);
   }
 }

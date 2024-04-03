@@ -27,6 +27,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.onfido.model.DeviceIntelligenceBreakdown;
 import com.onfido.model.ReportDocument;
+import com.onfido.model.ReportName;
 import com.onfido.model.ReportResult;
 import com.onfido.model.ReportStatus;
 import com.onfido.model.ReportSubResult;
@@ -83,7 +84,7 @@ public class DeviceIntelligenceReport {
   private List<ReportDocument> documents;
 
   public static final String JSON_PROPERTY_NAME = "name";
-  private String name;
+  private ReportName name;
 
   public static final String JSON_PROPERTY_BREAKDOWN = "breakdown";
   private DeviceIntelligenceBreakdown breakdown;
@@ -299,7 +300,7 @@ public class DeviceIntelligenceReport {
   }
 
 
-  public DeviceIntelligenceReport name(String name) {
+  public DeviceIntelligenceReport name(ReportName name) {
     this.name = name;
     return this;
   }
@@ -312,14 +313,14 @@ public class DeviceIntelligenceReport {
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
-  public String getName() {
+  public ReportName getName() {
     return name;
   }
 
 
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setName(String name) {
+  public void setName(ReportName name) {
     this.name = name;
   }
 

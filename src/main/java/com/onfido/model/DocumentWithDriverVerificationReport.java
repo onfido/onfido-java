@@ -28,6 +28,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.onfido.model.DocumentBreakdown;
 import com.onfido.model.DocumentWithDriverVerificationReportAllOfProperties;
 import com.onfido.model.ReportDocument;
+import com.onfido.model.ReportName;
 import com.onfido.model.ReportResult;
 import com.onfido.model.ReportStatus;
 import com.onfido.model.ReportSubResult;
@@ -85,7 +86,7 @@ public class DocumentWithDriverVerificationReport {
   private List<ReportDocument> documents;
 
   public static final String JSON_PROPERTY_NAME = "name";
-  private String name;
+  private ReportName name;
 
   public static final String JSON_PROPERTY_BREAKDOWN = "breakdown";
   private DocumentBreakdown breakdown;
@@ -304,7 +305,7 @@ public class DocumentWithDriverVerificationReport {
   }
 
 
-  public DocumentWithDriverVerificationReport name(String name) {
+  public DocumentWithDriverVerificationReport name(ReportName name) {
     this.name = name;
     return this;
   }
@@ -317,14 +318,14 @@ public class DocumentWithDriverVerificationReport {
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
-  public String getName() {
+  public ReportName getName() {
     return name;
   }
 
 
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setName(String name) {
+  public void setName(ReportName name) {
     this.name = name;
   }
 

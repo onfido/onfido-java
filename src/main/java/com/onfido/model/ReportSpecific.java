@@ -46,6 +46,7 @@ import com.onfido.model.IndiaPanReportAllOfProperties;
 import com.onfido.model.KnownFacesReport;
 import com.onfido.model.ProofOfAddressReport;
 import com.onfido.model.ReportDocument;
+import com.onfido.model.ReportName;
 import com.onfido.model.ReportResult;
 import com.onfido.model.ReportStatus;
 import com.onfido.model.ReportSubResult;

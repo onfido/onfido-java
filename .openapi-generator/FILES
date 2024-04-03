@@ -209,6 +209,7 @@ docs/RepeatAttemptsList.md
 docs/RepeatAttemptsListRepeatAttemptsInner.md
 docs/Report.md
 docs/ReportDocument.md
+docs/ReportName.md
 docs/ReportResult.md
 docs/ReportShared.md
 docs/ReportSpecific.md
@@ -500,6 +501,7 @@ src/main/java/com/onfido/model/RepeatAttemptsList.java
 src/main/java/com/onfido/model/RepeatAttemptsListRepeatAttemptsInner.java
 src/main/java/com/onfido/model/Report.java
 src/main/java/com/onfido/model/ReportDocument.java
+src/main/java/com/onfido/model/ReportName.java
 src/main/java/com/onfido/model/ReportResult.java
 src/main/java/com/onfido/model/ReportShared.java
 src/main/java/com/onfido/model/ReportSpecific.java
@@ -763,6 +765,7 @@ src/test/java/com/onfido/model/ProofOfAddressReportTest.java
 src/test/java/com/onfido/model/RepeatAttemptsListRepeatAttemptsInnerTest.java
 src/test/java/com/onfido/model/RepeatAttemptsListTest.java
 src/test/java/com/onfido/model/ReportDocumentTest.java
+src/test/java/com/onfido/model/ReportNameTest.java
 src/test/java/com/onfido/model/ReportResultTest.java
 src/test/java/com/onfido/model/ReportSharedTest.java
 src/test/java/com/onfido/model/ReportSpecificTest.java

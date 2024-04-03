@@ -27,7 +27,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.onfido.model.DocumentProperties;
 import com.onfido.model.ReportDocument;
-import com.onfido.model.ReportName;
 import com.onfido.model.ReportResult;
 import com.onfido.model.ReportStatus;
 import com.onfido.model.ReportSubResult;
@@ -86,7 +85,7 @@ public class UsDrivingLicenceReport {
   private List<ReportDocument> documents;
 
   public static final String JSON_PROPERTY_NAME = "name";
-  private ReportName name;
+  private String name;
 
   public static final String JSON_PROPERTY_BREAKDOWN = "breakdown";
   private UsDrivingLicenceBreakdown breakdown;
@@ -305,7 +304,7 @@ public class UsDrivingLicenceReport {
   }
 
 
-  public UsDrivingLicenceReport name(ReportName name) {
+  public UsDrivingLicenceReport name(String name) {
     this.name = name;
     return this;
   }
@@ -318,14 +317,14 @@ public class UsDrivingLicenceReport {
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
-  public ReportName getName() {
+  public String getName() {
     return name;
   }
 
 
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setName(ReportName name) {
+  public void setName(String name) {
     this.name = name;
   }
 

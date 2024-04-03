@@ -21,7 +21,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.onfido.model.ReportName;
 import com.onfido.model.UsDrivingLicenceBuilder;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -49,7 +48,7 @@ import com.onfido.JSON;
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class CheckRequest {
   public static final String JSON_PROPERTY_REPORT_NAMES = "report_names";
-  private List<ReportName> reportNames = new ArrayList<>();
+  private List<String> reportNames = new ArrayList<>();
 
   public static final String JSON_PROPERTY_DOCUMENT_IDS = "document_ids";
   private List<UUID> documentIds;
@@ -67,7 +66,7 @@ public class CheckRequest {
   private String subResult;
 
   public static final String JSON_PROPERTY_CONSIDER = "consider";
-  private List<ReportName> consider;
+  private List<String> consider;
 
   public static final String JSON_PROPERTY_US_DRIVING_LICENCE = "us_driving_licence";
   private UsDrivingLicenceBuilder usDrivingLicence;
@@ -75,12 +74,12 @@ public class CheckRequest {
   public CheckRequest() { 
   }
 
-  public CheckRequest reportNames(List<ReportName> reportNames) {
+  public CheckRequest reportNames(List<String> reportNames) {
     this.reportNames = reportNames;
     return this;
   }
 
-  public CheckRequest addReportNamesItem(ReportName reportNamesItem) {
+  public CheckRequest addReportNamesItem(String reportNamesItem) {
     if (this.reportNames == null) {
       this.reportNames = new ArrayList<>();
     }
@@ -96,14 +95,14 @@ public class CheckRequest {
   @JsonProperty(JSON_PROPERTY_REPORT_NAMES)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
-  public List<ReportName> getReportNames() {
+  public List<String> getReportNames() {
     return reportNames;
   }
 
 
   @JsonProperty(JSON_PROPERTY_REPORT_NAMES)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setReportNames(List<ReportName> reportNames) {
+  public void setReportNames(List<String> reportNames) {
     this.reportNames = reportNames;
   }
 
@@ -241,12 +240,12 @@ public class CheckRequest {
   }
 
 
-  public CheckRequest consider(List<ReportName> consider) {
+  public CheckRequest consider(List<String> consider) {
     this.consider = consider;
     return this;
   }
 
-  public CheckRequest addConsiderItem(ReportName considerItem) {
+  public CheckRequest addConsiderItem(String considerItem) {
     if (this.consider == null) {
       this.consider = new ArrayList<>();
     }
@@ -262,14 +261,14 @@ public class CheckRequest {
   @JsonProperty(JSON_PROPERTY_CONSIDER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<ReportName> getConsider() {
+  public List<String> getConsider() {
     return consider;
   }
 
 
   @JsonProperty(JSON_PROPERTY_CONSIDER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setConsider(List<ReportName> consider) {
+  public void setConsider(List<String> consider) {
     this.consider = consider;
   }
 

@@ -26,7 +26,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.onfido.model.ReportDocument;
-import com.onfido.model.ReportName;
 import com.onfido.model.ReportResult;
 import com.onfido.model.ReportStatus;
 import com.onfido.model.ReportSubResult;
@@ -86,7 +85,7 @@ public class WatchlistPepsOnlyReport {
   private List<ReportDocument> documents;
 
   public static final String JSON_PROPERTY_NAME = "name";
-  private ReportName name;
+  private String name;
 
   public static final String JSON_PROPERTY_BREAKDOWN = "breakdown";
   private WatchlistStandardBreakdown breakdown;
@@ -305,7 +304,7 @@ public class WatchlistPepsOnlyReport {
   }
 
 
-  public WatchlistPepsOnlyReport name(ReportName name) {
+  public WatchlistPepsOnlyReport name(String name) {
     this.name = name;
     return this;
   }
@@ -318,14 +317,14 @@ public class WatchlistPepsOnlyReport {
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
-  public ReportName getName() {
+  public String getName() {
     return name;
   }
 
 
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setName(ReportName name) {
+  public void setName(String name) {
     this.name = name;
   }
 

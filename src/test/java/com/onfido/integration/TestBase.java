@@ -10,7 +10,6 @@ import com.onfido.model.CheckBuilder;
 import com.onfido.model.CountryCodes;
 import com.onfido.model.Document;
 import com.onfido.model.LocationBuilder;
-import com.onfido.model.ReportName;
 import com.onfido.model.Webhook;
 import java.io.File;
 import java.io.IOException;
@@ -89,7 +88,7 @@ public class TestBase {
     return onfido.createCheck(
         checkBuilder
             .applicantId(applicant.getId())
-            .reportNames(Arrays.asList(ReportName.DOCUMENT, ReportName.IDENTITY_ENHANCED))
+            .reportNames(Arrays.asList("document", "identity_enhanced"))
             .documentIds(Arrays.asList(document.getId())));
   }
 

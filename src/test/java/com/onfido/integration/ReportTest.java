@@ -61,7 +61,7 @@ public class ReportTest extends TestBase {
     }
   }
 
-  // @Test
+  @Test
   public void findReportTest() throws Exception {
     List<UUID> reportIds = check.getReportIds();
 

@@ -12,12 +12,6 @@ on:
     branches:
       - master
       - 'release/**'
-  workflow_dispatch:
-    branches:
-      - master
-      - 'release/**'
-  schedule:
-    - cron:  '0 2 * * *'
 
 jobs:
   build:
@@ -25,20 +19,24 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
     - name: Set up JDK 11
-      uses: actions/setup-java@v2
+      uses: actions/setup-java@v4
       with:
         java-version: '11'
         distribution: 'adopt'
+    - name: Install and run linter over tests
+      run: |
+        npm install google-java-format
+        npx google-java-format --set-exit-if-changed --glob=src/test/**/*.java > /dev/null
     - name: Build with Maven
-      run: mvn -B package --file pom.xml
-    - name: E2E testing
+      run: mvn -B package --file pom.xml -Dmaven.test.skip
+    - name: Run integration tests with Maven
       run: mvn test
       env:
-        ONFIDO_API_TOKEN: ${{secrets.ONFIDO_API_TOKEN}}
-        ONFIDO_SAMPLE_APPLICANT_ID: ${{secrets.ONFIDO_SAMPLE_APPLICANT_ID}}
-        ONFIDO_SAMPLE_VIDEO_ID_1: ${{secrets.ONFIDO_SAMPLE_VIDEO_ID_1}}
-        ONFIDO_SAMPLE_VIDEO_ID_2: ${{secrets.ONFIDO_SAMPLE_VIDEO_ID_2}}
-        ONFIDO_SAMPLE_MOTION_ID_1: ${{secrets.ONFIDO_SAMPLE_MOTION_ID_1}}
-        ONFIDO_SAMPLE_MOTION_ID_2: ${{secrets.ONFIDO_SAMPLE_MOTION_ID_2}}
+        ONFIDO_API_TOKEN: ${{ secrets.ONFIDO_API_TOKEN }}
+        ONFIDO_SAMPLE_APPLICANT_ID: ${{ secrets.ONFIDO_SAMPLE_APPLICANT_ID }}
+        ONFIDO_SAMPLE_VIDEO_ID_1: ${{ secrets.ONFIDO_SAMPLE_VIDEO_ID_1 }}
+        ONFIDO_SAMPLE_VIDEO_ID_2: ${{ secrets.ONFIDO_SAMPLE_VIDEO_ID_2 }}
+        ONFIDO_SAMPLE_MOTION_ID_1: ${{ secrets.ONFIDO_SAMPLE_MOTION_ID_1 }}
+        ONFIDO_SAMPLE_MOTION_ID_2: ${{ secrets.ONFIDO_SAMPLE_MOTION_ID_2 }}

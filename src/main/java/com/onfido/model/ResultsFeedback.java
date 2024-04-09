@@ -38,7 +38,7 @@ import com.onfido.JSON;
 })
 @JsonTypeName("results_feedback")
 @com.fasterxml.jackson.annotation.JsonIgnoreProperties(ignoreUnknown = true)
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class ResultsFeedback {
   /**
    * The expected result for the check or report.

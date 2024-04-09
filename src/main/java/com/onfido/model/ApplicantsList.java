@@ -37,7 +37,7 @@ import com.onfido.JSON;
 })
 @JsonTypeName("Applicants_list")
 @com.fasterxml.jackson.annotation.JsonIgnoreProperties(ignoreUnknown = true)
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class ApplicantsList {
   public static final String JSON_PROPERTY_APPLICANTS = "applicants";
   private List<Applicant> applicants = new ArrayList<>();

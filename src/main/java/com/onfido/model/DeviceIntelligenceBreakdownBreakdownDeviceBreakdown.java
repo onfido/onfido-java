@@ -37,7 +37,7 @@ import com.onfido.JSON;
 })
 @JsonTypeName("device_intelligence_breakdown_breakdown_device_breakdown")
 @com.fasterxml.jackson.annotation.JsonIgnoreProperties(ignoreUnknown = true)
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class DeviceIntelligenceBreakdownBreakdownDeviceBreakdown {
   public static final String JSON_PROPERTY_APPLICATION_AUTHENTICITY = "application_authenticity";
   private DocumentBreakdownDataComparisonBreakdownIssuingCountry applicationAuthenticity;

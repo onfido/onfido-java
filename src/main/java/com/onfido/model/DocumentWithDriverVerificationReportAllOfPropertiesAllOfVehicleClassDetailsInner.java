@@ -38,7 +38,7 @@ import com.onfido.JSON;
 })
 @JsonTypeName("document_with_driver_verification_report_allOf_properties_allOf_vehicle_class_details_inner")
 @com.fasterxml.jackson.annotation.JsonIgnoreProperties(ignoreUnknown = true)
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class DocumentWithDriverVerificationReportAllOfPropertiesAllOfVehicleClassDetailsInner {
   public static final String JSON_PROPERTY_CATEGORY = "category";
   private String category;

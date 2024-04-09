@@ -37,7 +37,7 @@ import com.onfido.JSON;
 })
 @JsonTypeName("document_ODP_reasons")
 @com.fasterxml.jackson.annotation.JsonIgnoreProperties(ignoreUnknown = true)
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class DocumentODPReasons {
   public static final String JSON_PROPERTY_PHOTO_OF_SCREEN = "photo_of_screen";
   private String photoOfScreen;

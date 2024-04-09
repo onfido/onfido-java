@@ -37,7 +37,7 @@ import com.onfido.JSON;
 })
 @JsonTypeName("known_faces_properties")
 @com.fasterxml.jackson.annotation.JsonIgnoreProperties(ignoreUnknown = true)
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class KnownFacesProperties {
   public static final String JSON_PROPERTY_MATCHES = "matches";
   private List<KnownFacesPropertiesMatchesInner> matches;

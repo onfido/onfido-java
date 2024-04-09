@@ -37,7 +37,7 @@ import com.onfido.JSON;
 })
 @JsonTypeName("Webhooks_list")
 @com.fasterxml.jackson.annotation.JsonIgnoreProperties(ignoreUnknown = true)
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class WebhooksList {
   public static final String JSON_PROPERTY_WEBHOOKS = "webhooks";
   private List<Webhook> webhooks = new ArrayList<>();

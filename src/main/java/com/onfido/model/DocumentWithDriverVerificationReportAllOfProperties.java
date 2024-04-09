@@ -83,7 +83,7 @@ import com.onfido.JSON;
 })
 @JsonTypeName("document_with_driver_verification_report_allOf_properties")
 @com.fasterxml.jackson.annotation.JsonIgnoreProperties(ignoreUnknown = true)
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class DocumentWithDriverVerificationReportAllOfProperties {
   public static final String JSON_PROPERTY_DATE_OF_BIRTH = "date_of_birth";
   private LocalDate dateOfBirth;

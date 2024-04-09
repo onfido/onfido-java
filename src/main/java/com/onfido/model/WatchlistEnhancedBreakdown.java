@@ -41,7 +41,7 @@ import com.onfido.JSON;
 })
 @JsonTypeName("watchlist_enhanced_breakdown")
 @com.fasterxml.jackson.annotation.JsonIgnoreProperties(ignoreUnknown = true)
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class WatchlistEnhancedBreakdown {
   public static final String JSON_PROPERTY_POLITICALLY_EXPOSED_PERSON = "politically_exposed_person";
   private WatchlistAmlBreakdownPoliticallyExposedPerson politicallyExposedPerson;

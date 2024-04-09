@@ -59,7 +59,7 @@ import com.onfido.JSON;
 })
 @JsonTypeName("watchlist_enhanced_report")
 @com.fasterxml.jackson.annotation.JsonIgnoreProperties(ignoreUnknown = true)
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class WatchlistEnhancedReport {
   public static final String JSON_PROPERTY_ID = "id";
   private UUID id;

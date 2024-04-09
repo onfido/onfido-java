@@ -34,7 +34,7 @@ import com.onfido.JSON;
 })
 @JsonTypeName("identity_enhanced_breakdown_address_breakdown_credit_agencies_properties")
 @com.fasterxml.jackson.annotation.JsonIgnoreProperties(ignoreUnknown = true)
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class IdentityEnhancedBreakdownAddressBreakdownCreditAgenciesProperties {
   public static final String JSON_PROPERTY_NUMBER_OF_MATCHES = "number_of_matches";
   private Integer numberOfMatches;

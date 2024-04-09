@@ -43,7 +43,7 @@ import com.onfido.JSON;
 })
 @JsonTypeName("document_IQ_reasons")
 @com.fasterxml.jackson.annotation.JsonIgnoreProperties(ignoreUnknown = true)
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class DocumentIQReasons {
   public static final String JSON_PROPERTY_DARK_PHOTO = "dark_photo";
   private String darkPhoto;

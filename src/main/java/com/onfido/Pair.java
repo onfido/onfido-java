@@ -13,7 +13,7 @@
 
 package com.onfido;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class Pair {
     private String name = "";
     private String value = "";

@@ -46,7 +46,7 @@ import com.onfido.JSON;
 })
 @JsonTypeName("applicant_response")
 @com.fasterxml.jackson.annotation.JsonIgnoreProperties(ignoreUnknown = true)
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class ApplicantResponse {
   public static final String JSON_PROPERTY_FIRST_NAME = "first_name";
   private String firstName;

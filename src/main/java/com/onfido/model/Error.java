@@ -34,7 +34,7 @@ import com.onfido.JSON;
   Error.JSON_PROPERTY_ERROR
 })
 @com.fasterxml.jackson.annotation.JsonIgnoreProperties(ignoreUnknown = true)
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class Error {
   public static final String JSON_PROPERTY_ERROR = "error";
   private ErrorProperties error;

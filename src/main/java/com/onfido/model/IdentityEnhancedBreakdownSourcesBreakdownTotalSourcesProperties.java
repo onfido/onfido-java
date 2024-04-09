@@ -34,7 +34,7 @@ import com.onfido.JSON;
 })
 @JsonTypeName("identity_enhanced_breakdown_sources_breakdown_total_sources_properties")
 @com.fasterxml.jackson.annotation.JsonIgnoreProperties(ignoreUnknown = true)
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class IdentityEnhancedBreakdownSourcesBreakdownTotalSourcesProperties {
   public static final String JSON_PROPERTY_TOTAL_NUMBER_OF_SOURCES = "total_number_of_sources";
   private Integer totalNumberOfSources;

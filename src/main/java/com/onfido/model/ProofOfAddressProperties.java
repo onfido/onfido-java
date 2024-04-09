@@ -42,7 +42,7 @@ import com.onfido.JSON;
 })
 @JsonTypeName("proof_of_address_properties")
 @com.fasterxml.jackson.annotation.JsonIgnoreProperties(ignoreUnknown = true)
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class ProofOfAddressProperties {
   public static final String JSON_PROPERTY_ADDRESS = "address";
   private String address;

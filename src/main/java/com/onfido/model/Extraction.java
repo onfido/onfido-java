@@ -14,43 +14,59 @@
 package com.onfido.model;
 
 import java.util.Objects;
-import java.util.Map;
-import java.util.HashMap;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import com.onfido.model.ExtractionDocumentClassification;
 import com.onfido.model.ExtractionExtractedData;
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.UUID;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.onfido.JSON;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import com.onfido.JSON;
 
 /**
  * Extraction
  */
-@JsonPropertyOrder({
-  Extraction.JSON_PROPERTY_DOCUMENT_ID,
-  Extraction.JSON_PROPERTY_DOCUMENT_CLASSIFICATION,
-  Extraction.JSON_PROPERTY_EXTRACTED_DATA
-})
-@JsonTypeName("extraction")
-@com.fasterxml.jackson.annotation.JsonIgnoreProperties(ignoreUnknown = true)
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class Extraction {
-  public static final String JSON_PROPERTY_DOCUMENT_ID = "document_id";
+  public static final String SERIALIZED_NAME_DOCUMENT_ID = "document_id";
+  @SerializedName(SERIALIZED_NAME_DOCUMENT_ID)
   private UUID documentId;
 
-  public static final String JSON_PROPERTY_DOCUMENT_CLASSIFICATION = "document_classification";
+  public static final String SERIALIZED_NAME_DOCUMENT_CLASSIFICATION = "document_classification";
+  @SerializedName(SERIALIZED_NAME_DOCUMENT_CLASSIFICATION)
   private ExtractionDocumentClassification documentClassification;
 
-  public static final String JSON_PROPERTY_EXTRACTED_DATA = "extracted_data";
+  public static final String SERIALIZED_NAME_EXTRACTED_DATA = "extracted_data";
+  @SerializedName(SERIALIZED_NAME_EXTRACTED_DATA)
   private ExtractionExtractedData extractedData;
 
-  public Extraction() { 
+  public Extraction() {
   }
 
   public Extraction documentId(UUID documentId) {
@@ -63,16 +79,10 @@ public class Extraction {
    * @return documentId
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_DOCUMENT_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public UUID getDocumentId() {
     return documentId;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_DOCUMENT_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDocumentId(UUID documentId) {
     this.documentId = documentId;
   }
@@ -88,16 +98,10 @@ public class Extraction {
    * @return documentClassification
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_DOCUMENT_CLASSIFICATION)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public ExtractionDocumentClassification getDocumentClassification() {
     return documentClassification;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_DOCUMENT_CLASSIFICATION)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDocumentClassification(ExtractionDocumentClassification documentClassification) {
     this.documentClassification = documentClassification;
   }
@@ -113,24 +117,60 @@ public class Extraction {
    * @return extractedData
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_EXTRACTED_DATA)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public ExtractionExtractedData getExtractedData() {
     return extractedData;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_EXTRACTED_DATA)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setExtractedData(ExtractionExtractedData extractedData) {
     this.extractedData = extractedData;
   }
 
+  /**
+   * A container for additional, undeclared properties.
+   * This is a holder for any undeclared properties as specified with
+   * the 'additionalProperties' keyword in the OAS document.
+   */
+  private Map<String, Object> additionalProperties;
 
   /**
-   * Return true if this extraction object is equal to o.
+   * Set the additional (undeclared) property with the specified name and value.
+   * If the property does not already exist, create it otherwise replace it.
+   *
+   * @param key name of the property
+   * @param value value of the property
+   * @return the Extraction instance itself
    */
+  public Extraction putAdditionalProperty(String key, Object value) {
+    if (this.additionalProperties == null) {
+        this.additionalProperties = new HashMap<String, Object>();
+    }
+    this.additionalProperties.put(key, value);
+    return this;
+  }
+
+  /**
+   * Return the additional (undeclared) property.
+   *
+   * @return a map of objects
+   */
+  public Map<String, Object> getAdditionalProperties() {
+    return additionalProperties;
+  }
+
+  /**
+   * Return the additional (undeclared) property with the specified name.
+   *
+   * @param key name of the property
+   * @return an object
+   */
+  public Object getAdditionalProperty(String key) {
+    if (this.additionalProperties == null) {
+        return null;
+    }
+    return this.additionalProperties.get(key);
+  }
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -142,12 +182,13 @@ public class Extraction {
     Extraction extraction = (Extraction) o;
     return Objects.equals(this.documentId, extraction.documentId) &&
         Objects.equals(this.documentClassification, extraction.documentClassification) &&
-        Objects.equals(this.extractedData, extraction.extractedData);
+        Objects.equals(this.extractedData, extraction.extractedData)&&
+        Objects.equals(this.additionalProperties, extraction.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(documentId, documentClassification, extractedData);
+    return Objects.hash(documentId, documentClassification, extractedData, additionalProperties);
   }
 
   @Override
@@ -157,6 +198,7 @@ public class Extraction {
     sb.append("    documentId: ").append(toIndentedString(documentId)).append("\n");
     sb.append("    documentClassification: ").append(toIndentedString(documentClassification)).append("\n");
     sb.append("    extractedData: ").append(toIndentedString(extractedData)).append("\n");
+    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -172,5 +214,137 @@ public class Extraction {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("document_id");
+    openapiFields.add("document_classification");
+    openapiFields.add("extracted_data");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+  }
+
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to Extraction
+  */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!Extraction.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in Extraction is not found in the empty JSON string", Extraction.openapiRequiredFields.toString()));
+        }
+      }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("document_id") != null && !jsonObj.get("document_id").isJsonNull()) && !jsonObj.get("document_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `document_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("document_id").toString()));
+      }
+      // validate the optional field `document_classification`
+      if (jsonObj.get("document_classification") != null && !jsonObj.get("document_classification").isJsonNull()) {
+        ExtractionDocumentClassification.validateJsonElement(jsonObj.get("document_classification"));
+      }
+      // validate the optional field `extracted_data`
+      if (jsonObj.get("extracted_data") != null && !jsonObj.get("extracted_data").isJsonNull()) {
+        ExtractionExtractedData.validateJsonElement(jsonObj.get("extracted_data"));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!Extraction.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'Extraction' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<Extraction> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(Extraction.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<Extraction>() {
+           @Override
+           public void write(JsonWriter out, Extraction value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             obj.remove("additionalProperties");
+             // serialize additional properties
+             if (value.getAdditionalProperties() != null) {
+               for (Map.Entry<String, Object> entry : value.getAdditionalProperties().entrySet()) {
+                 if (entry.getValue() instanceof String)
+                   obj.addProperty(entry.getKey(), (String) entry.getValue());
+                 else if (entry.getValue() instanceof Number)
+                   obj.addProperty(entry.getKey(), (Number) entry.getValue());
+                 else if (entry.getValue() instanceof Boolean)
+                   obj.addProperty(entry.getKey(), (Boolean) entry.getValue());
+                 else if (entry.getValue() instanceof Character)
+                   obj.addProperty(entry.getKey(), (Character) entry.getValue());
+                 else {
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
+                 }
+               }
+             }
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public Extraction read(JsonReader in) throws IOException {
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
+             // store additional fields in the deserialized instance
+             Extraction instance = thisAdapter.fromJsonTree(jsonObj);
+             for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
+               if (!openapiFields.contains(entry.getKey())) {
+                 if (entry.getValue().isJsonPrimitive()) { // primitive type
+                   if (entry.getValue().getAsJsonPrimitive().isString())
+                     instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsString());
+                   else if (entry.getValue().getAsJsonPrimitive().isNumber())
+                     instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsNumber());
+                   else if (entry.getValue().getAsJsonPrimitive().isBoolean())
+                     instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
+                   else
+                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                 } else if (entry.getValue().isJsonArray()) {
+                     instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
+                 } else { // JSON object
+                     instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), HashMap.class));
+                 }
+               }
+             }
+             return instance;
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of Extraction given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of Extraction
+  * @throws IOException if the JSON string is invalid with respect to Extraction
+  */
+  public static Extraction fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, Extraction.class);
+  }
+
+ /**
+  * Convert an instance of Extraction to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

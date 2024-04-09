@@ -14,68 +14,84 @@
 package com.onfido.model;
 
 import java.util.Objects;
-import java.util.Map;
-import java.util.HashMap;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 import java.util.Arrays;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.onfido.JSON;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import com.onfido.JSON;
 
 /**
  * DocumentIQReasons
  */
-@JsonPropertyOrder({
-  DocumentIQReasons.JSON_PROPERTY_DARK_PHOTO,
-  DocumentIQReasons.JSON_PROPERTY_GLARE_ON_PHOTO,
-  DocumentIQReasons.JSON_PROPERTY_BLURRED_PHOTO,
-  DocumentIQReasons.JSON_PROPERTY_COVERED_PHOTO,
-  DocumentIQReasons.JSON_PROPERTY_OTHER_PHOTO_ISSUE,
-  DocumentIQReasons.JSON_PROPERTY_DAMAGED_DOCUMENT,
-  DocumentIQReasons.JSON_PROPERTY_INCORRECT_SIDE,
-  DocumentIQReasons.JSON_PROPERTY_CUT_OFF_DOCUMENT,
-  DocumentIQReasons.JSON_PROPERTY_NO_DOCUMENT_IN_IMAGE,
-  DocumentIQReasons.JSON_PROPERTY_TWO_DOCUMENTS_UPLOADED
-})
-@JsonTypeName("document_IQ_reasons")
-@com.fasterxml.jackson.annotation.JsonIgnoreProperties(ignoreUnknown = true)
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class DocumentIQReasons {
-  public static final String JSON_PROPERTY_DARK_PHOTO = "dark_photo";
+  public static final String SERIALIZED_NAME_DARK_PHOTO = "dark_photo";
+  @SerializedName(SERIALIZED_NAME_DARK_PHOTO)
   private String darkPhoto;
 
-  public static final String JSON_PROPERTY_GLARE_ON_PHOTO = "glare_on_photo";
+  public static final String SERIALIZED_NAME_GLARE_ON_PHOTO = "glare_on_photo";
+  @SerializedName(SERIALIZED_NAME_GLARE_ON_PHOTO)
   private String glareOnPhoto;
 
-  public static final String JSON_PROPERTY_BLURRED_PHOTO = "blurred_photo";
+  public static final String SERIALIZED_NAME_BLURRED_PHOTO = "blurred_photo";
+  @SerializedName(SERIALIZED_NAME_BLURRED_PHOTO)
   private String blurredPhoto;
 
-  public static final String JSON_PROPERTY_COVERED_PHOTO = "covered_photo";
+  public static final String SERIALIZED_NAME_COVERED_PHOTO = "covered_photo";
+  @SerializedName(SERIALIZED_NAME_COVERED_PHOTO)
   private String coveredPhoto;
 
-  public static final String JSON_PROPERTY_OTHER_PHOTO_ISSUE = "other_photo_issue";
+  public static final String SERIALIZED_NAME_OTHER_PHOTO_ISSUE = "other_photo_issue";
+  @SerializedName(SERIALIZED_NAME_OTHER_PHOTO_ISSUE)
   private String otherPhotoIssue;
 
-  public static final String JSON_PROPERTY_DAMAGED_DOCUMENT = "damaged_document";
+  public static final String SERIALIZED_NAME_DAMAGED_DOCUMENT = "damaged_document";
+  @SerializedName(SERIALIZED_NAME_DAMAGED_DOCUMENT)
   private String damagedDocument;
 
-  public static final String JSON_PROPERTY_INCORRECT_SIDE = "incorrect_side";
+  public static final String SERIALIZED_NAME_INCORRECT_SIDE = "incorrect_side";
+  @SerializedName(SERIALIZED_NAME_INCORRECT_SIDE)
   private String incorrectSide;
 
-  public static final String JSON_PROPERTY_CUT_OFF_DOCUMENT = "cut_off_document";
+  public static final String SERIALIZED_NAME_CUT_OFF_DOCUMENT = "cut_off_document";
+  @SerializedName(SERIALIZED_NAME_CUT_OFF_DOCUMENT)
   private String cutOffDocument;
 
-  public static final String JSON_PROPERTY_NO_DOCUMENT_IN_IMAGE = "no_document_in_image";
+  public static final String SERIALIZED_NAME_NO_DOCUMENT_IN_IMAGE = "no_document_in_image";
+  @SerializedName(SERIALIZED_NAME_NO_DOCUMENT_IN_IMAGE)
   private String noDocumentInImage;
 
-  public static final String JSON_PROPERTY_TWO_DOCUMENTS_UPLOADED = "two_documents_uploaded";
+  public static final String SERIALIZED_NAME_TWO_DOCUMENTS_UPLOADED = "two_documents_uploaded";
+  @SerializedName(SERIALIZED_NAME_TWO_DOCUMENTS_UPLOADED)
   private String twoDocumentsUploaded;
 
-  public DocumentIQReasons() { 
+  public DocumentIQReasons() {
   }
 
   public DocumentIQReasons darkPhoto(String darkPhoto) {
@@ -88,16 +104,10 @@ public class DocumentIQReasons {
    * @return darkPhoto
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_DARK_PHOTO)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getDarkPhoto() {
     return darkPhoto;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_DARK_PHOTO)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDarkPhoto(String darkPhoto) {
     this.darkPhoto = darkPhoto;
   }
@@ -113,16 +123,10 @@ public class DocumentIQReasons {
    * @return glareOnPhoto
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_GLARE_ON_PHOTO)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getGlareOnPhoto() {
     return glareOnPhoto;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_GLARE_ON_PHOTO)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setGlareOnPhoto(String glareOnPhoto) {
     this.glareOnPhoto = glareOnPhoto;
   }
@@ -138,16 +142,10 @@ public class DocumentIQReasons {
    * @return blurredPhoto
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_BLURRED_PHOTO)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getBlurredPhoto() {
     return blurredPhoto;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_BLURRED_PHOTO)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setBlurredPhoto(String blurredPhoto) {
     this.blurredPhoto = blurredPhoto;
   }
@@ -163,16 +161,10 @@ public class DocumentIQReasons {
    * @return coveredPhoto
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_COVERED_PHOTO)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getCoveredPhoto() {
     return coveredPhoto;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_COVERED_PHOTO)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCoveredPhoto(String coveredPhoto) {
     this.coveredPhoto = coveredPhoto;
   }
@@ -188,16 +180,10 @@ public class DocumentIQReasons {
    * @return otherPhotoIssue
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_OTHER_PHOTO_ISSUE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getOtherPhotoIssue() {
     return otherPhotoIssue;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_OTHER_PHOTO_ISSUE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOtherPhotoIssue(String otherPhotoIssue) {
     this.otherPhotoIssue = otherPhotoIssue;
   }
@@ -213,16 +199,10 @@ public class DocumentIQReasons {
    * @return damagedDocument
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_DAMAGED_DOCUMENT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getDamagedDocument() {
     return damagedDocument;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_DAMAGED_DOCUMENT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDamagedDocument(String damagedDocument) {
     this.damagedDocument = damagedDocument;
   }
@@ -238,16 +218,10 @@ public class DocumentIQReasons {
    * @return incorrectSide
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_INCORRECT_SIDE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getIncorrectSide() {
     return incorrectSide;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_INCORRECT_SIDE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setIncorrectSide(String incorrectSide) {
     this.incorrectSide = incorrectSide;
   }
@@ -263,16 +237,10 @@ public class DocumentIQReasons {
    * @return cutOffDocument
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_CUT_OFF_DOCUMENT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getCutOffDocument() {
     return cutOffDocument;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_CUT_OFF_DOCUMENT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCutOffDocument(String cutOffDocument) {
     this.cutOffDocument = cutOffDocument;
   }
@@ -288,16 +256,10 @@ public class DocumentIQReasons {
    * @return noDocumentInImage
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_NO_DOCUMENT_IN_IMAGE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getNoDocumentInImage() {
     return noDocumentInImage;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_NO_DOCUMENT_IN_IMAGE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setNoDocumentInImage(String noDocumentInImage) {
     this.noDocumentInImage = noDocumentInImage;
   }
@@ -313,24 +275,60 @@ public class DocumentIQReasons {
    * @return twoDocumentsUploaded
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_TWO_DOCUMENTS_UPLOADED)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getTwoDocumentsUploaded() {
     return twoDocumentsUploaded;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_TWO_DOCUMENTS_UPLOADED)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTwoDocumentsUploaded(String twoDocumentsUploaded) {
     this.twoDocumentsUploaded = twoDocumentsUploaded;
   }
 
+  /**
+   * A container for additional, undeclared properties.
+   * This is a holder for any undeclared properties as specified with
+   * the 'additionalProperties' keyword in the OAS document.
+   */
+  private Map<String, Object> additionalProperties;
 
   /**
-   * Return true if this document_IQ_reasons object is equal to o.
+   * Set the additional (undeclared) property with the specified name and value.
+   * If the property does not already exist, create it otherwise replace it.
+   *
+   * @param key name of the property
+   * @param value value of the property
+   * @return the DocumentIQReasons instance itself
    */
+  public DocumentIQReasons putAdditionalProperty(String key, Object value) {
+    if (this.additionalProperties == null) {
+        this.additionalProperties = new HashMap<String, Object>();
+    }
+    this.additionalProperties.put(key, value);
+    return this;
+  }
+
+  /**
+   * Return the additional (undeclared) property.
+   *
+   * @return a map of objects
+   */
+  public Map<String, Object> getAdditionalProperties() {
+    return additionalProperties;
+  }
+
+  /**
+   * Return the additional (undeclared) property with the specified name.
+   *
+   * @param key name of the property
+   * @return an object
+   */
+  public Object getAdditionalProperty(String key) {
+    if (this.additionalProperties == null) {
+        return null;
+    }
+    return this.additionalProperties.get(key);
+  }
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -349,12 +347,13 @@ public class DocumentIQReasons {
         Objects.equals(this.incorrectSide, documentIQReasons.incorrectSide) &&
         Objects.equals(this.cutOffDocument, documentIQReasons.cutOffDocument) &&
         Objects.equals(this.noDocumentInImage, documentIQReasons.noDocumentInImage) &&
-        Objects.equals(this.twoDocumentsUploaded, documentIQReasons.twoDocumentsUploaded);
+        Objects.equals(this.twoDocumentsUploaded, documentIQReasons.twoDocumentsUploaded)&&
+        Objects.equals(this.additionalProperties, documentIQReasons.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(darkPhoto, glareOnPhoto, blurredPhoto, coveredPhoto, otherPhotoIssue, damagedDocument, incorrectSide, cutOffDocument, noDocumentInImage, twoDocumentsUploaded);
+    return Objects.hash(darkPhoto, glareOnPhoto, blurredPhoto, coveredPhoto, otherPhotoIssue, damagedDocument, incorrectSide, cutOffDocument, noDocumentInImage, twoDocumentsUploaded, additionalProperties);
   }
 
   @Override
@@ -371,6 +370,7 @@ public class DocumentIQReasons {
     sb.append("    cutOffDocument: ").append(toIndentedString(cutOffDocument)).append("\n");
     sb.append("    noDocumentInImage: ").append(toIndentedString(noDocumentInImage)).append("\n");
     sb.append("    twoDocumentsUploaded: ").append(toIndentedString(twoDocumentsUploaded)).append("\n");
+    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -386,5 +386,163 @@ public class DocumentIQReasons {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("dark_photo");
+    openapiFields.add("glare_on_photo");
+    openapiFields.add("blurred_photo");
+    openapiFields.add("covered_photo");
+    openapiFields.add("other_photo_issue");
+    openapiFields.add("damaged_document");
+    openapiFields.add("incorrect_side");
+    openapiFields.add("cut_off_document");
+    openapiFields.add("no_document_in_image");
+    openapiFields.add("two_documents_uploaded");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+  }
+
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to DocumentIQReasons
+  */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!DocumentIQReasons.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in DocumentIQReasons is not found in the empty JSON string", DocumentIQReasons.openapiRequiredFields.toString()));
+        }
+      }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("dark_photo") != null && !jsonObj.get("dark_photo").isJsonNull()) && !jsonObj.get("dark_photo").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `dark_photo` to be a primitive type in the JSON string but got `%s`", jsonObj.get("dark_photo").toString()));
+      }
+      if ((jsonObj.get("glare_on_photo") != null && !jsonObj.get("glare_on_photo").isJsonNull()) && !jsonObj.get("glare_on_photo").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `glare_on_photo` to be a primitive type in the JSON string but got `%s`", jsonObj.get("glare_on_photo").toString()));
+      }
+      if ((jsonObj.get("blurred_photo") != null && !jsonObj.get("blurred_photo").isJsonNull()) && !jsonObj.get("blurred_photo").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `blurred_photo` to be a primitive type in the JSON string but got `%s`", jsonObj.get("blurred_photo").toString()));
+      }
+      if ((jsonObj.get("covered_photo") != null && !jsonObj.get("covered_photo").isJsonNull()) && !jsonObj.get("covered_photo").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `covered_photo` to be a primitive type in the JSON string but got `%s`", jsonObj.get("covered_photo").toString()));
+      }
+      if ((jsonObj.get("other_photo_issue") != null && !jsonObj.get("other_photo_issue").isJsonNull()) && !jsonObj.get("other_photo_issue").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `other_photo_issue` to be a primitive type in the JSON string but got `%s`", jsonObj.get("other_photo_issue").toString()));
+      }
+      if ((jsonObj.get("damaged_document") != null && !jsonObj.get("damaged_document").isJsonNull()) && !jsonObj.get("damaged_document").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `damaged_document` to be a primitive type in the JSON string but got `%s`", jsonObj.get("damaged_document").toString()));
+      }
+      if ((jsonObj.get("incorrect_side") != null && !jsonObj.get("incorrect_side").isJsonNull()) && !jsonObj.get("incorrect_side").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `incorrect_side` to be a primitive type in the JSON string but got `%s`", jsonObj.get("incorrect_side").toString()));
+      }
+      if ((jsonObj.get("cut_off_document") != null && !jsonObj.get("cut_off_document").isJsonNull()) && !jsonObj.get("cut_off_document").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `cut_off_document` to be a primitive type in the JSON string but got `%s`", jsonObj.get("cut_off_document").toString()));
+      }
+      if ((jsonObj.get("no_document_in_image") != null && !jsonObj.get("no_document_in_image").isJsonNull()) && !jsonObj.get("no_document_in_image").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `no_document_in_image` to be a primitive type in the JSON string but got `%s`", jsonObj.get("no_document_in_image").toString()));
+      }
+      if ((jsonObj.get("two_documents_uploaded") != null && !jsonObj.get("two_documents_uploaded").isJsonNull()) && !jsonObj.get("two_documents_uploaded").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `two_documents_uploaded` to be a primitive type in the JSON string but got `%s`", jsonObj.get("two_documents_uploaded").toString()));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!DocumentIQReasons.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'DocumentIQReasons' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<DocumentIQReasons> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(DocumentIQReasons.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<DocumentIQReasons>() {
+           @Override
+           public void write(JsonWriter out, DocumentIQReasons value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             obj.remove("additionalProperties");
+             // serialize additional properties
+             if (value.getAdditionalProperties() != null) {
+               for (Map.Entry<String, Object> entry : value.getAdditionalProperties().entrySet()) {
+                 if (entry.getValue() instanceof String)
+                   obj.addProperty(entry.getKey(), (String) entry.getValue());
+                 else if (entry.getValue() instanceof Number)
+                   obj.addProperty(entry.getKey(), (Number) entry.getValue());
+                 else if (entry.getValue() instanceof Boolean)
+                   obj.addProperty(entry.getKey(), (Boolean) entry.getValue());
+                 else if (entry.getValue() instanceof Character)
+                   obj.addProperty(entry.getKey(), (Character) entry.getValue());
+                 else {
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
+                 }
+               }
+             }
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public DocumentIQReasons read(JsonReader in) throws IOException {
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
+             // store additional fields in the deserialized instance
+             DocumentIQReasons instance = thisAdapter.fromJsonTree(jsonObj);
+             for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
+               if (!openapiFields.contains(entry.getKey())) {
+                 if (entry.getValue().isJsonPrimitive()) { // primitive type
+                   if (entry.getValue().getAsJsonPrimitive().isString())
+                     instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsString());
+                   else if (entry.getValue().getAsJsonPrimitive().isNumber())
+                     instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsNumber());
+                   else if (entry.getValue().getAsJsonPrimitive().isBoolean())
+                     instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
+                   else
+                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                 } else if (entry.getValue().isJsonArray()) {
+                     instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
+                 } else { // JSON object
+                     instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), HashMap.class));
+                 }
+               }
+             }
+             return instance;
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of DocumentIQReasons given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of DocumentIQReasons
+  * @throws IOException if the JSON string is invalid with respect to DocumentIQReasons
+  */
+  public static DocumentIQReasons fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, DocumentIQReasons.class);
+  }
+
+ /**
+  * Convert an instance of DocumentIQReasons to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

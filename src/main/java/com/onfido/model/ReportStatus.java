@@ -14,18 +14,19 @@
 package com.onfido.model;
 
 import java.util.Objects;
-import java.util.Map;
-import java.util.HashMap;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.onfido.JSON;
+import com.google.gson.annotations.SerializedName;
 
-
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import java.io.IOException;
+import com.google.gson.TypeAdapter;
+import com.google.gson.JsonElement;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 
 /**
  * The current state of the report in the checking process. Read-only.
  */
+@JsonAdapter(ReportStatus.Adapter.class)
 public enum ReportStatus {
   
   AWAITING_DATA("awaiting_data"),
@@ -46,7 +47,6 @@ public enum ReportStatus {
     this.value = value;
   }
 
-  @JsonValue
   public String getValue() {
     return value;
   }
@@ -56,7 +56,6 @@ public enum ReportStatus {
     return String.valueOf(value);
   }
 
-  @JsonCreator
   public static ReportStatus fromValue(String value) {
     for (ReportStatus b : ReportStatus.values()) {
       if (b.value.equals(value)) {
@@ -64,6 +63,24 @@ public enum ReportStatus {
       }
     }
     return UNKNOWN_DEFAULT_OPEN_API;
+  }
+
+  public static class Adapter extends TypeAdapter<ReportStatus> {
+    @Override
+    public void write(final JsonWriter jsonWriter, final ReportStatus enumeration) throws IOException {
+      jsonWriter.value(enumeration.getValue());
+    }
+
+    @Override
+    public ReportStatus read(final JsonReader jsonReader) throws IOException {
+      String value = jsonReader.nextString();
+      return ReportStatus.fromValue(value);
+    }
+  }
+
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+    String value = jsonElement.getAsString();
+    ReportStatus.fromValue(value);
   }
 }
 

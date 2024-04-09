@@ -13,76 +13,88 @@
 
 package com.onfido.model;
 
-import java.util.Map;
-import java.util.HashMap;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
 import java.util.Objects;
-import java.util.Map;
-import java.util.HashMap;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import com.onfido.model.AddressBuilder;
 import com.onfido.model.ConsentsBuilder;
 import com.onfido.model.IdNumber;
 import com.onfido.model.LocationBuilder;
+import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.onfido.JSON;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import com.onfido.JSON;
 
 /**
  * ApplicantUpdater
  */
-@JsonPropertyOrder({
-  ApplicantUpdater.JSON_PROPERTY_EMAIL,
-  ApplicantUpdater.JSON_PROPERTY_DOB,
-  ApplicantUpdater.JSON_PROPERTY_ID_NUMBERS,
-  ApplicantUpdater.JSON_PROPERTY_PHONE_NUMBER,
-  ApplicantUpdater.JSON_PROPERTY_CONSENTS,
-  ApplicantUpdater.JSON_PROPERTY_ADDRESS,
-  ApplicantUpdater.JSON_PROPERTY_LOCATION,
-  ApplicantUpdater.JSON_PROPERTY_FIRST_NAME,
-  ApplicantUpdater.JSON_PROPERTY_LAST_NAME
-})
-@JsonTypeName("applicant_updater")
-@com.fasterxml.jackson.annotation.JsonIgnoreProperties(ignoreUnknown = true)
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class ApplicantUpdater {
-  public static final String JSON_PROPERTY_EMAIL = "email";
+  public static final String SERIALIZED_NAME_EMAIL = "email";
+  @SerializedName(SERIALIZED_NAME_EMAIL)
   private String email;
 
-  public static final String JSON_PROPERTY_DOB = "dob";
+  public static final String SERIALIZED_NAME_DOB = "dob";
+  @SerializedName(SERIALIZED_NAME_DOB)
   private LocalDate dob;
 
-  public static final String JSON_PROPERTY_ID_NUMBERS = "id_numbers";
+  public static final String SERIALIZED_NAME_ID_NUMBERS = "id_numbers";
+  @SerializedName(SERIALIZED_NAME_ID_NUMBERS)
   private List<IdNumber> idNumbers;
 
-  public static final String JSON_PROPERTY_PHONE_NUMBER = "phone_number";
+  public static final String SERIALIZED_NAME_PHONE_NUMBER = "phone_number";
+  @SerializedName(SERIALIZED_NAME_PHONE_NUMBER)
   private String phoneNumber;
 
-  public static final String JSON_PROPERTY_CONSENTS = "consents";
+  public static final String SERIALIZED_NAME_CONSENTS = "consents";
+  @SerializedName(SERIALIZED_NAME_CONSENTS)
   private ConsentsBuilder consents;
 
-  public static final String JSON_PROPERTY_ADDRESS = "address";
+  public static final String SERIALIZED_NAME_ADDRESS = "address";
+  @SerializedName(SERIALIZED_NAME_ADDRESS)
   private AddressBuilder address;
 
-  public static final String JSON_PROPERTY_LOCATION = "location";
+  public static final String SERIALIZED_NAME_LOCATION = "location";
+  @SerializedName(SERIALIZED_NAME_LOCATION)
   private LocationBuilder location;
 
-  public static final String JSON_PROPERTY_FIRST_NAME = "first_name";
+  public static final String SERIALIZED_NAME_FIRST_NAME = "first_name";
+  @SerializedName(SERIALIZED_NAME_FIRST_NAME)
   private String firstName;
 
-  public static final String JSON_PROPERTY_LAST_NAME = "last_name";
+  public static final String SERIALIZED_NAME_LAST_NAME = "last_name";
+  @SerializedName(SERIALIZED_NAME_LAST_NAME)
   private String lastName;
 
-  public ApplicantUpdater() { 
+  public ApplicantUpdater() {
   }
 
   public ApplicantUpdater email(String email) {
@@ -95,16 +107,10 @@ public class ApplicantUpdater {
    * @return email
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_EMAIL)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getEmail() {
     return email;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_EMAIL)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setEmail(String email) {
     this.email = email;
   }
@@ -120,16 +126,10 @@ public class ApplicantUpdater {
    * @return dob
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_DOB)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public LocalDate getDob() {
     return dob;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_DOB)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDob(LocalDate dob) {
     this.dob = dob;
   }
@@ -153,16 +153,10 @@ public class ApplicantUpdater {
    * @return idNumbers
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ID_NUMBERS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public List<IdNumber> getIdNumbers() {
     return idNumbers;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_ID_NUMBERS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setIdNumbers(List<IdNumber> idNumbers) {
     this.idNumbers = idNumbers;
   }
@@ -178,16 +172,10 @@ public class ApplicantUpdater {
    * @return phoneNumber
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_PHONE_NUMBER)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getPhoneNumber() {
     return phoneNumber;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_PHONE_NUMBER)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPhoneNumber(String phoneNumber) {
     this.phoneNumber = phoneNumber;
   }
@@ -203,16 +191,10 @@ public class ApplicantUpdater {
    * @return consents
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_CONSENTS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public ConsentsBuilder getConsents() {
     return consents;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_CONSENTS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setConsents(ConsentsBuilder consents) {
     this.consents = consents;
   }
@@ -228,16 +210,10 @@ public class ApplicantUpdater {
    * @return address
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ADDRESS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public AddressBuilder getAddress() {
     return address;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_ADDRESS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAddress(AddressBuilder address) {
     this.address = address;
   }
@@ -253,16 +229,10 @@ public class ApplicantUpdater {
    * @return location
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_LOCATION)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public LocationBuilder getLocation() {
     return location;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_LOCATION)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setLocation(LocationBuilder location) {
     this.location = location;
   }
@@ -278,16 +248,10 @@ public class ApplicantUpdater {
    * @return firstName
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_FIRST_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getFirstName() {
     return firstName;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_FIRST_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setFirstName(String firstName) {
     this.firstName = firstName;
   }
@@ -303,16 +267,10 @@ public class ApplicantUpdater {
    * @return lastName
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_LAST_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getLastName() {
     return lastName;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_LAST_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setLastName(String lastName) {
     this.lastName = lastName;
   }
@@ -327,11 +285,14 @@ public class ApplicantUpdater {
   /**
    * Set the additional (undeclared) property with the specified name and value.
    * If the property does not already exist, create it otherwise replace it.
+   *
+   * @param key name of the property
+   * @param value value of the property
+   * @return the ApplicantUpdater instance itself
    */
-  @JsonAnySetter
   public ApplicantUpdater putAdditionalProperty(String key, Object value) {
     if (this.additionalProperties == null) {
-        this.additionalProperties = new HashMap<>();
+        this.additionalProperties = new HashMap<String, Object>();
     }
     this.additionalProperties.put(key, value);
     return this;
@@ -339,14 +300,18 @@ public class ApplicantUpdater {
 
   /**
    * Return the additional (undeclared) property.
+   *
+   * @return a map of objects
    */
-  @JsonAnyGetter
   public Map<String, Object> getAdditionalProperties() {
     return additionalProperties;
   }
 
   /**
    * Return the additional (undeclared) property with the specified name.
+   *
+   * @param key name of the property
+   * @return an object
    */
   public Object getAdditionalProperty(String key) {
     if (this.additionalProperties == null) {
@@ -355,9 +320,7 @@ public class ApplicantUpdater {
     return this.additionalProperties.get(key);
   }
 
-  /**
-   * Return true if this applicant_updater object is equal to o.
-   */
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -413,5 +376,170 @@ public class ApplicantUpdater {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("email");
+    openapiFields.add("dob");
+    openapiFields.add("id_numbers");
+    openapiFields.add("phone_number");
+    openapiFields.add("consents");
+    openapiFields.add("address");
+    openapiFields.add("location");
+    openapiFields.add("first_name");
+    openapiFields.add("last_name");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+  }
+
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to ApplicantUpdater
+  */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!ApplicantUpdater.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in ApplicantUpdater is not found in the empty JSON string", ApplicantUpdater.openapiRequiredFields.toString()));
+        }
+      }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("email") != null && !jsonObj.get("email").isJsonNull()) && !jsonObj.get("email").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `email` to be a primitive type in the JSON string but got `%s`", jsonObj.get("email").toString()));
+      }
+      if (jsonObj.get("id_numbers") != null && !jsonObj.get("id_numbers").isJsonNull()) {
+        JsonArray jsonArrayidNumbers = jsonObj.getAsJsonArray("id_numbers");
+        if (jsonArrayidNumbers != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("id_numbers").isJsonArray()) {
+            throw new IllegalArgumentException(String.format("Expected the field `id_numbers` to be an array in the JSON string but got `%s`", jsonObj.get("id_numbers").toString()));
+          }
+
+          // validate the optional field `id_numbers` (array)
+          for (int i = 0; i < jsonArrayidNumbers.size(); i++) {
+            IdNumber.validateJsonElement(jsonArrayidNumbers.get(i));
+          };
+        }
+      }
+      if ((jsonObj.get("phone_number") != null && !jsonObj.get("phone_number").isJsonNull()) && !jsonObj.get("phone_number").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `phone_number` to be a primitive type in the JSON string but got `%s`", jsonObj.get("phone_number").toString()));
+      }
+      // validate the optional field `consents`
+      if (jsonObj.get("consents") != null && !jsonObj.get("consents").isJsonNull()) {
+        ConsentsBuilder.validateJsonElement(jsonObj.get("consents"));
+      }
+      // validate the optional field `address`
+      if (jsonObj.get("address") != null && !jsonObj.get("address").isJsonNull()) {
+        AddressBuilder.validateJsonElement(jsonObj.get("address"));
+      }
+      // validate the optional field `location`
+      if (jsonObj.get("location") != null && !jsonObj.get("location").isJsonNull()) {
+        LocationBuilder.validateJsonElement(jsonObj.get("location"));
+      }
+      if ((jsonObj.get("first_name") != null && !jsonObj.get("first_name").isJsonNull()) && !jsonObj.get("first_name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `first_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("first_name").toString()));
+      }
+      if ((jsonObj.get("last_name") != null && !jsonObj.get("last_name").isJsonNull()) && !jsonObj.get("last_name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `last_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("last_name").toString()));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!ApplicantUpdater.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'ApplicantUpdater' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<ApplicantUpdater> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(ApplicantUpdater.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<ApplicantUpdater>() {
+           @Override
+           public void write(JsonWriter out, ApplicantUpdater value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             obj.remove("additionalProperties");
+             // serialize additional properties
+             if (value.getAdditionalProperties() != null) {
+               for (Map.Entry<String, Object> entry : value.getAdditionalProperties().entrySet()) {
+                 if (entry.getValue() instanceof String)
+                   obj.addProperty(entry.getKey(), (String) entry.getValue());
+                 else if (entry.getValue() instanceof Number)
+                   obj.addProperty(entry.getKey(), (Number) entry.getValue());
+                 else if (entry.getValue() instanceof Boolean)
+                   obj.addProperty(entry.getKey(), (Boolean) entry.getValue());
+                 else if (entry.getValue() instanceof Character)
+                   obj.addProperty(entry.getKey(), (Character) entry.getValue());
+                 else {
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
+                 }
+               }
+             }
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public ApplicantUpdater read(JsonReader in) throws IOException {
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
+             // store additional fields in the deserialized instance
+             ApplicantUpdater instance = thisAdapter.fromJsonTree(jsonObj);
+             for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
+               if (!openapiFields.contains(entry.getKey())) {
+                 if (entry.getValue().isJsonPrimitive()) { // primitive type
+                   if (entry.getValue().getAsJsonPrimitive().isString())
+                     instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsString());
+                   else if (entry.getValue().getAsJsonPrimitive().isNumber())
+                     instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsNumber());
+                   else if (entry.getValue().getAsJsonPrimitive().isBoolean())
+                     instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
+                   else
+                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                 } else if (entry.getValue().isJsonArray()) {
+                     instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
+                 } else { // JSON object
+                     instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), HashMap.class));
+                 }
+               }
+             }
+             return instance;
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of ApplicantUpdater given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of ApplicantUpdater
+  * @throws IOException if the JSON string is invalid with respect to ApplicantUpdater
+  */
+  public static ApplicantUpdater fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, ApplicantUpdater.class);
+  }
+
+ /**
+  * Convert an instance of ApplicantUpdater to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

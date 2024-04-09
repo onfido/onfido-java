@@ -14,18 +14,19 @@
 package com.onfido.model;
 
 import java.util.Objects;
-import java.util.Map;
-import java.util.HashMap;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.onfido.JSON;
+import com.google.gson.annotations.SerializedName;
 
-
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import java.io.IOException;
+import com.google.gson.TypeAdapter;
+import com.google.gson.JsonElement;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 
 /**
  * Gets or Sets document_types
  */
+@JsonAdapter(DocumentTypes.Adapter.class)
 public enum DocumentTypes {
   
   PASSPORT("passport"),
@@ -86,7 +87,6 @@ public enum DocumentTypes {
     this.value = value;
   }
 
-  @JsonValue
   public String getValue() {
     return value;
   }
@@ -96,7 +96,6 @@ public enum DocumentTypes {
     return String.valueOf(value);
   }
 
-  @JsonCreator
   public static DocumentTypes fromValue(String value) {
     for (DocumentTypes b : DocumentTypes.values()) {
       if (b.value.equals(value)) {
@@ -104,6 +103,24 @@ public enum DocumentTypes {
       }
     }
     return UNKNOWN_DEFAULT_OPEN_API;
+  }
+
+  public static class Adapter extends TypeAdapter<DocumentTypes> {
+    @Override
+    public void write(final JsonWriter jsonWriter, final DocumentTypes enumeration) throws IOException {
+      jsonWriter.value(enumeration.getValue());
+    }
+
+    @Override
+    public DocumentTypes read(final JsonReader jsonReader) throws IOException {
+      String value = jsonReader.nextString();
+      return DocumentTypes.fromValue(value);
+    }
+  }
+
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+    String value = jsonElement.getAsString();
+    DocumentTypes.fromValue(value);
   }
 }
 

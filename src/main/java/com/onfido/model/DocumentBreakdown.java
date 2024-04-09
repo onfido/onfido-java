@@ -14,13 +14,11 @@
 package com.onfido.model;
 
 import java.util.Objects;
-import java.util.Map;
-import java.util.HashMap;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import com.onfido.model.DocumentBreakdownAgeValidation;
 import com.onfido.model.DocumentBreakdownCompromisedDocument;
 import com.onfido.model.DocumentBreakdownDataComparison;
@@ -30,57 +28,75 @@ import com.onfido.model.DocumentBreakdownImageIntegrity;
 import com.onfido.model.DocumentBreakdownIssuingAuthority;
 import com.onfido.model.DocumentBreakdownPoliceRecord;
 import com.onfido.model.DocumentBreakdownVisualAuthenticity;
+import java.io.IOException;
 import java.util.Arrays;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.onfido.JSON;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import com.onfido.JSON;
 
 /**
  * DocumentBreakdown
  */
-@JsonPropertyOrder({
-  DocumentBreakdown.JSON_PROPERTY_DATA_COMPARISON,
-  DocumentBreakdown.JSON_PROPERTY_DATA_VALIDATION,
-  DocumentBreakdown.JSON_PROPERTY_IMAGE_INTEGRITY,
-  DocumentBreakdown.JSON_PROPERTY_VISUAL_AUTHENTICITY,
-  DocumentBreakdown.JSON_PROPERTY_DATA_CONSISTENCY,
-  DocumentBreakdown.JSON_PROPERTY_POLICE_RECORD,
-  DocumentBreakdown.JSON_PROPERTY_COMPROMISED_DOCUMENT,
-  DocumentBreakdown.JSON_PROPERTY_AGE_VALIDATION,
-  DocumentBreakdown.JSON_PROPERTY_ISSUING_AUTHORITY
-})
-@JsonTypeName("document_breakdown")
-@com.fasterxml.jackson.annotation.JsonIgnoreProperties(ignoreUnknown = true)
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class DocumentBreakdown {
-  public static final String JSON_PROPERTY_DATA_COMPARISON = "data_comparison";
+  public static final String SERIALIZED_NAME_DATA_COMPARISON = "data_comparison";
+  @SerializedName(SERIALIZED_NAME_DATA_COMPARISON)
   private DocumentBreakdownDataComparison dataComparison;
 
-  public static final String JSON_PROPERTY_DATA_VALIDATION = "data_validation";
+  public static final String SERIALIZED_NAME_DATA_VALIDATION = "data_validation";
+  @SerializedName(SERIALIZED_NAME_DATA_VALIDATION)
   private DocumentBreakdownDataValidation dataValidation;
 
-  public static final String JSON_PROPERTY_IMAGE_INTEGRITY = "image_integrity";
+  public static final String SERIALIZED_NAME_IMAGE_INTEGRITY = "image_integrity";
+  @SerializedName(SERIALIZED_NAME_IMAGE_INTEGRITY)
   private DocumentBreakdownImageIntegrity imageIntegrity;
 
-  public static final String JSON_PROPERTY_VISUAL_AUTHENTICITY = "visual_authenticity";
+  public static final String SERIALIZED_NAME_VISUAL_AUTHENTICITY = "visual_authenticity";
+  @SerializedName(SERIALIZED_NAME_VISUAL_AUTHENTICITY)
   private DocumentBreakdownVisualAuthenticity visualAuthenticity;
 
-  public static final String JSON_PROPERTY_DATA_CONSISTENCY = "data_consistency";
+  public static final String SERIALIZED_NAME_DATA_CONSISTENCY = "data_consistency";
+  @SerializedName(SERIALIZED_NAME_DATA_CONSISTENCY)
   private DocumentBreakdownDataConsistency dataConsistency;
 
-  public static final String JSON_PROPERTY_POLICE_RECORD = "police_record";
+  public static final String SERIALIZED_NAME_POLICE_RECORD = "police_record";
+  @SerializedName(SERIALIZED_NAME_POLICE_RECORD)
   private DocumentBreakdownPoliceRecord policeRecord;
 
-  public static final String JSON_PROPERTY_COMPROMISED_DOCUMENT = "compromised_document";
+  public static final String SERIALIZED_NAME_COMPROMISED_DOCUMENT = "compromised_document";
+  @SerializedName(SERIALIZED_NAME_COMPROMISED_DOCUMENT)
   private DocumentBreakdownCompromisedDocument compromisedDocument;
 
-  public static final String JSON_PROPERTY_AGE_VALIDATION = "age_validation";
+  public static final String SERIALIZED_NAME_AGE_VALIDATION = "age_validation";
+  @SerializedName(SERIALIZED_NAME_AGE_VALIDATION)
   private DocumentBreakdownAgeValidation ageValidation;
 
-  public static final String JSON_PROPERTY_ISSUING_AUTHORITY = "issuing_authority";
+  public static final String SERIALIZED_NAME_ISSUING_AUTHORITY = "issuing_authority";
+  @SerializedName(SERIALIZED_NAME_ISSUING_AUTHORITY)
   private DocumentBreakdownIssuingAuthority issuingAuthority;
 
-  public DocumentBreakdown() { 
+  public DocumentBreakdown() {
   }
 
   public DocumentBreakdown dataComparison(DocumentBreakdownDataComparison dataComparison) {
@@ -93,16 +109,10 @@ public class DocumentBreakdown {
    * @return dataComparison
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_DATA_COMPARISON)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public DocumentBreakdownDataComparison getDataComparison() {
     return dataComparison;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_DATA_COMPARISON)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDataComparison(DocumentBreakdownDataComparison dataComparison) {
     this.dataComparison = dataComparison;
   }
@@ -118,16 +128,10 @@ public class DocumentBreakdown {
    * @return dataValidation
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_DATA_VALIDATION)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public DocumentBreakdownDataValidation getDataValidation() {
     return dataValidation;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_DATA_VALIDATION)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDataValidation(DocumentBreakdownDataValidation dataValidation) {
     this.dataValidation = dataValidation;
   }
@@ -143,16 +147,10 @@ public class DocumentBreakdown {
    * @return imageIntegrity
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_IMAGE_INTEGRITY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public DocumentBreakdownImageIntegrity getImageIntegrity() {
     return imageIntegrity;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_IMAGE_INTEGRITY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setImageIntegrity(DocumentBreakdownImageIntegrity imageIntegrity) {
     this.imageIntegrity = imageIntegrity;
   }
@@ -168,16 +166,10 @@ public class DocumentBreakdown {
    * @return visualAuthenticity
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_VISUAL_AUTHENTICITY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public DocumentBreakdownVisualAuthenticity getVisualAuthenticity() {
     return visualAuthenticity;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_VISUAL_AUTHENTICITY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setVisualAuthenticity(DocumentBreakdownVisualAuthenticity visualAuthenticity) {
     this.visualAuthenticity = visualAuthenticity;
   }
@@ -193,16 +185,10 @@ public class DocumentBreakdown {
    * @return dataConsistency
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_DATA_CONSISTENCY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public DocumentBreakdownDataConsistency getDataConsistency() {
     return dataConsistency;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_DATA_CONSISTENCY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDataConsistency(DocumentBreakdownDataConsistency dataConsistency) {
     this.dataConsistency = dataConsistency;
   }
@@ -218,16 +204,10 @@ public class DocumentBreakdown {
    * @return policeRecord
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_POLICE_RECORD)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public DocumentBreakdownPoliceRecord getPoliceRecord() {
     return policeRecord;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_POLICE_RECORD)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPoliceRecord(DocumentBreakdownPoliceRecord policeRecord) {
     this.policeRecord = policeRecord;
   }
@@ -243,16 +223,10 @@ public class DocumentBreakdown {
    * @return compromisedDocument
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_COMPROMISED_DOCUMENT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public DocumentBreakdownCompromisedDocument getCompromisedDocument() {
     return compromisedDocument;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_COMPROMISED_DOCUMENT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCompromisedDocument(DocumentBreakdownCompromisedDocument compromisedDocument) {
     this.compromisedDocument = compromisedDocument;
   }
@@ -268,16 +242,10 @@ public class DocumentBreakdown {
    * @return ageValidation
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_AGE_VALIDATION)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public DocumentBreakdownAgeValidation getAgeValidation() {
     return ageValidation;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_AGE_VALIDATION)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAgeValidation(DocumentBreakdownAgeValidation ageValidation) {
     this.ageValidation = ageValidation;
   }
@@ -293,24 +261,60 @@ public class DocumentBreakdown {
    * @return issuingAuthority
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ISSUING_AUTHORITY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public DocumentBreakdownIssuingAuthority getIssuingAuthority() {
     return issuingAuthority;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_ISSUING_AUTHORITY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setIssuingAuthority(DocumentBreakdownIssuingAuthority issuingAuthority) {
     this.issuingAuthority = issuingAuthority;
   }
 
+  /**
+   * A container for additional, undeclared properties.
+   * This is a holder for any undeclared properties as specified with
+   * the 'additionalProperties' keyword in the OAS document.
+   */
+  private Map<String, Object> additionalProperties;
 
   /**
-   * Return true if this document_breakdown object is equal to o.
+   * Set the additional (undeclared) property with the specified name and value.
+   * If the property does not already exist, create it otherwise replace it.
+   *
+   * @param key name of the property
+   * @param value value of the property
+   * @return the DocumentBreakdown instance itself
    */
+  public DocumentBreakdown putAdditionalProperty(String key, Object value) {
+    if (this.additionalProperties == null) {
+        this.additionalProperties = new HashMap<String, Object>();
+    }
+    this.additionalProperties.put(key, value);
+    return this;
+  }
+
+  /**
+   * Return the additional (undeclared) property.
+   *
+   * @return a map of objects
+   */
+  public Map<String, Object> getAdditionalProperties() {
+    return additionalProperties;
+  }
+
+  /**
+   * Return the additional (undeclared) property with the specified name.
+   *
+   * @param key name of the property
+   * @return an object
+   */
+  public Object getAdditionalProperty(String key) {
+    if (this.additionalProperties == null) {
+        return null;
+    }
+    return this.additionalProperties.get(key);
+  }
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -328,12 +332,13 @@ public class DocumentBreakdown {
         Objects.equals(this.policeRecord, documentBreakdown.policeRecord) &&
         Objects.equals(this.compromisedDocument, documentBreakdown.compromisedDocument) &&
         Objects.equals(this.ageValidation, documentBreakdown.ageValidation) &&
-        Objects.equals(this.issuingAuthority, documentBreakdown.issuingAuthority);
+        Objects.equals(this.issuingAuthority, documentBreakdown.issuingAuthority)&&
+        Objects.equals(this.additionalProperties, documentBreakdown.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(dataComparison, dataValidation, imageIntegrity, visualAuthenticity, dataConsistency, policeRecord, compromisedDocument, ageValidation, issuingAuthority);
+    return Objects.hash(dataComparison, dataValidation, imageIntegrity, visualAuthenticity, dataConsistency, policeRecord, compromisedDocument, ageValidation, issuingAuthority, additionalProperties);
   }
 
   @Override
@@ -349,6 +354,7 @@ public class DocumentBreakdown {
     sb.append("    compromisedDocument: ").append(toIndentedString(compromisedDocument)).append("\n");
     sb.append("    ageValidation: ").append(toIndentedString(ageValidation)).append("\n");
     sb.append("    issuingAuthority: ").append(toIndentedString(issuingAuthority)).append("\n");
+    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -364,5 +370,168 @@ public class DocumentBreakdown {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("data_comparison");
+    openapiFields.add("data_validation");
+    openapiFields.add("image_integrity");
+    openapiFields.add("visual_authenticity");
+    openapiFields.add("data_consistency");
+    openapiFields.add("police_record");
+    openapiFields.add("compromised_document");
+    openapiFields.add("age_validation");
+    openapiFields.add("issuing_authority");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+  }
+
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to DocumentBreakdown
+  */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!DocumentBreakdown.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in DocumentBreakdown is not found in the empty JSON string", DocumentBreakdown.openapiRequiredFields.toString()));
+        }
+      }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // validate the optional field `data_comparison`
+      if (jsonObj.get("data_comparison") != null && !jsonObj.get("data_comparison").isJsonNull()) {
+        DocumentBreakdownDataComparison.validateJsonElement(jsonObj.get("data_comparison"));
+      }
+      // validate the optional field `data_validation`
+      if (jsonObj.get("data_validation") != null && !jsonObj.get("data_validation").isJsonNull()) {
+        DocumentBreakdownDataValidation.validateJsonElement(jsonObj.get("data_validation"));
+      }
+      // validate the optional field `image_integrity`
+      if (jsonObj.get("image_integrity") != null && !jsonObj.get("image_integrity").isJsonNull()) {
+        DocumentBreakdownImageIntegrity.validateJsonElement(jsonObj.get("image_integrity"));
+      }
+      // validate the optional field `visual_authenticity`
+      if (jsonObj.get("visual_authenticity") != null && !jsonObj.get("visual_authenticity").isJsonNull()) {
+        DocumentBreakdownVisualAuthenticity.validateJsonElement(jsonObj.get("visual_authenticity"));
+      }
+      // validate the optional field `data_consistency`
+      if (jsonObj.get("data_consistency") != null && !jsonObj.get("data_consistency").isJsonNull()) {
+        DocumentBreakdownDataConsistency.validateJsonElement(jsonObj.get("data_consistency"));
+      }
+      // validate the optional field `police_record`
+      if (jsonObj.get("police_record") != null && !jsonObj.get("police_record").isJsonNull()) {
+        DocumentBreakdownPoliceRecord.validateJsonElement(jsonObj.get("police_record"));
+      }
+      // validate the optional field `compromised_document`
+      if (jsonObj.get("compromised_document") != null && !jsonObj.get("compromised_document").isJsonNull()) {
+        DocumentBreakdownCompromisedDocument.validateJsonElement(jsonObj.get("compromised_document"));
+      }
+      // validate the optional field `age_validation`
+      if (jsonObj.get("age_validation") != null && !jsonObj.get("age_validation").isJsonNull()) {
+        DocumentBreakdownAgeValidation.validateJsonElement(jsonObj.get("age_validation"));
+      }
+      // validate the optional field `issuing_authority`
+      if (jsonObj.get("issuing_authority") != null && !jsonObj.get("issuing_authority").isJsonNull()) {
+        DocumentBreakdownIssuingAuthority.validateJsonElement(jsonObj.get("issuing_authority"));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!DocumentBreakdown.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'DocumentBreakdown' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<DocumentBreakdown> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(DocumentBreakdown.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<DocumentBreakdown>() {
+           @Override
+           public void write(JsonWriter out, DocumentBreakdown value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             obj.remove("additionalProperties");
+             // serialize additional properties
+             if (value.getAdditionalProperties() != null) {
+               for (Map.Entry<String, Object> entry : value.getAdditionalProperties().entrySet()) {
+                 if (entry.getValue() instanceof String)
+                   obj.addProperty(entry.getKey(), (String) entry.getValue());
+                 else if (entry.getValue() instanceof Number)
+                   obj.addProperty(entry.getKey(), (Number) entry.getValue());
+                 else if (entry.getValue() instanceof Boolean)
+                   obj.addProperty(entry.getKey(), (Boolean) entry.getValue());
+                 else if (entry.getValue() instanceof Character)
+                   obj.addProperty(entry.getKey(), (Character) entry.getValue());
+                 else {
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
+                 }
+               }
+             }
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public DocumentBreakdown read(JsonReader in) throws IOException {
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
+             // store additional fields in the deserialized instance
+             DocumentBreakdown instance = thisAdapter.fromJsonTree(jsonObj);
+             for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
+               if (!openapiFields.contains(entry.getKey())) {
+                 if (entry.getValue().isJsonPrimitive()) { // primitive type
+                   if (entry.getValue().getAsJsonPrimitive().isString())
+                     instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsString());
+                   else if (entry.getValue().getAsJsonPrimitive().isNumber())
+                     instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsNumber());
+                   else if (entry.getValue().getAsJsonPrimitive().isBoolean())
+                     instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
+                   else
+                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                 } else if (entry.getValue().isJsonArray()) {
+                     instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
+                 } else { // JSON object
+                     instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), HashMap.class));
+                 }
+               }
+             }
+             return instance;
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of DocumentBreakdown given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of DocumentBreakdown
+  * @throws IOException if the JSON string is invalid with respect to DocumentBreakdown
+  */
+  public static DocumentBreakdown fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, DocumentBreakdown.class);
+  }
+
+ /**
+  * Convert an instance of DocumentBreakdown to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

@@ -13,8 +13,8 @@
 
 package com.onfido.auth;
 
-import com.onfido.Pair;
 import com.onfido.ApiException;
+import com.onfido.Pair;
 
 import java.net.URI;
 import java.util.Map;
@@ -58,7 +58,8 @@ public class ApiKeyAuth implements Authentication {
   }
 
   @Override
-  public void applyToParams(List<Pair> queryParams, Map<String, String> headerParams, Map<String, String> cookieParams, String payload, String method, URI uri) throws ApiException {
+  public void applyToParams(List<Pair> queryParams, Map<String, String> headerParams, Map<String, String> cookieParams,
+                           String payload, String method, URI uri) throws ApiException {
     if (apiKey == null) {
       return;
     }

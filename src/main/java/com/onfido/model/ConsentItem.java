@@ -35,7 +35,7 @@ import com.onfido.JSON;
 })
 @JsonTypeName("Consent_item")
 @com.fasterxml.jackson.annotation.JsonIgnoreProperties(ignoreUnknown = true)
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class ConsentItem {
   /**
    * Gets or Sets name

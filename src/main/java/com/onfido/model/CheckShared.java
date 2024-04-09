@@ -41,7 +41,7 @@ import com.onfido.JSON;
 })
 @JsonTypeName("check_shared")
 @com.fasterxml.jackson.annotation.JsonIgnoreProperties(ignoreUnknown = true)
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class CheckShared {
   public static final String JSON_PROPERTY_WEBHOOK_IDS = "webhook_ids";
   private List<String> webhookIds;

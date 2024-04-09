@@ -46,7 +46,7 @@ import com.onfido.JSON;
 })
 @JsonTypeName("check_request")
 @com.fasterxml.jackson.annotation.JsonIgnoreProperties(ignoreUnknown = true)
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class CheckRequest {
   public static final String JSON_PROPERTY_REPORT_NAMES = "report_names";
   private List<ReportName> reportNames = new ArrayList<>();

@@ -38,7 +38,7 @@ import com.onfido.JSON;
 })
 @JsonTypeName("identity_enhanced_properties_matched_addresses_inner")
 @com.fasterxml.jackson.annotation.JsonIgnoreProperties(ignoreUnknown = true)
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class IdentityEnhancedPropertiesMatchedAddressesInner {
   public static final String JSON_PROPERTY_ID = "id";
   private BigDecimal id;

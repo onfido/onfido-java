@@ -41,7 +41,7 @@ import com.onfido.JSON;
 })
 @JsonTypeName("document_CDQ_reasons")
 @com.fasterxml.jackson.annotation.JsonIgnoreProperties(ignoreUnknown = true)
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class DocumentCDQReasons {
   public static final String JSON_PROPERTY_OBSCURED_DATA_POINTS = "obscured_data_points";
   private String obscuredDataPoints;

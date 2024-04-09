@@ -39,7 +39,7 @@ import com.onfido.JSON;
 })
 @JsonTypeName("facial_similarity_photo_breakdown")
 @com.fasterxml.jackson.annotation.JsonIgnoreProperties(ignoreUnknown = true)
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class FacialSimilarityPhotoBreakdown {
   public static final String JSON_PROPERTY_FACE_COMPARISON = "face_comparison";
   private FacialSimilarityPhotoBreakdownFaceComparison faceComparison;

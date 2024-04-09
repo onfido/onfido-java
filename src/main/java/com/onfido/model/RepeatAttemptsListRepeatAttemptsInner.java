@@ -42,7 +42,7 @@ import com.onfido.JSON;
 })
 @JsonTypeName("repeat_attempts_list_repeat_attempts_inner")
 @com.fasterxml.jackson.annotation.JsonIgnoreProperties(ignoreUnknown = true)
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class RepeatAttemptsListRepeatAttemptsInner {
   public static final String JSON_PROPERTY_REPORT_ID = "report_id";
   private UUID reportId;

@@ -60,7 +60,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class DefaultApi {
   private ApiClient apiClient;
 
@@ -2986,8 +2986,8 @@ public class DefaultApi {
   /**
    * Upload ID photo
    * You can upload ID photos to this endpoint. Like document upload, files must be uploaded as a multipart form. Valid file types are jpg, png and pdf. The file size must be between 32KB and 10MB. 
-   * @param applicantId The ID of the applicant whose ID photo is being uploaded. (required)
-   * @param _file The file to be uploaded. (required)
+   * @param applicantId The ID of the applicant whose ID photo is being uploaded. (optional)
+   * @param _file The file to be uploaded. (optional)
    * @return IdPhoto
    * @throws ApiException if fails to make API call
    * @http.response.details
@@ -3004,8 +3004,8 @@ public class DefaultApi {
   /**
    * Upload ID photo
    * You can upload ID photos to this endpoint. Like document upload, files must be uploaded as a multipart form. Valid file types are jpg, png and pdf. The file size must be between 32KB and 10MB. 
-   * @param applicantId The ID of the applicant whose ID photo is being uploaded. (required)
-   * @param _file The file to be uploaded. (required)
+   * @param applicantId The ID of the applicant whose ID photo is being uploaded. (optional)
+   * @param _file The file to be uploaded. (optional)
    * @return ApiResponse&lt;IdPhoto&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
@@ -3016,18 +3016,14 @@ public class DefaultApi {
      </table>
    */
   public ApiResponse<IdPhoto> uploadIdPhotoWithHttpInfo(UUID applicantId, File _file) throws ApiException {
-    // Check required parameters
-    if (applicantId == null) {
-      throw new ApiException(400, "Missing the required parameter 'applicantId' when calling uploadIdPhoto");
-    }
-    if (_file == null) {
-      throw new ApiException(400, "Missing the required parameter '_file' when calling uploadIdPhoto");
-    }
-
     // Form parameters
     Map<String, Object> localVarFormParams = new LinkedHashMap<>();
-    localVarFormParams.put("applicant_id", applicantId);
-    localVarFormParams.put("file", _file);
+    if (applicantId != null) {
+      localVarFormParams.put("applicant_id", applicantId);
+    }
+    if (_file != null) {
+      localVarFormParams.put("file", _file);
+    }
 
     String localVarAccept = apiClient.selectHeaderAccept("application/json");
     String localVarContentType = apiClient.selectHeaderContentType("multipart/form-data");
@@ -3040,8 +3036,8 @@ public class DefaultApi {
   /**
    * Upload live photo
    * You can upload live photos to this endpoint. Like document upload, files must be uploaded as a multipart form. Valid file types are jpg, png and pdf. The file size must be between 32KB and 10MB. Live photos are validated at the point of upload to check that they contain exactly one face. This validation can be disabled by setting the advanced_validation argument to false. 
-   * @param applicantId The ID of the applicant whose live photo is being uploaded. (required)
-   * @param _file The file to be uploaded. (required)
+   * @param applicantId The ID of the applicant whose live photo is being uploaded. (optional)
+   * @param _file The file to be uploaded. (optional)
    * @param advancedValidation Validates that the live photo contains exactly one face. (optional, default to true)
    * @return LivePhoto
    * @throws ApiException if fails to make API call
@@ -3059,8 +3055,8 @@ public class DefaultApi {
   /**
    * Upload live photo
    * You can upload live photos to this endpoint. Like document upload, files must be uploaded as a multipart form. Valid file types are jpg, png and pdf. The file size must be between 32KB and 10MB. Live photos are validated at the point of upload to check that they contain exactly one face. This validation can be disabled by setting the advanced_validation argument to false. 
-   * @param applicantId The ID of the applicant whose live photo is being uploaded. (required)
-   * @param _file The file to be uploaded. (required)
+   * @param applicantId The ID of the applicant whose live photo is being uploaded. (optional)
+   * @param _file The file to be uploaded. (optional)
    * @param advancedValidation Validates that the live photo contains exactly one face. (optional, default to true)
    * @return ApiResponse&lt;LivePhoto&gt;
    * @throws ApiException if fails to make API call
@@ -3072,18 +3068,14 @@ public class DefaultApi {
      </table>
    */
   public ApiResponse<LivePhoto> uploadLivePhotoWithHttpInfo(UUID applicantId, File _file, Boolean advancedValidation) throws ApiException {
-    // Check required parameters
-    if (applicantId == null) {
-      throw new ApiException(400, "Missing the required parameter 'applicantId' when calling uploadLivePhoto");
-    }
-    if (_file == null) {
-      throw new ApiException(400, "Missing the required parameter '_file' when calling uploadLivePhoto");
-    }
-
     // Form parameters
     Map<String, Object> localVarFormParams = new LinkedHashMap<>();
-    localVarFormParams.put("applicant_id", applicantId);
-    localVarFormParams.put("file", _file);
+    if (applicantId != null) {
+      localVarFormParams.put("applicant_id", applicantId);
+    }
+    if (_file != null) {
+      localVarFormParams.put("file", _file);
+    }
     if (advancedValidation != null) {
       localVarFormParams.put("advanced_validation", advancedValidation);
     }

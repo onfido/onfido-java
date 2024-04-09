@@ -39,7 +39,7 @@ import com.onfido.JSON;
 })
 @JsonTypeName("identity_enhanced_properties")
 @com.fasterxml.jackson.annotation.JsonIgnoreProperties(ignoreUnknown = true)
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class IdentityEnhancedProperties {
   public static final String JSON_PROPERTY_MATCHED_ADDRESS = "matched_address";
   private BigDecimal matchedAddress;

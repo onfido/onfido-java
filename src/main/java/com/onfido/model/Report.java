@@ -92,7 +92,7 @@ import com.fasterxml.jackson.databind.ser.std.StdSerializer;
 import com.onfido.JSON;
 
 @com.fasterxml.jackson.annotation.JsonIgnoreProperties(ignoreUnknown = true)
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 @JsonDeserialize(using = Report.ReportDeserializer.class)
 @JsonSerialize(using = Report.ReportSerializer.class)
 public class Report extends AbstractOpenApiSchema {

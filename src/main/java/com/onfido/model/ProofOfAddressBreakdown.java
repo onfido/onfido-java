@@ -39,7 +39,7 @@ import com.onfido.JSON;
 })
 @JsonTypeName("proof_of_address_breakdown")
 @com.fasterxml.jackson.annotation.JsonIgnoreProperties(ignoreUnknown = true)
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class ProofOfAddressBreakdown {
   public static final String JSON_PROPERTY_DATA_COMPARISON = "data_comparison";
   private ProofOfAddressBreakdownDataComparison dataComparison;

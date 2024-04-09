@@ -36,7 +36,7 @@ import com.onfido.JSON;
 })
 @JsonTypeName("india_pan_report_allOf_breakdown_device_breakdown")
 @com.fasterxml.jackson.annotation.JsonIgnoreProperties(ignoreUnknown = true)
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class IndiaPanReportAllOfBreakdownDeviceBreakdown {
   public static final String JSON_PROPERTY_PAN_VALID = "pan_valid";
   private IndiaPanReportAllOfBreakdownDeviceBreakdownPanValid panValid;

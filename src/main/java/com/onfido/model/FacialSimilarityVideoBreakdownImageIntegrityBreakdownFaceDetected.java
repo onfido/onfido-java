@@ -35,7 +35,7 @@ import com.onfido.JSON;
 })
 @JsonTypeName("facial_similarity_video_breakdown_image_integrity_breakdown_face_detected")
 @com.fasterxml.jackson.annotation.JsonIgnoreProperties(ignoreUnknown = true)
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class FacialSimilarityVideoBreakdownImageIntegrityBreakdownFaceDetected {
   public static final String JSON_PROPERTY_RESULT = "result";
   private String result;

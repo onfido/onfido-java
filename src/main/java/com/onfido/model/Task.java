@@ -38,7 +38,7 @@ import com.onfido.JSON;
   Task.JSON_PROPERTY_UPDATED_AT
 })
 @com.fasterxml.jackson.annotation.JsonIgnoreProperties(ignoreUnknown = true)
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class Task {
   public static final String JSON_PROPERTY_ID = "id";
   private UUID id;

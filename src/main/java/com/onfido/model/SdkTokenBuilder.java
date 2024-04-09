@@ -42,7 +42,7 @@ import com.onfido.JSON;
 })
 @JsonTypeName("sdk_token_builder")
 @com.fasterxml.jackson.annotation.JsonIgnoreProperties(ignoreUnknown = true)
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class SdkTokenBuilder {
   public static final String JSON_PROPERTY_APPLICANT_ID = "applicant_id";
   private UUID applicantId;

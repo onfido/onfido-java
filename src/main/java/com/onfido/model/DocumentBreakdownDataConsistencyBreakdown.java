@@ -44,7 +44,7 @@ import com.onfido.JSON;
 })
 @JsonTypeName("document_breakdown_data_consistency_breakdown")
 @com.fasterxml.jackson.annotation.JsonIgnoreProperties(ignoreUnknown = true)
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class DocumentBreakdownDataConsistencyBreakdown {
   public static final String JSON_PROPERTY_DATE_OF_EXPIRY = "date_of_expiry";
   private DocumentBreakdownDataComparisonBreakdownIssuingCountry dateOfExpiry;

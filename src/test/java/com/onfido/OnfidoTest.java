@@ -53,18 +53,24 @@ public class OnfidoTest {
   @Test
   public void usesEURegionApiUrl() {
     DefaultApi onfido = new DefaultApi(apiClient.setRegion(Region.EU).setApiToken("token"));
-    Assertions.assertEquals("https://api.eu.onfido.com/v3.6", onfido.getApiClient().getBasePath());
+    String url = onfido.getApiClient().buildUrl(null, "", null, null);
+
+    Assertions.assertEquals("https://api.eu.onfido.com/v3.6", url);
   }
 
   @Test()
   public void usesUSRegionApiUrl() {
     DefaultApi onfido = new DefaultApi(apiClient.setRegion(Region.US).setApiToken("token"));
-    Assertions.assertEquals("https://api.us.onfido.com/v3.6", onfido.getApiClient().getBasePath());
+    String url = onfido.getApiClient().buildUrl(null, "", null, null);
+
+    Assertions.assertEquals("https://api.us.onfido.com/v3.6", url);
   }
 
   @Test()
   public void usesCARegionApiUrl() {
     DefaultApi onfido = new DefaultApi(apiClient.setRegion(Region.CA).setApiToken("token"));
-    Assertions.assertEquals("https://api.ca.onfido.com/v3.6", onfido.getApiClient().getBasePath());
+    String url = onfido.getApiClient().buildUrl(null, "", null, null);
+
+    Assertions.assertEquals("https://api.ca.onfido.com/v3.6", url);
   }
 }

@@ -13,8 +13,10 @@ import com.onfido.model.ReportDocument;
 import com.onfido.model.ReportName;
 import com.onfido.model.ReportStatus;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.UUID;
+import java.util.stream.Collectors;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -36,29 +38,9 @@ public class ReportTest extends TestBase {
   }
 
   private List<Report> sortReports(List<Report> reports) {
-    // TODO update after https://github.com/onfido/onfido-openapi-spec/pull/57
-    // return reports.stream()
-    //               .sorted(Comparator.comparing(Report::getName))
-    //               .collect(Collectors.toList());
-
-    try {
-      reports.get(0).getDocumentReport();
-
-      return reports;
-    } catch (Exception ClassCastException) {
-      // If sorting is not good, we swap them around
-      return Arrays.asList(reports.get(1), reports.get(0));
-    }
-  }
-
-  private UUID getReportId(Report report) {
-    // TODO update after https://github.com/onfido/onfido-openapi-spec/pull/57
-    // return report.getId();
-    try {
-      return report.getDocumentReport().getId();
-    } catch (Exception ClassCastException) {
-      return report.getIdentityEnhancedReport().getId();
-    }
+    return reports.stream()
+        .sorted(Comparator.comparing(Report::getName))
+        .collect(Collectors.toList());
   }
 
   @Test
@@ -71,7 +53,6 @@ public class ReportTest extends TestBase {
               Arrays.asList(
                   onfido.findReport(reportIds.get(0)), onfido.findReport(reportIds.get(1))));
 
-      // TODO avoid casting after https://github.com/onfido/onfido-openapi-spec/pull/57
       DocumentReport documentReport = reports.get(0).getDocumentReport();
       IdentityEnhancedReport identityEnhancedReport = reports.get(1).getIdentityEnhancedReport();
 
@@ -99,10 +80,8 @@ public class ReportTest extends TestBase {
   public void listReportsTest() throws Exception {
     List<Report> reports = sortReports(onfido.listReports(check.getId()).getReports());
 
-    // TODO avoid casting after https://github.com/onfido/onfido-openapi-spec/pull/57
-    Assertions.assertEquals(ReportName.DOCUMENT, reports.get(0).getDocumentReport().getName());
-    Assertions.assertEquals(
-        ReportName.IDENTITY_ENHANCED, reports.get(1).getIdentityEnhancedReport().getName());
+    Assertions.assertEquals(ReportName.DOCUMENT, reports.get(0).getName());
+    Assertions.assertEquals(ReportName.IDENTITY_ENHANCED, reports.get(1).getName());
   }
 
   @Test
@@ -111,7 +90,7 @@ public class ReportTest extends TestBase {
 
     if (reportIds != null) {
       Report report = onfido.findReport(reportIds.get(0));
-      onfido.resumeReport(getReportId(report));
+      onfido.resumeReport(report.getId());
     } else {
       Assertions.fail();
     }
@@ -123,7 +102,7 @@ public class ReportTest extends TestBase {
 
     if (reportIds != null) {
       Report report = onfido.findReport(reportIds.get(0));
-      onfido.cancelReport(getReportId(report));
+      onfido.cancelReport(report.getId());
     } else {
       Assertions.fail();
     }

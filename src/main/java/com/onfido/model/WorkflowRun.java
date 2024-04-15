@@ -13,81 +13,90 @@
 
 package com.onfido.model;
 
-import java.util.Map;
-import java.util.HashMap;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
 import java.util.Objects;
-import java.util.Map;
-import java.util.HashMap;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import com.onfido.model.WorkflowRunResponseError;
 import com.onfido.model.WorkflowRunSharedLink;
+import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.onfido.JSON;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import com.onfido.JSON;
 
 /**
  * WorkflowRun
  */
-@JsonPropertyOrder({
-  WorkflowRun.JSON_PROPERTY_APPLICANT_ID,
-  WorkflowRun.JSON_PROPERTY_WORKFLOW_ID,
-  WorkflowRun.JSON_PROPERTY_TAGS,
-  WorkflowRun.JSON_PROPERTY_LINK,
-  WorkflowRun.JSON_PROPERTY_CREATED_AT,
-  WorkflowRun.JSON_PROPERTY_UPDATED_AT,
-  WorkflowRun.JSON_PROPERTY_ID,
-  WorkflowRun.JSON_PROPERTY_WORKFLOW_VERSION_ID,
-  WorkflowRun.JSON_PROPERTY_DASHBOARD_URL,
-  WorkflowRun.JSON_PROPERTY_STATUS,
-  WorkflowRun.JSON_PROPERTY_OUTPUT,
-  WorkflowRun.JSON_PROPERTY_REASONS,
-  WorkflowRun.JSON_PROPERTY_ERROR
-})
-@JsonTypeName("workflow_run")
-@com.fasterxml.jackson.annotation.JsonIgnoreProperties(ignoreUnknown = true)
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class WorkflowRun {
-  public static final String JSON_PROPERTY_APPLICANT_ID = "applicant_id";
+  public static final String SERIALIZED_NAME_APPLICANT_ID = "applicant_id";
+  @SerializedName(SERIALIZED_NAME_APPLICANT_ID)
   private UUID applicantId;
 
-  public static final String JSON_PROPERTY_WORKFLOW_ID = "workflow_id";
+  public static final String SERIALIZED_NAME_WORKFLOW_ID = "workflow_id";
+  @SerializedName(SERIALIZED_NAME_WORKFLOW_ID)
   private UUID workflowId;
 
-  public static final String JSON_PROPERTY_TAGS = "tags";
+  public static final String SERIALIZED_NAME_TAGS = "tags";
+  @SerializedName(SERIALIZED_NAME_TAGS)
   private List<String> tags;
 
-  public static final String JSON_PROPERTY_LINK = "link";
+  public static final String SERIALIZED_NAME_LINK = "link";
+  @SerializedName(SERIALIZED_NAME_LINK)
   private WorkflowRunSharedLink link;
 
-  public static final String JSON_PROPERTY_CREATED_AT = "created_at";
+  public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
+  @SerializedName(SERIALIZED_NAME_CREATED_AT)
   private OffsetDateTime createdAt;
 
-  public static final String JSON_PROPERTY_UPDATED_AT = "updated_at";
+  public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
+  @SerializedName(SERIALIZED_NAME_UPDATED_AT)
   private OffsetDateTime updatedAt;
 
-  public static final String JSON_PROPERTY_ID = "id";
+  public static final String SERIALIZED_NAME_ID = "id";
+  @SerializedName(SERIALIZED_NAME_ID)
   private UUID id;
 
-  public static final String JSON_PROPERTY_WORKFLOW_VERSION_ID = "workflow_version_id";
+  public static final String SERIALIZED_NAME_WORKFLOW_VERSION_ID = "workflow_version_id";
+  @SerializedName(SERIALIZED_NAME_WORKFLOW_VERSION_ID)
   private Integer workflowVersionId;
 
-  public static final String JSON_PROPERTY_DASHBOARD_URL = "dashboard_url";
+  public static final String SERIALIZED_NAME_DASHBOARD_URL = "dashboard_url";
+  @SerializedName(SERIALIZED_NAME_DASHBOARD_URL)
   private String dashboardUrl;
 
   /**
    * The status of the Workflow Run.
    */
+  @JsonAdapter(StatusEnum.Adapter.class)
   public enum StatusEnum {
     AWAITING_INPUT("awaiting_input"),
     
@@ -111,7 +120,6 @@ public class WorkflowRun {
       this.value = value;
     }
 
-    @JsonValue
     public String getValue() {
       return value;
     }
@@ -121,7 +129,6 @@ public class WorkflowRun {
       return String.valueOf(value);
     }
 
-    @JsonCreator
     public static StatusEnum fromValue(String value) {
       for (StatusEnum b : StatusEnum.values()) {
         if (b.value.equals(value)) {
@@ -130,21 +137,43 @@ public class WorkflowRun {
       }
       return UNKNOWN_DEFAULT_OPEN_API;
     }
+
+    public static class Adapter extends TypeAdapter<StatusEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final StatusEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public StatusEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return StatusEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      StatusEnum.fromValue(value);
+    }
   }
 
-  public static final String JSON_PROPERTY_STATUS = "status";
+  public static final String SERIALIZED_NAME_STATUS = "status";
+  @SerializedName(SERIALIZED_NAME_STATUS)
   private StatusEnum status;
 
-  public static final String JSON_PROPERTY_OUTPUT = "output";
+  public static final String SERIALIZED_NAME_OUTPUT = "output";
+  @SerializedName(SERIALIZED_NAME_OUTPUT)
   private Object output;
 
-  public static final String JSON_PROPERTY_REASONS = "reasons";
+  public static final String SERIALIZED_NAME_REASONS = "reasons";
+  @SerializedName(SERIALIZED_NAME_REASONS)
   private List<String> reasons;
 
-  public static final String JSON_PROPERTY_ERROR = "error";
+  public static final String SERIALIZED_NAME_ERROR = "error";
+  @SerializedName(SERIALIZED_NAME_ERROR)
   private WorkflowRunResponseError error;
 
-  public WorkflowRun() { 
+  public WorkflowRun() {
   }
 
   public WorkflowRun applicantId(UUID applicantId) {
@@ -157,16 +186,10 @@ public class WorkflowRun {
    * @return applicantId
   **/
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_APPLICANT_ID)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-
   public UUID getApplicantId() {
     return applicantId;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_APPLICANT_ID)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setApplicantId(UUID applicantId) {
     this.applicantId = applicantId;
   }
@@ -182,16 +205,10 @@ public class WorkflowRun {
    * @return workflowId
   **/
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_WORKFLOW_ID)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-
   public UUID getWorkflowId() {
     return workflowId;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_WORKFLOW_ID)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setWorkflowId(UUID workflowId) {
     this.workflowId = workflowId;
   }
@@ -215,16 +232,10 @@ public class WorkflowRun {
    * @return tags
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_TAGS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public List<String> getTags() {
     return tags;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_TAGS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTags(List<String> tags) {
     this.tags = tags;
   }
@@ -240,16 +251,10 @@ public class WorkflowRun {
    * @return link
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_LINK)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public WorkflowRunSharedLink getLink() {
     return link;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_LINK)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setLink(WorkflowRunSharedLink link) {
     this.link = link;
   }
@@ -265,16 +270,10 @@ public class WorkflowRun {
    * @return createdAt
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_CREATED_AT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public OffsetDateTime getCreatedAt() {
     return createdAt;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_CREATED_AT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCreatedAt(OffsetDateTime createdAt) {
     this.createdAt = createdAt;
   }
@@ -290,16 +289,10 @@ public class WorkflowRun {
    * @return updatedAt
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_UPDATED_AT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public OffsetDateTime getUpdatedAt() {
     return updatedAt;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_UPDATED_AT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setUpdatedAt(OffsetDateTime updatedAt) {
     this.updatedAt = updatedAt;
   }
@@ -315,16 +308,10 @@ public class WorkflowRun {
    * @return id
   **/
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_ID)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-
   public UUID getId() {
     return id;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_ID)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setId(UUID id) {
     this.id = id;
   }
@@ -340,16 +327,10 @@ public class WorkflowRun {
    * @return workflowVersionId
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_WORKFLOW_VERSION_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public Integer getWorkflowVersionId() {
     return workflowVersionId;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_WORKFLOW_VERSION_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setWorkflowVersionId(Integer workflowVersionId) {
     this.workflowVersionId = workflowVersionId;
   }
@@ -365,16 +346,10 @@ public class WorkflowRun {
    * @return dashboardUrl
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_DASHBOARD_URL)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getDashboardUrl() {
     return dashboardUrl;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_DASHBOARD_URL)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDashboardUrl(String dashboardUrl) {
     this.dashboardUrl = dashboardUrl;
   }
@@ -390,16 +365,10 @@ public class WorkflowRun {
    * @return status
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_STATUS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public StatusEnum getStatus() {
     return status;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_STATUS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setStatus(StatusEnum status) {
     this.status = status;
   }
@@ -415,16 +384,10 @@ public class WorkflowRun {
    * @return output
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_OUTPUT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public Object getOutput() {
     return output;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_OUTPUT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOutput(Object output) {
     this.output = output;
   }
@@ -448,16 +411,10 @@ public class WorkflowRun {
    * @return reasons
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_REASONS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public List<String> getReasons() {
     return reasons;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_REASONS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setReasons(List<String> reasons) {
     this.reasons = reasons;
   }
@@ -473,16 +430,10 @@ public class WorkflowRun {
    * @return error
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ERROR)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public WorkflowRunResponseError getError() {
     return error;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_ERROR)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setError(WorkflowRunResponseError error) {
     this.error = error;
   }
@@ -497,11 +448,14 @@ public class WorkflowRun {
   /**
    * Set the additional (undeclared) property with the specified name and value.
    * If the property does not already exist, create it otherwise replace it.
+   *
+   * @param key name of the property
+   * @param value value of the property
+   * @return the WorkflowRun instance itself
    */
-  @JsonAnySetter
   public WorkflowRun putAdditionalProperty(String key, Object value) {
     if (this.additionalProperties == null) {
-        this.additionalProperties = new HashMap<>();
+        this.additionalProperties = new HashMap<String, Object>();
     }
     this.additionalProperties.put(key, value);
     return this;
@@ -509,14 +463,18 @@ public class WorkflowRun {
 
   /**
    * Return the additional (undeclared) property.
+   *
+   * @return a map of objects
    */
-  @JsonAnyGetter
   public Map<String, Object> getAdditionalProperties() {
     return additionalProperties;
   }
 
   /**
    * Return the additional (undeclared) property with the specified name.
+   *
+   * @param key name of the property
+   * @return an object
    */
   public Object getAdditionalProperty(String key) {
     if (this.additionalProperties == null) {
@@ -525,9 +483,7 @@ public class WorkflowRun {
     return this.additionalProperties.get(key);
   }
 
-  /**
-   * Return true if this workflow_run object is equal to o.
-   */
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -591,5 +547,181 @@ public class WorkflowRun {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("applicant_id");
+    openapiFields.add("workflow_id");
+    openapiFields.add("tags");
+    openapiFields.add("link");
+    openapiFields.add("created_at");
+    openapiFields.add("updated_at");
+    openapiFields.add("id");
+    openapiFields.add("workflow_version_id");
+    openapiFields.add("dashboard_url");
+    openapiFields.add("status");
+    openapiFields.add("output");
+    openapiFields.add("reasons");
+    openapiFields.add("error");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("applicant_id");
+    openapiRequiredFields.add("workflow_id");
+    openapiRequiredFields.add("id");
+  }
+
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to WorkflowRun
+  */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!WorkflowRun.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in WorkflowRun is not found in the empty JSON string", WorkflowRun.openapiRequiredFields.toString()));
+        }
+      }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : WorkflowRun.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if (!jsonObj.get("applicant_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `applicant_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("applicant_id").toString()));
+      }
+      if (!jsonObj.get("workflow_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `workflow_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("workflow_id").toString()));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("tags") != null && !jsonObj.get("tags").isJsonNull() && !jsonObj.get("tags").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
+      }
+      // validate the optional field `link`
+      if (jsonObj.get("link") != null && !jsonObj.get("link").isJsonNull()) {
+        WorkflowRunSharedLink.validateJsonElement(jsonObj.get("link"));
+      }
+      if (!jsonObj.get("id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
+      }
+      if ((jsonObj.get("dashboard_url") != null && !jsonObj.get("dashboard_url").isJsonNull()) && !jsonObj.get("dashboard_url").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `dashboard_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("dashboard_url").toString()));
+      }
+      if ((jsonObj.get("status") != null && !jsonObj.get("status").isJsonNull()) && !jsonObj.get("status").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));
+      }
+      // validate the optional field `status`
+      if (jsonObj.get("status") != null && !jsonObj.get("status").isJsonNull()) {
+        StatusEnum.validateJsonElement(jsonObj.get("status"));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("reasons") != null && !jsonObj.get("reasons").isJsonNull() && !jsonObj.get("reasons").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `reasons` to be an array in the JSON string but got `%s`", jsonObj.get("reasons").toString()));
+      }
+      // validate the optional field `error`
+      if (jsonObj.get("error") != null && !jsonObj.get("error").isJsonNull()) {
+        WorkflowRunResponseError.validateJsonElement(jsonObj.get("error"));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!WorkflowRun.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'WorkflowRun' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<WorkflowRun> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(WorkflowRun.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<WorkflowRun>() {
+           @Override
+           public void write(JsonWriter out, WorkflowRun value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             obj.remove("additionalProperties");
+             // serialize additional properties
+             if (value.getAdditionalProperties() != null) {
+               for (Map.Entry<String, Object> entry : value.getAdditionalProperties().entrySet()) {
+                 if (entry.getValue() instanceof String)
+                   obj.addProperty(entry.getKey(), (String) entry.getValue());
+                 else if (entry.getValue() instanceof Number)
+                   obj.addProperty(entry.getKey(), (Number) entry.getValue());
+                 else if (entry.getValue() instanceof Boolean)
+                   obj.addProperty(entry.getKey(), (Boolean) entry.getValue());
+                 else if (entry.getValue() instanceof Character)
+                   obj.addProperty(entry.getKey(), (Character) entry.getValue());
+                 else {
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
+                 }
+               }
+             }
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public WorkflowRun read(JsonReader in) throws IOException {
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
+             // store additional fields in the deserialized instance
+             WorkflowRun instance = thisAdapter.fromJsonTree(jsonObj);
+             for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
+               if (!openapiFields.contains(entry.getKey())) {
+                 if (entry.getValue().isJsonPrimitive()) { // primitive type
+                   if (entry.getValue().getAsJsonPrimitive().isString())
+                     instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsString());
+                   else if (entry.getValue().getAsJsonPrimitive().isNumber())
+                     instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsNumber());
+                   else if (entry.getValue().getAsJsonPrimitive().isBoolean())
+                     instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
+                   else
+                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                 } else if (entry.getValue().isJsonArray()) {
+                     instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
+                 } else { // JSON object
+                     instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), HashMap.class));
+                 }
+               }
+             }
+             return instance;
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of WorkflowRun given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of WorkflowRun
+  * @throws IOException if the JSON string is invalid with respect to WorkflowRun
+  */
+  public static WorkflowRun fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, WorkflowRun.class);
+  }
+
+ /**
+  * Convert an instance of WorkflowRun to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

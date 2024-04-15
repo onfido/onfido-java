@@ -38,7 +38,8 @@ public class TestBase {
             Configuration.getDefaultApiClient()
                 .setApiToken(apiToken)
                 .setConnectTimeout(60_000)
-                .setReadTimeout(60_000));
+                .setReadTimeout(60_000)
+                .setWriteTimeout(60_000));
   }
 
   @AfterAll

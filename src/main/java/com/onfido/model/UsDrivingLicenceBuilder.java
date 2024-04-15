@@ -13,72 +13,73 @@
 
 package com.onfido.model;
 
-import java.util.Map;
-import java.util.HashMap;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
 import java.util.Objects;
-import java.util.Map;
-import java.util.HashMap;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 import java.time.LocalDate;
 import java.util.Arrays;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.onfido.JSON;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import com.onfido.JSON;
 
 /**
  * UsDrivingLicenceBuilder
  */
-@JsonPropertyOrder({
-  UsDrivingLicenceBuilder.JSON_PROPERTY_ID_NUMBER,
-  UsDrivingLicenceBuilder.JSON_PROPERTY_ISSUE_STATE,
-  UsDrivingLicenceBuilder.JSON_PROPERTY_ADDRESS_LINE1,
-  UsDrivingLicenceBuilder.JSON_PROPERTY_ADDRESS_LINE2,
-  UsDrivingLicenceBuilder.JSON_PROPERTY_CITY,
-  UsDrivingLicenceBuilder.JSON_PROPERTY_DATE_OF_BIRTH,
-  UsDrivingLicenceBuilder.JSON_PROPERTY_DOCUMENT_CATEGORY,
-  UsDrivingLicenceBuilder.JSON_PROPERTY_EXPIRATION_DATE,
-  UsDrivingLicenceBuilder.JSON_PROPERTY_EYE_COLOR_CODE,
-  UsDrivingLicenceBuilder.JSON_PROPERTY_FIRST_NAME,
-  UsDrivingLicenceBuilder.JSON_PROPERTY_GENDER,
-  UsDrivingLicenceBuilder.JSON_PROPERTY_ISSUE_DATE,
-  UsDrivingLicenceBuilder.JSON_PROPERTY_LAST_NAME,
-  UsDrivingLicenceBuilder.JSON_PROPERTY_MIDDLE_NAME,
-  UsDrivingLicenceBuilder.JSON_PROPERTY_NAME_SUFFIX,
-  UsDrivingLicenceBuilder.JSON_PROPERTY_POSTAL_CODE,
-  UsDrivingLicenceBuilder.JSON_PROPERTY_STATE,
-  UsDrivingLicenceBuilder.JSON_PROPERTY_WEIGHT_MEASURE
-})
-@JsonTypeName("us_driving_licence_builder")
-@com.fasterxml.jackson.annotation.JsonIgnoreProperties(ignoreUnknown = true)
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class UsDrivingLicenceBuilder {
-  public static final String JSON_PROPERTY_ID_NUMBER = "id_number";
+  public static final String SERIALIZED_NAME_ID_NUMBER = "id_number";
+  @SerializedName(SERIALIZED_NAME_ID_NUMBER)
   private String idNumber;
 
-  public static final String JSON_PROPERTY_ISSUE_STATE = "issue_state";
+  public static final String SERIALIZED_NAME_ISSUE_STATE = "issue_state";
+  @SerializedName(SERIALIZED_NAME_ISSUE_STATE)
   private String issueState;
 
-  public static final String JSON_PROPERTY_ADDRESS_LINE1 = "address_line_1";
+  public static final String SERIALIZED_NAME_ADDRESS_LINE1 = "address_line_1";
+  @SerializedName(SERIALIZED_NAME_ADDRESS_LINE1)
   private String addressLine1;
 
-  public static final String JSON_PROPERTY_ADDRESS_LINE2 = "address_line_2";
+  public static final String SERIALIZED_NAME_ADDRESS_LINE2 = "address_line_2";
+  @SerializedName(SERIALIZED_NAME_ADDRESS_LINE2)
   private String addressLine2;
 
-  public static final String JSON_PROPERTY_CITY = "city";
+  public static final String SERIALIZED_NAME_CITY = "city";
+  @SerializedName(SERIALIZED_NAME_CITY)
   private String city;
 
-  public static final String JSON_PROPERTY_DATE_OF_BIRTH = "date_of_birth";
+  public static final String SERIALIZED_NAME_DATE_OF_BIRTH = "date_of_birth";
+  @SerializedName(SERIALIZED_NAME_DATE_OF_BIRTH)
   private LocalDate dateOfBirth;
 
   /**
    * Document category.
    */
+  @JsonAdapter(DocumentCategoryEnum.Adapter.class)
   public enum DocumentCategoryEnum {
     DRIVER_LICENSE("driver license"),
     
@@ -94,7 +95,6 @@ public class UsDrivingLicenceBuilder {
       this.value = value;
     }
 
-    @JsonValue
     public String getValue() {
       return value;
     }
@@ -104,7 +104,6 @@ public class UsDrivingLicenceBuilder {
       return String.valueOf(value);
     }
 
-    @JsonCreator
     public static DocumentCategoryEnum fromValue(String value) {
       for (DocumentCategoryEnum b : DocumentCategoryEnum.values()) {
         if (b.value.equals(value)) {
@@ -113,17 +112,38 @@ public class UsDrivingLicenceBuilder {
       }
       return UNKNOWN_DEFAULT_OPEN_API;
     }
+
+    public static class Adapter extends TypeAdapter<DocumentCategoryEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final DocumentCategoryEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public DocumentCategoryEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return DocumentCategoryEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      DocumentCategoryEnum.fromValue(value);
+    }
   }
 
-  public static final String JSON_PROPERTY_DOCUMENT_CATEGORY = "document_category";
+  public static final String SERIALIZED_NAME_DOCUMENT_CATEGORY = "document_category";
+  @SerializedName(SERIALIZED_NAME_DOCUMENT_CATEGORY)
   private DocumentCategoryEnum documentCategory;
 
-  public static final String JSON_PROPERTY_EXPIRATION_DATE = "expiration_date";
+  public static final String SERIALIZED_NAME_EXPIRATION_DATE = "expiration_date";
+  @SerializedName(SERIALIZED_NAME_EXPIRATION_DATE)
   private LocalDate expirationDate;
 
   /**
    * Eye color code.
    */
+  @JsonAdapter(EyeColorCodeEnum.Adapter.class)
   public enum EyeColorCodeEnum {
     BLK("BLK"),
     
@@ -151,7 +171,6 @@ public class UsDrivingLicenceBuilder {
       this.value = value;
     }
 
-    @JsonValue
     public String getValue() {
       return value;
     }
@@ -161,7 +180,6 @@ public class UsDrivingLicenceBuilder {
       return String.valueOf(value);
     }
 
-    @JsonCreator
     public static EyeColorCodeEnum fromValue(String value) {
       for (EyeColorCodeEnum b : EyeColorCodeEnum.values()) {
         if (b.value.equals(value)) {
@@ -170,17 +188,38 @@ public class UsDrivingLicenceBuilder {
       }
       return UNKNOWN_DEFAULT_OPEN_API;
     }
+
+    public static class Adapter extends TypeAdapter<EyeColorCodeEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final EyeColorCodeEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public EyeColorCodeEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return EyeColorCodeEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      EyeColorCodeEnum.fromValue(value);
+    }
   }
 
-  public static final String JSON_PROPERTY_EYE_COLOR_CODE = "eye_color_code";
+  public static final String SERIALIZED_NAME_EYE_COLOR_CODE = "eye_color_code";
+  @SerializedName(SERIALIZED_NAME_EYE_COLOR_CODE)
   private EyeColorCodeEnum eyeColorCode;
 
-  public static final String JSON_PROPERTY_FIRST_NAME = "first_name";
+  public static final String SERIALIZED_NAME_FIRST_NAME = "first_name";
+  @SerializedName(SERIALIZED_NAME_FIRST_NAME)
   private String firstName;
 
   /**
    * Gets or Sets gender
    */
+  @JsonAdapter(GenderEnum.Adapter.class)
   public enum GenderEnum {
     MALE("Male"),
     
@@ -194,7 +233,6 @@ public class UsDrivingLicenceBuilder {
       this.value = value;
     }
 
-    @JsonValue
     public String getValue() {
       return value;
     }
@@ -204,7 +242,6 @@ public class UsDrivingLicenceBuilder {
       return String.valueOf(value);
     }
 
-    @JsonCreator
     public static GenderEnum fromValue(String value) {
       for (GenderEnum b : GenderEnum.values()) {
         if (b.value.equals(value)) {
@@ -213,38 +250,63 @@ public class UsDrivingLicenceBuilder {
       }
       return UNKNOWN_DEFAULT_OPEN_API;
     }
+
+    public static class Adapter extends TypeAdapter<GenderEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final GenderEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public GenderEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return GenderEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      GenderEnum.fromValue(value);
+    }
   }
 
-  public static final String JSON_PROPERTY_GENDER = "gender";
+  public static final String SERIALIZED_NAME_GENDER = "gender";
+  @SerializedName(SERIALIZED_NAME_GENDER)
   private GenderEnum gender;
 
-  public static final String JSON_PROPERTY_ISSUE_DATE = "issue_date";
+  public static final String SERIALIZED_NAME_ISSUE_DATE = "issue_date";
+  @SerializedName(SERIALIZED_NAME_ISSUE_DATE)
   private LocalDate issueDate;
 
-  public static final String JSON_PROPERTY_LAST_NAME = "last_name";
+  public static final String SERIALIZED_NAME_LAST_NAME = "last_name";
+  @SerializedName(SERIALIZED_NAME_LAST_NAME)
   private String lastName;
 
-  public static final String JSON_PROPERTY_MIDDLE_NAME = "middle_name";
+  public static final String SERIALIZED_NAME_MIDDLE_NAME = "middle_name";
+  @SerializedName(SERIALIZED_NAME_MIDDLE_NAME)
   private String middleName;
 
-  public static final String JSON_PROPERTY_NAME_SUFFIX = "name_suffix";
+  public static final String SERIALIZED_NAME_NAME_SUFFIX = "name_suffix";
+  @SerializedName(SERIALIZED_NAME_NAME_SUFFIX)
   private String nameSuffix;
 
-  public static final String JSON_PROPERTY_POSTAL_CODE = "postal_code";
+  public static final String SERIALIZED_NAME_POSTAL_CODE = "postal_code";
+  @SerializedName(SERIALIZED_NAME_POSTAL_CODE)
   private String postalCode;
 
-  public static final String JSON_PROPERTY_STATE = "state";
+  public static final String SERIALIZED_NAME_STATE = "state";
+  @SerializedName(SERIALIZED_NAME_STATE)
   private String state;
 
-  public static final String JSON_PROPERTY_WEIGHT_MEASURE = "weight_measure";
+  public static final String SERIALIZED_NAME_WEIGHT_MEASURE = "weight_measure";
+  @SerializedName(SERIALIZED_NAME_WEIGHT_MEASURE)
   private Integer weightMeasure;
 
-  public UsDrivingLicenceBuilder() { 
+  public UsDrivingLicenceBuilder() {
   }
 
-  @JsonCreator
   public UsDrivingLicenceBuilder(
-    @JsonProperty(JSON_PROPERTY_GENDER) GenderEnum gender
+     GenderEnum gender
   ) {
     this();
     this.gender = gender;
@@ -260,16 +322,10 @@ public class UsDrivingLicenceBuilder {
    * @return idNumber
   **/
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_ID_NUMBER)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-
   public String getIdNumber() {
     return idNumber;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_ID_NUMBER)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setIdNumber(String idNumber) {
     this.idNumber = idNumber;
   }
@@ -285,16 +341,10 @@ public class UsDrivingLicenceBuilder {
    * @return issueState
   **/
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_ISSUE_STATE)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-
   public String getIssueState() {
     return issueState;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_ISSUE_STATE)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setIssueState(String issueState) {
     this.issueState = issueState;
   }
@@ -310,16 +360,10 @@ public class UsDrivingLicenceBuilder {
    * @return addressLine1
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ADDRESS_LINE1)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getAddressLine1() {
     return addressLine1;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_ADDRESS_LINE1)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAddressLine1(String addressLine1) {
     this.addressLine1 = addressLine1;
   }
@@ -335,16 +379,10 @@ public class UsDrivingLicenceBuilder {
    * @return addressLine2
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ADDRESS_LINE2)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getAddressLine2() {
     return addressLine2;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_ADDRESS_LINE2)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAddressLine2(String addressLine2) {
     this.addressLine2 = addressLine2;
   }
@@ -360,16 +398,10 @@ public class UsDrivingLicenceBuilder {
    * @return city
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_CITY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getCity() {
     return city;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_CITY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCity(String city) {
     this.city = city;
   }
@@ -385,16 +417,10 @@ public class UsDrivingLicenceBuilder {
    * @return dateOfBirth
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_DATE_OF_BIRTH)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public LocalDate getDateOfBirth() {
     return dateOfBirth;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_DATE_OF_BIRTH)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDateOfBirth(LocalDate dateOfBirth) {
     this.dateOfBirth = dateOfBirth;
   }
@@ -410,16 +436,10 @@ public class UsDrivingLicenceBuilder {
    * @return documentCategory
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_DOCUMENT_CATEGORY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public DocumentCategoryEnum getDocumentCategory() {
     return documentCategory;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_DOCUMENT_CATEGORY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDocumentCategory(DocumentCategoryEnum documentCategory) {
     this.documentCategory = documentCategory;
   }
@@ -435,16 +455,10 @@ public class UsDrivingLicenceBuilder {
    * @return expirationDate
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_EXPIRATION_DATE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public LocalDate getExpirationDate() {
     return expirationDate;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_EXPIRATION_DATE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setExpirationDate(LocalDate expirationDate) {
     this.expirationDate = expirationDate;
   }
@@ -460,16 +474,10 @@ public class UsDrivingLicenceBuilder {
    * @return eyeColorCode
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_EYE_COLOR_CODE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public EyeColorCodeEnum getEyeColorCode() {
     return eyeColorCode;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_EYE_COLOR_CODE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setEyeColorCode(EyeColorCodeEnum eyeColorCode) {
     this.eyeColorCode = eyeColorCode;
   }
@@ -485,16 +493,10 @@ public class UsDrivingLicenceBuilder {
    * @return firstName
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_FIRST_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getFirstName() {
     return firstName;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_FIRST_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setFirstName(String firstName) {
     this.firstName = firstName;
   }
@@ -505,13 +507,9 @@ public class UsDrivingLicenceBuilder {
    * @return gender
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_GENDER)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public GenderEnum getGender() {
     return gender;
   }
-
 
 
 
@@ -525,16 +523,10 @@ public class UsDrivingLicenceBuilder {
    * @return issueDate
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ISSUE_DATE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public LocalDate getIssueDate() {
     return issueDate;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_ISSUE_DATE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setIssueDate(LocalDate issueDate) {
     this.issueDate = issueDate;
   }
@@ -550,16 +542,10 @@ public class UsDrivingLicenceBuilder {
    * @return lastName
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_LAST_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getLastName() {
     return lastName;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_LAST_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setLastName(String lastName) {
     this.lastName = lastName;
   }
@@ -575,16 +561,10 @@ public class UsDrivingLicenceBuilder {
    * @return middleName
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_MIDDLE_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getMiddleName() {
     return middleName;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_MIDDLE_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMiddleName(String middleName) {
     this.middleName = middleName;
   }
@@ -600,16 +580,10 @@ public class UsDrivingLicenceBuilder {
    * @return nameSuffix
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_NAME_SUFFIX)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getNameSuffix() {
     return nameSuffix;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_NAME_SUFFIX)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setNameSuffix(String nameSuffix) {
     this.nameSuffix = nameSuffix;
   }
@@ -625,16 +599,10 @@ public class UsDrivingLicenceBuilder {
    * @return postalCode
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_POSTAL_CODE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getPostalCode() {
     return postalCode;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_POSTAL_CODE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPostalCode(String postalCode) {
     this.postalCode = postalCode;
   }
@@ -650,16 +618,10 @@ public class UsDrivingLicenceBuilder {
    * @return state
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_STATE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getState() {
     return state;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_STATE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setState(String state) {
     this.state = state;
   }
@@ -675,16 +637,10 @@ public class UsDrivingLicenceBuilder {
    * @return weightMeasure
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_WEIGHT_MEASURE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public Integer getWeightMeasure() {
     return weightMeasure;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_WEIGHT_MEASURE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setWeightMeasure(Integer weightMeasure) {
     this.weightMeasure = weightMeasure;
   }
@@ -699,11 +655,14 @@ public class UsDrivingLicenceBuilder {
   /**
    * Set the additional (undeclared) property with the specified name and value.
    * If the property does not already exist, create it otherwise replace it.
+   *
+   * @param key name of the property
+   * @param value value of the property
+   * @return the UsDrivingLicenceBuilder instance itself
    */
-  @JsonAnySetter
   public UsDrivingLicenceBuilder putAdditionalProperty(String key, Object value) {
     if (this.additionalProperties == null) {
-        this.additionalProperties = new HashMap<>();
+        this.additionalProperties = new HashMap<String, Object>();
     }
     this.additionalProperties.put(key, value);
     return this;
@@ -711,14 +670,18 @@ public class UsDrivingLicenceBuilder {
 
   /**
    * Return the additional (undeclared) property.
+   *
+   * @return a map of objects
    */
-  @JsonAnyGetter
   public Map<String, Object> getAdditionalProperties() {
     return additionalProperties;
   }
 
   /**
    * Return the additional (undeclared) property with the specified name.
+   *
+   * @param key name of the property
+   * @return an object
    */
   public Object getAdditionalProperty(String key) {
     if (this.additionalProperties == null) {
@@ -727,9 +690,7 @@ public class UsDrivingLicenceBuilder {
     return this.additionalProperties.get(key);
   }
 
-  /**
-   * Return true if this us_driving_licence_builder object is equal to o.
-   */
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -803,5 +764,204 @@ public class UsDrivingLicenceBuilder {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("id_number");
+    openapiFields.add("issue_state");
+    openapiFields.add("address_line_1");
+    openapiFields.add("address_line_2");
+    openapiFields.add("city");
+    openapiFields.add("date_of_birth");
+    openapiFields.add("document_category");
+    openapiFields.add("expiration_date");
+    openapiFields.add("eye_color_code");
+    openapiFields.add("first_name");
+    openapiFields.add("gender");
+    openapiFields.add("issue_date");
+    openapiFields.add("last_name");
+    openapiFields.add("middle_name");
+    openapiFields.add("name_suffix");
+    openapiFields.add("postal_code");
+    openapiFields.add("state");
+    openapiFields.add("weight_measure");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("id_number");
+    openapiRequiredFields.add("issue_state");
+  }
+
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to UsDrivingLicenceBuilder
+  */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!UsDrivingLicenceBuilder.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in UsDrivingLicenceBuilder is not found in the empty JSON string", UsDrivingLicenceBuilder.openapiRequiredFields.toString()));
+        }
+      }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : UsDrivingLicenceBuilder.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if (!jsonObj.get("id_number").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `id_number` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id_number").toString()));
+      }
+      if (!jsonObj.get("issue_state").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `issue_state` to be a primitive type in the JSON string but got `%s`", jsonObj.get("issue_state").toString()));
+      }
+      if ((jsonObj.get("address_line_1") != null && !jsonObj.get("address_line_1").isJsonNull()) && !jsonObj.get("address_line_1").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `address_line_1` to be a primitive type in the JSON string but got `%s`", jsonObj.get("address_line_1").toString()));
+      }
+      if ((jsonObj.get("address_line_2") != null && !jsonObj.get("address_line_2").isJsonNull()) && !jsonObj.get("address_line_2").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `address_line_2` to be a primitive type in the JSON string but got `%s`", jsonObj.get("address_line_2").toString()));
+      }
+      if ((jsonObj.get("city") != null && !jsonObj.get("city").isJsonNull()) && !jsonObj.get("city").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `city` to be a primitive type in the JSON string but got `%s`", jsonObj.get("city").toString()));
+      }
+      if ((jsonObj.get("document_category") != null && !jsonObj.get("document_category").isJsonNull()) && !jsonObj.get("document_category").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `document_category` to be a primitive type in the JSON string but got `%s`", jsonObj.get("document_category").toString()));
+      }
+      // validate the optional field `document_category`
+      if (jsonObj.get("document_category") != null && !jsonObj.get("document_category").isJsonNull()) {
+        DocumentCategoryEnum.validateJsonElement(jsonObj.get("document_category"));
+      }
+      if ((jsonObj.get("eye_color_code") != null && !jsonObj.get("eye_color_code").isJsonNull()) && !jsonObj.get("eye_color_code").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `eye_color_code` to be a primitive type in the JSON string but got `%s`", jsonObj.get("eye_color_code").toString()));
+      }
+      // validate the optional field `eye_color_code`
+      if (jsonObj.get("eye_color_code") != null && !jsonObj.get("eye_color_code").isJsonNull()) {
+        EyeColorCodeEnum.validateJsonElement(jsonObj.get("eye_color_code"));
+      }
+      if ((jsonObj.get("first_name") != null && !jsonObj.get("first_name").isJsonNull()) && !jsonObj.get("first_name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `first_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("first_name").toString()));
+      }
+      if ((jsonObj.get("gender") != null && !jsonObj.get("gender").isJsonNull()) && !jsonObj.get("gender").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `gender` to be a primitive type in the JSON string but got `%s`", jsonObj.get("gender").toString()));
+      }
+      // validate the optional field `gender`
+      if (jsonObj.get("gender") != null && !jsonObj.get("gender").isJsonNull()) {
+        GenderEnum.validateJsonElement(jsonObj.get("gender"));
+      }
+      if ((jsonObj.get("last_name") != null && !jsonObj.get("last_name").isJsonNull()) && !jsonObj.get("last_name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `last_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("last_name").toString()));
+      }
+      if ((jsonObj.get("middle_name") != null && !jsonObj.get("middle_name").isJsonNull()) && !jsonObj.get("middle_name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `middle_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("middle_name").toString()));
+      }
+      if ((jsonObj.get("name_suffix") != null && !jsonObj.get("name_suffix").isJsonNull()) && !jsonObj.get("name_suffix").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `name_suffix` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name_suffix").toString()));
+      }
+      if ((jsonObj.get("postal_code") != null && !jsonObj.get("postal_code").isJsonNull()) && !jsonObj.get("postal_code").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `postal_code` to be a primitive type in the JSON string but got `%s`", jsonObj.get("postal_code").toString()));
+      }
+      if ((jsonObj.get("state") != null && !jsonObj.get("state").isJsonNull()) && !jsonObj.get("state").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `state` to be a primitive type in the JSON string but got `%s`", jsonObj.get("state").toString()));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!UsDrivingLicenceBuilder.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'UsDrivingLicenceBuilder' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<UsDrivingLicenceBuilder> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(UsDrivingLicenceBuilder.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<UsDrivingLicenceBuilder>() {
+           @Override
+           public void write(JsonWriter out, UsDrivingLicenceBuilder value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             obj.remove("additionalProperties");
+             // serialize additional properties
+             if (value.getAdditionalProperties() != null) {
+               for (Map.Entry<String, Object> entry : value.getAdditionalProperties().entrySet()) {
+                 if (entry.getValue() instanceof String)
+                   obj.addProperty(entry.getKey(), (String) entry.getValue());
+                 else if (entry.getValue() instanceof Number)
+                   obj.addProperty(entry.getKey(), (Number) entry.getValue());
+                 else if (entry.getValue() instanceof Boolean)
+                   obj.addProperty(entry.getKey(), (Boolean) entry.getValue());
+                 else if (entry.getValue() instanceof Character)
+                   obj.addProperty(entry.getKey(), (Character) entry.getValue());
+                 else {
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
+                 }
+               }
+             }
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public UsDrivingLicenceBuilder read(JsonReader in) throws IOException {
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
+             // store additional fields in the deserialized instance
+             UsDrivingLicenceBuilder instance = thisAdapter.fromJsonTree(jsonObj);
+             for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
+               if (!openapiFields.contains(entry.getKey())) {
+                 if (entry.getValue().isJsonPrimitive()) { // primitive type
+                   if (entry.getValue().getAsJsonPrimitive().isString())
+                     instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsString());
+                   else if (entry.getValue().getAsJsonPrimitive().isNumber())
+                     instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsNumber());
+                   else if (entry.getValue().getAsJsonPrimitive().isBoolean())
+                     instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
+                   else
+                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                 } else if (entry.getValue().isJsonArray()) {
+                     instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
+                 } else { // JSON object
+                     instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), HashMap.class));
+                 }
+               }
+             }
+             return instance;
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of UsDrivingLicenceBuilder given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of UsDrivingLicenceBuilder
+  * @throws IOException if the JSON string is invalid with respect to UsDrivingLicenceBuilder
+  */
+  public static UsDrivingLicenceBuilder fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, UsDrivingLicenceBuilder.class);
+  }
+
+ /**
+  * Convert an instance of UsDrivingLicenceBuilder to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

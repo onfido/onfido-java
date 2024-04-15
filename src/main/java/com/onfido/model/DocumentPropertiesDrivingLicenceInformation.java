@@ -14,45 +14,61 @@
 package com.onfido.model;
 
 import java.util.Objects;
-import java.util.Map;
-import java.util.HashMap;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 import java.time.LocalDate;
 import java.util.Arrays;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.onfido.JSON;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import com.onfido.JSON;
 
 /**
  * DocumentPropertiesDrivingLicenceInformation
  */
-@JsonPropertyOrder({
-  DocumentPropertiesDrivingLicenceInformation.JSON_PROPERTY_CATEGORY,
-  DocumentPropertiesDrivingLicenceInformation.JSON_PROPERTY_OBTAINMENT_DATE,
-  DocumentPropertiesDrivingLicenceInformation.JSON_PROPERTY_EXPIRY_DATE,
-  DocumentPropertiesDrivingLicenceInformation.JSON_PROPERTY_CODES
-})
-@JsonTypeName("document_properties_driving_licence_information")
-@com.fasterxml.jackson.annotation.JsonIgnoreProperties(ignoreUnknown = true)
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class DocumentPropertiesDrivingLicenceInformation {
-  public static final String JSON_PROPERTY_CATEGORY = "category";
+  public static final String SERIALIZED_NAME_CATEGORY = "category";
+  @SerializedName(SERIALIZED_NAME_CATEGORY)
   private String category;
 
-  public static final String JSON_PROPERTY_OBTAINMENT_DATE = "obtainment_date";
+  public static final String SERIALIZED_NAME_OBTAINMENT_DATE = "obtainment_date";
+  @SerializedName(SERIALIZED_NAME_OBTAINMENT_DATE)
   private LocalDate obtainmentDate;
 
-  public static final String JSON_PROPERTY_EXPIRY_DATE = "expiry_date";
+  public static final String SERIALIZED_NAME_EXPIRY_DATE = "expiry_date";
+  @SerializedName(SERIALIZED_NAME_EXPIRY_DATE)
   private LocalDate expiryDate;
 
-  public static final String JSON_PROPERTY_CODES = "codes";
+  public static final String SERIALIZED_NAME_CODES = "codes";
+  @SerializedName(SERIALIZED_NAME_CODES)
   private String codes;
 
-  public DocumentPropertiesDrivingLicenceInformation() { 
+  public DocumentPropertiesDrivingLicenceInformation() {
   }
 
   public DocumentPropertiesDrivingLicenceInformation category(String category) {
@@ -65,16 +81,10 @@ public class DocumentPropertiesDrivingLicenceInformation {
    * @return category
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_CATEGORY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getCategory() {
     return category;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_CATEGORY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCategory(String category) {
     this.category = category;
   }
@@ -90,16 +100,10 @@ public class DocumentPropertiesDrivingLicenceInformation {
    * @return obtainmentDate
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_OBTAINMENT_DATE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public LocalDate getObtainmentDate() {
     return obtainmentDate;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_OBTAINMENT_DATE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setObtainmentDate(LocalDate obtainmentDate) {
     this.obtainmentDate = obtainmentDate;
   }
@@ -115,16 +119,10 @@ public class DocumentPropertiesDrivingLicenceInformation {
    * @return expiryDate
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_EXPIRY_DATE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public LocalDate getExpiryDate() {
     return expiryDate;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_EXPIRY_DATE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setExpiryDate(LocalDate expiryDate) {
     this.expiryDate = expiryDate;
   }
@@ -140,24 +138,60 @@ public class DocumentPropertiesDrivingLicenceInformation {
    * @return codes
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_CODES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getCodes() {
     return codes;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_CODES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCodes(String codes) {
     this.codes = codes;
   }
 
+  /**
+   * A container for additional, undeclared properties.
+   * This is a holder for any undeclared properties as specified with
+   * the 'additionalProperties' keyword in the OAS document.
+   */
+  private Map<String, Object> additionalProperties;
 
   /**
-   * Return true if this document_properties_driving_licence_information object is equal to o.
+   * Set the additional (undeclared) property with the specified name and value.
+   * If the property does not already exist, create it otherwise replace it.
+   *
+   * @param key name of the property
+   * @param value value of the property
+   * @return the DocumentPropertiesDrivingLicenceInformation instance itself
    */
+  public DocumentPropertiesDrivingLicenceInformation putAdditionalProperty(String key, Object value) {
+    if (this.additionalProperties == null) {
+        this.additionalProperties = new HashMap<String, Object>();
+    }
+    this.additionalProperties.put(key, value);
+    return this;
+  }
+
+  /**
+   * Return the additional (undeclared) property.
+   *
+   * @return a map of objects
+   */
+  public Map<String, Object> getAdditionalProperties() {
+    return additionalProperties;
+  }
+
+  /**
+   * Return the additional (undeclared) property with the specified name.
+   *
+   * @param key name of the property
+   * @return an object
+   */
+  public Object getAdditionalProperty(String key) {
+    if (this.additionalProperties == null) {
+        return null;
+    }
+    return this.additionalProperties.get(key);
+  }
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -170,12 +204,13 @@ public class DocumentPropertiesDrivingLicenceInformation {
     return Objects.equals(this.category, documentPropertiesDrivingLicenceInformation.category) &&
         Objects.equals(this.obtainmentDate, documentPropertiesDrivingLicenceInformation.obtainmentDate) &&
         Objects.equals(this.expiryDate, documentPropertiesDrivingLicenceInformation.expiryDate) &&
-        Objects.equals(this.codes, documentPropertiesDrivingLicenceInformation.codes);
+        Objects.equals(this.codes, documentPropertiesDrivingLicenceInformation.codes)&&
+        Objects.equals(this.additionalProperties, documentPropertiesDrivingLicenceInformation.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(category, obtainmentDate, expiryDate, codes);
+    return Objects.hash(category, obtainmentDate, expiryDate, codes, additionalProperties);
   }
 
   @Override
@@ -186,6 +221,7 @@ public class DocumentPropertiesDrivingLicenceInformation {
     sb.append("    obtainmentDate: ").append(toIndentedString(obtainmentDate)).append("\n");
     sb.append("    expiryDate: ").append(toIndentedString(expiryDate)).append("\n");
     sb.append("    codes: ").append(toIndentedString(codes)).append("\n");
+    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -201,5 +237,133 @@ public class DocumentPropertiesDrivingLicenceInformation {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("category");
+    openapiFields.add("obtainment_date");
+    openapiFields.add("expiry_date");
+    openapiFields.add("codes");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+  }
+
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to DocumentPropertiesDrivingLicenceInformation
+  */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!DocumentPropertiesDrivingLicenceInformation.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in DocumentPropertiesDrivingLicenceInformation is not found in the empty JSON string", DocumentPropertiesDrivingLicenceInformation.openapiRequiredFields.toString()));
+        }
+      }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("category") != null && !jsonObj.get("category").isJsonNull()) && !jsonObj.get("category").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `category` to be a primitive type in the JSON string but got `%s`", jsonObj.get("category").toString()));
+      }
+      if ((jsonObj.get("codes") != null && !jsonObj.get("codes").isJsonNull()) && !jsonObj.get("codes").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `codes` to be a primitive type in the JSON string but got `%s`", jsonObj.get("codes").toString()));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!DocumentPropertiesDrivingLicenceInformation.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'DocumentPropertiesDrivingLicenceInformation' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<DocumentPropertiesDrivingLicenceInformation> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(DocumentPropertiesDrivingLicenceInformation.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<DocumentPropertiesDrivingLicenceInformation>() {
+           @Override
+           public void write(JsonWriter out, DocumentPropertiesDrivingLicenceInformation value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             obj.remove("additionalProperties");
+             // serialize additional properties
+             if (value.getAdditionalProperties() != null) {
+               for (Map.Entry<String, Object> entry : value.getAdditionalProperties().entrySet()) {
+                 if (entry.getValue() instanceof String)
+                   obj.addProperty(entry.getKey(), (String) entry.getValue());
+                 else if (entry.getValue() instanceof Number)
+                   obj.addProperty(entry.getKey(), (Number) entry.getValue());
+                 else if (entry.getValue() instanceof Boolean)
+                   obj.addProperty(entry.getKey(), (Boolean) entry.getValue());
+                 else if (entry.getValue() instanceof Character)
+                   obj.addProperty(entry.getKey(), (Character) entry.getValue());
+                 else {
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
+                 }
+               }
+             }
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public DocumentPropertiesDrivingLicenceInformation read(JsonReader in) throws IOException {
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
+             // store additional fields in the deserialized instance
+             DocumentPropertiesDrivingLicenceInformation instance = thisAdapter.fromJsonTree(jsonObj);
+             for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
+               if (!openapiFields.contains(entry.getKey())) {
+                 if (entry.getValue().isJsonPrimitive()) { // primitive type
+                   if (entry.getValue().getAsJsonPrimitive().isString())
+                     instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsString());
+                   else if (entry.getValue().getAsJsonPrimitive().isNumber())
+                     instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsNumber());
+                   else if (entry.getValue().getAsJsonPrimitive().isBoolean())
+                     instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
+                   else
+                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                 } else if (entry.getValue().isJsonArray()) {
+                     instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
+                 } else { // JSON object
+                     instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), HashMap.class));
+                 }
+               }
+             }
+             return instance;
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of DocumentPropertiesDrivingLicenceInformation given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of DocumentPropertiesDrivingLicenceInformation
+  * @throws IOException if the JSON string is invalid with respect to DocumentPropertiesDrivingLicenceInformation
+  */
+  public static DocumentPropertiesDrivingLicenceInformation fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, DocumentPropertiesDrivingLicenceInformation.class);
+  }
+
+ /**
+  * Convert an instance of DocumentPropertiesDrivingLicenceInformation to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

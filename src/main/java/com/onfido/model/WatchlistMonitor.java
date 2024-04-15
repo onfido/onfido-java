@@ -14,53 +14,67 @@
 package com.onfido.model;
 
 import java.util.Objects;
-import java.util.Map;
-import java.util.HashMap;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.onfido.JSON;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import com.onfido.JSON;
 
 /**
  * WatchlistMonitor
  */
-@JsonPropertyOrder({
-  WatchlistMonitor.JSON_PROPERTY_ID,
-  WatchlistMonitor.JSON_PROPERTY_CREATED_AT,
-  WatchlistMonitor.JSON_PROPERTY_DELETED_AT,
-  WatchlistMonitor.JSON_PROPERTY_APPLICANT_ID,
-  WatchlistMonitor.JSON_PROPERTY_REPORT_NAME,
-  WatchlistMonitor.JSON_PROPERTY_TAGS,
-  WatchlistMonitor.JSON_PROPERTY_SANDBOX
-})
-@JsonTypeName("watchlist_monitor")
-@com.fasterxml.jackson.annotation.JsonIgnoreProperties(ignoreUnknown = true)
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class WatchlistMonitor {
-  public static final String JSON_PROPERTY_ID = "id";
+  public static final String SERIALIZED_NAME_ID = "id";
+  @SerializedName(SERIALIZED_NAME_ID)
   private UUID id;
 
-  public static final String JSON_PROPERTY_CREATED_AT = "created_at";
+  public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
+  @SerializedName(SERIALIZED_NAME_CREATED_AT)
   private OffsetDateTime createdAt;
 
-  public static final String JSON_PROPERTY_DELETED_AT = "deleted_at";
+  public static final String SERIALIZED_NAME_DELETED_AT = "deleted_at";
+  @SerializedName(SERIALIZED_NAME_DELETED_AT)
   private OffsetDateTime deletedAt;
 
-  public static final String JSON_PROPERTY_APPLICANT_ID = "applicant_id";
+  public static final String SERIALIZED_NAME_APPLICANT_ID = "applicant_id";
+  @SerializedName(SERIALIZED_NAME_APPLICANT_ID)
   private UUID applicantId;
 
   /**
    * The name of the report type the monitor creates. Can be either \&quot;watchlist_standard\&quot; or \&quot;watchlist_aml\&quot;.
    */
+  @JsonAdapter(ReportNameEnum.Adapter.class)
   public enum ReportNameEnum {
     STANDARD("watchlist_standard"),
     
@@ -74,7 +88,6 @@ public class WatchlistMonitor {
       this.value = value;
     }
 
-    @JsonValue
     public String getValue() {
       return value;
     }
@@ -84,7 +97,6 @@ public class WatchlistMonitor {
       return String.valueOf(value);
     }
 
-    @JsonCreator
     public static ReportNameEnum fromValue(String value) {
       for (ReportNameEnum b : ReportNameEnum.values()) {
         if (b.value.equals(value)) {
@@ -93,26 +105,46 @@ public class WatchlistMonitor {
       }
       return UNKNOWN_DEFAULT_OPEN_API;
     }
+
+    public static class Adapter extends TypeAdapter<ReportNameEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final ReportNameEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public ReportNameEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return ReportNameEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      ReportNameEnum.fromValue(value);
+    }
   }
 
-  public static final String JSON_PROPERTY_REPORT_NAME = "report_name";
+  public static final String SERIALIZED_NAME_REPORT_NAME = "report_name";
+  @SerializedName(SERIALIZED_NAME_REPORT_NAME)
   private ReportNameEnum reportName;
 
-  public static final String JSON_PROPERTY_TAGS = "tags";
+  public static final String SERIALIZED_NAME_TAGS = "tags";
+  @SerializedName(SERIALIZED_NAME_TAGS)
   private List<String> tags;
 
-  public static final String JSON_PROPERTY_SANDBOX = "sandbox";
+  public static final String SERIALIZED_NAME_SANDBOX = "sandbox";
+  @SerializedName(SERIALIZED_NAME_SANDBOX)
   private Boolean sandbox = false;
 
-  public WatchlistMonitor() { 
+  public WatchlistMonitor() {
   }
 
-  @JsonCreator
   public WatchlistMonitor(
-    @JsonProperty(JSON_PROPERTY_ID) UUID id, 
-    @JsonProperty(JSON_PROPERTY_CREATED_AT) OffsetDateTime createdAt, 
-    @JsonProperty(JSON_PROPERTY_DELETED_AT) OffsetDateTime deletedAt, 
-    @JsonProperty(JSON_PROPERTY_SANDBOX) Boolean sandbox
+     UUID id, 
+     OffsetDateTime createdAt, 
+     OffsetDateTime deletedAt, 
+     Boolean sandbox
   ) {
     this();
     this.id = id;
@@ -126,13 +158,9 @@ public class WatchlistMonitor {
    * @return id
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public UUID getId() {
     return id;
   }
-
 
 
 
@@ -141,13 +169,9 @@ public class WatchlistMonitor {
    * @return createdAt
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_CREATED_AT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public OffsetDateTime getCreatedAt() {
     return createdAt;
   }
-
 
 
 
@@ -156,13 +180,9 @@ public class WatchlistMonitor {
    * @return deletedAt
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_DELETED_AT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public OffsetDateTime getDeletedAt() {
     return deletedAt;
   }
-
 
 
 
@@ -176,16 +196,10 @@ public class WatchlistMonitor {
    * @return applicantId
   **/
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_APPLICANT_ID)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-
   public UUID getApplicantId() {
     return applicantId;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_APPLICANT_ID)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setApplicantId(UUID applicantId) {
     this.applicantId = applicantId;
   }
@@ -201,16 +215,10 @@ public class WatchlistMonitor {
    * @return reportName
   **/
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_REPORT_NAME)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-
   public ReportNameEnum getReportName() {
     return reportName;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_REPORT_NAME)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setReportName(ReportNameEnum reportName) {
     this.reportName = reportName;
   }
@@ -234,16 +242,10 @@ public class WatchlistMonitor {
    * @return tags
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_TAGS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public List<String> getTags() {
     return tags;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_TAGS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTags(List<String> tags) {
     this.tags = tags;
   }
@@ -254,19 +256,57 @@ public class WatchlistMonitor {
    * @return sandbox
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_SANDBOX)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public Boolean getSandbox() {
     return sandbox;
   }
 
 
-
+  /**
+   * A container for additional, undeclared properties.
+   * This is a holder for any undeclared properties as specified with
+   * the 'additionalProperties' keyword in the OAS document.
+   */
+  private Map<String, Object> additionalProperties;
 
   /**
-   * Return true if this watchlist_monitor object is equal to o.
+   * Set the additional (undeclared) property with the specified name and value.
+   * If the property does not already exist, create it otherwise replace it.
+   *
+   * @param key name of the property
+   * @param value value of the property
+   * @return the WatchlistMonitor instance itself
    */
+  public WatchlistMonitor putAdditionalProperty(String key, Object value) {
+    if (this.additionalProperties == null) {
+        this.additionalProperties = new HashMap<String, Object>();
+    }
+    this.additionalProperties.put(key, value);
+    return this;
+  }
+
+  /**
+   * Return the additional (undeclared) property.
+   *
+   * @return a map of objects
+   */
+  public Map<String, Object> getAdditionalProperties() {
+    return additionalProperties;
+  }
+
+  /**
+   * Return the additional (undeclared) property with the specified name.
+   *
+   * @param key name of the property
+   * @return an object
+   */
+  public Object getAdditionalProperty(String key) {
+    if (this.additionalProperties == null) {
+        return null;
+    }
+    return this.additionalProperties.get(key);
+  }
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -282,12 +322,13 @@ public class WatchlistMonitor {
         Objects.equals(this.applicantId, watchlistMonitor.applicantId) &&
         Objects.equals(this.reportName, watchlistMonitor.reportName) &&
         Objects.equals(this.tags, watchlistMonitor.tags) &&
-        Objects.equals(this.sandbox, watchlistMonitor.sandbox);
+        Objects.equals(this.sandbox, watchlistMonitor.sandbox)&&
+        Objects.equals(this.additionalProperties, watchlistMonitor.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, createdAt, deletedAt, applicantId, reportName, tags, sandbox);
+    return Objects.hash(id, createdAt, deletedAt, applicantId, reportName, tags, sandbox, additionalProperties);
   }
 
   @Override
@@ -301,6 +342,7 @@ public class WatchlistMonitor {
     sb.append("    reportName: ").append(toIndentedString(reportName)).append("\n");
     sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
     sb.append("    sandbox: ").append(toIndentedString(sandbox)).append("\n");
+    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -316,5 +358,154 @@ public class WatchlistMonitor {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("id");
+    openapiFields.add("created_at");
+    openapiFields.add("deleted_at");
+    openapiFields.add("applicant_id");
+    openapiFields.add("report_name");
+    openapiFields.add("tags");
+    openapiFields.add("sandbox");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("applicant_id");
+    openapiRequiredFields.add("report_name");
+  }
+
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to WatchlistMonitor
+  */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!WatchlistMonitor.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in WatchlistMonitor is not found in the empty JSON string", WatchlistMonitor.openapiRequiredFields.toString()));
+        }
+      }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : WatchlistMonitor.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("id") != null && !jsonObj.get("id").isJsonNull()) && !jsonObj.get("id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
+      }
+      if (!jsonObj.get("applicant_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `applicant_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("applicant_id").toString()));
+      }
+      if (!jsonObj.get("report_name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `report_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("report_name").toString()));
+      }
+      // validate the required field `report_name`
+      ReportNameEnum.validateJsonElement(jsonObj.get("report_name"));
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("tags") != null && !jsonObj.get("tags").isJsonNull() && !jsonObj.get("tags").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!WatchlistMonitor.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'WatchlistMonitor' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<WatchlistMonitor> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(WatchlistMonitor.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<WatchlistMonitor>() {
+           @Override
+           public void write(JsonWriter out, WatchlistMonitor value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             obj.remove("additionalProperties");
+             // serialize additional properties
+             if (value.getAdditionalProperties() != null) {
+               for (Map.Entry<String, Object> entry : value.getAdditionalProperties().entrySet()) {
+                 if (entry.getValue() instanceof String)
+                   obj.addProperty(entry.getKey(), (String) entry.getValue());
+                 else if (entry.getValue() instanceof Number)
+                   obj.addProperty(entry.getKey(), (Number) entry.getValue());
+                 else if (entry.getValue() instanceof Boolean)
+                   obj.addProperty(entry.getKey(), (Boolean) entry.getValue());
+                 else if (entry.getValue() instanceof Character)
+                   obj.addProperty(entry.getKey(), (Character) entry.getValue());
+                 else {
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
+                 }
+               }
+             }
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public WatchlistMonitor read(JsonReader in) throws IOException {
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
+             // store additional fields in the deserialized instance
+             WatchlistMonitor instance = thisAdapter.fromJsonTree(jsonObj);
+             for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
+               if (!openapiFields.contains(entry.getKey())) {
+                 if (entry.getValue().isJsonPrimitive()) { // primitive type
+                   if (entry.getValue().getAsJsonPrimitive().isString())
+                     instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsString());
+                   else if (entry.getValue().getAsJsonPrimitive().isNumber())
+                     instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsNumber());
+                   else if (entry.getValue().getAsJsonPrimitive().isBoolean())
+                     instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
+                   else
+                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                 } else if (entry.getValue().isJsonArray()) {
+                     instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
+                 } else { // JSON object
+                     instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), HashMap.class));
+                 }
+               }
+             }
+             return instance;
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of WatchlistMonitor given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of WatchlistMonitor
+  * @throws IOException if the JSON string is invalid with respect to WatchlistMonitor
+  */
+  public static WatchlistMonitor fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, WatchlistMonitor.class);
+  }
+
+ /**
+  * Convert an instance of WatchlistMonitor to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

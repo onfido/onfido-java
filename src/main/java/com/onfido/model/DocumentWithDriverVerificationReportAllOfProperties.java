@@ -13,18 +13,12 @@
 
 package com.onfido.model;
 
-import java.util.Map;
-import java.util.HashMap;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
 import java.util.Objects;
-import java.util.Map;
-import java.util.HashMap;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import com.onfido.model.DocumentPropertiesAddressLines;
 import com.onfido.model.DocumentPropertiesBarcodeInner;
 import com.onfido.model.DocumentPropertiesDocumentClassification;
@@ -34,160 +28,178 @@ import com.onfido.model.DocumentPropertiesExtractedData;
 import com.onfido.model.DocumentPropertiesNfc;
 import com.onfido.model.DocumentWithDriverVerificationReportAllOfPropertiesAllOfPassengerVehicle;
 import com.onfido.model.DocumentWithDriverVerificationReportAllOfPropertiesAllOfVehicleClassDetailsInner;
+import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.onfido.JSON;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import com.onfido.JSON;
 
 /**
  * DocumentWithDriverVerificationReportAllOfProperties
  */
-@JsonPropertyOrder({
-  DocumentWithDriverVerificationReportAllOfProperties.JSON_PROPERTY_DATE_OF_BIRTH,
-  DocumentWithDriverVerificationReportAllOfProperties.JSON_PROPERTY_DATE_OF_EXPIRY,
-  DocumentWithDriverVerificationReportAllOfProperties.JSON_PROPERTY_DOCUMENT_NUMBERS,
-  DocumentWithDriverVerificationReportAllOfProperties.JSON_PROPERTY_DOCUMENT_TYPE,
-  DocumentWithDriverVerificationReportAllOfProperties.JSON_PROPERTY_FIRST_NAME,
-  DocumentWithDriverVerificationReportAllOfProperties.JSON_PROPERTY_GENDER,
-  DocumentWithDriverVerificationReportAllOfProperties.JSON_PROPERTY_ISSUING_COUNTRY,
-  DocumentWithDriverVerificationReportAllOfProperties.JSON_PROPERTY_LAST_NAME,
-  DocumentWithDriverVerificationReportAllOfProperties.JSON_PROPERTY_NATIONALITY,
-  DocumentWithDriverVerificationReportAllOfProperties.JSON_PROPERTY_ISSUING_STATE,
-  DocumentWithDriverVerificationReportAllOfProperties.JSON_PROPERTY_ISSUING_DATE,
-  DocumentWithDriverVerificationReportAllOfProperties.JSON_PROPERTY_CATEGORISATION,
-  DocumentWithDriverVerificationReportAllOfProperties.JSON_PROPERTY_MRZ_LINE1,
-  DocumentWithDriverVerificationReportAllOfProperties.JSON_PROPERTY_MRZ_LINE2,
-  DocumentWithDriverVerificationReportAllOfProperties.JSON_PROPERTY_MRZ_LINE3,
-  DocumentWithDriverVerificationReportAllOfProperties.JSON_PROPERTY_ADDRESS,
-  DocumentWithDriverVerificationReportAllOfProperties.JSON_PROPERTY_PLACE_OF_BIRTH,
-  DocumentWithDriverVerificationReportAllOfProperties.JSON_PROPERTY_SPOUSE_NAME,
-  DocumentWithDriverVerificationReportAllOfProperties.JSON_PROPERTY_WIDOW_NAME,
-  DocumentWithDriverVerificationReportAllOfProperties.JSON_PROPERTY_ALIAS_NAME,
-  DocumentWithDriverVerificationReportAllOfProperties.JSON_PROPERTY_ISSUING_AUTHORITY,
-  DocumentWithDriverVerificationReportAllOfProperties.JSON_PROPERTY_REAL_ID_COMPLIANCE,
-  DocumentWithDriverVerificationReportAllOfProperties.JSON_PROPERTY_ADDRESS_LINES,
-  DocumentWithDriverVerificationReportAllOfProperties.JSON_PROPERTY_BARCODE,
-  DocumentWithDriverVerificationReportAllOfProperties.JSON_PROPERTY_NFC,
-  DocumentWithDriverVerificationReportAllOfProperties.JSON_PROPERTY_DRIVING_LICENCE_INFORMATION,
-  DocumentWithDriverVerificationReportAllOfProperties.JSON_PROPERTY_DOCUMENT_CLASSIFICATION,
-  DocumentWithDriverVerificationReportAllOfProperties.JSON_PROPERTY_EXTRACTED_DATA,
-  DocumentWithDriverVerificationReportAllOfProperties.JSON_PROPERTY_DRIVERS_LICENCE,
-  DocumentWithDriverVerificationReportAllOfProperties.JSON_PROPERTY_RESTRICTED_LICENCE,
-  DocumentWithDriverVerificationReportAllOfProperties.JSON_PROPERTY_RAW_LICENCE_CATEGORY,
-  DocumentWithDriverVerificationReportAllOfProperties.JSON_PROPERTY_RAW_VEHICLE_CLASSES,
-  DocumentWithDriverVerificationReportAllOfProperties.JSON_PROPERTY_VEHICLE_CLASS_DETAILS,
-  DocumentWithDriverVerificationReportAllOfProperties.JSON_PROPERTY_PASSENGER_VEHICLE
-})
-@JsonTypeName("document_with_driver_verification_report_allOf_properties")
-@com.fasterxml.jackson.annotation.JsonIgnoreProperties(ignoreUnknown = true)
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class DocumentWithDriverVerificationReportAllOfProperties {
-  public static final String JSON_PROPERTY_DATE_OF_BIRTH = "date_of_birth";
+  public static final String SERIALIZED_NAME_DATE_OF_BIRTH = "date_of_birth";
+  @SerializedName(SERIALIZED_NAME_DATE_OF_BIRTH)
   private LocalDate dateOfBirth;
 
-  public static final String JSON_PROPERTY_DATE_OF_EXPIRY = "date_of_expiry";
+  public static final String SERIALIZED_NAME_DATE_OF_EXPIRY = "date_of_expiry";
+  @SerializedName(SERIALIZED_NAME_DATE_OF_EXPIRY)
   private LocalDate dateOfExpiry;
 
-  public static final String JSON_PROPERTY_DOCUMENT_NUMBERS = "document_numbers";
+  public static final String SERIALIZED_NAME_DOCUMENT_NUMBERS = "document_numbers";
+  @SerializedName(SERIALIZED_NAME_DOCUMENT_NUMBERS)
   private List<DocumentPropertiesDocumentNumbersInner> documentNumbers;
 
-  public static final String JSON_PROPERTY_DOCUMENT_TYPE = "document_type";
+  public static final String SERIALIZED_NAME_DOCUMENT_TYPE = "document_type";
+  @SerializedName(SERIALIZED_NAME_DOCUMENT_TYPE)
   private String documentType;
 
-  public static final String JSON_PROPERTY_FIRST_NAME = "first_name";
+  public static final String SERIALIZED_NAME_FIRST_NAME = "first_name";
+  @SerializedName(SERIALIZED_NAME_FIRST_NAME)
   private String firstName;
 
-  public static final String JSON_PROPERTY_GENDER = "gender";
+  public static final String SERIALIZED_NAME_GENDER = "gender";
+  @SerializedName(SERIALIZED_NAME_GENDER)
   private String gender;
 
-  public static final String JSON_PROPERTY_ISSUING_COUNTRY = "issuing_country";
+  public static final String SERIALIZED_NAME_ISSUING_COUNTRY = "issuing_country";
+  @SerializedName(SERIALIZED_NAME_ISSUING_COUNTRY)
   private String issuingCountry;
 
-  public static final String JSON_PROPERTY_LAST_NAME = "last_name";
+  public static final String SERIALIZED_NAME_LAST_NAME = "last_name";
+  @SerializedName(SERIALIZED_NAME_LAST_NAME)
   private String lastName;
 
-  public static final String JSON_PROPERTY_NATIONALITY = "nationality";
+  public static final String SERIALIZED_NAME_NATIONALITY = "nationality";
+  @SerializedName(SERIALIZED_NAME_NATIONALITY)
   private String nationality;
 
-  public static final String JSON_PROPERTY_ISSUING_STATE = "issuing_state";
+  public static final String SERIALIZED_NAME_ISSUING_STATE = "issuing_state";
+  @SerializedName(SERIALIZED_NAME_ISSUING_STATE)
   private String issuingState;
 
-  public static final String JSON_PROPERTY_ISSUING_DATE = "issuing_date";
+  public static final String SERIALIZED_NAME_ISSUING_DATE = "issuing_date";
+  @SerializedName(SERIALIZED_NAME_ISSUING_DATE)
   private LocalDate issuingDate;
 
-  public static final String JSON_PROPERTY_CATEGORISATION = "categorisation";
+  public static final String SERIALIZED_NAME_CATEGORISATION = "categorisation";
+  @SerializedName(SERIALIZED_NAME_CATEGORISATION)
   private String categorisation;
 
-  public static final String JSON_PROPERTY_MRZ_LINE1 = "mrz_line1";
+  public static final String SERIALIZED_NAME_MRZ_LINE1 = "mrz_line1";
+  @SerializedName(SERIALIZED_NAME_MRZ_LINE1)
   private String mrzLine1;
 
-  public static final String JSON_PROPERTY_MRZ_LINE2 = "mrz_line2";
+  public static final String SERIALIZED_NAME_MRZ_LINE2 = "mrz_line2";
+  @SerializedName(SERIALIZED_NAME_MRZ_LINE2)
   private String mrzLine2;
 
-  public static final String JSON_PROPERTY_MRZ_LINE3 = "mrz_line3";
+  public static final String SERIALIZED_NAME_MRZ_LINE3 = "mrz_line3";
+  @SerializedName(SERIALIZED_NAME_MRZ_LINE3)
   private String mrzLine3;
 
-  public static final String JSON_PROPERTY_ADDRESS = "address";
+  public static final String SERIALIZED_NAME_ADDRESS = "address";
+  @SerializedName(SERIALIZED_NAME_ADDRESS)
   private String address;
 
-  public static final String JSON_PROPERTY_PLACE_OF_BIRTH = "place_of_birth";
+  public static final String SERIALIZED_NAME_PLACE_OF_BIRTH = "place_of_birth";
+  @SerializedName(SERIALIZED_NAME_PLACE_OF_BIRTH)
   private String placeOfBirth;
 
-  public static final String JSON_PROPERTY_SPOUSE_NAME = "spouse_name";
+  public static final String SERIALIZED_NAME_SPOUSE_NAME = "spouse_name";
+  @SerializedName(SERIALIZED_NAME_SPOUSE_NAME)
   private String spouseName;
 
-  public static final String JSON_PROPERTY_WIDOW_NAME = "widow_name";
+  public static final String SERIALIZED_NAME_WIDOW_NAME = "widow_name";
+  @SerializedName(SERIALIZED_NAME_WIDOW_NAME)
   private String widowName;
 
-  public static final String JSON_PROPERTY_ALIAS_NAME = "alias_name";
+  public static final String SERIALIZED_NAME_ALIAS_NAME = "alias_name";
+  @SerializedName(SERIALIZED_NAME_ALIAS_NAME)
   private String aliasName;
 
-  public static final String JSON_PROPERTY_ISSUING_AUTHORITY = "issuing_authority";
+  public static final String SERIALIZED_NAME_ISSUING_AUTHORITY = "issuing_authority";
+  @SerializedName(SERIALIZED_NAME_ISSUING_AUTHORITY)
   private String issuingAuthority;
 
-  public static final String JSON_PROPERTY_REAL_ID_COMPLIANCE = "real_id_compliance";
+  public static final String SERIALIZED_NAME_REAL_ID_COMPLIANCE = "real_id_compliance";
+  @SerializedName(SERIALIZED_NAME_REAL_ID_COMPLIANCE)
   private Boolean realIdCompliance;
 
-  public static final String JSON_PROPERTY_ADDRESS_LINES = "address_lines";
+  public static final String SERIALIZED_NAME_ADDRESS_LINES = "address_lines";
+  @SerializedName(SERIALIZED_NAME_ADDRESS_LINES)
   private DocumentPropertiesAddressLines addressLines;
 
-  public static final String JSON_PROPERTY_BARCODE = "barcode";
+  public static final String SERIALIZED_NAME_BARCODE = "barcode";
+  @SerializedName(SERIALIZED_NAME_BARCODE)
   private List<DocumentPropertiesBarcodeInner> barcode;
 
-  public static final String JSON_PROPERTY_NFC = "nfc";
+  public static final String SERIALIZED_NAME_NFC = "nfc";
+  @SerializedName(SERIALIZED_NAME_NFC)
   private DocumentPropertiesNfc nfc;
 
-  public static final String JSON_PROPERTY_DRIVING_LICENCE_INFORMATION = "driving_licence_information";
+  public static final String SERIALIZED_NAME_DRIVING_LICENCE_INFORMATION = "driving_licence_information";
+  @SerializedName(SERIALIZED_NAME_DRIVING_LICENCE_INFORMATION)
   private DocumentPropertiesDrivingLicenceInformation drivingLicenceInformation;
 
-  public static final String JSON_PROPERTY_DOCUMENT_CLASSIFICATION = "document_classification";
+  public static final String SERIALIZED_NAME_DOCUMENT_CLASSIFICATION = "document_classification";
+  @SerializedName(SERIALIZED_NAME_DOCUMENT_CLASSIFICATION)
   private DocumentPropertiesDocumentClassification documentClassification;
 
-  public static final String JSON_PROPERTY_EXTRACTED_DATA = "extracted_data";
+  public static final String SERIALIZED_NAME_EXTRACTED_DATA = "extracted_data";
+  @SerializedName(SERIALIZED_NAME_EXTRACTED_DATA)
   private DocumentPropertiesExtractedData extractedData;
 
-  public static final String JSON_PROPERTY_DRIVERS_LICENCE = "drivers_licence";
+  public static final String SERIALIZED_NAME_DRIVERS_LICENCE = "drivers_licence";
+  @SerializedName(SERIALIZED_NAME_DRIVERS_LICENCE)
   private Boolean driversLicence;
 
-  public static final String JSON_PROPERTY_RESTRICTED_LICENCE = "restricted_licence";
+  public static final String SERIALIZED_NAME_RESTRICTED_LICENCE = "restricted_licence";
+  @SerializedName(SERIALIZED_NAME_RESTRICTED_LICENCE)
   private Boolean restrictedLicence;
 
-  public static final String JSON_PROPERTY_RAW_LICENCE_CATEGORY = "raw_licence_category";
+  public static final String SERIALIZED_NAME_RAW_LICENCE_CATEGORY = "raw_licence_category";
+  @SerializedName(SERIALIZED_NAME_RAW_LICENCE_CATEGORY)
   private String rawLicenceCategory;
 
-  public static final String JSON_PROPERTY_RAW_VEHICLE_CLASSES = "raw_vehicle_classes";
+  public static final String SERIALIZED_NAME_RAW_VEHICLE_CLASSES = "raw_vehicle_classes";
+  @SerializedName(SERIALIZED_NAME_RAW_VEHICLE_CLASSES)
   private String rawVehicleClasses;
 
-  public static final String JSON_PROPERTY_VEHICLE_CLASS_DETAILS = "vehicle_class_details";
+  public static final String SERIALIZED_NAME_VEHICLE_CLASS_DETAILS = "vehicle_class_details";
+  @SerializedName(SERIALIZED_NAME_VEHICLE_CLASS_DETAILS)
   private List<DocumentWithDriverVerificationReportAllOfPropertiesAllOfVehicleClassDetailsInner> vehicleClassDetails;
 
-  public static final String JSON_PROPERTY_PASSENGER_VEHICLE = "passenger_vehicle";
+  public static final String SERIALIZED_NAME_PASSENGER_VEHICLE = "passenger_vehicle";
+  @SerializedName(SERIALIZED_NAME_PASSENGER_VEHICLE)
   private DocumentWithDriverVerificationReportAllOfPropertiesAllOfPassengerVehicle passengerVehicle;
 
-  public DocumentWithDriverVerificationReportAllOfProperties() { 
+  public DocumentWithDriverVerificationReportAllOfProperties() {
   }
 
   public DocumentWithDriverVerificationReportAllOfProperties dateOfBirth(LocalDate dateOfBirth) {
@@ -200,16 +212,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
    * @return dateOfBirth
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_DATE_OF_BIRTH)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public LocalDate getDateOfBirth() {
     return dateOfBirth;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_DATE_OF_BIRTH)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDateOfBirth(LocalDate dateOfBirth) {
     this.dateOfBirth = dateOfBirth;
   }
@@ -225,16 +231,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
    * @return dateOfExpiry
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_DATE_OF_EXPIRY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public LocalDate getDateOfExpiry() {
     return dateOfExpiry;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_DATE_OF_EXPIRY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDateOfExpiry(LocalDate dateOfExpiry) {
     this.dateOfExpiry = dateOfExpiry;
   }
@@ -258,16 +258,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
    * @return documentNumbers
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_DOCUMENT_NUMBERS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public List<DocumentPropertiesDocumentNumbersInner> getDocumentNumbers() {
     return documentNumbers;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_DOCUMENT_NUMBERS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDocumentNumbers(List<DocumentPropertiesDocumentNumbersInner> documentNumbers) {
     this.documentNumbers = documentNumbers;
   }
@@ -283,16 +277,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
    * @return documentType
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_DOCUMENT_TYPE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getDocumentType() {
     return documentType;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_DOCUMENT_TYPE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDocumentType(String documentType) {
     this.documentType = documentType;
   }
@@ -308,16 +296,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
    * @return firstName
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_FIRST_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getFirstName() {
     return firstName;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_FIRST_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setFirstName(String firstName) {
     this.firstName = firstName;
   }
@@ -333,16 +315,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
    * @return gender
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_GENDER)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getGender() {
     return gender;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_GENDER)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setGender(String gender) {
     this.gender = gender;
   }
@@ -358,16 +334,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
    * @return issuingCountry
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ISSUING_COUNTRY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getIssuingCountry() {
     return issuingCountry;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_ISSUING_COUNTRY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setIssuingCountry(String issuingCountry) {
     this.issuingCountry = issuingCountry;
   }
@@ -383,16 +353,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
    * @return lastName
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_LAST_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getLastName() {
     return lastName;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_LAST_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setLastName(String lastName) {
     this.lastName = lastName;
   }
@@ -408,16 +372,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
    * @return nationality
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_NATIONALITY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getNationality() {
     return nationality;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_NATIONALITY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setNationality(String nationality) {
     this.nationality = nationality;
   }
@@ -433,16 +391,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
    * @return issuingState
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ISSUING_STATE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getIssuingState() {
     return issuingState;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_ISSUING_STATE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setIssuingState(String issuingState) {
     this.issuingState = issuingState;
   }
@@ -458,16 +410,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
    * @return issuingDate
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ISSUING_DATE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public LocalDate getIssuingDate() {
     return issuingDate;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_ISSUING_DATE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setIssuingDate(LocalDate issuingDate) {
     this.issuingDate = issuingDate;
   }
@@ -483,16 +429,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
    * @return categorisation
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_CATEGORISATION)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getCategorisation() {
     return categorisation;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_CATEGORISATION)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCategorisation(String categorisation) {
     this.categorisation = categorisation;
   }
@@ -508,16 +448,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
    * @return mrzLine1
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_MRZ_LINE1)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getMrzLine1() {
     return mrzLine1;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_MRZ_LINE1)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMrzLine1(String mrzLine1) {
     this.mrzLine1 = mrzLine1;
   }
@@ -533,16 +467,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
    * @return mrzLine2
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_MRZ_LINE2)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getMrzLine2() {
     return mrzLine2;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_MRZ_LINE2)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMrzLine2(String mrzLine2) {
     this.mrzLine2 = mrzLine2;
   }
@@ -558,16 +486,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
    * @return mrzLine3
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_MRZ_LINE3)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getMrzLine3() {
     return mrzLine3;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_MRZ_LINE3)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMrzLine3(String mrzLine3) {
     this.mrzLine3 = mrzLine3;
   }
@@ -583,16 +505,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
    * @return address
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ADDRESS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getAddress() {
     return address;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_ADDRESS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAddress(String address) {
     this.address = address;
   }
@@ -608,16 +524,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
    * @return placeOfBirth
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_PLACE_OF_BIRTH)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getPlaceOfBirth() {
     return placeOfBirth;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_PLACE_OF_BIRTH)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPlaceOfBirth(String placeOfBirth) {
     this.placeOfBirth = placeOfBirth;
   }
@@ -633,16 +543,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
    * @return spouseName
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_SPOUSE_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getSpouseName() {
     return spouseName;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_SPOUSE_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSpouseName(String spouseName) {
     this.spouseName = spouseName;
   }
@@ -658,16 +562,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
    * @return widowName
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_WIDOW_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getWidowName() {
     return widowName;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_WIDOW_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setWidowName(String widowName) {
     this.widowName = widowName;
   }
@@ -683,16 +581,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
    * @return aliasName
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ALIAS_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getAliasName() {
     return aliasName;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_ALIAS_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAliasName(String aliasName) {
     this.aliasName = aliasName;
   }
@@ -708,16 +600,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
    * @return issuingAuthority
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ISSUING_AUTHORITY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getIssuingAuthority() {
     return issuingAuthority;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_ISSUING_AUTHORITY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setIssuingAuthority(String issuingAuthority) {
     this.issuingAuthority = issuingAuthority;
   }
@@ -733,16 +619,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
    * @return realIdCompliance
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_REAL_ID_COMPLIANCE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public Boolean getRealIdCompliance() {
     return realIdCompliance;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_REAL_ID_COMPLIANCE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRealIdCompliance(Boolean realIdCompliance) {
     this.realIdCompliance = realIdCompliance;
   }
@@ -758,16 +638,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
    * @return addressLines
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ADDRESS_LINES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public DocumentPropertiesAddressLines getAddressLines() {
     return addressLines;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_ADDRESS_LINES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAddressLines(DocumentPropertiesAddressLines addressLines) {
     this.addressLines = addressLines;
   }
@@ -791,16 +665,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
    * @return barcode
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_BARCODE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public List<DocumentPropertiesBarcodeInner> getBarcode() {
     return barcode;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_BARCODE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setBarcode(List<DocumentPropertiesBarcodeInner> barcode) {
     this.barcode = barcode;
   }
@@ -816,16 +684,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
    * @return nfc
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_NFC)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public DocumentPropertiesNfc getNfc() {
     return nfc;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_NFC)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setNfc(DocumentPropertiesNfc nfc) {
     this.nfc = nfc;
   }
@@ -841,16 +703,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
    * @return drivingLicenceInformation
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_DRIVING_LICENCE_INFORMATION)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public DocumentPropertiesDrivingLicenceInformation getDrivingLicenceInformation() {
     return drivingLicenceInformation;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_DRIVING_LICENCE_INFORMATION)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDrivingLicenceInformation(DocumentPropertiesDrivingLicenceInformation drivingLicenceInformation) {
     this.drivingLicenceInformation = drivingLicenceInformation;
   }
@@ -866,16 +722,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
    * @return documentClassification
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_DOCUMENT_CLASSIFICATION)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public DocumentPropertiesDocumentClassification getDocumentClassification() {
     return documentClassification;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_DOCUMENT_CLASSIFICATION)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDocumentClassification(DocumentPropertiesDocumentClassification documentClassification) {
     this.documentClassification = documentClassification;
   }
@@ -891,16 +741,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
    * @return extractedData
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_EXTRACTED_DATA)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public DocumentPropertiesExtractedData getExtractedData() {
     return extractedData;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_EXTRACTED_DATA)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setExtractedData(DocumentPropertiesExtractedData extractedData) {
     this.extractedData = extractedData;
   }
@@ -916,16 +760,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
    * @return driversLicence
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_DRIVERS_LICENCE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public Boolean getDriversLicence() {
     return driversLicence;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_DRIVERS_LICENCE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDriversLicence(Boolean driversLicence) {
     this.driversLicence = driversLicence;
   }
@@ -941,16 +779,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
    * @return restrictedLicence
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_RESTRICTED_LICENCE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public Boolean getRestrictedLicence() {
     return restrictedLicence;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_RESTRICTED_LICENCE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRestrictedLicence(Boolean restrictedLicence) {
     this.restrictedLicence = restrictedLicence;
   }
@@ -966,16 +798,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
    * @return rawLicenceCategory
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_RAW_LICENCE_CATEGORY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getRawLicenceCategory() {
     return rawLicenceCategory;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_RAW_LICENCE_CATEGORY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRawLicenceCategory(String rawLicenceCategory) {
     this.rawLicenceCategory = rawLicenceCategory;
   }
@@ -991,16 +817,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
    * @return rawVehicleClasses
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_RAW_VEHICLE_CLASSES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getRawVehicleClasses() {
     return rawVehicleClasses;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_RAW_VEHICLE_CLASSES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRawVehicleClasses(String rawVehicleClasses) {
     this.rawVehicleClasses = rawVehicleClasses;
   }
@@ -1024,16 +844,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
    * @return vehicleClassDetails
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_VEHICLE_CLASS_DETAILS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public List<DocumentWithDriverVerificationReportAllOfPropertiesAllOfVehicleClassDetailsInner> getVehicleClassDetails() {
     return vehicleClassDetails;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_VEHICLE_CLASS_DETAILS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setVehicleClassDetails(List<DocumentWithDriverVerificationReportAllOfPropertiesAllOfVehicleClassDetailsInner> vehicleClassDetails) {
     this.vehicleClassDetails = vehicleClassDetails;
   }
@@ -1049,16 +863,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
    * @return passengerVehicle
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_PASSENGER_VEHICLE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public DocumentWithDriverVerificationReportAllOfPropertiesAllOfPassengerVehicle getPassengerVehicle() {
     return passengerVehicle;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_PASSENGER_VEHICLE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPassengerVehicle(DocumentWithDriverVerificationReportAllOfPropertiesAllOfPassengerVehicle passengerVehicle) {
     this.passengerVehicle = passengerVehicle;
   }
@@ -1073,11 +881,14 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
   /**
    * Set the additional (undeclared) property with the specified name and value.
    * If the property does not already exist, create it otherwise replace it.
+   *
+   * @param key name of the property
+   * @param value value of the property
+   * @return the DocumentWithDriverVerificationReportAllOfProperties instance itself
    */
-  @JsonAnySetter
   public DocumentWithDriverVerificationReportAllOfProperties putAdditionalProperty(String key, Object value) {
     if (this.additionalProperties == null) {
-        this.additionalProperties = new HashMap<>();
+        this.additionalProperties = new HashMap<String, Object>();
     }
     this.additionalProperties.put(key, value);
     return this;
@@ -1085,14 +896,18 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
 
   /**
    * Return the additional (undeclared) property.
+   *
+   * @return a map of objects
    */
-  @JsonAnyGetter
   public Map<String, Object> getAdditionalProperties() {
     return additionalProperties;
   }
 
   /**
    * Return the additional (undeclared) property with the specified name.
+   *
+   * @param key name of the property
+   * @return an object
    */
   public Object getAdditionalProperty(String key) {
     if (this.additionalProperties == null) {
@@ -1101,9 +916,7 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return this.additionalProperties.get(key);
   }
 
-  /**
-   * Return true if this document_with_driver_verification_report_allOf_properties object is equal to o.
-   */
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -1209,5 +1022,280 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("date_of_birth");
+    openapiFields.add("date_of_expiry");
+    openapiFields.add("document_numbers");
+    openapiFields.add("document_type");
+    openapiFields.add("first_name");
+    openapiFields.add("gender");
+    openapiFields.add("issuing_country");
+    openapiFields.add("last_name");
+    openapiFields.add("nationality");
+    openapiFields.add("issuing_state");
+    openapiFields.add("issuing_date");
+    openapiFields.add("categorisation");
+    openapiFields.add("mrz_line1");
+    openapiFields.add("mrz_line2");
+    openapiFields.add("mrz_line3");
+    openapiFields.add("address");
+    openapiFields.add("place_of_birth");
+    openapiFields.add("spouse_name");
+    openapiFields.add("widow_name");
+    openapiFields.add("alias_name");
+    openapiFields.add("issuing_authority");
+    openapiFields.add("real_id_compliance");
+    openapiFields.add("address_lines");
+    openapiFields.add("barcode");
+    openapiFields.add("nfc");
+    openapiFields.add("driving_licence_information");
+    openapiFields.add("document_classification");
+    openapiFields.add("extracted_data");
+    openapiFields.add("drivers_licence");
+    openapiFields.add("restricted_licence");
+    openapiFields.add("raw_licence_category");
+    openapiFields.add("raw_vehicle_classes");
+    openapiFields.add("vehicle_class_details");
+    openapiFields.add("passenger_vehicle");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+  }
+
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to DocumentWithDriverVerificationReportAllOfProperties
+  */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!DocumentWithDriverVerificationReportAllOfProperties.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in DocumentWithDriverVerificationReportAllOfProperties is not found in the empty JSON string", DocumentWithDriverVerificationReportAllOfProperties.openapiRequiredFields.toString()));
+        }
+      }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if (jsonObj.get("document_numbers") != null && !jsonObj.get("document_numbers").isJsonNull()) {
+        JsonArray jsonArraydocumentNumbers = jsonObj.getAsJsonArray("document_numbers");
+        if (jsonArraydocumentNumbers != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("document_numbers").isJsonArray()) {
+            throw new IllegalArgumentException(String.format("Expected the field `document_numbers` to be an array in the JSON string but got `%s`", jsonObj.get("document_numbers").toString()));
+          }
+
+          // validate the optional field `document_numbers` (array)
+          for (int i = 0; i < jsonArraydocumentNumbers.size(); i++) {
+            DocumentPropertiesDocumentNumbersInner.validateJsonElement(jsonArraydocumentNumbers.get(i));
+          };
+        }
+      }
+      if ((jsonObj.get("document_type") != null && !jsonObj.get("document_type").isJsonNull()) && !jsonObj.get("document_type").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `document_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("document_type").toString()));
+      }
+      if ((jsonObj.get("first_name") != null && !jsonObj.get("first_name").isJsonNull()) && !jsonObj.get("first_name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `first_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("first_name").toString()));
+      }
+      if ((jsonObj.get("gender") != null && !jsonObj.get("gender").isJsonNull()) && !jsonObj.get("gender").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `gender` to be a primitive type in the JSON string but got `%s`", jsonObj.get("gender").toString()));
+      }
+      if ((jsonObj.get("issuing_country") != null && !jsonObj.get("issuing_country").isJsonNull()) && !jsonObj.get("issuing_country").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `issuing_country` to be a primitive type in the JSON string but got `%s`", jsonObj.get("issuing_country").toString()));
+      }
+      if ((jsonObj.get("last_name") != null && !jsonObj.get("last_name").isJsonNull()) && !jsonObj.get("last_name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `last_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("last_name").toString()));
+      }
+      if ((jsonObj.get("nationality") != null && !jsonObj.get("nationality").isJsonNull()) && !jsonObj.get("nationality").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `nationality` to be a primitive type in the JSON string but got `%s`", jsonObj.get("nationality").toString()));
+      }
+      if ((jsonObj.get("issuing_state") != null && !jsonObj.get("issuing_state").isJsonNull()) && !jsonObj.get("issuing_state").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `issuing_state` to be a primitive type in the JSON string but got `%s`", jsonObj.get("issuing_state").toString()));
+      }
+      if ((jsonObj.get("categorisation") != null && !jsonObj.get("categorisation").isJsonNull()) && !jsonObj.get("categorisation").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `categorisation` to be a primitive type in the JSON string but got `%s`", jsonObj.get("categorisation").toString()));
+      }
+      if ((jsonObj.get("mrz_line1") != null && !jsonObj.get("mrz_line1").isJsonNull()) && !jsonObj.get("mrz_line1").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `mrz_line1` to be a primitive type in the JSON string but got `%s`", jsonObj.get("mrz_line1").toString()));
+      }
+      if ((jsonObj.get("mrz_line2") != null && !jsonObj.get("mrz_line2").isJsonNull()) && !jsonObj.get("mrz_line2").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `mrz_line2` to be a primitive type in the JSON string but got `%s`", jsonObj.get("mrz_line2").toString()));
+      }
+      if ((jsonObj.get("mrz_line3") != null && !jsonObj.get("mrz_line3").isJsonNull()) && !jsonObj.get("mrz_line3").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `mrz_line3` to be a primitive type in the JSON string but got `%s`", jsonObj.get("mrz_line3").toString()));
+      }
+      if ((jsonObj.get("address") != null && !jsonObj.get("address").isJsonNull()) && !jsonObj.get("address").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `address` to be a primitive type in the JSON string but got `%s`", jsonObj.get("address").toString()));
+      }
+      if ((jsonObj.get("place_of_birth") != null && !jsonObj.get("place_of_birth").isJsonNull()) && !jsonObj.get("place_of_birth").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `place_of_birth` to be a primitive type in the JSON string but got `%s`", jsonObj.get("place_of_birth").toString()));
+      }
+      if ((jsonObj.get("spouse_name") != null && !jsonObj.get("spouse_name").isJsonNull()) && !jsonObj.get("spouse_name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `spouse_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("spouse_name").toString()));
+      }
+      if ((jsonObj.get("widow_name") != null && !jsonObj.get("widow_name").isJsonNull()) && !jsonObj.get("widow_name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `widow_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("widow_name").toString()));
+      }
+      if ((jsonObj.get("alias_name") != null && !jsonObj.get("alias_name").isJsonNull()) && !jsonObj.get("alias_name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `alias_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("alias_name").toString()));
+      }
+      if ((jsonObj.get("issuing_authority") != null && !jsonObj.get("issuing_authority").isJsonNull()) && !jsonObj.get("issuing_authority").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `issuing_authority` to be a primitive type in the JSON string but got `%s`", jsonObj.get("issuing_authority").toString()));
+      }
+      // validate the optional field `address_lines`
+      if (jsonObj.get("address_lines") != null && !jsonObj.get("address_lines").isJsonNull()) {
+        DocumentPropertiesAddressLines.validateJsonElement(jsonObj.get("address_lines"));
+      }
+      if (jsonObj.get("barcode") != null && !jsonObj.get("barcode").isJsonNull()) {
+        JsonArray jsonArraybarcode = jsonObj.getAsJsonArray("barcode");
+        if (jsonArraybarcode != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("barcode").isJsonArray()) {
+            throw new IllegalArgumentException(String.format("Expected the field `barcode` to be an array in the JSON string but got `%s`", jsonObj.get("barcode").toString()));
+          }
+
+          // validate the optional field `barcode` (array)
+          for (int i = 0; i < jsonArraybarcode.size(); i++) {
+            DocumentPropertiesBarcodeInner.validateJsonElement(jsonArraybarcode.get(i));
+          };
+        }
+      }
+      // validate the optional field `nfc`
+      if (jsonObj.get("nfc") != null && !jsonObj.get("nfc").isJsonNull()) {
+        DocumentPropertiesNfc.validateJsonElement(jsonObj.get("nfc"));
+      }
+      // validate the optional field `driving_licence_information`
+      if (jsonObj.get("driving_licence_information") != null && !jsonObj.get("driving_licence_information").isJsonNull()) {
+        DocumentPropertiesDrivingLicenceInformation.validateJsonElement(jsonObj.get("driving_licence_information"));
+      }
+      // validate the optional field `document_classification`
+      if (jsonObj.get("document_classification") != null && !jsonObj.get("document_classification").isJsonNull()) {
+        DocumentPropertiesDocumentClassification.validateJsonElement(jsonObj.get("document_classification"));
+      }
+      // validate the optional field `extracted_data`
+      if (jsonObj.get("extracted_data") != null && !jsonObj.get("extracted_data").isJsonNull()) {
+        DocumentPropertiesExtractedData.validateJsonElement(jsonObj.get("extracted_data"));
+      }
+      if ((jsonObj.get("raw_licence_category") != null && !jsonObj.get("raw_licence_category").isJsonNull()) && !jsonObj.get("raw_licence_category").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `raw_licence_category` to be a primitive type in the JSON string but got `%s`", jsonObj.get("raw_licence_category").toString()));
+      }
+      if ((jsonObj.get("raw_vehicle_classes") != null && !jsonObj.get("raw_vehicle_classes").isJsonNull()) && !jsonObj.get("raw_vehicle_classes").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `raw_vehicle_classes` to be a primitive type in the JSON string but got `%s`", jsonObj.get("raw_vehicle_classes").toString()));
+      }
+      if (jsonObj.get("vehicle_class_details") != null && !jsonObj.get("vehicle_class_details").isJsonNull()) {
+        JsonArray jsonArrayvehicleClassDetails = jsonObj.getAsJsonArray("vehicle_class_details");
+        if (jsonArrayvehicleClassDetails != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("vehicle_class_details").isJsonArray()) {
+            throw new IllegalArgumentException(String.format("Expected the field `vehicle_class_details` to be an array in the JSON string but got `%s`", jsonObj.get("vehicle_class_details").toString()));
+          }
+
+          // validate the optional field `vehicle_class_details` (array)
+          for (int i = 0; i < jsonArrayvehicleClassDetails.size(); i++) {
+            DocumentWithDriverVerificationReportAllOfPropertiesAllOfVehicleClassDetailsInner.validateJsonElement(jsonArrayvehicleClassDetails.get(i));
+          };
+        }
+      }
+      // validate the optional field `passenger_vehicle`
+      if (jsonObj.get("passenger_vehicle") != null && !jsonObj.get("passenger_vehicle").isJsonNull()) {
+        DocumentWithDriverVerificationReportAllOfPropertiesAllOfPassengerVehicle.validateJsonElement(jsonObj.get("passenger_vehicle"));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!DocumentWithDriverVerificationReportAllOfProperties.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'DocumentWithDriverVerificationReportAllOfProperties' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<DocumentWithDriverVerificationReportAllOfProperties> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(DocumentWithDriverVerificationReportAllOfProperties.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<DocumentWithDriverVerificationReportAllOfProperties>() {
+           @Override
+           public void write(JsonWriter out, DocumentWithDriverVerificationReportAllOfProperties value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             obj.remove("additionalProperties");
+             // serialize additional properties
+             if (value.getAdditionalProperties() != null) {
+               for (Map.Entry<String, Object> entry : value.getAdditionalProperties().entrySet()) {
+                 if (entry.getValue() instanceof String)
+                   obj.addProperty(entry.getKey(), (String) entry.getValue());
+                 else if (entry.getValue() instanceof Number)
+                   obj.addProperty(entry.getKey(), (Number) entry.getValue());
+                 else if (entry.getValue() instanceof Boolean)
+                   obj.addProperty(entry.getKey(), (Boolean) entry.getValue());
+                 else if (entry.getValue() instanceof Character)
+                   obj.addProperty(entry.getKey(), (Character) entry.getValue());
+                 else {
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
+                 }
+               }
+             }
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public DocumentWithDriverVerificationReportAllOfProperties read(JsonReader in) throws IOException {
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
+             // store additional fields in the deserialized instance
+             DocumentWithDriverVerificationReportAllOfProperties instance = thisAdapter.fromJsonTree(jsonObj);
+             for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
+               if (!openapiFields.contains(entry.getKey())) {
+                 if (entry.getValue().isJsonPrimitive()) { // primitive type
+                   if (entry.getValue().getAsJsonPrimitive().isString())
+                     instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsString());
+                   else if (entry.getValue().getAsJsonPrimitive().isNumber())
+                     instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsNumber());
+                   else if (entry.getValue().getAsJsonPrimitive().isBoolean())
+                     instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
+                   else
+                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                 } else if (entry.getValue().isJsonArray()) {
+                     instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
+                 } else { // JSON object
+                     instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), HashMap.class));
+                 }
+               }
+             }
+             return instance;
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of DocumentWithDriverVerificationReportAllOfProperties given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of DocumentWithDriverVerificationReportAllOfProperties
+  * @throws IOException if the JSON string is invalid with respect to DocumentWithDriverVerificationReportAllOfProperties
+  */
+  public static DocumentWithDriverVerificationReportAllOfProperties fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, DocumentWithDriverVerificationReportAllOfProperties.class);
+  }
+
+ /**
+  * Convert an instance of DocumentWithDriverVerificationReportAllOfProperties to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

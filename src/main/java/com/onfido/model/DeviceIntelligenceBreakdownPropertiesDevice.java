@@ -14,55 +14,52 @@
 package com.onfido.model;
 
 import java.util.Objects;
-import java.util.Map;
-import java.util.HashMap;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 import java.util.Arrays;
 import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.onfido.JSON;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import com.onfido.JSON;
 
 /**
  * DeviceIntelligenceBreakdownPropertiesDevice
  */
-@JsonPropertyOrder({
-  DeviceIntelligenceBreakdownPropertiesDevice.JSON_PROPERTY_SDK_VERSION,
-  DeviceIntelligenceBreakdownPropertiesDevice.JSON_PROPERTY_SDK_SOURCE,
-  DeviceIntelligenceBreakdownPropertiesDevice.JSON_PROPERTY_AUTHENTICATION_TYPE,
-  DeviceIntelligenceBreakdownPropertiesDevice.JSON_PROPERTY_RAW_MODEL,
-  DeviceIntelligenceBreakdownPropertiesDevice.JSON_PROPERTY_OS,
-  DeviceIntelligenceBreakdownPropertiesDevice.JSON_PROPERTY_BROWSER,
-  DeviceIntelligenceBreakdownPropertiesDevice.JSON_PROPERTY_EMULATOR,
-  DeviceIntelligenceBreakdownPropertiesDevice.JSON_PROPERTY_RANDOMIZED_DEVICE,
-  DeviceIntelligenceBreakdownPropertiesDevice.JSON_PROPERTY_FAKE_NETWORK_REQUEST,
-  DeviceIntelligenceBreakdownPropertiesDevice.JSON_PROPERTY_TRUE_OS,
-  DeviceIntelligenceBreakdownPropertiesDevice.JSON_PROPERTY_OS_ANOMALY,
-  DeviceIntelligenceBreakdownPropertiesDevice.JSON_PROPERTY_ROOTED,
-  DeviceIntelligenceBreakdownPropertiesDevice.JSON_PROPERTY_REMOTE_SOFTWARE,
-  DeviceIntelligenceBreakdownPropertiesDevice.JSON_PROPERTY_IP_REPUTATION,
-  DeviceIntelligenceBreakdownPropertiesDevice.JSON_PROPERTY_DEVICE_FINGERPRINT_REUSE,
-  DeviceIntelligenceBreakdownPropertiesDevice.JSON_PROPERTY_SINGLE_DEVICE_USED,
-  DeviceIntelligenceBreakdownPropertiesDevice.JSON_PROPERTY_DOCUMENT_CAPTURE,
-  DeviceIntelligenceBreakdownPropertiesDevice.JSON_PROPERTY_BIOMETRIC_CAPTURE
-})
-@JsonTypeName("device_intelligence_breakdown_properties_device")
-@com.fasterxml.jackson.annotation.JsonIgnoreProperties(ignoreUnknown = true)
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class DeviceIntelligenceBreakdownPropertiesDevice {
-  public static final String JSON_PROPERTY_SDK_VERSION = "sdk_version";
+  public static final String SERIALIZED_NAME_SDK_VERSION = "sdk_version";
+  @SerializedName(SERIALIZED_NAME_SDK_VERSION)
   private String sdkVersion;
 
   /**
    * The SDK used to upload the media.
    */
+  @JsonAdapter(SdkSourceEnum.Adapter.class)
   public enum SdkSourceEnum {
     ANDROID_SDK("onfido-android-sdk"),
     
@@ -78,7 +75,6 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
       this.value = value;
     }
 
-    @JsonValue
     public String getValue() {
       return value;
     }
@@ -88,7 +84,6 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
       return String.valueOf(value);
     }
 
-    @JsonCreator
     public static SdkSourceEnum fromValue(String value) {
       for (SdkSourceEnum b : SdkSourceEnum.values()) {
         if (b.value.equals(value)) {
@@ -97,14 +92,34 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
       }
       return UNKNOWN_DEFAULT_OPEN_API;
     }
+
+    public static class Adapter extends TypeAdapter<SdkSourceEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final SdkSourceEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public SdkSourceEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return SdkSourceEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      SdkSourceEnum.fromValue(value);
+    }
   }
 
-  public static final String JSON_PROPERTY_SDK_SOURCE = "sdk_source";
+  public static final String SERIALIZED_NAME_SDK_SOURCE = "sdk_source";
+  @SerializedName(SERIALIZED_NAME_SDK_SOURCE)
   private SdkSourceEnum sdkSource;
 
   /**
    * The token used to authenticate the request.
    */
+  @JsonAdapter(AuthenticationTypeEnum.Adapter.class)
   public enum AuthenticationTypeEnum {
     SDK_TOKEN("sdk_token"),
     
@@ -120,7 +135,6 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
       this.value = value;
     }
 
-    @JsonValue
     public String getValue() {
       return value;
     }
@@ -130,7 +144,6 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
       return String.valueOf(value);
     }
 
-    @JsonCreator
     public static AuthenticationTypeEnum fromValue(String value) {
       for (AuthenticationTypeEnum b : AuthenticationTypeEnum.values()) {
         if (b.value.equals(value)) {
@@ -139,44 +152,78 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
       }
       return UNKNOWN_DEFAULT_OPEN_API;
     }
+
+    public static class Adapter extends TypeAdapter<AuthenticationTypeEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final AuthenticationTypeEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public AuthenticationTypeEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return AuthenticationTypeEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      AuthenticationTypeEnum.fromValue(value);
+    }
   }
 
-  public static final String JSON_PROPERTY_AUTHENTICATION_TYPE = "authentication_type";
+  public static final String SERIALIZED_NAME_AUTHENTICATION_TYPE = "authentication_type";
+  @SerializedName(SERIALIZED_NAME_AUTHENTICATION_TYPE)
   private AuthenticationTypeEnum authenticationType;
 
-  public static final String JSON_PROPERTY_RAW_MODEL = "raw_model";
+  public static final String SERIALIZED_NAME_RAW_MODEL = "raw_model";
+  @SerializedName(SERIALIZED_NAME_RAW_MODEL)
   private String rawModel;
 
-  public static final String JSON_PROPERTY_OS = "os";
+  public static final String SERIALIZED_NAME_OS = "os";
+  @SerializedName(SERIALIZED_NAME_OS)
   private String os;
 
-  public static final String JSON_PROPERTY_BROWSER = "browser";
+  public static final String SERIALIZED_NAME_BROWSER = "browser";
+  @SerializedName(SERIALIZED_NAME_BROWSER)
   private String browser;
 
-  public static final String JSON_PROPERTY_EMULATOR = "emulator";
+  public static final String SERIALIZED_NAME_EMULATOR = "emulator";
+  @SerializedName(SERIALIZED_NAME_EMULATOR)
   private Boolean emulator;
 
-  public static final String JSON_PROPERTY_RANDOMIZED_DEVICE = "randomized_device";
+  public static final String SERIALIZED_NAME_RANDOMIZED_DEVICE = "randomized_device";
+  @SerializedName(SERIALIZED_NAME_RANDOMIZED_DEVICE)
   private Boolean randomizedDevice;
 
-  public static final String JSON_PROPERTY_FAKE_NETWORK_REQUEST = "fake_network_request";
+  public static final String SERIALIZED_NAME_FAKE_NETWORK_REQUEST = "fake_network_request";
+  @SerializedName(SERIALIZED_NAME_FAKE_NETWORK_REQUEST)
   private Boolean fakeNetworkRequest;
 
-  public static final String JSON_PROPERTY_TRUE_OS = "true_os";
+  public static final String SERIALIZED_NAME_TRUE_OS = "true_os";
+  @Deprecated
+  @SerializedName(SERIALIZED_NAME_TRUE_OS)
   private String trueOs;
 
-  public static final String JSON_PROPERTY_OS_ANOMALY = "os_anomaly";
+  public static final String SERIALIZED_NAME_OS_ANOMALY = "os_anomaly";
+  @Deprecated
+  @SerializedName(SERIALIZED_NAME_OS_ANOMALY)
   private String osAnomaly;
 
-  public static final String JSON_PROPERTY_ROOTED = "rooted";
+  public static final String SERIALIZED_NAME_ROOTED = "rooted";
+  @Deprecated
+  @SerializedName(SERIALIZED_NAME_ROOTED)
   private Boolean rooted;
 
-  public static final String JSON_PROPERTY_REMOTE_SOFTWARE = "remote_software";
+  public static final String SERIALIZED_NAME_REMOTE_SOFTWARE = "remote_software";
+  @Deprecated
+  @SerializedName(SERIALIZED_NAME_REMOTE_SOFTWARE)
   private Boolean remoteSoftware;
 
   /**
    * Whether there is highly suspicious traffic related to the IP address. The risk depends on the overall ratio of clear checks on a given IP.
    */
+  @JsonAdapter(IpReputationEnum.Adapter.class)
   public enum IpReputationEnum {
     NOT_ENOUGH_DATA("NOT_ENOUGH_DATA"),
     
@@ -192,7 +239,6 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
       this.value = value;
     }
 
-    @JsonValue
     public String getValue() {
       return value;
     }
@@ -202,7 +248,6 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
       return String.valueOf(value);
     }
 
-    @JsonCreator
     public static IpReputationEnum fromValue(String value) {
       for (IpReputationEnum b : IpReputationEnum.values()) {
         if (b.value.equals(value)) {
@@ -211,20 +256,42 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
       }
       return UNKNOWN_DEFAULT_OPEN_API;
     }
+
+    public static class Adapter extends TypeAdapter<IpReputationEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final IpReputationEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public IpReputationEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return IpReputationEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      IpReputationEnum.fromValue(value);
+    }
   }
 
-  public static final String JSON_PROPERTY_IP_REPUTATION = "ip_reputation";
+  public static final String SERIALIZED_NAME_IP_REPUTATION = "ip_reputation";
+  @SerializedName(SERIALIZED_NAME_IP_REPUTATION)
   private IpReputationEnum ipReputation;
 
-  public static final String JSON_PROPERTY_DEVICE_FINGERPRINT_REUSE = "device_fingerprint_reuse";
+  public static final String SERIALIZED_NAME_DEVICE_FINGERPRINT_REUSE = "device_fingerprint_reuse";
+  @SerializedName(SERIALIZED_NAME_DEVICE_FINGERPRINT_REUSE)
   private Integer deviceFingerprintReuse;
 
-  public static final String JSON_PROPERTY_SINGLE_DEVICE_USED = "single_device_used";
-  private JsonNullable<Boolean> singleDeviceUsed = JsonNullable.<Boolean>undefined();
+  public static final String SERIALIZED_NAME_SINGLE_DEVICE_USED = "single_device_used";
+  @SerializedName(SERIALIZED_NAME_SINGLE_DEVICE_USED)
+  private Boolean singleDeviceUsed;
 
   /**
    * Whether the document media were live captured from the device camera.
    */
+  @JsonAdapter(DocumentCaptureEnum.Adapter.class)
   public enum DocumentCaptureEnum {
     LIVE("live"),
     
@@ -238,7 +305,6 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
       this.value = value;
     }
 
-    @JsonValue
     public String getValue() {
       return value;
     }
@@ -248,7 +314,6 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
       return String.valueOf(value);
     }
 
-    @JsonCreator
     public static DocumentCaptureEnum fromValue(String value) {
       for (DocumentCaptureEnum b : DocumentCaptureEnum.values()) {
         if (b.value.equals(value)) {
@@ -257,14 +322,34 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
       }
       return UNKNOWN_DEFAULT_OPEN_API;
     }
+
+    public static class Adapter extends TypeAdapter<DocumentCaptureEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final DocumentCaptureEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public DocumentCaptureEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return DocumentCaptureEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      DocumentCaptureEnum.fromValue(value);
+    }
   }
 
-  public static final String JSON_PROPERTY_DOCUMENT_CAPTURE = "document_capture";
+  public static final String SERIALIZED_NAME_DOCUMENT_CAPTURE = "document_capture";
+  @SerializedName(SERIALIZED_NAME_DOCUMENT_CAPTURE)
   private DocumentCaptureEnum documentCapture;
 
   /**
    * Whether the biometric media were live captured from the device camera.
    */
+  @JsonAdapter(BiometricCaptureEnum.Adapter.class)
   public enum BiometricCaptureEnum {
     LIVE("live"),
     
@@ -278,7 +363,6 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
       this.value = value;
     }
 
-    @JsonValue
     public String getValue() {
       return value;
     }
@@ -288,7 +372,6 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
       return String.valueOf(value);
     }
 
-    @JsonCreator
     public static BiometricCaptureEnum fromValue(String value) {
       for (BiometricCaptureEnum b : BiometricCaptureEnum.values()) {
         if (b.value.equals(value)) {
@@ -297,12 +380,31 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
       }
       return UNKNOWN_DEFAULT_OPEN_API;
     }
+
+    public static class Adapter extends TypeAdapter<BiometricCaptureEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final BiometricCaptureEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public BiometricCaptureEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return BiometricCaptureEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      BiometricCaptureEnum.fromValue(value);
+    }
   }
 
-  public static final String JSON_PROPERTY_BIOMETRIC_CAPTURE = "biometric_capture";
+  public static final String SERIALIZED_NAME_BIOMETRIC_CAPTURE = "biometric_capture";
+  @SerializedName(SERIALIZED_NAME_BIOMETRIC_CAPTURE)
   private BiometricCaptureEnum biometricCapture;
 
-  public DeviceIntelligenceBreakdownPropertiesDevice() { 
+  public DeviceIntelligenceBreakdownPropertiesDevice() {
   }
 
   public DeviceIntelligenceBreakdownPropertiesDevice sdkVersion(String sdkVersion) {
@@ -315,16 +417,10 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
    * @return sdkVersion
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_SDK_VERSION)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getSdkVersion() {
     return sdkVersion;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_SDK_VERSION)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSdkVersion(String sdkVersion) {
     this.sdkVersion = sdkVersion;
   }
@@ -340,16 +436,10 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
    * @return sdkSource
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_SDK_SOURCE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public SdkSourceEnum getSdkSource() {
     return sdkSource;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_SDK_SOURCE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSdkSource(SdkSourceEnum sdkSource) {
     this.sdkSource = sdkSource;
   }
@@ -365,16 +455,10 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
    * @return authenticationType
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_AUTHENTICATION_TYPE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public AuthenticationTypeEnum getAuthenticationType() {
     return authenticationType;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_AUTHENTICATION_TYPE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAuthenticationType(AuthenticationTypeEnum authenticationType) {
     this.authenticationType = authenticationType;
   }
@@ -390,16 +474,10 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
    * @return rawModel
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_RAW_MODEL)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getRawModel() {
     return rawModel;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_RAW_MODEL)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRawModel(String rawModel) {
     this.rawModel = rawModel;
   }
@@ -415,16 +493,10 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
    * @return os
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_OS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getOs() {
     return os;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_OS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOs(String os) {
     this.os = os;
   }
@@ -440,16 +512,10 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
    * @return browser
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_BROWSER)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getBrowser() {
     return browser;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_BROWSER)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setBrowser(String browser) {
     this.browser = browser;
   }
@@ -465,16 +531,10 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
    * @return emulator
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_EMULATOR)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public Boolean getEmulator() {
     return emulator;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_EMULATOR)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setEmulator(Boolean emulator) {
     this.emulator = emulator;
   }
@@ -490,16 +550,10 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
    * @return randomizedDevice
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_RANDOMIZED_DEVICE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public Boolean getRandomizedDevice() {
     return randomizedDevice;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_RANDOMIZED_DEVICE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRandomizedDevice(Boolean randomizedDevice) {
     this.randomizedDevice = randomizedDevice;
   }
@@ -515,21 +569,16 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
    * @return fakeNetworkRequest
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_FAKE_NETWORK_REQUEST)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public Boolean getFakeNetworkRequest() {
     return fakeNetworkRequest;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_FAKE_NETWORK_REQUEST)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setFakeNetworkRequest(Boolean fakeNetworkRequest) {
     this.fakeNetworkRequest = fakeNetworkRequest;
   }
 
 
+  @Deprecated
   public DeviceIntelligenceBreakdownPropertiesDevice trueOs(String trueOs) {
     this.trueOs = trueOs;
     return this;
@@ -542,21 +591,17 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
   **/
   @Deprecated
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_TRUE_OS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getTrueOs() {
     return trueOs;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_TRUE_OS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @Deprecated
   public void setTrueOs(String trueOs) {
     this.trueOs = trueOs;
   }
 
 
+  @Deprecated
   public DeviceIntelligenceBreakdownPropertiesDevice osAnomaly(String osAnomaly) {
     this.osAnomaly = osAnomaly;
     return this;
@@ -569,21 +614,17 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
   **/
   @Deprecated
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_OS_ANOMALY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getOsAnomaly() {
     return osAnomaly;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_OS_ANOMALY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @Deprecated
   public void setOsAnomaly(String osAnomaly) {
     this.osAnomaly = osAnomaly;
   }
 
 
+  @Deprecated
   public DeviceIntelligenceBreakdownPropertiesDevice rooted(Boolean rooted) {
     this.rooted = rooted;
     return this;
@@ -596,21 +637,17 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
   **/
   @Deprecated
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ROOTED)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public Boolean getRooted() {
     return rooted;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_ROOTED)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @Deprecated
   public void setRooted(Boolean rooted) {
     this.rooted = rooted;
   }
 
 
+  @Deprecated
   public DeviceIntelligenceBreakdownPropertiesDevice remoteSoftware(Boolean remoteSoftware) {
     this.remoteSoftware = remoteSoftware;
     return this;
@@ -623,16 +660,11 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
   **/
   @Deprecated
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_REMOTE_SOFTWARE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public Boolean getRemoteSoftware() {
     return remoteSoftware;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_REMOTE_SOFTWARE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @Deprecated
   public void setRemoteSoftware(Boolean remoteSoftware) {
     this.remoteSoftware = remoteSoftware;
   }
@@ -648,16 +680,10 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
    * @return ipReputation
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_IP_REPUTATION)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public IpReputationEnum getIpReputation() {
     return ipReputation;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_IP_REPUTATION)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setIpReputation(IpReputationEnum ipReputation) {
     this.ipReputation = ipReputation;
   }
@@ -673,23 +699,17 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
    * @return deviceFingerprintReuse
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_DEVICE_FINGERPRINT_REUSE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public Integer getDeviceFingerprintReuse() {
     return deviceFingerprintReuse;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_DEVICE_FINGERPRINT_REUSE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDeviceFingerprintReuse(Integer deviceFingerprintReuse) {
     this.deviceFingerprintReuse = deviceFingerprintReuse;
   }
 
 
   public DeviceIntelligenceBreakdownPropertiesDevice singleDeviceUsed(Boolean singleDeviceUsed) {
-    this.singleDeviceUsed = JsonNullable.<Boolean>of(singleDeviceUsed);
+    this.singleDeviceUsed = singleDeviceUsed;
     return this;
   }
 
@@ -698,26 +718,12 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
    * @return singleDeviceUsed
   **/
   @javax.annotation.Nullable
-  @JsonIgnore
-
   public Boolean getSingleDeviceUsed() {
-        return singleDeviceUsed.orElse(null);
-  }
-
-  @JsonProperty(JSON_PROPERTY_SINGLE_DEVICE_USED)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public JsonNullable<Boolean> getSingleDeviceUsed_JsonNullable() {
     return singleDeviceUsed;
-  }
-  
-  @JsonProperty(JSON_PROPERTY_SINGLE_DEVICE_USED)
-  public void setSingleDeviceUsed_JsonNullable(JsonNullable<Boolean> singleDeviceUsed) {
-    this.singleDeviceUsed = singleDeviceUsed;
   }
 
   public void setSingleDeviceUsed(Boolean singleDeviceUsed) {
-    this.singleDeviceUsed = JsonNullable.<Boolean>of(singleDeviceUsed);
+    this.singleDeviceUsed = singleDeviceUsed;
   }
 
 
@@ -731,16 +737,10 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
    * @return documentCapture
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_DOCUMENT_CAPTURE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public DocumentCaptureEnum getDocumentCapture() {
     return documentCapture;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_DOCUMENT_CAPTURE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDocumentCapture(DocumentCaptureEnum documentCapture) {
     this.documentCapture = documentCapture;
   }
@@ -756,24 +756,60 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
    * @return biometricCapture
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_BIOMETRIC_CAPTURE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public BiometricCaptureEnum getBiometricCapture() {
     return biometricCapture;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_BIOMETRIC_CAPTURE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setBiometricCapture(BiometricCaptureEnum biometricCapture) {
     this.biometricCapture = biometricCapture;
   }
 
+  /**
+   * A container for additional, undeclared properties.
+   * This is a holder for any undeclared properties as specified with
+   * the 'additionalProperties' keyword in the OAS document.
+   */
+  private Map<String, Object> additionalProperties;
 
   /**
-   * Return true if this device_intelligence_breakdown_properties_device object is equal to o.
+   * Set the additional (undeclared) property with the specified name and value.
+   * If the property does not already exist, create it otherwise replace it.
+   *
+   * @param key name of the property
+   * @param value value of the property
+   * @return the DeviceIntelligenceBreakdownPropertiesDevice instance itself
    */
+  public DeviceIntelligenceBreakdownPropertiesDevice putAdditionalProperty(String key, Object value) {
+    if (this.additionalProperties == null) {
+        this.additionalProperties = new HashMap<String, Object>();
+    }
+    this.additionalProperties.put(key, value);
+    return this;
+  }
+
+  /**
+   * Return the additional (undeclared) property.
+   *
+   * @return a map of objects
+   */
+  public Map<String, Object> getAdditionalProperties() {
+    return additionalProperties;
+  }
+
+  /**
+   * Return the additional (undeclared) property with the specified name.
+   *
+   * @param key name of the property
+   * @return an object
+   */
+  public Object getAdditionalProperty(String key) {
+    if (this.additionalProperties == null) {
+        return null;
+    }
+    return this.additionalProperties.get(key);
+  }
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -798,9 +834,10 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
         Objects.equals(this.remoteSoftware, deviceIntelligenceBreakdownPropertiesDevice.remoteSoftware) &&
         Objects.equals(this.ipReputation, deviceIntelligenceBreakdownPropertiesDevice.ipReputation) &&
         Objects.equals(this.deviceFingerprintReuse, deviceIntelligenceBreakdownPropertiesDevice.deviceFingerprintReuse) &&
-        equalsNullable(this.singleDeviceUsed, deviceIntelligenceBreakdownPropertiesDevice.singleDeviceUsed) &&
+        Objects.equals(this.singleDeviceUsed, deviceIntelligenceBreakdownPropertiesDevice.singleDeviceUsed) &&
         Objects.equals(this.documentCapture, deviceIntelligenceBreakdownPropertiesDevice.documentCapture) &&
-        Objects.equals(this.biometricCapture, deviceIntelligenceBreakdownPropertiesDevice.biometricCapture);
+        Objects.equals(this.biometricCapture, deviceIntelligenceBreakdownPropertiesDevice.biometricCapture)&&
+        Objects.equals(this.additionalProperties, deviceIntelligenceBreakdownPropertiesDevice.additionalProperties);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -809,7 +846,7 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
 
   @Override
   public int hashCode() {
-    return Objects.hash(sdkVersion, sdkSource, authenticationType, rawModel, os, browser, emulator, randomizedDevice, fakeNetworkRequest, trueOs, osAnomaly, rooted, remoteSoftware, ipReputation, deviceFingerprintReuse, hashCodeNullable(singleDeviceUsed), documentCapture, biometricCapture);
+    return Objects.hash(sdkVersion, sdkSource, authenticationType, rawModel, os, browser, emulator, randomizedDevice, fakeNetworkRequest, trueOs, osAnomaly, rooted, remoteSoftware, ipReputation, deviceFingerprintReuse, singleDeviceUsed, documentCapture, biometricCapture, additionalProperties);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -841,6 +878,7 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
     sb.append("    singleDeviceUsed: ").append(toIndentedString(singleDeviceUsed)).append("\n");
     sb.append("    documentCapture: ").append(toIndentedString(documentCapture)).append("\n");
     sb.append("    biometricCapture: ").append(toIndentedString(biometricCapture)).append("\n");
+    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -856,5 +894,194 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("sdk_version");
+    openapiFields.add("sdk_source");
+    openapiFields.add("authentication_type");
+    openapiFields.add("raw_model");
+    openapiFields.add("os");
+    openapiFields.add("browser");
+    openapiFields.add("emulator");
+    openapiFields.add("randomized_device");
+    openapiFields.add("fake_network_request");
+    openapiFields.add("true_os");
+    openapiFields.add("os_anomaly");
+    openapiFields.add("rooted");
+    openapiFields.add("remote_software");
+    openapiFields.add("ip_reputation");
+    openapiFields.add("device_fingerprint_reuse");
+    openapiFields.add("single_device_used");
+    openapiFields.add("document_capture");
+    openapiFields.add("biometric_capture");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+  }
+
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to DeviceIntelligenceBreakdownPropertiesDevice
+  */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!DeviceIntelligenceBreakdownPropertiesDevice.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in DeviceIntelligenceBreakdownPropertiesDevice is not found in the empty JSON string", DeviceIntelligenceBreakdownPropertiesDevice.openapiRequiredFields.toString()));
+        }
+      }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("sdk_version") != null && !jsonObj.get("sdk_version").isJsonNull()) && !jsonObj.get("sdk_version").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `sdk_version` to be a primitive type in the JSON string but got `%s`", jsonObj.get("sdk_version").toString()));
+      }
+      if ((jsonObj.get("sdk_source") != null && !jsonObj.get("sdk_source").isJsonNull()) && !jsonObj.get("sdk_source").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `sdk_source` to be a primitive type in the JSON string but got `%s`", jsonObj.get("sdk_source").toString()));
+      }
+      // validate the optional field `sdk_source`
+      if (jsonObj.get("sdk_source") != null && !jsonObj.get("sdk_source").isJsonNull()) {
+        SdkSourceEnum.validateJsonElement(jsonObj.get("sdk_source"));
+      }
+      if ((jsonObj.get("authentication_type") != null && !jsonObj.get("authentication_type").isJsonNull()) && !jsonObj.get("authentication_type").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `authentication_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("authentication_type").toString()));
+      }
+      // validate the optional field `authentication_type`
+      if (jsonObj.get("authentication_type") != null && !jsonObj.get("authentication_type").isJsonNull()) {
+        AuthenticationTypeEnum.validateJsonElement(jsonObj.get("authentication_type"));
+      }
+      if ((jsonObj.get("raw_model") != null && !jsonObj.get("raw_model").isJsonNull()) && !jsonObj.get("raw_model").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `raw_model` to be a primitive type in the JSON string but got `%s`", jsonObj.get("raw_model").toString()));
+      }
+      if ((jsonObj.get("os") != null && !jsonObj.get("os").isJsonNull()) && !jsonObj.get("os").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `os` to be a primitive type in the JSON string but got `%s`", jsonObj.get("os").toString()));
+      }
+      if ((jsonObj.get("browser") != null && !jsonObj.get("browser").isJsonNull()) && !jsonObj.get("browser").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `browser` to be a primitive type in the JSON string but got `%s`", jsonObj.get("browser").toString()));
+      }
+      if ((jsonObj.get("true_os") != null && !jsonObj.get("true_os").isJsonNull()) && !jsonObj.get("true_os").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `true_os` to be a primitive type in the JSON string but got `%s`", jsonObj.get("true_os").toString()));
+      }
+      if ((jsonObj.get("os_anomaly") != null && !jsonObj.get("os_anomaly").isJsonNull()) && !jsonObj.get("os_anomaly").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `os_anomaly` to be a primitive type in the JSON string but got `%s`", jsonObj.get("os_anomaly").toString()));
+      }
+      if ((jsonObj.get("ip_reputation") != null && !jsonObj.get("ip_reputation").isJsonNull()) && !jsonObj.get("ip_reputation").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `ip_reputation` to be a primitive type in the JSON string but got `%s`", jsonObj.get("ip_reputation").toString()));
+      }
+      // validate the optional field `ip_reputation`
+      if (jsonObj.get("ip_reputation") != null && !jsonObj.get("ip_reputation").isJsonNull()) {
+        IpReputationEnum.validateJsonElement(jsonObj.get("ip_reputation"));
+      }
+      if ((jsonObj.get("document_capture") != null && !jsonObj.get("document_capture").isJsonNull()) && !jsonObj.get("document_capture").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `document_capture` to be a primitive type in the JSON string but got `%s`", jsonObj.get("document_capture").toString()));
+      }
+      // validate the optional field `document_capture`
+      if (jsonObj.get("document_capture") != null && !jsonObj.get("document_capture").isJsonNull()) {
+        DocumentCaptureEnum.validateJsonElement(jsonObj.get("document_capture"));
+      }
+      if ((jsonObj.get("biometric_capture") != null && !jsonObj.get("biometric_capture").isJsonNull()) && !jsonObj.get("biometric_capture").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `biometric_capture` to be a primitive type in the JSON string but got `%s`", jsonObj.get("biometric_capture").toString()));
+      }
+      // validate the optional field `biometric_capture`
+      if (jsonObj.get("biometric_capture") != null && !jsonObj.get("biometric_capture").isJsonNull()) {
+        BiometricCaptureEnum.validateJsonElement(jsonObj.get("biometric_capture"));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!DeviceIntelligenceBreakdownPropertiesDevice.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'DeviceIntelligenceBreakdownPropertiesDevice' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<DeviceIntelligenceBreakdownPropertiesDevice> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(DeviceIntelligenceBreakdownPropertiesDevice.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<DeviceIntelligenceBreakdownPropertiesDevice>() {
+           @Override
+           public void write(JsonWriter out, DeviceIntelligenceBreakdownPropertiesDevice value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             obj.remove("additionalProperties");
+             // serialize additional properties
+             if (value.getAdditionalProperties() != null) {
+               for (Map.Entry<String, Object> entry : value.getAdditionalProperties().entrySet()) {
+                 if (entry.getValue() instanceof String)
+                   obj.addProperty(entry.getKey(), (String) entry.getValue());
+                 else if (entry.getValue() instanceof Number)
+                   obj.addProperty(entry.getKey(), (Number) entry.getValue());
+                 else if (entry.getValue() instanceof Boolean)
+                   obj.addProperty(entry.getKey(), (Boolean) entry.getValue());
+                 else if (entry.getValue() instanceof Character)
+                   obj.addProperty(entry.getKey(), (Character) entry.getValue());
+                 else {
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
+                 }
+               }
+             }
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public DeviceIntelligenceBreakdownPropertiesDevice read(JsonReader in) throws IOException {
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
+             // store additional fields in the deserialized instance
+             DeviceIntelligenceBreakdownPropertiesDevice instance = thisAdapter.fromJsonTree(jsonObj);
+             for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
+               if (!openapiFields.contains(entry.getKey())) {
+                 if (entry.getValue().isJsonPrimitive()) { // primitive type
+                   if (entry.getValue().getAsJsonPrimitive().isString())
+                     instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsString());
+                   else if (entry.getValue().getAsJsonPrimitive().isNumber())
+                     instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsNumber());
+                   else if (entry.getValue().getAsJsonPrimitive().isBoolean())
+                     instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
+                   else
+                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                 } else if (entry.getValue().isJsonArray()) {
+                     instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
+                 } else { // JSON object
+                     instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), HashMap.class));
+                 }
+               }
+             }
+             return instance;
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of DeviceIntelligenceBreakdownPropertiesDevice given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of DeviceIntelligenceBreakdownPropertiesDevice
+  * @throws IOException if the JSON string is invalid with respect to DeviceIntelligenceBreakdownPropertiesDevice
+  */
+  public static DeviceIntelligenceBreakdownPropertiesDevice fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, DeviceIntelligenceBreakdownPropertiesDevice.class);
+  }
+
+ /**
+  * Convert an instance of DeviceIntelligenceBreakdownPropertiesDevice to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

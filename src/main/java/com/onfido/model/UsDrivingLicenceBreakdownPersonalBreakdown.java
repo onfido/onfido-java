@@ -14,81 +14,97 @@
 package com.onfido.model;
 
 import java.util.Objects;
-import java.util.Map;
-import java.util.HashMap;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import com.onfido.model.DocumentBreakdownDataComparisonBreakdownIssuingCountry;
+import java.io.IOException;
 import java.util.Arrays;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.onfido.JSON;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import com.onfido.JSON;
 
 /**
  * UsDrivingLicenceBreakdownPersonalBreakdown
  */
-@JsonPropertyOrder({
-  UsDrivingLicenceBreakdownPersonalBreakdown.JSON_PROPERTY_FIRST_NAME,
-  UsDrivingLicenceBreakdownPersonalBreakdown.JSON_PROPERTY_NAME_SUFFIX,
-  UsDrivingLicenceBreakdownPersonalBreakdown.JSON_PROPERTY_HEIGHT,
-  UsDrivingLicenceBreakdownPersonalBreakdown.JSON_PROPERTY_WEIGHT,
-  UsDrivingLicenceBreakdownPersonalBreakdown.JSON_PROPERTY_SEX_CODE,
-  UsDrivingLicenceBreakdownPersonalBreakdown.JSON_PROPERTY_EYE_COLOR,
-  UsDrivingLicenceBreakdownPersonalBreakdown.JSON_PROPERTY_DATE_OF_BIRTH,
-  UsDrivingLicenceBreakdownPersonalBreakdown.JSON_PROPERTY_LAST_NAME,
-  UsDrivingLicenceBreakdownPersonalBreakdown.JSON_PROPERTY_MIDDLE_NAME,
-  UsDrivingLicenceBreakdownPersonalBreakdown.JSON_PROPERTY_FIRST_NAME_FUZZY,
-  UsDrivingLicenceBreakdownPersonalBreakdown.JSON_PROPERTY_MIDDLE_NAME_FUZZY,
-  UsDrivingLicenceBreakdownPersonalBreakdown.JSON_PROPERTY_LAST_NAME_FUZZY,
-  UsDrivingLicenceBreakdownPersonalBreakdown.JSON_PROPERTY_MIDDLE_INITIAL
-})
-@JsonTypeName("us_driving_licence_breakdown_personal_breakdown")
-@com.fasterxml.jackson.annotation.JsonIgnoreProperties(ignoreUnknown = true)
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class UsDrivingLicenceBreakdownPersonalBreakdown {
-  public static final String JSON_PROPERTY_FIRST_NAME = "first_name";
+  public static final String SERIALIZED_NAME_FIRST_NAME = "first_name";
+  @SerializedName(SERIALIZED_NAME_FIRST_NAME)
   private DocumentBreakdownDataComparisonBreakdownIssuingCountry firstName;
 
-  public static final String JSON_PROPERTY_NAME_SUFFIX = "name_suffix";
+  public static final String SERIALIZED_NAME_NAME_SUFFIX = "name_suffix";
+  @SerializedName(SERIALIZED_NAME_NAME_SUFFIX)
   private DocumentBreakdownDataComparisonBreakdownIssuingCountry nameSuffix;
 
-  public static final String JSON_PROPERTY_HEIGHT = "height";
+  public static final String SERIALIZED_NAME_HEIGHT = "height";
+  @SerializedName(SERIALIZED_NAME_HEIGHT)
   private DocumentBreakdownDataComparisonBreakdownIssuingCountry height;
 
-  public static final String JSON_PROPERTY_WEIGHT = "weight";
+  public static final String SERIALIZED_NAME_WEIGHT = "weight";
+  @SerializedName(SERIALIZED_NAME_WEIGHT)
   private DocumentBreakdownDataComparisonBreakdownIssuingCountry weight;
 
-  public static final String JSON_PROPERTY_SEX_CODE = "sex_code";
+  public static final String SERIALIZED_NAME_SEX_CODE = "sex_code";
+  @SerializedName(SERIALIZED_NAME_SEX_CODE)
   private DocumentBreakdownDataComparisonBreakdownIssuingCountry sexCode;
 
-  public static final String JSON_PROPERTY_EYE_COLOR = "eye_color";
+  public static final String SERIALIZED_NAME_EYE_COLOR = "eye_color";
+  @SerializedName(SERIALIZED_NAME_EYE_COLOR)
   private DocumentBreakdownDataComparisonBreakdownIssuingCountry eyeColor;
 
-  public static final String JSON_PROPERTY_DATE_OF_BIRTH = "date_of_birth";
+  public static final String SERIALIZED_NAME_DATE_OF_BIRTH = "date_of_birth";
+  @SerializedName(SERIALIZED_NAME_DATE_OF_BIRTH)
   private DocumentBreakdownDataComparisonBreakdownIssuingCountry dateOfBirth;
 
-  public static final String JSON_PROPERTY_LAST_NAME = "last_name";
+  public static final String SERIALIZED_NAME_LAST_NAME = "last_name";
+  @SerializedName(SERIALIZED_NAME_LAST_NAME)
   private DocumentBreakdownDataComparisonBreakdownIssuingCountry lastName;
 
-  public static final String JSON_PROPERTY_MIDDLE_NAME = "middle_name";
+  public static final String SERIALIZED_NAME_MIDDLE_NAME = "middle_name";
+  @SerializedName(SERIALIZED_NAME_MIDDLE_NAME)
   private DocumentBreakdownDataComparisonBreakdownIssuingCountry middleName;
 
-  public static final String JSON_PROPERTY_FIRST_NAME_FUZZY = "first_name_fuzzy";
+  public static final String SERIALIZED_NAME_FIRST_NAME_FUZZY = "first_name_fuzzy";
+  @SerializedName(SERIALIZED_NAME_FIRST_NAME_FUZZY)
   private DocumentBreakdownDataComparisonBreakdownIssuingCountry firstNameFuzzy;
 
-  public static final String JSON_PROPERTY_MIDDLE_NAME_FUZZY = "middle_name_fuzzy";
+  public static final String SERIALIZED_NAME_MIDDLE_NAME_FUZZY = "middle_name_fuzzy";
+  @SerializedName(SERIALIZED_NAME_MIDDLE_NAME_FUZZY)
   private DocumentBreakdownDataComparisonBreakdownIssuingCountry middleNameFuzzy;
 
-  public static final String JSON_PROPERTY_LAST_NAME_FUZZY = "last_name_fuzzy";
+  public static final String SERIALIZED_NAME_LAST_NAME_FUZZY = "last_name_fuzzy";
+  @SerializedName(SERIALIZED_NAME_LAST_NAME_FUZZY)
   private DocumentBreakdownDataComparisonBreakdownIssuingCountry lastNameFuzzy;
 
-  public static final String JSON_PROPERTY_MIDDLE_INITIAL = "middle_initial";
+  public static final String SERIALIZED_NAME_MIDDLE_INITIAL = "middle_initial";
+  @SerializedName(SERIALIZED_NAME_MIDDLE_INITIAL)
   private DocumentBreakdownDataComparisonBreakdownIssuingCountry middleInitial;
 
-  public UsDrivingLicenceBreakdownPersonalBreakdown() { 
+  public UsDrivingLicenceBreakdownPersonalBreakdown() {
   }
 
   public UsDrivingLicenceBreakdownPersonalBreakdown firstName(DocumentBreakdownDataComparisonBreakdownIssuingCountry firstName) {
@@ -101,16 +117,10 @@ public class UsDrivingLicenceBreakdownPersonalBreakdown {
    * @return firstName
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_FIRST_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public DocumentBreakdownDataComparisonBreakdownIssuingCountry getFirstName() {
     return firstName;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_FIRST_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setFirstName(DocumentBreakdownDataComparisonBreakdownIssuingCountry firstName) {
     this.firstName = firstName;
   }
@@ -126,16 +136,10 @@ public class UsDrivingLicenceBreakdownPersonalBreakdown {
    * @return nameSuffix
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_NAME_SUFFIX)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public DocumentBreakdownDataComparisonBreakdownIssuingCountry getNameSuffix() {
     return nameSuffix;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_NAME_SUFFIX)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setNameSuffix(DocumentBreakdownDataComparisonBreakdownIssuingCountry nameSuffix) {
     this.nameSuffix = nameSuffix;
   }
@@ -151,16 +155,10 @@ public class UsDrivingLicenceBreakdownPersonalBreakdown {
    * @return height
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_HEIGHT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public DocumentBreakdownDataComparisonBreakdownIssuingCountry getHeight() {
     return height;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_HEIGHT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setHeight(DocumentBreakdownDataComparisonBreakdownIssuingCountry height) {
     this.height = height;
   }
@@ -176,16 +174,10 @@ public class UsDrivingLicenceBreakdownPersonalBreakdown {
    * @return weight
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_WEIGHT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public DocumentBreakdownDataComparisonBreakdownIssuingCountry getWeight() {
     return weight;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_WEIGHT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setWeight(DocumentBreakdownDataComparisonBreakdownIssuingCountry weight) {
     this.weight = weight;
   }
@@ -201,16 +193,10 @@ public class UsDrivingLicenceBreakdownPersonalBreakdown {
    * @return sexCode
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_SEX_CODE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public DocumentBreakdownDataComparisonBreakdownIssuingCountry getSexCode() {
     return sexCode;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_SEX_CODE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSexCode(DocumentBreakdownDataComparisonBreakdownIssuingCountry sexCode) {
     this.sexCode = sexCode;
   }
@@ -226,16 +212,10 @@ public class UsDrivingLicenceBreakdownPersonalBreakdown {
    * @return eyeColor
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_EYE_COLOR)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public DocumentBreakdownDataComparisonBreakdownIssuingCountry getEyeColor() {
     return eyeColor;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_EYE_COLOR)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setEyeColor(DocumentBreakdownDataComparisonBreakdownIssuingCountry eyeColor) {
     this.eyeColor = eyeColor;
   }
@@ -251,16 +231,10 @@ public class UsDrivingLicenceBreakdownPersonalBreakdown {
    * @return dateOfBirth
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_DATE_OF_BIRTH)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public DocumentBreakdownDataComparisonBreakdownIssuingCountry getDateOfBirth() {
     return dateOfBirth;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_DATE_OF_BIRTH)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDateOfBirth(DocumentBreakdownDataComparisonBreakdownIssuingCountry dateOfBirth) {
     this.dateOfBirth = dateOfBirth;
   }
@@ -276,16 +250,10 @@ public class UsDrivingLicenceBreakdownPersonalBreakdown {
    * @return lastName
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_LAST_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public DocumentBreakdownDataComparisonBreakdownIssuingCountry getLastName() {
     return lastName;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_LAST_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setLastName(DocumentBreakdownDataComparisonBreakdownIssuingCountry lastName) {
     this.lastName = lastName;
   }
@@ -301,16 +269,10 @@ public class UsDrivingLicenceBreakdownPersonalBreakdown {
    * @return middleName
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_MIDDLE_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public DocumentBreakdownDataComparisonBreakdownIssuingCountry getMiddleName() {
     return middleName;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_MIDDLE_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMiddleName(DocumentBreakdownDataComparisonBreakdownIssuingCountry middleName) {
     this.middleName = middleName;
   }
@@ -326,16 +288,10 @@ public class UsDrivingLicenceBreakdownPersonalBreakdown {
    * @return firstNameFuzzy
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_FIRST_NAME_FUZZY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public DocumentBreakdownDataComparisonBreakdownIssuingCountry getFirstNameFuzzy() {
     return firstNameFuzzy;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_FIRST_NAME_FUZZY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setFirstNameFuzzy(DocumentBreakdownDataComparisonBreakdownIssuingCountry firstNameFuzzy) {
     this.firstNameFuzzy = firstNameFuzzy;
   }
@@ -351,16 +307,10 @@ public class UsDrivingLicenceBreakdownPersonalBreakdown {
    * @return middleNameFuzzy
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_MIDDLE_NAME_FUZZY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public DocumentBreakdownDataComparisonBreakdownIssuingCountry getMiddleNameFuzzy() {
     return middleNameFuzzy;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_MIDDLE_NAME_FUZZY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMiddleNameFuzzy(DocumentBreakdownDataComparisonBreakdownIssuingCountry middleNameFuzzy) {
     this.middleNameFuzzy = middleNameFuzzy;
   }
@@ -376,16 +326,10 @@ public class UsDrivingLicenceBreakdownPersonalBreakdown {
    * @return lastNameFuzzy
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_LAST_NAME_FUZZY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public DocumentBreakdownDataComparisonBreakdownIssuingCountry getLastNameFuzzy() {
     return lastNameFuzzy;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_LAST_NAME_FUZZY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setLastNameFuzzy(DocumentBreakdownDataComparisonBreakdownIssuingCountry lastNameFuzzy) {
     this.lastNameFuzzy = lastNameFuzzy;
   }
@@ -401,24 +345,60 @@ public class UsDrivingLicenceBreakdownPersonalBreakdown {
    * @return middleInitial
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_MIDDLE_INITIAL)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public DocumentBreakdownDataComparisonBreakdownIssuingCountry getMiddleInitial() {
     return middleInitial;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_MIDDLE_INITIAL)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMiddleInitial(DocumentBreakdownDataComparisonBreakdownIssuingCountry middleInitial) {
     this.middleInitial = middleInitial;
   }
 
+  /**
+   * A container for additional, undeclared properties.
+   * This is a holder for any undeclared properties as specified with
+   * the 'additionalProperties' keyword in the OAS document.
+   */
+  private Map<String, Object> additionalProperties;
 
   /**
-   * Return true if this us_driving_licence_breakdown_personal_breakdown object is equal to o.
+   * Set the additional (undeclared) property with the specified name and value.
+   * If the property does not already exist, create it otherwise replace it.
+   *
+   * @param key name of the property
+   * @param value value of the property
+   * @return the UsDrivingLicenceBreakdownPersonalBreakdown instance itself
    */
+  public UsDrivingLicenceBreakdownPersonalBreakdown putAdditionalProperty(String key, Object value) {
+    if (this.additionalProperties == null) {
+        this.additionalProperties = new HashMap<String, Object>();
+    }
+    this.additionalProperties.put(key, value);
+    return this;
+  }
+
+  /**
+   * Return the additional (undeclared) property.
+   *
+   * @return a map of objects
+   */
+  public Map<String, Object> getAdditionalProperties() {
+    return additionalProperties;
+  }
+
+  /**
+   * Return the additional (undeclared) property with the specified name.
+   *
+   * @param key name of the property
+   * @return an object
+   */
+  public Object getAdditionalProperty(String key) {
+    if (this.additionalProperties == null) {
+        return null;
+    }
+    return this.additionalProperties.get(key);
+  }
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -440,12 +420,13 @@ public class UsDrivingLicenceBreakdownPersonalBreakdown {
         Objects.equals(this.firstNameFuzzy, usDrivingLicenceBreakdownPersonalBreakdown.firstNameFuzzy) &&
         Objects.equals(this.middleNameFuzzy, usDrivingLicenceBreakdownPersonalBreakdown.middleNameFuzzy) &&
         Objects.equals(this.lastNameFuzzy, usDrivingLicenceBreakdownPersonalBreakdown.lastNameFuzzy) &&
-        Objects.equals(this.middleInitial, usDrivingLicenceBreakdownPersonalBreakdown.middleInitial);
+        Objects.equals(this.middleInitial, usDrivingLicenceBreakdownPersonalBreakdown.middleInitial)&&
+        Objects.equals(this.additionalProperties, usDrivingLicenceBreakdownPersonalBreakdown.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(firstName, nameSuffix, height, weight, sexCode, eyeColor, dateOfBirth, lastName, middleName, firstNameFuzzy, middleNameFuzzy, lastNameFuzzy, middleInitial);
+    return Objects.hash(firstName, nameSuffix, height, weight, sexCode, eyeColor, dateOfBirth, lastName, middleName, firstNameFuzzy, middleNameFuzzy, lastNameFuzzy, middleInitial, additionalProperties);
   }
 
   @Override
@@ -465,6 +446,7 @@ public class UsDrivingLicenceBreakdownPersonalBreakdown {
     sb.append("    middleNameFuzzy: ").append(toIndentedString(middleNameFuzzy)).append("\n");
     sb.append("    lastNameFuzzy: ").append(toIndentedString(lastNameFuzzy)).append("\n");
     sb.append("    middleInitial: ").append(toIndentedString(middleInitial)).append("\n");
+    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -480,5 +462,188 @@ public class UsDrivingLicenceBreakdownPersonalBreakdown {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("first_name");
+    openapiFields.add("name_suffix");
+    openapiFields.add("height");
+    openapiFields.add("weight");
+    openapiFields.add("sex_code");
+    openapiFields.add("eye_color");
+    openapiFields.add("date_of_birth");
+    openapiFields.add("last_name");
+    openapiFields.add("middle_name");
+    openapiFields.add("first_name_fuzzy");
+    openapiFields.add("middle_name_fuzzy");
+    openapiFields.add("last_name_fuzzy");
+    openapiFields.add("middle_initial");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+  }
+
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to UsDrivingLicenceBreakdownPersonalBreakdown
+  */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!UsDrivingLicenceBreakdownPersonalBreakdown.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in UsDrivingLicenceBreakdownPersonalBreakdown is not found in the empty JSON string", UsDrivingLicenceBreakdownPersonalBreakdown.openapiRequiredFields.toString()));
+        }
+      }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // validate the optional field `first_name`
+      if (jsonObj.get("first_name") != null && !jsonObj.get("first_name").isJsonNull()) {
+        DocumentBreakdownDataComparisonBreakdownIssuingCountry.validateJsonElement(jsonObj.get("first_name"));
+      }
+      // validate the optional field `name_suffix`
+      if (jsonObj.get("name_suffix") != null && !jsonObj.get("name_suffix").isJsonNull()) {
+        DocumentBreakdownDataComparisonBreakdownIssuingCountry.validateJsonElement(jsonObj.get("name_suffix"));
+      }
+      // validate the optional field `height`
+      if (jsonObj.get("height") != null && !jsonObj.get("height").isJsonNull()) {
+        DocumentBreakdownDataComparisonBreakdownIssuingCountry.validateJsonElement(jsonObj.get("height"));
+      }
+      // validate the optional field `weight`
+      if (jsonObj.get("weight") != null && !jsonObj.get("weight").isJsonNull()) {
+        DocumentBreakdownDataComparisonBreakdownIssuingCountry.validateJsonElement(jsonObj.get("weight"));
+      }
+      // validate the optional field `sex_code`
+      if (jsonObj.get("sex_code") != null && !jsonObj.get("sex_code").isJsonNull()) {
+        DocumentBreakdownDataComparisonBreakdownIssuingCountry.validateJsonElement(jsonObj.get("sex_code"));
+      }
+      // validate the optional field `eye_color`
+      if (jsonObj.get("eye_color") != null && !jsonObj.get("eye_color").isJsonNull()) {
+        DocumentBreakdownDataComparisonBreakdownIssuingCountry.validateJsonElement(jsonObj.get("eye_color"));
+      }
+      // validate the optional field `date_of_birth`
+      if (jsonObj.get("date_of_birth") != null && !jsonObj.get("date_of_birth").isJsonNull()) {
+        DocumentBreakdownDataComparisonBreakdownIssuingCountry.validateJsonElement(jsonObj.get("date_of_birth"));
+      }
+      // validate the optional field `last_name`
+      if (jsonObj.get("last_name") != null && !jsonObj.get("last_name").isJsonNull()) {
+        DocumentBreakdownDataComparisonBreakdownIssuingCountry.validateJsonElement(jsonObj.get("last_name"));
+      }
+      // validate the optional field `middle_name`
+      if (jsonObj.get("middle_name") != null && !jsonObj.get("middle_name").isJsonNull()) {
+        DocumentBreakdownDataComparisonBreakdownIssuingCountry.validateJsonElement(jsonObj.get("middle_name"));
+      }
+      // validate the optional field `first_name_fuzzy`
+      if (jsonObj.get("first_name_fuzzy") != null && !jsonObj.get("first_name_fuzzy").isJsonNull()) {
+        DocumentBreakdownDataComparisonBreakdownIssuingCountry.validateJsonElement(jsonObj.get("first_name_fuzzy"));
+      }
+      // validate the optional field `middle_name_fuzzy`
+      if (jsonObj.get("middle_name_fuzzy") != null && !jsonObj.get("middle_name_fuzzy").isJsonNull()) {
+        DocumentBreakdownDataComparisonBreakdownIssuingCountry.validateJsonElement(jsonObj.get("middle_name_fuzzy"));
+      }
+      // validate the optional field `last_name_fuzzy`
+      if (jsonObj.get("last_name_fuzzy") != null && !jsonObj.get("last_name_fuzzy").isJsonNull()) {
+        DocumentBreakdownDataComparisonBreakdownIssuingCountry.validateJsonElement(jsonObj.get("last_name_fuzzy"));
+      }
+      // validate the optional field `middle_initial`
+      if (jsonObj.get("middle_initial") != null && !jsonObj.get("middle_initial").isJsonNull()) {
+        DocumentBreakdownDataComparisonBreakdownIssuingCountry.validateJsonElement(jsonObj.get("middle_initial"));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!UsDrivingLicenceBreakdownPersonalBreakdown.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'UsDrivingLicenceBreakdownPersonalBreakdown' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<UsDrivingLicenceBreakdownPersonalBreakdown> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(UsDrivingLicenceBreakdownPersonalBreakdown.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<UsDrivingLicenceBreakdownPersonalBreakdown>() {
+           @Override
+           public void write(JsonWriter out, UsDrivingLicenceBreakdownPersonalBreakdown value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             obj.remove("additionalProperties");
+             // serialize additional properties
+             if (value.getAdditionalProperties() != null) {
+               for (Map.Entry<String, Object> entry : value.getAdditionalProperties().entrySet()) {
+                 if (entry.getValue() instanceof String)
+                   obj.addProperty(entry.getKey(), (String) entry.getValue());
+                 else if (entry.getValue() instanceof Number)
+                   obj.addProperty(entry.getKey(), (Number) entry.getValue());
+                 else if (entry.getValue() instanceof Boolean)
+                   obj.addProperty(entry.getKey(), (Boolean) entry.getValue());
+                 else if (entry.getValue() instanceof Character)
+                   obj.addProperty(entry.getKey(), (Character) entry.getValue());
+                 else {
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
+                 }
+               }
+             }
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public UsDrivingLicenceBreakdownPersonalBreakdown read(JsonReader in) throws IOException {
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
+             // store additional fields in the deserialized instance
+             UsDrivingLicenceBreakdownPersonalBreakdown instance = thisAdapter.fromJsonTree(jsonObj);
+             for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
+               if (!openapiFields.contains(entry.getKey())) {
+                 if (entry.getValue().isJsonPrimitive()) { // primitive type
+                   if (entry.getValue().getAsJsonPrimitive().isString())
+                     instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsString());
+                   else if (entry.getValue().getAsJsonPrimitive().isNumber())
+                     instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsNumber());
+                   else if (entry.getValue().getAsJsonPrimitive().isBoolean())
+                     instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
+                   else
+                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                 } else if (entry.getValue().isJsonArray()) {
+                     instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
+                 } else { // JSON object
+                     instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), HashMap.class));
+                 }
+               }
+             }
+             return instance;
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of UsDrivingLicenceBreakdownPersonalBreakdown given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of UsDrivingLicenceBreakdownPersonalBreakdown
+  * @throws IOException if the JSON string is invalid with respect to UsDrivingLicenceBreakdownPersonalBreakdown
+  */
+  public static UsDrivingLicenceBreakdownPersonalBreakdown fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, UsDrivingLicenceBreakdownPersonalBreakdown.class);
+  }
+
+ /**
+  * Convert an instance of UsDrivingLicenceBreakdownPersonalBreakdown to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

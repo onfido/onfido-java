@@ -14,59 +14,75 @@
 package com.onfido.model;
 
 import java.util.Objects;
-import java.util.Map;
-import java.util.HashMap;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import com.onfido.model.DocumentBreakdownDataComparisonBreakdownIssuingCountry;
 import com.onfido.model.DocumentBreakdownDataValidationBreakdownDocumentExpiration;
 import com.onfido.model.DocumentBreakdownDataValidationBreakdownExpiryDate;
+import java.io.IOException;
 import java.util.Arrays;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.onfido.JSON;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import com.onfido.JSON;
 
 /**
  * DocumentBreakdownDataValidationBreakdown
  */
-@JsonPropertyOrder({
-  DocumentBreakdownDataValidationBreakdown.JSON_PROPERTY_GENDER,
-  DocumentBreakdownDataValidationBreakdown.JSON_PROPERTY_DATE_OF_BIRTH,
-  DocumentBreakdownDataValidationBreakdown.JSON_PROPERTY_DOCUMENT_NUMBERS,
-  DocumentBreakdownDataValidationBreakdown.JSON_PROPERTY_DOCUMENT_EXPIRATION,
-  DocumentBreakdownDataValidationBreakdown.JSON_PROPERTY_EXPIRY_DATE,
-  DocumentBreakdownDataValidationBreakdown.JSON_PROPERTY_MRZ,
-  DocumentBreakdownDataValidationBreakdown.JSON_PROPERTY_BARCODE
-})
-@JsonTypeName("document_breakdown_data_validation_breakdown")
-@com.fasterxml.jackson.annotation.JsonIgnoreProperties(ignoreUnknown = true)
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class DocumentBreakdownDataValidationBreakdown {
-  public static final String JSON_PROPERTY_GENDER = "gender";
+  public static final String SERIALIZED_NAME_GENDER = "gender";
+  @SerializedName(SERIALIZED_NAME_GENDER)
   private DocumentBreakdownDataComparisonBreakdownIssuingCountry gender;
 
-  public static final String JSON_PROPERTY_DATE_OF_BIRTH = "date_of_birth";
+  public static final String SERIALIZED_NAME_DATE_OF_BIRTH = "date_of_birth";
+  @SerializedName(SERIALIZED_NAME_DATE_OF_BIRTH)
   private DocumentBreakdownDataComparisonBreakdownIssuingCountry dateOfBirth;
 
-  public static final String JSON_PROPERTY_DOCUMENT_NUMBERS = "document_numbers";
+  public static final String SERIALIZED_NAME_DOCUMENT_NUMBERS = "document_numbers";
+  @SerializedName(SERIALIZED_NAME_DOCUMENT_NUMBERS)
   private DocumentBreakdownDataComparisonBreakdownIssuingCountry documentNumbers;
 
-  public static final String JSON_PROPERTY_DOCUMENT_EXPIRATION = "document_expiration";
+  public static final String SERIALIZED_NAME_DOCUMENT_EXPIRATION = "document_expiration";
+  @SerializedName(SERIALIZED_NAME_DOCUMENT_EXPIRATION)
   private DocumentBreakdownDataValidationBreakdownDocumentExpiration documentExpiration;
 
-  public static final String JSON_PROPERTY_EXPIRY_DATE = "expiry_date";
+  public static final String SERIALIZED_NAME_EXPIRY_DATE = "expiry_date";
+  @SerializedName(SERIALIZED_NAME_EXPIRY_DATE)
   private DocumentBreakdownDataValidationBreakdownExpiryDate expiryDate;
 
-  public static final String JSON_PROPERTY_MRZ = "mrz";
+  public static final String SERIALIZED_NAME_MRZ = "mrz";
+  @SerializedName(SERIALIZED_NAME_MRZ)
   private DocumentBreakdownDataComparisonBreakdownIssuingCountry mrz;
 
-  public static final String JSON_PROPERTY_BARCODE = "barcode";
+  public static final String SERIALIZED_NAME_BARCODE = "barcode";
+  @SerializedName(SERIALIZED_NAME_BARCODE)
   private DocumentBreakdownDataComparisonBreakdownIssuingCountry barcode;
 
-  public DocumentBreakdownDataValidationBreakdown() { 
+  public DocumentBreakdownDataValidationBreakdown() {
   }
 
   public DocumentBreakdownDataValidationBreakdown gender(DocumentBreakdownDataComparisonBreakdownIssuingCountry gender) {
@@ -79,16 +95,10 @@ public class DocumentBreakdownDataValidationBreakdown {
    * @return gender
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_GENDER)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public DocumentBreakdownDataComparisonBreakdownIssuingCountry getGender() {
     return gender;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_GENDER)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setGender(DocumentBreakdownDataComparisonBreakdownIssuingCountry gender) {
     this.gender = gender;
   }
@@ -104,16 +114,10 @@ public class DocumentBreakdownDataValidationBreakdown {
    * @return dateOfBirth
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_DATE_OF_BIRTH)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public DocumentBreakdownDataComparisonBreakdownIssuingCountry getDateOfBirth() {
     return dateOfBirth;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_DATE_OF_BIRTH)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDateOfBirth(DocumentBreakdownDataComparisonBreakdownIssuingCountry dateOfBirth) {
     this.dateOfBirth = dateOfBirth;
   }
@@ -129,16 +133,10 @@ public class DocumentBreakdownDataValidationBreakdown {
    * @return documentNumbers
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_DOCUMENT_NUMBERS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public DocumentBreakdownDataComparisonBreakdownIssuingCountry getDocumentNumbers() {
     return documentNumbers;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_DOCUMENT_NUMBERS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDocumentNumbers(DocumentBreakdownDataComparisonBreakdownIssuingCountry documentNumbers) {
     this.documentNumbers = documentNumbers;
   }
@@ -154,16 +152,10 @@ public class DocumentBreakdownDataValidationBreakdown {
    * @return documentExpiration
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_DOCUMENT_EXPIRATION)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public DocumentBreakdownDataValidationBreakdownDocumentExpiration getDocumentExpiration() {
     return documentExpiration;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_DOCUMENT_EXPIRATION)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDocumentExpiration(DocumentBreakdownDataValidationBreakdownDocumentExpiration documentExpiration) {
     this.documentExpiration = documentExpiration;
   }
@@ -179,16 +171,10 @@ public class DocumentBreakdownDataValidationBreakdown {
    * @return expiryDate
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_EXPIRY_DATE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public DocumentBreakdownDataValidationBreakdownExpiryDate getExpiryDate() {
     return expiryDate;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_EXPIRY_DATE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setExpiryDate(DocumentBreakdownDataValidationBreakdownExpiryDate expiryDate) {
     this.expiryDate = expiryDate;
   }
@@ -204,16 +190,10 @@ public class DocumentBreakdownDataValidationBreakdown {
    * @return mrz
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_MRZ)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public DocumentBreakdownDataComparisonBreakdownIssuingCountry getMrz() {
     return mrz;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_MRZ)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMrz(DocumentBreakdownDataComparisonBreakdownIssuingCountry mrz) {
     this.mrz = mrz;
   }
@@ -229,24 +209,60 @@ public class DocumentBreakdownDataValidationBreakdown {
    * @return barcode
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_BARCODE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public DocumentBreakdownDataComparisonBreakdownIssuingCountry getBarcode() {
     return barcode;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_BARCODE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setBarcode(DocumentBreakdownDataComparisonBreakdownIssuingCountry barcode) {
     this.barcode = barcode;
   }
 
+  /**
+   * A container for additional, undeclared properties.
+   * This is a holder for any undeclared properties as specified with
+   * the 'additionalProperties' keyword in the OAS document.
+   */
+  private Map<String, Object> additionalProperties;
 
   /**
-   * Return true if this document_breakdown_data_validation_breakdown object is equal to o.
+   * Set the additional (undeclared) property with the specified name and value.
+   * If the property does not already exist, create it otherwise replace it.
+   *
+   * @param key name of the property
+   * @param value value of the property
+   * @return the DocumentBreakdownDataValidationBreakdown instance itself
    */
+  public DocumentBreakdownDataValidationBreakdown putAdditionalProperty(String key, Object value) {
+    if (this.additionalProperties == null) {
+        this.additionalProperties = new HashMap<String, Object>();
+    }
+    this.additionalProperties.put(key, value);
+    return this;
+  }
+
+  /**
+   * Return the additional (undeclared) property.
+   *
+   * @return a map of objects
+   */
+  public Map<String, Object> getAdditionalProperties() {
+    return additionalProperties;
+  }
+
+  /**
+   * Return the additional (undeclared) property with the specified name.
+   *
+   * @param key name of the property
+   * @return an object
+   */
+  public Object getAdditionalProperty(String key) {
+    if (this.additionalProperties == null) {
+        return null;
+    }
+    return this.additionalProperties.get(key);
+  }
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -262,12 +278,13 @@ public class DocumentBreakdownDataValidationBreakdown {
         Objects.equals(this.documentExpiration, documentBreakdownDataValidationBreakdown.documentExpiration) &&
         Objects.equals(this.expiryDate, documentBreakdownDataValidationBreakdown.expiryDate) &&
         Objects.equals(this.mrz, documentBreakdownDataValidationBreakdown.mrz) &&
-        Objects.equals(this.barcode, documentBreakdownDataValidationBreakdown.barcode);
+        Objects.equals(this.barcode, documentBreakdownDataValidationBreakdown.barcode)&&
+        Objects.equals(this.additionalProperties, documentBreakdownDataValidationBreakdown.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(gender, dateOfBirth, documentNumbers, documentExpiration, expiryDate, mrz, barcode);
+    return Objects.hash(gender, dateOfBirth, documentNumbers, documentExpiration, expiryDate, mrz, barcode, additionalProperties);
   }
 
   @Override
@@ -281,6 +298,7 @@ public class DocumentBreakdownDataValidationBreakdown {
     sb.append("    expiryDate: ").append(toIndentedString(expiryDate)).append("\n");
     sb.append("    mrz: ").append(toIndentedString(mrz)).append("\n");
     sb.append("    barcode: ").append(toIndentedString(barcode)).append("\n");
+    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -296,5 +314,158 @@ public class DocumentBreakdownDataValidationBreakdown {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("gender");
+    openapiFields.add("date_of_birth");
+    openapiFields.add("document_numbers");
+    openapiFields.add("document_expiration");
+    openapiFields.add("expiry_date");
+    openapiFields.add("mrz");
+    openapiFields.add("barcode");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+  }
+
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to DocumentBreakdownDataValidationBreakdown
+  */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!DocumentBreakdownDataValidationBreakdown.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in DocumentBreakdownDataValidationBreakdown is not found in the empty JSON string", DocumentBreakdownDataValidationBreakdown.openapiRequiredFields.toString()));
+        }
+      }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // validate the optional field `gender`
+      if (jsonObj.get("gender") != null && !jsonObj.get("gender").isJsonNull()) {
+        DocumentBreakdownDataComparisonBreakdownIssuingCountry.validateJsonElement(jsonObj.get("gender"));
+      }
+      // validate the optional field `date_of_birth`
+      if (jsonObj.get("date_of_birth") != null && !jsonObj.get("date_of_birth").isJsonNull()) {
+        DocumentBreakdownDataComparisonBreakdownIssuingCountry.validateJsonElement(jsonObj.get("date_of_birth"));
+      }
+      // validate the optional field `document_numbers`
+      if (jsonObj.get("document_numbers") != null && !jsonObj.get("document_numbers").isJsonNull()) {
+        DocumentBreakdownDataComparisonBreakdownIssuingCountry.validateJsonElement(jsonObj.get("document_numbers"));
+      }
+      // validate the optional field `document_expiration`
+      if (jsonObj.get("document_expiration") != null && !jsonObj.get("document_expiration").isJsonNull()) {
+        DocumentBreakdownDataValidationBreakdownDocumentExpiration.validateJsonElement(jsonObj.get("document_expiration"));
+      }
+      // validate the optional field `expiry_date`
+      if (jsonObj.get("expiry_date") != null && !jsonObj.get("expiry_date").isJsonNull()) {
+        DocumentBreakdownDataValidationBreakdownExpiryDate.validateJsonElement(jsonObj.get("expiry_date"));
+      }
+      // validate the optional field `mrz`
+      if (jsonObj.get("mrz") != null && !jsonObj.get("mrz").isJsonNull()) {
+        DocumentBreakdownDataComparisonBreakdownIssuingCountry.validateJsonElement(jsonObj.get("mrz"));
+      }
+      // validate the optional field `barcode`
+      if (jsonObj.get("barcode") != null && !jsonObj.get("barcode").isJsonNull()) {
+        DocumentBreakdownDataComparisonBreakdownIssuingCountry.validateJsonElement(jsonObj.get("barcode"));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!DocumentBreakdownDataValidationBreakdown.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'DocumentBreakdownDataValidationBreakdown' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<DocumentBreakdownDataValidationBreakdown> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(DocumentBreakdownDataValidationBreakdown.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<DocumentBreakdownDataValidationBreakdown>() {
+           @Override
+           public void write(JsonWriter out, DocumentBreakdownDataValidationBreakdown value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             obj.remove("additionalProperties");
+             // serialize additional properties
+             if (value.getAdditionalProperties() != null) {
+               for (Map.Entry<String, Object> entry : value.getAdditionalProperties().entrySet()) {
+                 if (entry.getValue() instanceof String)
+                   obj.addProperty(entry.getKey(), (String) entry.getValue());
+                 else if (entry.getValue() instanceof Number)
+                   obj.addProperty(entry.getKey(), (Number) entry.getValue());
+                 else if (entry.getValue() instanceof Boolean)
+                   obj.addProperty(entry.getKey(), (Boolean) entry.getValue());
+                 else if (entry.getValue() instanceof Character)
+                   obj.addProperty(entry.getKey(), (Character) entry.getValue());
+                 else {
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
+                 }
+               }
+             }
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public DocumentBreakdownDataValidationBreakdown read(JsonReader in) throws IOException {
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
+             // store additional fields in the deserialized instance
+             DocumentBreakdownDataValidationBreakdown instance = thisAdapter.fromJsonTree(jsonObj);
+             for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
+               if (!openapiFields.contains(entry.getKey())) {
+                 if (entry.getValue().isJsonPrimitive()) { // primitive type
+                   if (entry.getValue().getAsJsonPrimitive().isString())
+                     instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsString());
+                   else if (entry.getValue().getAsJsonPrimitive().isNumber())
+                     instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsNumber());
+                   else if (entry.getValue().getAsJsonPrimitive().isBoolean())
+                     instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
+                   else
+                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                 } else if (entry.getValue().isJsonArray()) {
+                     instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
+                 } else { // JSON object
+                     instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), HashMap.class));
+                 }
+               }
+             }
+             return instance;
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of DocumentBreakdownDataValidationBreakdown given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of DocumentBreakdownDataValidationBreakdown
+  * @throws IOException if the JSON string is invalid with respect to DocumentBreakdownDataValidationBreakdown
+  */
+  public static DocumentBreakdownDataValidationBreakdown fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, DocumentBreakdownDataValidationBreakdown.class);
+  }
+
+ /**
+  * Convert an instance of DocumentBreakdownDataValidationBreakdown to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

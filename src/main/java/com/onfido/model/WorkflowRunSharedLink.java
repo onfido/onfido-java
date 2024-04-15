@@ -14,48 +14,64 @@
 package com.onfido.model;
 
 import java.util.Objects;
-import java.util.Map;
-import java.util.HashMap;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.Arrays;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.onfido.JSON;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import com.onfido.JSON;
 
 /**
  * Object for the configuration of the Workflow Run link.
  */
-@JsonPropertyOrder({
-  WorkflowRunSharedLink.JSON_PROPERTY_URL,
-  WorkflowRunSharedLink.JSON_PROPERTY_COMPLETED_REDIRECT_URL,
-  WorkflowRunSharedLink.JSON_PROPERTY_EXPIRED_REDIRECT_URL,
-  WorkflowRunSharedLink.JSON_PROPERTY_EXPIRES_AT,
-  WorkflowRunSharedLink.JSON_PROPERTY_LANGUAGE
-})
-@JsonTypeName("workflow_run_shared_link")
-@com.fasterxml.jackson.annotation.JsonIgnoreProperties(ignoreUnknown = true)
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class WorkflowRunSharedLink {
-  public static final String JSON_PROPERTY_URL = "url";
+  public static final String SERIALIZED_NAME_URL = "url";
+  @SerializedName(SERIALIZED_NAME_URL)
   private String url;
 
-  public static final String JSON_PROPERTY_COMPLETED_REDIRECT_URL = "completed_redirect_url";
+  public static final String SERIALIZED_NAME_COMPLETED_REDIRECT_URL = "completed_redirect_url";
+  @SerializedName(SERIALIZED_NAME_COMPLETED_REDIRECT_URL)
   private String completedRedirectUrl;
 
-  public static final String JSON_PROPERTY_EXPIRED_REDIRECT_URL = "expired_redirect_url";
+  public static final String SERIALIZED_NAME_EXPIRED_REDIRECT_URL = "expired_redirect_url";
+  @SerializedName(SERIALIZED_NAME_EXPIRED_REDIRECT_URL)
   private String expiredRedirectUrl;
 
-  public static final String JSON_PROPERTY_EXPIRES_AT = "expires_at";
+  public static final String SERIALIZED_NAME_EXPIRES_AT = "expires_at";
+  @SerializedName(SERIALIZED_NAME_EXPIRES_AT)
   private OffsetDateTime expiresAt;
 
   /**
    * The code for the language when the workflow run is acessed using the link.
    */
+  @JsonAdapter(LanguageEnum.Adapter.class)
   public enum LanguageEnum {
     EN_US("en_US"),
     
@@ -79,7 +95,6 @@ public class WorkflowRunSharedLink {
       this.value = value;
     }
 
-    @JsonValue
     public String getValue() {
       return value;
     }
@@ -89,7 +104,6 @@ public class WorkflowRunSharedLink {
       return String.valueOf(value);
     }
 
-    @JsonCreator
     public static LanguageEnum fromValue(String value) {
       for (LanguageEnum b : LanguageEnum.values()) {
         if (b.value.equals(value)) {
@@ -98,12 +112,31 @@ public class WorkflowRunSharedLink {
       }
       return UNKNOWN_DEFAULT_OPEN_API;
     }
+
+    public static class Adapter extends TypeAdapter<LanguageEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final LanguageEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public LanguageEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return LanguageEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      LanguageEnum.fromValue(value);
+    }
   }
 
-  public static final String JSON_PROPERTY_LANGUAGE = "language";
+  public static final String SERIALIZED_NAME_LANGUAGE = "language";
+  @SerializedName(SERIALIZED_NAME_LANGUAGE)
   private LanguageEnum language;
 
-  public WorkflowRunSharedLink() { 
+  public WorkflowRunSharedLink() {
   }
 
   public WorkflowRunSharedLink url(String url) {
@@ -116,16 +149,10 @@ public class WorkflowRunSharedLink {
    * @return url
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_URL)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getUrl() {
     return url;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_URL)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setUrl(String url) {
     this.url = url;
   }
@@ -141,16 +168,10 @@ public class WorkflowRunSharedLink {
    * @return completedRedirectUrl
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_COMPLETED_REDIRECT_URL)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getCompletedRedirectUrl() {
     return completedRedirectUrl;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_COMPLETED_REDIRECT_URL)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCompletedRedirectUrl(String completedRedirectUrl) {
     this.completedRedirectUrl = completedRedirectUrl;
   }
@@ -166,16 +187,10 @@ public class WorkflowRunSharedLink {
    * @return expiredRedirectUrl
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_EXPIRED_REDIRECT_URL)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getExpiredRedirectUrl() {
     return expiredRedirectUrl;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_EXPIRED_REDIRECT_URL)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setExpiredRedirectUrl(String expiredRedirectUrl) {
     this.expiredRedirectUrl = expiredRedirectUrl;
   }
@@ -191,16 +206,10 @@ public class WorkflowRunSharedLink {
    * @return expiresAt
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_EXPIRES_AT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public OffsetDateTime getExpiresAt() {
     return expiresAt;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_EXPIRES_AT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setExpiresAt(OffsetDateTime expiresAt) {
     this.expiresAt = expiresAt;
   }
@@ -216,24 +225,60 @@ public class WorkflowRunSharedLink {
    * @return language
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_LANGUAGE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public LanguageEnum getLanguage() {
     return language;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_LANGUAGE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setLanguage(LanguageEnum language) {
     this.language = language;
   }
 
+  /**
+   * A container for additional, undeclared properties.
+   * This is a holder for any undeclared properties as specified with
+   * the 'additionalProperties' keyword in the OAS document.
+   */
+  private Map<String, Object> additionalProperties;
 
   /**
-   * Return true if this workflow_run_shared_link object is equal to o.
+   * Set the additional (undeclared) property with the specified name and value.
+   * If the property does not already exist, create it otherwise replace it.
+   *
+   * @param key name of the property
+   * @param value value of the property
+   * @return the WorkflowRunSharedLink instance itself
    */
+  public WorkflowRunSharedLink putAdditionalProperty(String key, Object value) {
+    if (this.additionalProperties == null) {
+        this.additionalProperties = new HashMap<String, Object>();
+    }
+    this.additionalProperties.put(key, value);
+    return this;
+  }
+
+  /**
+   * Return the additional (undeclared) property.
+   *
+   * @return a map of objects
+   */
+  public Map<String, Object> getAdditionalProperties() {
+    return additionalProperties;
+  }
+
+  /**
+   * Return the additional (undeclared) property with the specified name.
+   *
+   * @param key name of the property
+   * @return an object
+   */
+  public Object getAdditionalProperty(String key) {
+    if (this.additionalProperties == null) {
+        return null;
+    }
+    return this.additionalProperties.get(key);
+  }
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -247,12 +292,13 @@ public class WorkflowRunSharedLink {
         Objects.equals(this.completedRedirectUrl, workflowRunSharedLink.completedRedirectUrl) &&
         Objects.equals(this.expiredRedirectUrl, workflowRunSharedLink.expiredRedirectUrl) &&
         Objects.equals(this.expiresAt, workflowRunSharedLink.expiresAt) &&
-        Objects.equals(this.language, workflowRunSharedLink.language);
+        Objects.equals(this.language, workflowRunSharedLink.language)&&
+        Objects.equals(this.additionalProperties, workflowRunSharedLink.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(url, completedRedirectUrl, expiredRedirectUrl, expiresAt, language);
+    return Objects.hash(url, completedRedirectUrl, expiredRedirectUrl, expiresAt, language, additionalProperties);
   }
 
   @Override
@@ -264,6 +310,7 @@ public class WorkflowRunSharedLink {
     sb.append("    expiredRedirectUrl: ").append(toIndentedString(expiredRedirectUrl)).append("\n");
     sb.append("    expiresAt: ").append(toIndentedString(expiresAt)).append("\n");
     sb.append("    language: ").append(toIndentedString(language)).append("\n");
+    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -279,5 +326,144 @@ public class WorkflowRunSharedLink {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("url");
+    openapiFields.add("completed_redirect_url");
+    openapiFields.add("expired_redirect_url");
+    openapiFields.add("expires_at");
+    openapiFields.add("language");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+  }
+
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to WorkflowRunSharedLink
+  */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!WorkflowRunSharedLink.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in WorkflowRunSharedLink is not found in the empty JSON string", WorkflowRunSharedLink.openapiRequiredFields.toString()));
+        }
+      }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("url") != null && !jsonObj.get("url").isJsonNull()) && !jsonObj.get("url").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("url").toString()));
+      }
+      if ((jsonObj.get("completed_redirect_url") != null && !jsonObj.get("completed_redirect_url").isJsonNull()) && !jsonObj.get("completed_redirect_url").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `completed_redirect_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("completed_redirect_url").toString()));
+      }
+      if ((jsonObj.get("expired_redirect_url") != null && !jsonObj.get("expired_redirect_url").isJsonNull()) && !jsonObj.get("expired_redirect_url").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `expired_redirect_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("expired_redirect_url").toString()));
+      }
+      if ((jsonObj.get("language") != null && !jsonObj.get("language").isJsonNull()) && !jsonObj.get("language").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `language` to be a primitive type in the JSON string but got `%s`", jsonObj.get("language").toString()));
+      }
+      // validate the optional field `language`
+      if (jsonObj.get("language") != null && !jsonObj.get("language").isJsonNull()) {
+        LanguageEnum.validateJsonElement(jsonObj.get("language"));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!WorkflowRunSharedLink.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'WorkflowRunSharedLink' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<WorkflowRunSharedLink> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(WorkflowRunSharedLink.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<WorkflowRunSharedLink>() {
+           @Override
+           public void write(JsonWriter out, WorkflowRunSharedLink value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             obj.remove("additionalProperties");
+             // serialize additional properties
+             if (value.getAdditionalProperties() != null) {
+               for (Map.Entry<String, Object> entry : value.getAdditionalProperties().entrySet()) {
+                 if (entry.getValue() instanceof String)
+                   obj.addProperty(entry.getKey(), (String) entry.getValue());
+                 else if (entry.getValue() instanceof Number)
+                   obj.addProperty(entry.getKey(), (Number) entry.getValue());
+                 else if (entry.getValue() instanceof Boolean)
+                   obj.addProperty(entry.getKey(), (Boolean) entry.getValue());
+                 else if (entry.getValue() instanceof Character)
+                   obj.addProperty(entry.getKey(), (Character) entry.getValue());
+                 else {
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
+                 }
+               }
+             }
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public WorkflowRunSharedLink read(JsonReader in) throws IOException {
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
+             // store additional fields in the deserialized instance
+             WorkflowRunSharedLink instance = thisAdapter.fromJsonTree(jsonObj);
+             for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
+               if (!openapiFields.contains(entry.getKey())) {
+                 if (entry.getValue().isJsonPrimitive()) { // primitive type
+                   if (entry.getValue().getAsJsonPrimitive().isString())
+                     instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsString());
+                   else if (entry.getValue().getAsJsonPrimitive().isNumber())
+                     instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsNumber());
+                   else if (entry.getValue().getAsJsonPrimitive().isBoolean())
+                     instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
+                   else
+                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                 } else if (entry.getValue().isJsonArray()) {
+                     instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
+                 } else { // JSON object
+                     instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), HashMap.class));
+                 }
+               }
+             }
+             return instance;
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of WorkflowRunSharedLink given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of WorkflowRunSharedLink
+  * @throws IOException if the JSON string is invalid with respect to WorkflowRunSharedLink
+  */
+  public static WorkflowRunSharedLink fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, WorkflowRunSharedLink.class);
+  }
+
+ /**
+  * Convert an instance of WorkflowRunSharedLink to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

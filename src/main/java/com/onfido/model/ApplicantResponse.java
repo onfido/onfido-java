@@ -14,68 +14,84 @@
 package com.onfido.model;
 
 import java.util.Objects;
-import java.util.Map;
-import java.util.HashMap;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import com.onfido.model.Address;
 import com.onfido.model.Location;
+import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.Arrays;
 import java.util.UUID;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.onfido.JSON;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import com.onfido.JSON;
 
 /**
  * ApplicantResponse
  */
-@JsonPropertyOrder({
-  ApplicantResponse.JSON_PROPERTY_FIRST_NAME,
-  ApplicantResponse.JSON_PROPERTY_LAST_NAME,
-  ApplicantResponse.JSON_PROPERTY_ID,
-  ApplicantResponse.JSON_PROPERTY_CREATED_AT,
-  ApplicantResponse.JSON_PROPERTY_DELETE_AT,
-  ApplicantResponse.JSON_PROPERTY_HREF,
-  ApplicantResponse.JSON_PROPERTY_SANDBOX,
-  ApplicantResponse.JSON_PROPERTY_ADDRESS,
-  ApplicantResponse.JSON_PROPERTY_LOCATION
-})
-@JsonTypeName("applicant_response")
-@com.fasterxml.jackson.annotation.JsonIgnoreProperties(ignoreUnknown = true)
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class ApplicantResponse {
-  public static final String JSON_PROPERTY_FIRST_NAME = "first_name";
+  public static final String SERIALIZED_NAME_FIRST_NAME = "first_name";
+  @SerializedName(SERIALIZED_NAME_FIRST_NAME)
   private String firstName;
 
-  public static final String JSON_PROPERTY_LAST_NAME = "last_name";
+  public static final String SERIALIZED_NAME_LAST_NAME = "last_name";
+  @SerializedName(SERIALIZED_NAME_LAST_NAME)
   private String lastName;
 
-  public static final String JSON_PROPERTY_ID = "id";
+  public static final String SERIALIZED_NAME_ID = "id";
+  @SerializedName(SERIALIZED_NAME_ID)
   private UUID id;
 
-  public static final String JSON_PROPERTY_CREATED_AT = "created_at";
+  public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
+  @SerializedName(SERIALIZED_NAME_CREATED_AT)
   private OffsetDateTime createdAt;
 
-  public static final String JSON_PROPERTY_DELETE_AT = "delete_at";
+  public static final String SERIALIZED_NAME_DELETE_AT = "delete_at";
+  @SerializedName(SERIALIZED_NAME_DELETE_AT)
   private OffsetDateTime deleteAt;
 
-  public static final String JSON_PROPERTY_HREF = "href";
+  public static final String SERIALIZED_NAME_HREF = "href";
+  @SerializedName(SERIALIZED_NAME_HREF)
   private String href;
 
-  public static final String JSON_PROPERTY_SANDBOX = "sandbox";
+  public static final String SERIALIZED_NAME_SANDBOX = "sandbox";
+  @SerializedName(SERIALIZED_NAME_SANDBOX)
   private Boolean sandbox;
 
-  public static final String JSON_PROPERTY_ADDRESS = "address";
+  public static final String SERIALIZED_NAME_ADDRESS = "address";
+  @SerializedName(SERIALIZED_NAME_ADDRESS)
   private Address address;
 
-  public static final String JSON_PROPERTY_LOCATION = "location";
+  public static final String SERIALIZED_NAME_LOCATION = "location";
+  @SerializedName(SERIALIZED_NAME_LOCATION)
   private Location location;
 
-  public ApplicantResponse() { 
+  public ApplicantResponse() {
   }
 
   public ApplicantResponse firstName(String firstName) {
@@ -88,16 +104,10 @@ public class ApplicantResponse {
    * @return firstName
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_FIRST_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getFirstName() {
     return firstName;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_FIRST_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setFirstName(String firstName) {
     this.firstName = firstName;
   }
@@ -113,16 +123,10 @@ public class ApplicantResponse {
    * @return lastName
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_LAST_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getLastName() {
     return lastName;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_LAST_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setLastName(String lastName) {
     this.lastName = lastName;
   }
@@ -138,16 +142,10 @@ public class ApplicantResponse {
    * @return id
   **/
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_ID)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-
   public UUID getId() {
     return id;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_ID)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setId(UUID id) {
     this.id = id;
   }
@@ -163,16 +161,10 @@ public class ApplicantResponse {
    * @return createdAt
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_CREATED_AT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public OffsetDateTime getCreatedAt() {
     return createdAt;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_CREATED_AT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCreatedAt(OffsetDateTime createdAt) {
     this.createdAt = createdAt;
   }
@@ -188,16 +180,10 @@ public class ApplicantResponse {
    * @return deleteAt
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_DELETE_AT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public OffsetDateTime getDeleteAt() {
     return deleteAt;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_DELETE_AT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDeleteAt(OffsetDateTime deleteAt) {
     this.deleteAt = deleteAt;
   }
@@ -213,16 +199,10 @@ public class ApplicantResponse {
    * @return href
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_HREF)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getHref() {
     return href;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_HREF)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setHref(String href) {
     this.href = href;
   }
@@ -238,16 +218,10 @@ public class ApplicantResponse {
    * @return sandbox
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_SANDBOX)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public Boolean getSandbox() {
     return sandbox;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_SANDBOX)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSandbox(Boolean sandbox) {
     this.sandbox = sandbox;
   }
@@ -263,16 +237,10 @@ public class ApplicantResponse {
    * @return address
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ADDRESS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public Address getAddress() {
     return address;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_ADDRESS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAddress(Address address) {
     this.address = address;
   }
@@ -288,24 +256,60 @@ public class ApplicantResponse {
    * @return location
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_LOCATION)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public Location getLocation() {
     return location;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_LOCATION)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setLocation(Location location) {
     this.location = location;
   }
 
+  /**
+   * A container for additional, undeclared properties.
+   * This is a holder for any undeclared properties as specified with
+   * the 'additionalProperties' keyword in the OAS document.
+   */
+  private Map<String, Object> additionalProperties;
 
   /**
-   * Return true if this applicant_response object is equal to o.
+   * Set the additional (undeclared) property with the specified name and value.
+   * If the property does not already exist, create it otherwise replace it.
+   *
+   * @param key name of the property
+   * @param value value of the property
+   * @return the ApplicantResponse instance itself
    */
+  public ApplicantResponse putAdditionalProperty(String key, Object value) {
+    if (this.additionalProperties == null) {
+        this.additionalProperties = new HashMap<String, Object>();
+    }
+    this.additionalProperties.put(key, value);
+    return this;
+  }
+
+  /**
+   * Return the additional (undeclared) property.
+   *
+   * @return a map of objects
+   */
+  public Map<String, Object> getAdditionalProperties() {
+    return additionalProperties;
+  }
+
+  /**
+   * Return the additional (undeclared) property with the specified name.
+   *
+   * @param key name of the property
+   * @return an object
+   */
+  public Object getAdditionalProperty(String key) {
+    if (this.additionalProperties == null) {
+        return null;
+    }
+    return this.additionalProperties.get(key);
+  }
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -323,12 +327,13 @@ public class ApplicantResponse {
         Objects.equals(this.href, applicantResponse.href) &&
         Objects.equals(this.sandbox, applicantResponse.sandbox) &&
         Objects.equals(this.address, applicantResponse.address) &&
-        Objects.equals(this.location, applicantResponse.location);
+        Objects.equals(this.location, applicantResponse.location)&&
+        Objects.equals(this.additionalProperties, applicantResponse.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(firstName, lastName, id, createdAt, deleteAt, href, sandbox, address, location);
+    return Objects.hash(firstName, lastName, id, createdAt, deleteAt, href, sandbox, address, location, additionalProperties);
   }
 
   @Override
@@ -344,6 +349,7 @@ public class ApplicantResponse {
     sb.append("    sandbox: ").append(toIndentedString(sandbox)).append("\n");
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
     sb.append("    location: ").append(toIndentedString(location)).append("\n");
+    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -359,5 +365,160 @@ public class ApplicantResponse {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("first_name");
+    openapiFields.add("last_name");
+    openapiFields.add("id");
+    openapiFields.add("created_at");
+    openapiFields.add("delete_at");
+    openapiFields.add("href");
+    openapiFields.add("sandbox");
+    openapiFields.add("address");
+    openapiFields.add("location");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("id");
+  }
+
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to ApplicantResponse
+  */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!ApplicantResponse.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in ApplicantResponse is not found in the empty JSON string", ApplicantResponse.openapiRequiredFields.toString()));
+        }
+      }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : ApplicantResponse.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("first_name") != null && !jsonObj.get("first_name").isJsonNull()) && !jsonObj.get("first_name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `first_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("first_name").toString()));
+      }
+      if ((jsonObj.get("last_name") != null && !jsonObj.get("last_name").isJsonNull()) && !jsonObj.get("last_name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `last_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("last_name").toString()));
+      }
+      if (!jsonObj.get("id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
+      }
+      if ((jsonObj.get("href") != null && !jsonObj.get("href").isJsonNull()) && !jsonObj.get("href").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `href` to be a primitive type in the JSON string but got `%s`", jsonObj.get("href").toString()));
+      }
+      // validate the optional field `address`
+      if (jsonObj.get("address") != null && !jsonObj.get("address").isJsonNull()) {
+        Address.validateJsonElement(jsonObj.get("address"));
+      }
+      // validate the optional field `location`
+      if (jsonObj.get("location") != null && !jsonObj.get("location").isJsonNull()) {
+        Location.validateJsonElement(jsonObj.get("location"));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!ApplicantResponse.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'ApplicantResponse' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<ApplicantResponse> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(ApplicantResponse.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<ApplicantResponse>() {
+           @Override
+           public void write(JsonWriter out, ApplicantResponse value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             obj.remove("additionalProperties");
+             // serialize additional properties
+             if (value.getAdditionalProperties() != null) {
+               for (Map.Entry<String, Object> entry : value.getAdditionalProperties().entrySet()) {
+                 if (entry.getValue() instanceof String)
+                   obj.addProperty(entry.getKey(), (String) entry.getValue());
+                 else if (entry.getValue() instanceof Number)
+                   obj.addProperty(entry.getKey(), (Number) entry.getValue());
+                 else if (entry.getValue() instanceof Boolean)
+                   obj.addProperty(entry.getKey(), (Boolean) entry.getValue());
+                 else if (entry.getValue() instanceof Character)
+                   obj.addProperty(entry.getKey(), (Character) entry.getValue());
+                 else {
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
+                 }
+               }
+             }
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public ApplicantResponse read(JsonReader in) throws IOException {
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
+             // store additional fields in the deserialized instance
+             ApplicantResponse instance = thisAdapter.fromJsonTree(jsonObj);
+             for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
+               if (!openapiFields.contains(entry.getKey())) {
+                 if (entry.getValue().isJsonPrimitive()) { // primitive type
+                   if (entry.getValue().getAsJsonPrimitive().isString())
+                     instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsString());
+                   else if (entry.getValue().getAsJsonPrimitive().isNumber())
+                     instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsNumber());
+                   else if (entry.getValue().getAsJsonPrimitive().isBoolean())
+                     instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
+                   else
+                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                 } else if (entry.getValue().isJsonArray()) {
+                     instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
+                 } else { // JSON object
+                     instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), HashMap.class));
+                 }
+               }
+             }
+             return instance;
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of ApplicantResponse given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of ApplicantResponse
+  * @throws IOException if the JSON string is invalid with respect to ApplicantResponse
+  */
+  public static ApplicantResponse fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, ApplicantResponse.class);
+  }
+
+ /**
+  * Convert an instance of ApplicantResponse to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

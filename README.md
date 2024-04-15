@@ -2,7 +2,9 @@
 
 The official Java library for integrating with the Onfido API.
 
-Documentation can be found at <https://documentation.onfido.com>
+Documentation can be found at <https://documentation.onfido.com>.
+
+This library is only for use on the backend, as it uses Onfido API tokens which must be kept secret.
 
 This version uses Onfido API v3.6. Refer to our [API versioning guide](https://developers.onfido.com/guide/api-versioning-policy#client-libraries) for details of which client library versions use which versions of the API.
 
@@ -11,7 +13,7 @@ This version uses Onfido API v3.6. Refer to our [API versioning guide](https://d
 Building the API client library requires:
 
 1. Java 1.8+
-2. Maven (3.8.3+)/Gradle (7.2+)
+3. Maven/Gradle
 
 ## Installation
 
@@ -152,9 +154,9 @@ For contributions to the tests instead, please follow the steps below:
 
 ## More documentation
 
-More documentation and code examples can be found at <https://documentation.onfido.com>
+More documentation and code examples can be found at <https://documentation.onfido.com>.
 
 ## Support
 
-Should you encounter any technical issues during integration, please contact Onfido’s Customer Support team
+Should you encounter any technical issues during integration, please contact Onfido's Customer Support team
 via the [Customer Experience Portal](https://public.support.onfido.com/) which also include support documentation.

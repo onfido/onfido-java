@@ -14,48 +14,64 @@
 package com.onfido.model;
 
 import java.util.Objects;
-import java.util.Map;
-import java.util.HashMap;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 import java.util.Arrays;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.onfido.JSON;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import com.onfido.JSON;
 
 /**
  * PhotoReasons
  */
-@JsonPropertyOrder({
-  PhotoReasons.JSON_PROPERTY_DIGITAL_TAMPERING,
-  PhotoReasons.JSON_PROPERTY_FAKE_WEBCAM,
-  PhotoReasons.JSON_PROPERTY_TIME_OF_CAPTURE,
-  PhotoReasons.JSON_PROPERTY_EMULATOR,
-  PhotoReasons.JSON_PROPERTY_REASONS
-})
-@JsonTypeName("photo_reasons")
-@com.fasterxml.jackson.annotation.JsonIgnoreProperties(ignoreUnknown = true)
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class PhotoReasons {
-  public static final String JSON_PROPERTY_DIGITAL_TAMPERING = "digital_tampering";
+  public static final String SERIALIZED_NAME_DIGITAL_TAMPERING = "digital_tampering";
+  @SerializedName(SERIALIZED_NAME_DIGITAL_TAMPERING)
   private String digitalTampering;
 
-  public static final String JSON_PROPERTY_FAKE_WEBCAM = "fake_webcam";
+  public static final String SERIALIZED_NAME_FAKE_WEBCAM = "fake_webcam";
+  @SerializedName(SERIALIZED_NAME_FAKE_WEBCAM)
   private String fakeWebcam;
 
-  public static final String JSON_PROPERTY_TIME_OF_CAPTURE = "time_of_capture";
+  public static final String SERIALIZED_NAME_TIME_OF_CAPTURE = "time_of_capture";
+  @SerializedName(SERIALIZED_NAME_TIME_OF_CAPTURE)
   private String timeOfCapture;
 
-  public static final String JSON_PROPERTY_EMULATOR = "emulator";
+  public static final String SERIALIZED_NAME_EMULATOR = "emulator";
+  @SerializedName(SERIALIZED_NAME_EMULATOR)
   private String emulator;
 
-  public static final String JSON_PROPERTY_REASONS = "reasons";
+  public static final String SERIALIZED_NAME_REASONS = "reasons";
+  @SerializedName(SERIALIZED_NAME_REASONS)
   private String reasons;
 
-  public PhotoReasons() { 
+  public PhotoReasons() {
   }
 
   public PhotoReasons digitalTampering(String digitalTampering) {
@@ -68,16 +84,10 @@ public class PhotoReasons {
    * @return digitalTampering
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_DIGITAL_TAMPERING)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getDigitalTampering() {
     return digitalTampering;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_DIGITAL_TAMPERING)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDigitalTampering(String digitalTampering) {
     this.digitalTampering = digitalTampering;
   }
@@ -93,16 +103,10 @@ public class PhotoReasons {
    * @return fakeWebcam
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_FAKE_WEBCAM)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getFakeWebcam() {
     return fakeWebcam;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_FAKE_WEBCAM)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setFakeWebcam(String fakeWebcam) {
     this.fakeWebcam = fakeWebcam;
   }
@@ -118,16 +122,10 @@ public class PhotoReasons {
    * @return timeOfCapture
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_TIME_OF_CAPTURE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getTimeOfCapture() {
     return timeOfCapture;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_TIME_OF_CAPTURE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTimeOfCapture(String timeOfCapture) {
     this.timeOfCapture = timeOfCapture;
   }
@@ -143,16 +141,10 @@ public class PhotoReasons {
    * @return emulator
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_EMULATOR)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getEmulator() {
     return emulator;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_EMULATOR)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setEmulator(String emulator) {
     this.emulator = emulator;
   }
@@ -168,24 +160,60 @@ public class PhotoReasons {
    * @return reasons
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_REASONS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getReasons() {
     return reasons;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_REASONS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setReasons(String reasons) {
     this.reasons = reasons;
   }
 
+  /**
+   * A container for additional, undeclared properties.
+   * This is a holder for any undeclared properties as specified with
+   * the 'additionalProperties' keyword in the OAS document.
+   */
+  private Map<String, Object> additionalProperties;
 
   /**
-   * Return true if this photo_reasons object is equal to o.
+   * Set the additional (undeclared) property with the specified name and value.
+   * If the property does not already exist, create it otherwise replace it.
+   *
+   * @param key name of the property
+   * @param value value of the property
+   * @return the PhotoReasons instance itself
    */
+  public PhotoReasons putAdditionalProperty(String key, Object value) {
+    if (this.additionalProperties == null) {
+        this.additionalProperties = new HashMap<String, Object>();
+    }
+    this.additionalProperties.put(key, value);
+    return this;
+  }
+
+  /**
+   * Return the additional (undeclared) property.
+   *
+   * @return a map of objects
+   */
+  public Map<String, Object> getAdditionalProperties() {
+    return additionalProperties;
+  }
+
+  /**
+   * Return the additional (undeclared) property with the specified name.
+   *
+   * @param key name of the property
+   * @return an object
+   */
+  public Object getAdditionalProperty(String key) {
+    if (this.additionalProperties == null) {
+        return null;
+    }
+    return this.additionalProperties.get(key);
+  }
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -199,12 +227,13 @@ public class PhotoReasons {
         Objects.equals(this.fakeWebcam, photoReasons.fakeWebcam) &&
         Objects.equals(this.timeOfCapture, photoReasons.timeOfCapture) &&
         Objects.equals(this.emulator, photoReasons.emulator) &&
-        Objects.equals(this.reasons, photoReasons.reasons);
+        Objects.equals(this.reasons, photoReasons.reasons)&&
+        Objects.equals(this.additionalProperties, photoReasons.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(digitalTampering, fakeWebcam, timeOfCapture, emulator, reasons);
+    return Objects.hash(digitalTampering, fakeWebcam, timeOfCapture, emulator, reasons, additionalProperties);
   }
 
   @Override
@@ -216,6 +245,7 @@ public class PhotoReasons {
     sb.append("    timeOfCapture: ").append(toIndentedString(timeOfCapture)).append("\n");
     sb.append("    emulator: ").append(toIndentedString(emulator)).append("\n");
     sb.append("    reasons: ").append(toIndentedString(reasons)).append("\n");
+    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -231,5 +261,143 @@ public class PhotoReasons {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("digital_tampering");
+    openapiFields.add("fake_webcam");
+    openapiFields.add("time_of_capture");
+    openapiFields.add("emulator");
+    openapiFields.add("reasons");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+  }
+
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to PhotoReasons
+  */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!PhotoReasons.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in PhotoReasons is not found in the empty JSON string", PhotoReasons.openapiRequiredFields.toString()));
+        }
+      }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("digital_tampering") != null && !jsonObj.get("digital_tampering").isJsonNull()) && !jsonObj.get("digital_tampering").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `digital_tampering` to be a primitive type in the JSON string but got `%s`", jsonObj.get("digital_tampering").toString()));
+      }
+      if ((jsonObj.get("fake_webcam") != null && !jsonObj.get("fake_webcam").isJsonNull()) && !jsonObj.get("fake_webcam").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `fake_webcam` to be a primitive type in the JSON string but got `%s`", jsonObj.get("fake_webcam").toString()));
+      }
+      if ((jsonObj.get("time_of_capture") != null && !jsonObj.get("time_of_capture").isJsonNull()) && !jsonObj.get("time_of_capture").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `time_of_capture` to be a primitive type in the JSON string but got `%s`", jsonObj.get("time_of_capture").toString()));
+      }
+      if ((jsonObj.get("emulator") != null && !jsonObj.get("emulator").isJsonNull()) && !jsonObj.get("emulator").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `emulator` to be a primitive type in the JSON string but got `%s`", jsonObj.get("emulator").toString()));
+      }
+      if ((jsonObj.get("reasons") != null && !jsonObj.get("reasons").isJsonNull()) && !jsonObj.get("reasons").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `reasons` to be a primitive type in the JSON string but got `%s`", jsonObj.get("reasons").toString()));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!PhotoReasons.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'PhotoReasons' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<PhotoReasons> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(PhotoReasons.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<PhotoReasons>() {
+           @Override
+           public void write(JsonWriter out, PhotoReasons value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             obj.remove("additionalProperties");
+             // serialize additional properties
+             if (value.getAdditionalProperties() != null) {
+               for (Map.Entry<String, Object> entry : value.getAdditionalProperties().entrySet()) {
+                 if (entry.getValue() instanceof String)
+                   obj.addProperty(entry.getKey(), (String) entry.getValue());
+                 else if (entry.getValue() instanceof Number)
+                   obj.addProperty(entry.getKey(), (Number) entry.getValue());
+                 else if (entry.getValue() instanceof Boolean)
+                   obj.addProperty(entry.getKey(), (Boolean) entry.getValue());
+                 else if (entry.getValue() instanceof Character)
+                   obj.addProperty(entry.getKey(), (Character) entry.getValue());
+                 else {
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
+                 }
+               }
+             }
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public PhotoReasons read(JsonReader in) throws IOException {
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
+             // store additional fields in the deserialized instance
+             PhotoReasons instance = thisAdapter.fromJsonTree(jsonObj);
+             for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
+               if (!openapiFields.contains(entry.getKey())) {
+                 if (entry.getValue().isJsonPrimitive()) { // primitive type
+                   if (entry.getValue().getAsJsonPrimitive().isString())
+                     instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsString());
+                   else if (entry.getValue().getAsJsonPrimitive().isNumber())
+                     instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsNumber());
+                   else if (entry.getValue().getAsJsonPrimitive().isBoolean())
+                     instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
+                   else
+                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                 } else if (entry.getValue().isJsonArray()) {
+                     instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
+                 } else { // JSON object
+                     instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), HashMap.class));
+                 }
+               }
+             }
+             return instance;
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of PhotoReasons given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of PhotoReasons
+  * @throws IOException if the JSON string is invalid with respect to PhotoReasons
+  */
+  public static PhotoReasons fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, PhotoReasons.class);
+  }
+
+ /**
+  * Convert an instance of PhotoReasons to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

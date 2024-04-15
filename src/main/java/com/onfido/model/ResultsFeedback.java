@@ -14,35 +14,48 @@
 package com.onfido.model;
 
 import java.util.Objects;
-import java.util.Map;
-import java.util.HashMap;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.UUID;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.onfido.JSON;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import com.onfido.JSON;
 
 /**
  * ResultsFeedback
  */
-@JsonPropertyOrder({
-  ResultsFeedback.JSON_PROPERTY_EXPECTED_RESULT,
-  ResultsFeedback.JSON_PROPERTY_CHECK_ID,
-  ResultsFeedback.JSON_PROPERTY_REPORT_ID,
-  ResultsFeedback.JSON_PROPERTY_FEEDBACK_NOTES
-})
-@JsonTypeName("results_feedback")
-@com.fasterxml.jackson.annotation.JsonIgnoreProperties(ignoreUnknown = true)
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class ResultsFeedback {
   /**
    * The expected result for the check or report.
    */
+  @JsonAdapter(ExpectedResultEnum.Adapter.class)
   public enum ExpectedResultEnum {
     CLEAR("clear"),
     
@@ -56,7 +69,6 @@ public class ResultsFeedback {
       this.value = value;
     }
 
-    @JsonValue
     public String getValue() {
       return value;
     }
@@ -66,7 +78,6 @@ public class ResultsFeedback {
       return String.valueOf(value);
     }
 
-    @JsonCreator
     public static ExpectedResultEnum fromValue(String value) {
       for (ExpectedResultEnum b : ExpectedResultEnum.values()) {
         if (b.value.equals(value)) {
@@ -75,21 +86,43 @@ public class ResultsFeedback {
       }
       return UNKNOWN_DEFAULT_OPEN_API;
     }
+
+    public static class Adapter extends TypeAdapter<ExpectedResultEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final ExpectedResultEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public ExpectedResultEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return ExpectedResultEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      ExpectedResultEnum.fromValue(value);
+    }
   }
 
-  public static final String JSON_PROPERTY_EXPECTED_RESULT = "expected_result";
+  public static final String SERIALIZED_NAME_EXPECTED_RESULT = "expected_result";
+  @SerializedName(SERIALIZED_NAME_EXPECTED_RESULT)
   private ExpectedResultEnum expectedResult;
 
-  public static final String JSON_PROPERTY_CHECK_ID = "check_id";
+  public static final String SERIALIZED_NAME_CHECK_ID = "check_id";
+  @SerializedName(SERIALIZED_NAME_CHECK_ID)
   private UUID checkId;
 
-  public static final String JSON_PROPERTY_REPORT_ID = "report_id";
+  public static final String SERIALIZED_NAME_REPORT_ID = "report_id";
+  @SerializedName(SERIALIZED_NAME_REPORT_ID)
   private UUID reportId;
 
-  public static final String JSON_PROPERTY_FEEDBACK_NOTES = "feedback_notes";
+  public static final String SERIALIZED_NAME_FEEDBACK_NOTES = "feedback_notes";
+  @SerializedName(SERIALIZED_NAME_FEEDBACK_NOTES)
   private String feedbackNotes;
 
-  public ResultsFeedback() { 
+  public ResultsFeedback() {
   }
 
   public ResultsFeedback expectedResult(ExpectedResultEnum expectedResult) {
@@ -102,16 +135,10 @@ public class ResultsFeedback {
    * @return expectedResult
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_EXPECTED_RESULT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public ExpectedResultEnum getExpectedResult() {
     return expectedResult;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_EXPECTED_RESULT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setExpectedResult(ExpectedResultEnum expectedResult) {
     this.expectedResult = expectedResult;
   }
@@ -127,16 +154,10 @@ public class ResultsFeedback {
    * @return checkId
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_CHECK_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public UUID getCheckId() {
     return checkId;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_CHECK_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCheckId(UUID checkId) {
     this.checkId = checkId;
   }
@@ -152,16 +173,10 @@ public class ResultsFeedback {
    * @return reportId
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_REPORT_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public UUID getReportId() {
     return reportId;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_REPORT_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setReportId(UUID reportId) {
     this.reportId = reportId;
   }
@@ -177,24 +192,60 @@ public class ResultsFeedback {
    * @return feedbackNotes
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_FEEDBACK_NOTES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getFeedbackNotes() {
     return feedbackNotes;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_FEEDBACK_NOTES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setFeedbackNotes(String feedbackNotes) {
     this.feedbackNotes = feedbackNotes;
   }
 
+  /**
+   * A container for additional, undeclared properties.
+   * This is a holder for any undeclared properties as specified with
+   * the 'additionalProperties' keyword in the OAS document.
+   */
+  private Map<String, Object> additionalProperties;
 
   /**
-   * Return true if this results_feedback object is equal to o.
+   * Set the additional (undeclared) property with the specified name and value.
+   * If the property does not already exist, create it otherwise replace it.
+   *
+   * @param key name of the property
+   * @param value value of the property
+   * @return the ResultsFeedback instance itself
    */
+  public ResultsFeedback putAdditionalProperty(String key, Object value) {
+    if (this.additionalProperties == null) {
+        this.additionalProperties = new HashMap<String, Object>();
+    }
+    this.additionalProperties.put(key, value);
+    return this;
+  }
+
+  /**
+   * Return the additional (undeclared) property.
+   *
+   * @return a map of objects
+   */
+  public Map<String, Object> getAdditionalProperties() {
+    return additionalProperties;
+  }
+
+  /**
+   * Return the additional (undeclared) property with the specified name.
+   *
+   * @param key name of the property
+   * @return an object
+   */
+  public Object getAdditionalProperty(String key) {
+    if (this.additionalProperties == null) {
+        return null;
+    }
+    return this.additionalProperties.get(key);
+  }
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -207,12 +258,13 @@ public class ResultsFeedback {
     return Objects.equals(this.expectedResult, resultsFeedback.expectedResult) &&
         Objects.equals(this.checkId, resultsFeedback.checkId) &&
         Objects.equals(this.reportId, resultsFeedback.reportId) &&
-        Objects.equals(this.feedbackNotes, resultsFeedback.feedbackNotes);
+        Objects.equals(this.feedbackNotes, resultsFeedback.feedbackNotes)&&
+        Objects.equals(this.additionalProperties, resultsFeedback.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(expectedResult, checkId, reportId, feedbackNotes);
+    return Objects.hash(expectedResult, checkId, reportId, feedbackNotes, additionalProperties);
   }
 
   @Override
@@ -223,6 +275,7 @@ public class ResultsFeedback {
     sb.append("    checkId: ").append(toIndentedString(checkId)).append("\n");
     sb.append("    reportId: ").append(toIndentedString(reportId)).append("\n");
     sb.append("    feedbackNotes: ").append(toIndentedString(feedbackNotes)).append("\n");
+    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -238,5 +291,143 @@ public class ResultsFeedback {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("expected_result");
+    openapiFields.add("check_id");
+    openapiFields.add("report_id");
+    openapiFields.add("feedback_notes");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+  }
+
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to ResultsFeedback
+  */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!ResultsFeedback.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in ResultsFeedback is not found in the empty JSON string", ResultsFeedback.openapiRequiredFields.toString()));
+        }
+      }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("expected_result") != null && !jsonObj.get("expected_result").isJsonNull()) && !jsonObj.get("expected_result").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `expected_result` to be a primitive type in the JSON string but got `%s`", jsonObj.get("expected_result").toString()));
+      }
+      // validate the optional field `expected_result`
+      if (jsonObj.get("expected_result") != null && !jsonObj.get("expected_result").isJsonNull()) {
+        ExpectedResultEnum.validateJsonElement(jsonObj.get("expected_result"));
+      }
+      if ((jsonObj.get("check_id") != null && !jsonObj.get("check_id").isJsonNull()) && !jsonObj.get("check_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `check_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("check_id").toString()));
+      }
+      if ((jsonObj.get("report_id") != null && !jsonObj.get("report_id").isJsonNull()) && !jsonObj.get("report_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `report_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("report_id").toString()));
+      }
+      if ((jsonObj.get("feedback_notes") != null && !jsonObj.get("feedback_notes").isJsonNull()) && !jsonObj.get("feedback_notes").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `feedback_notes` to be a primitive type in the JSON string but got `%s`", jsonObj.get("feedback_notes").toString()));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!ResultsFeedback.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'ResultsFeedback' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<ResultsFeedback> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(ResultsFeedback.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<ResultsFeedback>() {
+           @Override
+           public void write(JsonWriter out, ResultsFeedback value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             obj.remove("additionalProperties");
+             // serialize additional properties
+             if (value.getAdditionalProperties() != null) {
+               for (Map.Entry<String, Object> entry : value.getAdditionalProperties().entrySet()) {
+                 if (entry.getValue() instanceof String)
+                   obj.addProperty(entry.getKey(), (String) entry.getValue());
+                 else if (entry.getValue() instanceof Number)
+                   obj.addProperty(entry.getKey(), (Number) entry.getValue());
+                 else if (entry.getValue() instanceof Boolean)
+                   obj.addProperty(entry.getKey(), (Boolean) entry.getValue());
+                 else if (entry.getValue() instanceof Character)
+                   obj.addProperty(entry.getKey(), (Character) entry.getValue());
+                 else {
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
+                 }
+               }
+             }
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public ResultsFeedback read(JsonReader in) throws IOException {
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
+             // store additional fields in the deserialized instance
+             ResultsFeedback instance = thisAdapter.fromJsonTree(jsonObj);
+             for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
+               if (!openapiFields.contains(entry.getKey())) {
+                 if (entry.getValue().isJsonPrimitive()) { // primitive type
+                   if (entry.getValue().getAsJsonPrimitive().isString())
+                     instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsString());
+                   else if (entry.getValue().getAsJsonPrimitive().isNumber())
+                     instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsNumber());
+                   else if (entry.getValue().getAsJsonPrimitive().isBoolean())
+                     instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
+                   else
+                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                 } else if (entry.getValue().isJsonArray()) {
+                     instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
+                 } else { // JSON object
+                     instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), HashMap.class));
+                 }
+               }
+             }
+             return instance;
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of ResultsFeedback given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of ResultsFeedback
+  * @throws IOException if the JSON string is invalid with respect to ResultsFeedback
+  */
+  public static ResultsFeedback fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, ResultsFeedback.class);
+  }
+
+ /**
+  * Convert an instance of ResultsFeedback to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

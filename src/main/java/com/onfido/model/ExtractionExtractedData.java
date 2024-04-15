@@ -14,81 +14,78 @@
 package com.onfido.model;
 
 import java.util.Objects;
-import java.util.Map;
-import java.util.HashMap;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import com.onfido.model.CountryCodes;
 import com.onfido.model.DocumentTypes;
+import java.io.IOException;
 import java.time.LocalDate;
 import java.util.Arrays;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.onfido.JSON;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import com.onfido.JSON;
 
 /**
  * ExtractionExtractedData
  */
-@JsonPropertyOrder({
-  ExtractionExtractedData.JSON_PROPERTY_DOCUMENT_NUMBER,
-  ExtractionExtractedData.JSON_PROPERTY_FIRST_NAME,
-  ExtractionExtractedData.JSON_PROPERTY_LAST_NAME,
-  ExtractionExtractedData.JSON_PROPERTY_FULL_NAME,
-  ExtractionExtractedData.JSON_PROPERTY_SPOUSE_NAME,
-  ExtractionExtractedData.JSON_PROPERTY_WIDOW_NAME,
-  ExtractionExtractedData.JSON_PROPERTY_ALIAS_NAME,
-  ExtractionExtractedData.JSON_PROPERTY_GENDER,
-  ExtractionExtractedData.JSON_PROPERTY_DATE_OF_BIRTH,
-  ExtractionExtractedData.JSON_PROPERTY_DATE_OF_EXPIRY,
-  ExtractionExtractedData.JSON_PROPERTY_EXPIRY_DATE,
-  ExtractionExtractedData.JSON_PROPERTY_NATIONALITY,
-  ExtractionExtractedData.JSON_PROPERTY_MRZ_LINE1,
-  ExtractionExtractedData.JSON_PROPERTY_MRZ_LINE2,
-  ExtractionExtractedData.JSON_PROPERTY_MRZ_LINE3,
-  ExtractionExtractedData.JSON_PROPERTY_ADDRESS1,
-  ExtractionExtractedData.JSON_PROPERTY_ADDRESS2,
-  ExtractionExtractedData.JSON_PROPERTY_ADDRESS3,
-  ExtractionExtractedData.JSON_PROPERTY_ADDRESS4,
-  ExtractionExtractedData.JSON_PROPERTY_ADDRESS5,
-  ExtractionExtractedData.JSON_PROPERTY_ISSUING_AUTHORITY,
-  ExtractionExtractedData.JSON_PROPERTY_ISSUING_COUNTRY,
-  ExtractionExtractedData.JSON_PROPERTY_DOCUMENT_TYPE,
-  ExtractionExtractedData.JSON_PROPERTY_PLACE_OF_BIRTH,
-  ExtractionExtractedData.JSON_PROPERTY_ISSUING_STATE,
-  ExtractionExtractedData.JSON_PROPERTY_ISSUING_DATE,
-  ExtractionExtractedData.JSON_PROPERTY_PERSONAL_NUMBER
-})
-@JsonTypeName("extraction_extracted_data")
-@com.fasterxml.jackson.annotation.JsonIgnoreProperties(ignoreUnknown = true)
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class ExtractionExtractedData {
-  public static final String JSON_PROPERTY_DOCUMENT_NUMBER = "document_number";
+  public static final String SERIALIZED_NAME_DOCUMENT_NUMBER = "document_number";
+  @SerializedName(SERIALIZED_NAME_DOCUMENT_NUMBER)
   private String documentNumber;
 
-  public static final String JSON_PROPERTY_FIRST_NAME = "first_name";
+  public static final String SERIALIZED_NAME_FIRST_NAME = "first_name";
+  @SerializedName(SERIALIZED_NAME_FIRST_NAME)
   private String firstName;
 
-  public static final String JSON_PROPERTY_LAST_NAME = "last_name";
+  public static final String SERIALIZED_NAME_LAST_NAME = "last_name";
+  @SerializedName(SERIALIZED_NAME_LAST_NAME)
   private String lastName;
 
-  public static final String JSON_PROPERTY_FULL_NAME = "full_name";
+  public static final String SERIALIZED_NAME_FULL_NAME = "full_name";
+  @SerializedName(SERIALIZED_NAME_FULL_NAME)
   private String fullName;
 
-  public static final String JSON_PROPERTY_SPOUSE_NAME = "spouse_name";
+  public static final String SERIALIZED_NAME_SPOUSE_NAME = "spouse_name";
+  @SerializedName(SERIALIZED_NAME_SPOUSE_NAME)
   private String spouseName;
 
-  public static final String JSON_PROPERTY_WIDOW_NAME = "widow_name";
+  public static final String SERIALIZED_NAME_WIDOW_NAME = "widow_name";
+  @SerializedName(SERIALIZED_NAME_WIDOW_NAME)
   private String widowName;
 
-  public static final String JSON_PROPERTY_ALIAS_NAME = "alias_name";
+  public static final String SERIALIZED_NAME_ALIAS_NAME = "alias_name";
+  @SerializedName(SERIALIZED_NAME_ALIAS_NAME)
   private String aliasName;
 
   /**
    * Gender (Valid values are Male and Female).
    */
+  @JsonAdapter(GenderEnum.Adapter.class)
   public enum GenderEnum {
     MALE("Male"),
     
@@ -102,7 +99,6 @@ public class ExtractionExtractedData {
       this.value = value;
     }
 
-    @JsonValue
     public String getValue() {
       return value;
     }
@@ -112,7 +108,6 @@ public class ExtractionExtractedData {
       return String.valueOf(value);
     }
 
-    @JsonCreator
     public static GenderEnum fromValue(String value) {
       for (GenderEnum b : GenderEnum.values()) {
         if (b.value.equals(value)) {
@@ -121,69 +116,107 @@ public class ExtractionExtractedData {
       }
       return UNKNOWN_DEFAULT_OPEN_API;
     }
+
+    public static class Adapter extends TypeAdapter<GenderEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final GenderEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public GenderEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return GenderEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      GenderEnum.fromValue(value);
+    }
   }
 
-  public static final String JSON_PROPERTY_GENDER = "gender";
+  public static final String SERIALIZED_NAME_GENDER = "gender";
+  @SerializedName(SERIALIZED_NAME_GENDER)
   private GenderEnum gender;
 
-  public static final String JSON_PROPERTY_DATE_OF_BIRTH = "date_of_birth";
+  public static final String SERIALIZED_NAME_DATE_OF_BIRTH = "date_of_birth";
+  @SerializedName(SERIALIZED_NAME_DATE_OF_BIRTH)
   private LocalDate dateOfBirth;
 
-  public static final String JSON_PROPERTY_DATE_OF_EXPIRY = "date_of_expiry";
+  public static final String SERIALIZED_NAME_DATE_OF_EXPIRY = "date_of_expiry";
+  @SerializedName(SERIALIZED_NAME_DATE_OF_EXPIRY)
   private LocalDate dateOfExpiry;
 
-  public static final String JSON_PROPERTY_EXPIRY_DATE = "expiry_date";
+  public static final String SERIALIZED_NAME_EXPIRY_DATE = "expiry_date";
+  @SerializedName(SERIALIZED_NAME_EXPIRY_DATE)
   private LocalDate expiryDate;
 
-  public static final String JSON_PROPERTY_NATIONALITY = "nationality";
+  public static final String SERIALIZED_NAME_NATIONALITY = "nationality";
+  @SerializedName(SERIALIZED_NAME_NATIONALITY)
   private String nationality;
 
-  public static final String JSON_PROPERTY_MRZ_LINE1 = "mrz_line_1";
+  public static final String SERIALIZED_NAME_MRZ_LINE1 = "mrz_line_1";
+  @SerializedName(SERIALIZED_NAME_MRZ_LINE1)
   private String mrzLine1;
 
-  public static final String JSON_PROPERTY_MRZ_LINE2 = "mrz_line_2";
+  public static final String SERIALIZED_NAME_MRZ_LINE2 = "mrz_line_2";
+  @SerializedName(SERIALIZED_NAME_MRZ_LINE2)
   private String mrzLine2;
 
-  public static final String JSON_PROPERTY_MRZ_LINE3 = "mrz_line_3";
+  public static final String SERIALIZED_NAME_MRZ_LINE3 = "mrz_line_3";
+  @SerializedName(SERIALIZED_NAME_MRZ_LINE3)
   private String mrzLine3;
 
-  public static final String JSON_PROPERTY_ADDRESS1 = "address_1";
+  public static final String SERIALIZED_NAME_ADDRESS1 = "address_1";
+  @SerializedName(SERIALIZED_NAME_ADDRESS1)
   private String address1;
 
-  public static final String JSON_PROPERTY_ADDRESS2 = "address_2";
+  public static final String SERIALIZED_NAME_ADDRESS2 = "address_2";
+  @SerializedName(SERIALIZED_NAME_ADDRESS2)
   private String address2;
 
-  public static final String JSON_PROPERTY_ADDRESS3 = "address_3";
+  public static final String SERIALIZED_NAME_ADDRESS3 = "address_3";
+  @SerializedName(SERIALIZED_NAME_ADDRESS3)
   private String address3;
 
-  public static final String JSON_PROPERTY_ADDRESS4 = "address_4";
+  public static final String SERIALIZED_NAME_ADDRESS4 = "address_4";
+  @SerializedName(SERIALIZED_NAME_ADDRESS4)
   private String address4;
 
-  public static final String JSON_PROPERTY_ADDRESS5 = "address_5";
+  public static final String SERIALIZED_NAME_ADDRESS5 = "address_5";
+  @SerializedName(SERIALIZED_NAME_ADDRESS5)
   private String address5;
 
-  public static final String JSON_PROPERTY_ISSUING_AUTHORITY = "issuing_authority";
+  public static final String SERIALIZED_NAME_ISSUING_AUTHORITY = "issuing_authority";
+  @SerializedName(SERIALIZED_NAME_ISSUING_AUTHORITY)
   private String issuingAuthority;
 
-  public static final String JSON_PROPERTY_ISSUING_COUNTRY = "issuing_country";
+  public static final String SERIALIZED_NAME_ISSUING_COUNTRY = "issuing_country";
+  @SerializedName(SERIALIZED_NAME_ISSUING_COUNTRY)
   private CountryCodes issuingCountry;
 
-  public static final String JSON_PROPERTY_DOCUMENT_TYPE = "document_type";
+  public static final String SERIALIZED_NAME_DOCUMENT_TYPE = "document_type";
+  @SerializedName(SERIALIZED_NAME_DOCUMENT_TYPE)
   private DocumentTypes documentType;
 
-  public static final String JSON_PROPERTY_PLACE_OF_BIRTH = "place_of_birth";
+  public static final String SERIALIZED_NAME_PLACE_OF_BIRTH = "place_of_birth";
+  @SerializedName(SERIALIZED_NAME_PLACE_OF_BIRTH)
   private String placeOfBirth;
 
-  public static final String JSON_PROPERTY_ISSUING_STATE = "issuing_state";
+  public static final String SERIALIZED_NAME_ISSUING_STATE = "issuing_state";
+  @SerializedName(SERIALIZED_NAME_ISSUING_STATE)
   private String issuingState;
 
-  public static final String JSON_PROPERTY_ISSUING_DATE = "issuing_date";
+  public static final String SERIALIZED_NAME_ISSUING_DATE = "issuing_date";
+  @SerializedName(SERIALIZED_NAME_ISSUING_DATE)
   private LocalDate issuingDate;
 
-  public static final String JSON_PROPERTY_PERSONAL_NUMBER = "personal_number";
+  public static final String SERIALIZED_NAME_PERSONAL_NUMBER = "personal_number";
+  @SerializedName(SERIALIZED_NAME_PERSONAL_NUMBER)
   private String personalNumber;
 
-  public ExtractionExtractedData() { 
+  public ExtractionExtractedData() {
   }
 
   public ExtractionExtractedData documentNumber(String documentNumber) {
@@ -196,16 +229,10 @@ public class ExtractionExtractedData {
    * @return documentNumber
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_DOCUMENT_NUMBER)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getDocumentNumber() {
     return documentNumber;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_DOCUMENT_NUMBER)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDocumentNumber(String documentNumber) {
     this.documentNumber = documentNumber;
   }
@@ -221,16 +248,10 @@ public class ExtractionExtractedData {
    * @return firstName
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_FIRST_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getFirstName() {
     return firstName;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_FIRST_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setFirstName(String firstName) {
     this.firstName = firstName;
   }
@@ -246,16 +267,10 @@ public class ExtractionExtractedData {
    * @return lastName
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_LAST_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getLastName() {
     return lastName;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_LAST_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setLastName(String lastName) {
     this.lastName = lastName;
   }
@@ -271,16 +286,10 @@ public class ExtractionExtractedData {
    * @return fullName
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_FULL_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getFullName() {
     return fullName;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_FULL_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setFullName(String fullName) {
     this.fullName = fullName;
   }
@@ -296,16 +305,10 @@ public class ExtractionExtractedData {
    * @return spouseName
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_SPOUSE_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getSpouseName() {
     return spouseName;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_SPOUSE_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSpouseName(String spouseName) {
     this.spouseName = spouseName;
   }
@@ -321,16 +324,10 @@ public class ExtractionExtractedData {
    * @return widowName
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_WIDOW_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getWidowName() {
     return widowName;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_WIDOW_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setWidowName(String widowName) {
     this.widowName = widowName;
   }
@@ -346,16 +343,10 @@ public class ExtractionExtractedData {
    * @return aliasName
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ALIAS_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getAliasName() {
     return aliasName;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_ALIAS_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAliasName(String aliasName) {
     this.aliasName = aliasName;
   }
@@ -371,16 +362,10 @@ public class ExtractionExtractedData {
    * @return gender
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_GENDER)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public GenderEnum getGender() {
     return gender;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_GENDER)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setGender(GenderEnum gender) {
     this.gender = gender;
   }
@@ -396,16 +381,10 @@ public class ExtractionExtractedData {
    * @return dateOfBirth
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_DATE_OF_BIRTH)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public LocalDate getDateOfBirth() {
     return dateOfBirth;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_DATE_OF_BIRTH)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDateOfBirth(LocalDate dateOfBirth) {
     this.dateOfBirth = dateOfBirth;
   }
@@ -421,16 +400,10 @@ public class ExtractionExtractedData {
    * @return dateOfExpiry
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_DATE_OF_EXPIRY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public LocalDate getDateOfExpiry() {
     return dateOfExpiry;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_DATE_OF_EXPIRY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDateOfExpiry(LocalDate dateOfExpiry) {
     this.dateOfExpiry = dateOfExpiry;
   }
@@ -446,16 +419,10 @@ public class ExtractionExtractedData {
    * @return expiryDate
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_EXPIRY_DATE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public LocalDate getExpiryDate() {
     return expiryDate;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_EXPIRY_DATE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setExpiryDate(LocalDate expiryDate) {
     this.expiryDate = expiryDate;
   }
@@ -471,16 +438,10 @@ public class ExtractionExtractedData {
    * @return nationality
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_NATIONALITY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getNationality() {
     return nationality;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_NATIONALITY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setNationality(String nationality) {
     this.nationality = nationality;
   }
@@ -496,16 +457,10 @@ public class ExtractionExtractedData {
    * @return mrzLine1
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_MRZ_LINE1)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getMrzLine1() {
     return mrzLine1;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_MRZ_LINE1)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMrzLine1(String mrzLine1) {
     this.mrzLine1 = mrzLine1;
   }
@@ -521,16 +476,10 @@ public class ExtractionExtractedData {
    * @return mrzLine2
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_MRZ_LINE2)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getMrzLine2() {
     return mrzLine2;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_MRZ_LINE2)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMrzLine2(String mrzLine2) {
     this.mrzLine2 = mrzLine2;
   }
@@ -546,16 +495,10 @@ public class ExtractionExtractedData {
    * @return mrzLine3
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_MRZ_LINE3)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getMrzLine3() {
     return mrzLine3;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_MRZ_LINE3)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMrzLine3(String mrzLine3) {
     this.mrzLine3 = mrzLine3;
   }
@@ -571,16 +514,10 @@ public class ExtractionExtractedData {
    * @return address1
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ADDRESS1)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getAddress1() {
     return address1;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_ADDRESS1)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAddress1(String address1) {
     this.address1 = address1;
   }
@@ -596,16 +533,10 @@ public class ExtractionExtractedData {
    * @return address2
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ADDRESS2)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getAddress2() {
     return address2;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_ADDRESS2)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAddress2(String address2) {
     this.address2 = address2;
   }
@@ -621,16 +552,10 @@ public class ExtractionExtractedData {
    * @return address3
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ADDRESS3)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getAddress3() {
     return address3;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_ADDRESS3)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAddress3(String address3) {
     this.address3 = address3;
   }
@@ -646,16 +571,10 @@ public class ExtractionExtractedData {
    * @return address4
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ADDRESS4)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getAddress4() {
     return address4;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_ADDRESS4)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAddress4(String address4) {
     this.address4 = address4;
   }
@@ -671,16 +590,10 @@ public class ExtractionExtractedData {
    * @return address5
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ADDRESS5)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getAddress5() {
     return address5;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_ADDRESS5)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAddress5(String address5) {
     this.address5 = address5;
   }
@@ -696,16 +609,10 @@ public class ExtractionExtractedData {
    * @return issuingAuthority
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ISSUING_AUTHORITY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getIssuingAuthority() {
     return issuingAuthority;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_ISSUING_AUTHORITY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setIssuingAuthority(String issuingAuthority) {
     this.issuingAuthority = issuingAuthority;
   }
@@ -721,16 +628,10 @@ public class ExtractionExtractedData {
    * @return issuingCountry
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ISSUING_COUNTRY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public CountryCodes getIssuingCountry() {
     return issuingCountry;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_ISSUING_COUNTRY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setIssuingCountry(CountryCodes issuingCountry) {
     this.issuingCountry = issuingCountry;
   }
@@ -746,16 +647,10 @@ public class ExtractionExtractedData {
    * @return documentType
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_DOCUMENT_TYPE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public DocumentTypes getDocumentType() {
     return documentType;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_DOCUMENT_TYPE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDocumentType(DocumentTypes documentType) {
     this.documentType = documentType;
   }
@@ -771,16 +666,10 @@ public class ExtractionExtractedData {
    * @return placeOfBirth
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_PLACE_OF_BIRTH)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getPlaceOfBirth() {
     return placeOfBirth;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_PLACE_OF_BIRTH)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPlaceOfBirth(String placeOfBirth) {
     this.placeOfBirth = placeOfBirth;
   }
@@ -796,16 +685,10 @@ public class ExtractionExtractedData {
    * @return issuingState
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ISSUING_STATE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getIssuingState() {
     return issuingState;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_ISSUING_STATE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setIssuingState(String issuingState) {
     this.issuingState = issuingState;
   }
@@ -821,16 +704,10 @@ public class ExtractionExtractedData {
    * @return issuingDate
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ISSUING_DATE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public LocalDate getIssuingDate() {
     return issuingDate;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_ISSUING_DATE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setIssuingDate(LocalDate issuingDate) {
     this.issuingDate = issuingDate;
   }
@@ -846,24 +723,60 @@ public class ExtractionExtractedData {
    * @return personalNumber
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_PERSONAL_NUMBER)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getPersonalNumber() {
     return personalNumber;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_PERSONAL_NUMBER)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPersonalNumber(String personalNumber) {
     this.personalNumber = personalNumber;
   }
 
+  /**
+   * A container for additional, undeclared properties.
+   * This is a holder for any undeclared properties as specified with
+   * the 'additionalProperties' keyword in the OAS document.
+   */
+  private Map<String, Object> additionalProperties;
 
   /**
-   * Return true if this extraction_extracted_data object is equal to o.
+   * Set the additional (undeclared) property with the specified name and value.
+   * If the property does not already exist, create it otherwise replace it.
+   *
+   * @param key name of the property
+   * @param value value of the property
+   * @return the ExtractionExtractedData instance itself
    */
+  public ExtractionExtractedData putAdditionalProperty(String key, Object value) {
+    if (this.additionalProperties == null) {
+        this.additionalProperties = new HashMap<String, Object>();
+    }
+    this.additionalProperties.put(key, value);
+    return this;
+  }
+
+  /**
+   * Return the additional (undeclared) property.
+   *
+   * @return a map of objects
+   */
+  public Map<String, Object> getAdditionalProperties() {
+    return additionalProperties;
+  }
+
+  /**
+   * Return the additional (undeclared) property with the specified name.
+   *
+   * @param key name of the property
+   * @return an object
+   */
+  public Object getAdditionalProperty(String key) {
+    if (this.additionalProperties == null) {
+        return null;
+    }
+    return this.additionalProperties.get(key);
+  }
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -899,12 +812,13 @@ public class ExtractionExtractedData {
         Objects.equals(this.placeOfBirth, extractionExtractedData.placeOfBirth) &&
         Objects.equals(this.issuingState, extractionExtractedData.issuingState) &&
         Objects.equals(this.issuingDate, extractionExtractedData.issuingDate) &&
-        Objects.equals(this.personalNumber, extractionExtractedData.personalNumber);
+        Objects.equals(this.personalNumber, extractionExtractedData.personalNumber)&&
+        Objects.equals(this.additionalProperties, extractionExtractedData.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(documentNumber, firstName, lastName, fullName, spouseName, widowName, aliasName, gender, dateOfBirth, dateOfExpiry, expiryDate, nationality, mrzLine1, mrzLine2, mrzLine3, address1, address2, address3, address4, address5, issuingAuthority, issuingCountry, documentType, placeOfBirth, issuingState, issuingDate, personalNumber);
+    return Objects.hash(documentNumber, firstName, lastName, fullName, spouseName, widowName, aliasName, gender, dateOfBirth, dateOfExpiry, expiryDate, nationality, mrzLine1, mrzLine2, mrzLine3, address1, address2, address3, address4, address5, issuingAuthority, issuingCountry, documentType, placeOfBirth, issuingState, issuingDate, personalNumber, additionalProperties);
   }
 
   @Override
@@ -938,6 +852,7 @@ public class ExtractionExtractedData {
     sb.append("    issuingState: ").append(toIndentedString(issuingState)).append("\n");
     sb.append("    issuingDate: ").append(toIndentedString(issuingDate)).append("\n");
     sb.append("    personalNumber: ").append(toIndentedString(personalNumber)).append("\n");
+    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -953,5 +868,225 @@ public class ExtractionExtractedData {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("document_number");
+    openapiFields.add("first_name");
+    openapiFields.add("last_name");
+    openapiFields.add("full_name");
+    openapiFields.add("spouse_name");
+    openapiFields.add("widow_name");
+    openapiFields.add("alias_name");
+    openapiFields.add("gender");
+    openapiFields.add("date_of_birth");
+    openapiFields.add("date_of_expiry");
+    openapiFields.add("expiry_date");
+    openapiFields.add("nationality");
+    openapiFields.add("mrz_line_1");
+    openapiFields.add("mrz_line_2");
+    openapiFields.add("mrz_line_3");
+    openapiFields.add("address_1");
+    openapiFields.add("address_2");
+    openapiFields.add("address_3");
+    openapiFields.add("address_4");
+    openapiFields.add("address_5");
+    openapiFields.add("issuing_authority");
+    openapiFields.add("issuing_country");
+    openapiFields.add("document_type");
+    openapiFields.add("place_of_birth");
+    openapiFields.add("issuing_state");
+    openapiFields.add("issuing_date");
+    openapiFields.add("personal_number");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+  }
+
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to ExtractionExtractedData
+  */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!ExtractionExtractedData.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in ExtractionExtractedData is not found in the empty JSON string", ExtractionExtractedData.openapiRequiredFields.toString()));
+        }
+      }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("document_number") != null && !jsonObj.get("document_number").isJsonNull()) && !jsonObj.get("document_number").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `document_number` to be a primitive type in the JSON string but got `%s`", jsonObj.get("document_number").toString()));
+      }
+      if ((jsonObj.get("first_name") != null && !jsonObj.get("first_name").isJsonNull()) && !jsonObj.get("first_name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `first_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("first_name").toString()));
+      }
+      if ((jsonObj.get("last_name") != null && !jsonObj.get("last_name").isJsonNull()) && !jsonObj.get("last_name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `last_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("last_name").toString()));
+      }
+      if ((jsonObj.get("full_name") != null && !jsonObj.get("full_name").isJsonNull()) && !jsonObj.get("full_name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `full_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("full_name").toString()));
+      }
+      if ((jsonObj.get("spouse_name") != null && !jsonObj.get("spouse_name").isJsonNull()) && !jsonObj.get("spouse_name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `spouse_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("spouse_name").toString()));
+      }
+      if ((jsonObj.get("widow_name") != null && !jsonObj.get("widow_name").isJsonNull()) && !jsonObj.get("widow_name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `widow_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("widow_name").toString()));
+      }
+      if ((jsonObj.get("alias_name") != null && !jsonObj.get("alias_name").isJsonNull()) && !jsonObj.get("alias_name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `alias_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("alias_name").toString()));
+      }
+      if ((jsonObj.get("gender") != null && !jsonObj.get("gender").isJsonNull()) && !jsonObj.get("gender").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `gender` to be a primitive type in the JSON string but got `%s`", jsonObj.get("gender").toString()));
+      }
+      // validate the optional field `gender`
+      if (jsonObj.get("gender") != null && !jsonObj.get("gender").isJsonNull()) {
+        GenderEnum.validateJsonElement(jsonObj.get("gender"));
+      }
+      if ((jsonObj.get("nationality") != null && !jsonObj.get("nationality").isJsonNull()) && !jsonObj.get("nationality").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `nationality` to be a primitive type in the JSON string but got `%s`", jsonObj.get("nationality").toString()));
+      }
+      if ((jsonObj.get("mrz_line_1") != null && !jsonObj.get("mrz_line_1").isJsonNull()) && !jsonObj.get("mrz_line_1").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `mrz_line_1` to be a primitive type in the JSON string but got `%s`", jsonObj.get("mrz_line_1").toString()));
+      }
+      if ((jsonObj.get("mrz_line_2") != null && !jsonObj.get("mrz_line_2").isJsonNull()) && !jsonObj.get("mrz_line_2").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `mrz_line_2` to be a primitive type in the JSON string but got `%s`", jsonObj.get("mrz_line_2").toString()));
+      }
+      if ((jsonObj.get("mrz_line_3") != null && !jsonObj.get("mrz_line_3").isJsonNull()) && !jsonObj.get("mrz_line_3").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `mrz_line_3` to be a primitive type in the JSON string but got `%s`", jsonObj.get("mrz_line_3").toString()));
+      }
+      if ((jsonObj.get("address_1") != null && !jsonObj.get("address_1").isJsonNull()) && !jsonObj.get("address_1").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `address_1` to be a primitive type in the JSON string but got `%s`", jsonObj.get("address_1").toString()));
+      }
+      if ((jsonObj.get("address_2") != null && !jsonObj.get("address_2").isJsonNull()) && !jsonObj.get("address_2").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `address_2` to be a primitive type in the JSON string but got `%s`", jsonObj.get("address_2").toString()));
+      }
+      if ((jsonObj.get("address_3") != null && !jsonObj.get("address_3").isJsonNull()) && !jsonObj.get("address_3").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `address_3` to be a primitive type in the JSON string but got `%s`", jsonObj.get("address_3").toString()));
+      }
+      if ((jsonObj.get("address_4") != null && !jsonObj.get("address_4").isJsonNull()) && !jsonObj.get("address_4").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `address_4` to be a primitive type in the JSON string but got `%s`", jsonObj.get("address_4").toString()));
+      }
+      if ((jsonObj.get("address_5") != null && !jsonObj.get("address_5").isJsonNull()) && !jsonObj.get("address_5").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `address_5` to be a primitive type in the JSON string but got `%s`", jsonObj.get("address_5").toString()));
+      }
+      if ((jsonObj.get("issuing_authority") != null && !jsonObj.get("issuing_authority").isJsonNull()) && !jsonObj.get("issuing_authority").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `issuing_authority` to be a primitive type in the JSON string but got `%s`", jsonObj.get("issuing_authority").toString()));
+      }
+      // validate the optional field `issuing_country`
+      if (jsonObj.get("issuing_country") != null && !jsonObj.get("issuing_country").isJsonNull()) {
+        CountryCodes.validateJsonElement(jsonObj.get("issuing_country"));
+      }
+      // validate the optional field `document_type`
+      if (jsonObj.get("document_type") != null && !jsonObj.get("document_type").isJsonNull()) {
+        DocumentTypes.validateJsonElement(jsonObj.get("document_type"));
+      }
+      if ((jsonObj.get("place_of_birth") != null && !jsonObj.get("place_of_birth").isJsonNull()) && !jsonObj.get("place_of_birth").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `place_of_birth` to be a primitive type in the JSON string but got `%s`", jsonObj.get("place_of_birth").toString()));
+      }
+      if ((jsonObj.get("issuing_state") != null && !jsonObj.get("issuing_state").isJsonNull()) && !jsonObj.get("issuing_state").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `issuing_state` to be a primitive type in the JSON string but got `%s`", jsonObj.get("issuing_state").toString()));
+      }
+      if ((jsonObj.get("personal_number") != null && !jsonObj.get("personal_number").isJsonNull()) && !jsonObj.get("personal_number").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `personal_number` to be a primitive type in the JSON string but got `%s`", jsonObj.get("personal_number").toString()));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!ExtractionExtractedData.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'ExtractionExtractedData' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<ExtractionExtractedData> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(ExtractionExtractedData.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<ExtractionExtractedData>() {
+           @Override
+           public void write(JsonWriter out, ExtractionExtractedData value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             obj.remove("additionalProperties");
+             // serialize additional properties
+             if (value.getAdditionalProperties() != null) {
+               for (Map.Entry<String, Object> entry : value.getAdditionalProperties().entrySet()) {
+                 if (entry.getValue() instanceof String)
+                   obj.addProperty(entry.getKey(), (String) entry.getValue());
+                 else if (entry.getValue() instanceof Number)
+                   obj.addProperty(entry.getKey(), (Number) entry.getValue());
+                 else if (entry.getValue() instanceof Boolean)
+                   obj.addProperty(entry.getKey(), (Boolean) entry.getValue());
+                 else if (entry.getValue() instanceof Character)
+                   obj.addProperty(entry.getKey(), (Character) entry.getValue());
+                 else {
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
+                 }
+               }
+             }
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public ExtractionExtractedData read(JsonReader in) throws IOException {
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
+             // store additional fields in the deserialized instance
+             ExtractionExtractedData instance = thisAdapter.fromJsonTree(jsonObj);
+             for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
+               if (!openapiFields.contains(entry.getKey())) {
+                 if (entry.getValue().isJsonPrimitive()) { // primitive type
+                   if (entry.getValue().getAsJsonPrimitive().isString())
+                     instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsString());
+                   else if (entry.getValue().getAsJsonPrimitive().isNumber())
+                     instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsNumber());
+                   else if (entry.getValue().getAsJsonPrimitive().isBoolean())
+                     instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
+                   else
+                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                 } else if (entry.getValue().isJsonArray()) {
+                     instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
+                 } else { // JSON object
+                     instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), HashMap.class));
+                 }
+               }
+             }
+             return instance;
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of ExtractionExtractedData given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of ExtractionExtractedData
+  * @throws IOException if the JSON string is invalid with respect to ExtractionExtractedData
+  */
+  public static ExtractionExtractedData fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, ExtractionExtractedData.class);
+  }
+
+ /**
+  * Convert an instance of ExtractionExtractedData to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

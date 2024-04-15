@@ -14,18 +14,19 @@
 package com.onfido.model;
 
 import java.util.Objects;
-import java.util.Map;
-import java.util.HashMap;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.onfido.JSON;
+import com.google.gson.annotations.SerializedName;
 
-
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import java.io.IOException;
+import com.google.gson.TypeAdapter;
+import com.google.gson.JsonElement;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 
 /**
  * Gets or Sets webhook_event_type
  */
+@JsonAdapter(WebhookEventType.Adapter.class)
 public enum WebhookEventType {
   
   AUDIT_LOG_CREATED("audit_log.created"),
@@ -70,7 +71,6 @@ public enum WebhookEventType {
     this.value = value;
   }
 
-  @JsonValue
   public String getValue() {
     return value;
   }
@@ -80,7 +80,6 @@ public enum WebhookEventType {
     return String.valueOf(value);
   }
 
-  @JsonCreator
   public static WebhookEventType fromValue(String value) {
     for (WebhookEventType b : WebhookEventType.values()) {
       if (b.value.equals(value)) {
@@ -88,6 +87,24 @@ public enum WebhookEventType {
       }
     }
     return UNKNOWN_DEFAULT_OPEN_API;
+  }
+
+  public static class Adapter extends TypeAdapter<WebhookEventType> {
+    @Override
+    public void write(final JsonWriter jsonWriter, final WebhookEventType enumeration) throws IOException {
+      jsonWriter.value(enumeration.getValue());
+    }
+
+    @Override
+    public WebhookEventType read(final JsonReader jsonReader) throws IOException {
+      String value = jsonReader.nextString();
+      return WebhookEventType.fromValue(value);
+    }
+  }
+
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+    String value = jsonElement.getAsString();
+    WebhookEventType.fromValue(value);
   }
 }
 

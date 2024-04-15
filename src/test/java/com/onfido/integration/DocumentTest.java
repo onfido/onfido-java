@@ -65,13 +65,11 @@ public class DocumentTest extends TestBase {
 
   @Test
   public void nullParamRequestTest() throws Exception {
-    // InputStream inputStream = new ByteArrayInputStream("testing testing 1 2".getBytes());
-
     try {
       onfido.uploadDocument(null, null, null, "file.png", null, null, null, null);
       Assertions.fail();
     } catch (ApiException ex) {
-      Assertions.assertEquals(400, ex.getCode());
+      Assertions.assertEquals(0, ex.getCode());
     }
   }
 }

@@ -14,18 +14,19 @@
 package com.onfido.model;
 
 import java.util.Objects;
-import java.util.Map;
-import java.util.HashMap;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.onfido.JSON;
+import com.google.gson.annotations.SerializedName;
 
-
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import java.io.IOException;
+import com.google.gson.TypeAdapter;
+import com.google.gson.JsonElement;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 
 /**
  * Gets or Sets country_codes
  */
+@JsonAdapter(CountryCodes.Adapter.class)
 public enum CountryCodes {
   
   ABW("ABW"),
@@ -536,7 +537,6 @@ public enum CountryCodes {
     this.value = value;
   }
 
-  @JsonValue
   public String getValue() {
     return value;
   }
@@ -546,7 +546,6 @@ public enum CountryCodes {
     return String.valueOf(value);
   }
 
-  @JsonCreator
   public static CountryCodes fromValue(String value) {
     for (CountryCodes b : CountryCodes.values()) {
       if (b.value.equals(value)) {
@@ -554,6 +553,24 @@ public enum CountryCodes {
       }
     }
     return UNKNOWN_DEFAULT_OPEN_API;
+  }
+
+  public static class Adapter extends TypeAdapter<CountryCodes> {
+    @Override
+    public void write(final JsonWriter jsonWriter, final CountryCodes enumeration) throws IOException {
+      jsonWriter.value(enumeration.getValue());
+    }
+
+    @Override
+    public CountryCodes read(final JsonReader jsonReader) throws IOException {
+      String value = jsonReader.nextString();
+      return CountryCodes.fromValue(value);
+    }
+  }
+
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+    String value = jsonElement.getAsString();
+    CountryCodes.fromValue(value);
   }
 }
 

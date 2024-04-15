@@ -14,65 +14,81 @@
 package com.onfido.model;
 
 import java.util.Objects;
-import java.util.Map;
-import java.util.HashMap;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import com.onfido.model.ReportName;
 import com.onfido.model.UsDrivingLicenceBuilder;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.onfido.JSON;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import com.onfido.JSON;
 
 /**
  * CheckRequest
  */
-@JsonPropertyOrder({
-  CheckRequest.JSON_PROPERTY_REPORT_NAMES,
-  CheckRequest.JSON_PROPERTY_DOCUMENT_IDS,
-  CheckRequest.JSON_PROPERTY_APPLICANT_PROVIDES_DATA,
-  CheckRequest.JSON_PROPERTY_ASYNCHRONOUS,
-  CheckRequest.JSON_PROPERTY_SUPPRESS_FORM_EMAILS,
-  CheckRequest.JSON_PROPERTY_SUB_RESULT,
-  CheckRequest.JSON_PROPERTY_CONSIDER,
-  CheckRequest.JSON_PROPERTY_US_DRIVING_LICENCE
-})
-@JsonTypeName("check_request")
-@com.fasterxml.jackson.annotation.JsonIgnoreProperties(ignoreUnknown = true)
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
 public class CheckRequest {
-  public static final String JSON_PROPERTY_REPORT_NAMES = "report_names";
+  public static final String SERIALIZED_NAME_REPORT_NAMES = "report_names";
+  @SerializedName(SERIALIZED_NAME_REPORT_NAMES)
   private List<ReportName> reportNames = new ArrayList<>();
 
-  public static final String JSON_PROPERTY_DOCUMENT_IDS = "document_ids";
+  public static final String SERIALIZED_NAME_DOCUMENT_IDS = "document_ids";
+  @SerializedName(SERIALIZED_NAME_DOCUMENT_IDS)
   private List<UUID> documentIds;
 
-  public static final String JSON_PROPERTY_APPLICANT_PROVIDES_DATA = "applicant_provides_data";
+  public static final String SERIALIZED_NAME_APPLICANT_PROVIDES_DATA = "applicant_provides_data";
+  @SerializedName(SERIALIZED_NAME_APPLICANT_PROVIDES_DATA)
   private Boolean applicantProvidesData = false;
 
-  public static final String JSON_PROPERTY_ASYNCHRONOUS = "asynchronous";
+  public static final String SERIALIZED_NAME_ASYNCHRONOUS = "asynchronous";
+  @SerializedName(SERIALIZED_NAME_ASYNCHRONOUS)
   private Boolean asynchronous = true;
 
-  public static final String JSON_PROPERTY_SUPPRESS_FORM_EMAILS = "suppress_form_emails";
+  public static final String SERIALIZED_NAME_SUPPRESS_FORM_EMAILS = "suppress_form_emails";
+  @SerializedName(SERIALIZED_NAME_SUPPRESS_FORM_EMAILS)
   private Boolean suppressFormEmails;
 
-  public static final String JSON_PROPERTY_SUB_RESULT = "sub_result";
+  public static final String SERIALIZED_NAME_SUB_RESULT = "sub_result";
+  @SerializedName(SERIALIZED_NAME_SUB_RESULT)
   private String subResult;
 
-  public static final String JSON_PROPERTY_CONSIDER = "consider";
+  public static final String SERIALIZED_NAME_CONSIDER = "consider";
+  @SerializedName(SERIALIZED_NAME_CONSIDER)
   private List<ReportName> consider;
 
-  public static final String JSON_PROPERTY_US_DRIVING_LICENCE = "us_driving_licence";
+  public static final String SERIALIZED_NAME_US_DRIVING_LICENCE = "us_driving_licence";
+  @SerializedName(SERIALIZED_NAME_US_DRIVING_LICENCE)
   private UsDrivingLicenceBuilder usDrivingLicence;
 
-  public CheckRequest() { 
+  public CheckRequest() {
   }
 
   public CheckRequest reportNames(List<ReportName> reportNames) {
@@ -93,16 +109,10 @@ public class CheckRequest {
    * @return reportNames
   **/
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_REPORT_NAMES)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-
   public List<ReportName> getReportNames() {
     return reportNames;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_REPORT_NAMES)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setReportNames(List<ReportName> reportNames) {
     this.reportNames = reportNames;
   }
@@ -126,16 +136,10 @@ public class CheckRequest {
    * @return documentIds
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_DOCUMENT_IDS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public List<UUID> getDocumentIds() {
     return documentIds;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_DOCUMENT_IDS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDocumentIds(List<UUID> documentIds) {
     this.documentIds = documentIds;
   }
@@ -151,16 +155,10 @@ public class CheckRequest {
    * @return applicantProvidesData
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_APPLICANT_PROVIDES_DATA)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public Boolean getApplicantProvidesData() {
     return applicantProvidesData;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_APPLICANT_PROVIDES_DATA)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setApplicantProvidesData(Boolean applicantProvidesData) {
     this.applicantProvidesData = applicantProvidesData;
   }
@@ -176,16 +174,10 @@ public class CheckRequest {
    * @return asynchronous
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ASYNCHRONOUS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public Boolean getAsynchronous() {
     return asynchronous;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_ASYNCHRONOUS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAsynchronous(Boolean asynchronous) {
     this.asynchronous = asynchronous;
   }
@@ -201,16 +193,10 @@ public class CheckRequest {
    * @return suppressFormEmails
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_SUPPRESS_FORM_EMAILS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public Boolean getSuppressFormEmails() {
     return suppressFormEmails;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_SUPPRESS_FORM_EMAILS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSuppressFormEmails(Boolean suppressFormEmails) {
     this.suppressFormEmails = suppressFormEmails;
   }
@@ -226,16 +212,10 @@ public class CheckRequest {
    * @return subResult
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_SUB_RESULT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public String getSubResult() {
     return subResult;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_SUB_RESULT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSubResult(String subResult) {
     this.subResult = subResult;
   }
@@ -259,16 +239,10 @@ public class CheckRequest {
    * @return consider
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_CONSIDER)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public List<ReportName> getConsider() {
     return consider;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_CONSIDER)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setConsider(List<ReportName> consider) {
     this.consider = consider;
   }
@@ -284,24 +258,60 @@ public class CheckRequest {
    * @return usDrivingLicence
   **/
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_US_DRIVING_LICENCE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public UsDrivingLicenceBuilder getUsDrivingLicence() {
     return usDrivingLicence;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_US_DRIVING_LICENCE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setUsDrivingLicence(UsDrivingLicenceBuilder usDrivingLicence) {
     this.usDrivingLicence = usDrivingLicence;
   }
 
+  /**
+   * A container for additional, undeclared properties.
+   * This is a holder for any undeclared properties as specified with
+   * the 'additionalProperties' keyword in the OAS document.
+   */
+  private Map<String, Object> additionalProperties;
 
   /**
-   * Return true if this check_request object is equal to o.
+   * Set the additional (undeclared) property with the specified name and value.
+   * If the property does not already exist, create it otherwise replace it.
+   *
+   * @param key name of the property
+   * @param value value of the property
+   * @return the CheckRequest instance itself
    */
+  public CheckRequest putAdditionalProperty(String key, Object value) {
+    if (this.additionalProperties == null) {
+        this.additionalProperties = new HashMap<String, Object>();
+    }
+    this.additionalProperties.put(key, value);
+    return this;
+  }
+
+  /**
+   * Return the additional (undeclared) property.
+   *
+   * @return a map of objects
+   */
+  public Map<String, Object> getAdditionalProperties() {
+    return additionalProperties;
+  }
+
+  /**
+   * Return the additional (undeclared) property with the specified name.
+   *
+   * @param key name of the property
+   * @return an object
+   */
+  public Object getAdditionalProperty(String key) {
+    if (this.additionalProperties == null) {
+        return null;
+    }
+    return this.additionalProperties.get(key);
+  }
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -318,12 +328,13 @@ public class CheckRequest {
         Objects.equals(this.suppressFormEmails, checkRequest.suppressFormEmails) &&
         Objects.equals(this.subResult, checkRequest.subResult) &&
         Objects.equals(this.consider, checkRequest.consider) &&
-        Objects.equals(this.usDrivingLicence, checkRequest.usDrivingLicence);
+        Objects.equals(this.usDrivingLicence, checkRequest.usDrivingLicence)&&
+        Objects.equals(this.additionalProperties, checkRequest.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(reportNames, documentIds, applicantProvidesData, asynchronous, suppressFormEmails, subResult, consider, usDrivingLicence);
+    return Objects.hash(reportNames, documentIds, applicantProvidesData, asynchronous, suppressFormEmails, subResult, consider, usDrivingLicence, additionalProperties);
   }
 
   @Override
@@ -338,6 +349,7 @@ public class CheckRequest {
     sb.append("    subResult: ").append(toIndentedString(subResult)).append("\n");
     sb.append("    consider: ").append(toIndentedString(consider)).append("\n");
     sb.append("    usDrivingLicence: ").append(toIndentedString(usDrivingLicence)).append("\n");
+    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -353,5 +365,160 @@ public class CheckRequest {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("report_names");
+    openapiFields.add("document_ids");
+    openapiFields.add("applicant_provides_data");
+    openapiFields.add("asynchronous");
+    openapiFields.add("suppress_form_emails");
+    openapiFields.add("sub_result");
+    openapiFields.add("consider");
+    openapiFields.add("us_driving_licence");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("report_names");
+  }
+
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to CheckRequest
+  */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!CheckRequest.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in CheckRequest is not found in the empty JSON string", CheckRequest.openapiRequiredFields.toString()));
+        }
+      }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : CheckRequest.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // ensure the required json array is present
+      if (jsonObj.get("report_names") == null) {
+        throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
+      } else if (!jsonObj.get("report_names").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `report_names` to be an array in the JSON string but got `%s`", jsonObj.get("report_names").toString()));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("document_ids") != null && !jsonObj.get("document_ids").isJsonNull() && !jsonObj.get("document_ids").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `document_ids` to be an array in the JSON string but got `%s`", jsonObj.get("document_ids").toString()));
+      }
+      if ((jsonObj.get("sub_result") != null && !jsonObj.get("sub_result").isJsonNull()) && !jsonObj.get("sub_result").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `sub_result` to be a primitive type in the JSON string but got `%s`", jsonObj.get("sub_result").toString()));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("consider") != null && !jsonObj.get("consider").isJsonNull() && !jsonObj.get("consider").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `consider` to be an array in the JSON string but got `%s`", jsonObj.get("consider").toString()));
+      }
+      // validate the optional field `us_driving_licence`
+      if (jsonObj.get("us_driving_licence") != null && !jsonObj.get("us_driving_licence").isJsonNull()) {
+        UsDrivingLicenceBuilder.validateJsonElement(jsonObj.get("us_driving_licence"));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!CheckRequest.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'CheckRequest' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<CheckRequest> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(CheckRequest.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<CheckRequest>() {
+           @Override
+           public void write(JsonWriter out, CheckRequest value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             obj.remove("additionalProperties");
+             // serialize additional properties
+             if (value.getAdditionalProperties() != null) {
+               for (Map.Entry<String, Object> entry : value.getAdditionalProperties().entrySet()) {
+                 if (entry.getValue() instanceof String)
+                   obj.addProperty(entry.getKey(), (String) entry.getValue());
+                 else if (entry.getValue() instanceof Number)
+                   obj.addProperty(entry.getKey(), (Number) entry.getValue());
+                 else if (entry.getValue() instanceof Boolean)
+                   obj.addProperty(entry.getKey(), (Boolean) entry.getValue());
+                 else if (entry.getValue() instanceof Character)
+                   obj.addProperty(entry.getKey(), (Character) entry.getValue());
+                 else {
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
+                 }
+               }
+             }
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public CheckRequest read(JsonReader in) throws IOException {
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
+             // store additional fields in the deserialized instance
+             CheckRequest instance = thisAdapter.fromJsonTree(jsonObj);
+             for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
+               if (!openapiFields.contains(entry.getKey())) {
+                 if (entry.getValue().isJsonPrimitive()) { // primitive type
+                   if (entry.getValue().getAsJsonPrimitive().isString())
+                     instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsString());
+                   else if (entry.getValue().getAsJsonPrimitive().isNumber())
+                     instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsNumber());
+                   else if (entry.getValue().getAsJsonPrimitive().isBoolean())
+                     instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
+                   else
+                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                 } else if (entry.getValue().isJsonArray()) {
+                     instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
+                 } else { // JSON object
+                     instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), HashMap.class));
+                 }
+               }
+             }
+             return instance;
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of CheckRequest given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of CheckRequest
+  * @throws IOException if the JSON string is invalid with respect to CheckRequest
+  */
+  public static CheckRequest fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, CheckRequest.class);
+  }
+
+ /**
+  * Convert an instance of CheckRequest to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

@@ -4,18 +4,20 @@ The official Java library for integrating with the Onfido API.
 
 Documentation can be found at <https://documentation.onfido.com>.
 
-This library is only for use on the backend, as it uses Onfido API tokens which must be kept secret.
+This library is only for use on the backend, as it uses Onfido API tokens which must be kept secret. If you do need to collect applicant data in the frontend of your application, we recommend that you use the Onfido SDKs: [iOS](https://github.com/onfido/onfido-ios-sdk), [Android](https://github.com/onfido/onfido-android-sdk), [Web](https://github.com/onfido/onfido-sdk-ui), and [React Native](https://github.com/onfido/react-native-sdk).
 
 This version uses Onfido API v3.6. Refer to our [API versioning guide](https://developers.onfido.com/guide/api-versioning-policy#client-libraries) for details of which client library versions use which versions of the API.
 
-## Requirements
+## Installation & Usage
+
+### Requirements
 
 Building the API client library requires:
 
 1. Java 1.8+
 3. Maven/Gradle
 
-## Installation
+### Installation
 
 To install the API client library to your local Maven repository, simply execute:
 
@@ -31,7 +33,7 @@ mvn clean deploy
 
 Refer to the [OSSRH Guide](http://central.sonatype.org/pages/ossrh-guide.html) for more information.
 
-### Maven users
+#### Maven users
 
 Add this dependency to your project's POM:
 
@@ -44,7 +46,7 @@ Add this dependency to your project's POM:
 </dependency>
 ```
 
-## Gradle users
+#### Gradle users
 
 Add this dependency to your project's build file:
 
@@ -59,7 +61,7 @@ Add this dependency to your project's build file:
   }
 ```
 
-### Others
+#### Others
 
 At first generate the JAR by executing:
 
@@ -81,6 +83,7 @@ Import the `DefaultApi` object, this is the main object used for interfacing wit
 ```java
 import com.onfido.api.DefaultApi;
 import com.onfido.ApiException;
+import com.onfido.OnfidoInvalidSignatureError;
 ```
 
 Instantiate and configure an `Onfido` instance with your API token, and region if necessary:
@@ -95,7 +98,7 @@ DefaultApi onfido = new DefaultApi(Configuration.getDefaultApiClient()
 
 NB: by default, timeout values are set to 30 seconds.
 
-## Making a call to the API
+### Making a call to the API
 
 Most of the request bodies can be created using a builder pattern, this would look something like:
 
@@ -116,14 +119,6 @@ try {
 
    // ...
 
-   // Webhook verification
-   WebhookEventVerifier verifier = new WebhookEventVerifier("_ABC123abc...3ABC123_");
-
-   String signature = "a0...760e";
-
-   WebhookEvent event = verifier.readPayload(rawEvent, signature);
-
-   const event = verifier.readPayload("{\"payload\":{\"r...3\"}}}", signature);
 } catch (ApiException e) {
     // An error response was received from the Onfido API, extra info is available.
     System.out.println(e.getMessage());
@@ -134,14 +129,30 @@ try {
 }
 ```
 
-## Recommendation
+### Webhook event verification
+
+Webhook events payload needs to be verified before it can be accessed. Library allows to easily decode the payload and verify its signature before returning it as an object for user convenience:
+
+```java
+try {
+   WebhookEventVerifier verifier = new WebhookEventVerifier("_ABC123abc...3ABC123_");
+
+   String signature = "a0...760e";
+
+   WebhookEvent event = verifier.readPayload("{\"payload\":{\"r...3\"}}}", signature);
+} catch( OnfidoInvalidSignatureError e ) {
+   // Invalid webhook signature
+}
+```
+
+
+### Recommendation
 
 It's recommended to create an instance of `ApiClient` per thread in a multithreaded environment to avoid any potential issues.
 
 ## Contributing
 
-This library is automatically generated using [OpenAPI Generator](https://openapi-generator.tech) - version: 7.4.0;
-therefore all the contributions, except tests files, should target [Onfido OpenAPI specification repository](https://github.com/onfido/onfido-openapi-spec/tree/master) instead of this repository.
+This library is automatically generated using [OpenAPI Generator](https://openapi-generator.tech) - version: 7.4.0; therefore all the contributions, except tests files, should target [Onfido OpenAPI specification repository](https://github.com/onfido/onfido-openapi-spec/tree/master) instead of this repository.
 
 For contributions to the tests instead, please follow the steps below:
 
@@ -159,4 +170,4 @@ More documentation and code examples can be found at <https://documentation.onfi
 ## Support
 
 Should you encounter any technical issues during integration, please contact Onfido's Customer Support team
-via the [Customer Experience Portal](https://public.support.onfido.com/) which also include support documentation.
+via the [Customer Experience Portal](https://public.support.onfido.com/) which also includes support documentation.

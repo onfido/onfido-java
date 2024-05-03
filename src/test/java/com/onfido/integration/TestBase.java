@@ -19,6 +19,8 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.UUID;
+import java.util.stream.Collectors;
+
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.TestInstance.Lifecycle;
@@ -103,7 +105,7 @@ public class TestBase {
 
   protected WorkflowRun createWorkflowRun(UUID workflowId, UUID applicantId) throws Exception {
     return onfido.createWorkflowRun(
-            new WorkflowRunBuilder().workflowId(workflowId).applicantId(applicantId));
+        new WorkflowRunBuilder().workflowId(workflowId).applicantId(applicantId));
   }
 
   private boolean isAValidUuid(UUID uuid) {
@@ -131,5 +133,13 @@ public class TestBase {
     for (Webhook webhook : onfido.listWebhooks().getWebhooks()) {
       onfido.deleteWebhook(webhook.getId());
     }
+  }
+
+  public String getTaskIdByPartialId(UUID workflowRunId, String partialId) throws ApiException {
+    return onfido.listTasks(workflowRunId).stream()
+        .filter((task) -> task.getTaskDefId().contains(partialId))
+        .collect(Collectors.toList())
+        .get(0)
+        .getId();
   }
 }

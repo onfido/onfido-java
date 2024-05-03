@@ -9,9 +9,12 @@ import com.onfido.model.Check;
 import com.onfido.model.CheckBuilder;
 import com.onfido.model.CountryCodes;
 import com.onfido.model.Document;
+import com.onfido.model.LivePhoto;
 import com.onfido.model.LocationBuilder;
 import com.onfido.model.ReportName;
 import com.onfido.model.Webhook;
+import com.onfido.model.WorkflowRun;
+import com.onfido.model.WorkflowRunBuilder;
 import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
@@ -43,7 +46,7 @@ public class TestBase {
   }
 
   @AfterAll
-  private void tearDownAndCleanUp() throws IOException, ApiException {
+  public void tearDownAndCleanUp() throws IOException, ApiException {
     cleanUpApplicants();
     cleanUpWebhooks();
   }
@@ -85,6 +88,10 @@ public class TestBase {
         locationBuilder);
   }
 
+  protected LivePhoto uploadLivePhoto(Applicant applicant, String filename) throws Exception {
+    return onfido.uploadLivePhoto(applicant.getId(), new File("media/" + filename), true);
+  }
+
   protected Check createCheck(Applicant applicant, Document document, CheckBuilder checkBuilder)
       throws IOException, InterruptedException, ApiException {
     return onfido.createCheck(
@@ -92,6 +99,11 @@ public class TestBase {
             .applicantId(applicant.getId())
             .reportNames(Arrays.asList(ReportName.DOCUMENT, ReportName.IDENTITY_ENHANCED))
             .documentIds(Arrays.asList(document.getId())));
+  }
+
+  protected WorkflowRun createWorkflowRun(UUID workflowId, UUID applicantId) throws Exception {
+    return onfido.createWorkflowRun(
+            new WorkflowRunBuilder().workflowId(workflowId).applicantId(applicantId));
   }
 
   private boolean isAValidUuid(UUID uuid) {

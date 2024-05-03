@@ -22,10 +22,6 @@ public class LivePhotoTest extends TestBase {
     livePhoto = uploadLivePhoto(applicant, "sample_photo.png");
   }
 
-  private LivePhoto uploadLivePhoto(Applicant applicant, String filename) throws Exception {
-    return onfido.uploadLivePhoto(applicant.getId(), new File("media/" + filename), true);
-  }
-
   @Test
   public void uploadLivePhotoTest() throws Exception {
     Assertions.assertEquals("sample_photo.png", livePhoto.getFileName());

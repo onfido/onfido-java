@@ -50,7 +50,7 @@ import com.onfido.JSON;
 /**
  * Asserts whether the person in the motion capture is real (not a spoof) and live.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class FacialSimilarityMotionBreakdownVisualAuthenticity {
   public static final String SERIALIZED_NAME_RESULT = "result";
   @SerializedName(SERIALIZED_NAME_RESULT)

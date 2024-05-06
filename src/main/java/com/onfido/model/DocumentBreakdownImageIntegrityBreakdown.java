@@ -53,7 +53,7 @@ import com.onfido.JSON;
 /**
  * DocumentBreakdownImageIntegrityBreakdown
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class DocumentBreakdownImageIntegrityBreakdown {
   public static final String SERIALIZED_NAME_IMAGE_QUALITY = "image_quality";
   @SerializedName(SERIALIZED_NAME_IMAGE_QUALITY)

@@ -54,7 +54,7 @@ import com.onfido.JSON;
 /**
  * LiveVideo
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class LiveVideo {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -86,7 +86,7 @@ public class LiveVideo {
 
   public static final String SERIALIZED_NAME_CHALLENGE = "challenge";
   @SerializedName(SERIALIZED_NAME_CHALLENGE)
-  private List<Map<String, Object>> challenge;
+  private List<Map<String, Object>> challenge = new ArrayList<>();
 
   public LiveVideo() {
   }

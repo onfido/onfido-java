@@ -51,7 +51,7 @@ import com.onfido.JSON;
 /**
  * KnownFacesBreakdown
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class KnownFacesBreakdown {
   public static final String SERIALIZED_NAME_PREVIOUSLY_SEEN_FACES = "previously_seen_faces";
   @SerializedName(SERIALIZED_NAME_PREVIOUSLY_SEEN_FACES)

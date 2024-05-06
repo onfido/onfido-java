@@ -50,7 +50,7 @@ import com.onfido.JSON;
 /**
  * IndiaPanReportAllOfBreakdownDeviceBreakdown
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class IndiaPanReportAllOfBreakdownDeviceBreakdown {
   public static final String SERIALIZED_NAME_PAN_VALID = "pan_valid";
   @SerializedName(SERIALIZED_NAME_PAN_VALID)

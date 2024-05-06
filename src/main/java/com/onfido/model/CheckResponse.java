@@ -53,7 +53,7 @@ import com.onfido.JSON;
 /**
  * CheckResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class CheckResponse {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -201,7 +201,7 @@ public class CheckResponse {
 
   public static final String SERIALIZED_NAME_REPORT_IDS = "report_ids";
   @SerializedName(SERIALIZED_NAME_REPORT_IDS)
-  private List<UUID> reportIds;
+  private List<UUID> reportIds = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SANDBOX = "sandbox";
   @SerializedName(SERIALIZED_NAME_SANDBOX)

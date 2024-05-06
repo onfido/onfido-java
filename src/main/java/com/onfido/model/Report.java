@@ -89,7 +89,7 @@ import com.google.gson.JsonParseException;
 
 import com.onfido.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class Report extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(Report.class.getName());
 
@@ -135,129 +135,129 @@ public class Report extends AbstractOpenApiSchema {
 
                     // check if the actual instance is of the type `DocumentReport`
                     if (value.getActualInstance() instanceof DocumentReport) {
-                      JsonElement element = adapterDocumentReport.toJsonTree((DocumentReport)value.getActualInstance());
-                      elementAdapter.write(out, element);
-                      return;
+                        JsonElement element = adapterDocumentReport.toJsonTree((DocumentReport)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
                     }
                     // check if the actual instance is of the type `DocumentVideoReport`
                     if (value.getActualInstance() instanceof DocumentVideoReport) {
-                      JsonElement element = adapterDocumentVideoReport.toJsonTree((DocumentVideoReport)value.getActualInstance());
-                      elementAdapter.write(out, element);
-                      return;
+                        JsonElement element = adapterDocumentVideoReport.toJsonTree((DocumentVideoReport)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
                     }
                     // check if the actual instance is of the type `DocumentVideoWithAddressInformationReport`
                     if (value.getActualInstance() instanceof DocumentVideoWithAddressInformationReport) {
-                      JsonElement element = adapterDocumentVideoWithAddressInformationReport.toJsonTree((DocumentVideoWithAddressInformationReport)value.getActualInstance());
-                      elementAdapter.write(out, element);
-                      return;
+                        JsonElement element = adapterDocumentVideoWithAddressInformationReport.toJsonTree((DocumentVideoWithAddressInformationReport)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
                     }
                     // check if the actual instance is of the type `DocumentWithAddressInformationReport`
                     if (value.getActualInstance() instanceof DocumentWithAddressInformationReport) {
-                      JsonElement element = adapterDocumentWithAddressInformationReport.toJsonTree((DocumentWithAddressInformationReport)value.getActualInstance());
-                      elementAdapter.write(out, element);
-                      return;
+                        JsonElement element = adapterDocumentWithAddressInformationReport.toJsonTree((DocumentWithAddressInformationReport)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
                     }
                     // check if the actual instance is of the type `DocumentWithDrivingLicenceInformationReport`
                     if (value.getActualInstance() instanceof DocumentWithDrivingLicenceInformationReport) {
-                      JsonElement element = adapterDocumentWithDrivingLicenceInformationReport.toJsonTree((DocumentWithDrivingLicenceInformationReport)value.getActualInstance());
-                      elementAdapter.write(out, element);
-                      return;
+                        JsonElement element = adapterDocumentWithDrivingLicenceInformationReport.toJsonTree((DocumentWithDrivingLicenceInformationReport)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
                     }
                     // check if the actual instance is of the type `DocumentWithDriverVerificationReport`
                     if (value.getActualInstance() instanceof DocumentWithDriverVerificationReport) {
-                      JsonElement element = adapterDocumentWithDriverVerificationReport.toJsonTree((DocumentWithDriverVerificationReport)value.getActualInstance());
-                      elementAdapter.write(out, element);
-                      return;
+                        JsonElement element = adapterDocumentWithDriverVerificationReport.toJsonTree((DocumentWithDriverVerificationReport)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
                     }
                     // check if the actual instance is of the type `FacialSimilarityPhotoReport`
                     if (value.getActualInstance() instanceof FacialSimilarityPhotoReport) {
-                      JsonElement element = adapterFacialSimilarityPhotoReport.toJsonTree((FacialSimilarityPhotoReport)value.getActualInstance());
-                      elementAdapter.write(out, element);
-                      return;
+                        JsonElement element = adapterFacialSimilarityPhotoReport.toJsonTree((FacialSimilarityPhotoReport)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
                     }
                     // check if the actual instance is of the type `FacialSimilarityPhotoFullyAutoReport`
                     if (value.getActualInstance() instanceof FacialSimilarityPhotoFullyAutoReport) {
-                      JsonElement element = adapterFacialSimilarityPhotoFullyAutoReport.toJsonTree((FacialSimilarityPhotoFullyAutoReport)value.getActualInstance());
-                      elementAdapter.write(out, element);
-                      return;
+                        JsonElement element = adapterFacialSimilarityPhotoFullyAutoReport.toJsonTree((FacialSimilarityPhotoFullyAutoReport)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
                     }
                     // check if the actual instance is of the type `FacialSimilarityVideoReport`
                     if (value.getActualInstance() instanceof FacialSimilarityVideoReport) {
-                      JsonElement element = adapterFacialSimilarityVideoReport.toJsonTree((FacialSimilarityVideoReport)value.getActualInstance());
-                      elementAdapter.write(out, element);
-                      return;
+                        JsonElement element = adapterFacialSimilarityVideoReport.toJsonTree((FacialSimilarityVideoReport)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
                     }
                     // check if the actual instance is of the type `FacialSimilarityMotionReport`
                     if (value.getActualInstance() instanceof FacialSimilarityMotionReport) {
-                      JsonElement element = adapterFacialSimilarityMotionReport.toJsonTree((FacialSimilarityMotionReport)value.getActualInstance());
-                      elementAdapter.write(out, element);
-                      return;
+                        JsonElement element = adapterFacialSimilarityMotionReport.toJsonTree((FacialSimilarityMotionReport)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
                     }
                     // check if the actual instance is of the type `KnownFacesReport`
                     if (value.getActualInstance() instanceof KnownFacesReport) {
-                      JsonElement element = adapterKnownFacesReport.toJsonTree((KnownFacesReport)value.getActualInstance());
-                      elementAdapter.write(out, element);
-                      return;
+                        JsonElement element = adapterKnownFacesReport.toJsonTree((KnownFacesReport)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
                     }
                     // check if the actual instance is of the type `IdentityEnhancedReport`
                     if (value.getActualInstance() instanceof IdentityEnhancedReport) {
-                      JsonElement element = adapterIdentityEnhancedReport.toJsonTree((IdentityEnhancedReport)value.getActualInstance());
-                      elementAdapter.write(out, element);
-                      return;
+                        JsonElement element = adapterIdentityEnhancedReport.toJsonTree((IdentityEnhancedReport)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
                     }
                     // check if the actual instance is of the type `WatchlistAmlReport`
                     if (value.getActualInstance() instanceof WatchlistAmlReport) {
-                      JsonElement element = adapterWatchlistAmlReport.toJsonTree((WatchlistAmlReport)value.getActualInstance());
-                      elementAdapter.write(out, element);
-                      return;
+                        JsonElement element = adapterWatchlistAmlReport.toJsonTree((WatchlistAmlReport)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
                     }
                     // check if the actual instance is of the type `WatchlistEnhancedReport`
                     if (value.getActualInstance() instanceof WatchlistEnhancedReport) {
-                      JsonElement element = adapterWatchlistEnhancedReport.toJsonTree((WatchlistEnhancedReport)value.getActualInstance());
-                      elementAdapter.write(out, element);
-                      return;
+                        JsonElement element = adapterWatchlistEnhancedReport.toJsonTree((WatchlistEnhancedReport)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
                     }
                     // check if the actual instance is of the type `WatchlistStandardReport`
                     if (value.getActualInstance() instanceof WatchlistStandardReport) {
-                      JsonElement element = adapterWatchlistStandardReport.toJsonTree((WatchlistStandardReport)value.getActualInstance());
-                      elementAdapter.write(out, element);
-                      return;
+                        JsonElement element = adapterWatchlistStandardReport.toJsonTree((WatchlistStandardReport)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
                     }
                     // check if the actual instance is of the type `WatchlistPepsOnlyReport`
                     if (value.getActualInstance() instanceof WatchlistPepsOnlyReport) {
-                      JsonElement element = adapterWatchlistPepsOnlyReport.toJsonTree((WatchlistPepsOnlyReport)value.getActualInstance());
-                      elementAdapter.write(out, element);
-                      return;
+                        JsonElement element = adapterWatchlistPepsOnlyReport.toJsonTree((WatchlistPepsOnlyReport)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
                     }
                     // check if the actual instance is of the type `WatchlistSanctionsOnlyReport`
                     if (value.getActualInstance() instanceof WatchlistSanctionsOnlyReport) {
-                      JsonElement element = adapterWatchlistSanctionsOnlyReport.toJsonTree((WatchlistSanctionsOnlyReport)value.getActualInstance());
-                      elementAdapter.write(out, element);
-                      return;
+                        JsonElement element = adapterWatchlistSanctionsOnlyReport.toJsonTree((WatchlistSanctionsOnlyReport)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
                     }
                     // check if the actual instance is of the type `ProofOfAddressReport`
                     if (value.getActualInstance() instanceof ProofOfAddressReport) {
-                      JsonElement element = adapterProofOfAddressReport.toJsonTree((ProofOfAddressReport)value.getActualInstance());
-                      elementAdapter.write(out, element);
-                      return;
+                        JsonElement element = adapterProofOfAddressReport.toJsonTree((ProofOfAddressReport)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
                     }
                     // check if the actual instance is of the type `UsDrivingLicenceReport`
                     if (value.getActualInstance() instanceof UsDrivingLicenceReport) {
-                      JsonElement element = adapterUsDrivingLicenceReport.toJsonTree((UsDrivingLicenceReport)value.getActualInstance());
-                      elementAdapter.write(out, element);
-                      return;
+                        JsonElement element = adapterUsDrivingLicenceReport.toJsonTree((UsDrivingLicenceReport)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
                     }
                     // check if the actual instance is of the type `DeviceIntelligenceReport`
                     if (value.getActualInstance() instanceof DeviceIntelligenceReport) {
-                      JsonElement element = adapterDeviceIntelligenceReport.toJsonTree((DeviceIntelligenceReport)value.getActualInstance());
-                      elementAdapter.write(out, element);
-                      return;
+                        JsonElement element = adapterDeviceIntelligenceReport.toJsonTree((DeviceIntelligenceReport)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
                     }
                     // check if the actual instance is of the type `IndiaPanReport`
                     if (value.getActualInstance() instanceof IndiaPanReport) {
-                      JsonElement element = adapterIndiaPanReport.toJsonTree((IndiaPanReport)value.getActualInstance());
-                      elementAdapter.write(out, element);
-                      return;
+                        JsonElement element = adapterIndiaPanReport.toJsonTree((IndiaPanReport)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
                     }
                     throw new IOException("Failed to serialize as the type doesn't match oneOf schemas: DeviceIntelligenceReport, DocumentReport, DocumentVideoReport, DocumentVideoWithAddressInformationReport, DocumentWithAddressInformationReport, DocumentWithDriverVerificationReport, DocumentWithDrivingLicenceInformationReport, FacialSimilarityMotionReport, FacialSimilarityPhotoFullyAutoReport, FacialSimilarityPhotoReport, FacialSimilarityVideoReport, IdentityEnhancedReport, IndiaPanReport, KnownFacesReport, ProofOfAddressReport, UsDrivingLicenceReport, WatchlistAmlReport, WatchlistEnhancedReport, WatchlistPepsOnlyReport, WatchlistSanctionsOnlyReport, WatchlistStandardReport");
                 }
@@ -457,255 +457,255 @@ public class Report extends AbstractOpenApiSchema {
 
                     // deserialize DocumentReport
                     try {
-                      // validate the JSON object to see if any exception is thrown
-                      DocumentReport.validateJsonElement(jsonElement);
-                      actualAdapter = adapterDocumentReport;
-                      match++;
-                      log.log(Level.FINER, "Input data matches schema 'DocumentReport'");
+                        // validate the JSON object to see if any exception is thrown
+                        DocumentReport.validateJsonElement(jsonElement);
+                        actualAdapter = adapterDocumentReport;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'DocumentReport'");
                     } catch (Exception e) {
-                      // deserialization failed, continue
-                      errorMessages.add(String.format("Deserialization for DocumentReport failed with `%s`.", e.getMessage()));
-                      log.log(Level.FINER, "Input data does not match schema 'DocumentReport'", e);
+                        // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for DocumentReport failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'DocumentReport'", e);
                     }
                     // deserialize DocumentVideoReport
                     try {
-                      // validate the JSON object to see if any exception is thrown
-                      DocumentVideoReport.validateJsonElement(jsonElement);
-                      actualAdapter = adapterDocumentVideoReport;
-                      match++;
-                      log.log(Level.FINER, "Input data matches schema 'DocumentVideoReport'");
+                        // validate the JSON object to see if any exception is thrown
+                        DocumentVideoReport.validateJsonElement(jsonElement);
+                        actualAdapter = adapterDocumentVideoReport;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'DocumentVideoReport'");
                     } catch (Exception e) {
-                      // deserialization failed, continue
-                      errorMessages.add(String.format("Deserialization for DocumentVideoReport failed with `%s`.", e.getMessage()));
-                      log.log(Level.FINER, "Input data does not match schema 'DocumentVideoReport'", e);
+                        // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for DocumentVideoReport failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'DocumentVideoReport'", e);
                     }
                     // deserialize DocumentVideoWithAddressInformationReport
                     try {
-                      // validate the JSON object to see if any exception is thrown
-                      DocumentVideoWithAddressInformationReport.validateJsonElement(jsonElement);
-                      actualAdapter = adapterDocumentVideoWithAddressInformationReport;
-                      match++;
-                      log.log(Level.FINER, "Input data matches schema 'DocumentVideoWithAddressInformationReport'");
+                        // validate the JSON object to see if any exception is thrown
+                        DocumentVideoWithAddressInformationReport.validateJsonElement(jsonElement);
+                        actualAdapter = adapterDocumentVideoWithAddressInformationReport;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'DocumentVideoWithAddressInformationReport'");
                     } catch (Exception e) {
-                      // deserialization failed, continue
-                      errorMessages.add(String.format("Deserialization for DocumentVideoWithAddressInformationReport failed with `%s`.", e.getMessage()));
-                      log.log(Level.FINER, "Input data does not match schema 'DocumentVideoWithAddressInformationReport'", e);
+                        // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for DocumentVideoWithAddressInformationReport failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'DocumentVideoWithAddressInformationReport'", e);
                     }
                     // deserialize DocumentWithAddressInformationReport
                     try {
-                      // validate the JSON object to see if any exception is thrown
-                      DocumentWithAddressInformationReport.validateJsonElement(jsonElement);
-                      actualAdapter = adapterDocumentWithAddressInformationReport;
-                      match++;
-                      log.log(Level.FINER, "Input data matches schema 'DocumentWithAddressInformationReport'");
+                        // validate the JSON object to see if any exception is thrown
+                        DocumentWithAddressInformationReport.validateJsonElement(jsonElement);
+                        actualAdapter = adapterDocumentWithAddressInformationReport;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'DocumentWithAddressInformationReport'");
                     } catch (Exception e) {
-                      // deserialization failed, continue
-                      errorMessages.add(String.format("Deserialization for DocumentWithAddressInformationReport failed with `%s`.", e.getMessage()));
-                      log.log(Level.FINER, "Input data does not match schema 'DocumentWithAddressInformationReport'", e);
+                        // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for DocumentWithAddressInformationReport failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'DocumentWithAddressInformationReport'", e);
                     }
                     // deserialize DocumentWithDrivingLicenceInformationReport
                     try {
-                      // validate the JSON object to see if any exception is thrown
-                      DocumentWithDrivingLicenceInformationReport.validateJsonElement(jsonElement);
-                      actualAdapter = adapterDocumentWithDrivingLicenceInformationReport;
-                      match++;
-                      log.log(Level.FINER, "Input data matches schema 'DocumentWithDrivingLicenceInformationReport'");
+                        // validate the JSON object to see if any exception is thrown
+                        DocumentWithDrivingLicenceInformationReport.validateJsonElement(jsonElement);
+                        actualAdapter = adapterDocumentWithDrivingLicenceInformationReport;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'DocumentWithDrivingLicenceInformationReport'");
                     } catch (Exception e) {
-                      // deserialization failed, continue
-                      errorMessages.add(String.format("Deserialization for DocumentWithDrivingLicenceInformationReport failed with `%s`.", e.getMessage()));
-                      log.log(Level.FINER, "Input data does not match schema 'DocumentWithDrivingLicenceInformationReport'", e);
+                        // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for DocumentWithDrivingLicenceInformationReport failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'DocumentWithDrivingLicenceInformationReport'", e);
                     }
                     // deserialize DocumentWithDriverVerificationReport
                     try {
-                      // validate the JSON object to see if any exception is thrown
-                      DocumentWithDriverVerificationReport.validateJsonElement(jsonElement);
-                      actualAdapter = adapterDocumentWithDriverVerificationReport;
-                      match++;
-                      log.log(Level.FINER, "Input data matches schema 'DocumentWithDriverVerificationReport'");
+                        // validate the JSON object to see if any exception is thrown
+                        DocumentWithDriverVerificationReport.validateJsonElement(jsonElement);
+                        actualAdapter = adapterDocumentWithDriverVerificationReport;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'DocumentWithDriverVerificationReport'");
                     } catch (Exception e) {
-                      // deserialization failed, continue
-                      errorMessages.add(String.format("Deserialization for DocumentWithDriverVerificationReport failed with `%s`.", e.getMessage()));
-                      log.log(Level.FINER, "Input data does not match schema 'DocumentWithDriverVerificationReport'", e);
+                        // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for DocumentWithDriverVerificationReport failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'DocumentWithDriverVerificationReport'", e);
                     }
                     // deserialize FacialSimilarityPhotoReport
                     try {
-                      // validate the JSON object to see if any exception is thrown
-                      FacialSimilarityPhotoReport.validateJsonElement(jsonElement);
-                      actualAdapter = adapterFacialSimilarityPhotoReport;
-                      match++;
-                      log.log(Level.FINER, "Input data matches schema 'FacialSimilarityPhotoReport'");
+                        // validate the JSON object to see if any exception is thrown
+                        FacialSimilarityPhotoReport.validateJsonElement(jsonElement);
+                        actualAdapter = adapterFacialSimilarityPhotoReport;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'FacialSimilarityPhotoReport'");
                     } catch (Exception e) {
-                      // deserialization failed, continue
-                      errorMessages.add(String.format("Deserialization for FacialSimilarityPhotoReport failed with `%s`.", e.getMessage()));
-                      log.log(Level.FINER, "Input data does not match schema 'FacialSimilarityPhotoReport'", e);
+                        // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for FacialSimilarityPhotoReport failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'FacialSimilarityPhotoReport'", e);
                     }
                     // deserialize FacialSimilarityPhotoFullyAutoReport
                     try {
-                      // validate the JSON object to see if any exception is thrown
-                      FacialSimilarityPhotoFullyAutoReport.validateJsonElement(jsonElement);
-                      actualAdapter = adapterFacialSimilarityPhotoFullyAutoReport;
-                      match++;
-                      log.log(Level.FINER, "Input data matches schema 'FacialSimilarityPhotoFullyAutoReport'");
+                        // validate the JSON object to see if any exception is thrown
+                        FacialSimilarityPhotoFullyAutoReport.validateJsonElement(jsonElement);
+                        actualAdapter = adapterFacialSimilarityPhotoFullyAutoReport;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'FacialSimilarityPhotoFullyAutoReport'");
                     } catch (Exception e) {
-                      // deserialization failed, continue
-                      errorMessages.add(String.format("Deserialization for FacialSimilarityPhotoFullyAutoReport failed with `%s`.", e.getMessage()));
-                      log.log(Level.FINER, "Input data does not match schema 'FacialSimilarityPhotoFullyAutoReport'", e);
+                        // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for FacialSimilarityPhotoFullyAutoReport failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'FacialSimilarityPhotoFullyAutoReport'", e);
                     }
                     // deserialize FacialSimilarityVideoReport
                     try {
-                      // validate the JSON object to see if any exception is thrown
-                      FacialSimilarityVideoReport.validateJsonElement(jsonElement);
-                      actualAdapter = adapterFacialSimilarityVideoReport;
-                      match++;
-                      log.log(Level.FINER, "Input data matches schema 'FacialSimilarityVideoReport'");
+                        // validate the JSON object to see if any exception is thrown
+                        FacialSimilarityVideoReport.validateJsonElement(jsonElement);
+                        actualAdapter = adapterFacialSimilarityVideoReport;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'FacialSimilarityVideoReport'");
                     } catch (Exception e) {
-                      // deserialization failed, continue
-                      errorMessages.add(String.format("Deserialization for FacialSimilarityVideoReport failed with `%s`.", e.getMessage()));
-                      log.log(Level.FINER, "Input data does not match schema 'FacialSimilarityVideoReport'", e);
+                        // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for FacialSimilarityVideoReport failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'FacialSimilarityVideoReport'", e);
                     }
                     // deserialize FacialSimilarityMotionReport
                     try {
-                      // validate the JSON object to see if any exception is thrown
-                      FacialSimilarityMotionReport.validateJsonElement(jsonElement);
-                      actualAdapter = adapterFacialSimilarityMotionReport;
-                      match++;
-                      log.log(Level.FINER, "Input data matches schema 'FacialSimilarityMotionReport'");
+                        // validate the JSON object to see if any exception is thrown
+                        FacialSimilarityMotionReport.validateJsonElement(jsonElement);
+                        actualAdapter = adapterFacialSimilarityMotionReport;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'FacialSimilarityMotionReport'");
                     } catch (Exception e) {
-                      // deserialization failed, continue
-                      errorMessages.add(String.format("Deserialization for FacialSimilarityMotionReport failed with `%s`.", e.getMessage()));
-                      log.log(Level.FINER, "Input data does not match schema 'FacialSimilarityMotionReport'", e);
+                        // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for FacialSimilarityMotionReport failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'FacialSimilarityMotionReport'", e);
                     }
                     // deserialize KnownFacesReport
                     try {
-                      // validate the JSON object to see if any exception is thrown
-                      KnownFacesReport.validateJsonElement(jsonElement);
-                      actualAdapter = adapterKnownFacesReport;
-                      match++;
-                      log.log(Level.FINER, "Input data matches schema 'KnownFacesReport'");
+                        // validate the JSON object to see if any exception is thrown
+                        KnownFacesReport.validateJsonElement(jsonElement);
+                        actualAdapter = adapterKnownFacesReport;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'KnownFacesReport'");
                     } catch (Exception e) {
-                      // deserialization failed, continue
-                      errorMessages.add(String.format("Deserialization for KnownFacesReport failed with `%s`.", e.getMessage()));
-                      log.log(Level.FINER, "Input data does not match schema 'KnownFacesReport'", e);
+                        // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for KnownFacesReport failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'KnownFacesReport'", e);
                     }
                     // deserialize IdentityEnhancedReport
                     try {
-                      // validate the JSON object to see if any exception is thrown
-                      IdentityEnhancedReport.validateJsonElement(jsonElement);
-                      actualAdapter = adapterIdentityEnhancedReport;
-                      match++;
-                      log.log(Level.FINER, "Input data matches schema 'IdentityEnhancedReport'");
+                        // validate the JSON object to see if any exception is thrown
+                        IdentityEnhancedReport.validateJsonElement(jsonElement);
+                        actualAdapter = adapterIdentityEnhancedReport;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'IdentityEnhancedReport'");
                     } catch (Exception e) {
-                      // deserialization failed, continue
-                      errorMessages.add(String.format("Deserialization for IdentityEnhancedReport failed with `%s`.", e.getMessage()));
-                      log.log(Level.FINER, "Input data does not match schema 'IdentityEnhancedReport'", e);
+                        // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for IdentityEnhancedReport failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'IdentityEnhancedReport'", e);
                     }
                     // deserialize WatchlistAmlReport
                     try {
-                      // validate the JSON object to see if any exception is thrown
-                      WatchlistAmlReport.validateJsonElement(jsonElement);
-                      actualAdapter = adapterWatchlistAmlReport;
-                      match++;
-                      log.log(Level.FINER, "Input data matches schema 'WatchlistAmlReport'");
+                        // validate the JSON object to see if any exception is thrown
+                        WatchlistAmlReport.validateJsonElement(jsonElement);
+                        actualAdapter = adapterWatchlistAmlReport;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'WatchlistAmlReport'");
                     } catch (Exception e) {
-                      // deserialization failed, continue
-                      errorMessages.add(String.format("Deserialization for WatchlistAmlReport failed with `%s`.", e.getMessage()));
-                      log.log(Level.FINER, "Input data does not match schema 'WatchlistAmlReport'", e);
+                        // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for WatchlistAmlReport failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'WatchlistAmlReport'", e);
                     }
                     // deserialize WatchlistEnhancedReport
                     try {
-                      // validate the JSON object to see if any exception is thrown
-                      WatchlistEnhancedReport.validateJsonElement(jsonElement);
-                      actualAdapter = adapterWatchlistEnhancedReport;
-                      match++;
-                      log.log(Level.FINER, "Input data matches schema 'WatchlistEnhancedReport'");
+                        // validate the JSON object to see if any exception is thrown
+                        WatchlistEnhancedReport.validateJsonElement(jsonElement);
+                        actualAdapter = adapterWatchlistEnhancedReport;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'WatchlistEnhancedReport'");
                     } catch (Exception e) {
-                      // deserialization failed, continue
-                      errorMessages.add(String.format("Deserialization for WatchlistEnhancedReport failed with `%s`.", e.getMessage()));
-                      log.log(Level.FINER, "Input data does not match schema 'WatchlistEnhancedReport'", e);
+                        // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for WatchlistEnhancedReport failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'WatchlistEnhancedReport'", e);
                     }
                     // deserialize WatchlistStandardReport
                     try {
-                      // validate the JSON object to see if any exception is thrown
-                      WatchlistStandardReport.validateJsonElement(jsonElement);
-                      actualAdapter = adapterWatchlistStandardReport;
-                      match++;
-                      log.log(Level.FINER, "Input data matches schema 'WatchlistStandardReport'");
+                        // validate the JSON object to see if any exception is thrown
+                        WatchlistStandardReport.validateJsonElement(jsonElement);
+                        actualAdapter = adapterWatchlistStandardReport;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'WatchlistStandardReport'");
                     } catch (Exception e) {
-                      // deserialization failed, continue
-                      errorMessages.add(String.format("Deserialization for WatchlistStandardReport failed with `%s`.", e.getMessage()));
-                      log.log(Level.FINER, "Input data does not match schema 'WatchlistStandardReport'", e);
+                        // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for WatchlistStandardReport failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'WatchlistStandardReport'", e);
                     }
                     // deserialize WatchlistPepsOnlyReport
                     try {
-                      // validate the JSON object to see if any exception is thrown
-                      WatchlistPepsOnlyReport.validateJsonElement(jsonElement);
-                      actualAdapter = adapterWatchlistPepsOnlyReport;
-                      match++;
-                      log.log(Level.FINER, "Input data matches schema 'WatchlistPepsOnlyReport'");
+                        // validate the JSON object to see if any exception is thrown
+                        WatchlistPepsOnlyReport.validateJsonElement(jsonElement);
+                        actualAdapter = adapterWatchlistPepsOnlyReport;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'WatchlistPepsOnlyReport'");
                     } catch (Exception e) {
-                      // deserialization failed, continue
-                      errorMessages.add(String.format("Deserialization for WatchlistPepsOnlyReport failed with `%s`.", e.getMessage()));
-                      log.log(Level.FINER, "Input data does not match schema 'WatchlistPepsOnlyReport'", e);
+                        // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for WatchlistPepsOnlyReport failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'WatchlistPepsOnlyReport'", e);
                     }
                     // deserialize WatchlistSanctionsOnlyReport
                     try {
-                      // validate the JSON object to see if any exception is thrown
-                      WatchlistSanctionsOnlyReport.validateJsonElement(jsonElement);
-                      actualAdapter = adapterWatchlistSanctionsOnlyReport;
-                      match++;
-                      log.log(Level.FINER, "Input data matches schema 'WatchlistSanctionsOnlyReport'");
+                        // validate the JSON object to see if any exception is thrown
+                        WatchlistSanctionsOnlyReport.validateJsonElement(jsonElement);
+                        actualAdapter = adapterWatchlistSanctionsOnlyReport;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'WatchlistSanctionsOnlyReport'");
                     } catch (Exception e) {
-                      // deserialization failed, continue
-                      errorMessages.add(String.format("Deserialization for WatchlistSanctionsOnlyReport failed with `%s`.", e.getMessage()));
-                      log.log(Level.FINER, "Input data does not match schema 'WatchlistSanctionsOnlyReport'", e);
+                        // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for WatchlistSanctionsOnlyReport failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'WatchlistSanctionsOnlyReport'", e);
                     }
                     // deserialize ProofOfAddressReport
                     try {
-                      // validate the JSON object to see if any exception is thrown
-                      ProofOfAddressReport.validateJsonElement(jsonElement);
-                      actualAdapter = adapterProofOfAddressReport;
-                      match++;
-                      log.log(Level.FINER, "Input data matches schema 'ProofOfAddressReport'");
+                        // validate the JSON object to see if any exception is thrown
+                        ProofOfAddressReport.validateJsonElement(jsonElement);
+                        actualAdapter = adapterProofOfAddressReport;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'ProofOfAddressReport'");
                     } catch (Exception e) {
-                      // deserialization failed, continue
-                      errorMessages.add(String.format("Deserialization for ProofOfAddressReport failed with `%s`.", e.getMessage()));
-                      log.log(Level.FINER, "Input data does not match schema 'ProofOfAddressReport'", e);
+                        // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for ProofOfAddressReport failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'ProofOfAddressReport'", e);
                     }
                     // deserialize UsDrivingLicenceReport
                     try {
-                      // validate the JSON object to see if any exception is thrown
-                      UsDrivingLicenceReport.validateJsonElement(jsonElement);
-                      actualAdapter = adapterUsDrivingLicenceReport;
-                      match++;
-                      log.log(Level.FINER, "Input data matches schema 'UsDrivingLicenceReport'");
+                        // validate the JSON object to see if any exception is thrown
+                        UsDrivingLicenceReport.validateJsonElement(jsonElement);
+                        actualAdapter = adapterUsDrivingLicenceReport;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'UsDrivingLicenceReport'");
                     } catch (Exception e) {
-                      // deserialization failed, continue
-                      errorMessages.add(String.format("Deserialization for UsDrivingLicenceReport failed with `%s`.", e.getMessage()));
-                      log.log(Level.FINER, "Input data does not match schema 'UsDrivingLicenceReport'", e);
+                        // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for UsDrivingLicenceReport failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'UsDrivingLicenceReport'", e);
                     }
                     // deserialize DeviceIntelligenceReport
                     try {
-                      // validate the JSON object to see if any exception is thrown
-                      DeviceIntelligenceReport.validateJsonElement(jsonElement);
-                      actualAdapter = adapterDeviceIntelligenceReport;
-                      match++;
-                      log.log(Level.FINER, "Input data matches schema 'DeviceIntelligenceReport'");
+                        // validate the JSON object to see if any exception is thrown
+                        DeviceIntelligenceReport.validateJsonElement(jsonElement);
+                        actualAdapter = adapterDeviceIntelligenceReport;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'DeviceIntelligenceReport'");
                     } catch (Exception e) {
-                      // deserialization failed, continue
-                      errorMessages.add(String.format("Deserialization for DeviceIntelligenceReport failed with `%s`.", e.getMessage()));
-                      log.log(Level.FINER, "Input data does not match schema 'DeviceIntelligenceReport'", e);
+                        // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for DeviceIntelligenceReport failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'DeviceIntelligenceReport'", e);
                     }
                     // deserialize IndiaPanReport
                     try {
-                      // validate the JSON object to see if any exception is thrown
-                      IndiaPanReport.validateJsonElement(jsonElement);
-                      actualAdapter = adapterIndiaPanReport;
-                      match++;
-                      log.log(Level.FINER, "Input data matches schema 'IndiaPanReport'");
+                        // validate the JSON object to see if any exception is thrown
+                        IndiaPanReport.validateJsonElement(jsonElement);
+                        actualAdapter = adapterIndiaPanReport;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'IndiaPanReport'");
                     } catch (Exception e) {
-                      // deserialization failed, continue
-                      errorMessages.add(String.format("Deserialization for IndiaPanReport failed with `%s`.", e.getMessage()));
-                      log.log(Level.FINER, "Input data does not match schema 'IndiaPanReport'", e);
+                        // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for IndiaPanReport failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'IndiaPanReport'", e);
                     }
 
                     if (match == 1) {
@@ -986,6 +986,7 @@ public class Report extends AbstractOpenApiSchema {
      *
      * @return The actual instance (DeviceIntelligenceReport, DocumentReport, DocumentVideoReport, DocumentVideoWithAddressInformationReport, DocumentWithAddressInformationReport, DocumentWithDriverVerificationReport, DocumentWithDrivingLicenceInformationReport, FacialSimilarityMotionReport, FacialSimilarityPhotoFullyAutoReport, FacialSimilarityPhotoReport, FacialSimilarityVideoReport, IdentityEnhancedReport, IndiaPanReport, KnownFacesReport, ProofOfAddressReport, UsDrivingLicenceReport, WatchlistAmlReport, WatchlistEnhancedReport, WatchlistPepsOnlyReport, WatchlistSanctionsOnlyReport, WatchlistStandardReport)
      */
+    @SuppressWarnings("unchecked")
     @Override
     public Object getActualInstance() {
         return super.getActualInstance();
@@ -1202,208 +1203,208 @@ public class Report extends AbstractOpenApiSchema {
         return (IndiaPanReport)super.getActualInstance();
     }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to Report
-  */
-  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-    // validate oneOf schemas one by one
-    int validCount = 0;
-    ArrayList<String> errorMessages = new ArrayList<>();
-    // validate the json string with DocumentReport
-    try {
-      DocumentReport.validateJsonElement(jsonElement);
-      validCount++;
-    } catch (Exception e) {
-      errorMessages.add(String.format("Deserialization for DocumentReport failed with `%s`.", e.getMessage()));
-      // continue to the next one
+    /**
+     * Validates the JSON Element and throws an exception if issues found
+     *
+     * @param jsonElement JSON Element
+     * @throws IOException if the JSON Element is invalid with respect to Report
+     */
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+        // validate oneOf schemas one by one
+        int validCount = 0;
+        ArrayList<String> errorMessages = new ArrayList<>();
+        // validate the json string with DocumentReport
+        try {
+            DocumentReport.validateJsonElement(jsonElement);
+            validCount++;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for DocumentReport failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        // validate the json string with DocumentVideoReport
+        try {
+            DocumentVideoReport.validateJsonElement(jsonElement);
+            validCount++;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for DocumentVideoReport failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        // validate the json string with DocumentVideoWithAddressInformationReport
+        try {
+            DocumentVideoWithAddressInformationReport.validateJsonElement(jsonElement);
+            validCount++;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for DocumentVideoWithAddressInformationReport failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        // validate the json string with DocumentWithAddressInformationReport
+        try {
+            DocumentWithAddressInformationReport.validateJsonElement(jsonElement);
+            validCount++;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for DocumentWithAddressInformationReport failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        // validate the json string with DocumentWithDrivingLicenceInformationReport
+        try {
+            DocumentWithDrivingLicenceInformationReport.validateJsonElement(jsonElement);
+            validCount++;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for DocumentWithDrivingLicenceInformationReport failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        // validate the json string with DocumentWithDriverVerificationReport
+        try {
+            DocumentWithDriverVerificationReport.validateJsonElement(jsonElement);
+            validCount++;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for DocumentWithDriverVerificationReport failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        // validate the json string with FacialSimilarityPhotoReport
+        try {
+            FacialSimilarityPhotoReport.validateJsonElement(jsonElement);
+            validCount++;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for FacialSimilarityPhotoReport failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        // validate the json string with FacialSimilarityPhotoFullyAutoReport
+        try {
+            FacialSimilarityPhotoFullyAutoReport.validateJsonElement(jsonElement);
+            validCount++;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for FacialSimilarityPhotoFullyAutoReport failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        // validate the json string with FacialSimilarityVideoReport
+        try {
+            FacialSimilarityVideoReport.validateJsonElement(jsonElement);
+            validCount++;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for FacialSimilarityVideoReport failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        // validate the json string with FacialSimilarityMotionReport
+        try {
+            FacialSimilarityMotionReport.validateJsonElement(jsonElement);
+            validCount++;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for FacialSimilarityMotionReport failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        // validate the json string with KnownFacesReport
+        try {
+            KnownFacesReport.validateJsonElement(jsonElement);
+            validCount++;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for KnownFacesReport failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        // validate the json string with IdentityEnhancedReport
+        try {
+            IdentityEnhancedReport.validateJsonElement(jsonElement);
+            validCount++;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for IdentityEnhancedReport failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        // validate the json string with WatchlistAmlReport
+        try {
+            WatchlistAmlReport.validateJsonElement(jsonElement);
+            validCount++;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for WatchlistAmlReport failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        // validate the json string with WatchlistEnhancedReport
+        try {
+            WatchlistEnhancedReport.validateJsonElement(jsonElement);
+            validCount++;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for WatchlistEnhancedReport failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        // validate the json string with WatchlistStandardReport
+        try {
+            WatchlistStandardReport.validateJsonElement(jsonElement);
+            validCount++;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for WatchlistStandardReport failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        // validate the json string with WatchlistPepsOnlyReport
+        try {
+            WatchlistPepsOnlyReport.validateJsonElement(jsonElement);
+            validCount++;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for WatchlistPepsOnlyReport failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        // validate the json string with WatchlistSanctionsOnlyReport
+        try {
+            WatchlistSanctionsOnlyReport.validateJsonElement(jsonElement);
+            validCount++;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for WatchlistSanctionsOnlyReport failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        // validate the json string with ProofOfAddressReport
+        try {
+            ProofOfAddressReport.validateJsonElement(jsonElement);
+            validCount++;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for ProofOfAddressReport failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        // validate the json string with UsDrivingLicenceReport
+        try {
+            UsDrivingLicenceReport.validateJsonElement(jsonElement);
+            validCount++;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for UsDrivingLicenceReport failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        // validate the json string with DeviceIntelligenceReport
+        try {
+            DeviceIntelligenceReport.validateJsonElement(jsonElement);
+            validCount++;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for DeviceIntelligenceReport failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        // validate the json string with IndiaPanReport
+        try {
+            IndiaPanReport.validateJsonElement(jsonElement);
+            validCount++;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for IndiaPanReport failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        if (validCount < 1) {
+            throw new IOException(String.format("The JSON string is invalid for Report with oneOf schemas: DeviceIntelligenceReport, DocumentReport, DocumentVideoReport, DocumentVideoWithAddressInformationReport, DocumentWithAddressInformationReport, DocumentWithDriverVerificationReport, DocumentWithDrivingLicenceInformationReport, FacialSimilarityMotionReport, FacialSimilarityPhotoFullyAutoReport, FacialSimilarityPhotoReport, FacialSimilarityVideoReport, IdentityEnhancedReport, IndiaPanReport, KnownFacesReport, ProofOfAddressReport, UsDrivingLicenceReport, WatchlistAmlReport, WatchlistEnhancedReport, WatchlistPepsOnlyReport, WatchlistSanctionsOnlyReport, WatchlistStandardReport. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
+        }
     }
-    // validate the json string with DocumentVideoReport
-    try {
-      DocumentVideoReport.validateJsonElement(jsonElement);
-      validCount++;
-    } catch (Exception e) {
-      errorMessages.add(String.format("Deserialization for DocumentVideoReport failed with `%s`.", e.getMessage()));
-      // continue to the next one
-    }
-    // validate the json string with DocumentVideoWithAddressInformationReport
-    try {
-      DocumentVideoWithAddressInformationReport.validateJsonElement(jsonElement);
-      validCount++;
-    } catch (Exception e) {
-      errorMessages.add(String.format("Deserialization for DocumentVideoWithAddressInformationReport failed with `%s`.", e.getMessage()));
-      // continue to the next one
-    }
-    // validate the json string with DocumentWithAddressInformationReport
-    try {
-      DocumentWithAddressInformationReport.validateJsonElement(jsonElement);
-      validCount++;
-    } catch (Exception e) {
-      errorMessages.add(String.format("Deserialization for DocumentWithAddressInformationReport failed with `%s`.", e.getMessage()));
-      // continue to the next one
-    }
-    // validate the json string with DocumentWithDrivingLicenceInformationReport
-    try {
-      DocumentWithDrivingLicenceInformationReport.validateJsonElement(jsonElement);
-      validCount++;
-    } catch (Exception e) {
-      errorMessages.add(String.format("Deserialization for DocumentWithDrivingLicenceInformationReport failed with `%s`.", e.getMessage()));
-      // continue to the next one
-    }
-    // validate the json string with DocumentWithDriverVerificationReport
-    try {
-      DocumentWithDriverVerificationReport.validateJsonElement(jsonElement);
-      validCount++;
-    } catch (Exception e) {
-      errorMessages.add(String.format("Deserialization for DocumentWithDriverVerificationReport failed with `%s`.", e.getMessage()));
-      // continue to the next one
-    }
-    // validate the json string with FacialSimilarityPhotoReport
-    try {
-      FacialSimilarityPhotoReport.validateJsonElement(jsonElement);
-      validCount++;
-    } catch (Exception e) {
-      errorMessages.add(String.format("Deserialization for FacialSimilarityPhotoReport failed with `%s`.", e.getMessage()));
-      // continue to the next one
-    }
-    // validate the json string with FacialSimilarityPhotoFullyAutoReport
-    try {
-      FacialSimilarityPhotoFullyAutoReport.validateJsonElement(jsonElement);
-      validCount++;
-    } catch (Exception e) {
-      errorMessages.add(String.format("Deserialization for FacialSimilarityPhotoFullyAutoReport failed with `%s`.", e.getMessage()));
-      // continue to the next one
-    }
-    // validate the json string with FacialSimilarityVideoReport
-    try {
-      FacialSimilarityVideoReport.validateJsonElement(jsonElement);
-      validCount++;
-    } catch (Exception e) {
-      errorMessages.add(String.format("Deserialization for FacialSimilarityVideoReport failed with `%s`.", e.getMessage()));
-      // continue to the next one
-    }
-    // validate the json string with FacialSimilarityMotionReport
-    try {
-      FacialSimilarityMotionReport.validateJsonElement(jsonElement);
-      validCount++;
-    } catch (Exception e) {
-      errorMessages.add(String.format("Deserialization for FacialSimilarityMotionReport failed with `%s`.", e.getMessage()));
-      // continue to the next one
-    }
-    // validate the json string with KnownFacesReport
-    try {
-      KnownFacesReport.validateJsonElement(jsonElement);
-      validCount++;
-    } catch (Exception e) {
-      errorMessages.add(String.format("Deserialization for KnownFacesReport failed with `%s`.", e.getMessage()));
-      // continue to the next one
-    }
-    // validate the json string with IdentityEnhancedReport
-    try {
-      IdentityEnhancedReport.validateJsonElement(jsonElement);
-      validCount++;
-    } catch (Exception e) {
-      errorMessages.add(String.format("Deserialization for IdentityEnhancedReport failed with `%s`.", e.getMessage()));
-      // continue to the next one
-    }
-    // validate the json string with WatchlistAmlReport
-    try {
-      WatchlistAmlReport.validateJsonElement(jsonElement);
-      validCount++;
-    } catch (Exception e) {
-      errorMessages.add(String.format("Deserialization for WatchlistAmlReport failed with `%s`.", e.getMessage()));
-      // continue to the next one
-    }
-    // validate the json string with WatchlistEnhancedReport
-    try {
-      WatchlistEnhancedReport.validateJsonElement(jsonElement);
-      validCount++;
-    } catch (Exception e) {
-      errorMessages.add(String.format("Deserialization for WatchlistEnhancedReport failed with `%s`.", e.getMessage()));
-      // continue to the next one
-    }
-    // validate the json string with WatchlistStandardReport
-    try {
-      WatchlistStandardReport.validateJsonElement(jsonElement);
-      validCount++;
-    } catch (Exception e) {
-      errorMessages.add(String.format("Deserialization for WatchlistStandardReport failed with `%s`.", e.getMessage()));
-      // continue to the next one
-    }
-    // validate the json string with WatchlistPepsOnlyReport
-    try {
-      WatchlistPepsOnlyReport.validateJsonElement(jsonElement);
-      validCount++;
-    } catch (Exception e) {
-      errorMessages.add(String.format("Deserialization for WatchlistPepsOnlyReport failed with `%s`.", e.getMessage()));
-      // continue to the next one
-    }
-    // validate the json string with WatchlistSanctionsOnlyReport
-    try {
-      WatchlistSanctionsOnlyReport.validateJsonElement(jsonElement);
-      validCount++;
-    } catch (Exception e) {
-      errorMessages.add(String.format("Deserialization for WatchlistSanctionsOnlyReport failed with `%s`.", e.getMessage()));
-      // continue to the next one
-    }
-    // validate the json string with ProofOfAddressReport
-    try {
-      ProofOfAddressReport.validateJsonElement(jsonElement);
-      validCount++;
-    } catch (Exception e) {
-      errorMessages.add(String.format("Deserialization for ProofOfAddressReport failed with `%s`.", e.getMessage()));
-      // continue to the next one
-    }
-    // validate the json string with UsDrivingLicenceReport
-    try {
-      UsDrivingLicenceReport.validateJsonElement(jsonElement);
-      validCount++;
-    } catch (Exception e) {
-      errorMessages.add(String.format("Deserialization for UsDrivingLicenceReport failed with `%s`.", e.getMessage()));
-      // continue to the next one
-    }
-    // validate the json string with DeviceIntelligenceReport
-    try {
-      DeviceIntelligenceReport.validateJsonElement(jsonElement);
-      validCount++;
-    } catch (Exception e) {
-      errorMessages.add(String.format("Deserialization for DeviceIntelligenceReport failed with `%s`.", e.getMessage()));
-      // continue to the next one
-    }
-    // validate the json string with IndiaPanReport
-    try {
-      IndiaPanReport.validateJsonElement(jsonElement);
-      validCount++;
-    } catch (Exception e) {
-      errorMessages.add(String.format("Deserialization for IndiaPanReport failed with `%s`.", e.getMessage()));
-      // continue to the next one
-    }
-    if (validCount < 1) {
-      throw new IOException(String.format("The JSON string is invalid for Report with oneOf schemas: DeviceIntelligenceReport, DocumentReport, DocumentVideoReport, DocumentVideoWithAddressInformationReport, DocumentWithAddressInformationReport, DocumentWithDriverVerificationReport, DocumentWithDrivingLicenceInformationReport, FacialSimilarityMotionReport, FacialSimilarityPhotoFullyAutoReport, FacialSimilarityPhotoReport, FacialSimilarityVideoReport, IdentityEnhancedReport, IndiaPanReport, KnownFacesReport, ProofOfAddressReport, UsDrivingLicenceReport, WatchlistAmlReport, WatchlistEnhancedReport, WatchlistPepsOnlyReport, WatchlistSanctionsOnlyReport, WatchlistStandardReport. %d class(es) match the result, expected at least 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
-    }
-  }
 
- /**
-  * Create an instance of Report given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of Report
-  * @throws IOException if the JSON string is invalid with respect to Report
-  */
-  public static Report fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, Report.class);
-  }
+    /**
+     * Create an instance of Report given an JSON string
+     *
+     * @param jsonString JSON string
+     * @return An instance of Report
+     * @throws IOException if the JSON string is invalid with respect to Report
+     */
+    public static Report fromJson(String jsonString) throws IOException {
+        return JSON.getGson().fromJson(jsonString, Report.class);
+    }
 
- /**
-  * Convert an instance of Report to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
+    /**
+     * Convert an instance of Report to an JSON string
+     *
+     * @return JSON string
+     */
+    public String toJson() {
+        return JSON.getGson().toJson(this);
+    }
 
 
   /**

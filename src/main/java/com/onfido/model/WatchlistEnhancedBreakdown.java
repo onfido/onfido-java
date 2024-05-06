@@ -53,7 +53,7 @@ import com.onfido.JSON;
 /**
  * WatchlistEnhancedBreakdown
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class WatchlistEnhancedBreakdown {
   public static final String SERIALIZED_NAME_POLITICALLY_EXPOSED_PERSON = "politically_exposed_person";
   @SerializedName(SERIALIZED_NAME_POLITICALLY_EXPOSED_PERSON)

@@ -52,11 +52,11 @@ import com.onfido.JSON;
 /**
  * WebhookResend
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class WebhookResend {
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
-  private List<WebhooksResendItem> data;
+  private List<WebhooksResendItem> data = new ArrayList<>();
 
   public WebhookResend() {
   }

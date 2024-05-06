@@ -49,7 +49,7 @@ import com.onfido.JSON;
 /**
  * The document doesn&#39;t match the expected template for the document type and country it is from.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class DocumentBreakdownVisualAuthenticityBreakdownTemplate {
   public static final String SERIALIZED_NAME_RESULT = "result";
   @SerializedName(SERIALIZED_NAME_RESULT)

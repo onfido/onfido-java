@@ -61,7 +61,7 @@ import com.onfido.JSON;
 /**
  * DocumentWithDriverVerificationReportAllOfProperties
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class DocumentWithDriverVerificationReportAllOfProperties {
   public static final String SERIALIZED_NAME_DATE_OF_BIRTH = "date_of_birth";
   @SerializedName(SERIALIZED_NAME_DATE_OF_BIRTH)
@@ -73,7 +73,7 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
 
   public static final String SERIALIZED_NAME_DOCUMENT_NUMBERS = "document_numbers";
   @SerializedName(SERIALIZED_NAME_DOCUMENT_NUMBERS)
-  private List<DocumentPropertiesDocumentNumbersInner> documentNumbers;
+  private List<DocumentPropertiesDocumentNumbersInner> documentNumbers = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_DOCUMENT_TYPE = "document_type";
   @SerializedName(SERIALIZED_NAME_DOCUMENT_TYPE)
@@ -157,7 +157,7 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
 
   public static final String SERIALIZED_NAME_BARCODE = "barcode";
   @SerializedName(SERIALIZED_NAME_BARCODE)
-  private List<DocumentPropertiesBarcodeInner> barcode;
+  private List<DocumentPropertiesBarcodeInner> barcode = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_NFC = "nfc";
   @SerializedName(SERIALIZED_NAME_NFC)
@@ -193,7 +193,7 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
 
   public static final String SERIALIZED_NAME_VEHICLE_CLASS_DETAILS = "vehicle_class_details";
   @SerializedName(SERIALIZED_NAME_VEHICLE_CLASS_DETAILS)
-  private List<DocumentWithDriverVerificationReportAllOfPropertiesAllOfVehicleClassDetailsInner> vehicleClassDetails;
+  private List<DocumentWithDriverVerificationReportAllOfPropertiesAllOfVehicleClassDetailsInner> vehicleClassDetails = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_PASSENGER_VEHICLE = "passenger_vehicle";
   @SerializedName(SERIALIZED_NAME_PASSENGER_VEHICLE)

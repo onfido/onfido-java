@@ -50,7 +50,7 @@ import com.onfido.JSON;
 /**
  * An object that contains all accepted fields for the Driver&#39;s License Data Verification report.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class UsDrivingLicenceShared {
   public static final String SERIALIZED_NAME_ID_NUMBER = "id_number";
   @SerializedName(SERIALIZED_NAME_ID_NUMBER)

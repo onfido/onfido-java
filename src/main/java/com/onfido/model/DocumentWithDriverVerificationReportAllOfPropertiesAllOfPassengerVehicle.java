@@ -50,7 +50,7 @@ import com.onfido.JSON;
 /**
  * Normalised data for passenger cars
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class DocumentWithDriverVerificationReportAllOfPropertiesAllOfPassengerVehicle {
   public static final String SERIALIZED_NAME_IS_QUALIFIED = "is_qualified";
   @SerializedName(SERIALIZED_NAME_IS_QUALIFIED)

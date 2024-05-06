@@ -49,7 +49,7 @@ import com.onfido.JSON;
 /**
  * VideoReasons
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class VideoReasons {
   public static final String SERIALIZED_NAME_FAKE_WEBCAM = "fake_webcam";
   @SerializedName(SERIALIZED_NAME_FAKE_WEBCAM)

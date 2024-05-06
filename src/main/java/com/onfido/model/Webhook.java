@@ -53,7 +53,7 @@ import com.onfido.JSON;
 /**
  * Webhook
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class Webhook {
   public static final String SERIALIZED_NAME_ENABLED = "enabled";
   @SerializedName(SERIALIZED_NAME_ENABLED)
@@ -61,11 +61,11 @@ public class Webhook {
 
   public static final String SERIALIZED_NAME_EVENTS = "events";
   @SerializedName(SERIALIZED_NAME_EVENTS)
-  private List<WebhookEventType> events;
+  private List<WebhookEventType> events = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_ENVIRONMENTS = "environments";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENTS)
-  private List<String> environments;
+  private List<String> environments = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_PAYLOAD_VERSION = "payload_version";
   @SerializedName(SERIALIZED_NAME_PAYLOAD_VERSION)

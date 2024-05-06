@@ -49,7 +49,7 @@ import com.onfido.JSON;
 /**
  * The applicant&#39;s consents
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class ConsentItem {
   /**
    * Gets or Sets name

@@ -15,6 +15,7 @@ package com.onfido.model;
 
 import java.util.Objects;
 import com.onfido.model.ConsentItem;
+import java.util.List;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -43,7 +44,7 @@ import com.onfido.JSON;
 /**
  * ConsentsBuilder
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class ConsentsBuilder {
   public ConsentsBuilder() {
   }

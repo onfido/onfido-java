@@ -52,11 +52,11 @@ import com.onfido.JSON;
 /**
  * KnownFacesProperties
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class KnownFacesProperties {
   public static final String SERIALIZED_NAME_MATCHES = "matches";
   @SerializedName(SERIALIZED_NAME_MATCHES)
-  private List<KnownFacesPropertiesMatchesInner> matches;
+  private List<KnownFacesPropertiesMatchesInner> matches = new ArrayList<>();
 
   public KnownFacesProperties() {
   }

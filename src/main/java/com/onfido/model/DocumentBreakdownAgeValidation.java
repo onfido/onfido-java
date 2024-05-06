@@ -50,7 +50,7 @@ import com.onfido.JSON;
 /**
  * Asserts whether the age calculated from the document&#39;s date of birth data point is greater than or equal to the minimum accepted age.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class DocumentBreakdownAgeValidation {
   public static final String SERIALIZED_NAME_RESULT = "result";
   @SerializedName(SERIALIZED_NAME_RESULT)

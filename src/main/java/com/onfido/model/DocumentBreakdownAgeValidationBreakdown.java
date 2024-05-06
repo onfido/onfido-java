@@ -50,7 +50,7 @@ import com.onfido.JSON;
 /**
  * DocumentBreakdownAgeValidationBreakdown
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class DocumentBreakdownAgeValidationBreakdown {
   public static final String SERIALIZED_NAME_MINIMUM_ACCEPTED_AGE = "minimum_accepted_age";
   @SerializedName(SERIALIZED_NAME_MINIMUM_ACCEPTED_AGE)

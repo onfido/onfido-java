@@ -57,7 +57,7 @@ import com.onfido.JSON;
 /**
  * Applicant
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class Applicant {
   public static final String SERIALIZED_NAME_EMAIL = "email";
   @SerializedName(SERIALIZED_NAME_EMAIL)
@@ -69,7 +69,7 @@ public class Applicant {
 
   public static final String SERIALIZED_NAME_ID_NUMBERS = "id_numbers";
   @SerializedName(SERIALIZED_NAME_ID_NUMBERS)
-  private List<IdNumber> idNumbers;
+  private List<IdNumber> idNumbers = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_PHONE_NUMBER = "phone_number";
   @SerializedName(SERIALIZED_NAME_PHONE_NUMBER)

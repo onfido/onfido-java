@@ -51,15 +51,15 @@ import com.onfido.JSON;
 /**
  * UpdateMonitorMatchRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class UpdateMonitorMatchRequest {
   public static final String SERIALIZED_NAME_ENABLE = "enable";
   @SerializedName(SERIALIZED_NAME_ENABLE)
-  private List<String> enable;
+  private List<String> enable = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_DISABLE = "disable";
   @SerializedName(SERIALIZED_NAME_DISABLE)
-  private List<String> disable;
+  private List<String> disable = new ArrayList<>();
 
   public UpdateMonitorMatchRequest() {
   }

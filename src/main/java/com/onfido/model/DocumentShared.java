@@ -51,7 +51,7 @@ import com.onfido.JSON;
 /**
  * DocumentShared
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class DocumentShared {
   /**
    * The file type of the uploaded file

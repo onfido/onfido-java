@@ -54,7 +54,7 @@ import com.onfido.JSON;
 /**
  * CheckRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class CheckRequest {
   public static final String SERIALIZED_NAME_REPORT_NAMES = "report_names";
   @SerializedName(SERIALIZED_NAME_REPORT_NAMES)
@@ -62,7 +62,7 @@ public class CheckRequest {
 
   public static final String SERIALIZED_NAME_DOCUMENT_IDS = "document_ids";
   @SerializedName(SERIALIZED_NAME_DOCUMENT_IDS)
-  private List<UUID> documentIds;
+  private List<UUID> documentIds = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_APPLICANT_PROVIDES_DATA = "applicant_provides_data";
   @SerializedName(SERIALIZED_NAME_APPLICANT_PROVIDES_DATA)
@@ -82,7 +82,7 @@ public class CheckRequest {
 
   public static final String SERIALIZED_NAME_CONSIDER = "consider";
   @SerializedName(SERIALIZED_NAME_CONSIDER)
-  private List<ReportName> consider;
+  private List<ReportName> consider = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_US_DRIVING_LICENCE = "us_driving_licence";
   @SerializedName(SERIALIZED_NAME_US_DRIVING_LICENCE)

@@ -50,7 +50,7 @@ import com.onfido.JSON;
 /**
  * ProofOfAddressBreakdownImageIntegrityBreakdown
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class ProofOfAddressBreakdownImageIntegrityBreakdown {
   public static final String SERIALIZED_NAME_IMAGE_QUALITY = "image_quality";
   @SerializedName(SERIALIZED_NAME_IMAGE_QUALITY)

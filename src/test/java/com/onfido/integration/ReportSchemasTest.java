@@ -1,14 +1,12 @@
 package com.onfido.integration;
 
+import static com.onfido.model.ReportStatus.COMPLETE;
+
 import com.onfido.model.*;
-
 import java.util.*;
-
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import static com.onfido.model.ReportStatus.COMPLETE;
 
 public class ReportSchemasTest extends TestBase {
   private Applicant applicant;

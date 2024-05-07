@@ -3,12 +3,10 @@ package com.onfido.integration;
 import com.onfido.model.Applicant;
 import com.onfido.model.CompleteTaskRequest;
 import com.onfido.model.Task;
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
-
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

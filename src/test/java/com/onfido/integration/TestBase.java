@@ -11,7 +11,6 @@ import com.onfido.model.CountryCodes;
 import com.onfido.model.Document;
 import com.onfido.model.LivePhoto;
 import com.onfido.model.LocationBuilder;
-import com.onfido.model.ReportName;
 import com.onfido.model.Webhook;
 import com.onfido.model.WorkflowRun;
 import com.onfido.model.WorkflowRunBuilder;
@@ -20,7 +19,6 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.UUID;
 import java.util.stream.Collectors;
-
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.TestInstance.Lifecycle;
@@ -97,9 +95,7 @@ public class TestBase {
   protected Check createCheck(Applicant applicant, Document document, CheckBuilder checkBuilder)
       throws IOException, InterruptedException, ApiException {
     return onfido.createCheck(
-        checkBuilder
-            .applicantId(applicant.getId())
-            .documentIds(Arrays.asList(document.getId())));
+        checkBuilder.applicantId(applicant.getId()).documentIds(Arrays.asList(document.getId())));
   }
 
   protected WorkflowRun createWorkflowRun(UUID workflowId, UUID applicantId) throws Exception {

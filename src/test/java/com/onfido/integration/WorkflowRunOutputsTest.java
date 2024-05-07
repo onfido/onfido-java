@@ -1,17 +1,15 @@
 package com.onfido.integration;
 
+import static com.onfido.model.WorkflowRun.StatusEnum.PROCESSING;
+
 import com.google.gson.Gson;
 import com.onfido.model.*;
-
 import java.io.FileReader;
 import java.io.Reader;
 import java.util.*;
-
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import static com.onfido.model.WorkflowRun.StatusEnum.PROCESSING;
 
 public class WorkflowRunOutputsTest extends TestBase {
   private Applicant applicant;

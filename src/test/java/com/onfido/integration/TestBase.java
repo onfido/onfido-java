@@ -99,7 +99,6 @@ public class TestBase {
     return onfido.createCheck(
         checkBuilder
             .applicantId(applicant.getId())
-            .reportNames(Arrays.asList(ReportName.DOCUMENT, ReportName.IDENTITY_ENHANCED))
             .documentIds(Arrays.asList(document.getId())));
   }
 

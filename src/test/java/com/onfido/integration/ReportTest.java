@@ -34,7 +34,8 @@ public class ReportTest extends TestBase {
         createCheck(
             applicant,
             document,
-            new CheckBuilder().reportNames(Arrays.asList(ReportName.DOCUMENT)));
+            new CheckBuilder()
+                .reportNames(Arrays.asList(ReportName.DOCUMENT, ReportName.IDENTITY_ENHANCED)));
   }
 
   private List<Report> sortReports(List<Report> reports) {

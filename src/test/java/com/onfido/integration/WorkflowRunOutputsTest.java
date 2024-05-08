@@ -1,5 +1,6 @@
 package com.onfido.integration;
 
+import static com.onfido.model.WorkflowRun.StatusEnum.APPROVED;
 import static com.onfido.model.WorkflowRun.StatusEnum.PROCESSING;
 
 import com.google.gson.Gson;
@@ -89,6 +90,7 @@ public class WorkflowRunOutputsTest extends TestBase {
       workflowRun = onfido.findWorkflowRun(workflowRunId);
     }
 
+    Assertions.assertEquals(APPROVED, workflowRun.getStatus());
     Map<String, Map<String, Object>> workflowRunOutput =
         (Map<String, Map<String, Object>>) workflowRun.getOutput();
 

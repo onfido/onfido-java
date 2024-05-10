@@ -1,0 +1,20 @@
+{
+  "data": {
+    "country_residence": "GBR",
+    "first_name": "First",
+    "last_name": "Last",
+    "dob": "2000-01-01",
+    "email": "first.last@gmail.com",
+    "phone_number": "+351911111111",
+    "nationality": "GBR",
+    "phone_number_consent_granted": true,
+    "address": {
+      "country": "GBR",
+      "line1": "123rd Street",
+      "line2": "2nd Floor",
+      "line3": "23",
+      "town": "London",
+      "postcode": "S2 2DF"
+    }
+  }
+}

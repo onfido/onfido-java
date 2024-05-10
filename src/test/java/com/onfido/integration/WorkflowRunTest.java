@@ -2,7 +2,6 @@ package com.onfido.integration;
 
 import com.onfido.model.Applicant;
 import com.onfido.model.WorkflowRun;
-import com.onfido.model.WorkflowRunBuilder;
 import java.io.File;
 import java.nio.file.Files;
 import java.util.UUID;
@@ -20,11 +19,6 @@ public class WorkflowRunTest extends TestBase {
   public void setup() throws Exception {
     applicant = createApplicant();
     workflowRun = createWorkflowRun(WORKFLOW_ID, applicant.getId());
-  }
-
-  private WorkflowRun createWorkflowRun(UUID workflowId, UUID applicantId) throws Exception {
-    return onfido.createWorkflowRun(
-        new WorkflowRunBuilder().workflowId(workflowId).applicantId(applicantId));
   }
 
   @Test

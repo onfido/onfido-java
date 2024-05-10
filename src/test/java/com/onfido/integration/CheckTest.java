@@ -67,9 +67,8 @@ public class CheckTest extends TestBase {
             applicant,
             document,
             new CheckBuilder()
-                .reportNames(Arrays.asList(ReportName.DOCUMENT))
+                .reportNames(Arrays.asList(ReportName.DOCUMENT, ReportName.IDENTITY_ENHANCED))
                 .consider(Arrays.asList(ReportName.IDENTITY_ENHANCED))
-                .reportNames(Arrays.asList(ReportName.US_DRIVING_LICENCE))
                 .usDrivingLicence(new UsDrivingLicenceBuilder().idNumber("12345").state("GA")));
 
     Assertions.assertEquals(applicant.getId(), check.getApplicantId());

@@ -9,13 +9,16 @@ import com.onfido.model.Check;
 import com.onfido.model.CheckBuilder;
 import com.onfido.model.CountryCodes;
 import com.onfido.model.Document;
+import com.onfido.model.LivePhoto;
 import com.onfido.model.LocationBuilder;
-import com.onfido.model.ReportName;
 import com.onfido.model.Webhook;
+import com.onfido.model.WorkflowRun;
+import com.onfido.model.WorkflowRunBuilder;
 import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.UUID;
+import java.util.stream.Collectors;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.TestInstance.Lifecycle;
@@ -43,7 +46,7 @@ public class TestBase {
   }
 
   @AfterAll
-  private void tearDownAndCleanUp() throws IOException, ApiException {
+  public void tearDownAndCleanUp() throws IOException, ApiException {
     cleanUpApplicants();
     cleanUpWebhooks();
   }
@@ -85,13 +88,19 @@ public class TestBase {
         locationBuilder);
   }
 
+  protected LivePhoto uploadLivePhoto(Applicant applicant, String filename) throws Exception {
+    return onfido.uploadLivePhoto(applicant.getId(), new File("media/" + filename), true);
+  }
+
   protected Check createCheck(Applicant applicant, Document document, CheckBuilder checkBuilder)
       throws IOException, InterruptedException, ApiException {
     return onfido.createCheck(
-        checkBuilder
-            .applicantId(applicant.getId())
-            .reportNames(Arrays.asList(ReportName.DOCUMENT, ReportName.IDENTITY_ENHANCED))
-            .documentIds(Arrays.asList(document.getId())));
+        checkBuilder.applicantId(applicant.getId()).documentIds(Arrays.asList(document.getId())));
+  }
+
+  protected WorkflowRun createWorkflowRun(UUID workflowId, UUID applicantId) throws Exception {
+    return onfido.createWorkflowRun(
+        new WorkflowRunBuilder().workflowId(workflowId).applicantId(applicantId));
   }
 
   private boolean isAValidUuid(UUID uuid) {
@@ -119,5 +128,13 @@ public class TestBase {
     for (Webhook webhook : onfido.listWebhooks().getWebhooks()) {
       onfido.deleteWebhook(webhook.getId());
     }
+  }
+
+  public String getTaskIdByPartialId(UUID workflowRunId, String partialId) throws ApiException {
+    return onfido.listTasks(workflowRunId).stream()
+        .filter((task) -> task.getTaskDefId().contains(partialId))
+        .collect(Collectors.toList())
+        .get(0)
+        .getId();
   }
 }

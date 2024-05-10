@@ -1,6 +1,7 @@
 <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+
     <servers>
         <server>
             <id>ossrh</id>
@@ -11,13 +12,15 @@
 
     <profiles>
         <profile>
-            <id>ossrh</id>
+            <id>release</id>
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
                 <gpg.executable>${env.GPG_EXECUTABLE}</gpg.executable>
                 <gpg.passphrase>${env.GPG_PASSPHRASE}</gpg.passphrase>
+                <altSnapshotDeploymentRepository>snapshots::default::https://s01.oss.sonatype.org/content/repositories/snapshots</altSnapshotDeploymentRepository>
+                <altDeploymentRepository>releases::default::https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</altDeploymentRepository>
             </properties>
         </profile>
     </profiles>

@@ -7,36 +7,69 @@ on:
   push:
     branches:
       - master
-      - 'release/**'
+      - "release/**"
   pull_request:
     branches:
       - master
-      - 'release/**'
-
+      - "release/**"
+  workflow_dispatch:
+  release:
+    types:
+      - published
 jobs:
-  build:
-
+  integration-tests:
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v4
-    - name: Set up JDK 11
-      uses: actions/setup-java@v4
-      with:
-        java-version: '11'
-        distribution: 'adopt'
-    - name: Install and run linter over tests
-      run: |
-        npm install google-java-format
-        npx google-java-format --set-exit-if-changed --glob=src/test/**/*.java > /dev/null
-    - name: Build with Maven
-      run: mvn -B package --file pom.xml -Dmaven.test.skip
-    - name: Run integration tests with Maven
-      run: mvn test
-      env:
-        ONFIDO_API_TOKEN: ${{ secrets.ONFIDO_API_TOKEN }}
-        ONFIDO_SAMPLE_APPLICANT_ID: ${{ secrets.ONFIDO_SAMPLE_APPLICANT_ID }}
-        ONFIDO_SAMPLE_VIDEO_ID_1: ${{ secrets.ONFIDO_SAMPLE_VIDEO_ID_1 }}
-        ONFIDO_SAMPLE_VIDEO_ID_2: ${{ secrets.ONFIDO_SAMPLE_VIDEO_ID_2 }}
-        ONFIDO_SAMPLE_MOTION_ID_1: ${{ secrets.ONFIDO_SAMPLE_MOTION_ID_1 }}
-        ONFIDO_SAMPLE_MOTION_ID_2: ${{ secrets.ONFIDO_SAMPLE_MOTION_ID_2 }}
+      - uses: actions/checkout@v4
+      - name: Set up JDK 11
+        uses: actions/setup-java@v4
+        with:
+          java-version: "11"
+          distribution: "adopt"
+      - name: Install and run linter over tests
+        run: |
+          npm install google-java-format
+          npx google-java-format --set-exit-if-changed --glob=src/test/**/*.java > /dev/null
+      - name: Build with Maven
+        run: mvn -B package --file pom.xml -Dmaven.test.skip
+      - name: Run integration tests with Maven
+        run: mvn test
+        env:
+          ONFIDO_API_TOKEN: ${{ secrets.ONFIDO_API_TOKEN }}
+          ONFIDO_SAMPLE_APPLICANT_ID: ${{ secrets.ONFIDO_SAMPLE_APPLICANT_ID }}
+          ONFIDO_SAMPLE_VIDEO_ID_1: ${{ secrets.ONFIDO_SAMPLE_VIDEO_ID_1 }}
+          ONFIDO_SAMPLE_VIDEO_ID_2: ${{ secrets.ONFIDO_SAMPLE_VIDEO_ID_2 }}
+          ONFIDO_SAMPLE_MOTION_ID_1: ${{ secrets.ONFIDO_SAMPLE_MOTION_ID_1 }}
+          ONFIDO_SAMPLE_MOTION_ID_2: ${{ secrets.ONFIDO_SAMPLE_MOTION_ID_2 }}
+
+  publish:
+    runs-on: ubuntu-latest
+    needs: integration-tests
+    if: github.event_name == 'release'
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Maven Central Repository
+        uses: actions/setup-java@v4
+        with:
+          java-version: "11"
+          distribution: "adopt"
+          server-id: ossrh
+          server-username: MAVEN_USERNAME
+          server-password: MAVEN_PASSWORD
+      - id: install-secret-key
+        name: Install gpg secret key
+        run: |
+          echo "$GPG_KEY" > key.asc
+          gpg --import --no-tty --batch --yes key.asc
+        shell: bash
+        env:
+          GPG_KEY: ${{ secrets.GPG_SECRET_KEY }}
+      - name: Publish package
+        run: |
+          export GPG_TTY=$(tty)
+          mvn clean deploy --settings .maven.xml -Dmaven.test.skip \
+            -Prelease -Dgpg.passphraseEnvName=GPG_PASSPHRASE
+        env:
+          MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
+          MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}
+          GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}

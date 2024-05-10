@@ -53,8 +53,7 @@ public class TasksTest extends TestBase {
     onfido.completeTask(workflowRunId, taskId, completeTaskRequest);
 
     Task completedTask = onfido.findTask(workflowRunId, taskId);
-    Map<String, String> taskOutput =
-        (Map<String, String>) completedTask.getAdditionalProperties().get("output");
+    Map<?, ?> taskOutput = (Map<?, ?>) completedTask.getAdditionalProperties().get("output");
 
     Assertions.assertEquals("First", taskOutput.get("first_name"));
     Assertions.assertEquals("Last", taskOutput.get("last_name"));

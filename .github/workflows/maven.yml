@@ -29,7 +29,7 @@ jobs:
       - name: Install and run linter over tests
         run: |
           npm install google-java-format
-          npx google-java-format --set-exit-if-changed --glob=src/test/**/*.java > /dev/null
+          npx google-java-format --set-exit-if-changed -i $(git ls-files src/test/\*.java)
       - name: Build with Maven
         run: mvn -B package --file pom.xml -Dmaven.test.skip
       - name: Run integration tests with Maven
@@ -56,8 +56,7 @@ jobs:
           server-id: ossrh
           server-username: MAVEN_USERNAME
           server-password: MAVEN_PASSWORD
-      - id: install-secret-key
-        name: Install gpg secret key
+      - name: Install gpg secret key
         run: |
           echo "$GPG_KEY" > key.asc
           gpg --import --no-tty --batch --yes key.asc
@@ -67,8 +66,8 @@ jobs:
       - name: Publish package
         run: |
           export GPG_TTY=$(tty)
-          mvn clean deploy --settings .maven.xml -Dmaven.test.skip \
-            -Prelease -Dgpg.passphraseEnvName=GPG_PASSPHRASE
+          mvn --settings .maven.xml -Dmaven.test.skip \
+            -P release,sign-artifacts clean deploy
         env:
           MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
           MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}

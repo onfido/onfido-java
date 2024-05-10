@@ -15,7 +15,7 @@ This version uses Onfido API v3.6. Refer to our [API versioning guide](https://d
 Building the API client library requires:
 
 1. Java 1.8+
-3. Maven/Gradle
+2. Maven/Gradle
 
 ### Installation
 
@@ -41,7 +41,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.onfido</groupId>
   <artifactId>onfido-api-java</artifactId>
-  <version>2.15.0</version>
+  <version>3.0.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -57,7 +57,7 @@ Add this dependency to your project's build file:
   }
 
   dependencies {
-     implementation "com.onfido:onfido-api-java:2.15.0"
+     implementation "com.onfido:onfido-api-java:3.0.0"
   }
 ```
 
@@ -71,10 +71,10 @@ mvn clean package
 
 Then manually install the following JARs:
 
-- `target/onfido-api-java-2.15.0.jar`
+- `target/onfido-api-java-3.0.0.jar`
 - `target/lib/*.jar`
 
-The latest version can be found at: https://search.maven.org/artifact/com.onfido/2.15.0
+The latest version can be found at: https://search.maven.org/artifact/com.onfido/3.0.0
 
 ## Getting Started
 
@@ -145,7 +145,6 @@ try {
 }
 ```
 
-
 ### Recommendation
 
 It's recommended to create an instance of `ApiClient` per thread in a multithreaded environment to avoid any potential issues.
@@ -156,7 +155,7 @@ This library is automatically generated using [OpenAPI Generator](https://openap
 
 For contributions to the tests instead, please follow the steps below:
 
-1. [Fork](<https://github.com/onfido/onfido-java/fork>) repository
+1. [Fork](https://github.com/onfido/onfido-java/fork) repository
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Make your changes
 4. Commit your changes (`git commit -am 'Add some feature'`)

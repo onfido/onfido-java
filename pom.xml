@@ -5,7 +5,7 @@
     <artifactId>onfido-api-java</artifactId>
     <packaging>jar</packaging>
     <name>onfido-api-java</name>
-    <version>3.0.0</version>
+    <version>3.1.0</version>
     <url>https://documentation.onfido.com</url>
     <description>Official Java API client library for the Onfido API</description>
     <scm>
@@ -229,18 +229,6 @@
 
                 </java>
               </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.sonatype.plugins</groupId>
-                <artifactId>nexus-staging-maven-plugin</artifactId>
-                <version>1.6.7</version>
-                <extensions>true</extensions>
-                <configuration>
-                    <serverId>ossrh</serverId>
-                    <nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>
-                    <autoReleaseAfterClose>true</autoReleaseAfterClose>
-                    <stagingProgressTimeoutMinutes>10</stagingProgressTimeoutMinutes>
-                </configuration>
             </plugin>
         </plugins>
     </build>

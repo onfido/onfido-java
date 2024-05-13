@@ -34,7 +34,7 @@ public class WorkflowRunOutputsTest extends TestBase {
     onfido.completeTask(workflowRunId, taskId, completeTaskRequest);
     WorkflowRun workflowRun = onfido.findWorkflowRun(workflowRunId);
 
-    Map<String, Object> output = (Map<String, Object>) workflowRun.getOutput();
+    Map<?, ?> output = (Map<?, ?>) workflowRun.getOutput();
     Assertions.assertEquals(completeTaskRequest.getData(), output.get("profile_capture_data"));
   }
 
@@ -91,8 +91,8 @@ public class WorkflowRunOutputsTest extends TestBase {
     }
 
     Assertions.assertEquals(APPROVED, workflowRun.getStatus());
-    Map<String, Map<String, Object>> workflowRunOutput =
-        (Map<String, Map<String, Object>>) workflowRun.getOutput();
+
+    Map<?, ?> workflowRunOutput = (Map<?, ?>) workflowRun.getOutput();
 
     // workflow run has configured as output the result of the document
     // report `doc` and the facial similarity report `selfie`

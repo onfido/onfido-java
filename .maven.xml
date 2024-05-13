@@ -17,7 +17,6 @@
                 <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
-                <gpg.executable>${env.GPG_EXECUTABLE}</gpg.executable>
                 <gpg.passphrase>${env.GPG_PASSPHRASE}</gpg.passphrase>
                 <altSnapshotDeploymentRepository>snapshots::default::https://s01.oss.sonatype.org/content/repositories/snapshots</altSnapshotDeploymentRepository>
                 <altDeploymentRepository>releases::default::https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</altDeploymentRepository>

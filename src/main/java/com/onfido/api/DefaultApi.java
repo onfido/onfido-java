@@ -35,7 +35,7 @@ import com.onfido.model.ApplicantsList;
 import com.onfido.model.Check;
 import com.onfido.model.CheckBuilder;
 import com.onfido.model.ChecksList;
-import com.onfido.model.CompleteTaskRequest;
+import com.onfido.model.CompleteTaskBuilder;
 import com.onfido.model.CountryCodes;
 import com.onfido.model.Document;
 import com.onfido.model.DocumentsList;
@@ -49,7 +49,7 @@ import com.onfido.model.IdPhoto;
 import com.onfido.model.LivePhoto;
 import com.onfido.model.LivePhotosList;
 import com.onfido.model.LiveVideo;
-import com.onfido.model.LiveoVideosList;
+import com.onfido.model.LiveVideosList;
 import com.onfido.model.LocationBuilder;
 import com.onfido.model.MotionCapture;
 import com.onfido.model.MotionCapturesList;
@@ -61,10 +61,13 @@ import com.onfido.model.ResultsFeedback;
 import com.onfido.model.SdkToken;
 import com.onfido.model.SdkTokenBuilder;
 import com.onfido.model.Task;
+import com.onfido.model.TaskItem;
 import java.util.UUID;
-import com.onfido.model.UpdateMonitorMatchRequest;
 import com.onfido.model.WatchlistMonitor;
-import com.onfido.model.WatchlistMonitorMatch;
+import com.onfido.model.WatchlistMonitorBuilder;
+import com.onfido.model.WatchlistMonitorMatchesList;
+import com.onfido.model.WatchlistMonitorMatchesUpdater;
+import com.onfido.model.WatchlistMonitorsList;
 import com.onfido.model.Webhook;
 import com.onfido.model.WebhookBuilder;
 import com.onfido.model.WebhookResend;
@@ -243,7 +246,7 @@ public class DefaultApi {
      * Build call for completeTask
      * @param workflowRunId The unique identifier of the Workflow Run to which the Task belongs. (required)
      * @param taskId The identifier of the Task you want to complete. (required)
-     * @param completeTaskRequest  (required)
+     * @param completeTaskBuilder  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -254,7 +257,7 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call completeTaskCall(UUID workflowRunId, String taskId, CompleteTaskRequest completeTaskRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call completeTaskCall(UUID workflowRunId, String taskId, CompleteTaskBuilder completeTaskBuilder, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -268,7 +271,7 @@ public class DefaultApi {
             basePath = null;
         }
 
-        Object localVarPostBody = completeTaskRequest;
+        Object localVarPostBody = completeTaskBuilder;
 
         // create path and map variables
         String localVarPath = "/workflow_runs/{workflow_run_id}/tasks/{task_id}/complete"
@@ -302,7 +305,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call completeTaskValidateBeforeCall(UUID workflowRunId, String taskId, CompleteTaskRequest completeTaskRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call completeTaskValidateBeforeCall(UUID workflowRunId, String taskId, CompleteTaskBuilder completeTaskBuilder, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'workflowRunId' is set
         if (workflowRunId == null) {
             throw new ApiException("Missing the required parameter 'workflowRunId' when calling completeTask(Async)");
@@ -313,12 +316,12 @@ public class DefaultApi {
             throw new ApiException("Missing the required parameter 'taskId' when calling completeTask(Async)");
         }
 
-        // verify the required parameter 'completeTaskRequest' is set
-        if (completeTaskRequest == null) {
-            throw new ApiException("Missing the required parameter 'completeTaskRequest' when calling completeTask(Async)");
+        // verify the required parameter 'completeTaskBuilder' is set
+        if (completeTaskBuilder == null) {
+            throw new ApiException("Missing the required parameter 'completeTaskBuilder' when calling completeTask(Async)");
         }
 
-        return completeTaskCall(workflowRunId, taskId, completeTaskRequest, _callback);
+        return completeTaskCall(workflowRunId, taskId, completeTaskBuilder, _callback);
 
     }
 
@@ -327,7 +330,7 @@ public class DefaultApi {
      * Completes a Send / Receive Data Task. 
      * @param workflowRunId The unique identifier of the Workflow Run to which the Task belongs. (required)
      * @param taskId The identifier of the Task you want to complete. (required)
-     * @param completeTaskRequest  (required)
+     * @param completeTaskBuilder  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -336,8 +339,8 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public void completeTask(UUID workflowRunId, String taskId, CompleteTaskRequest completeTaskRequest) throws ApiException {
-        completeTaskWithHttpInfo(workflowRunId, taskId, completeTaskRequest);
+    public void completeTask(UUID workflowRunId, String taskId, CompleteTaskBuilder completeTaskBuilder) throws ApiException {
+        completeTaskWithHttpInfo(workflowRunId, taskId, completeTaskBuilder);
     }
 
     /**
@@ -345,7 +348,7 @@ public class DefaultApi {
      * Completes a Send / Receive Data Task. 
      * @param workflowRunId The unique identifier of the Workflow Run to which the Task belongs. (required)
      * @param taskId The identifier of the Task you want to complete. (required)
-     * @param completeTaskRequest  (required)
+     * @param completeTaskBuilder  (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -355,8 +358,8 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> completeTaskWithHttpInfo(UUID workflowRunId, String taskId, CompleteTaskRequest completeTaskRequest) throws ApiException {
-        okhttp3.Call localVarCall = completeTaskValidateBeforeCall(workflowRunId, taskId, completeTaskRequest, null);
+    public ApiResponse<Void> completeTaskWithHttpInfo(UUID workflowRunId, String taskId, CompleteTaskBuilder completeTaskBuilder) throws ApiException {
+        okhttp3.Call localVarCall = completeTaskValidateBeforeCall(workflowRunId, taskId, completeTaskBuilder, null);
         return localVarApiClient.execute(localVarCall);
     }
 
@@ -365,7 +368,7 @@ public class DefaultApi {
      * Completes a Send / Receive Data Task. 
      * @param workflowRunId The unique identifier of the Workflow Run to which the Task belongs. (required)
      * @param taskId The identifier of the Task you want to complete. (required)
-     * @param completeTaskRequest  (required)
+     * @param completeTaskBuilder  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -376,9 +379,9 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call completeTaskAsync(UUID workflowRunId, String taskId, CompleteTaskRequest completeTaskRequest, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call completeTaskAsync(UUID workflowRunId, String taskId, CompleteTaskBuilder completeTaskBuilder, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = completeTaskValidateBeforeCall(workflowRunId, taskId, completeTaskRequest, _callback);
+        okhttp3.Call localVarCall = completeTaskValidateBeforeCall(workflowRunId, taskId, completeTaskBuilder, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
@@ -638,18 +641,18 @@ public class DefaultApi {
     }
     /**
      * Build call for createWatchlistMonitor
-     * @param watchlistMonitor  (required)
+     * @param watchlistMonitorBuilder  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Created watchlist monitor </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Created </td><td>  -  </td></tr>
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createWatchlistMonitorCall(WatchlistMonitor watchlistMonitor, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createWatchlistMonitorCall(WatchlistMonitorBuilder watchlistMonitorBuilder, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -663,7 +666,7 @@ public class DefaultApi {
             basePath = null;
         }
 
-        Object localVarPostBody = watchlistMonitor;
+        Object localVarPostBody = watchlistMonitorBuilder;
 
         // create path and map variables
         String localVarPath = "/watchlist_monitors";
@@ -695,49 +698,49 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createWatchlistMonitorValidateBeforeCall(WatchlistMonitor watchlistMonitor, final ApiCallback _callback) throws ApiException {
-        // verify the required parameter 'watchlistMonitor' is set
-        if (watchlistMonitor == null) {
-            throw new ApiException("Missing the required parameter 'watchlistMonitor' when calling createWatchlistMonitor(Async)");
+    private okhttp3.Call createWatchlistMonitorValidateBeforeCall(WatchlistMonitorBuilder watchlistMonitorBuilder, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'watchlistMonitorBuilder' is set
+        if (watchlistMonitorBuilder == null) {
+            throw new ApiException("Missing the required parameter 'watchlistMonitorBuilder' when calling createWatchlistMonitor(Async)");
         }
 
-        return createWatchlistMonitorCall(watchlistMonitor, _callback);
+        return createWatchlistMonitorCall(watchlistMonitorBuilder, _callback);
 
     }
 
     /**
      * Create monitor
      * Creates a new monitor for the applicant 
-     * @param watchlistMonitor  (required)
+     * @param watchlistMonitorBuilder  (required)
      * @return WatchlistMonitor
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Created watchlist monitor </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Created </td><td>  -  </td></tr>
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public WatchlistMonitor createWatchlistMonitor(WatchlistMonitor watchlistMonitor) throws ApiException {
-        ApiResponse<WatchlistMonitor> localVarResp = createWatchlistMonitorWithHttpInfo(watchlistMonitor);
+    public WatchlistMonitor createWatchlistMonitor(WatchlistMonitorBuilder watchlistMonitorBuilder) throws ApiException {
+        ApiResponse<WatchlistMonitor> localVarResp = createWatchlistMonitorWithHttpInfo(watchlistMonitorBuilder);
         return localVarResp.getData();
     }
 
     /**
      * Create monitor
      * Creates a new monitor for the applicant 
-     * @param watchlistMonitor  (required)
+     * @param watchlistMonitorBuilder  (required)
      * @return ApiResponse&lt;WatchlistMonitor&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Created watchlist monitor </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Created </td><td>  -  </td></tr>
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<WatchlistMonitor> createWatchlistMonitorWithHttpInfo(WatchlistMonitor watchlistMonitor) throws ApiException {
-        okhttp3.Call localVarCall = createWatchlistMonitorValidateBeforeCall(watchlistMonitor, null);
+    public ApiResponse<WatchlistMonitor> createWatchlistMonitorWithHttpInfo(WatchlistMonitorBuilder watchlistMonitorBuilder) throws ApiException {
+        okhttp3.Call localVarCall = createWatchlistMonitorValidateBeforeCall(watchlistMonitorBuilder, null);
         Type localVarReturnType = new TypeToken<WatchlistMonitor>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -745,20 +748,20 @@ public class DefaultApi {
     /**
      * Create monitor (asynchronously)
      * Creates a new monitor for the applicant 
-     * @param watchlistMonitor  (required)
+     * @param watchlistMonitorBuilder  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Created watchlist monitor </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Created </td><td>  -  </td></tr>
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createWatchlistMonitorAsync(WatchlistMonitor watchlistMonitor, final ApiCallback<WatchlistMonitor> _callback) throws ApiException {
+    public okhttp3.Call createWatchlistMonitorAsync(WatchlistMonitorBuilder watchlistMonitorBuilder, final ApiCallback<WatchlistMonitor> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = createWatchlistMonitorValidateBeforeCall(watchlistMonitor, _callback);
+        okhttp3.Call localVarCall = createWatchlistMonitorValidateBeforeCall(watchlistMonitorBuilder, _callback);
         Type localVarReturnType = new TypeToken<WatchlistMonitor>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -2675,7 +2678,7 @@ public class DefaultApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> Extraction result </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Extraction result </td><td>  -  </td></tr>
         <tr><td> 0 </td><td> Unprocessable Entity </td><td>  -  </td></tr>
      </table>
      */
@@ -2744,7 +2747,7 @@ public class DefaultApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> Extraction result </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Extraction result </td><td>  -  </td></tr>
         <tr><td> 0 </td><td> Unprocessable Entity </td><td>  -  </td></tr>
      </table>
      */
@@ -2762,7 +2765,7 @@ public class DefaultApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> Extraction result </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Extraction result </td><td>  -  </td></tr>
         <tr><td> 0 </td><td> Unprocessable Entity </td><td>  -  </td></tr>
      </table>
      */
@@ -2782,7 +2785,7 @@ public class DefaultApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> Extraction result </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Extraction result </td><td>  -  </td></tr>
         <tr><td> 0 </td><td> Unprocessable Entity </td><td>  -  </td></tr>
      </table>
      */
@@ -4458,7 +4461,7 @@ public class DefaultApi {
         return localVarCall;
     }
     /**
-     * Build call for forceNewRecordCreation
+     * Build call for forceReportCreationFromWatchlistMonitor
      * @param monitorId  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -4470,7 +4473,7 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call forceNewRecordCreationCall(UUID monitorId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call forceReportCreationFromWatchlistMonitorCall(UUID monitorId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -4516,13 +4519,13 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call forceNewRecordCreationValidateBeforeCall(UUID monitorId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call forceReportCreationFromWatchlistMonitorValidateBeforeCall(UUID monitorId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'monitorId' is set
         if (monitorId == null) {
-            throw new ApiException("Missing the required parameter 'monitorId' when calling forceNewRecordCreation(Async)");
+            throw new ApiException("Missing the required parameter 'monitorId' when calling forceReportCreationFromWatchlistMonitor(Async)");
         }
 
-        return forceNewRecordCreationCall(monitorId, _callback);
+        return forceReportCreationFromWatchlistMonitorCall(monitorId, _callback);
 
     }
 
@@ -4530,7 +4533,6 @@ public class DefaultApi {
      * Force new report creation (BETA)
      * Triggers a new check with an updated report to be generated by the monitor, as if the monitor had received an update. 
      * @param monitorId  (required)
-     * @return Applicant
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -4539,16 +4541,15 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public Applicant forceNewRecordCreation(UUID monitorId) throws ApiException {
-        ApiResponse<Applicant> localVarResp = forceNewRecordCreationWithHttpInfo(monitorId);
-        return localVarResp.getData();
+    public void forceReportCreationFromWatchlistMonitor(UUID monitorId) throws ApiException {
+        forceReportCreationFromWatchlistMonitorWithHttpInfo(monitorId);
     }
 
     /**
      * Force new report creation (BETA)
      * Triggers a new check with an updated report to be generated by the monitor, as if the monitor had received an update. 
      * @param monitorId  (required)
-     * @return ApiResponse&lt;Applicant&gt;
+     * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -4557,10 +4558,9 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Applicant> forceNewRecordCreationWithHttpInfo(UUID monitorId) throws ApiException {
-        okhttp3.Call localVarCall = forceNewRecordCreationValidateBeforeCall(monitorId, null);
-        Type localVarReturnType = new TypeToken<Applicant>(){}.getType();
-        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    public ApiResponse<Void> forceReportCreationFromWatchlistMonitorWithHttpInfo(UUID monitorId) throws ApiException {
+        okhttp3.Call localVarCall = forceReportCreationFromWatchlistMonitorValidateBeforeCall(monitorId, null);
+        return localVarApiClient.execute(localVarCall);
     }
 
     /**
@@ -4577,11 +4577,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call forceNewRecordCreationAsync(UUID monitorId, final ApiCallback<Applicant> _callback) throws ApiException {
+    public okhttp3.Call forceReportCreationFromWatchlistMonitorAsync(UUID monitorId, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = forceNewRecordCreationValidateBeforeCall(monitorId, _callback);
-        Type localVarReturnType = new TypeToken<Applicant>(){}.getType();
-        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        okhttp3.Call localVarCall = forceReportCreationFromWatchlistMonitorValidateBeforeCall(monitorId, _callback);
+        localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
@@ -5448,7 +5447,7 @@ public class DefaultApi {
      * List live videos
      * Lists all the live videos that belong to an applicant. 
      * @param applicantId The id of the applicant the live videos belong to. (required)
-     * @return LiveoVideosList
+     * @return LiveVideosList
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -5457,8 +5456,8 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public LiveoVideosList listLiveVideos(UUID applicantId) throws ApiException {
-        ApiResponse<LiveoVideosList> localVarResp = listLiveVideosWithHttpInfo(applicantId);
+    public LiveVideosList listLiveVideos(UUID applicantId) throws ApiException {
+        ApiResponse<LiveVideosList> localVarResp = listLiveVideosWithHttpInfo(applicantId);
         return localVarResp.getData();
     }
 
@@ -5466,7 +5465,7 @@ public class DefaultApi {
      * List live videos
      * Lists all the live videos that belong to an applicant. 
      * @param applicantId The id of the applicant the live videos belong to. (required)
-     * @return ApiResponse&lt;LiveoVideosList&gt;
+     * @return ApiResponse&lt;LiveVideosList&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -5475,9 +5474,9 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<LiveoVideosList> listLiveVideosWithHttpInfo(UUID applicantId) throws ApiException {
+    public ApiResponse<LiveVideosList> listLiveVideosWithHttpInfo(UUID applicantId) throws ApiException {
         okhttp3.Call localVarCall = listLiveVideosValidateBeforeCall(applicantId, null);
-        Type localVarReturnType = new TypeToken<LiveoVideosList>(){}.getType();
+        Type localVarReturnType = new TypeToken<LiveVideosList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -5495,10 +5494,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listLiveVideosAsync(UUID applicantId, final ApiCallback<LiveoVideosList> _callback) throws ApiException {
+    public okhttp3.Call listLiveVideosAsync(UUID applicantId, final ApiCallback<LiveVideosList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listLiveVideosValidateBeforeCall(applicantId, _callback);
-        Type localVarReturnType = new TypeToken<LiveoVideosList>(){}.getType();
+        Type localVarReturnType = new TypeToken<LiveVideosList>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -5962,7 +5961,7 @@ public class DefaultApi {
      * List Tasks
      * The tasks of a Workflow can be retrieved by calling this endpoint with the unique identifier of the Workflow Run. 
      * @param workflowRunId The unique identifier of the Workflow Run to which the Tasks belong. (required)
-     * @return List&lt;Task&gt;
+     * @return List&lt;TaskItem&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -5971,8 +5970,8 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public List<Task> listTasks(UUID workflowRunId) throws ApiException {
-        ApiResponse<List<Task>> localVarResp = listTasksWithHttpInfo(workflowRunId);
+    public List<TaskItem> listTasks(UUID workflowRunId) throws ApiException {
+        ApiResponse<List<TaskItem>> localVarResp = listTasksWithHttpInfo(workflowRunId);
         return localVarResp.getData();
     }
 
@@ -5980,7 +5979,7 @@ public class DefaultApi {
      * List Tasks
      * The tasks of a Workflow can be retrieved by calling this endpoint with the unique identifier of the Workflow Run. 
      * @param workflowRunId The unique identifier of the Workflow Run to which the Tasks belong. (required)
-     * @return ApiResponse&lt;List&lt;Task&gt;&gt;
+     * @return ApiResponse&lt;List&lt;TaskItem&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -5989,9 +5988,9 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<Task>> listTasksWithHttpInfo(UUID workflowRunId) throws ApiException {
+    public ApiResponse<List<TaskItem>> listTasksWithHttpInfo(UUID workflowRunId) throws ApiException {
         okhttp3.Call localVarCall = listTasksValidateBeforeCall(workflowRunId, null);
-        Type localVarReturnType = new TypeToken<List<Task>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<TaskItem>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -6009,10 +6008,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listTasksAsync(UUID workflowRunId, final ApiCallback<List<Task>> _callback) throws ApiException {
+    public okhttp3.Call listTasksAsync(UUID workflowRunId, final ApiCallback<List<TaskItem>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listTasksValidateBeforeCall(workflowRunId, _callback);
-        Type localVarReturnType = new TypeToken<List<Task>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<TaskItem>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -6088,7 +6087,7 @@ public class DefaultApi {
      * List matches (BETA)
      * List match IDs on this monitor, as well as their enabled/disabled status 
      * @param monitorId  (required)
-     * @return List&lt;WatchlistMonitorMatch&gt;
+     * @return WatchlistMonitorMatchesList
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -6096,8 +6095,8 @@ public class DefaultApi {
         <tr><td> 200 </td><td> An array of watchlist monitors </td><td>  -  </td></tr>
      </table>
      */
-    public List<WatchlistMonitorMatch> listWatchlistMonitorMatches(UUID monitorId) throws ApiException {
-        ApiResponse<List<WatchlistMonitorMatch>> localVarResp = listWatchlistMonitorMatchesWithHttpInfo(monitorId);
+    public WatchlistMonitorMatchesList listWatchlistMonitorMatches(UUID monitorId) throws ApiException {
+        ApiResponse<WatchlistMonitorMatchesList> localVarResp = listWatchlistMonitorMatchesWithHttpInfo(monitorId);
         return localVarResp.getData();
     }
 
@@ -6105,7 +6104,7 @@ public class DefaultApi {
      * List matches (BETA)
      * List match IDs on this monitor, as well as their enabled/disabled status 
      * @param monitorId  (required)
-     * @return ApiResponse&lt;List&lt;WatchlistMonitorMatch&gt;&gt;
+     * @return ApiResponse&lt;WatchlistMonitorMatchesList&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -6113,9 +6112,9 @@ public class DefaultApi {
         <tr><td> 200 </td><td> An array of watchlist monitors </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<WatchlistMonitorMatch>> listWatchlistMonitorMatchesWithHttpInfo(UUID monitorId) throws ApiException {
+    public ApiResponse<WatchlistMonitorMatchesList> listWatchlistMonitorMatchesWithHttpInfo(UUID monitorId) throws ApiException {
         okhttp3.Call localVarCall = listWatchlistMonitorMatchesValidateBeforeCall(monitorId, null);
-        Type localVarReturnType = new TypeToken<List<WatchlistMonitorMatch>>(){}.getType();
+        Type localVarReturnType = new TypeToken<WatchlistMonitorMatchesList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -6132,10 +6131,10 @@ public class DefaultApi {
         <tr><td> 200 </td><td> An array of watchlist monitors </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listWatchlistMonitorMatchesAsync(UUID monitorId, final ApiCallback<List<WatchlistMonitorMatch>> _callback) throws ApiException {
+    public okhttp3.Call listWatchlistMonitorMatchesAsync(UUID monitorId, final ApiCallback<WatchlistMonitorMatchesList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listWatchlistMonitorMatchesValidateBeforeCall(monitorId, _callback);
-        Type localVarReturnType = new TypeToken<List<WatchlistMonitorMatch>>(){}.getType();
+        Type localVarReturnType = new TypeToken<WatchlistMonitorMatchesList>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -6221,7 +6220,7 @@ public class DefaultApi {
      * List all available monitors for an applicant 
      * @param applicantId The id of the applicant the watchlist monitors belong to. If omitted, all monitors for the account will be listed. (required)
      * @param includeDeleted Whether to also include deleted (inactive) monitors. (optional, default to false)
-     * @return List&lt;WatchlistMonitor&gt;
+     * @return WatchlistMonitorsList
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -6230,8 +6229,8 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public List<WatchlistMonitor> listWatchlistMonitors(UUID applicantId, Boolean includeDeleted) throws ApiException {
-        ApiResponse<List<WatchlistMonitor>> localVarResp = listWatchlistMonitorsWithHttpInfo(applicantId, includeDeleted);
+    public WatchlistMonitorsList listWatchlistMonitors(UUID applicantId, Boolean includeDeleted) throws ApiException {
+        ApiResponse<WatchlistMonitorsList> localVarResp = listWatchlistMonitorsWithHttpInfo(applicantId, includeDeleted);
         return localVarResp.getData();
     }
 
@@ -6240,7 +6239,7 @@ public class DefaultApi {
      * List all available monitors for an applicant 
      * @param applicantId The id of the applicant the watchlist monitors belong to. If omitted, all monitors for the account will be listed. (required)
      * @param includeDeleted Whether to also include deleted (inactive) monitors. (optional, default to false)
-     * @return ApiResponse&lt;List&lt;WatchlistMonitor&gt;&gt;
+     * @return ApiResponse&lt;WatchlistMonitorsList&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -6249,9 +6248,9 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<WatchlistMonitor>> listWatchlistMonitorsWithHttpInfo(UUID applicantId, Boolean includeDeleted) throws ApiException {
+    public ApiResponse<WatchlistMonitorsList> listWatchlistMonitorsWithHttpInfo(UUID applicantId, Boolean includeDeleted) throws ApiException {
         okhttp3.Call localVarCall = listWatchlistMonitorsValidateBeforeCall(applicantId, includeDeleted, null);
-        Type localVarReturnType = new TypeToken<List<WatchlistMonitor>>(){}.getType();
+        Type localVarReturnType = new TypeToken<WatchlistMonitorsList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -6270,10 +6269,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listWatchlistMonitorsAsync(UUID applicantId, Boolean includeDeleted, final ApiCallback<List<WatchlistMonitor>> _callback) throws ApiException {
+    public okhttp3.Call listWatchlistMonitorsAsync(UUID applicantId, Boolean includeDeleted, final ApiCallback<WatchlistMonitorsList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listWatchlistMonitorsValidateBeforeCall(applicantId, includeDeleted, _callback);
-        Type localVarReturnType = new TypeToken<List<WatchlistMonitor>>(){}.getType();
+        Type localVarReturnType = new TypeToken<WatchlistMonitorsList>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -7430,20 +7429,20 @@ public class DefaultApi {
         return localVarCall;
     }
     /**
-     * Build call for updateMonitorMatch
+     * Build call for updateWatchlistMonitorMatch
      * @param monitorId  (required)
-     * @param updateMonitorMatchRequest  (required)
+     * @param watchlistMonitorMatchesUpdater  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> An array of watchlist monitors </td><td>  -  </td></tr>
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateMonitorMatchCall(UUID monitorId, UpdateMonitorMatchRequest updateMonitorMatchRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateWatchlistMonitorMatchCall(UUID monitorId, WatchlistMonitorMatchesUpdater watchlistMonitorMatchesUpdater, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -7457,7 +7456,7 @@ public class DefaultApi {
             basePath = null;
         }
 
-        Object localVarPostBody = updateMonitorMatchRequest;
+        Object localVarPostBody = watchlistMonitorMatchesUpdater;
 
         // create path and map variables
         String localVarPath = "/watchlist_monitors/{monitor_id}/matches"
@@ -7490,18 +7489,18 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateMonitorMatchValidateBeforeCall(UUID monitorId, UpdateMonitorMatchRequest updateMonitorMatchRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateWatchlistMonitorMatchValidateBeforeCall(UUID monitorId, WatchlistMonitorMatchesUpdater watchlistMonitorMatchesUpdater, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'monitorId' is set
         if (monitorId == null) {
-            throw new ApiException("Missing the required parameter 'monitorId' when calling updateMonitorMatch(Async)");
+            throw new ApiException("Missing the required parameter 'monitorId' when calling updateWatchlistMonitorMatch(Async)");
         }
 
-        // verify the required parameter 'updateMonitorMatchRequest' is set
-        if (updateMonitorMatchRequest == null) {
-            throw new ApiException("Missing the required parameter 'updateMonitorMatchRequest' when calling updateMonitorMatch(Async)");
+        // verify the required parameter 'watchlistMonitorMatchesUpdater' is set
+        if (watchlistMonitorMatchesUpdater == null) {
+            throw new ApiException("Missing the required parameter 'watchlistMonitorMatchesUpdater' when calling updateWatchlistMonitorMatch(Async)");
         }
 
-        return updateMonitorMatchCall(monitorId, updateMonitorMatchRequest, _callback);
+        return updateWatchlistMonitorMatchCall(monitorId, watchlistMonitorMatchesUpdater, _callback);
 
     }
 
@@ -7509,57 +7508,61 @@ public class DefaultApi {
      * Set match status (BETA)
      * Update the status of the given matches 
      * @param monitorId  (required)
-     * @param updateMonitorMatchRequest  (required)
+     * @param watchlistMonitorMatchesUpdater  (required)
+     * @return WatchlistMonitorMatchesList
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> An array of watchlist monitors </td><td>  -  </td></tr>
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public void updateMonitorMatch(UUID monitorId, UpdateMonitorMatchRequest updateMonitorMatchRequest) throws ApiException {
-        updateMonitorMatchWithHttpInfo(monitorId, updateMonitorMatchRequest);
+    public WatchlistMonitorMatchesList updateWatchlistMonitorMatch(UUID monitorId, WatchlistMonitorMatchesUpdater watchlistMonitorMatchesUpdater) throws ApiException {
+        ApiResponse<WatchlistMonitorMatchesList> localVarResp = updateWatchlistMonitorMatchWithHttpInfo(monitorId, watchlistMonitorMatchesUpdater);
+        return localVarResp.getData();
     }
 
     /**
      * Set match status (BETA)
      * Update the status of the given matches 
      * @param monitorId  (required)
-     * @param updateMonitorMatchRequest  (required)
-     * @return ApiResponse&lt;Void&gt;
+     * @param watchlistMonitorMatchesUpdater  (required)
+     * @return ApiResponse&lt;WatchlistMonitorMatchesList&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> An array of watchlist monitors </td><td>  -  </td></tr>
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> updateMonitorMatchWithHttpInfo(UUID monitorId, UpdateMonitorMatchRequest updateMonitorMatchRequest) throws ApiException {
-        okhttp3.Call localVarCall = updateMonitorMatchValidateBeforeCall(monitorId, updateMonitorMatchRequest, null);
-        return localVarApiClient.execute(localVarCall);
+    public ApiResponse<WatchlistMonitorMatchesList> updateWatchlistMonitorMatchWithHttpInfo(UUID monitorId, WatchlistMonitorMatchesUpdater watchlistMonitorMatchesUpdater) throws ApiException {
+        okhttp3.Call localVarCall = updateWatchlistMonitorMatchValidateBeforeCall(monitorId, watchlistMonitorMatchesUpdater, null);
+        Type localVarReturnType = new TypeToken<WatchlistMonitorMatchesList>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
      * Set match status (BETA) (asynchronously)
      * Update the status of the given matches 
      * @param monitorId  (required)
-     * @param updateMonitorMatchRequest  (required)
+     * @param watchlistMonitorMatchesUpdater  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> An array of watchlist monitors </td><td>  -  </td></tr>
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateMonitorMatchAsync(UUID monitorId, UpdateMonitorMatchRequest updateMonitorMatchRequest, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call updateWatchlistMonitorMatchAsync(UUID monitorId, WatchlistMonitorMatchesUpdater watchlistMonitorMatchesUpdater, final ApiCallback<WatchlistMonitorMatchesList> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = updateMonitorMatchValidateBeforeCall(monitorId, updateMonitorMatchRequest, _callback);
-        localVarApiClient.executeAsync(localVarCall, _callback);
+        okhttp3.Call localVarCall = updateWatchlistMonitorMatchValidateBeforeCall(monitorId, watchlistMonitorMatchesUpdater, _callback);
+        Type localVarReturnType = new TypeToken<WatchlistMonitorMatchesList>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**

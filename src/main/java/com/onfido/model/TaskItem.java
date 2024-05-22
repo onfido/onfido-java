@@ -20,9 +20,8 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
-import java.util.ArrayList;
+import java.time.OffsetDateTime;
 import java.util.Arrays;
-import java.util.List;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -49,72 +48,102 @@ import java.util.Set;
 import com.onfido.JSON;
 
 /**
- * UpdateMonitorMatchRequest
+ * TaskItem
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
-public class UpdateMonitorMatchRequest {
-  public static final String SERIALIZED_NAME_ENABLE = "enable";
-  @SerializedName(SERIALIZED_NAME_ENABLE)
-  private List<String> enable = new ArrayList<>();
+public class TaskItem {
+  public static final String SERIALIZED_NAME_ID = "id";
+  @SerializedName(SERIALIZED_NAME_ID)
+  private String id;
 
-  public static final String SERIALIZED_NAME_DISABLE = "disable";
-  @SerializedName(SERIALIZED_NAME_DISABLE)
-  private List<String> disable = new ArrayList<>();
+  public static final String SERIALIZED_NAME_TASK_DEF_ID = "task_def_id";
+  @SerializedName(SERIALIZED_NAME_TASK_DEF_ID)
+  private String taskDefId;
 
-  public UpdateMonitorMatchRequest() {
+  public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
+  @SerializedName(SERIALIZED_NAME_CREATED_AT)
+  private OffsetDateTime createdAt;
+
+  public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
+  @SerializedName(SERIALIZED_NAME_UPDATED_AT)
+  private OffsetDateTime updatedAt;
+
+  public TaskItem() {
   }
 
-  public UpdateMonitorMatchRequest enable(List<String> enable) {
-    this.enable = enable;
-    return this;
-  }
-
-  public UpdateMonitorMatchRequest addEnableItem(String enableItem) {
-    if (this.enable == null) {
-      this.enable = new ArrayList<>();
-    }
-    this.enable.add(enableItem);
-    return this;
-  }
-
-   /**
-   * Get enable
-   * @return enable
-  **/
-  @javax.annotation.Nullable
-  public List<String> getEnable() {
-    return enable;
-  }
-
-  public void setEnable(List<String> enable) {
-    this.enable = enable;
-  }
-
-
-  public UpdateMonitorMatchRequest disable(List<String> disable) {
-    this.disable = disable;
-    return this;
-  }
-
-  public UpdateMonitorMatchRequest addDisableItem(String disableItem) {
-    if (this.disable == null) {
-      this.disable = new ArrayList<>();
-    }
-    this.disable.add(disableItem);
+  public TaskItem id(String id) {
+    this.id = id;
     return this;
   }
 
    /**
-   * Get disable
-   * @return disable
+   * The identifier for the Task.
+   * @return id
   **/
   @javax.annotation.Nullable
-  public List<String> getDisable() {
-    return disable;
+  public String getId() {
+    return id;
   }
 
-  public void setDisable(List<String> disable) {
-    this.disable = disable;
+  public void setId(String id) {
+    this.id = id;
+  }
+
+
+  public TaskItem taskDefId(String taskDefId) {
+    this.taskDefId = taskDefId;
+    return this;
+  }
+
+   /**
+   * The identifier for the Task Definition.
+   * @return taskDefId
+  **/
+  @javax.annotation.Nullable
+  public String getTaskDefId() {
+    return taskDefId;
+  }
+
+  public void setTaskDefId(String taskDefId) {
+    this.taskDefId = taskDefId;
+  }
+
+
+  public TaskItem createdAt(OffsetDateTime createdAt) {
+    this.createdAt = createdAt;
+    return this;
+  }
+
+   /**
+   * The date and time when the Task was created.
+   * @return createdAt
+  **/
+  @javax.annotation.Nullable
+  public OffsetDateTime getCreatedAt() {
+    return createdAt;
+  }
+
+  public void setCreatedAt(OffsetDateTime createdAt) {
+    this.createdAt = createdAt;
+  }
+
+
+  public TaskItem updatedAt(OffsetDateTime updatedAt) {
+    this.updatedAt = updatedAt;
+    return this;
+  }
+
+   /**
+   * The date and time when the Task was last updated.
+   * @return updatedAt
+  **/
+  @javax.annotation.Nullable
+  public OffsetDateTime getUpdatedAt() {
+    return updatedAt;
+  }
+
+  public void setUpdatedAt(OffsetDateTime updatedAt) {
+    this.updatedAt = updatedAt;
   }
 
   /**
@@ -130,9 +159,9 @@ public class UpdateMonitorMatchRequest {
    *
    * @param key name of the property
    * @param value value of the property
-   * @return the UpdateMonitorMatchRequest instance itself
+   * @return the TaskItem instance itself
    */
-  public UpdateMonitorMatchRequest putAdditionalProperty(String key, Object value) {
+  public TaskItem putAdditionalProperty(String key, Object value) {
     if (this.additionalProperties == null) {
         this.additionalProperties = new HashMap<String, Object>();
     }
@@ -171,23 +200,27 @@ public class UpdateMonitorMatchRequest {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    UpdateMonitorMatchRequest updateMonitorMatchRequest = (UpdateMonitorMatchRequest) o;
-    return Objects.equals(this.enable, updateMonitorMatchRequest.enable) &&
-        Objects.equals(this.disable, updateMonitorMatchRequest.disable)&&
-        Objects.equals(this.additionalProperties, updateMonitorMatchRequest.additionalProperties);
+    TaskItem taskItem = (TaskItem) o;
+    return Objects.equals(this.id, taskItem.id) &&
+        Objects.equals(this.taskDefId, taskItem.taskDefId) &&
+        Objects.equals(this.createdAt, taskItem.createdAt) &&
+        Objects.equals(this.updatedAt, taskItem.updatedAt)&&
+        Objects.equals(this.additionalProperties, taskItem.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(enable, disable, additionalProperties);
+    return Objects.hash(id, taskDefId, createdAt, updatedAt, additionalProperties);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class UpdateMonitorMatchRequest {\n");
-    sb.append("    enable: ").append(toIndentedString(enable)).append("\n");
-    sb.append("    disable: ").append(toIndentedString(disable)).append("\n");
+    sb.append("class TaskItem {\n");
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    taskDefId: ").append(toIndentedString(taskDefId)).append("\n");
+    sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
+    sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -211,8 +244,10 @@ public class UpdateMonitorMatchRequest {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("enable");
-    openapiFields.add("disable");
+    openapiFields.add("id");
+    openapiFields.add("task_def_id");
+    openapiFields.add("created_at");
+    openapiFields.add("updated_at");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -222,22 +257,20 @@ public class UpdateMonitorMatchRequest {
   * Validates the JSON Element and throws an exception if issues found
   *
   * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to UpdateMonitorMatchRequest
+  * @throws IOException if the JSON Element is invalid with respect to TaskItem
   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!UpdateMonitorMatchRequest.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in UpdateMonitorMatchRequest is not found in the empty JSON string", UpdateMonitorMatchRequest.openapiRequiredFields.toString()));
+        if (!TaskItem.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in TaskItem is not found in the empty JSON string", TaskItem.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // ensure the optional json data is an array if present
-      if (jsonObj.get("enable") != null && !jsonObj.get("enable").isJsonNull() && !jsonObj.get("enable").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `enable` to be an array in the JSON string but got `%s`", jsonObj.get("enable").toString()));
+      if ((jsonObj.get("id") != null && !jsonObj.get("id").isJsonNull()) && !jsonObj.get("id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
       }
-      // ensure the optional json data is an array if present
-      if (jsonObj.get("disable") != null && !jsonObj.get("disable").isJsonNull() && !jsonObj.get("disable").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `disable` to be an array in the JSON string but got `%s`", jsonObj.get("disable").toString()));
+      if ((jsonObj.get("task_def_id") != null && !jsonObj.get("task_def_id").isJsonNull()) && !jsonObj.get("task_def_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `task_def_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("task_def_id").toString()));
       }
   }
 
@@ -245,16 +278,16 @@ public class UpdateMonitorMatchRequest {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!UpdateMonitorMatchRequest.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'UpdateMonitorMatchRequest' and its subtypes
+       if (!TaskItem.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'TaskItem' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<UpdateMonitorMatchRequest> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(UpdateMonitorMatchRequest.class));
+       final TypeAdapter<TaskItem> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(TaskItem.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<UpdateMonitorMatchRequest>() {
+       return (TypeAdapter<T>) new TypeAdapter<TaskItem>() {
            @Override
-           public void write(JsonWriter out, UpdateMonitorMatchRequest value) throws IOException {
+           public void write(JsonWriter out, TaskItem value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              obj.remove("additionalProperties");
              // serialize additional properties
@@ -282,12 +315,12 @@ public class UpdateMonitorMatchRequest {
            }
 
            @Override
-           public UpdateMonitorMatchRequest read(JsonReader in) throws IOException {
+           public TaskItem read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
-             UpdateMonitorMatchRequest instance = thisAdapter.fromJsonTree(jsonObj);
+             TaskItem instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
                if (!openapiFields.contains(entry.getKey())) {
                  if (entry.getValue().isJsonPrimitive()) { // primitive type
@@ -314,18 +347,18 @@ public class UpdateMonitorMatchRequest {
   }
 
  /**
-  * Create an instance of UpdateMonitorMatchRequest given an JSON string
+  * Create an instance of TaskItem given an JSON string
   *
   * @param jsonString JSON string
-  * @return An instance of UpdateMonitorMatchRequest
-  * @throws IOException if the JSON string is invalid with respect to UpdateMonitorMatchRequest
+  * @return An instance of TaskItem
+  * @throws IOException if the JSON string is invalid with respect to TaskItem
   */
-  public static UpdateMonitorMatchRequest fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, UpdateMonitorMatchRequest.class);
+  public static TaskItem fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, TaskItem.class);
   }
 
  /**
-  * Convert an instance of UpdateMonitorMatchRequest to an JSON string
+  * Convert an instance of TaskItem to an JSON string
   *
   * @return JSON string
   */

@@ -1,8 +1,9 @@
 package com.onfido.integration;
 
 import com.onfido.model.Applicant;
-import com.onfido.model.CompleteTaskRequest;
+import com.onfido.model.CompleteTaskBuilder;
 import com.onfido.model.Task;
+import com.onfido.model.TaskItem;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -24,14 +25,14 @@ public class TasksTest extends TestBase {
 
   @Test
   public void listTasks() throws Exception {
-    List<Task> tasks = onfido.listTasks(workflowRunId);
+    List<TaskItem> tasks = onfido.listTasks(workflowRunId);
 
     Assertions.assertEquals(2, tasks.size());
   }
 
   @Test
   public void findTask() throws Exception {
-    Task lookupTask = onfido.listTasks(workflowRunId).get(0);
+    TaskItem lookupTask = onfido.listTasks(workflowRunId).get(0);
 
     Task task = onfido.findTask(workflowRunId, lookupTask.getId());
 
@@ -47,13 +48,13 @@ public class TasksTest extends TestBase {
     completeTaskBody.put("first_name", "First");
     completeTaskBody.put("last_name", "Last");
 
-    CompleteTaskRequest completeTaskRequest = new CompleteTaskRequest();
-    completeTaskRequest.setData(completeTaskBody);
+    CompleteTaskBuilder completeTaskBuilder = new CompleteTaskBuilder();
+    completeTaskBuilder.putAdditionalProperty("data", completeTaskBody);
 
-    onfido.completeTask(workflowRunId, taskId, completeTaskRequest);
+    onfido.completeTask(workflowRunId, taskId, completeTaskBuilder);
 
     Task completedTask = onfido.findTask(workflowRunId, taskId);
-    Map<?, ?> taskOutput = (Map<?, ?>) completedTask.getAdditionalProperties().get("output");
+    Map<?, ?> taskOutput = (Map<?, ?>) completedTask.getOutput();
 
     Assertions.assertEquals("First", taskOutput.get("first_name"));
     Assertions.assertEquals("Last", taskOutput.get("last_name"));

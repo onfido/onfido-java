@@ -19,11 +19,10 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.onfido.model.LiveVideo;
 import java.io.IOException;
-import java.util.ArrayList;
+import java.time.OffsetDateTime;
 import java.util.Arrays;
-import java.util.List;
+import java.util.UUID;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -50,41 +49,102 @@ import java.util.Set;
 import com.onfido.JSON;
 
 /**
- * LiveoVideosList
+ * WatchlistMonitorResponse
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
-public class LiveoVideosList {
-  public static final String SERIALIZED_NAME_LIVE_VIDEOS = "live_videos";
-  @SerializedName(SERIALIZED_NAME_LIVE_VIDEOS)
-  private List<LiveVideo> liveVideos = new ArrayList<>();
+public class WatchlistMonitorResponse {
+  public static final String SERIALIZED_NAME_ID = "id";
+  @SerializedName(SERIALIZED_NAME_ID)
+  private UUID id;
 
-  public LiveoVideosList() {
+  public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
+  @SerializedName(SERIALIZED_NAME_CREATED_AT)
+  private OffsetDateTime createdAt;
+
+  public static final String SERIALIZED_NAME_DELETED_AT = "deleted_at";
+  @SerializedName(SERIALIZED_NAME_DELETED_AT)
+  private OffsetDateTime deletedAt;
+
+  public static final String SERIALIZED_NAME_IS_SANDBOX = "is_sandbox";
+  @SerializedName(SERIALIZED_NAME_IS_SANDBOX)
+  private Boolean isSandbox = false;
+
+  public WatchlistMonitorResponse() {
   }
 
-  public LiveoVideosList liveVideos(List<LiveVideo> liveVideos) {
-    this.liveVideos = liveVideos;
-    return this;
-  }
-
-  public LiveoVideosList addLiveVideosItem(LiveVideo liveVideosItem) {
-    if (this.liveVideos == null) {
-      this.liveVideos = new ArrayList<>();
-    }
-    this.liveVideos.add(liveVideosItem);
+  public WatchlistMonitorResponse id(UUID id) {
+    this.id = id;
     return this;
   }
 
    /**
-   * Get liveVideos
-   * @return liveVideos
+   * The unique identifier for the monitor.
+   * @return id
   **/
   @javax.annotation.Nonnull
-  public List<LiveVideo> getLiveVideos() {
-    return liveVideos;
+  public UUID getId() {
+    return id;
   }
 
-  public void setLiveVideos(List<LiveVideo> liveVideos) {
-    this.liveVideos = liveVideos;
+  public void setId(UUID id) {
+    this.id = id;
+  }
+
+
+  public WatchlistMonitorResponse createdAt(OffsetDateTime createdAt) {
+    this.createdAt = createdAt;
+    return this;
+  }
+
+   /**
+   * The date and time at which the monitor was created.
+   * @return createdAt
+  **/
+  @javax.annotation.Nullable
+  public OffsetDateTime getCreatedAt() {
+    return createdAt;
+  }
+
+  public void setCreatedAt(OffsetDateTime createdAt) {
+    this.createdAt = createdAt;
+  }
+
+
+  public WatchlistMonitorResponse deletedAt(OffsetDateTime deletedAt) {
+    this.deletedAt = deletedAt;
+    return this;
+  }
+
+   /**
+   * The date and time at which the monitor was deleted. If the monitor is still active, this field will be null.
+   * @return deletedAt
+  **/
+  @javax.annotation.Nullable
+  public OffsetDateTime getDeletedAt() {
+    return deletedAt;
+  }
+
+  public void setDeletedAt(OffsetDateTime deletedAt) {
+    this.deletedAt = deletedAt;
+  }
+
+
+  public WatchlistMonitorResponse isSandbox(Boolean isSandbox) {
+    this.isSandbox = isSandbox;
+    return this;
+  }
+
+   /**
+   * Indicates whether the object was created in the sandbox or not.
+   * @return isSandbox
+  **/
+  @javax.annotation.Nullable
+  public Boolean getIsSandbox() {
+    return isSandbox;
+  }
+
+  public void setIsSandbox(Boolean isSandbox) {
+    this.isSandbox = isSandbox;
   }
 
   /**
@@ -100,9 +160,9 @@ public class LiveoVideosList {
    *
    * @param key name of the property
    * @param value value of the property
-   * @return the LiveoVideosList instance itself
+   * @return the WatchlistMonitorResponse instance itself
    */
-  public LiveoVideosList putAdditionalProperty(String key, Object value) {
+  public WatchlistMonitorResponse putAdditionalProperty(String key, Object value) {
     if (this.additionalProperties == null) {
         this.additionalProperties = new HashMap<String, Object>();
     }
@@ -141,21 +201,27 @@ public class LiveoVideosList {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    LiveoVideosList liveoVideosList = (LiveoVideosList) o;
-    return Objects.equals(this.liveVideos, liveoVideosList.liveVideos)&&
-        Objects.equals(this.additionalProperties, liveoVideosList.additionalProperties);
+    WatchlistMonitorResponse watchlistMonitorResponse = (WatchlistMonitorResponse) o;
+    return Objects.equals(this.id, watchlistMonitorResponse.id) &&
+        Objects.equals(this.createdAt, watchlistMonitorResponse.createdAt) &&
+        Objects.equals(this.deletedAt, watchlistMonitorResponse.deletedAt) &&
+        Objects.equals(this.isSandbox, watchlistMonitorResponse.isSandbox)&&
+        Objects.equals(this.additionalProperties, watchlistMonitorResponse.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(liveVideos, additionalProperties);
+    return Objects.hash(id, createdAt, deletedAt, isSandbox, additionalProperties);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class LiveoVideosList {\n");
-    sb.append("    liveVideos: ").append(toIndentedString(liveVideos)).append("\n");
+    sb.append("class WatchlistMonitorResponse {\n");
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
+    sb.append("    deletedAt: ").append(toIndentedString(deletedAt)).append("\n");
+    sb.append("    isSandbox: ").append(toIndentedString(isSandbox)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -179,59 +245,55 @@ public class LiveoVideosList {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("live_videos");
+    openapiFields.add("id");
+    openapiFields.add("created_at");
+    openapiFields.add("deleted_at");
+    openapiFields.add("is_sandbox");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("live_videos");
+    openapiRequiredFields.add("id");
   }
 
  /**
   * Validates the JSON Element and throws an exception if issues found
   *
   * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to LiveoVideosList
+  * @throws IOException if the JSON Element is invalid with respect to WatchlistMonitorResponse
   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!LiveoVideosList.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in LiveoVideosList is not found in the empty JSON string", LiveoVideosList.openapiRequiredFields.toString()));
+        if (!WatchlistMonitorResponse.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in WatchlistMonitorResponse is not found in the empty JSON string", WatchlistMonitorResponse.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : LiveoVideosList.openapiRequiredFields) {
+      for (String requiredField : WatchlistMonitorResponse.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
           throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // ensure the json data is an array
-      if (!jsonObj.get("live_videos").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `live_videos` to be an array in the JSON string but got `%s`", jsonObj.get("live_videos").toString()));
+      if (!jsonObj.get("id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
       }
-
-      JsonArray jsonArrayliveVideos = jsonObj.getAsJsonArray("live_videos");
-      // validate the required field `live_videos` (array)
-      for (int i = 0; i < jsonArrayliveVideos.size(); i++) {
-        LiveVideo.validateJsonElement(jsonArrayliveVideos.get(i));
-      };
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!LiveoVideosList.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'LiveoVideosList' and its subtypes
+       if (!WatchlistMonitorResponse.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'WatchlistMonitorResponse' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<LiveoVideosList> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(LiveoVideosList.class));
+       final TypeAdapter<WatchlistMonitorResponse> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(WatchlistMonitorResponse.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<LiveoVideosList>() {
+       return (TypeAdapter<T>) new TypeAdapter<WatchlistMonitorResponse>() {
            @Override
-           public void write(JsonWriter out, LiveoVideosList value) throws IOException {
+           public void write(JsonWriter out, WatchlistMonitorResponse value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              obj.remove("additionalProperties");
              // serialize additional properties
@@ -259,12 +321,12 @@ public class LiveoVideosList {
            }
 
            @Override
-           public LiveoVideosList read(JsonReader in) throws IOException {
+           public WatchlistMonitorResponse read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
-             LiveoVideosList instance = thisAdapter.fromJsonTree(jsonObj);
+             WatchlistMonitorResponse instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
                if (!openapiFields.contains(entry.getKey())) {
                  if (entry.getValue().isJsonPrimitive()) { // primitive type
@@ -291,18 +353,18 @@ public class LiveoVideosList {
   }
 
  /**
-  * Create an instance of LiveoVideosList given an JSON string
+  * Create an instance of WatchlistMonitorResponse given an JSON string
   *
   * @param jsonString JSON string
-  * @return An instance of LiveoVideosList
-  * @throws IOException if the JSON string is invalid with respect to LiveoVideosList
+  * @return An instance of WatchlistMonitorResponse
+  * @throws IOException if the JSON string is invalid with respect to WatchlistMonitorResponse
   */
-  public static LiveoVideosList fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, LiveoVideosList.class);
+  public static WatchlistMonitorResponse fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, WatchlistMonitorResponse.class);
   }
 
  /**
-  * Convert an instance of LiveoVideosList to an JSON string
+  * Convert an instance of WatchlistMonitorResponse to an JSON string
   *
   * @return JSON string
   */

@@ -170,7 +170,8 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.CheckResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.CheckShared.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.ChecksList.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.CompleteTaskRequest.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.CompleteTaskBuilder.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.CompleteTaskDataBuilder.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.ConsentItem.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.ConsentsBuilder.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.DeviceIntelligenceBreakdown.CustomTypeAdapterFactory());
@@ -329,7 +330,7 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.LivePhotoResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.LivePhotosList.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.LiveVideo.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.LiveoVideosList.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.LiveVideosList.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.Location.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.LocationBuilder.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.LocationShared.CustomTypeAdapterFactory());
@@ -358,7 +359,7 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.SdkTokenRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.SdkTokenResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.Task.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.UpdateMonitorMatchRequest.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.TaskItem.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.UsDrivingLicenceBreakdown.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.UsDrivingLicenceBreakdownAddress.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.UsDrivingLicenceBreakdownAddressBreakdown.CustomTypeAdapterFactory());
@@ -381,7 +382,13 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.WatchlistEnhancedProperties.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.WatchlistEnhancedReport.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.WatchlistMonitor.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.WatchlistMonitorBuilder.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.WatchlistMonitorMatch.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.WatchlistMonitorMatchesList.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.WatchlistMonitorMatchesUpdater.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.WatchlistMonitorResponse.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.WatchlistMonitorShared.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.WatchlistMonitorsList.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.WatchlistPepsOnlyReport.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.WatchlistSanctionsOnlyReport.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.WatchlistStandardBreakdown.CustomTypeAdapterFactory());

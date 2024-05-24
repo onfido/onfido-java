@@ -28,14 +28,16 @@ public class WorkflowRunOutputsTest extends TestBase {
 
     String taskId = getTaskIdByPartialId(workflowRunId, "profile");
 
-    Reader reader = new FileReader("src/test/java/com/onfido/utils/ProfileDataCapture.json");
-    CompleteTaskRequest completeTaskRequest = gson.fromJson(reader, CompleteTaskRequest.class);
+    Reader reader = new FileReader("media/ProfileDataCapture.json");
+    CompleteTaskBuilder completeTaskBuilder = new CompleteTaskBuilder();
+    completeTaskBuilder.putAdditionalProperty("data", gson.fromJson(reader, Object.class));
 
-    onfido.completeTask(workflowRunId, taskId, completeTaskRequest);
+    onfido.completeTask(workflowRunId, taskId, completeTaskBuilder);
     WorkflowRun workflowRun = onfido.findWorkflowRun(workflowRunId);
 
     Map<?, ?> output = (Map<?, ?>) workflowRun.getOutput();
-    Assertions.assertEquals(completeTaskRequest.getData(), output.get("profile_capture_data"));
+    Assertions.assertEquals(
+        completeTaskBuilder.getAdditionalProperty("data"), output.get("profile_capture_data"));
   }
 
   @Test
@@ -49,33 +51,36 @@ public class WorkflowRunOutputsTest extends TestBase {
     completeProfileDataTaskBody.put("first_name", "First");
     completeProfileDataTaskBody.put("last_name", "Last");
 
-    CompleteTaskRequest completeProfileDataTaskRequest = new CompleteTaskRequest();
-    completeProfileDataTaskRequest.setData(completeProfileDataTaskBody);
-    onfido.completeTask(workflowRunId, profileDataTaskId, completeProfileDataTaskRequest);
+    CompleteTaskBuilder completeProfileDataTaskBuilder = new CompleteTaskBuilder();
+    completeProfileDataTaskBuilder.setData(
+        new CompleteTaskDataBuilder(completeProfileDataTaskBody));
+    onfido.completeTask(workflowRunId, profileDataTaskId, completeProfileDataTaskBuilder);
 
     String documentCaptureTaskId = getTaskIdByPartialId(workflowRunId, "document_photo");
     Document document = uploadDocument(applicant, "sample_driving_licence.png", "driving_licence");
 
     Map<String, String> completeDocumentCaptureTaskBody = new HashMap<>();
     List<Object> completeDocumentCaptureTaskBodyArray = new ArrayList<>();
-    CompleteTaskRequest completeDocumentCaptureTaskRequest = new CompleteTaskRequest();
+    CompleteTaskBuilder completeDocumentCaptureTaskBuilder = new CompleteTaskBuilder();
 
     completeDocumentCaptureTaskBody.put("id", document.getId().toString());
     completeDocumentCaptureTaskBodyArray.add(completeDocumentCaptureTaskBody);
-    completeDocumentCaptureTaskRequest.setData(completeDocumentCaptureTaskBodyArray);
-    onfido.completeTask(workflowRunId, documentCaptureTaskId, completeDocumentCaptureTaskRequest);
+    completeDocumentCaptureTaskBuilder.setData(
+        new CompleteTaskDataBuilder(completeDocumentCaptureTaskBodyArray));
+    onfido.completeTask(workflowRunId, documentCaptureTaskId, completeDocumentCaptureTaskBuilder);
 
     String photoCaptureTaskId = getTaskIdByPartialId(workflowRunId, "face_photo");
     LivePhoto livePhoto = uploadLivePhoto(applicant, "sample_photo.png");
 
     Map<String, String> completeLivePhotoCaptureTaskBody = new HashMap<>();
     List<Object> completeLivePhotoCaptureTaskBodyArray = new ArrayList<>();
-    CompleteTaskRequest completeLivePhotoCaptureTaskRequest = new CompleteTaskRequest();
+    CompleteTaskBuilder completeLivePhotoCaptureTaskBuilder = new CompleteTaskBuilder();
 
     completeLivePhotoCaptureTaskBody.put("id", livePhoto.getId().toString());
     completeLivePhotoCaptureTaskBodyArray.add(completeLivePhotoCaptureTaskBody);
-    completeLivePhotoCaptureTaskRequest.setData(completeLivePhotoCaptureTaskBodyArray);
-    onfido.completeTask(workflowRunId, photoCaptureTaskId, completeLivePhotoCaptureTaskRequest);
+    completeLivePhotoCaptureTaskBuilder.setData(
+        new CompleteTaskDataBuilder(completeLivePhotoCaptureTaskBodyArray));
+    onfido.completeTask(workflowRunId, photoCaptureTaskId, completeLivePhotoCaptureTaskBuilder);
 
     WorkflowRun workflowRun = onfido.findWorkflowRun(workflowRunId);
 

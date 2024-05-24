@@ -19,9 +19,9 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.onfido.model.CompleteTaskDataBuilder;
 import java.io.IOException;
 import java.util.Arrays;
-import java.util.UUID;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -48,56 +48,33 @@ import java.util.Set;
 import com.onfido.JSON;
 
 /**
- * WatchlistMonitorMatch
+ * CompleteTaskBuilder
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
-public class WatchlistMonitorMatch {
-  public static final String SERIALIZED_NAME_ID = "id";
-  @SerializedName(SERIALIZED_NAME_ID)
-  private UUID id;
+public class CompleteTaskBuilder {
+  public static final String SERIALIZED_NAME_DATA = "data";
+  @SerializedName(SERIALIZED_NAME_DATA)
+  private CompleteTaskDataBuilder data;
 
-  public static final String SERIALIZED_NAME_ENABLED = "enabled";
-  @SerializedName(SERIALIZED_NAME_ENABLED)
-  private Boolean enabled;
-
-  public WatchlistMonitorMatch() {
+  public CompleteTaskBuilder() {
   }
 
-  public WatchlistMonitorMatch id(UUID id) {
-    this.id = id;
+  public CompleteTaskBuilder data(CompleteTaskDataBuilder data) {
+    this.data = data;
     return this;
   }
 
    /**
-   * Monitor ID
-   * @return id
+   * Get data
+   * @return data
   **/
-  @javax.annotation.Nullable
-  public UUID getId() {
-    return id;
+  @javax.annotation.Nonnull
+  public CompleteTaskDataBuilder getData() {
+    return data;
   }
 
-  public void setId(UUID id) {
-    this.id = id;
-  }
-
-
-  public WatchlistMonitorMatch enabled(Boolean enabled) {
-    this.enabled = enabled;
-    return this;
-  }
-
-   /**
-   * Monitor status
-   * @return enabled
-  **/
-  @javax.annotation.Nullable
-  public Boolean getEnabled() {
-    return enabled;
-  }
-
-  public void setEnabled(Boolean enabled) {
-    this.enabled = enabled;
+  public void setData(CompleteTaskDataBuilder data) {
+    this.data = data;
   }
 
   /**
@@ -113,9 +90,9 @@ public class WatchlistMonitorMatch {
    *
    * @param key name of the property
    * @param value value of the property
-   * @return the WatchlistMonitorMatch instance itself
+   * @return the CompleteTaskBuilder instance itself
    */
-  public WatchlistMonitorMatch putAdditionalProperty(String key, Object value) {
+  public CompleteTaskBuilder putAdditionalProperty(String key, Object value) {
     if (this.additionalProperties == null) {
         this.additionalProperties = new HashMap<String, Object>();
     }
@@ -154,23 +131,21 @@ public class WatchlistMonitorMatch {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    WatchlistMonitorMatch watchlistMonitorMatch = (WatchlistMonitorMatch) o;
-    return Objects.equals(this.id, watchlistMonitorMatch.id) &&
-        Objects.equals(this.enabled, watchlistMonitorMatch.enabled)&&
-        Objects.equals(this.additionalProperties, watchlistMonitorMatch.additionalProperties);
+    CompleteTaskBuilder completeTaskBuilder = (CompleteTaskBuilder) o;
+    return Objects.equals(this.data, completeTaskBuilder.data)&&
+        Objects.equals(this.additionalProperties, completeTaskBuilder.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, enabled, additionalProperties);
+    return Objects.hash(data, additionalProperties);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class WatchlistMonitorMatch {\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
+    sb.append("class CompleteTaskBuilder {\n");
+    sb.append("    data: ").append(toIndentedString(data)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -194,45 +169,51 @@ public class WatchlistMonitorMatch {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("id");
-    openapiFields.add("enabled");
+    openapiFields.add("data");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("data");
   }
 
  /**
   * Validates the JSON Element and throws an exception if issues found
   *
   * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to WatchlistMonitorMatch
+  * @throws IOException if the JSON Element is invalid with respect to CompleteTaskBuilder
   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!WatchlistMonitorMatch.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in WatchlistMonitorMatch is not found in the empty JSON string", WatchlistMonitorMatch.openapiRequiredFields.toString()));
+        if (!CompleteTaskBuilder.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in CompleteTaskBuilder is not found in the empty JSON string", CompleteTaskBuilder.openapiRequiredFields.toString()));
+        }
+      }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : CompleteTaskBuilder.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("id") != null && !jsonObj.get("id").isJsonNull()) && !jsonObj.get("id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
-      }
+      // validate the required field `data`
+      CompleteTaskDataBuilder.validateJsonElement(jsonObj.get("data"));
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!WatchlistMonitorMatch.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'WatchlistMonitorMatch' and its subtypes
+       if (!CompleteTaskBuilder.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'CompleteTaskBuilder' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<WatchlistMonitorMatch> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(WatchlistMonitorMatch.class));
+       final TypeAdapter<CompleteTaskBuilder> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(CompleteTaskBuilder.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<WatchlistMonitorMatch>() {
+       return (TypeAdapter<T>) new TypeAdapter<CompleteTaskBuilder>() {
            @Override
-           public void write(JsonWriter out, WatchlistMonitorMatch value) throws IOException {
+           public void write(JsonWriter out, CompleteTaskBuilder value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              obj.remove("additionalProperties");
              // serialize additional properties
@@ -260,12 +241,12 @@ public class WatchlistMonitorMatch {
            }
 
            @Override
-           public WatchlistMonitorMatch read(JsonReader in) throws IOException {
+           public CompleteTaskBuilder read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
-             WatchlistMonitorMatch instance = thisAdapter.fromJsonTree(jsonObj);
+             CompleteTaskBuilder instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
                if (!openapiFields.contains(entry.getKey())) {
                  if (entry.getValue().isJsonPrimitive()) { // primitive type
@@ -292,18 +273,18 @@ public class WatchlistMonitorMatch {
   }
 
  /**
-  * Create an instance of WatchlistMonitorMatch given an JSON string
+  * Create an instance of CompleteTaskBuilder given an JSON string
   *
   * @param jsonString JSON string
-  * @return An instance of WatchlistMonitorMatch
-  * @throws IOException if the JSON string is invalid with respect to WatchlistMonitorMatch
+  * @return An instance of CompleteTaskBuilder
+  * @throws IOException if the JSON string is invalid with respect to CompleteTaskBuilder
   */
-  public static WatchlistMonitorMatch fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, WatchlistMonitorMatch.class);
+  public static CompleteTaskBuilder fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, CompleteTaskBuilder.class);
   }
 
  /**
-  * Convert an instance of WatchlistMonitorMatch to an JSON string
+  * Convert an instance of CompleteTaskBuilder to an JSON string
   *
   * @return JSON string
   */

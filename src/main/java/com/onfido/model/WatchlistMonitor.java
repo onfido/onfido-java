@@ -55,24 +55,12 @@ import com.onfido.JSON;
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class WatchlistMonitor {
-  public static final String SERIALIZED_NAME_ID = "id";
-  @SerializedName(SERIALIZED_NAME_ID)
-  private UUID id;
-
-  public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
-  @SerializedName(SERIALIZED_NAME_CREATED_AT)
-  private OffsetDateTime createdAt;
-
-  public static final String SERIALIZED_NAME_DELETED_AT = "deleted_at";
-  @SerializedName(SERIALIZED_NAME_DELETED_AT)
-  private OffsetDateTime deletedAt;
-
   public static final String SERIALIZED_NAME_APPLICANT_ID = "applicant_id";
   @SerializedName(SERIALIZED_NAME_APPLICANT_ID)
   private UUID applicantId;
 
   /**
-   * The name of the report type the monitor creates. Can be either \&quot;watchlist_standard\&quot; or \&quot;watchlist_aml\&quot;.
+   * The name of the report type the monitor creates.
    */
   @JsonAdapter(ReportNameEnum.Adapter.class)
   public enum ReportNameEnum {
@@ -133,58 +121,24 @@ public class WatchlistMonitor {
   @SerializedName(SERIALIZED_NAME_TAGS)
   private List<String> tags = new ArrayList<>();
 
-  public static final String SERIALIZED_NAME_SANDBOX = "sandbox";
-  @SerializedName(SERIALIZED_NAME_SANDBOX)
-  private Boolean sandbox = false;
+  public static final String SERIALIZED_NAME_ID = "id";
+  @SerializedName(SERIALIZED_NAME_ID)
+  private UUID id;
+
+  public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
+  @SerializedName(SERIALIZED_NAME_CREATED_AT)
+  private OffsetDateTime createdAt;
+
+  public static final String SERIALIZED_NAME_DELETED_AT = "deleted_at";
+  @SerializedName(SERIALIZED_NAME_DELETED_AT)
+  private OffsetDateTime deletedAt;
+
+  public static final String SERIALIZED_NAME_IS_SANDBOX = "is_sandbox";
+  @SerializedName(SERIALIZED_NAME_IS_SANDBOX)
+  private Boolean isSandbox = false;
 
   public WatchlistMonitor() {
   }
-
-  public WatchlistMonitor(
-     UUID id, 
-     OffsetDateTime createdAt, 
-     OffsetDateTime deletedAt, 
-     Boolean sandbox
-  ) {
-    this();
-    this.id = id;
-    this.createdAt = createdAt;
-    this.deletedAt = deletedAt;
-    this.sandbox = sandbox;
-  }
-
-   /**
-   * The unique identifier for the monitor.
-   * @return id
-  **/
-  @javax.annotation.Nullable
-  public UUID getId() {
-    return id;
-  }
-
-
-
-   /**
-   * The date and time at which the monitor was created.
-   * @return createdAt
-  **/
-  @javax.annotation.Nullable
-  public OffsetDateTime getCreatedAt() {
-    return createdAt;
-  }
-
-
-
-   /**
-   * The date and time at which the monitor was deleted. If the monitor is still active, this field will be null.
-   * @return deletedAt
-  **/
-  @javax.annotation.Nullable
-  public OffsetDateTime getDeletedAt() {
-    return deletedAt;
-  }
-
-
 
   public WatchlistMonitor applicantId(UUID applicantId) {
     this.applicantId = applicantId;
@@ -211,7 +165,7 @@ public class WatchlistMonitor {
   }
 
    /**
-   * The name of the report type the monitor creates. Can be either \&quot;watchlist_standard\&quot; or \&quot;watchlist_aml\&quot;.
+   * The name of the report type the monitor creates.
    * @return reportName
   **/
   @javax.annotation.Nonnull
@@ -251,15 +205,80 @@ public class WatchlistMonitor {
   }
 
 
-   /**
-   * Indicates whether the object was created in the sandbox or not.
-   * @return sandbox
-  **/
-  @javax.annotation.Nullable
-  public Boolean getSandbox() {
-    return sandbox;
+  public WatchlistMonitor id(UUID id) {
+    this.id = id;
+    return this;
   }
 
+   /**
+   * The unique identifier for the monitor.
+   * @return id
+  **/
+  @javax.annotation.Nonnull
+  public UUID getId() {
+    return id;
+  }
+
+  public void setId(UUID id) {
+    this.id = id;
+  }
+
+
+  public WatchlistMonitor createdAt(OffsetDateTime createdAt) {
+    this.createdAt = createdAt;
+    return this;
+  }
+
+   /**
+   * The date and time at which the monitor was created.
+   * @return createdAt
+  **/
+  @javax.annotation.Nullable
+  public OffsetDateTime getCreatedAt() {
+    return createdAt;
+  }
+
+  public void setCreatedAt(OffsetDateTime createdAt) {
+    this.createdAt = createdAt;
+  }
+
+
+  public WatchlistMonitor deletedAt(OffsetDateTime deletedAt) {
+    this.deletedAt = deletedAt;
+    return this;
+  }
+
+   /**
+   * The date and time at which the monitor was deleted. If the monitor is still active, this field will be null.
+   * @return deletedAt
+  **/
+  @javax.annotation.Nullable
+  public OffsetDateTime getDeletedAt() {
+    return deletedAt;
+  }
+
+  public void setDeletedAt(OffsetDateTime deletedAt) {
+    this.deletedAt = deletedAt;
+  }
+
+
+  public WatchlistMonitor isSandbox(Boolean isSandbox) {
+    this.isSandbox = isSandbox;
+    return this;
+  }
+
+   /**
+   * Indicates whether the object was created in the sandbox or not.
+   * @return isSandbox
+  **/
+  @javax.annotation.Nullable
+  public Boolean getIsSandbox() {
+    return isSandbox;
+  }
+
+  public void setIsSandbox(Boolean isSandbox) {
+    this.isSandbox = isSandbox;
+  }
 
   /**
    * A container for additional, undeclared properties.
@@ -316,32 +335,32 @@ public class WatchlistMonitor {
       return false;
     }
     WatchlistMonitor watchlistMonitor = (WatchlistMonitor) o;
-    return Objects.equals(this.id, watchlistMonitor.id) &&
-        Objects.equals(this.createdAt, watchlistMonitor.createdAt) &&
-        Objects.equals(this.deletedAt, watchlistMonitor.deletedAt) &&
-        Objects.equals(this.applicantId, watchlistMonitor.applicantId) &&
+    return Objects.equals(this.applicantId, watchlistMonitor.applicantId) &&
         Objects.equals(this.reportName, watchlistMonitor.reportName) &&
         Objects.equals(this.tags, watchlistMonitor.tags) &&
-        Objects.equals(this.sandbox, watchlistMonitor.sandbox)&&
+        Objects.equals(this.id, watchlistMonitor.id) &&
+        Objects.equals(this.createdAt, watchlistMonitor.createdAt) &&
+        Objects.equals(this.deletedAt, watchlistMonitor.deletedAt) &&
+        Objects.equals(this.isSandbox, watchlistMonitor.isSandbox)&&
         Objects.equals(this.additionalProperties, watchlistMonitor.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, createdAt, deletedAt, applicantId, reportName, tags, sandbox, additionalProperties);
+    return Objects.hash(applicantId, reportName, tags, id, createdAt, deletedAt, isSandbox, additionalProperties);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class WatchlistMonitor {\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
-    sb.append("    deletedAt: ").append(toIndentedString(deletedAt)).append("\n");
     sb.append("    applicantId: ").append(toIndentedString(applicantId)).append("\n");
     sb.append("    reportName: ").append(toIndentedString(reportName)).append("\n");
     sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
-    sb.append("    sandbox: ").append(toIndentedString(sandbox)).append("\n");
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
+    sb.append("    deletedAt: ").append(toIndentedString(deletedAt)).append("\n");
+    sb.append("    isSandbox: ").append(toIndentedString(isSandbox)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -365,18 +384,19 @@ public class WatchlistMonitor {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("id");
-    openapiFields.add("created_at");
-    openapiFields.add("deleted_at");
     openapiFields.add("applicant_id");
     openapiFields.add("report_name");
     openapiFields.add("tags");
-    openapiFields.add("sandbox");
+    openapiFields.add("id");
+    openapiFields.add("created_at");
+    openapiFields.add("deleted_at");
+    openapiFields.add("is_sandbox");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
     openapiRequiredFields.add("applicant_id");
     openapiRequiredFields.add("report_name");
+    openapiRequiredFields.add("id");
   }
 
  /**
@@ -399,9 +419,6 @@ public class WatchlistMonitor {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("id") != null && !jsonObj.get("id").isJsonNull()) && !jsonObj.get("id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
-      }
       if (!jsonObj.get("applicant_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `applicant_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("applicant_id").toString()));
       }
@@ -413,6 +430,9 @@ public class WatchlistMonitor {
       // ensure the optional json data is an array if present
       if (jsonObj.get("tags") != null && !jsonObj.get("tags").isJsonNull() && !jsonObj.get("tags").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
+      }
+      if (!jsonObj.get("id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
       }
   }
 

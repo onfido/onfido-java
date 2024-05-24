@@ -20,7 +20,10 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+import java.util.UUID;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -47,33 +50,141 @@ import java.util.Set;
 import com.onfido.JSON;
 
 /**
- * CompleteTaskRequest
+ * WatchlistMonitorShared
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
-public class CompleteTaskRequest {
-  public static final String SERIALIZED_NAME_DATA = "data";
-  @SerializedName(SERIALIZED_NAME_DATA)
-  private Object data;
+public class WatchlistMonitorShared {
+  public static final String SERIALIZED_NAME_APPLICANT_ID = "applicant_id";
+  @SerializedName(SERIALIZED_NAME_APPLICANT_ID)
+  private UUID applicantId;
 
-  public CompleteTaskRequest() {
+  /**
+   * The name of the report type the monitor creates.
+   */
+  @JsonAdapter(ReportNameEnum.Adapter.class)
+  public enum ReportNameEnum {
+    STANDARD("watchlist_standard"),
+    
+    AML("watchlist_aml"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+
+    private String value;
+
+    ReportNameEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static ReportNameEnum fromValue(String value) {
+      for (ReportNameEnum b : ReportNameEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      return UNKNOWN_DEFAULT_OPEN_API;
+    }
+
+    public static class Adapter extends TypeAdapter<ReportNameEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final ReportNameEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public ReportNameEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return ReportNameEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      ReportNameEnum.fromValue(value);
+    }
   }
 
-  public CompleteTaskRequest data(Object data) {
-    this.data = data;
+  public static final String SERIALIZED_NAME_REPORT_NAME = "report_name";
+  @SerializedName(SERIALIZED_NAME_REPORT_NAME)
+  private ReportNameEnum reportName;
+
+  public static final String SERIALIZED_NAME_TAGS = "tags";
+  @SerializedName(SERIALIZED_NAME_TAGS)
+  private List<String> tags = new ArrayList<>();
+
+  public WatchlistMonitorShared() {
+  }
+
+  public WatchlistMonitorShared applicantId(UUID applicantId) {
+    this.applicantId = applicantId;
     return this;
   }
 
    /**
-   * The Task completion payload.
-   * @return data
+   * The ID for the applicant associated with the monitor.
+   * @return applicantId
   **/
-  @javax.annotation.Nullable
-  public Object getData() {
-    return data;
+  @javax.annotation.Nonnull
+  public UUID getApplicantId() {
+    return applicantId;
   }
 
-  public void setData(Object data) {
-    this.data = data;
+  public void setApplicantId(UUID applicantId) {
+    this.applicantId = applicantId;
+  }
+
+
+  public WatchlistMonitorShared reportName(ReportNameEnum reportName) {
+    this.reportName = reportName;
+    return this;
+  }
+
+   /**
+   * The name of the report type the monitor creates.
+   * @return reportName
+  **/
+  @javax.annotation.Nonnull
+  public ReportNameEnum getReportName() {
+    return reportName;
+  }
+
+  public void setReportName(ReportNameEnum reportName) {
+    this.reportName = reportName;
+  }
+
+
+  public WatchlistMonitorShared tags(List<String> tags) {
+    this.tags = tags;
+    return this;
+  }
+
+  public WatchlistMonitorShared addTagsItem(String tagsItem) {
+    if (this.tags == null) {
+      this.tags = new ArrayList<>();
+    }
+    this.tags.add(tagsItem);
+    return this;
+  }
+
+   /**
+   * A list of tags associated with this monitor. These tags will be applied to each check this monitor creates.
+   * @return tags
+  **/
+  @javax.annotation.Nullable
+  public List<String> getTags() {
+    return tags;
+  }
+
+  public void setTags(List<String> tags) {
+    this.tags = tags;
   }
 
   /**
@@ -89,9 +200,9 @@ public class CompleteTaskRequest {
    *
    * @param key name of the property
    * @param value value of the property
-   * @return the CompleteTaskRequest instance itself
+   * @return the WatchlistMonitorShared instance itself
    */
-  public CompleteTaskRequest putAdditionalProperty(String key, Object value) {
+  public WatchlistMonitorShared putAdditionalProperty(String key, Object value) {
     if (this.additionalProperties == null) {
         this.additionalProperties = new HashMap<String, Object>();
     }
@@ -130,21 +241,25 @@ public class CompleteTaskRequest {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    CompleteTaskRequest completeTaskRequest = (CompleteTaskRequest) o;
-    return Objects.equals(this.data, completeTaskRequest.data)&&
-        Objects.equals(this.additionalProperties, completeTaskRequest.additionalProperties);
+    WatchlistMonitorShared watchlistMonitorShared = (WatchlistMonitorShared) o;
+    return Objects.equals(this.applicantId, watchlistMonitorShared.applicantId) &&
+        Objects.equals(this.reportName, watchlistMonitorShared.reportName) &&
+        Objects.equals(this.tags, watchlistMonitorShared.tags)&&
+        Objects.equals(this.additionalProperties, watchlistMonitorShared.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(data, additionalProperties);
+    return Objects.hash(applicantId, reportName, tags, additionalProperties);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class CompleteTaskRequest {\n");
-    sb.append("    data: ").append(toIndentedString(data)).append("\n");
+    sb.append("class WatchlistMonitorShared {\n");
+    sb.append("    applicantId: ").append(toIndentedString(applicantId)).append("\n");
+    sb.append("    reportName: ").append(toIndentedString(reportName)).append("\n");
+    sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -168,41 +283,64 @@ public class CompleteTaskRequest {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("data");
+    openapiFields.add("applicant_id");
+    openapiFields.add("report_name");
+    openapiFields.add("tags");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("applicant_id");
+    openapiRequiredFields.add("report_name");
   }
 
  /**
   * Validates the JSON Element and throws an exception if issues found
   *
   * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to CompleteTaskRequest
+  * @throws IOException if the JSON Element is invalid with respect to WatchlistMonitorShared
   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!CompleteTaskRequest.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in CompleteTaskRequest is not found in the empty JSON string", CompleteTaskRequest.openapiRequiredFields.toString()));
+        if (!WatchlistMonitorShared.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in WatchlistMonitorShared is not found in the empty JSON string", WatchlistMonitorShared.openapiRequiredFields.toString()));
+        }
+      }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : WatchlistMonitorShared.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if (!jsonObj.get("applicant_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `applicant_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("applicant_id").toString()));
+      }
+      if (!jsonObj.get("report_name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `report_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("report_name").toString()));
+      }
+      // validate the required field `report_name`
+      ReportNameEnum.validateJsonElement(jsonObj.get("report_name"));
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("tags") != null && !jsonObj.get("tags").isJsonNull() && !jsonObj.get("tags").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
+      }
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!CompleteTaskRequest.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'CompleteTaskRequest' and its subtypes
+       if (!WatchlistMonitorShared.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'WatchlistMonitorShared' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<CompleteTaskRequest> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(CompleteTaskRequest.class));
+       final TypeAdapter<WatchlistMonitorShared> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(WatchlistMonitorShared.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<CompleteTaskRequest>() {
+       return (TypeAdapter<T>) new TypeAdapter<WatchlistMonitorShared>() {
            @Override
-           public void write(JsonWriter out, CompleteTaskRequest value) throws IOException {
+           public void write(JsonWriter out, WatchlistMonitorShared value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              obj.remove("additionalProperties");
              // serialize additional properties
@@ -230,12 +368,12 @@ public class CompleteTaskRequest {
            }
 
            @Override
-           public CompleteTaskRequest read(JsonReader in) throws IOException {
+           public WatchlistMonitorShared read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
-             CompleteTaskRequest instance = thisAdapter.fromJsonTree(jsonObj);
+             WatchlistMonitorShared instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
                if (!openapiFields.contains(entry.getKey())) {
                  if (entry.getValue().isJsonPrimitive()) { // primitive type
@@ -262,18 +400,18 @@ public class CompleteTaskRequest {
   }
 
  /**
-  * Create an instance of CompleteTaskRequest given an JSON string
+  * Create an instance of WatchlistMonitorShared given an JSON string
   *
   * @param jsonString JSON string
-  * @return An instance of CompleteTaskRequest
-  * @throws IOException if the JSON string is invalid with respect to CompleteTaskRequest
+  * @return An instance of WatchlistMonitorShared
+  * @throws IOException if the JSON string is invalid with respect to WatchlistMonitorShared
   */
-  public static CompleteTaskRequest fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, CompleteTaskRequest.class);
+  public static WatchlistMonitorShared fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, WatchlistMonitorShared.class);
   }
 
  /**
-  * Convert an instance of CompleteTaskRequest to an JSON string
+  * Convert an instance of WatchlistMonitorShared to an JSON string
   *
   * @return JSON string
   */

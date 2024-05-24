@@ -22,6 +22,8 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.Arrays;
+import java.util.UUID;
+import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -56,9 +58,25 @@ public class Task {
   @SerializedName(SERIALIZED_NAME_ID)
   private String id;
 
+  public static final String SERIALIZED_NAME_WORKFLOW_RUN_ID = "workflow_run_id";
+  @SerializedName(SERIALIZED_NAME_WORKFLOW_RUN_ID)
+  private UUID workflowRunId;
+
   public static final String SERIALIZED_NAME_TASK_DEF_ID = "task_def_id";
   @SerializedName(SERIALIZED_NAME_TASK_DEF_ID)
   private String taskDefId;
+
+  public static final String SERIALIZED_NAME_TASK_DEF_VERSION = "task_def_version";
+  @SerializedName(SERIALIZED_NAME_TASK_DEF_VERSION)
+  private String taskDefVersion;
+
+  public static final String SERIALIZED_NAME_INPUT = "input";
+  @SerializedName(SERIALIZED_NAME_INPUT)
+  private Object input;
+
+  public static final String SERIALIZED_NAME_OUTPUT = "output";
+  @SerializedName(SERIALIZED_NAME_OUTPUT)
+  private Object output;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
@@ -90,6 +108,25 @@ public class Task {
   }
 
 
+  public Task workflowRunId(UUID workflowRunId) {
+    this.workflowRunId = workflowRunId;
+    return this;
+  }
+
+   /**
+   * The workflow run id the task belongs to.
+   * @return workflowRunId
+  **/
+  @javax.annotation.Nullable
+  public UUID getWorkflowRunId() {
+    return workflowRunId;
+  }
+
+  public void setWorkflowRunId(UUID workflowRunId) {
+    this.workflowRunId = workflowRunId;
+  }
+
+
   public Task taskDefId(String taskDefId) {
     this.taskDefId = taskDefId;
     return this;
@@ -106,6 +143,63 @@ public class Task {
 
   public void setTaskDefId(String taskDefId) {
     this.taskDefId = taskDefId;
+  }
+
+
+  public Task taskDefVersion(String taskDefVersion) {
+    this.taskDefVersion = taskDefVersion;
+    return this;
+  }
+
+   /**
+   * The task definition version.
+   * @return taskDefVersion
+  **/
+  @javax.annotation.Nullable
+  public String getTaskDefVersion() {
+    return taskDefVersion;
+  }
+
+  public void setTaskDefVersion(String taskDefVersion) {
+    this.taskDefVersion = taskDefVersion;
+  }
+
+
+  public Task input(Object input) {
+    this.input = input;
+    return this;
+  }
+
+   /**
+   * Input object with the fields used by the Task to execute.
+   * @return input
+  **/
+  @javax.annotation.Nullable
+  public Object getInput() {
+    return input;
+  }
+
+  public void setInput(Object input) {
+    this.input = input;
+  }
+
+
+  public Task output(Object output) {
+    this.output = output;
+    return this;
+  }
+
+   /**
+   * Output object with the fields produced by the Task execution.
+   * @return output
+  **/
+  @javax.annotation.Nullable
+  public Object getOutput() {
+    return output;
+  }
+
+  public void setOutput(Object output) {
+    this.output = output;
   }
 
 
@@ -202,15 +296,30 @@ public class Task {
     }
     Task task = (Task) o;
     return Objects.equals(this.id, task.id) &&
+        Objects.equals(this.workflowRunId, task.workflowRunId) &&
         Objects.equals(this.taskDefId, task.taskDefId) &&
+        Objects.equals(this.taskDefVersion, task.taskDefVersion) &&
+        Objects.equals(this.input, task.input) &&
+        Objects.equals(this.output, task.output) &&
         Objects.equals(this.createdAt, task.createdAt) &&
         Objects.equals(this.updatedAt, task.updatedAt)&&
         Objects.equals(this.additionalProperties, task.additionalProperties);
   }
 
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+  }
+
   @Override
   public int hashCode() {
-    return Objects.hash(id, taskDefId, createdAt, updatedAt, additionalProperties);
+    return Objects.hash(id, workflowRunId, taskDefId, taskDefVersion, input, output, createdAt, updatedAt, additionalProperties);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -218,7 +327,11 @@ public class Task {
     StringBuilder sb = new StringBuilder();
     sb.append("class Task {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    workflowRunId: ").append(toIndentedString(workflowRunId)).append("\n");
     sb.append("    taskDefId: ").append(toIndentedString(taskDefId)).append("\n");
+    sb.append("    taskDefVersion: ").append(toIndentedString(taskDefVersion)).append("\n");
+    sb.append("    input: ").append(toIndentedString(input)).append("\n");
+    sb.append("    output: ").append(toIndentedString(output)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
@@ -245,7 +358,11 @@ public class Task {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
     openapiFields.add("id");
+    openapiFields.add("workflow_run_id");
     openapiFields.add("task_def_id");
+    openapiFields.add("task_def_version");
+    openapiFields.add("input");
+    openapiFields.add("output");
     openapiFields.add("created_at");
     openapiFields.add("updated_at");
 
@@ -269,8 +386,14 @@ public class Task {
       if ((jsonObj.get("id") != null && !jsonObj.get("id").isJsonNull()) && !jsonObj.get("id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
       }
+      if ((jsonObj.get("workflow_run_id") != null && !jsonObj.get("workflow_run_id").isJsonNull()) && !jsonObj.get("workflow_run_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `workflow_run_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("workflow_run_id").toString()));
+      }
       if ((jsonObj.get("task_def_id") != null && !jsonObj.get("task_def_id").isJsonNull()) && !jsonObj.get("task_def_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `task_def_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("task_def_id").toString()));
+      }
+      if ((jsonObj.get("task_def_version") != null && !jsonObj.get("task_def_version").isJsonNull()) && !jsonObj.get("task_def_version").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `task_def_version` to be a primitive type in the JSON string but got `%s`", jsonObj.get("task_def_version").toString()));
       }
   }
 

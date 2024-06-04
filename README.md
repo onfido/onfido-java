@@ -41,7 +41,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.onfido</groupId>
   <artifactId>onfido-api-java</artifactId>
-  <version>3.2.0</version>
+  <version>4.0.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -57,7 +57,7 @@ Add this dependency to your project's build file:
   }
 
   dependencies {
-     implementation "com.onfido:onfido-api-java:3.2.0"
+     implementation "com.onfido:onfido-api-java:4.0.0"
   }
 ```
 
@@ -71,10 +71,10 @@ mvn clean package
 
 Then manually install the following JARs:
 
-- `target/onfido-api-java-3.2.0.jar`
+- `target/onfido-api-java-4.0.0.jar`
 - `target/lib/*.jar`
 
-The latest version can be found at: https://search.maven.org/artifact/com.onfido/3.2.0
+The latest version can be found at: https://search.maven.org/artifact/com.onfido/4.0.0
 
 ## Getting Started
 
@@ -82,6 +82,9 @@ Import the `DefaultApi` object, this is the main object used for interfacing wit
 
 ```java
 import com.onfido.api.DefaultApi;
+import com.onfido.ApiClient.Region;
+import com.onfido.Configuration;
+
 import com.onfido.ApiException;
 import com.onfido.OnfidoInvalidSignatureError;
 ```
@@ -135,11 +138,13 @@ Webhook events payload needs to be verified before it can be accessed. Library a
 
 ```java
 try {
-   WebhookEventVerifier verifier = new WebhookEventVerifier("_ABC123abc...3ABC123_");
+   WebhookEventVerifier verifier = new WebhookEventVerifier(
+      System.getenv("ONFIDO_WEBHOOK_SECRET_TOKEN")
+   );
 
    String signature = "a0...760e";
 
-   WebhookEvent event = verifier.readPayload("{\"payload\":{\"r...3\"}}}", signature);
+   WebhookEvent event = verifier.readPayload("{\"payload\":{\"r...3\"}}", signature);
 } catch( OnfidoInvalidSignatureError e ) {
    // Invalid webhook signature
 }

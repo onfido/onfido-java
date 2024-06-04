@@ -1,5 +1,9 @@
 # Changelog
 
+## v4.0.0 4th June 2024
+
+- Refresh library up to commit: [62dc554](https://github.com/onfido/onfido-openapi-spec/commit/62dc5541a4a51e8de313fc99fb3dec496033a23e)
+
 ## v3.2.0 22nd May 2024
 
 - Refresh library up to commit: [40e7a67](https://github.com/onfido/onfido-openapi-spec/commit/40e7a6727ee8e1af9630d3b9b50ba77ba48fc7ce)

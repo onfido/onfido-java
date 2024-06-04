@@ -290,10 +290,10 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.FacialSimilarityVideoBreakdownVisualAuthenticityBreakdownLivenessDetected.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.FacialSimilarityVideoBreakdownVisualAuthenticityBreakdownSpoofingDetection.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.FacialSimilarityVideoReport.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.IDPhotosList.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.IdNumber.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.IdPhoto.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.IdPhotoResponse.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.IdPhotosList.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.IdentityEnhancedBreakdown.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.IdentityEnhancedBreakdownAddress.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.IdentityEnhancedBreakdownAddressBreakdown.CustomTypeAdapterFactory());
@@ -360,6 +360,7 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.SdkTokenResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.Task.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.TaskItem.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.TimelineFileReference.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.UsDrivingLicenceBreakdown.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.UsDrivingLicenceBreakdownAddress.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.UsDrivingLicenceBreakdownAddressBreakdown.CustomTypeAdapterFactory());

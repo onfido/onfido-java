@@ -50,23 +50,23 @@ import java.util.Set;
 import com.onfido.JSON;
 
 /**
- * IDPhotosList
+ * IdPhotosList
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
-public class IDPhotosList {
+public class IdPhotosList {
   public static final String SERIALIZED_NAME_ID_PHOTOS = "id_photos";
   @SerializedName(SERIALIZED_NAME_ID_PHOTOS)
   private List<IdPhoto> idPhotos = new ArrayList<>();
 
-  public IDPhotosList() {
+  public IdPhotosList() {
   }
 
-  public IDPhotosList idPhotos(List<IdPhoto> idPhotos) {
+  public IdPhotosList idPhotos(List<IdPhoto> idPhotos) {
     this.idPhotos = idPhotos;
     return this;
   }
 
-  public IDPhotosList addIdPhotosItem(IdPhoto idPhotosItem) {
+  public IdPhotosList addIdPhotosItem(IdPhoto idPhotosItem) {
     if (this.idPhotos == null) {
       this.idPhotos = new ArrayList<>();
     }
@@ -100,9 +100,9 @@ public class IDPhotosList {
    *
    * @param key name of the property
    * @param value value of the property
-   * @return the IDPhotosList instance itself
+   * @return the IdPhotosList instance itself
    */
-  public IDPhotosList putAdditionalProperty(String key, Object value) {
+  public IdPhotosList putAdditionalProperty(String key, Object value) {
     if (this.additionalProperties == null) {
         this.additionalProperties = new HashMap<String, Object>();
     }
@@ -141,7 +141,7 @@ public class IDPhotosList {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    IDPhotosList idPhotosList = (IDPhotosList) o;
+    IdPhotosList idPhotosList = (IdPhotosList) o;
     return Objects.equals(this.idPhotos, idPhotosList.idPhotos)&&
         Objects.equals(this.additionalProperties, idPhotosList.additionalProperties);
   }
@@ -154,7 +154,7 @@ public class IDPhotosList {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class IDPhotosList {\n");
+    sb.append("class IdPhotosList {\n");
     sb.append("    idPhotos: ").append(toIndentedString(idPhotos)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
@@ -190,17 +190,17 @@ public class IDPhotosList {
   * Validates the JSON Element and throws an exception if issues found
   *
   * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to IDPhotosList
+  * @throws IOException if the JSON Element is invalid with respect to IdPhotosList
   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!IDPhotosList.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in IDPhotosList is not found in the empty JSON string", IDPhotosList.openapiRequiredFields.toString()));
+        if (!IdPhotosList.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in IdPhotosList is not found in the empty JSON string", IdPhotosList.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : IDPhotosList.openapiRequiredFields) {
+      for (String requiredField : IdPhotosList.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
           throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
@@ -222,16 +222,16 @@ public class IDPhotosList {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!IDPhotosList.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'IDPhotosList' and its subtypes
+       if (!IdPhotosList.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'IdPhotosList' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<IDPhotosList> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(IDPhotosList.class));
+       final TypeAdapter<IdPhotosList> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(IdPhotosList.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<IDPhotosList>() {
+       return (TypeAdapter<T>) new TypeAdapter<IdPhotosList>() {
            @Override
-           public void write(JsonWriter out, IDPhotosList value) throws IOException {
+           public void write(JsonWriter out, IdPhotosList value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              obj.remove("additionalProperties");
              // serialize additional properties
@@ -259,12 +259,12 @@ public class IDPhotosList {
            }
 
            @Override
-           public IDPhotosList read(JsonReader in) throws IOException {
+           public IdPhotosList read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
-             IDPhotosList instance = thisAdapter.fromJsonTree(jsonObj);
+             IdPhotosList instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
                if (!openapiFields.contains(entry.getKey())) {
                  if (entry.getValue().isJsonPrimitive()) { // primitive type
@@ -291,18 +291,18 @@ public class IDPhotosList {
   }
 
  /**
-  * Create an instance of IDPhotosList given an JSON string
+  * Create an instance of IdPhotosList given an JSON string
   *
   * @param jsonString JSON string
-  * @return An instance of IDPhotosList
-  * @throws IOException if the JSON string is invalid with respect to IDPhotosList
+  * @return An instance of IdPhotosList
+  * @throws IOException if the JSON string is invalid with respect to IdPhotosList
   */
-  public static IDPhotosList fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, IDPhotosList.class);
+  public static IdPhotosList fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, IdPhotosList.class);
   }
 
  /**
-  * Convert an instance of IDPhotosList to an JSON string
+  * Convert an instance of IdPhotosList to an JSON string
   *
   * @return JSON string
   */

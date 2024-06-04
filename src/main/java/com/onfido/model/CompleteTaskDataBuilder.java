@@ -87,7 +87,7 @@ public class CompleteTaskDataBuilder extends AbstractOpenApiSchema {
                     }
                     // check if the actual instance is of the type `Object`
                     if (value.getActualInstance() instanceof Object) {
-                        JsonElement element = adapterObject.toJsonTree((Object)value.getActualInstance());
+                        JsonElement element = new GsonBuilder().create().toJsonTree(value.getActualInstance());
                         elementAdapter.write(out, element);
                         return;
                     }

@@ -2,6 +2,7 @@ package com.onfido.integration;
 
 import com.onfido.model.Applicant;
 import com.onfido.model.CompleteTaskBuilder;
+import com.onfido.model.CompleteTaskDataBuilder;
 import com.onfido.model.Task;
 import com.onfido.model.TaskItem;
 import java.util.HashMap;
@@ -49,7 +50,7 @@ public class TasksTest extends TestBase {
     completeTaskBody.put("last_name", "Last");
 
     CompleteTaskBuilder completeTaskBuilder = new CompleteTaskBuilder();
-    completeTaskBuilder.putAdditionalProperty("data", completeTaskBody);
+    completeTaskBuilder.setData(new CompleteTaskDataBuilder(completeTaskBody));
 
     onfido.completeTask(workflowRunId, taskId, completeTaskBuilder);
 

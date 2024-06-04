@@ -44,8 +44,8 @@ import com.onfido.model.Error1;
 import com.onfido.model.ExtractRequest;
 import com.onfido.model.Extraction;
 import java.io.File;
-import com.onfido.model.IDPhotosList;
 import com.onfido.model.IdPhoto;
+import com.onfido.model.IdPhotosList;
 import com.onfido.model.LivePhoto;
 import com.onfido.model.LivePhotosList;
 import com.onfido.model.LiveVideo;
@@ -62,6 +62,8 @@ import com.onfido.model.SdkToken;
 import com.onfido.model.SdkTokenBuilder;
 import com.onfido.model.Task;
 import com.onfido.model.TaskItem;
+import com.onfido.model.TimelineFileReference;
+import java.net.URI;
 import java.util.UUID;
 import com.onfido.model.WatchlistMonitor;
 import com.onfido.model.WatchlistMonitorBuilder;
@@ -636,6 +638,133 @@ public class DefaultApi {
 
         okhttp3.Call localVarCall = createCheckValidateBeforeCall(checkBuilder, _callback);
         Type localVarReturnType = new TypeToken<Check>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for createTimelineFile
+     * @param workflowRunId The unique identifier of the Workflow Run. (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 202 </td><td> A Timeline File reference. </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call createTimelineFileCall(UUID workflowRunId, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/workflow_runs/{workflow_run_id}/timeline_file"
+            .replace("{" + "workflow_run_id" + "}", localVarApiClient.escapeString(workflowRunId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "Token" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call createTimelineFileValidateBeforeCall(UUID workflowRunId, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'workflowRunId' is set
+        if (workflowRunId == null) {
+            throw new ApiException("Missing the required parameter 'workflowRunId' when calling createTimelineFile(Async)");
+        }
+
+        return createTimelineFileCall(workflowRunId, _callback);
+
+    }
+
+    /**
+     * Create Timeline File for Workflow Run
+     * Triggers the generation of the Timeline File for the designated Workflow Run. 
+     * @param workflowRunId The unique identifier of the Workflow Run. (required)
+     * @return TimelineFileReference
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 202 </td><td> A Timeline File reference. </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+     </table>
+     */
+    public TimelineFileReference createTimelineFile(UUID workflowRunId) throws ApiException {
+        ApiResponse<TimelineFileReference> localVarResp = createTimelineFileWithHttpInfo(workflowRunId);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Create Timeline File for Workflow Run
+     * Triggers the generation of the Timeline File for the designated Workflow Run. 
+     * @param workflowRunId The unique identifier of the Workflow Run. (required)
+     * @return ApiResponse&lt;TimelineFileReference&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 202 </td><td> A Timeline File reference. </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<TimelineFileReference> createTimelineFileWithHttpInfo(UUID workflowRunId) throws ApiException {
+        okhttp3.Call localVarCall = createTimelineFileValidateBeforeCall(workflowRunId, null);
+        Type localVarReturnType = new TypeToken<TimelineFileReference>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Create Timeline File for Workflow Run (asynchronously)
+     * Triggers the generation of the Timeline File for the designated Workflow Run. 
+     * @param workflowRunId The unique identifier of the Workflow Run. (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 202 </td><td> A Timeline File reference. </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call createTimelineFileAsync(UUID workflowRunId, final ApiCallback<TimelineFileReference> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = createTimelineFileValidateBeforeCall(workflowRunId, _callback);
+        Type localVarReturnType = new TypeToken<TimelineFileReference>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -2550,7 +2679,8 @@ public class DefaultApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> The signed evidence file PDF </td><td>  -  </td></tr>
+        <tr><td> 302 </td><td> Found </td><td>  * Location - Link to the Timeline File. <br>  </td></tr>
+        <tr><td> 200 </td><td> The signed evidence PDF binary data. </td><td>  -  </td></tr>
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
@@ -2581,7 +2711,7 @@ public class DefaultApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            "binary/octet-stream",
+            "application/pdf",
             "application/json"
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
@@ -2620,7 +2750,8 @@ public class DefaultApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> The signed evidence file PDF </td><td>  -  </td></tr>
+        <tr><td> 302 </td><td> Found </td><td>  * Location - Link to the Timeline File. <br>  </td></tr>
+        <tr><td> 200 </td><td> The signed evidence PDF binary data. </td><td>  -  </td></tr>
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
@@ -2638,7 +2769,8 @@ public class DefaultApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> The signed evidence file PDF </td><td>  -  </td></tr>
+        <tr><td> 302 </td><td> Found </td><td>  * Location - Link to the Timeline File. <br>  </td></tr>
+        <tr><td> 200 </td><td> The signed evidence PDF binary data. </td><td>  -  </td></tr>
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
@@ -2658,7 +2790,8 @@ public class DefaultApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> The signed evidence file PDF </td><td>  -  </td></tr>
+        <tr><td> 302 </td><td> Found </td><td>  * Location - Link to the Timeline File. <br>  </td></tr>
+        <tr><td> 200 </td><td> The signed evidence PDF binary data. </td><td>  -  </td></tr>
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
@@ -4080,6 +4213,148 @@ public class DefaultApi {
         return localVarCall;
     }
     /**
+     * Build call for findTimelineFile
+     * @param workflowRunId The unique identifier of the Workflow Run. (required)
+     * @param timelineFileId The unique identifier for the Timefile File. (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 302 </td><td> Found </td><td>  * Location - Link to the Timeline File. <br>  </td></tr>
+        <tr><td> 200 </td><td> The Timeline File PDF binary data. </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call findTimelineFileCall(UUID workflowRunId, UUID timelineFileId, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/workflow_runs/{workflow_run_id}/timeline_file/{timeline_file_id}"
+            .replace("{" + "workflow_run_id" + "}", localVarApiClient.escapeString(workflowRunId.toString()))
+            .replace("{" + "timeline_file_id" + "}", localVarApiClient.escapeString(timelineFileId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/pdf",
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "Token" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call findTimelineFileValidateBeforeCall(UUID workflowRunId, UUID timelineFileId, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'workflowRunId' is set
+        if (workflowRunId == null) {
+            throw new ApiException("Missing the required parameter 'workflowRunId' when calling findTimelineFile(Async)");
+        }
+
+        // verify the required parameter 'timelineFileId' is set
+        if (timelineFileId == null) {
+            throw new ApiException("Missing the required parameter 'timelineFileId' when calling findTimelineFile(Async)");
+        }
+
+        return findTimelineFileCall(workflowRunId, timelineFileId, _callback);
+
+    }
+
+    /**
+     * Retrieve Timeline File for Workflow Run
+     * Retrieves the Timeline File for the designated Workflow Run. 
+     * @param workflowRunId The unique identifier of the Workflow Run. (required)
+     * @param timelineFileId The unique identifier for the Timefile File. (required)
+     * @return File
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 302 </td><td> Found </td><td>  * Location - Link to the Timeline File. <br>  </td></tr>
+        <tr><td> 200 </td><td> The Timeline File PDF binary data. </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+     </table>
+     */
+    public File findTimelineFile(UUID workflowRunId, UUID timelineFileId) throws ApiException {
+        ApiResponse<File> localVarResp = findTimelineFileWithHttpInfo(workflowRunId, timelineFileId);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Retrieve Timeline File for Workflow Run
+     * Retrieves the Timeline File for the designated Workflow Run. 
+     * @param workflowRunId The unique identifier of the Workflow Run. (required)
+     * @param timelineFileId The unique identifier for the Timefile File. (required)
+     * @return ApiResponse&lt;File&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 302 </td><td> Found </td><td>  * Location - Link to the Timeline File. <br>  </td></tr>
+        <tr><td> 200 </td><td> The Timeline File PDF binary data. </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<File> findTimelineFileWithHttpInfo(UUID workflowRunId, UUID timelineFileId) throws ApiException {
+        okhttp3.Call localVarCall = findTimelineFileValidateBeforeCall(workflowRunId, timelineFileId, null);
+        Type localVarReturnType = new TypeToken<File>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Retrieve Timeline File for Workflow Run (asynchronously)
+     * Retrieves the Timeline File for the designated Workflow Run. 
+     * @param workflowRunId The unique identifier of the Workflow Run. (required)
+     * @param timelineFileId The unique identifier for the Timefile File. (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 302 </td><td> Found </td><td>  * Location - Link to the Timeline File. <br>  </td></tr>
+        <tr><td> 200 </td><td> The Timeline File PDF binary data. </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call findTimelineFileAsync(UUID workflowRunId, UUID timelineFileId, final ApiCallback<File> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = findTimelineFileValidateBeforeCall(workflowRunId, timelineFileId, _callback);
+        Type localVarReturnType = new TypeToken<File>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
      * Build call for findWatchlistMonitor
      * @param monitorId The watchlist monitor&#39;s unique identifier. (required)
      * @param _callback Callback for upload/download progress
@@ -5187,7 +5462,7 @@ public class DefaultApi {
      * List ID photos
      * Lists the ID photos that belong to an applicant. 
      * @param applicantId The id of the applicant the ID photos belong to. (required)
-     * @return IDPhotosList
+     * @return IdPhotosList
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -5196,8 +5471,8 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public IDPhotosList listIdPhotos(UUID applicantId) throws ApiException {
-        ApiResponse<IDPhotosList> localVarResp = listIdPhotosWithHttpInfo(applicantId);
+    public IdPhotosList listIdPhotos(UUID applicantId) throws ApiException {
+        ApiResponse<IdPhotosList> localVarResp = listIdPhotosWithHttpInfo(applicantId);
         return localVarResp.getData();
     }
 
@@ -5205,7 +5480,7 @@ public class DefaultApi {
      * List ID photos
      * Lists the ID photos that belong to an applicant. 
      * @param applicantId The id of the applicant the ID photos belong to. (required)
-     * @return ApiResponse&lt;IDPhotosList&gt;
+     * @return ApiResponse&lt;IdPhotosList&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -5214,9 +5489,9 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<IDPhotosList> listIdPhotosWithHttpInfo(UUID applicantId) throws ApiException {
+    public ApiResponse<IdPhotosList> listIdPhotosWithHttpInfo(UUID applicantId) throws ApiException {
         okhttp3.Call localVarCall = listIdPhotosValidateBeforeCall(applicantId, null);
-        Type localVarReturnType = new TypeToken<IDPhotosList>(){}.getType();
+        Type localVarReturnType = new TypeToken<IdPhotosList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -5234,10 +5509,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listIdPhotosAsync(UUID applicantId, final ApiCallback<IDPhotosList> _callback) throws ApiException {
+    public okhttp3.Call listIdPhotosAsync(UUID applicantId, final ApiCallback<IdPhotosList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listIdPhotosValidateBeforeCall(applicantId, _callback);
-        Type localVarReturnType = new TypeToken<IDPhotosList>(){}.getType();
+        Type localVarReturnType = new TypeToken<IdPhotosList>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

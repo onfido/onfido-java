@@ -30,14 +30,14 @@ public class WorkflowRunOutputsTest extends TestBase {
 
     Reader reader = new FileReader("media/ProfileDataCapture.json");
     CompleteTaskBuilder completeTaskBuilder = new CompleteTaskBuilder();
-    completeTaskBuilder.putAdditionalProperty("data", gson.fromJson(reader, Object.class));
+    completeTaskBuilder.setData(new CompleteTaskDataBuilder(gson.fromJson(reader, Object.class)));
 
     onfido.completeTask(workflowRunId, taskId, completeTaskBuilder);
     WorkflowRun workflowRun = onfido.findWorkflowRun(workflowRunId);
 
     Map<?, ?> output = (Map<?, ?>) workflowRun.getOutput();
     Assertions.assertEquals(
-        completeTaskBuilder.getAdditionalProperty("data"), output.get("profile_capture_data"));
+        completeTaskBuilder.getData().getObject(), output.get("profile_capture_data"));
   }
 
   @Test

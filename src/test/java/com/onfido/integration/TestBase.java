@@ -9,6 +9,7 @@ import com.onfido.model.Check;
 import com.onfido.model.CheckBuilder;
 import com.onfido.model.CountryCodes;
 import com.onfido.model.Document;
+import com.onfido.model.IdPhoto;
 import com.onfido.model.LivePhoto;
 import com.onfido.model.LocationBuilder;
 import com.onfido.model.Webhook;
@@ -90,6 +91,10 @@ public class TestBase {
 
   protected LivePhoto uploadLivePhoto(Applicant applicant, String filename) throws Exception {
     return onfido.uploadLivePhoto(applicant.getId(), new File("media/" + filename), true);
+  }
+
+  protected IdPhoto uploadIdPhoto(Applicant applicant, String filename) throws Exception {
+    return onfido.uploadIdPhoto(applicant.getId(), new File("media/" + filename));
   }
 
   protected Check createCheck(Applicant applicant, Document document, CheckBuilder checkBuilder)

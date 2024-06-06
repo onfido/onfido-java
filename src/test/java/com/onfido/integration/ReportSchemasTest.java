@@ -27,17 +27,17 @@ public class ReportSchemasTest extends TestBase {
             new CheckBuilder().reportNames(Arrays.asList(ReportName.DOCUMENT)));
 
     DocumentReport documentReport =
-        onfido.findReport(check.getReportIds().get(0)).getDocumentReport();
+        (DocumentReport)
+            repeatRequestUntilStatusChanges(
+                "findReport", new Object[] {check.getReportIds().get(0)}, COMPLETE, 10, 1000);
 
-    int iteration = 0;
-    while (!documentReport.getStatus().equals(COMPLETE)) {
-      if (iteration > 10) {
-        Assertions.fail("Report did not complete in time");
-      }
-      iteration += 1;
-      Thread.sleep(1000);
-      documentReport = onfido.findReport(check.getReportIds().get(0)).getDocumentReport();
-    }
+    Assertions.assertEquals(COMPLETE, documentReport.getStatus());
+    Assertions.assertEquals(ReportName.DOCUMENT, documentReport.getName());
+    Assertions.assertEquals(check.getId(), documentReport.getCheckId());
+    Assertions.assertNotNull(documentReport.getBreakdown());
+    Assertions.assertNotNull(documentReport.getProperties());
+    Assertions.assertNotNull(documentReport.getResult());
+    Assertions.assertNotNull(documentReport.getSubResult());
   }
 
   @Test
@@ -52,17 +52,18 @@ public class ReportSchemasTest extends TestBase {
                 .reportNames(Arrays.asList(ReportName.FACIAL_SIMILARITY_PHOTO_FULLY_AUTO)));
 
     FacialSimilarityPhotoFullyAutoReport facialSimilarityPhotoFullyAutoReport =
-        onfido.findReport(check.getReportIds().get(0)).getFacialSimilarityPhotoFullyAutoReport();
+        (FacialSimilarityPhotoFullyAutoReport)
+            repeatRequestUntilStatusChanges(
+                "findReport", new Object[] {check.getReportIds().get(0)}, COMPLETE, 10, 1000);
 
-    int iteration = 0;
-    while (!facialSimilarityPhotoFullyAutoReport.getStatus().equals(COMPLETE)) {
-      if (iteration > 10) {
-        Assertions.fail("Report did not complete in time");
-      }
-      iteration += 1;
-      Thread.sleep(1000);
-      facialSimilarityPhotoFullyAutoReport =
-          onfido.findReport(check.getReportIds().get(0)).getFacialSimilarityPhotoFullyAutoReport();
-    }
+    Assertions.assertEquals(COMPLETE, facialSimilarityPhotoFullyAutoReport.getStatus());
+    Assertions.assertEquals(
+        ReportName.FACIAL_SIMILARITY_PHOTO_FULLY_AUTO,
+        facialSimilarityPhotoFullyAutoReport.getName());
+    Assertions.assertEquals(check.getId(), facialSimilarityPhotoFullyAutoReport.getCheckId());
+    Assertions.assertNotNull(facialSimilarityPhotoFullyAutoReport.getBreakdown());
+    Assertions.assertNotNull(facialSimilarityPhotoFullyAutoReport.getResult());
+    Assertions.assertNotNull(
+        facialSimilarityPhotoFullyAutoReport.getAdditionalProperties().get("properties"));
   }
 }

@@ -12,6 +12,7 @@ import com.onfido.model.Document;
 import com.onfido.model.IdPhoto;
 import com.onfido.model.LivePhoto;
 import com.onfido.model.LocationBuilder;
+import com.onfido.model.Report;
 import com.onfido.model.WatchlistMonitor;
 import com.onfido.model.WatchlistMonitorBuilder;
 import com.onfido.model.Webhook;
@@ -170,6 +171,12 @@ public class TestBase {
           InvocationTargetException {
     Method method = getMethod(methodName, params);
     Object instance = method.invoke(onfido, params);
+    boolean isInstanceOfReport = instance instanceof Report;
+
+    if (isInstanceOfReport) {
+      instance = ((Report) instance).getActualInstance();
+    }
+
     int iteration = 0;
 
     while (!instance.getClass().getMethod("getStatus").invoke(instance).equals(status)) {
@@ -180,7 +187,11 @@ public class TestBase {
       iteration += 1;
       Thread.sleep(sleepTime);
 
-      instance = method.invoke(onfido, params);
+      if (isInstanceOfReport) {
+        instance = ((Report) method.invoke(onfido, params)).getActualInstance();
+      } else {
+        instance = method.invoke(onfido, params);
+      }
     }
     return instance;
   }

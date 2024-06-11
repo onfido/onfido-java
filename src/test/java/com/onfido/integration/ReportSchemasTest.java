@@ -3,9 +3,8 @@ package com.onfido.integration;
 import static com.onfido.model.ReportStatus.COMPLETE;
 
 import com.onfido.model.*;
-import java.util.*;
 import java.time.LocalDate;
-
+import java.util.*;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -41,8 +40,16 @@ public class ReportSchemasTest extends TestBase {
     Assertions.assertNotNull(documentReport.getResult());
     Assertions.assertNotNull(documentReport.getSubResult());
 
-    Assertions.assertEquals("clear", documentReport.getBreakdown().getDataComparison().getBreakdown().getIssuingCountry().getResult());
-    Assertions.assertEquals(LocalDate.parse("1990-01-01"), documentReport.getProperties().getDateOfBirth());
+    Assertions.assertEquals(
+        "clear",
+        documentReport
+            .getBreakdown()
+            .getDataComparison()
+            .getBreakdown()
+            .getIssuingCountry()
+            .getResult());
+    Assertions.assertEquals(
+        LocalDate.parse("1990-01-01"), documentReport.getProperties().getDateOfBirth());
   }
 
   @Test

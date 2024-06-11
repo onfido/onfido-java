@@ -7,7 +7,6 @@ import com.onfido.model.CheckBuilder;
 import com.onfido.model.Document;
 import com.onfido.model.ReportName;
 import com.onfido.model.UsDrivingLicenceBuilder;
-import java.io.File;
 import java.util.Arrays;
 import java.util.List;
 import org.junit.jupiter.api.Assertions;

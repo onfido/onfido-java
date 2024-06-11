@@ -4,7 +4,6 @@ import com.onfido.ApiException;
 import com.onfido.FileTransfer;
 import com.onfido.model.Applicant;
 import com.onfido.model.IdPhoto;
-import java.io.File;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;

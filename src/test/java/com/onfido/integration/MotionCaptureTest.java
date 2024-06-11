@@ -3,7 +3,6 @@ package com.onfido.integration;
 import com.onfido.ApiException;
 import com.onfido.FileTransfer;
 import com.onfido.model.MotionCapture;
-import java.io.File;
 import java.util.List;
 import java.util.UUID;
 import org.junit.jupiter.api.Assertions;

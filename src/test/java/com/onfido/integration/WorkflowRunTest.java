@@ -1,12 +1,9 @@
 package com.onfido.integration;
 
-import com.onfido.model.TimelineFileReference;
 import com.onfido.FileTransfer;
-import com.onfido.model.Applicant;
+import com.onfido.model.TimelineFileReference;
 import com.onfido.model.WorkflowRun;
 import com.onfido.model.WorkflowRunBuilder;
-import java.io.File;
-import java.nio.file.Files;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;

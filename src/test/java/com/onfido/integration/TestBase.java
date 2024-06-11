@@ -96,7 +96,8 @@ public class TestBase {
   }
 
   protected LivePhoto uploadLivePhoto(Applicant applicant, String filename) throws Exception {
-    return onfido.uploadLivePhoto(applicant.getId(), new FileTransfer(new File("media/" + filename)), true);
+    return onfido.uploadLivePhoto(
+        applicant.getId(), new FileTransfer(new File("media/" + filename)), true);
   }
 
   protected IdPhoto uploadIdPhoto(Applicant applicant, String filename) throws Exception {

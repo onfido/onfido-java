@@ -49,7 +49,7 @@ import com.onfido.JSON;
 /**
  * Asserts a single face of good enough quality has been found in both the document image and the live photo.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
 public class FacialSimilarityPhotoBreakdownImageIntegrityBreakdownFaceDetected {
   public static final String SERIALIZED_NAME_RESULT = "result";
   @SerializedName(SERIALIZED_NAME_RESULT)

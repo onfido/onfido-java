@@ -50,7 +50,7 @@ import com.onfido.JSON;
 /**
  * Asserts if the document was of enough quality to be able to perform a fraud inspection.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
 public class DocumentBreakdownImageIntegrityBreakdownConclusiveDocumentQuality {
   public static final String SERIALIZED_NAME_RESULT = "result";
   @SerializedName(SERIALIZED_NAME_RESULT)

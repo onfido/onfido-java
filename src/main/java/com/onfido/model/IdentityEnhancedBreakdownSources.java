@@ -50,7 +50,7 @@ import com.onfido.JSON;
 /**
  * Asserts if any sources that an applicant&#39;s details have been verified against have produced a match.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
 public class IdentityEnhancedBreakdownSources {
   public static final String SERIALIZED_NAME_RESULT = "result";
   @SerializedName(SERIALIZED_NAME_RESULT)

@@ -49,7 +49,7 @@ import com.onfido.JSON;
 /**
  * Asserts if there are any records found in Government and International Organisations Sanctions Lists.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
 public class WatchlistAmlBreakdownSanction {
   public static final String SERIALIZED_NAME_RESULT = "result";
   @SerializedName(SERIALIZED_NAME_RESULT)

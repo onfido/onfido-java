@@ -50,7 +50,7 @@ import com.onfido.JSON;
 /**
  * TimelineFileReference
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
 public class TimelineFileReference {
   public static final String SERIALIZED_NAME_WORKFLOW_TIMELINE_FILE_ID = "workflow_timeline_file_id";
   @SerializedName(SERIALIZED_NAME_WORKFLOW_TIMELINE_FILE_ID)

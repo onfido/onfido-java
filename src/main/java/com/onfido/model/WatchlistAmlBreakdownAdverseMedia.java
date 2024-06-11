@@ -49,7 +49,7 @@ import com.onfido.JSON;
 /**
  * Asserts if there are any records found of negative events reported by publicly and generally available media sources.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
 public class WatchlistAmlBreakdownAdverseMedia {
   public static final String SERIALIZED_NAME_RESULT = "result";
   @SerializedName(SERIALIZED_NAME_RESULT)

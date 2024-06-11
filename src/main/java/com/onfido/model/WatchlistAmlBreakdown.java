@@ -53,7 +53,7 @@ import com.onfido.JSON;
 /**
  * WatchlistAmlBreakdown
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
 public class WatchlistAmlBreakdown {
   public static final String SERIALIZED_NAME_SANCTION = "sanction";
   @SerializedName(SERIALIZED_NAME_SANCTION)

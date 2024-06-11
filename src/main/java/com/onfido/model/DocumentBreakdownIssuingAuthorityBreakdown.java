@@ -51,7 +51,7 @@ import com.onfido.JSON;
 /**
  * DocumentBreakdownIssuingAuthorityBreakdown
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
 public class DocumentBreakdownIssuingAuthorityBreakdown {
   public static final String SERIALIZED_NAME_NFC_ACTIVE_AUTHENTICATION = "nfc_active_authentication";
   @SerializedName(SERIALIZED_NAME_NFC_ACTIVE_AUTHENTICATION)

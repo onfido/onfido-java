@@ -21,6 +21,7 @@ import com.onfido.Configuration;
 import com.onfido.Pair;
 import com.onfido.ProgressRequestBody;
 import com.onfido.ProgressResponseBody;
+import com.onfido.FileTransfer;
 
 import com.google.gson.reflect.TypeToken;
 
@@ -1592,7 +1593,7 @@ public class DefaultApi {
      * Download check
      * Downloads a PDF of a check with a given check ID. Returns the binary data representing the PDF. 
      * @param checkId  (required)
-     * @return File
+     * @return FileTransfer
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1601,8 +1602,8 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public File downloadCheck(UUID checkId) throws ApiException {
-        ApiResponse<File> localVarResp = downloadCheckWithHttpInfo(checkId);
+    public FileTransfer downloadCheck(UUID checkId) throws ApiException {
+        ApiResponse<FileTransfer> localVarResp = downloadCheckWithHttpInfo(checkId);
         return localVarResp.getData();
     }
 
@@ -1610,7 +1611,7 @@ public class DefaultApi {
      * Download check
      * Downloads a PDF of a check with a given check ID. Returns the binary data representing the PDF. 
      * @param checkId  (required)
-     * @return ApiResponse&lt;File&gt;
+     * @return ApiResponse&lt;FileTransfer&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1619,9 +1620,9 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<File> downloadCheckWithHttpInfo(UUID checkId) throws ApiException {
+    public ApiResponse<FileTransfer> downloadCheckWithHttpInfo(UUID checkId) throws ApiException {
         okhttp3.Call localVarCall = downloadCheckValidateBeforeCall(checkId, null);
-        Type localVarReturnType = new TypeToken<File>(){}.getType();
+        Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1639,10 +1640,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call downloadCheckAsync(UUID checkId, final ApiCallback<File> _callback) throws ApiException {
+    public okhttp3.Call downloadCheckAsync(UUID checkId, final ApiCallback<FileTransfer> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = downloadCheckValidateBeforeCall(checkId, _callback);
-        Type localVarReturnType = new TypeToken<File>(){}.getType();
+        Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1720,7 +1721,7 @@ public class DefaultApi {
      * Download document
      * Downloads specific documents belonging to an applicant. If successful, the response will be the binary data representing the image. 
      * @param documentId  (required)
-     * @return File
+     * @return FileTransfer
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1729,8 +1730,8 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public File downloadDocument(UUID documentId) throws ApiException {
-        ApiResponse<File> localVarResp = downloadDocumentWithHttpInfo(documentId);
+    public FileTransfer downloadDocument(UUID documentId) throws ApiException {
+        ApiResponse<FileTransfer> localVarResp = downloadDocumentWithHttpInfo(documentId);
         return localVarResp.getData();
     }
 
@@ -1738,7 +1739,7 @@ public class DefaultApi {
      * Download document
      * Downloads specific documents belonging to an applicant. If successful, the response will be the binary data representing the image. 
      * @param documentId  (required)
-     * @return ApiResponse&lt;File&gt;
+     * @return ApiResponse&lt;FileTransfer&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1747,9 +1748,9 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<File> downloadDocumentWithHttpInfo(UUID documentId) throws ApiException {
+    public ApiResponse<FileTransfer> downloadDocumentWithHttpInfo(UUID documentId) throws ApiException {
         okhttp3.Call localVarCall = downloadDocumentValidateBeforeCall(documentId, null);
-        Type localVarReturnType = new TypeToken<File>(){}.getType();
+        Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1767,10 +1768,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call downloadDocumentAsync(UUID documentId, final ApiCallback<File> _callback) throws ApiException {
+    public okhttp3.Call downloadDocumentAsync(UUID documentId, final ApiCallback<FileTransfer> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = downloadDocumentValidateBeforeCall(documentId, _callback);
-        Type localVarReturnType = new TypeToken<File>(){}.getType();
+        Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1848,7 +1849,7 @@ public class DefaultApi {
      * Download document video
      * Downloads a document video. If successful, the response will be the binary data representing the video. 
      * @param documentId  (required)
-     * @return File
+     * @return FileTransfer
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1857,8 +1858,8 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public File downloadDocumentVideo(String documentId) throws ApiException {
-        ApiResponse<File> localVarResp = downloadDocumentVideoWithHttpInfo(documentId);
+    public FileTransfer downloadDocumentVideo(String documentId) throws ApiException {
+        ApiResponse<FileTransfer> localVarResp = downloadDocumentVideoWithHttpInfo(documentId);
         return localVarResp.getData();
     }
 
@@ -1866,7 +1867,7 @@ public class DefaultApi {
      * Download document video
      * Downloads a document video. If successful, the response will be the binary data representing the video. 
      * @param documentId  (required)
-     * @return ApiResponse&lt;File&gt;
+     * @return ApiResponse&lt;FileTransfer&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1875,9 +1876,9 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<File> downloadDocumentVideoWithHttpInfo(String documentId) throws ApiException {
+    public ApiResponse<FileTransfer> downloadDocumentVideoWithHttpInfo(String documentId) throws ApiException {
         okhttp3.Call localVarCall = downloadDocumentVideoValidateBeforeCall(documentId, null);
-        Type localVarReturnType = new TypeToken<File>(){}.getType();
+        Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1895,10 +1896,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call downloadDocumentVideoAsync(String documentId, final ApiCallback<File> _callback) throws ApiException {
+    public okhttp3.Call downloadDocumentVideoAsync(String documentId, final ApiCallback<FileTransfer> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = downloadDocumentVideoValidateBeforeCall(documentId, _callback);
-        Type localVarReturnType = new TypeToken<File>(){}.getType();
+        Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1976,7 +1977,7 @@ public class DefaultApi {
      * Download ID photo
      * ID photos are downloaded using this endpoint.
      * @param idPhotoId The ID photo&#39;s unique identifier. (required)
-     * @return File
+     * @return FileTransfer
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1985,8 +1986,8 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public File downloadIdPhoto(UUID idPhotoId) throws ApiException {
-        ApiResponse<File> localVarResp = downloadIdPhotoWithHttpInfo(idPhotoId);
+    public FileTransfer downloadIdPhoto(UUID idPhotoId) throws ApiException {
+        ApiResponse<FileTransfer> localVarResp = downloadIdPhotoWithHttpInfo(idPhotoId);
         return localVarResp.getData();
     }
 
@@ -1994,7 +1995,7 @@ public class DefaultApi {
      * Download ID photo
      * ID photos are downloaded using this endpoint.
      * @param idPhotoId The ID photo&#39;s unique identifier. (required)
-     * @return ApiResponse&lt;File&gt;
+     * @return ApiResponse&lt;FileTransfer&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2003,9 +2004,9 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<File> downloadIdPhotoWithHttpInfo(UUID idPhotoId) throws ApiException {
+    public ApiResponse<FileTransfer> downloadIdPhotoWithHttpInfo(UUID idPhotoId) throws ApiException {
         okhttp3.Call localVarCall = downloadIdPhotoValidateBeforeCall(idPhotoId, null);
-        Type localVarReturnType = new TypeToken<File>(){}.getType();
+        Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -2023,10 +2024,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call downloadIdPhotoAsync(UUID idPhotoId, final ApiCallback<File> _callback) throws ApiException {
+    public okhttp3.Call downloadIdPhotoAsync(UUID idPhotoId, final ApiCallback<FileTransfer> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = downloadIdPhotoValidateBeforeCall(idPhotoId, _callback);
-        Type localVarReturnType = new TypeToken<File>(){}.getType();
+        Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -2104,7 +2105,7 @@ public class DefaultApi {
      * Download live photo
      * Live photos are downloaded using this endpoint.
      * @param livePhotoId The live photo&#39;s unique identifier. (required)
-     * @return File
+     * @return FileTransfer
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2113,8 +2114,8 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public File downloadLivePhoto(UUID livePhotoId) throws ApiException {
-        ApiResponse<File> localVarResp = downloadLivePhotoWithHttpInfo(livePhotoId);
+    public FileTransfer downloadLivePhoto(UUID livePhotoId) throws ApiException {
+        ApiResponse<FileTransfer> localVarResp = downloadLivePhotoWithHttpInfo(livePhotoId);
         return localVarResp.getData();
     }
 
@@ -2122,7 +2123,7 @@ public class DefaultApi {
      * Download live photo
      * Live photos are downloaded using this endpoint.
      * @param livePhotoId The live photo&#39;s unique identifier. (required)
-     * @return ApiResponse&lt;File&gt;
+     * @return ApiResponse&lt;FileTransfer&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2131,9 +2132,9 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<File> downloadLivePhotoWithHttpInfo(UUID livePhotoId) throws ApiException {
+    public ApiResponse<FileTransfer> downloadLivePhotoWithHttpInfo(UUID livePhotoId) throws ApiException {
         okhttp3.Call localVarCall = downloadLivePhotoValidateBeforeCall(livePhotoId, null);
-        Type localVarReturnType = new TypeToken<File>(){}.getType();
+        Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -2151,10 +2152,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call downloadLivePhotoAsync(UUID livePhotoId, final ApiCallback<File> _callback) throws ApiException {
+    public okhttp3.Call downloadLivePhotoAsync(UUID livePhotoId, final ApiCallback<FileTransfer> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = downloadLivePhotoValidateBeforeCall(livePhotoId, _callback);
-        Type localVarReturnType = new TypeToken<File>(){}.getType();
+        Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -2232,7 +2233,7 @@ public class DefaultApi {
      * Download live video
      * Live videos are downloaded using this endpoint.
      * @param liveVideoId The live video&#39;s unique identifier. (required)
-     * @return File
+     * @return FileTransfer
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2241,8 +2242,8 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public File downloadLiveVideo(UUID liveVideoId) throws ApiException {
-        ApiResponse<File> localVarResp = downloadLiveVideoWithHttpInfo(liveVideoId);
+    public FileTransfer downloadLiveVideo(UUID liveVideoId) throws ApiException {
+        ApiResponse<FileTransfer> localVarResp = downloadLiveVideoWithHttpInfo(liveVideoId);
         return localVarResp.getData();
     }
 
@@ -2250,7 +2251,7 @@ public class DefaultApi {
      * Download live video
      * Live videos are downloaded using this endpoint.
      * @param liveVideoId The live video&#39;s unique identifier. (required)
-     * @return ApiResponse&lt;File&gt;
+     * @return ApiResponse&lt;FileTransfer&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2259,9 +2260,9 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<File> downloadLiveVideoWithHttpInfo(UUID liveVideoId) throws ApiException {
+    public ApiResponse<FileTransfer> downloadLiveVideoWithHttpInfo(UUID liveVideoId) throws ApiException {
         okhttp3.Call localVarCall = downloadLiveVideoValidateBeforeCall(liveVideoId, null);
-        Type localVarReturnType = new TypeToken<File>(){}.getType();
+        Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -2279,10 +2280,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call downloadLiveVideoAsync(UUID liveVideoId, final ApiCallback<File> _callback) throws ApiException {
+    public okhttp3.Call downloadLiveVideoAsync(UUID liveVideoId, final ApiCallback<FileTransfer> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = downloadLiveVideoValidateBeforeCall(liveVideoId, _callback);
-        Type localVarReturnType = new TypeToken<File>(){}.getType();
+        Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -2360,7 +2361,7 @@ public class DefaultApi {
      * Download live video frame
      * Returns the binary data representing a single frame from a live video.
      * @param liveVideoId The live video&#39;s unique identifier. (required)
-     * @return File
+     * @return FileTransfer
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2369,8 +2370,8 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public File downloadLiveVideoFrame(UUID liveVideoId) throws ApiException {
-        ApiResponse<File> localVarResp = downloadLiveVideoFrameWithHttpInfo(liveVideoId);
+    public FileTransfer downloadLiveVideoFrame(UUID liveVideoId) throws ApiException {
+        ApiResponse<FileTransfer> localVarResp = downloadLiveVideoFrameWithHttpInfo(liveVideoId);
         return localVarResp.getData();
     }
 
@@ -2378,7 +2379,7 @@ public class DefaultApi {
      * Download live video frame
      * Returns the binary data representing a single frame from a live video.
      * @param liveVideoId The live video&#39;s unique identifier. (required)
-     * @return ApiResponse&lt;File&gt;
+     * @return ApiResponse&lt;FileTransfer&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2387,9 +2388,9 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<File> downloadLiveVideoFrameWithHttpInfo(UUID liveVideoId) throws ApiException {
+    public ApiResponse<FileTransfer> downloadLiveVideoFrameWithHttpInfo(UUID liveVideoId) throws ApiException {
         okhttp3.Call localVarCall = downloadLiveVideoFrameValidateBeforeCall(liveVideoId, null);
-        Type localVarReturnType = new TypeToken<File>(){}.getType();
+        Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -2407,10 +2408,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call downloadLiveVideoFrameAsync(UUID liveVideoId, final ApiCallback<File> _callback) throws ApiException {
+    public okhttp3.Call downloadLiveVideoFrameAsync(UUID liveVideoId, final ApiCallback<FileTransfer> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = downloadLiveVideoFrameValidateBeforeCall(liveVideoId, _callback);
-        Type localVarReturnType = new TypeToken<File>(){}.getType();
+        Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -2488,7 +2489,7 @@ public class DefaultApi {
      * Download motion capture
      * Motion captures are downloaded using this endpoint.
      * @param motionCaptureId The motion capture&#39;s unique identifier. (required)
-     * @return File
+     * @return FileTransfer
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2497,8 +2498,8 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public File downloadMotionCapture(UUID motionCaptureId) throws ApiException {
-        ApiResponse<File> localVarResp = downloadMotionCaptureWithHttpInfo(motionCaptureId);
+    public FileTransfer downloadMotionCapture(UUID motionCaptureId) throws ApiException {
+        ApiResponse<FileTransfer> localVarResp = downloadMotionCaptureWithHttpInfo(motionCaptureId);
         return localVarResp.getData();
     }
 
@@ -2506,7 +2507,7 @@ public class DefaultApi {
      * Download motion capture
      * Motion captures are downloaded using this endpoint.
      * @param motionCaptureId The motion capture&#39;s unique identifier. (required)
-     * @return ApiResponse&lt;File&gt;
+     * @return ApiResponse&lt;FileTransfer&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2515,9 +2516,9 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<File> downloadMotionCaptureWithHttpInfo(UUID motionCaptureId) throws ApiException {
+    public ApiResponse<FileTransfer> downloadMotionCaptureWithHttpInfo(UUID motionCaptureId) throws ApiException {
         okhttp3.Call localVarCall = downloadMotionCaptureValidateBeforeCall(motionCaptureId, null);
-        Type localVarReturnType = new TypeToken<File>(){}.getType();
+        Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -2535,10 +2536,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call downloadMotionCaptureAsync(UUID motionCaptureId, final ApiCallback<File> _callback) throws ApiException {
+    public okhttp3.Call downloadMotionCaptureAsync(UUID motionCaptureId, final ApiCallback<FileTransfer> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = downloadMotionCaptureValidateBeforeCall(motionCaptureId, _callback);
-        Type localVarReturnType = new TypeToken<File>(){}.getType();
+        Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -2616,7 +2617,7 @@ public class DefaultApi {
      * Download motion capture frame
      * Instead of the whole capture binary, a single frame can be downloaded using this endpoint. Returns the binary data representing the frame.
      * @param motionCaptureId The motion capture&#39;s unique identifier. (required)
-     * @return File
+     * @return FileTransfer
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2625,8 +2626,8 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public File downloadMotionCaptureFrame(UUID motionCaptureId) throws ApiException {
-        ApiResponse<File> localVarResp = downloadMotionCaptureFrameWithHttpInfo(motionCaptureId);
+    public FileTransfer downloadMotionCaptureFrame(UUID motionCaptureId) throws ApiException {
+        ApiResponse<FileTransfer> localVarResp = downloadMotionCaptureFrameWithHttpInfo(motionCaptureId);
         return localVarResp.getData();
     }
 
@@ -2634,7 +2635,7 @@ public class DefaultApi {
      * Download motion capture frame
      * Instead of the whole capture binary, a single frame can be downloaded using this endpoint. Returns the binary data representing the frame.
      * @param motionCaptureId The motion capture&#39;s unique identifier. (required)
-     * @return ApiResponse&lt;File&gt;
+     * @return ApiResponse&lt;FileTransfer&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2643,9 +2644,9 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<File> downloadMotionCaptureFrameWithHttpInfo(UUID motionCaptureId) throws ApiException {
+    public ApiResponse<FileTransfer> downloadMotionCaptureFrameWithHttpInfo(UUID motionCaptureId) throws ApiException {
         okhttp3.Call localVarCall = downloadMotionCaptureFrameValidateBeforeCall(motionCaptureId, null);
-        Type localVarReturnType = new TypeToken<File>(){}.getType();
+        Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -2663,10 +2664,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call downloadMotionCaptureFrameAsync(UUID motionCaptureId, final ApiCallback<File> _callback) throws ApiException {
+    public okhttp3.Call downloadMotionCaptureFrameAsync(UUID motionCaptureId, final ApiCallback<FileTransfer> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = downloadMotionCaptureFrameValidateBeforeCall(motionCaptureId, _callback);
-        Type localVarReturnType = new TypeToken<File>(){}.getType();
+        Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -2745,7 +2746,7 @@ public class DefaultApi {
      * Retrieve Workflow Run Evidence Summary File
      * Retrieves the signed evidence file for the designated Workflow Run 
      * @param workflowRunId Workflow Run ID (required)
-     * @return File
+     * @return FileTransfer
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2755,8 +2756,8 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public File downloadSignedEvidenceFile(UUID workflowRunId) throws ApiException {
-        ApiResponse<File> localVarResp = downloadSignedEvidenceFileWithHttpInfo(workflowRunId);
+    public FileTransfer downloadSignedEvidenceFile(UUID workflowRunId) throws ApiException {
+        ApiResponse<FileTransfer> localVarResp = downloadSignedEvidenceFileWithHttpInfo(workflowRunId);
         return localVarResp.getData();
     }
 
@@ -2764,7 +2765,7 @@ public class DefaultApi {
      * Retrieve Workflow Run Evidence Summary File
      * Retrieves the signed evidence file for the designated Workflow Run 
      * @param workflowRunId Workflow Run ID (required)
-     * @return ApiResponse&lt;File&gt;
+     * @return ApiResponse&lt;FileTransfer&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2774,9 +2775,9 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<File> downloadSignedEvidenceFileWithHttpInfo(UUID workflowRunId) throws ApiException {
+    public ApiResponse<FileTransfer> downloadSignedEvidenceFileWithHttpInfo(UUID workflowRunId) throws ApiException {
         okhttp3.Call localVarCall = downloadSignedEvidenceFileValidateBeforeCall(workflowRunId, null);
-        Type localVarReturnType = new TypeToken<File>(){}.getType();
+        Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -2795,10 +2796,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call downloadSignedEvidenceFileAsync(UUID workflowRunId, final ApiCallback<File> _callback) throws ApiException {
+    public okhttp3.Call downloadSignedEvidenceFileAsync(UUID workflowRunId, final ApiCallback<FileTransfer> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = downloadSignedEvidenceFileValidateBeforeCall(workflowRunId, _callback);
-        Type localVarReturnType = new TypeToken<File>(){}.getType();
+        Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -4295,7 +4296,7 @@ public class DefaultApi {
      * Retrieves the Timeline File for the designated Workflow Run. 
      * @param workflowRunId The unique identifier of the Workflow Run. (required)
      * @param timelineFileId The unique identifier for the Timefile File. (required)
-     * @return File
+     * @return FileTransfer
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -4305,8 +4306,8 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public File findTimelineFile(UUID workflowRunId, UUID timelineFileId) throws ApiException {
-        ApiResponse<File> localVarResp = findTimelineFileWithHttpInfo(workflowRunId, timelineFileId);
+    public FileTransfer findTimelineFile(UUID workflowRunId, UUID timelineFileId) throws ApiException {
+        ApiResponse<FileTransfer> localVarResp = findTimelineFileWithHttpInfo(workflowRunId, timelineFileId);
         return localVarResp.getData();
     }
 
@@ -4315,7 +4316,7 @@ public class DefaultApi {
      * Retrieves the Timeline File for the designated Workflow Run. 
      * @param workflowRunId The unique identifier of the Workflow Run. (required)
      * @param timelineFileId The unique identifier for the Timefile File. (required)
-     * @return ApiResponse&lt;File&gt;
+     * @return ApiResponse&lt;FileTransfer&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -4325,9 +4326,9 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<File> findTimelineFileWithHttpInfo(UUID workflowRunId, UUID timelineFileId) throws ApiException {
+    public ApiResponse<FileTransfer> findTimelineFileWithHttpInfo(UUID workflowRunId, UUID timelineFileId) throws ApiException {
         okhttp3.Call localVarCall = findTimelineFileValidateBeforeCall(workflowRunId, timelineFileId, null);
-        Type localVarReturnType = new TypeToken<File>(){}.getType();
+        Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -4347,10 +4348,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call findTimelineFileAsync(UUID workflowRunId, UUID timelineFileId, final ApiCallback<File> _callback) throws ApiException {
+    public okhttp3.Call findTimelineFileAsync(UUID workflowRunId, UUID timelineFileId, final ApiCallback<FileTransfer> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = findTimelineFileValidateBeforeCall(workflowRunId, timelineFileId, _callback);
-        Type localVarReturnType = new TypeToken<File>(){}.getType();
+        Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -7997,7 +7998,7 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call uploadDocumentCall(String type, UUID applicantId, File _file, String fileType, String side, CountryCodes issuingCountry, Boolean validateImageQuality, LocationBuilder location, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call uploadDocumentCall(String type, UUID applicantId, FileTransfer _file, String fileType, String side, CountryCodes issuingCountry, Boolean validateImageQuality, LocationBuilder location, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -8075,7 +8076,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call uploadDocumentValidateBeforeCall(String type, UUID applicantId, File _file, String fileType, String side, CountryCodes issuingCountry, Boolean validateImageQuality, LocationBuilder location, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call uploadDocumentValidateBeforeCall(String type, UUID applicantId, FileTransfer _file, String fileType, String side, CountryCodes issuingCountry, Boolean validateImageQuality, LocationBuilder location, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'type' is set
         if (type == null) {
             throw new ApiException("Missing the required parameter 'type' when calling uploadDocument(Async)");
@@ -8115,7 +8116,7 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public Document uploadDocument(String type, UUID applicantId, File _file, String fileType, String side, CountryCodes issuingCountry, Boolean validateImageQuality, LocationBuilder location) throws ApiException {
+    public Document uploadDocument(String type, UUID applicantId, FileTransfer _file, String fileType, String side, CountryCodes issuingCountry, Boolean validateImageQuality, LocationBuilder location) throws ApiException {
         ApiResponse<Document> localVarResp = uploadDocumentWithHttpInfo(type, applicantId, _file, fileType, side, issuingCountry, validateImageQuality, location);
         return localVarResp.getData();
     }
@@ -8140,7 +8141,7 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Document> uploadDocumentWithHttpInfo(String type, UUID applicantId, File _file, String fileType, String side, CountryCodes issuingCountry, Boolean validateImageQuality, LocationBuilder location) throws ApiException {
+    public ApiResponse<Document> uploadDocumentWithHttpInfo(String type, UUID applicantId, FileTransfer _file, String fileType, String side, CountryCodes issuingCountry, Boolean validateImageQuality, LocationBuilder location) throws ApiException {
         okhttp3.Call localVarCall = uploadDocumentValidateBeforeCall(type, applicantId, _file, fileType, side, issuingCountry, validateImageQuality, location, null);
         Type localVarReturnType = new TypeToken<Document>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -8167,7 +8168,7 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call uploadDocumentAsync(String type, UUID applicantId, File _file, String fileType, String side, CountryCodes issuingCountry, Boolean validateImageQuality, LocationBuilder location, final ApiCallback<Document> _callback) throws ApiException {
+    public okhttp3.Call uploadDocumentAsync(String type, UUID applicantId, FileTransfer _file, String fileType, String side, CountryCodes issuingCountry, Boolean validateImageQuality, LocationBuilder location, final ApiCallback<Document> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = uploadDocumentValidateBeforeCall(type, applicantId, _file, fileType, side, issuingCountry, validateImageQuality, location, _callback);
         Type localVarReturnType = new TypeToken<Document>(){}.getType();
@@ -8188,7 +8189,7 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call uploadIdPhotoCall(UUID applicantId, File _file, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call uploadIdPhotoCall(UUID applicantId, FileTransfer _file, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -8242,7 +8243,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call uploadIdPhotoValidateBeforeCall(UUID applicantId, File _file, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call uploadIdPhotoValidateBeforeCall(UUID applicantId, FileTransfer _file, final ApiCallback _callback) throws ApiException {
         return uploadIdPhotoCall(applicantId, _file, _callback);
 
     }
@@ -8261,7 +8262,7 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public IdPhoto uploadIdPhoto(UUID applicantId, File _file) throws ApiException {
+    public IdPhoto uploadIdPhoto(UUID applicantId, FileTransfer _file) throws ApiException {
         ApiResponse<IdPhoto> localVarResp = uploadIdPhotoWithHttpInfo(applicantId, _file);
         return localVarResp.getData();
     }
@@ -8280,7 +8281,7 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<IdPhoto> uploadIdPhotoWithHttpInfo(UUID applicantId, File _file) throws ApiException {
+    public ApiResponse<IdPhoto> uploadIdPhotoWithHttpInfo(UUID applicantId, FileTransfer _file) throws ApiException {
         okhttp3.Call localVarCall = uploadIdPhotoValidateBeforeCall(applicantId, _file, null);
         Type localVarReturnType = new TypeToken<IdPhoto>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -8301,7 +8302,7 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call uploadIdPhotoAsync(UUID applicantId, File _file, final ApiCallback<IdPhoto> _callback) throws ApiException {
+    public okhttp3.Call uploadIdPhotoAsync(UUID applicantId, FileTransfer _file, final ApiCallback<IdPhoto> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = uploadIdPhotoValidateBeforeCall(applicantId, _file, _callback);
         Type localVarReturnType = new TypeToken<IdPhoto>(){}.getType();
@@ -8323,7 +8324,7 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call uploadLivePhotoCall(UUID applicantId, File _file, Boolean advancedValidation, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call uploadLivePhotoCall(UUID applicantId, FileTransfer _file, Boolean advancedValidation, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -8381,7 +8382,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call uploadLivePhotoValidateBeforeCall(UUID applicantId, File _file, Boolean advancedValidation, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call uploadLivePhotoValidateBeforeCall(UUID applicantId, FileTransfer _file, Boolean advancedValidation, final ApiCallback _callback) throws ApiException {
         return uploadLivePhotoCall(applicantId, _file, advancedValidation, _callback);
 
     }
@@ -8401,7 +8402,7 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public LivePhoto uploadLivePhoto(UUID applicantId, File _file, Boolean advancedValidation) throws ApiException {
+    public LivePhoto uploadLivePhoto(UUID applicantId, FileTransfer _file, Boolean advancedValidation) throws ApiException {
         ApiResponse<LivePhoto> localVarResp = uploadLivePhotoWithHttpInfo(applicantId, _file, advancedValidation);
         return localVarResp.getData();
     }
@@ -8421,7 +8422,7 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<LivePhoto> uploadLivePhotoWithHttpInfo(UUID applicantId, File _file, Boolean advancedValidation) throws ApiException {
+    public ApiResponse<LivePhoto> uploadLivePhotoWithHttpInfo(UUID applicantId, FileTransfer _file, Boolean advancedValidation) throws ApiException {
         okhttp3.Call localVarCall = uploadLivePhotoValidateBeforeCall(applicantId, _file, advancedValidation, null);
         Type localVarReturnType = new TypeToken<LivePhoto>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -8443,7 +8444,7 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call uploadLivePhotoAsync(UUID applicantId, File _file, Boolean advancedValidation, final ApiCallback<LivePhoto> _callback) throws ApiException {
+    public okhttp3.Call uploadLivePhotoAsync(UUID applicantId, FileTransfer _file, Boolean advancedValidation, final ApiCallback<LivePhoto> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = uploadLivePhotoValidateBeforeCall(applicantId, _file, advancedValidation, _callback);
         Type localVarReturnType = new TypeToken<LivePhoto>(){}.getType();

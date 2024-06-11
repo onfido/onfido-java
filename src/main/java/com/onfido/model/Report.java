@@ -1000,6 +1000,7 @@ public class Report extends AbstractOpenApiSchema {
      * @return The actual instance of `DocumentReport`
      * @throws ClassCastException if the instance is not `DocumentReport`
      */
+    @SuppressWarnings("unchecked")
     public DocumentReport getDocumentReport() throws ClassCastException {
         return (DocumentReport)super.getActualInstance();
     }
@@ -1010,6 +1011,7 @@ public class Report extends AbstractOpenApiSchema {
      * @return The actual instance of `DocumentVideoReport`
      * @throws ClassCastException if the instance is not `DocumentVideoReport`
      */
+    @SuppressWarnings("unchecked")
     public DocumentVideoReport getDocumentVideoReport() throws ClassCastException {
         return (DocumentVideoReport)super.getActualInstance();
     }
@@ -1020,6 +1022,7 @@ public class Report extends AbstractOpenApiSchema {
      * @return The actual instance of `DocumentVideoWithAddressInformationReport`
      * @throws ClassCastException if the instance is not `DocumentVideoWithAddressInformationReport`
      */
+    @SuppressWarnings("unchecked")
     public DocumentVideoWithAddressInformationReport getDocumentVideoWithAddressInformationReport() throws ClassCastException {
         return (DocumentVideoWithAddressInformationReport)super.getActualInstance();
     }
@@ -1030,6 +1033,7 @@ public class Report extends AbstractOpenApiSchema {
      * @return The actual instance of `DocumentWithAddressInformationReport`
      * @throws ClassCastException if the instance is not `DocumentWithAddressInformationReport`
      */
+    @SuppressWarnings("unchecked")
     public DocumentWithAddressInformationReport getDocumentWithAddressInformationReport() throws ClassCastException {
         return (DocumentWithAddressInformationReport)super.getActualInstance();
     }
@@ -1040,6 +1044,7 @@ public class Report extends AbstractOpenApiSchema {
      * @return The actual instance of `DocumentWithDrivingLicenceInformationReport`
      * @throws ClassCastException if the instance is not `DocumentWithDrivingLicenceInformationReport`
      */
+    @SuppressWarnings("unchecked")
     public DocumentWithDrivingLicenceInformationReport getDocumentWithDrivingLicenceInformationReport() throws ClassCastException {
         return (DocumentWithDrivingLicenceInformationReport)super.getActualInstance();
     }
@@ -1050,6 +1055,7 @@ public class Report extends AbstractOpenApiSchema {
      * @return The actual instance of `DocumentWithDriverVerificationReport`
      * @throws ClassCastException if the instance is not `DocumentWithDriverVerificationReport`
      */
+    @SuppressWarnings("unchecked")
     public DocumentWithDriverVerificationReport getDocumentWithDriverVerificationReport() throws ClassCastException {
         return (DocumentWithDriverVerificationReport)super.getActualInstance();
     }
@@ -1060,6 +1066,7 @@ public class Report extends AbstractOpenApiSchema {
      * @return The actual instance of `FacialSimilarityPhotoReport`
      * @throws ClassCastException if the instance is not `FacialSimilarityPhotoReport`
      */
+    @SuppressWarnings("unchecked")
     public FacialSimilarityPhotoReport getFacialSimilarityPhotoReport() throws ClassCastException {
         return (FacialSimilarityPhotoReport)super.getActualInstance();
     }
@@ -1070,6 +1077,7 @@ public class Report extends AbstractOpenApiSchema {
      * @return The actual instance of `FacialSimilarityPhotoFullyAutoReport`
      * @throws ClassCastException if the instance is not `FacialSimilarityPhotoFullyAutoReport`
      */
+    @SuppressWarnings("unchecked")
     public FacialSimilarityPhotoFullyAutoReport getFacialSimilarityPhotoFullyAutoReport() throws ClassCastException {
         return (FacialSimilarityPhotoFullyAutoReport)super.getActualInstance();
     }
@@ -1080,6 +1088,7 @@ public class Report extends AbstractOpenApiSchema {
      * @return The actual instance of `FacialSimilarityVideoReport`
      * @throws ClassCastException if the instance is not `FacialSimilarityVideoReport`
      */
+    @SuppressWarnings("unchecked")
     public FacialSimilarityVideoReport getFacialSimilarityVideoReport() throws ClassCastException {
         return (FacialSimilarityVideoReport)super.getActualInstance();
     }
@@ -1090,6 +1099,7 @@ public class Report extends AbstractOpenApiSchema {
      * @return The actual instance of `FacialSimilarityMotionReport`
      * @throws ClassCastException if the instance is not `FacialSimilarityMotionReport`
      */
+    @SuppressWarnings("unchecked")
     public FacialSimilarityMotionReport getFacialSimilarityMotionReport() throws ClassCastException {
         return (FacialSimilarityMotionReport)super.getActualInstance();
     }
@@ -1100,6 +1110,7 @@ public class Report extends AbstractOpenApiSchema {
      * @return The actual instance of `KnownFacesReport`
      * @throws ClassCastException if the instance is not `KnownFacesReport`
      */
+    @SuppressWarnings("unchecked")
     public KnownFacesReport getKnownFacesReport() throws ClassCastException {
         return (KnownFacesReport)super.getActualInstance();
     }
@@ -1110,6 +1121,7 @@ public class Report extends AbstractOpenApiSchema {
      * @return The actual instance of `IdentityEnhancedReport`
      * @throws ClassCastException if the instance is not `IdentityEnhancedReport`
      */
+    @SuppressWarnings("unchecked")
     public IdentityEnhancedReport getIdentityEnhancedReport() throws ClassCastException {
         return (IdentityEnhancedReport)super.getActualInstance();
     }
@@ -1120,6 +1132,7 @@ public class Report extends AbstractOpenApiSchema {
      * @return The actual instance of `WatchlistAmlReport`
      * @throws ClassCastException if the instance is not `WatchlistAmlReport`
      */
+    @SuppressWarnings("unchecked")
     public WatchlistAmlReport getWatchlistAmlReport() throws ClassCastException {
         return (WatchlistAmlReport)super.getActualInstance();
     }
@@ -1130,6 +1143,7 @@ public class Report extends AbstractOpenApiSchema {
      * @return The actual instance of `WatchlistEnhancedReport`
      * @throws ClassCastException if the instance is not `WatchlistEnhancedReport`
      */
+    @SuppressWarnings("unchecked")
     public WatchlistEnhancedReport getWatchlistEnhancedReport() throws ClassCastException {
         return (WatchlistEnhancedReport)super.getActualInstance();
     }
@@ -1140,6 +1154,7 @@ public class Report extends AbstractOpenApiSchema {
      * @return The actual instance of `WatchlistStandardReport`
      * @throws ClassCastException if the instance is not `WatchlistStandardReport`
      */
+    @SuppressWarnings("unchecked")
     public WatchlistStandardReport getWatchlistStandardReport() throws ClassCastException {
         return (WatchlistStandardReport)super.getActualInstance();
     }
@@ -1150,6 +1165,7 @@ public class Report extends AbstractOpenApiSchema {
      * @return The actual instance of `WatchlistPepsOnlyReport`
      * @throws ClassCastException if the instance is not `WatchlistPepsOnlyReport`
      */
+    @SuppressWarnings("unchecked")
     public WatchlistPepsOnlyReport getWatchlistPepsOnlyReport() throws ClassCastException {
         return (WatchlistPepsOnlyReport)super.getActualInstance();
     }
@@ -1160,6 +1176,7 @@ public class Report extends AbstractOpenApiSchema {
      * @return The actual instance of `WatchlistSanctionsOnlyReport`
      * @throws ClassCastException if the instance is not `WatchlistSanctionsOnlyReport`
      */
+    @SuppressWarnings("unchecked")
     public WatchlistSanctionsOnlyReport getWatchlistSanctionsOnlyReport() throws ClassCastException {
         return (WatchlistSanctionsOnlyReport)super.getActualInstance();
     }
@@ -1170,6 +1187,7 @@ public class Report extends AbstractOpenApiSchema {
      * @return The actual instance of `ProofOfAddressReport`
      * @throws ClassCastException if the instance is not `ProofOfAddressReport`
      */
+    @SuppressWarnings("unchecked")
     public ProofOfAddressReport getProofOfAddressReport() throws ClassCastException {
         return (ProofOfAddressReport)super.getActualInstance();
     }
@@ -1180,6 +1198,7 @@ public class Report extends AbstractOpenApiSchema {
      * @return The actual instance of `UsDrivingLicenceReport`
      * @throws ClassCastException if the instance is not `UsDrivingLicenceReport`
      */
+    @SuppressWarnings("unchecked")
     public UsDrivingLicenceReport getUsDrivingLicenceReport() throws ClassCastException {
         return (UsDrivingLicenceReport)super.getActualInstance();
     }
@@ -1190,6 +1209,7 @@ public class Report extends AbstractOpenApiSchema {
      * @return The actual instance of `DeviceIntelligenceReport`
      * @throws ClassCastException if the instance is not `DeviceIntelligenceReport`
      */
+    @SuppressWarnings("unchecked")
     public DeviceIntelligenceReport getDeviceIntelligenceReport() throws ClassCastException {
         return (DeviceIntelligenceReport)super.getActualInstance();
     }
@@ -1200,6 +1220,7 @@ public class Report extends AbstractOpenApiSchema {
      * @return The actual instance of `IndiaPanReport`
      * @throws ClassCastException if the instance is not `IndiaPanReport`
      */
+    @SuppressWarnings("unchecked")
     public IndiaPanReport getIndiaPanReport() throws ClassCastException {
         return (IndiaPanReport)super.getActualInstance();
     }
@@ -1408,32 +1429,41 @@ public class Report extends AbstractOpenApiSchema {
     }
 
 
-  /**
-  * Give access to shared properties. Read-only.
-  * @return ReportShared object with common fields
-  **/
+    /**
+     * Give access to shared properties. Read-only.
+     * @return ReportShared object with common fields
+     **/
 
-  public ReportShared getReportShared() {
-      return reportShared;
-  }
+    public ReportShared getReportShared() {
+        return reportShared;
+    }
 
-  /**
-  * Give access to shared properties. Read-only.
-  * @return id
-  **/
+    /**
+     * Give access to shared properties. Read-only.
+     * @return id
+     **/
 
-  public UUID getId() {
-      return reportShared.getId();
-  }
+    public UUID getId() {
+        return reportShared.getId();
+    }
 
-  /**
-  * Get name
-  * @return name
-  **/
+    /**
+     * Get name
+     * @return name
+     **/
 
-  public ReportName getName() {
-      return reportShared.getName();
-  }
+    public ReportName getName() {
+        return reportShared.getName();
+    }
+
+    /**
+     * Get status
+     * @return status
+     **/
+
+    public ReportStatus getStatus() {
+        return reportShared.getStatus();
+    }
 
 }
 

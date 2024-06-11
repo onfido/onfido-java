@@ -851,6 +851,13 @@ public class ApiClient {
         } else if (returnType.equals(File.class)) {
             // Handle file downloading.
             return (T) downloadFileFromResponse(response);
+        } else if (returnType.equals(FileTransfer.class)) {
+            try {
+                String filename = getFilenameFromResponse(response);
+                return (T) new FileTransfer(response.body().bytes(), filename);
+            } catch (IOException e) {
+                throw new ApiException(e);
+            }
         }
 
         String respBody;
@@ -946,16 +953,7 @@ public class ApiClient {
      * @throws java.io.IOException If fail to prepare file for download
      */
     public File prepareDownloadFile(Response response) throws IOException {
-        String filename = null;
-        String contentDisposition = response.header("Content-Disposition");
-        if (contentDisposition != null && !"".equals(contentDisposition)) {
-            // Get filename from the Content-Disposition header.
-            Pattern pattern = Pattern.compile("filename=['\"]?([^'\"\\s]+)['\"]?");
-            Matcher matcher = pattern.matcher(contentDisposition);
-            if (matcher.find()) {
-                filename = sanitizeFilename(matcher.group(1));
-            }
-        }
+        String filename = getFilenameFromResponse(response);
 
         String prefix = null;
         String suffix = null;
@@ -1339,14 +1337,14 @@ public class ApiClient {
     public RequestBody buildRequestBodyMultipart(Map<String, Object> formParams) {
         MultipartBody.Builder mpBuilder = new MultipartBody.Builder().setType(MultipartBody.FORM);
         for (Entry<String, Object> param : formParams.entrySet()) {
-            if (param.getValue() instanceof File) {
-                File file = (File) param.getValue();
+            if (param.getValue() instanceof FileTransfer) {
+                FileTransfer file = (FileTransfer) param.getValue();
                 addPartToMultiPartBuilder(mpBuilder, param.getKey(), file);
             } else if (param.getValue() instanceof List) {
                 List list = (List) param.getValue();
                 for (Object item: list) {
-                    if (item instanceof File) {
-                        addPartToMultiPartBuilder(mpBuilder, param.getKey(), (File) item);
+                    if (item instanceof FileTransfer) {
+                        addPartToMultiPartBuilder(mpBuilder, param.getKey(), (FileTransfer) item);
                     } else {
                         addPartToMultiPartBuilder(mpBuilder, param.getKey(), param.getValue());
                     }
@@ -1359,31 +1357,39 @@ public class ApiClient {
     }
 
     /**
-     * Guess Content-Type header from the given file (defaults to "application/octet-stream").
-     *
-     * @param file The given file
-     * @return The guessed Content-Type
-     */
-    public String guessContentTypeFromFile(File file) {
-        String contentType = URLConnection.guessContentTypeFromName(file.getName());
-        if (contentType == null) {
-            return "application/octet-stream";
-        } else {
-            return contentType;
-        }
-    }
-
-    /**
      * Add a Content-Disposition Header for the given key and file to the MultipartBody Builder.
      *
      * @param mpBuilder MultipartBody.Builder
      * @param key The key of the Header element
      * @param file The file to add to the Header
      */
-    private void addPartToMultiPartBuilder(MultipartBody.Builder mpBuilder, String key, File file) {
-        Headers partHeaders = Headers.of("Content-Disposition", "form-data; name=\"" + key + "\"; filename=\"" + file.getName() + "\"");
-        MediaType mediaType = MediaType.parse(guessContentTypeFromFile(file));
-        mpBuilder.addPart(partHeaders, RequestBody.create(file, mediaType));
+    private void addPartToMultiPartBuilder(MultipartBody.Builder mpBuilder, String key, FileTransfer file) {
+        Headers partHeaders = Headers.of("Content-Disposition", "form-data; name=\"" + key + "\"; filename=\"" + file.getFilename() + "\"");
+        MediaType mediaType = MediaType.parse(file.getContentType());
+
+        if ( file.getByteArray() != null ) {
+            mpBuilder.addPart(partHeaders, RequestBody.create(file.getByteArray(), mediaType));
+        }
+        else {
+            mpBuilder.addPart(partHeaders, RequestBody.create(file.getInputFile(), mediaType));
+        }
+    }
+
+    /**
+     * Retrieve filename, once santized, from provided response.
+     */
+    private String getFilenameFromResponse(Response response) {
+        String filename = "";
+        String contentDisposition = response.header("Content-Disposition");
+        if (contentDisposition != null && !"".equals(contentDisposition)) {
+            // Get filename from the Content-Disposition header.
+            Pattern pattern = Pattern.compile("filename=['\"]?([^'\"\\s]+)['\"]?");
+            Matcher matcher = pattern.matcher(contentDisposition);
+            if (matcher.find()) {
+                filename = sanitizeFilename(matcher.group(1));
+            }
+        }
+        return filename;
     }
 
     /**

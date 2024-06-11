@@ -12,11 +12,16 @@ import com.onfido.model.Document;
 import com.onfido.model.IdPhoto;
 import com.onfido.model.LivePhoto;
 import com.onfido.model.LocationBuilder;
+import com.onfido.model.Report;
+import com.onfido.model.WatchlistMonitor;
+import com.onfido.model.WatchlistMonitorBuilder;
 import com.onfido.model.Webhook;
 import com.onfido.model.WorkflowRun;
 import com.onfido.model.WorkflowRunBuilder;
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.UUID;
 import java.util.stream.Collectors;
@@ -141,5 +146,76 @@ public class TestBase {
         .collect(Collectors.toList())
         .get(0)
         .getId();
+  }
+
+  public WatchlistMonitor createWatchlistMonitor(
+      UUID applicantId, WatchlistMonitorBuilder.ReportNameEnum reportName) throws ApiException {
+    return onfido.createWatchlistMonitor(
+        new WatchlistMonitorBuilder().applicantId(applicantId).reportName(reportName));
+  }
+
+  private Method getMethod(String methodName, Object[] params) throws NoSuchMethodException {
+    Class<?>[] paramTypes = new Class<?>[params.length];
+    for (int i = 0; i < params.length; i++) {
+      paramTypes[i] = params[i].getClass();
+    }
+
+    return onfido.getClass().getMethod(methodName, paramTypes);
+  }
+
+  public Object repeatRequestUntilStatusChanges(
+      String methodName, Object[] params, Object status, int maxRetries, int sleepTime)
+      throws NoSuchMethodException,
+          IllegalAccessException,
+          InterruptedException,
+          InvocationTargetException {
+    Method method = getMethod(methodName, params);
+    Object instance = method.invoke(onfido, params);
+    boolean isInstanceOfReport = instance instanceof Report;
+
+    if (isInstanceOfReport) {
+      instance = ((Report) instance).getActualInstance();
+    }
+
+    int iteration = 0;
+
+    while (!instance.getClass().getMethod("getStatus").invoke(instance).equals(status)) {
+      if (iteration > maxRetries) {
+        throw new RuntimeException("Status did not change in time");
+      }
+
+      iteration += 1;
+      Thread.sleep(sleepTime);
+
+      if (isInstanceOfReport) {
+        instance = ((Report) method.invoke(onfido, params)).getActualInstance();
+      } else {
+        instance = method.invoke(onfido, params);
+      }
+    }
+    return instance;
+  }
+
+  public Object repeatRequestUntilHttpCodeChanges(
+      String methodName, Object[] params, int maxRetries, int sleepTime)
+      throws NoSuchMethodException, IllegalAccessException, InterruptedException {
+    Method method = getMethod(methodName, params);
+    Object instance = null;
+    int iteration = 0;
+
+    while (iteration <= maxRetries) {
+      try {
+        instance = method.invoke(onfido, params);
+        break;
+      } catch (InvocationTargetException e) {
+        Thread.sleep(sleepTime);
+        iteration += 1;
+      }
+    }
+
+    if (instance == null) {
+      throw new RuntimeException("Method did not execute successfully within the retry limit.");
+    }
+    return instance;
   }
 }

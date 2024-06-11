@@ -1,7 +1,6 @@
 package com.onfido.integration;
 
 import static com.onfido.model.WorkflowRun.StatusEnum.APPROVED;
-import static com.onfido.model.WorkflowRun.StatusEnum.PROCESSING;
 
 import com.google.gson.Gson;
 import com.onfido.model.*;
@@ -82,18 +81,15 @@ public class WorkflowRunOutputsTest extends TestBase {
         new CompleteTaskDataBuilder(completeLivePhotoCaptureTaskBodyArray));
     onfido.completeTask(workflowRunId, photoCaptureTaskId, completeLivePhotoCaptureTaskBuilder);
 
-    WorkflowRun workflowRun = onfido.findWorkflowRun(workflowRunId);
-
     // wait for workflow run to finish
-    int iteration = 0;
-    while (workflowRun.getStatus().equals(PROCESSING)) {
-      if (iteration > 10) {
-        Assertions.fail("Workflow run did not complete in time");
-      }
-      iteration += 1;
-      Thread.sleep(1000);
-      workflowRun = onfido.findWorkflowRun(workflowRunId);
-    }
+    WorkflowRun workflowRun =
+        (WorkflowRun)
+            repeatRequestUntilStatusChanges(
+                "findWorkflowRun",
+                new UUID[] {workflowRunId},
+                WorkflowRun.StatusEnum.APPROVED,
+                10,
+                1000);
 
     Assertions.assertEquals(APPROVED, workflowRun.getStatus());
 

@@ -50,7 +50,7 @@ import com.onfido.JSON;
 /**
  * Asserts whether the person in the live video is real (not a spoof) and live.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
 public class FacialSimilarityVideoBreakdownVisualAuthenticity {
   public static final String SERIALIZED_NAME_RESULT = "result";
   @SerializedName(SERIALIZED_NAME_RESULT)

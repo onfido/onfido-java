@@ -50,7 +50,7 @@ import com.onfido.JSON;
 /**
  * DocumentBreakdownCompromisedDocumentBreakdown
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
 public class DocumentBreakdownCompromisedDocumentBreakdown {
   public static final String SERIALIZED_NAME_DOCUMENT_DATABASE = "document_database";
   @SerializedName(SERIALIZED_NAME_DOCUMENT_DATABASE)

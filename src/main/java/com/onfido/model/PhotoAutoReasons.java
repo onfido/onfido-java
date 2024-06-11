@@ -49,7 +49,7 @@ import com.onfido.JSON;
 /**
  * PhotoAutoReasons
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
 public class PhotoAutoReasons {
   public static final String SERIALIZED_NAME_DIGITAL_TAMPERING = "digital_tampering";
   @SerializedName(SERIALIZED_NAME_DIGITAL_TAMPERING)

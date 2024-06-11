@@ -49,7 +49,7 @@ import com.onfido.JSON;
 /**
  * DocumentIQReasons
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
 public class DocumentIQReasons {
   public static final String SERIALIZED_NAME_DARK_PHOTO = "dark_photo";
   @SerializedName(SERIALIZED_NAME_DARK_PHOTO)

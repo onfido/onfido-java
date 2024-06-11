@@ -49,7 +49,7 @@ import com.onfido.JSON;
 /**
  * IdentityEnhancedBreakdownSourcesBreakdownTotalSourcesProperties
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
 public class IdentityEnhancedBreakdownSourcesBreakdownTotalSourcesProperties {
   public static final String SERIALIZED_NAME_TOTAL_NUMBER_OF_SOURCES = "total_number_of_sources";
   @SerializedName(SERIALIZED_NAME_TOTAL_NUMBER_OF_SOURCES)

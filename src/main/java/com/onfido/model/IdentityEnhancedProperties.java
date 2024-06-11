@@ -53,7 +53,7 @@ import com.onfido.JSON;
 /**
  * IdentityEnhancedProperties
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
 public class IdentityEnhancedProperties {
   public static final String SERIALIZED_NAME_MATCHED_ADDRESS = "matched_address";
   @SerializedName(SERIALIZED_NAME_MATCHED_ADDRESS)

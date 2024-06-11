@@ -51,7 +51,7 @@ import com.onfido.JSON;
 /**
  * FacialSimilarityPhotoBreakdownImageIntegrityBreakdown
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
 public class FacialSimilarityPhotoBreakdownImageIntegrityBreakdown {
   public static final String SERIALIZED_NAME_FACE_DETECTED = "face_detected";
   @SerializedName(SERIALIZED_NAME_FACE_DETECTED)

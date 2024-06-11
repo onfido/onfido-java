@@ -49,7 +49,7 @@ import com.onfido.JSON;
 /**
  * IdentityEnhancedBreakdownAddressBreakdownCreditAgenciesProperties
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
 public class IdentityEnhancedBreakdownAddressBreakdownCreditAgenciesProperties {
   public static final String SERIALIZED_NAME_NUMBER_OF_MATCHES = "number_of_matches";
   @SerializedName(SERIALIZED_NAME_NUMBER_OF_MATCHES)

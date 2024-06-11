@@ -50,7 +50,7 @@ import com.onfido.JSON;
 /**
  * The number of address matches against credit agencies.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
 public class IdentityEnhancedBreakdownAddressBreakdownCreditAgencies {
   public static final String SERIALIZED_NAME_RESULT = "result";
   @SerializedName(SERIALIZED_NAME_RESULT)

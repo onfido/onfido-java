@@ -49,7 +49,7 @@ import com.onfido.JSON;
 /**
  * Fonts in the document don&#39;t match the expected ones.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
 public class DocumentBreakdownVisualAuthenticityBreakdownFonts {
   public static final String SERIALIZED_NAME_RESULT = "result";
   @SerializedName(SERIALIZED_NAME_RESULT)

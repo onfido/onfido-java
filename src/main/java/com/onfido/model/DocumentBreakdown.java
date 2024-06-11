@@ -58,7 +58,7 @@ import com.onfido.JSON;
 /**
  * DocumentBreakdown
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
 public class DocumentBreakdown {
   public static final String SERIALIZED_NAME_DATA_COMPARISON = "data_comparison";
   @SerializedName(SERIALIZED_NAME_DATA_COMPARISON)

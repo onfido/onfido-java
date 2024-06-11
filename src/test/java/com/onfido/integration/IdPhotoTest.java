@@ -1,6 +1,7 @@
 package com.onfido.integration;
 
 import com.onfido.ApiException;
+import com.onfido.FileTransfer;
 import com.onfido.model.Applicant;
 import com.onfido.model.IdPhoto;
 import java.io.File;
@@ -29,9 +30,11 @@ public class IdPhotoTest extends TestBase {
 
   @Test
   public void downloadIdPhotoTest() throws Exception {
-    File download = onfido.downloadIdPhoto(idPhoto.getId());
+    FileTransfer download = onfido.downloadIdPhoto(idPhoto.getId());
 
-    Assertions.assertTrue(download.length() > 0);
+    Assertions.assertEquals("image/png", download.getContentType());
+    Assertions.assertTrue(download.getFilename() != null);
+    Assertions.assertTrue(download.getByteArray().length > 0);
   }
 
   @Test

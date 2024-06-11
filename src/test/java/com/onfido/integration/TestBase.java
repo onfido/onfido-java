@@ -2,6 +2,7 @@ package com.onfido.integration;
 
 import com.onfido.ApiException;
 import com.onfido.Configuration;
+import com.onfido.FileTransfer;
 import com.onfido.api.DefaultApi;
 import com.onfido.model.Applicant;
 import com.onfido.model.ApplicantBuilder;
@@ -86,7 +87,7 @@ public class TestBase {
     return onfido.uploadDocument(
         document_type,
         applicant.getId(),
-        file,
+        new FileTransfer(file),
         null,
         "front",
         CountryCodes.USA,
@@ -95,11 +96,11 @@ public class TestBase {
   }
 
   protected LivePhoto uploadLivePhoto(Applicant applicant, String filename) throws Exception {
-    return onfido.uploadLivePhoto(applicant.getId(), new File("media/" + filename), true);
+    return onfido.uploadLivePhoto(applicant.getId(), new FileTransfer(new File("media/" + filename)), true);
   }
 
   protected IdPhoto uploadIdPhoto(Applicant applicant, String filename) throws Exception {
-    return onfido.uploadIdPhoto(applicant.getId(), new File("media/" + filename));
+    return onfido.uploadIdPhoto(applicant.getId(), new FileTransfer(new File("media/" + filename)));
   }
 
   protected Check createCheck(Applicant applicant, Document document, CheckBuilder checkBuilder)

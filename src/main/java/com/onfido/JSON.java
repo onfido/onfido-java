@@ -259,6 +259,7 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.FacialSimilarityMotionBreakdownVisualAuthenticity.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.FacialSimilarityMotionBreakdownVisualAuthenticityBreakdown.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.FacialSimilarityMotionBreakdownVisualAuthenticityBreakdownSpoofingDetection.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.FacialSimilarityMotionProperties.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.FacialSimilarityMotionReport.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.FacialSimilarityPhotoBreakdown.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.FacialSimilarityPhotoBreakdownFaceComparison.CustomTypeAdapterFactory());
@@ -277,7 +278,9 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.FacialSimilarityPhotoFullyAutoBreakdownImageIntegrity.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.FacialSimilarityPhotoFullyAutoBreakdownImageIntegrityBreakdown.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.FacialSimilarityPhotoFullyAutoBreakdownImageIntegrityBreakdownSourceIntegrity.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.FacialSimilarityPhotoFullyAutoProperties.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.FacialSimilarityPhotoFullyAutoReport.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.FacialSimilarityPhotoProperties.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.FacialSimilarityPhotoReport.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.FacialSimilarityVideoBreakdown.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.FacialSimilarityVideoBreakdownFaceComparison.CustomTypeAdapterFactory());
@@ -289,6 +292,7 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.FacialSimilarityVideoBreakdownVisualAuthenticityBreakdown.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.FacialSimilarityVideoBreakdownVisualAuthenticityBreakdownLivenessDetected.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.FacialSimilarityVideoBreakdownVisualAuthenticityBreakdownSpoofingDetection.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.FacialSimilarityVideoProperties.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.FacialSimilarityVideoReport.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.IdNumber.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.IdPhoto.CustomTypeAdapterFactory());

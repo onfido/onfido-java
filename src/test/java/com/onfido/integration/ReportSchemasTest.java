@@ -63,7 +63,6 @@ public class ReportSchemasTest extends TestBase {
     Assertions.assertEquals(check.getId(), facialSimilarityPhotoFullyAutoReport.getCheckId());
     Assertions.assertNotNull(facialSimilarityPhotoFullyAutoReport.getBreakdown());
     Assertions.assertNotNull(facialSimilarityPhotoFullyAutoReport.getResult());
-    Assertions.assertNotNull(
-        facialSimilarityPhotoFullyAutoReport.getAdditionalProperties().get("properties"));
+    Assertions.assertNotNull(facialSimilarityPhotoFullyAutoReport.getProperties());
   }
 }

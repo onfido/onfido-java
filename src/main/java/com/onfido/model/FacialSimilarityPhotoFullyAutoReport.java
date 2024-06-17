@@ -20,6 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.onfido.model.FacialSimilarityPhotoFullyAutoBreakdown;
+import com.onfido.model.FacialSimilarityPhotoFullyAutoProperties;
 import com.onfido.model.ReportDocument;
 import com.onfido.model.ReportName;
 import com.onfido.model.ReportResult;
@@ -100,6 +101,10 @@ public class FacialSimilarityPhotoFullyAutoReport {
   public static final String SERIALIZED_NAME_BREAKDOWN = "breakdown";
   @SerializedName(SERIALIZED_NAME_BREAKDOWN)
   private FacialSimilarityPhotoFullyAutoBreakdown breakdown;
+
+  public static final String SERIALIZED_NAME_PROPERTIES = "properties";
+  @SerializedName(SERIALIZED_NAME_PROPERTIES)
+  private FacialSimilarityPhotoFullyAutoProperties properties;
 
   public FacialSimilarityPhotoFullyAutoReport() {
   }
@@ -301,6 +306,25 @@ public class FacialSimilarityPhotoFullyAutoReport {
     this.breakdown = breakdown;
   }
 
+
+  public FacialSimilarityPhotoFullyAutoReport properties(FacialSimilarityPhotoFullyAutoProperties properties) {
+    this.properties = properties;
+    return this;
+  }
+
+   /**
+   * Get properties
+   * @return properties
+  **/
+  @javax.annotation.Nullable
+  public FacialSimilarityPhotoFullyAutoProperties getProperties() {
+    return properties;
+  }
+
+  public void setProperties(FacialSimilarityPhotoFullyAutoProperties properties) {
+    this.properties = properties;
+  }
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -365,13 +389,14 @@ public class FacialSimilarityPhotoFullyAutoReport {
         Objects.equals(this.checkId, facialSimilarityPhotoFullyAutoReport.checkId) &&
         Objects.equals(this.documents, facialSimilarityPhotoFullyAutoReport.documents) &&
         Objects.equals(this.name, facialSimilarityPhotoFullyAutoReport.name) &&
-        Objects.equals(this.breakdown, facialSimilarityPhotoFullyAutoReport.breakdown)&&
+        Objects.equals(this.breakdown, facialSimilarityPhotoFullyAutoReport.breakdown) &&
+        Objects.equals(this.properties, facialSimilarityPhotoFullyAutoReport.properties)&&
         Objects.equals(this.additionalProperties, facialSimilarityPhotoFullyAutoReport.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, createdAt, href, status, result, subResult, checkId, documents, name, breakdown, additionalProperties);
+    return Objects.hash(id, createdAt, href, status, result, subResult, checkId, documents, name, breakdown, properties, additionalProperties);
   }
 
   @Override
@@ -388,6 +413,7 @@ public class FacialSimilarityPhotoFullyAutoReport {
     sb.append("    documents: ").append(toIndentedString(documents)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    breakdown: ").append(toIndentedString(breakdown)).append("\n");
+    sb.append("    properties: ").append(toIndentedString(properties)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -421,6 +447,7 @@ public class FacialSimilarityPhotoFullyAutoReport {
     openapiFields.add("documents");
     openapiFields.add("name");
     openapiFields.add("breakdown");
+    openapiFields.add("properties");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -488,6 +515,10 @@ public class FacialSimilarityPhotoFullyAutoReport {
       // validate the optional field `breakdown`
       if (jsonObj.get("breakdown") != null && !jsonObj.get("breakdown").isJsonNull()) {
         FacialSimilarityPhotoFullyAutoBreakdown.validateJsonElement(jsonObj.get("breakdown"));
+      }
+      // validate the optional field `properties`
+      if (jsonObj.get("properties") != null && !jsonObj.get("properties").isJsonNull()) {
+        FacialSimilarityPhotoFullyAutoProperties.validateJsonElement(jsonObj.get("properties"));
       }
   }
 

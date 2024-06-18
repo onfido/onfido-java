@@ -23,6 +23,7 @@ import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.nio.file.Files;
 import java.util.Arrays;
 import java.util.UUID;
 import java.util.stream.Collectors;
@@ -80,14 +81,14 @@ public class TestBase {
   protected Document uploadDocument(Applicant applicant, String filename, String document_type)
       throws IOException, InterruptedException, ApiException {
     File file = new File("media/" + filename);
+    byte[] byteArray = Files.readAllBytes(file.toPath());
 
     LocationBuilder locationBuilder =
         new LocationBuilder().ipAddress("127.0.0.1").countryOfResidence(CountryCodes.GBR);
 
-    return onfido.uploadDocument(
-        document_type,
+    return onfido.uploadDocument(document_type,
         applicant.getId(),
-        new FileTransfer(file),
+        new FileTransfer(byteArray, filename),
         null,
         "front",
         CountryCodes.USA,

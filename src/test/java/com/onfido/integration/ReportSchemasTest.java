@@ -27,29 +27,34 @@ public class ReportSchemasTest extends TestBase {
             document,
             new CheckBuilder().reportNames(Arrays.asList(ReportName.DOCUMENT)));
 
-    DocumentReport documentReport =
-        (DocumentReport)
+    Report documentReport =
+        (Report)
             repeatRequestUntilStatusChanges(
                 "findReport", new Object[] {check.getReportIds().get(0)}, COMPLETE, 10, 1000);
 
     Assertions.assertEquals(COMPLETE, documentReport.getStatus());
     Assertions.assertEquals(ReportName.DOCUMENT, documentReport.getName());
-    Assertions.assertEquals(check.getId(), documentReport.getCheckId());
-    Assertions.assertNotNull(documentReport.getBreakdown());
-    Assertions.assertNotNull(documentReport.getProperties());
-    Assertions.assertNotNull(documentReport.getResult());
-    Assertions.assertNotNull(documentReport.getSubResult());
+    Assertions.assertEquals(check.getId(), documentReport.getReportShared().getCheckId());
+    Assertions.assertNotNull(documentReport.getDocumentReport().getBreakdown());
+    Assertions.assertNotNull(documentReport.getDocumentReport().getProperties());
+    Assertions.assertNotNull(documentReport.getReportShared().getResult());
+    Assertions.assertNotNull(documentReport.getReportShared().getSubResult());
 
     Assertions.assertEquals(
         "clear",
         documentReport
+            .getDocumentReport()
             .getBreakdown()
             .getDataComparison()
             .getBreakdown()
             .getIssuingCountry()
             .getResult());
     Assertions.assertEquals(
-        LocalDate.parse("1990-01-01"), documentReport.getProperties().getDateOfBirth());
+        LocalDate.parse("1990-01-01"),
+        documentReport.getDocumentReport().getProperties().getDateOfBirth());
+    Assertions.assertEquals(check.getId(), documentReport.getReportShared().getCheckId());
+    Assertions.assertNotNull(documentReport.getDocumentReport().getBreakdown());
+    Assertions.assertNotNull(documentReport.getDocumentReport().getProperties());
   }
 
   @Test
@@ -63,8 +68,8 @@ public class ReportSchemasTest extends TestBase {
             new CheckBuilder()
                 .reportNames(Arrays.asList(ReportName.FACIAL_SIMILARITY_PHOTO_FULLY_AUTO)));
 
-    FacialSimilarityPhotoFullyAutoReport facialSimilarityPhotoFullyAutoReport =
-        (FacialSimilarityPhotoFullyAutoReport)
+    Report facialSimilarityPhotoFullyAutoReport =
+        (Report)
             repeatRequestUntilStatusChanges(
                 "findReport", new Object[] {check.getReportIds().get(0)}, COMPLETE, 10, 1000);
 
@@ -72,9 +77,16 @@ public class ReportSchemasTest extends TestBase {
     Assertions.assertEquals(
         ReportName.FACIAL_SIMILARITY_PHOTO_FULLY_AUTO,
         facialSimilarityPhotoFullyAutoReport.getName());
-    Assertions.assertEquals(check.getId(), facialSimilarityPhotoFullyAutoReport.getCheckId());
-    Assertions.assertNotNull(facialSimilarityPhotoFullyAutoReport.getBreakdown());
-    Assertions.assertNotNull(facialSimilarityPhotoFullyAutoReport.getResult());
-    Assertions.assertNotNull(facialSimilarityPhotoFullyAutoReport.getProperties());
+    Assertions.assertEquals(
+        check.getId(), facialSimilarityPhotoFullyAutoReport.getReportShared().getCheckId());
+    Assertions.assertNotNull(
+        facialSimilarityPhotoFullyAutoReport
+            .getFacialSimilarityPhotoFullyAutoReport()
+            .getBreakdown());
+    Assertions.assertNotNull(facialSimilarityPhotoFullyAutoReport.getReportShared().getResult());
+    Assertions.assertNotNull(
+        facialSimilarityPhotoFullyAutoReport
+            .getFacialSimilarityPhotoFullyAutoReport()
+            .getProperties());
   }
 }

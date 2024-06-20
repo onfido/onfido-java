@@ -1,12 +1,12 @@
 package com.onfido.integration;
 
+import com.onfido.FileTransfer;
 import com.onfido.model.Applicant;
 import com.onfido.model.Check;
 import com.onfido.model.CheckBuilder;
 import com.onfido.model.Document;
 import com.onfido.model.ReportName;
 import com.onfido.model.UsDrivingLicenceBuilder;
-import java.io.File;
 import java.util.Arrays;
 import java.util.List;
 import org.junit.jupiter.api.Assertions;
@@ -117,7 +117,12 @@ public class CheckTest extends TestBase {
             document,
             new CheckBuilder().reportNames(Arrays.asList(ReportName.DOCUMENT)));
 
-    File download = onfido.downloadCheck(check.getId());
-    Assertions.assertTrue(download.length() > 0);
+    FileTransfer download = onfido.downloadCheck(check.getId());
+    byte[] byteArray = download.getByteArray();
+
+    Assertions.assertEquals("application/pdf", download.getContentType());
+    Assertions.assertTrue(download.getFilename() != null);
+    Assertions.assertTrue(byteArray.length > 0);
+    Assertions.assertEquals("%PDF", new String(byteArray, 0, 4));
   }
 }

@@ -1,10 +1,9 @@
 package com.onfido.integration;
 
+import com.onfido.FileTransfer;
 import com.onfido.model.TimelineFileReference;
 import com.onfido.model.WorkflowRun;
 import com.onfido.model.WorkflowRunBuilder;
-import java.io.File;
-import java.nio.file.Files;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
@@ -62,11 +61,10 @@ public class WorkflowRunTest extends TestBase {
 
   @Test
   public void evidenceWorkflowRunTest() throws Exception {
-    File download = onfido.downloadSignedEvidenceFile(workflowRunId);
-    byte[] content = Files.readAllBytes(download.toPath());
+    byte[] byteArray = onfido.downloadSignedEvidenceFile(workflowRunId).getByteArray();
 
-    Assertions.assertEquals("%PDF", new String(content, 0, 4));
-    Assertions.assertTrue(download.length() > 0);
+    Assertions.assertEquals("%PDF", new String(byteArray, 0, 4));
+    Assertions.assertTrue(byteArray.length > 0);
   }
 
   @Test
@@ -91,15 +89,14 @@ public class WorkflowRunTest extends TestBase {
         "findWorkflowRun", new UUID[] {workflowRunId}, WorkflowRun.StatusEnum.APPROVED, 10, 1000);
     UUID timelineFileId = onfido.createTimelineFile(workflowRunId).getWorkflowTimelineFileId();
 
-    File download =
-        (File)
+    FileTransfer download =
+        (FileTransfer)
             repeatRequestUntilHttpCodeChanges(
                 "findTimelineFile", new UUID[] {workflowRunId, timelineFileId}, 10, 1000);
 
-    onfido.findTimelineFile(workflowRunId, timelineFileId);
-    byte[] content = Files.readAllBytes(download.toPath());
+    byte[] byteArray = download.getByteArray();
 
-    Assertions.assertEquals("%PDF", new String(content, 0, 4));
-    Assertions.assertTrue(download.length() > 0);
+    Assertions.assertEquals("%PDF", new String(byteArray, 0, 4));
+    Assertions.assertTrue(byteArray.length > 0);
   }
 }

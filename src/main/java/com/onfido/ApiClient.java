@@ -1376,7 +1376,7 @@ public class ApiClient {
     }
 
     /**
-     * Retrieve filename, once santized, from provided response.
+     * Retrieve filename, once sanitized, from provided response.
      */
     private String getFilenameFromResponse(Response response) {
         String filename = "";

@@ -1,9 +1,9 @@
 package com.onfido.integration;
 
 import com.onfido.ApiException;
+import com.onfido.FileTransfer;
 import com.onfido.model.Applicant;
 import com.onfido.model.LivePhoto;
-import java.io.File;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -29,9 +29,11 @@ public class LivePhotoTest extends TestBase {
 
   @Test
   public void downloadLivePhotoTest() throws Exception {
-    File download = onfido.downloadLivePhoto(livePhoto.getId());
+    FileTransfer download = onfido.downloadLivePhoto(livePhoto.getId());
 
-    Assertions.assertTrue(download.length() > 0);
+    Assertions.assertEquals("image/png", download.getContentType());
+    Assertions.assertEquals("sample_photo.png", download.getFilename());
+    Assertions.assertTrue(download.getByteArray().length > 0);
   }
 
   @Test

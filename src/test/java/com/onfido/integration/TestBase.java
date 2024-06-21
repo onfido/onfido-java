@@ -2,6 +2,7 @@ package com.onfido.integration;
 
 import com.onfido.ApiException;
 import com.onfido.Configuration;
+import com.onfido.FileTransfer;
 import com.onfido.api.DefaultApi;
 import com.onfido.model.Applicant;
 import com.onfido.model.ApplicantBuilder;
@@ -22,6 +23,7 @@ import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.nio.file.Files;
 import java.util.Arrays;
 import java.util.UUID;
 import java.util.stream.Collectors;
@@ -79,6 +81,7 @@ public class TestBase {
   protected Document uploadDocument(Applicant applicant, String filename, String document_type)
       throws IOException, InterruptedException, ApiException {
     File file = new File("media/" + filename);
+    byte[] byteArray = Files.readAllBytes(file.toPath());
 
     LocationBuilder locationBuilder =
         new LocationBuilder().ipAddress("127.0.0.1").countryOfResidence(CountryCodes.GBR);
@@ -86,7 +89,7 @@ public class TestBase {
     return onfido.uploadDocument(
         document_type,
         applicant.getId(),
-        file,
+        new FileTransfer(byteArray, filename),
         null,
         "front",
         CountryCodes.USA,
@@ -95,11 +98,12 @@ public class TestBase {
   }
 
   protected LivePhoto uploadLivePhoto(Applicant applicant, String filename) throws Exception {
-    return onfido.uploadLivePhoto(applicant.getId(), new File("media/" + filename), true);
+    return onfido.uploadLivePhoto(
+        applicant.getId(), new FileTransfer(new File("media/" + filename)), true);
   }
 
   protected IdPhoto uploadIdPhoto(Applicant applicant, String filename) throws Exception {
-    return onfido.uploadIdPhoto(applicant.getId(), new File("media/" + filename));
+    return onfido.uploadIdPhoto(applicant.getId(), new FileTransfer(new File("media/" + filename)));
   }
 
   protected Check createCheck(Applicant applicant, Document document, CheckBuilder checkBuilder)

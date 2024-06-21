@@ -1,9 +1,8 @@
 package com.onfido.integration;
 
 import com.onfido.ApiException;
+import com.onfido.FileTransfer;
 import com.onfido.model.LiveVideo;
-import java.io.File;
-import java.nio.file.Files;
 import java.util.List;
 import java.util.UUID;
 import org.junit.jupiter.api.Assertions;
@@ -16,18 +15,21 @@ public class LiveVideoTest extends TestBase {
 
   @Test
   public void downloadLiveVideoTest() throws Exception {
-    File download = onfido.downloadLiveVideo(sampleLiveVideoId1);
+    FileTransfer download = onfido.downloadLiveVideo(sampleLiveVideoId1);
 
-    Assertions.assertTrue(download.length() > 0);
+    Assertions.assertEquals("video/quicktime", download.getContentType());
+    Assertions.assertEquals("video.mov", download.getFilename());
+    Assertions.assertTrue(download.getByteArray().length > 0);
   }
 
   @Test
   public void downloadLiveVideoFrameTest() throws Exception {
     try {
-      File download = onfido.downloadLiveVideoFrame(sampleLiveVideoId1);
-      byte[] content = Files.readAllBytes(download.toPath());
+      FileTransfer download = onfido.downloadLiveVideoFrame(sampleLiveVideoId1);
 
-      Assertions.assertEquals("JFIF", new String(content, 6, 4));
+      Assertions.assertEquals("image/jpeg", download.getContentType());
+      Assertions.assertTrue(download.getFilename() != null);
+      Assertions.assertEquals("JFIF", new String(download.getByteArray(), 6, 4));
     } catch (ApiException ex) {
       Assertions.assertEquals(422, ex.getCode());
       Assertions.assertEquals(

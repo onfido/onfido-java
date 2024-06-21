@@ -1,9 +1,9 @@
 package com.onfido.integration;
 
 import com.onfido.ApiException;
+import com.onfido.FileTransfer;
 import com.onfido.model.Applicant;
 import com.onfido.model.Document;
-import java.io.File;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -28,9 +28,11 @@ public class DocumentTest extends TestBase {
 
   @Test
   public void downloadDocumentTest() throws Exception {
-    File download = onfido.downloadDocument(document.getId());
+    FileTransfer download = onfido.downloadDocument(document.getId());
 
-    Assertions.assertTrue(download.length() > 0);
+    Assertions.assertEquals("image/png", download.getContentType());
+    Assertions.assertTrue(download.getFilename() != null);
+    Assertions.assertTrue(download.getByteArray().length > 0);
   }
 
   @Test

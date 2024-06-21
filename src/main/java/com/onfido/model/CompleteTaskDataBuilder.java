@@ -225,6 +225,7 @@ public class CompleteTaskDataBuilder extends AbstractOpenApiSchema {
      * @return The actual instance of `List<Object>`
      * @throws ClassCastException if the instance is not `List<Object>`
      */
+    @SuppressWarnings("unchecked")
     public List<Object> getListObject() throws ClassCastException {
         return (List<Object>)super.getActualInstance();
     }
@@ -235,6 +236,7 @@ public class CompleteTaskDataBuilder extends AbstractOpenApiSchema {
      * @return The actual instance of `Object`
      * @throws ClassCastException if the instance is not `Object`
      */
+    @SuppressWarnings("unchecked")
     public Object getObject() throws ClassCastException {
         return (Object)super.getActualInstance();
     }
@@ -302,32 +304,41 @@ public class CompleteTaskDataBuilder extends AbstractOpenApiSchema {
     }
 
 
-  /**
-  * Give access to shared properties. Read-only.
-  * @return ReportShared object with common fields
-  **/
+    /**
+     * Give access to shared properties. Read-only.
+     * @return ReportShared object with common fields
+     **/
 
-  public ReportShared getReportShared() {
-      return reportShared;
-  }
+    public ReportShared getReportShared() {
+        return reportShared;
+    }
 
-  /**
-  * Give access to shared properties. Read-only.
-  * @return id
-  **/
+    /**
+     * Give access to shared properties. Read-only.
+     * @return id
+     **/
 
-  public UUID getId() {
-      return reportShared.getId();
-  }
+    public UUID getId() {
+        return reportShared.getId();
+    }
 
-  /**
-  * Get name
-  * @return name
-  **/
+    /**
+     * Get name
+     * @return name
+     **/
 
-  public ReportName getName() {
-      return reportShared.getName();
-  }
+    public ReportName getName() {
+        return reportShared.getName();
+    }
+
+    /**
+     * Get status
+     * @return status
+     **/
+
+    public ReportStatus getStatus() {
+        return reportShared.getStatus();
+    }
 
 }
 

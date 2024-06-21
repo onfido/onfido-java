@@ -1,9 +1,8 @@
 package com.onfido.integration;
 
 import com.onfido.ApiException;
+import com.onfido.FileTransfer;
 import com.onfido.model.MotionCapture;
-import java.io.File;
-import java.nio.file.Files;
 import java.util.List;
 import java.util.UUID;
 import org.junit.jupiter.api.Assertions;
@@ -16,19 +15,23 @@ public class MotionCaptureTest extends TestBase {
 
   @Test
   public void downloadMotionCaptureTest() throws Exception {
-    File download = onfido.downloadMotionCapture(EXAMPLE_ID_1);
+    FileTransfer download = onfido.downloadMotionCapture(EXAMPLE_ID_1);
 
-    Assertions.assertTrue(download.length() > 0);
+    Assertions.assertEquals("video/mp4", download.getContentType());
+    Assertions.assertTrue(download.getFilename() != null);
+    Assertions.assertTrue(download.getByteArray().length > 0);
   }
 
   @Test
   public void downloadMotionCaptureFrameTest() throws Exception {
     try {
-      File download = onfido.downloadMotionCaptureFrame(EXAMPLE_ID_1);
-      byte[] content = Files.readAllBytes(download.toPath());
+      FileTransfer download = onfido.downloadMotionCaptureFrame(EXAMPLE_ID_1);
+      byte[] byteArray = download.getByteArray();
 
-      Assertions.assertTrue(download.length() > 0);
-      Assertions.assertEquals("JFIF", new String(content, 6, 4));
+      Assertions.assertEquals("image/jpeg", download.getContentType());
+      Assertions.assertTrue(download.getFilename() != null);
+      Assertions.assertTrue(byteArray.length > 0);
+      Assertions.assertEquals("JFIF", new String(byteArray, 6, 4));
     } catch (ApiException ex) {
       Assertions.assertEquals(422, ex.getCode());
       Assertions.assertEquals(

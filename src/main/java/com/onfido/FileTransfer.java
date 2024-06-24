@@ -28,7 +28,7 @@ public class FileTransfer {
   /**
    * Create a new file transfer from a File
    *
-   * @param file File to include in transfer
+   * @param inputFile File to include in transfer
    * @throws ApiException
    */
   public FileTransfer(File inputFile) {

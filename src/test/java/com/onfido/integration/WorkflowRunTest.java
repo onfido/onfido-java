@@ -17,6 +17,7 @@ public class WorkflowRunTest extends TestBase {
   private UUID workflowRunId;
 
   static final UUID WORKFLOW_ID = UUID.fromString("e8c921eb-0495-44fe-b655-bcdcaffdafe5");
+  static final UUID WORKFLOW_ID_TIMELINE = UUID.fromString("221f9d24-cf72-4762-ac4a-01bf3ccc09dd");
 
   @BeforeEach
   public void setup() throws Exception {
@@ -69,8 +70,7 @@ public class WorkflowRunTest extends TestBase {
 
   @Test
   public void generateTimelineFileTest() throws Exception {
-    UUID workflowId = UUID.fromString("221f9d24-cf72-4762-ac4a-01bf3ccc09dd");
-    UUID workflowRunId = createWorkflowRun(workflowId, applicantId).getId();
+    UUID workflowRunId = createWorkflowRun(WORKFLOW_ID_TIMELINE, applicantId).getId();
 
     repeatRequestUntilStatusChanges(
         "findWorkflowRun", new UUID[] {workflowRunId}, WorkflowRun.StatusEnum.APPROVED, 10, 1000);
@@ -82,8 +82,7 @@ public class WorkflowRunTest extends TestBase {
 
   @Test
   public void findTimelineFileTest() throws Exception {
-    UUID workflowId = UUID.fromString("221f9d24-cf72-4762-ac4a-01bf3ccc09dd");
-    UUID workflowRunId = createWorkflowRun(workflowId, applicantId).getId();
+    UUID workflowRunId = createWorkflowRun(WORKFLOW_ID_TIMELINE, applicantId).getId();
 
     repeatRequestUntilStatusChanges(
         "findWorkflowRun", new UUID[] {workflowRunId}, WorkflowRun.StatusEnum.APPROVED, 10, 1000);

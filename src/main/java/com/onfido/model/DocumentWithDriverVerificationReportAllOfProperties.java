@@ -71,6 +71,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
   @SerializedName(SERIALIZED_NAME_DATE_OF_EXPIRY)
   private LocalDate dateOfExpiry;
 
+  public static final String SERIALIZED_NAME_PERSONAL_NUMBER = "personal_number";
+  @SerializedName(SERIALIZED_NAME_PERSONAL_NUMBER)
+  private String personalNumber;
+
   public static final String SERIALIZED_NAME_DOCUMENT_NUMBERS = "document_numbers";
   @SerializedName(SERIALIZED_NAME_DOCUMENT_NUMBERS)
   private List<DocumentPropertiesDocumentNumbersInner> documentNumbers = new ArrayList<>();
@@ -147,9 +151,249 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
   @SerializedName(SERIALIZED_NAME_ISSUING_AUTHORITY)
   private String issuingAuthority;
 
+  public static final String SERIALIZED_NAME_REMARKS = "remarks";
+  @SerializedName(SERIALIZED_NAME_REMARKS)
+  private String remarks;
+
+  public static final String SERIALIZED_NAME_CIVIL_STATE = "civil_state";
+  @SerializedName(SERIALIZED_NAME_CIVIL_STATE)
+  private String civilState;
+
+  public static final String SERIALIZED_NAME_EXPATRIATION = "expatriation";
+  @SerializedName(SERIALIZED_NAME_EXPATRIATION)
+  private String expatriation;
+
+  public static final String SERIALIZED_NAME_FATHER_NAME = "father_name";
+  @SerializedName(SERIALIZED_NAME_FATHER_NAME)
+  private String fatherName;
+
+  public static final String SERIALIZED_NAME_MOTHER_NAME = "mother_name";
+  @SerializedName(SERIALIZED_NAME_MOTHER_NAME)
+  private String motherName;
+
+  public static final String SERIALIZED_NAME_RELIGION = "religion";
+  @SerializedName(SERIALIZED_NAME_RELIGION)
+  private String religion;
+
+  public static final String SERIALIZED_NAME_TYPE_OF_PERMIT = "type_of_permit";
+  @SerializedName(SERIALIZED_NAME_TYPE_OF_PERMIT)
+  private String typeOfPermit;
+
+  public static final String SERIALIZED_NAME_VERSION_NUMBER = "version_number";
+  @SerializedName(SERIALIZED_NAME_VERSION_NUMBER)
+  private String versionNumber;
+
+  public static final String SERIALIZED_NAME_DOCUMENT_SUBTYPE = "document_subtype";
+  @SerializedName(SERIALIZED_NAME_DOCUMENT_SUBTYPE)
+  private String documentSubtype;
+
+  public static final String SERIALIZED_NAME_PROFESSION = "profession";
+  @SerializedName(SERIALIZED_NAME_PROFESSION)
+  private String profession;
+
+  public static final String SERIALIZED_NAME_SECURITY_DOCUMENT_NUMBER = "security_document_number";
+  @SerializedName(SERIALIZED_NAME_SECURITY_DOCUMENT_NUMBER)
+  private String securityDocumentNumber;
+
+  public static final String SERIALIZED_NAME_TAX_NUMBER = "tax_number";
+  @SerializedName(SERIALIZED_NAME_TAX_NUMBER)
+  private String taxNumber;
+
+  /**
+   * Gets or Sets nistIdentityEvidenceStrength
+   */
+  @JsonAdapter(NistIdentityEvidenceStrengthEnum.Adapter.class)
+  public enum NistIdentityEvidenceStrengthEnum {
+    SUPERIOR("superior"),
+    
+    STRONG("strong"),
+    
+    FAIR("fair"),
+    
+    WEAK("weak"),
+    
+    UNACCEPTABLE("unacceptable"),
+    
+    UNSPECIFIED_IDENTITY_EVIDENCE_STRENGTH("unspecified_identity_evidence_strength"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+
+    private String value;
+
+    NistIdentityEvidenceStrengthEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static NistIdentityEvidenceStrengthEnum fromValue(String value) {
+      for (NistIdentityEvidenceStrengthEnum b : NistIdentityEvidenceStrengthEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      return UNKNOWN_DEFAULT_OPEN_API;
+    }
+
+    public static class Adapter extends TypeAdapter<NistIdentityEvidenceStrengthEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final NistIdentityEvidenceStrengthEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public NistIdentityEvidenceStrengthEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return NistIdentityEvidenceStrengthEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      NistIdentityEvidenceStrengthEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_NIST_IDENTITY_EVIDENCE_STRENGTH = "nist_identity_evidence_strength";
+  @SerializedName(SERIALIZED_NAME_NIST_IDENTITY_EVIDENCE_STRENGTH)
+  private NistIdentityEvidenceStrengthEnum nistIdentityEvidenceStrength;
+
+  /**
+   * Gets or Sets hasIssuanceConfirmation
+   */
+  @JsonAdapter(HasIssuanceConfirmationEnum.Adapter.class)
+  public enum HasIssuanceConfirmationEnum {
+    TRUE("true"),
+    
+    FALSE("false"),
+    
+    UNSPECIFIED("unspecified"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+
+    private String value;
+
+    HasIssuanceConfirmationEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static HasIssuanceConfirmationEnum fromValue(String value) {
+      for (HasIssuanceConfirmationEnum b : HasIssuanceConfirmationEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      return UNKNOWN_DEFAULT_OPEN_API;
+    }
+
+    public static class Adapter extends TypeAdapter<HasIssuanceConfirmationEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final HasIssuanceConfirmationEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public HasIssuanceConfirmationEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return HasIssuanceConfirmationEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      HasIssuanceConfirmationEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_HAS_ISSUANCE_CONFIRMATION = "has_issuance_confirmation";
+  @SerializedName(SERIALIZED_NAME_HAS_ISSUANCE_CONFIRMATION)
+  private HasIssuanceConfirmationEnum hasIssuanceConfirmation;
+
   public static final String SERIALIZED_NAME_REAL_ID_COMPLIANCE = "real_id_compliance";
   @SerializedName(SERIALIZED_NAME_REAL_ID_COMPLIANCE)
   private Boolean realIdCompliance;
+
+  /**
+   * Gets or Sets securityTier
+   */
+  @JsonAdapter(SecurityTierEnum.Adapter.class)
+  public enum SecurityTierEnum {
+    TIER_1("tier_1"),
+    
+    TIER_2("tier_2"),
+    
+    TIER_3("tier_3"),
+    
+    TIER_4("tier_4"),
+    
+    TIER_5("tier_5"),
+    
+    UNSPECIFIED_SECURITY_TIER("unspecified_security_tier"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+
+    private String value;
+
+    SecurityTierEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static SecurityTierEnum fromValue(String value) {
+      for (SecurityTierEnum b : SecurityTierEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      return UNKNOWN_DEFAULT_OPEN_API;
+    }
+
+    public static class Adapter extends TypeAdapter<SecurityTierEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final SecurityTierEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public SecurityTierEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return SecurityTierEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      SecurityTierEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_SECURITY_TIER = "security_tier";
+  @SerializedName(SERIALIZED_NAME_SECURITY_TIER)
+  private SecurityTierEnum securityTier;
 
   public static final String SERIALIZED_NAME_ADDRESS_LINES = "address_lines";
   @SerializedName(SERIALIZED_NAME_ADDRESS_LINES)
@@ -237,6 +481,25 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
 
   public void setDateOfExpiry(LocalDate dateOfExpiry) {
     this.dateOfExpiry = dateOfExpiry;
+  }
+
+
+  public DocumentWithDriverVerificationReportAllOfProperties personalNumber(String personalNumber) {
+    this.personalNumber = personalNumber;
+    return this;
+  }
+
+   /**
+   * Get personalNumber
+   * @return personalNumber
+  **/
+  @javax.annotation.Nullable
+  public String getPersonalNumber() {
+    return personalNumber;
+  }
+
+  public void setPersonalNumber(String personalNumber) {
+    this.personalNumber = personalNumber;
   }
 
 
@@ -609,6 +872,272 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
   }
 
 
+  public DocumentWithDriverVerificationReportAllOfProperties remarks(String remarks) {
+    this.remarks = remarks;
+    return this;
+  }
+
+   /**
+   * Get remarks
+   * @return remarks
+  **/
+  @javax.annotation.Nullable
+  public String getRemarks() {
+    return remarks;
+  }
+
+  public void setRemarks(String remarks) {
+    this.remarks = remarks;
+  }
+
+
+  public DocumentWithDriverVerificationReportAllOfProperties civilState(String civilState) {
+    this.civilState = civilState;
+    return this;
+  }
+
+   /**
+   * Get civilState
+   * @return civilState
+  **/
+  @javax.annotation.Nullable
+  public String getCivilState() {
+    return civilState;
+  }
+
+  public void setCivilState(String civilState) {
+    this.civilState = civilState;
+  }
+
+
+  public DocumentWithDriverVerificationReportAllOfProperties expatriation(String expatriation) {
+    this.expatriation = expatriation;
+    return this;
+  }
+
+   /**
+   * Get expatriation
+   * @return expatriation
+  **/
+  @javax.annotation.Nullable
+  public String getExpatriation() {
+    return expatriation;
+  }
+
+  public void setExpatriation(String expatriation) {
+    this.expatriation = expatriation;
+  }
+
+
+  public DocumentWithDriverVerificationReportAllOfProperties fatherName(String fatherName) {
+    this.fatherName = fatherName;
+    return this;
+  }
+
+   /**
+   * Get fatherName
+   * @return fatherName
+  **/
+  @javax.annotation.Nullable
+  public String getFatherName() {
+    return fatherName;
+  }
+
+  public void setFatherName(String fatherName) {
+    this.fatherName = fatherName;
+  }
+
+
+  public DocumentWithDriverVerificationReportAllOfProperties motherName(String motherName) {
+    this.motherName = motherName;
+    return this;
+  }
+
+   /**
+   * Get motherName
+   * @return motherName
+  **/
+  @javax.annotation.Nullable
+  public String getMotherName() {
+    return motherName;
+  }
+
+  public void setMotherName(String motherName) {
+    this.motherName = motherName;
+  }
+
+
+  public DocumentWithDriverVerificationReportAllOfProperties religion(String religion) {
+    this.religion = religion;
+    return this;
+  }
+
+   /**
+   * Get religion
+   * @return religion
+  **/
+  @javax.annotation.Nullable
+  public String getReligion() {
+    return religion;
+  }
+
+  public void setReligion(String religion) {
+    this.religion = religion;
+  }
+
+
+  public DocumentWithDriverVerificationReportAllOfProperties typeOfPermit(String typeOfPermit) {
+    this.typeOfPermit = typeOfPermit;
+    return this;
+  }
+
+   /**
+   * Get typeOfPermit
+   * @return typeOfPermit
+  **/
+  @javax.annotation.Nullable
+  public String getTypeOfPermit() {
+    return typeOfPermit;
+  }
+
+  public void setTypeOfPermit(String typeOfPermit) {
+    this.typeOfPermit = typeOfPermit;
+  }
+
+
+  public DocumentWithDriverVerificationReportAllOfProperties versionNumber(String versionNumber) {
+    this.versionNumber = versionNumber;
+    return this;
+  }
+
+   /**
+   * Get versionNumber
+   * @return versionNumber
+  **/
+  @javax.annotation.Nullable
+  public String getVersionNumber() {
+    return versionNumber;
+  }
+
+  public void setVersionNumber(String versionNumber) {
+    this.versionNumber = versionNumber;
+  }
+
+
+  public DocumentWithDriverVerificationReportAllOfProperties documentSubtype(String documentSubtype) {
+    this.documentSubtype = documentSubtype;
+    return this;
+  }
+
+   /**
+   * Get documentSubtype
+   * @return documentSubtype
+  **/
+  @javax.annotation.Nullable
+  public String getDocumentSubtype() {
+    return documentSubtype;
+  }
+
+  public void setDocumentSubtype(String documentSubtype) {
+    this.documentSubtype = documentSubtype;
+  }
+
+
+  public DocumentWithDriverVerificationReportAllOfProperties profession(String profession) {
+    this.profession = profession;
+    return this;
+  }
+
+   /**
+   * Get profession
+   * @return profession
+  **/
+  @javax.annotation.Nullable
+  public String getProfession() {
+    return profession;
+  }
+
+  public void setProfession(String profession) {
+    this.profession = profession;
+  }
+
+
+  public DocumentWithDriverVerificationReportAllOfProperties securityDocumentNumber(String securityDocumentNumber) {
+    this.securityDocumentNumber = securityDocumentNumber;
+    return this;
+  }
+
+   /**
+   * Get securityDocumentNumber
+   * @return securityDocumentNumber
+  **/
+  @javax.annotation.Nullable
+  public String getSecurityDocumentNumber() {
+    return securityDocumentNumber;
+  }
+
+  public void setSecurityDocumentNumber(String securityDocumentNumber) {
+    this.securityDocumentNumber = securityDocumentNumber;
+  }
+
+
+  public DocumentWithDriverVerificationReportAllOfProperties taxNumber(String taxNumber) {
+    this.taxNumber = taxNumber;
+    return this;
+  }
+
+   /**
+   * Get taxNumber
+   * @return taxNumber
+  **/
+  @javax.annotation.Nullable
+  public String getTaxNumber() {
+    return taxNumber;
+  }
+
+  public void setTaxNumber(String taxNumber) {
+    this.taxNumber = taxNumber;
+  }
+
+
+  public DocumentWithDriverVerificationReportAllOfProperties nistIdentityEvidenceStrength(NistIdentityEvidenceStrengthEnum nistIdentityEvidenceStrength) {
+    this.nistIdentityEvidenceStrength = nistIdentityEvidenceStrength;
+    return this;
+  }
+
+   /**
+   * Get nistIdentityEvidenceStrength
+   * @return nistIdentityEvidenceStrength
+  **/
+  @javax.annotation.Nullable
+  public NistIdentityEvidenceStrengthEnum getNistIdentityEvidenceStrength() {
+    return nistIdentityEvidenceStrength;
+  }
+
+  public void setNistIdentityEvidenceStrength(NistIdentityEvidenceStrengthEnum nistIdentityEvidenceStrength) {
+    this.nistIdentityEvidenceStrength = nistIdentityEvidenceStrength;
+  }
+
+
+  public DocumentWithDriverVerificationReportAllOfProperties hasIssuanceConfirmation(HasIssuanceConfirmationEnum hasIssuanceConfirmation) {
+    this.hasIssuanceConfirmation = hasIssuanceConfirmation;
+    return this;
+  }
+
+   /**
+   * Get hasIssuanceConfirmation
+   * @return hasIssuanceConfirmation
+  **/
+  @javax.annotation.Nullable
+  public HasIssuanceConfirmationEnum getHasIssuanceConfirmation() {
+    return hasIssuanceConfirmation;
+  }
+
+  public void setHasIssuanceConfirmation(HasIssuanceConfirmationEnum hasIssuanceConfirmation) {
+    this.hasIssuanceConfirmation = hasIssuanceConfirmation;
+  }
+
+
   public DocumentWithDriverVerificationReportAllOfProperties realIdCompliance(Boolean realIdCompliance) {
     this.realIdCompliance = realIdCompliance;
     return this;
@@ -625,6 +1154,25 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
 
   public void setRealIdCompliance(Boolean realIdCompliance) {
     this.realIdCompliance = realIdCompliance;
+  }
+
+
+  public DocumentWithDriverVerificationReportAllOfProperties securityTier(SecurityTierEnum securityTier) {
+    this.securityTier = securityTier;
+    return this;
+  }
+
+   /**
+   * Get securityTier
+   * @return securityTier
+  **/
+  @javax.annotation.Nullable
+  public SecurityTierEnum getSecurityTier() {
+    return securityTier;
+  }
+
+  public void setSecurityTier(SecurityTierEnum securityTier) {
+    this.securityTier = securityTier;
   }
 
 
@@ -928,6 +1476,7 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     DocumentWithDriverVerificationReportAllOfProperties documentWithDriverVerificationReportAllOfProperties = (DocumentWithDriverVerificationReportAllOfProperties) o;
     return Objects.equals(this.dateOfBirth, documentWithDriverVerificationReportAllOfProperties.dateOfBirth) &&
         Objects.equals(this.dateOfExpiry, documentWithDriverVerificationReportAllOfProperties.dateOfExpiry) &&
+        Objects.equals(this.personalNumber, documentWithDriverVerificationReportAllOfProperties.personalNumber) &&
         Objects.equals(this.documentNumbers, documentWithDriverVerificationReportAllOfProperties.documentNumbers) &&
         Objects.equals(this.documentType, documentWithDriverVerificationReportAllOfProperties.documentType) &&
         Objects.equals(this.firstName, documentWithDriverVerificationReportAllOfProperties.firstName) &&
@@ -947,7 +1496,22 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
         Objects.equals(this.widowName, documentWithDriverVerificationReportAllOfProperties.widowName) &&
         Objects.equals(this.aliasName, documentWithDriverVerificationReportAllOfProperties.aliasName) &&
         Objects.equals(this.issuingAuthority, documentWithDriverVerificationReportAllOfProperties.issuingAuthority) &&
+        Objects.equals(this.remarks, documentWithDriverVerificationReportAllOfProperties.remarks) &&
+        Objects.equals(this.civilState, documentWithDriverVerificationReportAllOfProperties.civilState) &&
+        Objects.equals(this.expatriation, documentWithDriverVerificationReportAllOfProperties.expatriation) &&
+        Objects.equals(this.fatherName, documentWithDriverVerificationReportAllOfProperties.fatherName) &&
+        Objects.equals(this.motherName, documentWithDriverVerificationReportAllOfProperties.motherName) &&
+        Objects.equals(this.religion, documentWithDriverVerificationReportAllOfProperties.religion) &&
+        Objects.equals(this.typeOfPermit, documentWithDriverVerificationReportAllOfProperties.typeOfPermit) &&
+        Objects.equals(this.versionNumber, documentWithDriverVerificationReportAllOfProperties.versionNumber) &&
+        Objects.equals(this.documentSubtype, documentWithDriverVerificationReportAllOfProperties.documentSubtype) &&
+        Objects.equals(this.profession, documentWithDriverVerificationReportAllOfProperties.profession) &&
+        Objects.equals(this.securityDocumentNumber, documentWithDriverVerificationReportAllOfProperties.securityDocumentNumber) &&
+        Objects.equals(this.taxNumber, documentWithDriverVerificationReportAllOfProperties.taxNumber) &&
+        Objects.equals(this.nistIdentityEvidenceStrength, documentWithDriverVerificationReportAllOfProperties.nistIdentityEvidenceStrength) &&
+        Objects.equals(this.hasIssuanceConfirmation, documentWithDriverVerificationReportAllOfProperties.hasIssuanceConfirmation) &&
         Objects.equals(this.realIdCompliance, documentWithDriverVerificationReportAllOfProperties.realIdCompliance) &&
+        Objects.equals(this.securityTier, documentWithDriverVerificationReportAllOfProperties.securityTier) &&
         Objects.equals(this.addressLines, documentWithDriverVerificationReportAllOfProperties.addressLines) &&
         Objects.equals(this.barcode, documentWithDriverVerificationReportAllOfProperties.barcode) &&
         Objects.equals(this.nfc, documentWithDriverVerificationReportAllOfProperties.nfc) &&
@@ -965,7 +1529,7 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
 
   @Override
   public int hashCode() {
-    return Objects.hash(dateOfBirth, dateOfExpiry, documentNumbers, documentType, firstName, gender, issuingCountry, lastName, nationality, issuingState, issuingDate, categorisation, mrzLine1, mrzLine2, mrzLine3, address, placeOfBirth, spouseName, widowName, aliasName, issuingAuthority, realIdCompliance, addressLines, barcode, nfc, drivingLicenceInformation, documentClassification, extractedData, driversLicence, restrictedLicence, rawLicenceCategory, rawVehicleClasses, vehicleClassDetails, passengerVehicle, additionalProperties);
+    return Objects.hash(dateOfBirth, dateOfExpiry, personalNumber, documentNumbers, documentType, firstName, gender, issuingCountry, lastName, nationality, issuingState, issuingDate, categorisation, mrzLine1, mrzLine2, mrzLine3, address, placeOfBirth, spouseName, widowName, aliasName, issuingAuthority, remarks, civilState, expatriation, fatherName, motherName, religion, typeOfPermit, versionNumber, documentSubtype, profession, securityDocumentNumber, taxNumber, nistIdentityEvidenceStrength, hasIssuanceConfirmation, realIdCompliance, securityTier, addressLines, barcode, nfc, drivingLicenceInformation, documentClassification, extractedData, driversLicence, restrictedLicence, rawLicenceCategory, rawVehicleClasses, vehicleClassDetails, passengerVehicle, additionalProperties);
   }
 
   @Override
@@ -974,6 +1538,7 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     sb.append("class DocumentWithDriverVerificationReportAllOfProperties {\n");
     sb.append("    dateOfBirth: ").append(toIndentedString(dateOfBirth)).append("\n");
     sb.append("    dateOfExpiry: ").append(toIndentedString(dateOfExpiry)).append("\n");
+    sb.append("    personalNumber: ").append(toIndentedString(personalNumber)).append("\n");
     sb.append("    documentNumbers: ").append(toIndentedString(documentNumbers)).append("\n");
     sb.append("    documentType: ").append(toIndentedString(documentType)).append("\n");
     sb.append("    firstName: ").append(toIndentedString(firstName)).append("\n");
@@ -993,7 +1558,22 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     sb.append("    widowName: ").append(toIndentedString(widowName)).append("\n");
     sb.append("    aliasName: ").append(toIndentedString(aliasName)).append("\n");
     sb.append("    issuingAuthority: ").append(toIndentedString(issuingAuthority)).append("\n");
+    sb.append("    remarks: ").append(toIndentedString(remarks)).append("\n");
+    sb.append("    civilState: ").append(toIndentedString(civilState)).append("\n");
+    sb.append("    expatriation: ").append(toIndentedString(expatriation)).append("\n");
+    sb.append("    fatherName: ").append(toIndentedString(fatherName)).append("\n");
+    sb.append("    motherName: ").append(toIndentedString(motherName)).append("\n");
+    sb.append("    religion: ").append(toIndentedString(religion)).append("\n");
+    sb.append("    typeOfPermit: ").append(toIndentedString(typeOfPermit)).append("\n");
+    sb.append("    versionNumber: ").append(toIndentedString(versionNumber)).append("\n");
+    sb.append("    documentSubtype: ").append(toIndentedString(documentSubtype)).append("\n");
+    sb.append("    profession: ").append(toIndentedString(profession)).append("\n");
+    sb.append("    securityDocumentNumber: ").append(toIndentedString(securityDocumentNumber)).append("\n");
+    sb.append("    taxNumber: ").append(toIndentedString(taxNumber)).append("\n");
+    sb.append("    nistIdentityEvidenceStrength: ").append(toIndentedString(nistIdentityEvidenceStrength)).append("\n");
+    sb.append("    hasIssuanceConfirmation: ").append(toIndentedString(hasIssuanceConfirmation)).append("\n");
     sb.append("    realIdCompliance: ").append(toIndentedString(realIdCompliance)).append("\n");
+    sb.append("    securityTier: ").append(toIndentedString(securityTier)).append("\n");
     sb.append("    addressLines: ").append(toIndentedString(addressLines)).append("\n");
     sb.append("    barcode: ").append(toIndentedString(barcode)).append("\n");
     sb.append("    nfc: ").append(toIndentedString(nfc)).append("\n");
@@ -1031,6 +1611,7 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     openapiFields = new HashSet<String>();
     openapiFields.add("date_of_birth");
     openapiFields.add("date_of_expiry");
+    openapiFields.add("personal_number");
     openapiFields.add("document_numbers");
     openapiFields.add("document_type");
     openapiFields.add("first_name");
@@ -1050,7 +1631,22 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     openapiFields.add("widow_name");
     openapiFields.add("alias_name");
     openapiFields.add("issuing_authority");
+    openapiFields.add("remarks");
+    openapiFields.add("civil_state");
+    openapiFields.add("expatriation");
+    openapiFields.add("father_name");
+    openapiFields.add("mother_name");
+    openapiFields.add("religion");
+    openapiFields.add("type_of_permit");
+    openapiFields.add("version_number");
+    openapiFields.add("document_subtype");
+    openapiFields.add("profession");
+    openapiFields.add("security_document_number");
+    openapiFields.add("tax_number");
+    openapiFields.add("nist_identity_evidence_strength");
+    openapiFields.add("has_issuance_confirmation");
     openapiFields.add("real_id_compliance");
+    openapiFields.add("security_tier");
     openapiFields.add("address_lines");
     openapiFields.add("barcode");
     openapiFields.add("nfc");
@@ -1081,6 +1677,9 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("personal_number") != null && !jsonObj.get("personal_number").isJsonNull()) && !jsonObj.get("personal_number").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `personal_number` to be a primitive type in the JSON string but got `%s`", jsonObj.get("personal_number").toString()));
+      }
       if (jsonObj.get("document_numbers") != null && !jsonObj.get("document_numbers").isJsonNull()) {
         JsonArray jsonArraydocumentNumbers = jsonObj.getAsJsonArray("document_numbers");
         if (jsonArraydocumentNumbers != null) {
@@ -1145,6 +1744,63 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
       }
       if ((jsonObj.get("issuing_authority") != null && !jsonObj.get("issuing_authority").isJsonNull()) && !jsonObj.get("issuing_authority").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `issuing_authority` to be a primitive type in the JSON string but got `%s`", jsonObj.get("issuing_authority").toString()));
+      }
+      if ((jsonObj.get("remarks") != null && !jsonObj.get("remarks").isJsonNull()) && !jsonObj.get("remarks").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `remarks` to be a primitive type in the JSON string but got `%s`", jsonObj.get("remarks").toString()));
+      }
+      if ((jsonObj.get("civil_state") != null && !jsonObj.get("civil_state").isJsonNull()) && !jsonObj.get("civil_state").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `civil_state` to be a primitive type in the JSON string but got `%s`", jsonObj.get("civil_state").toString()));
+      }
+      if ((jsonObj.get("expatriation") != null && !jsonObj.get("expatriation").isJsonNull()) && !jsonObj.get("expatriation").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `expatriation` to be a primitive type in the JSON string but got `%s`", jsonObj.get("expatriation").toString()));
+      }
+      if ((jsonObj.get("father_name") != null && !jsonObj.get("father_name").isJsonNull()) && !jsonObj.get("father_name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `father_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("father_name").toString()));
+      }
+      if ((jsonObj.get("mother_name") != null && !jsonObj.get("mother_name").isJsonNull()) && !jsonObj.get("mother_name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `mother_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("mother_name").toString()));
+      }
+      if ((jsonObj.get("religion") != null && !jsonObj.get("religion").isJsonNull()) && !jsonObj.get("religion").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `religion` to be a primitive type in the JSON string but got `%s`", jsonObj.get("religion").toString()));
+      }
+      if ((jsonObj.get("type_of_permit") != null && !jsonObj.get("type_of_permit").isJsonNull()) && !jsonObj.get("type_of_permit").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `type_of_permit` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type_of_permit").toString()));
+      }
+      if ((jsonObj.get("version_number") != null && !jsonObj.get("version_number").isJsonNull()) && !jsonObj.get("version_number").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `version_number` to be a primitive type in the JSON string but got `%s`", jsonObj.get("version_number").toString()));
+      }
+      if ((jsonObj.get("document_subtype") != null && !jsonObj.get("document_subtype").isJsonNull()) && !jsonObj.get("document_subtype").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `document_subtype` to be a primitive type in the JSON string but got `%s`", jsonObj.get("document_subtype").toString()));
+      }
+      if ((jsonObj.get("profession") != null && !jsonObj.get("profession").isJsonNull()) && !jsonObj.get("profession").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `profession` to be a primitive type in the JSON string but got `%s`", jsonObj.get("profession").toString()));
+      }
+      if ((jsonObj.get("security_document_number") != null && !jsonObj.get("security_document_number").isJsonNull()) && !jsonObj.get("security_document_number").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `security_document_number` to be a primitive type in the JSON string but got `%s`", jsonObj.get("security_document_number").toString()));
+      }
+      if ((jsonObj.get("tax_number") != null && !jsonObj.get("tax_number").isJsonNull()) && !jsonObj.get("tax_number").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `tax_number` to be a primitive type in the JSON string but got `%s`", jsonObj.get("tax_number").toString()));
+      }
+      if ((jsonObj.get("nist_identity_evidence_strength") != null && !jsonObj.get("nist_identity_evidence_strength").isJsonNull()) && !jsonObj.get("nist_identity_evidence_strength").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `nist_identity_evidence_strength` to be a primitive type in the JSON string but got `%s`", jsonObj.get("nist_identity_evidence_strength").toString()));
+      }
+      // validate the optional field `nist_identity_evidence_strength`
+      if (jsonObj.get("nist_identity_evidence_strength") != null && !jsonObj.get("nist_identity_evidence_strength").isJsonNull()) {
+        NistIdentityEvidenceStrengthEnum.validateJsonElement(jsonObj.get("nist_identity_evidence_strength"));
+      }
+      if ((jsonObj.get("has_issuance_confirmation") != null && !jsonObj.get("has_issuance_confirmation").isJsonNull()) && !jsonObj.get("has_issuance_confirmation").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `has_issuance_confirmation` to be a primitive type in the JSON string but got `%s`", jsonObj.get("has_issuance_confirmation").toString()));
+      }
+      // validate the optional field `has_issuance_confirmation`
+      if (jsonObj.get("has_issuance_confirmation") != null && !jsonObj.get("has_issuance_confirmation").isJsonNull()) {
+        HasIssuanceConfirmationEnum.validateJsonElement(jsonObj.get("has_issuance_confirmation"));
+      }
+      if ((jsonObj.get("security_tier") != null && !jsonObj.get("security_tier").isJsonNull()) && !jsonObj.get("security_tier").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `security_tier` to be a primitive type in the JSON string but got `%s`", jsonObj.get("security_tier").toString()));
+      }
+      // validate the optional field `security_tier`
+      if (jsonObj.get("security_tier") != null && !jsonObj.get("security_tier").isJsonNull()) {
+        SecurityTierEnum.validateJsonElement(jsonObj.get("security_tier"));
       }
       // validate the optional field `address_lines`
       if (jsonObj.get("address_lines") != null && !jsonObj.get("address_lines").isJsonNull()) {

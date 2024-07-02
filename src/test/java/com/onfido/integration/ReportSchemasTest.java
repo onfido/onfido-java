@@ -55,6 +55,7 @@ public class ReportSchemasTest extends TestBase {
     Assertions.assertEquals(check.getId(), documentReport.getReportShared().getCheckId());
     Assertions.assertNotNull(documentReport.getDocumentReport().getBreakdown());
     Assertions.assertNotNull(documentReport.getDocumentReport().getProperties());
+    Assertions.assertNull(documentReport.getDocumentReport().getProperties().getDocumentSubtype());
   }
 
   @Test

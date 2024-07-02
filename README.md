@@ -8,6 +8,8 @@ This library is only for use on the backend, as it uses Onfido API tokens which 
 
 This version uses Onfido API v3.6. Refer to our [API versioning guide](https://developers.onfido.com/guide/api-versioning-policy#client-libraries) for details of which client library versions use which versions of the API.
 
+![Build Status](https://github.com/onfido/onfido-java/actions/workflows/maven.yml/badge.svg)
+
 ## Installation & Usage
 
 ### Requirements
@@ -41,7 +43,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.onfido</groupId>
   <artifactId>onfido-api-java</artifactId>
-  <version>3.2.0</version>
+  <version>3.3.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -57,7 +59,7 @@ Add this dependency to your project's build file:
   }
 
   dependencies {
-     implementation "com.onfido:onfido-api-java:3.2.0"
+     implementation "com.onfido:onfido-api-java:3.3.0"
   }
 ```
 
@@ -71,10 +73,10 @@ mvn clean package
 
 Then manually install the following JARs:
 
-- `target/onfido-api-java-3.2.0.jar`
+- `target/onfido-api-java-3.3.0.jar`
 - `target/lib/*.jar`
 
-The latest version can be found at: https://search.maven.org/artifact/com.onfido/3.2.0
+The latest version can be found at: https://search.maven.org/artifact/com.onfido/3.3.0
 
 ## Getting Started
 

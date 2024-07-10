@@ -22,7 +22,6 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.Arrays;
-import java.util.UUID;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -55,7 +54,7 @@ import com.onfido.JSON;
 public class WebhookEventPayloadObject {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
-  private UUID id;
+  private String id;
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
@@ -72,7 +71,7 @@ public class WebhookEventPayloadObject {
   public WebhookEventPayloadObject() {
   }
 
-  public WebhookEventPayloadObject id(UUID id) {
+  public WebhookEventPayloadObject id(String id) {
     this.id = id;
     return this;
   }
@@ -82,11 +81,11 @@ public class WebhookEventPayloadObject {
    * @return id
   **/
   @javax.annotation.Nonnull
-  public UUID getId() {
+  public String getId() {
     return id;
   }
 
-  public void setId(UUID id) {
+  public void setId(String id) {
     this.id = id;
   }
 

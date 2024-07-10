@@ -85,6 +85,14 @@ public class DocumentProperties {
   @SerializedName(SERIALIZED_NAME_FIRST_NAME)
   private String firstName;
 
+  public static final String SERIALIZED_NAME_MIDDLE_NAME = "middle_name";
+  @SerializedName(SERIALIZED_NAME_MIDDLE_NAME)
+  private String middleName;
+
+  public static final String SERIALIZED_NAME_LAST_NAME = "last_name";
+  @SerializedName(SERIALIZED_NAME_LAST_NAME)
+  private String lastName;
+
   public static final String SERIALIZED_NAME_GENDER = "gender";
   @SerializedName(SERIALIZED_NAME_GENDER)
   private String gender;
@@ -92,10 +100,6 @@ public class DocumentProperties {
   public static final String SERIALIZED_NAME_ISSUING_COUNTRY = "issuing_country";
   @SerializedName(SERIALIZED_NAME_ISSUING_COUNTRY)
   private String issuingCountry;
-
-  public static final String SERIALIZED_NAME_LAST_NAME = "last_name";
-  @SerializedName(SERIALIZED_NAME_LAST_NAME)
-  private String lastName;
 
   public static final String SERIALIZED_NAME_NATIONALITY = "nationality";
   @SerializedName(SERIALIZED_NAME_NATIONALITY)
@@ -542,6 +546,44 @@ public class DocumentProperties {
   }
 
 
+  public DocumentProperties middleName(String middleName) {
+    this.middleName = middleName;
+    return this;
+  }
+
+   /**
+   * Get middleName
+   * @return middleName
+  **/
+  @javax.annotation.Nullable
+  public String getMiddleName() {
+    return middleName;
+  }
+
+  public void setMiddleName(String middleName) {
+    this.middleName = middleName;
+  }
+
+
+  public DocumentProperties lastName(String lastName) {
+    this.lastName = lastName;
+    return this;
+  }
+
+   /**
+   * Get lastName
+   * @return lastName
+  **/
+  @javax.annotation.Nullable
+  public String getLastName() {
+    return lastName;
+  }
+
+  public void setLastName(String lastName) {
+    this.lastName = lastName;
+  }
+
+
   public DocumentProperties gender(String gender) {
     this.gender = gender;
     return this;
@@ -577,25 +619,6 @@ public class DocumentProperties {
 
   public void setIssuingCountry(String issuingCountry) {
     this.issuingCountry = issuingCountry;
-  }
-
-
-  public DocumentProperties lastName(String lastName) {
-    this.lastName = lastName;
-    return this;
-  }
-
-   /**
-   * Get lastName
-   * @return lastName
-  **/
-  @javax.annotation.Nullable
-  public String getLastName() {
-    return lastName;
-  }
-
-  public void setLastName(String lastName) {
-    this.lastName = lastName;
   }
 
 
@@ -1332,9 +1355,10 @@ public class DocumentProperties {
         Objects.equals(this.documentNumbers, documentProperties.documentNumbers) &&
         Objects.equals(this.documentType, documentProperties.documentType) &&
         Objects.equals(this.firstName, documentProperties.firstName) &&
+        Objects.equals(this.middleName, documentProperties.middleName) &&
+        Objects.equals(this.lastName, documentProperties.lastName) &&
         Objects.equals(this.gender, documentProperties.gender) &&
         Objects.equals(this.issuingCountry, documentProperties.issuingCountry) &&
-        Objects.equals(this.lastName, documentProperties.lastName) &&
         Objects.equals(this.nationality, documentProperties.nationality) &&
         Objects.equals(this.issuingState, documentProperties.issuingState) &&
         Objects.equals(this.issuingDate, documentProperties.issuingDate) &&
@@ -1375,7 +1399,7 @@ public class DocumentProperties {
 
   @Override
   public int hashCode() {
-    return Objects.hash(dateOfBirth, dateOfExpiry, personalNumber, documentNumbers, documentType, firstName, gender, issuingCountry, lastName, nationality, issuingState, issuingDate, categorisation, mrzLine1, mrzLine2, mrzLine3, address, placeOfBirth, spouseName, widowName, aliasName, issuingAuthority, remarks, civilState, expatriation, fatherName, motherName, religion, typeOfPermit, versionNumber, documentSubtype, profession, securityDocumentNumber, taxNumber, nistIdentityEvidenceStrength, hasIssuanceConfirmation, realIdCompliance, securityTier, addressLines, barcode, nfc, drivingLicenceInformation, documentClassification, extractedData, additionalProperties);
+    return Objects.hash(dateOfBirth, dateOfExpiry, personalNumber, documentNumbers, documentType, firstName, middleName, lastName, gender, issuingCountry, nationality, issuingState, issuingDate, categorisation, mrzLine1, mrzLine2, mrzLine3, address, placeOfBirth, spouseName, widowName, aliasName, issuingAuthority, remarks, civilState, expatriation, fatherName, motherName, religion, typeOfPermit, versionNumber, documentSubtype, profession, securityDocumentNumber, taxNumber, nistIdentityEvidenceStrength, hasIssuanceConfirmation, realIdCompliance, securityTier, addressLines, barcode, nfc, drivingLicenceInformation, documentClassification, extractedData, additionalProperties);
   }
 
   @Override
@@ -1388,9 +1412,10 @@ public class DocumentProperties {
     sb.append("    documentNumbers: ").append(toIndentedString(documentNumbers)).append("\n");
     sb.append("    documentType: ").append(toIndentedString(documentType)).append("\n");
     sb.append("    firstName: ").append(toIndentedString(firstName)).append("\n");
+    sb.append("    middleName: ").append(toIndentedString(middleName)).append("\n");
+    sb.append("    lastName: ").append(toIndentedString(lastName)).append("\n");
     sb.append("    gender: ").append(toIndentedString(gender)).append("\n");
     sb.append("    issuingCountry: ").append(toIndentedString(issuingCountry)).append("\n");
-    sb.append("    lastName: ").append(toIndentedString(lastName)).append("\n");
     sb.append("    nationality: ").append(toIndentedString(nationality)).append("\n");
     sb.append("    issuingState: ").append(toIndentedString(issuingState)).append("\n");
     sb.append("    issuingDate: ").append(toIndentedString(issuingDate)).append("\n");
@@ -1455,9 +1480,10 @@ public class DocumentProperties {
     openapiFields.add("document_numbers");
     openapiFields.add("document_type");
     openapiFields.add("first_name");
+    openapiFields.add("middle_name");
+    openapiFields.add("last_name");
     openapiFields.add("gender");
     openapiFields.add("issuing_country");
-    openapiFields.add("last_name");
     openapiFields.add("nationality");
     openapiFields.add("issuing_state");
     openapiFields.add("issuing_date");
@@ -1534,14 +1560,17 @@ public class DocumentProperties {
       if ((jsonObj.get("first_name") != null && !jsonObj.get("first_name").isJsonNull()) && !jsonObj.get("first_name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `first_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("first_name").toString()));
       }
+      if ((jsonObj.get("middle_name") != null && !jsonObj.get("middle_name").isJsonNull()) && !jsonObj.get("middle_name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `middle_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("middle_name").toString()));
+      }
+      if ((jsonObj.get("last_name") != null && !jsonObj.get("last_name").isJsonNull()) && !jsonObj.get("last_name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `last_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("last_name").toString()));
+      }
       if ((jsonObj.get("gender") != null && !jsonObj.get("gender").isJsonNull()) && !jsonObj.get("gender").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `gender` to be a primitive type in the JSON string but got `%s`", jsonObj.get("gender").toString()));
       }
       if ((jsonObj.get("issuing_country") != null && !jsonObj.get("issuing_country").isJsonNull()) && !jsonObj.get("issuing_country").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `issuing_country` to be a primitive type in the JSON string but got `%s`", jsonObj.get("issuing_country").toString()));
-      }
-      if ((jsonObj.get("last_name") != null && !jsonObj.get("last_name").isJsonNull()) && !jsonObj.get("last_name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `last_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("last_name").toString()));
       }
       if ((jsonObj.get("nationality") != null && !jsonObj.get("nationality").isJsonNull()) && !jsonObj.get("nationality").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `nationality` to be a primitive type in the JSON string but got `%s`", jsonObj.get("nationality").toString()));

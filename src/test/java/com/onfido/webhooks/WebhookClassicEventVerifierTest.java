@@ -8,13 +8,15 @@ import com.onfido.model.WebhookEventPayload;
 import com.onfido.model.WebhookEventPayloadObject;
 import com.onfido.model.WebhookEventType;
 import java.time.OffsetDateTime;
-import java.util.UUID;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class WebhookEventVerifierTest extends TestBase {
+public class WebhookClassicEventVerifierTest extends TestBase {
   private static final String rawEvent =
-      "{\"payload\":{\"resource_type\":\"check\",\"action\":\"check.completed\",\"object\":{\"id\":\"f2302f45-227d-413d-ad61-09ec077a086a\",\"status\":\"complete\",\"completed_at_iso8601\":\"2024-04-04T09:21:21Z\",\"href\":\"https://api.onfido.com/v3.6/checks/f2302f45-227d-413d-ad61-09ec077a086a\"}}}";
+      "{\"payload\":{\"resource_type\":\"check\",\"action\":\"check.completed\",\"object\":{\"id\":\"f2302f45-227d-413d-ad61-09ec077a086a\""
+          + ",\"status\":\"complete\",\"completed_at_iso8601\":\"2024-04-04T09:21:21Z\""
+          + ",\"href\":\"https://api.onfido.com/v3.6/checks/f2302f45-227d-413d-ad61-09ec077a086a\"}}}";
+
   private static final String webhookToken = "wU99mE6jJ7nXOLFwZ0tJymM1lpI15pZh";
 
   private WebhookEventVerifier webhookEventVerifier = new WebhookEventVerifier(webhookToken);
@@ -27,7 +29,7 @@ public class WebhookEventVerifierTest extends TestBase {
                   .resourceType("check")
                   ._object(
                       new WebhookEventPayloadObject()
-                          .id(UUID.fromString("f2302f45-227d-413d-ad61-09ec077a086a"))
+                          .id(String.valueOf("f2302f45-227d-413d-ad61-09ec077a086a"))
                           .href(
                               "https://api.onfido.com/v3.6/checks/f2302f45-227d-413d-ad61-09ec077a086a")
                           .status("complete")

@@ -4,6 +4,7 @@ import com.onfido.ApiException;
 import com.onfido.FileTransfer;
 import com.onfido.model.Applicant;
 import com.onfido.model.Document;
+import com.onfido.model.Document.FileTypeEnum;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -54,15 +55,17 @@ public class DocumentTest extends TestBase {
 
   @Test
   public void listDocumentsTest() throws Exception {
-    uploadDocument(applicant, "another_sample_driving_licence.png", "driving_licence");
+    uploadDocument(applicant, "another_sample_driving_licence.jpeg", "driving_licence");
 
     List<Document> documents =
         onfido.listDocuments(applicant.getId()).getDocuments().stream()
             .sorted(Comparator.comparing(Document::getFileName))
             .collect(Collectors.toList());
 
-    Assertions.assertEquals("another_sample_driving_licence.png", documents.get(0).getFileName());
+    Assertions.assertEquals("another_sample_driving_licence.jpeg", documents.get(0).getFileName());
+    Assertions.assertEquals(FileTypeEnum.JPEG, documents.get(0).getFileType());
     Assertions.assertEquals("sample_driving_licence.png", documents.get(1).getFileName());
+    Assertions.assertEquals(FileTypeEnum.PNG, documents.get(1).getFileType());
   }
 
   @Test

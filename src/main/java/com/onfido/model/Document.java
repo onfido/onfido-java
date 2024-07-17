@@ -61,6 +61,8 @@ public class Document {
   public enum FileTypeEnum {
     JPG("jpg"),
     
+    JPEG("jpeg"),
+    
     PNG("png"),
     
     PDF("pdf"),

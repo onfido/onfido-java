@@ -22,7 +22,6 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.Arrays;
-import java.util.UUID;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -55,11 +54,15 @@ import com.onfido.JSON;
 public class WebhookEventPayloadObject {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
-  private UUID id;
+  private String id;
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
   private String status;
+
+  public static final String SERIALIZED_NAME_STARTED_AT_ISO8601 = "started_at_iso8601";
+  @SerializedName(SERIALIZED_NAME_STARTED_AT_ISO8601)
+  private OffsetDateTime startedAtIso8601;
 
   public static final String SERIALIZED_NAME_COMPLETED_AT_ISO8601 = "completed_at_iso8601";
   @SerializedName(SERIALIZED_NAME_COMPLETED_AT_ISO8601)
@@ -72,7 +75,7 @@ public class WebhookEventPayloadObject {
   public WebhookEventPayloadObject() {
   }
 
-  public WebhookEventPayloadObject id(UUID id) {
+  public WebhookEventPayloadObject id(String id) {
     this.id = id;
     return this;
   }
@@ -82,11 +85,11 @@ public class WebhookEventPayloadObject {
    * @return id
   **/
   @javax.annotation.Nonnull
-  public UUID getId() {
+  public String getId() {
     return id;
   }
 
-  public void setId(UUID id) {
+  public void setId(String id) {
     this.id = id;
   }
 
@@ -107,6 +110,25 @@ public class WebhookEventPayloadObject {
 
   public void setStatus(String status) {
     this.status = status;
+  }
+
+
+  public WebhookEventPayloadObject startedAtIso8601(OffsetDateTime startedAtIso8601) {
+    this.startedAtIso8601 = startedAtIso8601;
+    return this;
+  }
+
+   /**
+   * The date and time when the operation was started, if available.
+   * @return startedAtIso8601
+  **/
+  @javax.annotation.Nullable
+  public OffsetDateTime getStartedAtIso8601() {
+    return startedAtIso8601;
+  }
+
+  public void setStartedAtIso8601(OffsetDateTime startedAtIso8601) {
+    this.startedAtIso8601 = startedAtIso8601;
   }
 
 
@@ -204,6 +226,7 @@ public class WebhookEventPayloadObject {
     WebhookEventPayloadObject webhookEventPayloadObject = (WebhookEventPayloadObject) o;
     return Objects.equals(this.id, webhookEventPayloadObject.id) &&
         Objects.equals(this.status, webhookEventPayloadObject.status) &&
+        Objects.equals(this.startedAtIso8601, webhookEventPayloadObject.startedAtIso8601) &&
         Objects.equals(this.completedAtIso8601, webhookEventPayloadObject.completedAtIso8601) &&
         Objects.equals(this.href, webhookEventPayloadObject.href)&&
         Objects.equals(this.additionalProperties, webhookEventPayloadObject.additionalProperties);
@@ -211,7 +234,7 @@ public class WebhookEventPayloadObject {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, status, completedAtIso8601, href, additionalProperties);
+    return Objects.hash(id, status, startedAtIso8601, completedAtIso8601, href, additionalProperties);
   }
 
   @Override
@@ -220,6 +243,7 @@ public class WebhookEventPayloadObject {
     sb.append("class WebhookEventPayloadObject {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    sb.append("    startedAtIso8601: ").append(toIndentedString(startedAtIso8601)).append("\n");
     sb.append("    completedAtIso8601: ").append(toIndentedString(completedAtIso8601)).append("\n");
     sb.append("    href: ").append(toIndentedString(href)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
@@ -247,6 +271,7 @@ public class WebhookEventPayloadObject {
     openapiFields = new HashSet<String>();
     openapiFields.add("id");
     openapiFields.add("status");
+    openapiFields.add("started_at_iso8601");
     openapiFields.add("completed_at_iso8601");
     openapiFields.add("href");
 

@@ -4,20 +4,7 @@ import com.onfido.ApiException;
 import com.onfido.Configuration;
 import com.onfido.FileTransfer;
 import com.onfido.api.DefaultApi;
-import com.onfido.model.Applicant;
-import com.onfido.model.ApplicantBuilder;
-import com.onfido.model.Check;
-import com.onfido.model.CheckBuilder;
-import com.onfido.model.CountryCodes;
-import com.onfido.model.Document;
-import com.onfido.model.IdPhoto;
-import com.onfido.model.LivePhoto;
-import com.onfido.model.LocationBuilder;
-import com.onfido.model.WatchlistMonitor;
-import com.onfido.model.WatchlistMonitorBuilder;
-import com.onfido.model.Webhook;
-import com.onfido.model.WorkflowRun;
-import com.onfido.model.WorkflowRunBuilder;
+import com.onfido.model.*;
 import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
@@ -65,6 +52,8 @@ public class TestBase {
             new ApplicantBuilder()
                 .firstName(first_name)
                 .lastName("Last")
+                .email("first.last@gmail.com")
+                .phoneNumber("351911111111")
                 .location(
                     new LocationBuilder()
                         .ipAddress("127.0.0.1")
@@ -186,6 +175,29 @@ public class TestBase {
       iteration += 1;
       Thread.sleep(sleepTime);
       instance = method.invoke(onfido, params);
+    }
+    return instance;
+  }
+
+  public Task repeatRequestUntilTaskOutputChanges(
+      String methodName, Object[] params, int maxRetries, int sleepTime)
+      throws NoSuchMethodException,
+          IllegalAccessException,
+          InterruptedException,
+          InvocationTargetException {
+    Method method = getMethod(methodName, params);
+    Task instance = (Task) method.invoke(onfido, params);
+
+    int iteration = 0;
+
+    while (instance.getOutput() == null) {
+      if (iteration > maxRetries) {
+        throw new RuntimeException("Task output did not change in time");
+      }
+
+      iteration += 1;
+      Thread.sleep(sleepTime);
+      instance = (Task) method.invoke(onfido, params);
     }
     return instance;
   }

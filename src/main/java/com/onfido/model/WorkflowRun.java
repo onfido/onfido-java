@@ -70,6 +70,10 @@ public class WorkflowRun {
   @SerializedName(SERIALIZED_NAME_TAGS)
   private List<String> tags;
 
+  public static final String SERIALIZED_NAME_CUSTOMER_USER_ID = "customer_user_id";
+  @SerializedName(SERIALIZED_NAME_CUSTOMER_USER_ID)
+  private String customerUserId;
+
   public static final String SERIALIZED_NAME_LINK = "link";
   @SerializedName(SERIALIZED_NAME_LINK)
   private WorkflowRunSharedLink link;
@@ -174,6 +178,10 @@ public class WorkflowRun {
   @SerializedName(SERIALIZED_NAME_ERROR)
   private WorkflowRunResponseError error;
 
+  public static final String SERIALIZED_NAME_SDK_TOKEN = "sdk_token";
+  @SerializedName(SERIALIZED_NAME_SDK_TOKEN)
+  private String sdkToken;
+
   public WorkflowRun() {
   }
 
@@ -239,6 +247,25 @@ public class WorkflowRun {
 
   public void setTags(List<String> tags) {
     this.tags = tags;
+  }
+
+
+  public WorkflowRun customerUserId(String customerUserId) {
+    this.customerUserId = customerUserId;
+    return this;
+  }
+
+   /**
+   * Customer-provided user identifier.
+   * @return customerUserId
+  **/
+  @javax.annotation.Nullable
+  public String getCustomerUserId() {
+    return customerUserId;
+  }
+
+  public void setCustomerUserId(String customerUserId) {
+    this.customerUserId = customerUserId;
   }
 
 
@@ -439,6 +466,25 @@ public class WorkflowRun {
     this.error = error;
   }
 
+
+  public WorkflowRun sdkToken(String sdkToken) {
+    this.sdkToken = sdkToken;
+    return this;
+  }
+
+   /**
+   * Client token to use when loading this workflow run in the Onfido SDK.
+   * @return sdkToken
+  **/
+  @javax.annotation.Nullable
+  public String getSdkToken() {
+    return sdkToken;
+  }
+
+  public void setSdkToken(String sdkToken) {
+    this.sdkToken = sdkToken;
+  }
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -497,6 +543,7 @@ public class WorkflowRun {
     return Objects.equals(this.applicantId, workflowRun.applicantId) &&
         Objects.equals(this.workflowId, workflowRun.workflowId) &&
         Objects.equals(this.tags, workflowRun.tags) &&
+        Objects.equals(this.customerUserId, workflowRun.customerUserId) &&
         Objects.equals(this.link, workflowRun.link) &&
         Objects.equals(this.createdAt, workflowRun.createdAt) &&
         Objects.equals(this.updatedAt, workflowRun.updatedAt) &&
@@ -506,7 +553,8 @@ public class WorkflowRun {
         Objects.equals(this.status, workflowRun.status) &&
         Objects.equals(this.output, workflowRun.output) &&
         Objects.equals(this.reasons, workflowRun.reasons) &&
-        Objects.equals(this.error, workflowRun.error)&&
+        Objects.equals(this.error, workflowRun.error) &&
+        Objects.equals(this.sdkToken, workflowRun.sdkToken)&&
         Objects.equals(this.additionalProperties, workflowRun.additionalProperties);
   }
 
@@ -516,7 +564,7 @@ public class WorkflowRun {
 
   @Override
   public int hashCode() {
-    return Objects.hash(applicantId, workflowId, tags, link, createdAt, updatedAt, id, workflowVersionId, dashboardUrl, status, output, reasons, error, additionalProperties);
+    return Objects.hash(applicantId, workflowId, tags, customerUserId, link, createdAt, updatedAt, id, workflowVersionId, dashboardUrl, status, output, reasons, error, sdkToken, additionalProperties);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -533,6 +581,7 @@ public class WorkflowRun {
     sb.append("    applicantId: ").append(toIndentedString(applicantId)).append("\n");
     sb.append("    workflowId: ").append(toIndentedString(workflowId)).append("\n");
     sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+    sb.append("    customerUserId: ").append(toIndentedString(customerUserId)).append("\n");
     sb.append("    link: ").append(toIndentedString(link)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
@@ -543,6 +592,7 @@ public class WorkflowRun {
     sb.append("    output: ").append(toIndentedString(output)).append("\n");
     sb.append("    reasons: ").append(toIndentedString(reasons)).append("\n");
     sb.append("    error: ").append(toIndentedString(error)).append("\n");
+    sb.append("    sdkToken: ").append(toIndentedString(sdkToken)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -569,6 +619,7 @@ public class WorkflowRun {
     openapiFields.add("applicant_id");
     openapiFields.add("workflow_id");
     openapiFields.add("tags");
+    openapiFields.add("customer_user_id");
     openapiFields.add("link");
     openapiFields.add("created_at");
     openapiFields.add("updated_at");
@@ -579,6 +630,7 @@ public class WorkflowRun {
     openapiFields.add("output");
     openapiFields.add("reasons");
     openapiFields.add("error");
+    openapiFields.add("sdk_token");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -617,6 +669,9 @@ public class WorkflowRun {
       if (jsonObj.get("tags") != null && !jsonObj.get("tags").isJsonNull() && !jsonObj.get("tags").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
       }
+      if ((jsonObj.get("customer_user_id") != null && !jsonObj.get("customer_user_id").isJsonNull()) && !jsonObj.get("customer_user_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `customer_user_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("customer_user_id").toString()));
+      }
       // validate the optional field `link`
       if (jsonObj.get("link") != null && !jsonObj.get("link").isJsonNull()) {
         WorkflowRunSharedLink.validateJsonElement(jsonObj.get("link"));
@@ -641,6 +696,9 @@ public class WorkflowRun {
       // validate the optional field `error`
       if (jsonObj.get("error") != null && !jsonObj.get("error").isJsonNull()) {
         WorkflowRunResponseError.validateJsonElement(jsonObj.get("error"));
+      }
+      if ((jsonObj.get("sdk_token") != null && !jsonObj.get("sdk_token").isJsonNull()) && !jsonObj.get("sdk_token").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `sdk_token` to be a primitive type in the JSON string but got `%s`", jsonObj.get("sdk_token").toString()));
       }
   }
 

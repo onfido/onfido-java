@@ -25,6 +25,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
+import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -146,6 +147,10 @@ public class WorkflowRunResponse {
   public static final String SERIALIZED_NAME_ERROR = "error";
   @SerializedName(SERIALIZED_NAME_ERROR)
   private WorkflowRunResponseError error;
+
+  public static final String SERIALIZED_NAME_SDK_TOKEN = "sdk_token";
+  @SerializedName(SERIALIZED_NAME_SDK_TOKEN)
+  private String sdkToken;
 
   public WorkflowRunResponse() {
   }
@@ -290,6 +295,25 @@ public class WorkflowRunResponse {
     this.error = error;
   }
 
+
+  public WorkflowRunResponse sdkToken(String sdkToken) {
+    this.sdkToken = sdkToken;
+    return this;
+  }
+
+   /**
+   * Client token to use when loading this workflow run in the Onfido SDK.
+   * @return sdkToken
+  **/
+  @javax.annotation.Nullable
+  public String getSdkToken() {
+    return sdkToken;
+  }
+
+  public void setSdkToken(String sdkToken) {
+    this.sdkToken = sdkToken;
+  }
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -351,13 +375,25 @@ public class WorkflowRunResponse {
         Objects.equals(this.status, workflowRunResponse.status) &&
         Objects.equals(this.output, workflowRunResponse.output) &&
         Objects.equals(this.reasons, workflowRunResponse.reasons) &&
-        Objects.equals(this.error, workflowRunResponse.error)&&
+        Objects.equals(this.error, workflowRunResponse.error) &&
+        Objects.equals(this.sdkToken, workflowRunResponse.sdkToken)&&
         Objects.equals(this.additionalProperties, workflowRunResponse.additionalProperties);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, workflowVersionId, dashboardUrl, status, output, reasons, error, additionalProperties);
+    return Objects.hash(id, workflowVersionId, dashboardUrl, status, output, reasons, error, sdkToken, additionalProperties);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -371,6 +407,7 @@ public class WorkflowRunResponse {
     sb.append("    output: ").append(toIndentedString(output)).append("\n");
     sb.append("    reasons: ").append(toIndentedString(reasons)).append("\n");
     sb.append("    error: ").append(toIndentedString(error)).append("\n");
+    sb.append("    sdkToken: ").append(toIndentedString(sdkToken)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -401,6 +438,7 @@ public class WorkflowRunResponse {
     openapiFields.add("output");
     openapiFields.add("reasons");
     openapiFields.add("error");
+    openapiFields.add("sdk_token");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -447,6 +485,9 @@ public class WorkflowRunResponse {
       // validate the optional field `error`
       if (jsonObj.get("error") != null && !jsonObj.get("error").isJsonNull()) {
         WorkflowRunResponseError.validateJsonElement(jsonObj.get("error"));
+      }
+      if ((jsonObj.get("sdk_token") != null && !jsonObj.get("sdk_token").isJsonNull()) && !jsonObj.get("sdk_token").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `sdk_token` to be a primitive type in the JSON string but got `%s`", jsonObj.get("sdk_token").toString()));
       }
   }
 

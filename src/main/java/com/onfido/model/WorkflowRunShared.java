@@ -69,6 +69,10 @@ public class WorkflowRunShared {
   @SerializedName(SERIALIZED_NAME_TAGS)
   private List<String> tags;
 
+  public static final String SERIALIZED_NAME_CUSTOMER_USER_ID = "customer_user_id";
+  @SerializedName(SERIALIZED_NAME_CUSTOMER_USER_ID)
+  private String customerUserId;
+
   public static final String SERIALIZED_NAME_LINK = "link";
   @SerializedName(SERIALIZED_NAME_LINK)
   private WorkflowRunSharedLink link;
@@ -146,6 +150,25 @@ public class WorkflowRunShared {
 
   public void setTags(List<String> tags) {
     this.tags = tags;
+  }
+
+
+  public WorkflowRunShared customerUserId(String customerUserId) {
+    this.customerUserId = customerUserId;
+    return this;
+  }
+
+   /**
+   * Customer-provided user identifier.
+   * @return customerUserId
+  **/
+  @javax.annotation.Nullable
+  public String getCustomerUserId() {
+    return customerUserId;
+  }
+
+  public void setCustomerUserId(String customerUserId) {
+    this.customerUserId = customerUserId;
   }
 
 
@@ -263,6 +286,7 @@ public class WorkflowRunShared {
     return Objects.equals(this.applicantId, workflowRunShared.applicantId) &&
         Objects.equals(this.workflowId, workflowRunShared.workflowId) &&
         Objects.equals(this.tags, workflowRunShared.tags) &&
+        Objects.equals(this.customerUserId, workflowRunShared.customerUserId) &&
         Objects.equals(this.link, workflowRunShared.link) &&
         Objects.equals(this.createdAt, workflowRunShared.createdAt) &&
         Objects.equals(this.updatedAt, workflowRunShared.updatedAt)&&
@@ -275,7 +299,7 @@ public class WorkflowRunShared {
 
   @Override
   public int hashCode() {
-    return Objects.hash(applicantId, workflowId, tags, link, createdAt, updatedAt, additionalProperties);
+    return Objects.hash(applicantId, workflowId, tags, customerUserId, link, createdAt, updatedAt, additionalProperties);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -292,6 +316,7 @@ public class WorkflowRunShared {
     sb.append("    applicantId: ").append(toIndentedString(applicantId)).append("\n");
     sb.append("    workflowId: ").append(toIndentedString(workflowId)).append("\n");
     sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+    sb.append("    customerUserId: ").append(toIndentedString(customerUserId)).append("\n");
     sb.append("    link: ").append(toIndentedString(link)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
@@ -321,6 +346,7 @@ public class WorkflowRunShared {
     openapiFields.add("applicant_id");
     openapiFields.add("workflow_id");
     openapiFields.add("tags");
+    openapiFields.add("customer_user_id");
     openapiFields.add("link");
     openapiFields.add("created_at");
     openapiFields.add("updated_at");
@@ -360,6 +386,9 @@ public class WorkflowRunShared {
       // ensure the optional json data is an array if present
       if (jsonObj.get("tags") != null && !jsonObj.get("tags").isJsonNull() && !jsonObj.get("tags").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
+      }
+      if ((jsonObj.get("customer_user_id") != null && !jsonObj.get("customer_user_id").isJsonNull()) && !jsonObj.get("customer_user_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `customer_user_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("customer_user_id").toString()));
       }
       // validate the optional field `link`
       if (jsonObj.get("link") != null && !jsonObj.get("link").isJsonNull()) {

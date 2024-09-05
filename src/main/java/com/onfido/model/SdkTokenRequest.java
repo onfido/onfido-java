@@ -62,7 +62,7 @@ public class SdkTokenRequest {
 
   public static final String SERIALIZED_NAME_APPLICATION_ID = "application_id";
   @SerializedName(SERIALIZED_NAME_APPLICATION_ID)
-  private UUID applicationId;
+  private String applicationId;
 
   public static final String SERIALIZED_NAME_CROSS_DEVICE_URL = "cross_device_url";
   @SerializedName(SERIALIZED_NAME_CROSS_DEVICE_URL)
@@ -109,7 +109,7 @@ public class SdkTokenRequest {
   }
 
 
-  public SdkTokenRequest applicationId(UUID applicationId) {
+  public SdkTokenRequest applicationId(String applicationId) {
     this.applicationId = applicationId;
     return this;
   }
@@ -119,11 +119,11 @@ public class SdkTokenRequest {
    * @return applicationId
   **/
   @javax.annotation.Nullable
-  public UUID getApplicationId() {
+  public String getApplicationId() {
     return applicationId;
   }
 
-  public void setApplicationId(UUID applicationId) {
+  public void setApplicationId(String applicationId) {
     this.applicationId = applicationId;
   }
 

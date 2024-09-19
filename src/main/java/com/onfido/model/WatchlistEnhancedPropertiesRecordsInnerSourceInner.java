@@ -19,11 +19,8 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.onfido.model.WatchlistEnhancedPropertiesRecordsInner;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -50,41 +47,102 @@ import java.util.Set;
 import com.onfido.JSON;
 
 /**
- * WatchlistEnhancedProperties
+ * WatchlistEnhancedPropertiesRecordsInnerSourceInner
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
-public class WatchlistEnhancedProperties {
-  public static final String SERIALIZED_NAME_RECORDS = "records";
-  @SerializedName(SERIALIZED_NAME_RECORDS)
-  private List<WatchlistEnhancedPropertiesRecordsInner> records = new ArrayList<>();
+public class WatchlistEnhancedPropertiesRecordsInnerSourceInner {
+  public static final String SERIALIZED_NAME_SOURCE_HEADLINE = "source_headline";
+  @SerializedName(SERIALIZED_NAME_SOURCE_HEADLINE)
+  private String sourceHeadline;
 
-  public WatchlistEnhancedProperties() {
+  public static final String SERIALIZED_NAME_SOURCE_NAME = "source_name";
+  @SerializedName(SERIALIZED_NAME_SOURCE_NAME)
+  private String sourceName;
+
+  public static final String SERIALIZED_NAME_SOURCE_URL = "source_url";
+  @SerializedName(SERIALIZED_NAME_SOURCE_URL)
+  private String sourceUrl;
+
+  public static final String SERIALIZED_NAME_SOURCE_FORMAT = "source_format";
+  @SerializedName(SERIALIZED_NAME_SOURCE_FORMAT)
+  private String sourceFormat;
+
+  public WatchlistEnhancedPropertiesRecordsInnerSourceInner() {
   }
 
-  public WatchlistEnhancedProperties records(List<WatchlistEnhancedPropertiesRecordsInner> records) {
-    this.records = records;
-    return this;
-  }
-
-  public WatchlistEnhancedProperties addRecordsItem(WatchlistEnhancedPropertiesRecordsInner recordsItem) {
-    if (this.records == null) {
-      this.records = new ArrayList<>();
-    }
-    this.records.add(recordsItem);
+  public WatchlistEnhancedPropertiesRecordsInnerSourceInner sourceHeadline(String sourceHeadline) {
+    this.sourceHeadline = sourceHeadline;
     return this;
   }
 
    /**
-   * Returns any matches including, but not limited to, name and date of birth of match, aliases and associates, and relevant events and sources.
-   * @return records
+   * Get sourceHeadline
+   * @return sourceHeadline
   **/
   @javax.annotation.Nullable
-  public List<WatchlistEnhancedPropertiesRecordsInner> getRecords() {
-    return records;
+  public String getSourceHeadline() {
+    return sourceHeadline;
   }
 
-  public void setRecords(List<WatchlistEnhancedPropertiesRecordsInner> records) {
-    this.records = records;
+  public void setSourceHeadline(String sourceHeadline) {
+    this.sourceHeadline = sourceHeadline;
+  }
+
+
+  public WatchlistEnhancedPropertiesRecordsInnerSourceInner sourceName(String sourceName) {
+    this.sourceName = sourceName;
+    return this;
+  }
+
+   /**
+   * Get sourceName
+   * @return sourceName
+  **/
+  @javax.annotation.Nullable
+  public String getSourceName() {
+    return sourceName;
+  }
+
+  public void setSourceName(String sourceName) {
+    this.sourceName = sourceName;
+  }
+
+
+  public WatchlistEnhancedPropertiesRecordsInnerSourceInner sourceUrl(String sourceUrl) {
+    this.sourceUrl = sourceUrl;
+    return this;
+  }
+
+   /**
+   * Get sourceUrl
+   * @return sourceUrl
+  **/
+  @javax.annotation.Nullable
+  public String getSourceUrl() {
+    return sourceUrl;
+  }
+
+  public void setSourceUrl(String sourceUrl) {
+    this.sourceUrl = sourceUrl;
+  }
+
+
+  public WatchlistEnhancedPropertiesRecordsInnerSourceInner sourceFormat(String sourceFormat) {
+    this.sourceFormat = sourceFormat;
+    return this;
+  }
+
+   /**
+   * Get sourceFormat
+   * @return sourceFormat
+  **/
+  @javax.annotation.Nullable
+  public String getSourceFormat() {
+    return sourceFormat;
+  }
+
+  public void setSourceFormat(String sourceFormat) {
+    this.sourceFormat = sourceFormat;
   }
 
   /**
@@ -100,9 +158,9 @@ public class WatchlistEnhancedProperties {
    *
    * @param key name of the property
    * @param value value of the property
-   * @return the WatchlistEnhancedProperties instance itself
+   * @return the WatchlistEnhancedPropertiesRecordsInnerSourceInner instance itself
    */
-  public WatchlistEnhancedProperties putAdditionalProperty(String key, Object value) {
+  public WatchlistEnhancedPropertiesRecordsInnerSourceInner putAdditionalProperty(String key, Object value) {
     if (this.additionalProperties == null) {
         this.additionalProperties = new HashMap<String, Object>();
     }
@@ -141,21 +199,27 @@ public class WatchlistEnhancedProperties {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    WatchlistEnhancedProperties watchlistEnhancedProperties = (WatchlistEnhancedProperties) o;
-    return Objects.equals(this.records, watchlistEnhancedProperties.records)&&
-        Objects.equals(this.additionalProperties, watchlistEnhancedProperties.additionalProperties);
+    WatchlistEnhancedPropertiesRecordsInnerSourceInner watchlistEnhancedPropertiesRecordsInnerSourceInner = (WatchlistEnhancedPropertiesRecordsInnerSourceInner) o;
+    return Objects.equals(this.sourceHeadline, watchlistEnhancedPropertiesRecordsInnerSourceInner.sourceHeadline) &&
+        Objects.equals(this.sourceName, watchlistEnhancedPropertiesRecordsInnerSourceInner.sourceName) &&
+        Objects.equals(this.sourceUrl, watchlistEnhancedPropertiesRecordsInnerSourceInner.sourceUrl) &&
+        Objects.equals(this.sourceFormat, watchlistEnhancedPropertiesRecordsInnerSourceInner.sourceFormat)&&
+        Objects.equals(this.additionalProperties, watchlistEnhancedPropertiesRecordsInnerSourceInner.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(records, additionalProperties);
+    return Objects.hash(sourceHeadline, sourceName, sourceUrl, sourceFormat, additionalProperties);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class WatchlistEnhancedProperties {\n");
-    sb.append("    records: ").append(toIndentedString(records)).append("\n");
+    sb.append("class WatchlistEnhancedPropertiesRecordsInnerSourceInner {\n");
+    sb.append("    sourceHeadline: ").append(toIndentedString(sourceHeadline)).append("\n");
+    sb.append("    sourceName: ").append(toIndentedString(sourceName)).append("\n");
+    sb.append("    sourceUrl: ").append(toIndentedString(sourceUrl)).append("\n");
+    sb.append("    sourceFormat: ").append(toIndentedString(sourceFormat)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -179,7 +243,10 @@ public class WatchlistEnhancedProperties {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("records");
+    openapiFields.add("source_headline");
+    openapiFields.add("source_name");
+    openapiFields.add("source_url");
+    openapiFields.add("source_format");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -189,28 +256,26 @@ public class WatchlistEnhancedProperties {
   * Validates the JSON Element and throws an exception if issues found
   *
   * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to WatchlistEnhancedProperties
+  * @throws IOException if the JSON Element is invalid with respect to WatchlistEnhancedPropertiesRecordsInnerSourceInner
   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!WatchlistEnhancedProperties.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in WatchlistEnhancedProperties is not found in the empty JSON string", WatchlistEnhancedProperties.openapiRequiredFields.toString()));
+        if (!WatchlistEnhancedPropertiesRecordsInnerSourceInner.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in WatchlistEnhancedPropertiesRecordsInnerSourceInner is not found in the empty JSON string", WatchlistEnhancedPropertiesRecordsInnerSourceInner.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if (jsonObj.get("records") != null && !jsonObj.get("records").isJsonNull()) {
-        JsonArray jsonArrayrecords = jsonObj.getAsJsonArray("records");
-        if (jsonArrayrecords != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("records").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `records` to be an array in the JSON string but got `%s`", jsonObj.get("records").toString()));
-          }
-
-          // validate the optional field `records` (array)
-          for (int i = 0; i < jsonArrayrecords.size(); i++) {
-            WatchlistEnhancedPropertiesRecordsInner.validateJsonElement(jsonArrayrecords.get(i));
-          };
-        }
+      if ((jsonObj.get("source_headline") != null && !jsonObj.get("source_headline").isJsonNull()) && !jsonObj.get("source_headline").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `source_headline` to be a primitive type in the JSON string but got `%s`", jsonObj.get("source_headline").toString()));
+      }
+      if ((jsonObj.get("source_name") != null && !jsonObj.get("source_name").isJsonNull()) && !jsonObj.get("source_name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `source_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("source_name").toString()));
+      }
+      if ((jsonObj.get("source_url") != null && !jsonObj.get("source_url").isJsonNull()) && !jsonObj.get("source_url").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `source_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("source_url").toString()));
+      }
+      if ((jsonObj.get("source_format") != null && !jsonObj.get("source_format").isJsonNull()) && !jsonObj.get("source_format").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `source_format` to be a primitive type in the JSON string but got `%s`", jsonObj.get("source_format").toString()));
       }
   }
 
@@ -218,16 +283,16 @@ public class WatchlistEnhancedProperties {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!WatchlistEnhancedProperties.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'WatchlistEnhancedProperties' and its subtypes
+       if (!WatchlistEnhancedPropertiesRecordsInnerSourceInner.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'WatchlistEnhancedPropertiesRecordsInnerSourceInner' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<WatchlistEnhancedProperties> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(WatchlistEnhancedProperties.class));
+       final TypeAdapter<WatchlistEnhancedPropertiesRecordsInnerSourceInner> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(WatchlistEnhancedPropertiesRecordsInnerSourceInner.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<WatchlistEnhancedProperties>() {
+       return (TypeAdapter<T>) new TypeAdapter<WatchlistEnhancedPropertiesRecordsInnerSourceInner>() {
            @Override
-           public void write(JsonWriter out, WatchlistEnhancedProperties value) throws IOException {
+           public void write(JsonWriter out, WatchlistEnhancedPropertiesRecordsInnerSourceInner value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              obj.remove("additionalProperties");
              // serialize additional properties
@@ -255,12 +320,12 @@ public class WatchlistEnhancedProperties {
            }
 
            @Override
-           public WatchlistEnhancedProperties read(JsonReader in) throws IOException {
+           public WatchlistEnhancedPropertiesRecordsInnerSourceInner read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
-             WatchlistEnhancedProperties instance = thisAdapter.fromJsonTree(jsonObj);
+             WatchlistEnhancedPropertiesRecordsInnerSourceInner instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
                if (!openapiFields.contains(entry.getKey())) {
                  if (entry.getValue().isJsonPrimitive()) { // primitive type
@@ -287,18 +352,18 @@ public class WatchlistEnhancedProperties {
   }
 
  /**
-  * Create an instance of WatchlistEnhancedProperties given an JSON string
+  * Create an instance of WatchlistEnhancedPropertiesRecordsInnerSourceInner given an JSON string
   *
   * @param jsonString JSON string
-  * @return An instance of WatchlistEnhancedProperties
-  * @throws IOException if the JSON string is invalid with respect to WatchlistEnhancedProperties
+  * @return An instance of WatchlistEnhancedPropertiesRecordsInnerSourceInner
+  * @throws IOException if the JSON string is invalid with respect to WatchlistEnhancedPropertiesRecordsInnerSourceInner
   */
-  public static WatchlistEnhancedProperties fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, WatchlistEnhancedProperties.class);
+  public static WatchlistEnhancedPropertiesRecordsInnerSourceInner fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, WatchlistEnhancedPropertiesRecordsInnerSourceInner.class);
   }
 
  /**
-  * Convert an instance of WatchlistEnhancedProperties to an JSON string
+  * Convert an instance of WatchlistEnhancedPropertiesRecordsInnerSourceInner to an JSON string
   *
   * @return JSON string
   */

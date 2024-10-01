@@ -54,6 +54,7 @@ public class TestBase {
                 .lastName("Last")
                 .email("first.last@gmail.com")
                 .phoneNumber("351911111111")
+                .putAdditionalProperty(ConsentItem.NameEnum.PRIVACY_NOTICES_READ.toString(), true)
                 .location(
                     new LocationBuilder()
                         .ipAddress("127.0.0.1")

@@ -58,8 +58,10 @@ public class ReportSchemasTest extends TestBase {
     Assertions.assertNull(documentReport.getDocumentReport().getProperties().getDocumentSubtype());
 
     Assertions.assertNull(documentReport.getDocumentReport().getAdditionalProperties());
-    Assertions.assertNull(documentReport.getDocumentReport().getBreakdown().getAdditionalProperties());
-    Assertions.assertNull(documentReport.getDocumentReport().getProperties().getAdditionalProperties());
+    Assertions.assertNull(
+        documentReport.getDocumentReport().getBreakdown().getAdditionalProperties());
+    Assertions.assertNull(
+        documentReport.getDocumentReport().getProperties().getAdditionalProperties());
   }
 
   @Test
@@ -94,7 +96,14 @@ public class ReportSchemasTest extends TestBase {
             .getFacialSimilarityPhotoFullyAutoReport()
             .getProperties());
 
-    Assertions.assertNull(facialSimilarityPhotoFullyAutoReport.getFacialSimilarityPhotoFullyAutoReport().getAdditionalProperties());
-    Assertions.assertNull(facialSimilarityPhotoFullyAutoReport.getFacialSimilarityPhotoFullyAutoReport().getProperties().getAdditionalProperties());
+    Assertions.assertNull(
+        facialSimilarityPhotoFullyAutoReport
+            .getFacialSimilarityPhotoFullyAutoReport()
+            .getAdditionalProperties());
+    Assertions.assertNull(
+        facialSimilarityPhotoFullyAutoReport
+            .getFacialSimilarityPhotoFullyAutoReport()
+            .getProperties()
+            .getAdditionalProperties());
   }
 }

@@ -4,6 +4,7 @@ import com.onfido.FileTransfer;
 import com.onfido.model.TimelineFileReference;
 import com.onfido.model.WorkflowRun;
 import com.onfido.model.WorkflowRunBuilder;
+import com.onfido.model.WorkflowRunStatus;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
@@ -48,8 +49,7 @@ public class WorkflowRunTest extends TestBase {
 
     Assertions.assertEquals(workflowId, workflowRunWithCustomInputs.getWorkflowId());
     Assertions.assertEquals(applicantId, workflowRunWithCustomInputs.getApplicantId());
-    Assertions.assertEquals(
-        WorkflowRun.StatusEnum.APPROVED, workflowRunWithCustomInputs.getStatus());
+    Assertions.assertEquals(WorkflowRunStatus.APPROVED, workflowRunWithCustomInputs.getStatus());
   }
 
   @Test
@@ -73,7 +73,7 @@ public class WorkflowRunTest extends TestBase {
     UUID workflowRunId = createWorkflowRun(WORKFLOW_ID_TIMELINE, applicantId).getId();
 
     repeatRequestUntilStatusChanges(
-        "findWorkflowRun", new UUID[] {workflowRunId}, WorkflowRun.StatusEnum.APPROVED, 10, 1000);
+        "findWorkflowRun", new UUID[] {workflowRunId}, WorkflowRunStatus.APPROVED, 10, 1000);
     TimelineFileReference workflowTimelineFileData = onfido.createTimelineFile(workflowRunId);
 
     Assertions.assertNotNull(workflowTimelineFileData.getWorkflowTimelineFileId());
@@ -85,7 +85,7 @@ public class WorkflowRunTest extends TestBase {
     UUID workflowRunId = createWorkflowRun(WORKFLOW_ID_TIMELINE, applicantId).getId();
 
     repeatRequestUntilStatusChanges(
-        "findWorkflowRun", new UUID[] {workflowRunId}, WorkflowRun.StatusEnum.APPROVED, 10, 1000);
+        "findWorkflowRun", new UUID[] {workflowRunId}, WorkflowRunStatus.APPROVED, 10, 1000);
     UUID timelineFileId = onfido.createTimelineFile(workflowRunId).getWorkflowTimelineFileId();
 
     FileTransfer download =

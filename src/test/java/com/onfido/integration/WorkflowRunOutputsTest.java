@@ -1,7 +1,5 @@
 package com.onfido.integration;
 
-import static com.onfido.model.WorkflowRun.StatusEnum.APPROVED;
-
 import com.google.gson.Gson;
 import com.onfido.model.*;
 import java.io.FileReader;
@@ -87,11 +85,11 @@ public class WorkflowRunOutputsTest extends TestBase {
             repeatRequestUntilStatusChanges(
                 "findWorkflowRun",
                 new UUID[] {workflowRunId},
-                WorkflowRun.StatusEnum.APPROVED,
+                WorkflowRunStatus.APPROVED,
                 10,
                 1000);
 
-    Assertions.assertEquals(APPROVED, workflowRun.getStatus());
+    Assertions.assertEquals(WorkflowRunStatus.APPROVED, workflowRun.getStatus());
 
     Map<?, ?> workflowRunOutput = (Map<?, ?>) workflowRun.getOutput();
 

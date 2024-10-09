@@ -30,6 +30,8 @@ public class WorkflowRunTest extends TestBase {
   public void createWorkflowRunTest() throws Exception {
     Assertions.assertEquals(WORKFLOW_ID, workflowRun.getWorkflowId());
     Assertions.assertEquals(applicantId, workflowRun.getApplicantId());
+
+    Assertions.assertNull(workflowRun.getAdditionalProperties());
   }
 
   @Test
@@ -50,6 +52,8 @@ public class WorkflowRunTest extends TestBase {
     Assertions.assertEquals(applicantId, workflowRunWithCustomInputs.getApplicantId());
     Assertions.assertEquals(
         WorkflowRun.StatusEnum.APPROVED, workflowRunWithCustomInputs.getStatus());
+
+    Assertions.assertNull(workflowRunWithCustomInputs.getAdditionalProperties());
   }
 
   @Test
@@ -58,6 +62,8 @@ public class WorkflowRunTest extends TestBase {
 
     Assertions.assertEquals(WORKFLOW_ID, lookupWorkflowRun.getWorkflowId());
     Assertions.assertEquals(applicantId, lookupWorkflowRun.getApplicantId());
+
+    Assertions.assertNull(lookupWorkflowRun.getAdditionalProperties());
   }
 
   @Test
@@ -78,6 +84,8 @@ public class WorkflowRunTest extends TestBase {
 
     Assertions.assertNotNull(workflowTimelineFileData.getWorkflowTimelineFileId());
     Assertions.assertNotNull(workflowTimelineFileData.getHref());
+
+    Assertions.assertNull(workflowTimelineFileData.getAdditionalProperties());
   }
 
   @Test

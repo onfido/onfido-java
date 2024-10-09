@@ -25,6 +25,8 @@ public class LivePhotoTest extends TestBase {
   @Test
   public void uploadLivePhotoTest() throws Exception {
     Assertions.assertEquals("sample_photo.png", livePhoto.getFileName());
+
+    Assertions.assertNull(livePhoto.getAdditionalProperties());
   }
 
   @Test
@@ -51,6 +53,8 @@ public class LivePhotoTest extends TestBase {
     LivePhoto lookupLivePhoto = onfido.findLivePhoto(livePhoto.getId());
 
     Assertions.assertEquals("sample_photo.png", lookupLivePhoto.getFileName());
+
+    Assertions.assertNull(lookupLivePhoto.getAdditionalProperties());
   }
 
   @Test
@@ -64,5 +68,8 @@ public class LivePhotoTest extends TestBase {
 
     Assertions.assertEquals("another_sample_photo.png", livePhotos.get(0).getFileName());
     Assertions.assertEquals("sample_photo.png", livePhotos.get(1).getFileName());
+
+    Assertions.assertNull(livePhotos.get(0).getAdditionalProperties());
+    Assertions.assertNull(livePhotos.get(1).getAdditionalProperties());
   }
 }

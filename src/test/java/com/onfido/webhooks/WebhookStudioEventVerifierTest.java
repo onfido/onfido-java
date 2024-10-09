@@ -7,10 +7,7 @@ import com.onfido.model.WebhookEvent;
 import com.onfido.model.WebhookEventObjectStatus;
 import com.onfido.model.WebhookEventPayload;
 import com.onfido.model.WebhookEventPayloadObject;
-import com.onfido.model.WebhookEventResourceType;
 import com.onfido.model.WebhookEventType;
-import com.onfido.model.WorkflowRunStatus;
-
 import java.time.OffsetDateTime;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

@@ -5,7 +5,6 @@ import com.onfido.model.TimelineFileReference;
 import com.onfido.model.WorkflowRun;
 import com.onfido.model.WorkflowRunBuilder;
 import com.onfido.model.WorkflowRunStatus;
-
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
@@ -50,8 +49,7 @@ public class WorkflowRunTest extends TestBase {
 
     Assertions.assertEquals(workflowId, workflowRunWithCustomInputs.getWorkflowId());
     Assertions.assertEquals(applicantId, workflowRunWithCustomInputs.getApplicantId());
-    Assertions.assertEquals(
-        WorkflowRunStatus.APPROVED, workflowRunWithCustomInputs.getStatus());
+    Assertions.assertEquals(WorkflowRunStatus.APPROVED, workflowRunWithCustomInputs.getStatus());
   }
 
   @Test

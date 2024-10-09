@@ -25,6 +25,8 @@ public class DocumentTest extends TestBase {
   @Test
   public void uploadDocumentTest() throws Exception {
     Assertions.assertEquals("sample_driving_licence.png", document.getFileName());
+
+    Assertions.assertNotNull(document.toJson());
   }
 
   @Test
@@ -51,6 +53,7 @@ public class DocumentTest extends TestBase {
     Document lookupDocument = onfido.findDocument(document.getId());
 
     Assertions.assertEquals("sample_driving_licence.png", lookupDocument.getFileName());
+    Assertions.assertNotNull(lookupDocument.toJson());
   }
 
   @Test
@@ -66,6 +69,9 @@ public class DocumentTest extends TestBase {
     Assertions.assertEquals(FileTypeEnum.JPEG, documents.get(0).getFileType());
     Assertions.assertEquals("sample_driving_licence.png", documents.get(1).getFileName());
     Assertions.assertEquals(FileTypeEnum.PNG, documents.get(1).getFileType());
+
+    Assertions.assertNotNull(documents.get(0).toJson());
+    Assertions.assertNotNull(documents.get(1).toJson());
   }
 
   @Test

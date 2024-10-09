@@ -4,6 +4,7 @@ import com.onfido.OnfidoInvalidSignatureError;
 import com.onfido.WebhookEventVerifier;
 import com.onfido.integration.TestBase;
 import com.onfido.model.WebhookEvent;
+import com.onfido.model.WebhookEventObjectStatus;
 import com.onfido.model.WebhookEventPayload;
 import com.onfido.model.WebhookEventPayloadObject;
 import com.onfido.model.WebhookEventType;
@@ -27,7 +28,7 @@ public class WebhookStudioEventVerifierTest extends TestBase {
   private static final WebhookEventPayloadObject expectedObject =
       new WebhookEventPayloadObject()
           .id("profile_1eb92")
-          .status("started")
+          .status(WebhookEventObjectStatus.STARTED)
           .startedAtIso8601(OffsetDateTime.parse("2024-07-10T12:49:09Z"))
           .href(
               "https://api.eu.onfido.com/v3.6/workflow_runs/bc77c6e5-753a-4580-96a6-aaed3e5a8d19/tasks/profile_1eb92");

@@ -33,6 +33,8 @@ public class CheckTest extends TestBase {
 
     Assertions.assertEquals(applicant.getId(), check.getApplicantId());
     Assertions.assertEquals(null, check.getWebhookIds());
+
+    Assertions.assertNull(check.getAdditionalProperties());
   }
 
   @Test
@@ -85,6 +87,8 @@ public class CheckTest extends TestBase {
     Check lookupCheck = onfido.findCheck(check.getId());
 
     Assertions.assertEquals(check.getApplicantId(), lookupCheck.getApplicantId());
+
+    Assertions.assertNull(check.getAdditionalProperties());
   }
 
   @Test
@@ -96,6 +100,8 @@ public class CheckTest extends TestBase {
 
     Assertions.assertEquals(applicant.getId(), checks.get(0).getApplicantId());
     Assertions.assertEquals(1, checks.size());
+
+    Assertions.assertNull(checks.get(0).getAdditionalProperties());
   }
 
   @Test

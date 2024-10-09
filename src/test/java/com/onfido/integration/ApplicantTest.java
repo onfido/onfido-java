@@ -29,6 +29,8 @@ public class ApplicantTest extends TestBase {
 
     Assertions.assertEquals("First", applicant.getFirstName());
     Assertions.assertEquals("Last", applicant.getLastName());
+
+    Assertions.assertNull(applicant.getAdditionalProperties());
   }
 
   @Test
@@ -38,6 +40,8 @@ public class ApplicantTest extends TestBase {
 
     Assertions.assertEquals("First", lookupApplicant.getFirstName());
     Assertions.assertEquals("Last", lookupApplicant.getLastName());
+
+    Assertions.assertNull(lookupApplicant.getAdditionalProperties());
   }
 
   @Test
@@ -47,6 +51,8 @@ public class ApplicantTest extends TestBase {
 
     Assertions.assertEquals("Updated", updatedApplicant.getFirstName());
     Assertions.assertEquals("Last", updatedApplicant.getLastName());
+
+    Assertions.assertNull(updatedApplicant.getAdditionalProperties());
   }
 
   @Test
@@ -76,5 +82,8 @@ public class ApplicantTest extends TestBase {
 
     Assertions.assertEquals("Applicant1", applicants.get(0).getFirstName());
     Assertions.assertEquals("Applicant2", applicants.get(1).getFirstName());
+
+    Assertions.assertNull(applicants.get(0).getAdditionalProperties());
+    Assertions.assertNull(applicants.get(1).getAdditionalProperties());
   }
 }

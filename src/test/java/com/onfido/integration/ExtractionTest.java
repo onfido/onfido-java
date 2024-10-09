@@ -50,5 +50,9 @@ public class ExtractionTest extends TestBase {
     Assertions.assertEquals("SARAH", extractedData.getFirstName());
     Assertions.assertEquals("MORGAN", extractedData.getLastName());
     Assertions.assertEquals(GenderEnum.FEMALE, extractedData.getGender());
+
+    Assertions.assertNull(extraction.getAdditionalProperties());
+    Assertions.assertNull(documentClassification.getAdditionalProperties());
+    Assertions.assertNull(extractedData.getAdditionalProperties());
   }
 }

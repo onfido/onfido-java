@@ -57,6 +57,8 @@ public class MotionCaptureTest extends TestBase {
     MotionCapture motionCapture = onfido.findMotionCapture(EXAMPLE_ID_1);
 
     Assertions.assertEquals(expectedFilename, motionCapture.getFileName());
+
+    Assertions.assertNull(motionCapture.getAdditionalProperties());
   }
 
   @Test
@@ -65,5 +67,8 @@ public class MotionCaptureTest extends TestBase {
         onfido.listMotionCaptures(sampleApplicantId).getMotionCaptures();
 
     Assertions.assertEquals(2, motionCaptures.size());
+
+    Assertions.assertNull(motionCaptures.get(0).getAdditionalProperties());
+    Assertions.assertNull(motionCaptures.get(1).getAdditionalProperties());
   }
 }

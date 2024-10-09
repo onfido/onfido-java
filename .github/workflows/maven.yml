@@ -41,7 +41,7 @@ jobs:
         run: mvn -B package --file pom.xml -Dmaven.test.skip
       - name: Run integration tests with Maven
         if: ${{ github.repository_owner == 'onfido' }}
-        run: mvn test
+        run: mvn test -fn
         env:
           ONFIDO_API_TOKEN: ${{ secrets.ONFIDO_API_TOKEN }}
           ONFIDO_SAMPLE_APPLICANT_ID: ${{ secrets.ONFIDO_SAMPLE_APPLICANT_ID }}

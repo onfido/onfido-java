@@ -52,6 +52,8 @@ public class LiveVideoTest extends TestBase {
     LiveVideo liveVideo = onfido.findLiveVideo(sampleLiveVideoId1);
 
     Assertions.assertEquals("video.mov", liveVideo.getFileName());
+
+    Assertions.assertNull(liveVideo.getAdditionalProperties());
   }
 
   @Test
@@ -60,5 +62,8 @@ public class LiveVideoTest extends TestBase {
 
     Assertions.assertEquals("video.mov", liveVideos.get(0).getFileName());
     Assertions.assertEquals("video.mov", liveVideos.get(1).getFileName());
+
+    Assertions.assertNull(liveVideos.get(0).getAdditionalProperties());
+    Assertions.assertNull(liveVideos.get(1).getAdditionalProperties());
   }
 }

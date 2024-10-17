@@ -19,6 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.onfido.model.CheckStatus;
 import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
@@ -75,6 +76,10 @@ public class Check {
   @SerializedName(SERIALIZED_NAME_REDIRECT_URI)
   private String redirectUri;
 
+  public static final String SERIALIZED_NAME_PRIVACY_NOTICES_READ_CONSENT_GIVEN = "privacy_notices_read_consent_given";
+  @SerializedName(SERIALIZED_NAME_PRIVACY_NOTICES_READ_CONSENT_GIVEN)
+  private Boolean privacyNoticesReadConsentGiven;
+
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
   private UUID id;
@@ -87,71 +92,9 @@ public class Check {
   @SerializedName(SERIALIZED_NAME_HREF)
   private String href;
 
-  /**
-   * The current state of the check in the checking process.
-   */
-  @JsonAdapter(StatusEnum.Adapter.class)
-  public enum StatusEnum {
-    IN_PROGRESS("in_progress"),
-    
-    AWAITING_APPLICANT("awaiting_applicant"),
-    
-    COMPLETE("complete"),
-    
-    WITHDRAWN("withdrawn"),
-    
-    PAUSED("paused"),
-    
-    REOPENED("reopened"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
-
-    private String value;
-
-    StatusEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static StatusEnum fromValue(String value) {
-      for (StatusEnum b : StatusEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      return UNKNOWN_DEFAULT_OPEN_API;
-    }
-
-    public static class Adapter extends TypeAdapter<StatusEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final StatusEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public StatusEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return StatusEnum.fromValue(value);
-      }
-    }
-
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-      String value = jsonElement.getAsString();
-      StatusEnum.fromValue(value);
-    }
-  }
-
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
-  private StatusEnum status;
+  private CheckStatus status;
 
   /**
    * The overall result of the check, based on the results of the constituent reports.
@@ -226,6 +169,14 @@ public class Check {
   public static final String SERIALIZED_NAME_SANDBOX = "sandbox";
   @SerializedName(SERIALIZED_NAME_SANDBOX)
   private Boolean sandbox;
+
+  public static final String SERIALIZED_NAME_PAUSED = "paused";
+  @SerializedName(SERIALIZED_NAME_PAUSED)
+  private Boolean paused;
+
+  public static final String SERIALIZED_NAME_VERSION = "version";
+  @SerializedName(SERIALIZED_NAME_VERSION)
+  private String version;
 
   public Check() {
   }
@@ -341,6 +292,25 @@ public class Check {
   }
 
 
+  public Check privacyNoticesReadConsentGiven(Boolean privacyNoticesReadConsentGiven) {
+    this.privacyNoticesReadConsentGiven = privacyNoticesReadConsentGiven;
+    return this;
+  }
+
+   /**
+   * Get privacyNoticesReadConsentGiven
+   * @return privacyNoticesReadConsentGiven
+  **/
+  @javax.annotation.Nullable
+  public Boolean getPrivacyNoticesReadConsentGiven() {
+    return privacyNoticesReadConsentGiven;
+  }
+
+  public void setPrivacyNoticesReadConsentGiven(Boolean privacyNoticesReadConsentGiven) {
+    this.privacyNoticesReadConsentGiven = privacyNoticesReadConsentGiven;
+  }
+
+
   public Check id(UUID id) {
     this.id = id;
     return this;
@@ -398,21 +368,21 @@ public class Check {
   }
 
 
-  public Check status(StatusEnum status) {
+  public Check status(CheckStatus status) {
     this.status = status;
     return this;
   }
 
    /**
-   * The current state of the check in the checking process.
+   * Get status
    * @return status
   **/
   @javax.annotation.Nullable
-  public StatusEnum getStatus() {
+  public CheckStatus getStatus() {
     return status;
   }
 
-  public void setStatus(StatusEnum status) {
+  public void setStatus(CheckStatus status) {
     this.status = status;
   }
 
@@ -519,6 +489,44 @@ public class Check {
     this.sandbox = sandbox;
   }
 
+
+  public Check paused(Boolean paused) {
+    this.paused = paused;
+    return this;
+  }
+
+   /**
+   * Get paused
+   * @return paused
+  **/
+  @javax.annotation.Nullable
+  public Boolean getPaused() {
+    return paused;
+  }
+
+  public void setPaused(Boolean paused) {
+    this.paused = paused;
+  }
+
+
+  public Check version(String version) {
+    this.version = version;
+    return this;
+  }
+
+   /**
+   * Get version
+   * @return version
+  **/
+  @javax.annotation.Nullable
+  public String getVersion() {
+    return version;
+  }
+
+  public void setVersion(String version) {
+    this.version = version;
+  }
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -579,6 +587,7 @@ public class Check {
         Objects.equals(this.applicantProvidesData, check.applicantProvidesData) &&
         Objects.equals(this.tags, check.tags) &&
         Objects.equals(this.redirectUri, check.redirectUri) &&
+        Objects.equals(this.privacyNoticesReadConsentGiven, check.privacyNoticesReadConsentGiven) &&
         Objects.equals(this.id, check.id) &&
         Objects.equals(this.createdAt, check.createdAt) &&
         Objects.equals(this.href, check.href) &&
@@ -587,13 +596,15 @@ public class Check {
         Objects.equals(this.formUri, check.formUri) &&
         Objects.equals(this.resultsUri, check.resultsUri) &&
         Objects.equals(this.reportIds, check.reportIds) &&
-        Objects.equals(this.sandbox, check.sandbox)&&
+        Objects.equals(this.sandbox, check.sandbox) &&
+        Objects.equals(this.paused, check.paused) &&
+        Objects.equals(this.version, check.version)&&
         Objects.equals(this.additionalProperties, check.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(webhookIds, applicantId, applicantProvidesData, tags, redirectUri, id, createdAt, href, status, result, formUri, resultsUri, reportIds, sandbox, additionalProperties);
+    return Objects.hash(webhookIds, applicantId, applicantProvidesData, tags, redirectUri, privacyNoticesReadConsentGiven, id, createdAt, href, status, result, formUri, resultsUri, reportIds, sandbox, paused, version, additionalProperties);
   }
 
   @Override
@@ -605,6 +616,7 @@ public class Check {
     sb.append("    applicantProvidesData: ").append(toIndentedString(applicantProvidesData)).append("\n");
     sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
     sb.append("    redirectUri: ").append(toIndentedString(redirectUri)).append("\n");
+    sb.append("    privacyNoticesReadConsentGiven: ").append(toIndentedString(privacyNoticesReadConsentGiven)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    href: ").append(toIndentedString(href)).append("\n");
@@ -614,6 +626,8 @@ public class Check {
     sb.append("    resultsUri: ").append(toIndentedString(resultsUri)).append("\n");
     sb.append("    reportIds: ").append(toIndentedString(reportIds)).append("\n");
     sb.append("    sandbox: ").append(toIndentedString(sandbox)).append("\n");
+    sb.append("    paused: ").append(toIndentedString(paused)).append("\n");
+    sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -642,6 +656,7 @@ public class Check {
     openapiFields.add("applicant_provides_data");
     openapiFields.add("tags");
     openapiFields.add("redirect_uri");
+    openapiFields.add("privacy_notices_read_consent_given");
     openapiFields.add("id");
     openapiFields.add("created_at");
     openapiFields.add("href");
@@ -651,6 +666,8 @@ public class Check {
     openapiFields.add("results_uri");
     openapiFields.add("report_ids");
     openapiFields.add("sandbox");
+    openapiFields.add("paused");
+    openapiFields.add("version");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -703,7 +720,7 @@ public class Check {
       }
       // validate the optional field `status`
       if (jsonObj.get("status") != null && !jsonObj.get("status").isJsonNull()) {
-        StatusEnum.validateJsonElement(jsonObj.get("status"));
+        CheckStatus.validateJsonElement(jsonObj.get("status"));
       }
       if ((jsonObj.get("result") != null && !jsonObj.get("result").isJsonNull()) && !jsonObj.get("result").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `result` to be a primitive type in the JSON string but got `%s`", jsonObj.get("result").toString()));
@@ -721,6 +738,9 @@ public class Check {
       // ensure the optional json data is an array if present
       if (jsonObj.get("report_ids") != null && !jsonObj.get("report_ids").isJsonNull() && !jsonObj.get("report_ids").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `report_ids` to be an array in the JSON string but got `%s`", jsonObj.get("report_ids").toString()));
+      }
+      if ((jsonObj.get("version") != null && !jsonObj.get("version").isJsonNull()) && !jsonObj.get("version").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `version` to be a primitive type in the JSON string but got `%s`", jsonObj.get("version").toString()));
       }
   }
 
@@ -755,7 +775,7 @@ public class Check {
                    JsonElement jsonElement = gson.toJsonTree(entry.getValue());
                    if (jsonElement.isJsonArray()) {
                      obj.add(entry.getKey(), jsonElement.getAsJsonArray());
-                   } else {
+                   } else if (jsonElement.isJsonObject()) { 
                      obj.add(entry.getKey(), jsonElement.getAsJsonObject());
                    }
                  }

@@ -200,26 +200,6 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
   @SerializedName(SERIALIZED_NAME_FAKE_NETWORK_REQUEST)
   private Boolean fakeNetworkRequest;
 
-  public static final String SERIALIZED_NAME_TRUE_OS = "true_os";
-  @Deprecated
-  @SerializedName(SERIALIZED_NAME_TRUE_OS)
-  private String trueOs;
-
-  public static final String SERIALIZED_NAME_OS_ANOMALY = "os_anomaly";
-  @Deprecated
-  @SerializedName(SERIALIZED_NAME_OS_ANOMALY)
-  private String osAnomaly;
-
-  public static final String SERIALIZED_NAME_ROOTED = "rooted";
-  @Deprecated
-  @SerializedName(SERIALIZED_NAME_ROOTED)
-  private Boolean rooted;
-
-  public static final String SERIALIZED_NAME_REMOTE_SOFTWARE = "remote_software";
-  @Deprecated
-  @SerializedName(SERIALIZED_NAME_REMOTE_SOFTWARE)
-  private Boolean remoteSoftware;
-
   /**
    * Whether there is highly suspicious traffic related to the IP address. The risk depends on the overall ratio of clear checks on a given IP.
    */
@@ -578,98 +558,6 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
   }
 
 
-  @Deprecated
-  public DeviceIntelligenceBreakdownPropertiesDevice trueOs(String trueOs) {
-    this.trueOs = trueOs;
-    return this;
-  }
-
-   /**
-   * The true operating system of the device.
-   * @return trueOs
-   * @deprecated
-  **/
-  @Deprecated
-  @javax.annotation.Nullable
-  public String getTrueOs() {
-    return trueOs;
-  }
-
-  @Deprecated
-  public void setTrueOs(String trueOs) {
-    this.trueOs = trueOs;
-  }
-
-
-  @Deprecated
-  public DeviceIntelligenceBreakdownPropertiesDevice osAnomaly(String osAnomaly) {
-    this.osAnomaly = osAnomaly;
-    return this;
-  }
-
-   /**
-   * The likelihood of an operating system anomaly between the true OS and the OS sent by the device.
-   * @return osAnomaly
-   * @deprecated
-  **/
-  @Deprecated
-  @javax.annotation.Nullable
-  public String getOsAnomaly() {
-    return osAnomaly;
-  }
-
-  @Deprecated
-  public void setOsAnomaly(String osAnomaly) {
-    this.osAnomaly = osAnomaly;
-  }
-
-
-  @Deprecated
-  public DeviceIntelligenceBreakdownPropertiesDevice rooted(Boolean rooted) {
-    this.rooted = rooted;
-    return this;
-  }
-
-   /**
-   * Whether the device is rooted.
-   * @return rooted
-   * @deprecated
-  **/
-  @Deprecated
-  @javax.annotation.Nullable
-  public Boolean getRooted() {
-    return rooted;
-  }
-
-  @Deprecated
-  public void setRooted(Boolean rooted) {
-    this.rooted = rooted;
-  }
-
-
-  @Deprecated
-  public DeviceIntelligenceBreakdownPropertiesDevice remoteSoftware(Boolean remoteSoftware) {
-    this.remoteSoftware = remoteSoftware;
-    return this;
-  }
-
-   /**
-   * Whether the device is controlled via remote software.
-   * @return remoteSoftware
-   * @deprecated
-  **/
-  @Deprecated
-  @javax.annotation.Nullable
-  public Boolean getRemoteSoftware() {
-    return remoteSoftware;
-  }
-
-  @Deprecated
-  public void setRemoteSoftware(Boolean remoteSoftware) {
-    this.remoteSoftware = remoteSoftware;
-  }
-
-
   public DeviceIntelligenceBreakdownPropertiesDevice ipReputation(IpReputationEnum ipReputation) {
     this.ipReputation = ipReputation;
     return this;
@@ -828,10 +716,6 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
         Objects.equals(this.emulator, deviceIntelligenceBreakdownPropertiesDevice.emulator) &&
         Objects.equals(this.randomizedDevice, deviceIntelligenceBreakdownPropertiesDevice.randomizedDevice) &&
         Objects.equals(this.fakeNetworkRequest, deviceIntelligenceBreakdownPropertiesDevice.fakeNetworkRequest) &&
-        Objects.equals(this.trueOs, deviceIntelligenceBreakdownPropertiesDevice.trueOs) &&
-        Objects.equals(this.osAnomaly, deviceIntelligenceBreakdownPropertiesDevice.osAnomaly) &&
-        Objects.equals(this.rooted, deviceIntelligenceBreakdownPropertiesDevice.rooted) &&
-        Objects.equals(this.remoteSoftware, deviceIntelligenceBreakdownPropertiesDevice.remoteSoftware) &&
         Objects.equals(this.ipReputation, deviceIntelligenceBreakdownPropertiesDevice.ipReputation) &&
         Objects.equals(this.deviceFingerprintReuse, deviceIntelligenceBreakdownPropertiesDevice.deviceFingerprintReuse) &&
         Objects.equals(this.singleDeviceUsed, deviceIntelligenceBreakdownPropertiesDevice.singleDeviceUsed) &&
@@ -846,7 +730,7 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
 
   @Override
   public int hashCode() {
-    return Objects.hash(sdkVersion, sdkSource, authenticationType, rawModel, os, browser, emulator, randomizedDevice, fakeNetworkRequest, trueOs, osAnomaly, rooted, remoteSoftware, ipReputation, deviceFingerprintReuse, singleDeviceUsed, documentCapture, biometricCapture, additionalProperties);
+    return Objects.hash(sdkVersion, sdkSource, authenticationType, rawModel, os, browser, emulator, randomizedDevice, fakeNetworkRequest, ipReputation, deviceFingerprintReuse, singleDeviceUsed, documentCapture, biometricCapture, additionalProperties);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -869,10 +753,6 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
     sb.append("    emulator: ").append(toIndentedString(emulator)).append("\n");
     sb.append("    randomizedDevice: ").append(toIndentedString(randomizedDevice)).append("\n");
     sb.append("    fakeNetworkRequest: ").append(toIndentedString(fakeNetworkRequest)).append("\n");
-    sb.append("    trueOs: ").append(toIndentedString(trueOs)).append("\n");
-    sb.append("    osAnomaly: ").append(toIndentedString(osAnomaly)).append("\n");
-    sb.append("    rooted: ").append(toIndentedString(rooted)).append("\n");
-    sb.append("    remoteSoftware: ").append(toIndentedString(remoteSoftware)).append("\n");
     sb.append("    ipReputation: ").append(toIndentedString(ipReputation)).append("\n");
     sb.append("    deviceFingerprintReuse: ").append(toIndentedString(deviceFingerprintReuse)).append("\n");
     sb.append("    singleDeviceUsed: ").append(toIndentedString(singleDeviceUsed)).append("\n");
@@ -910,10 +790,6 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
     openapiFields.add("emulator");
     openapiFields.add("randomized_device");
     openapiFields.add("fake_network_request");
-    openapiFields.add("true_os");
-    openapiFields.add("os_anomaly");
-    openapiFields.add("rooted");
-    openapiFields.add("remote_software");
     openapiFields.add("ip_reputation");
     openapiFields.add("device_fingerprint_reuse");
     openapiFields.add("single_device_used");
@@ -962,12 +838,6 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
       }
       if ((jsonObj.get("browser") != null && !jsonObj.get("browser").isJsonNull()) && !jsonObj.get("browser").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `browser` to be a primitive type in the JSON string but got `%s`", jsonObj.get("browser").toString()));
-      }
-      if ((jsonObj.get("true_os") != null && !jsonObj.get("true_os").isJsonNull()) && !jsonObj.get("true_os").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `true_os` to be a primitive type in the JSON string but got `%s`", jsonObj.get("true_os").toString()));
-      }
-      if ((jsonObj.get("os_anomaly") != null && !jsonObj.get("os_anomaly").isJsonNull()) && !jsonObj.get("os_anomaly").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `os_anomaly` to be a primitive type in the JSON string but got `%s`", jsonObj.get("os_anomaly").toString()));
       }
       if ((jsonObj.get("ip_reputation") != null && !jsonObj.get("ip_reputation").isJsonNull()) && !jsonObj.get("ip_reputation").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `ip_reputation` to be a primitive type in the JSON string but got `%s`", jsonObj.get("ip_reputation").toString()));
@@ -1023,7 +893,7 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
                    JsonElement jsonElement = gson.toJsonTree(entry.getValue());
                    if (jsonElement.isJsonArray()) {
                      obj.add(entry.getKey(), jsonElement.getAsJsonArray());
-                   } else {
+                   } else if (jsonElement.isJsonObject()) { 
                      obj.add(entry.getKey(), jsonElement.getAsJsonObject());
                    }
                  }

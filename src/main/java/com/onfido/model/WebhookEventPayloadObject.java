@@ -19,6 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.onfido.model.WebhookEventObjectStatus;
 import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.Arrays;
@@ -58,7 +59,7 @@ public class WebhookEventPayloadObject {
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
-  private String status;
+  private WebhookEventObjectStatus status;
 
   public static final String SERIALIZED_NAME_STARTED_AT_ISO8601 = "started_at_iso8601";
   @SerializedName(SERIALIZED_NAME_STARTED_AT_ISO8601)
@@ -94,21 +95,21 @@ public class WebhookEventPayloadObject {
   }
 
 
-  public WebhookEventPayloadObject status(String status) {
+  public WebhookEventPayloadObject status(WebhookEventObjectStatus status) {
     this.status = status;
     return this;
   }
 
    /**
-   * The current state of the object, if available.
+   * Get status
    * @return status
   **/
   @javax.annotation.Nullable
-  public String getStatus() {
+  public WebhookEventObjectStatus getStatus() {
     return status;
   }
 
-  public void setStatus(String status) {
+  public void setStatus(WebhookEventObjectStatus status) {
     this.status = status;
   }
 
@@ -304,8 +305,9 @@ public class WebhookEventPayloadObject {
       if (!jsonObj.get("id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
       }
-      if ((jsonObj.get("status") != null && !jsonObj.get("status").isJsonNull()) && !jsonObj.get("status").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));
+      // validate the optional field `status`
+      if (jsonObj.get("status") != null && !jsonObj.get("status").isJsonNull()) {
+        WebhookEventObjectStatus.validateJsonElement(jsonObj.get("status"));
       }
       if (!jsonObj.get("href").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `href` to be a primitive type in the JSON string but got `%s`", jsonObj.get("href").toString()));
@@ -343,7 +345,7 @@ public class WebhookEventPayloadObject {
                    JsonElement jsonElement = gson.toJsonTree(entry.getValue());
                    if (jsonElement.isJsonArray()) {
                      obj.add(entry.getKey(), jsonElement.getAsJsonArray());
-                   } else {
+                   } else if (jsonElement.isJsonObject()) { 
                      obj.add(entry.getKey(), jsonElement.getAsJsonObject());
                    }
                  }

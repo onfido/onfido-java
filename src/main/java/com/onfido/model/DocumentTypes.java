@@ -79,6 +79,16 @@ public enum DocumentTypes {
   
   INTERNATIONAL_DRIVING_LICENCE("international_driving_licence"),
   
+  HOME_OFFICE_LETTER("home_office_letter"),
+  
+  BIRTH_CERTIFICATE("birth_certificate"),
+  
+  VEHICLE_REGISTRATION_CERTIFICATE("vehicle_registration_certificate"),
+  
+  FORM_FOR_AFFIXING_THE_VISA("form_for_affixing_the_visa"),
+  
+  IDENTIFICATION_NUMBER_DOCUMENT("identification_number_document"),
+  
   UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
   private String value;

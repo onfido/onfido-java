@@ -256,7 +256,7 @@ public class KnownFacesBreakdown {
                    JsonElement jsonElement = gson.toJsonTree(entry.getValue());
                    if (jsonElement.isJsonArray()) {
                      obj.add(entry.getKey(), jsonElement.getAsJsonArray());
-                   } else {
+                   } else if (jsonElement.isJsonObject()) { 
                      obj.add(entry.getKey(), jsonElement.getAsJsonObject());
                    }
                  }

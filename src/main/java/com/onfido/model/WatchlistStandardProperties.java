@@ -54,12 +54,14 @@ import com.onfido.JSON;
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
 public class WatchlistStandardProperties {
   public static final String SERIALIZED_NAME_RECORDS = "records";
+  @Deprecated
   @SerializedName(SERIALIZED_NAME_RECORDS)
   private List<String> records = new ArrayList<>();
 
   public WatchlistStandardProperties() {
   }
 
+  @Deprecated
   public WatchlistStandardProperties records(List<String> records) {
     this.records = records;
     return this;
@@ -76,12 +78,15 @@ public class WatchlistStandardProperties {
    /**
    * Returns any matches including, but not limited to, name and date of birth of match, aliases and associates, and relevant events and sources.
    * @return records
+   * @deprecated
   **/
+  @Deprecated
   @javax.annotation.Nullable
   public List<String> getRecords() {
     return records;
   }
 
+  @Deprecated
   public void setRecords(List<String> records) {
     this.records = records;
   }
@@ -234,7 +239,7 @@ public class WatchlistStandardProperties {
                    JsonElement jsonElement = gson.toJsonTree(entry.getValue());
                    if (jsonElement.isJsonArray()) {
                      obj.add(entry.getKey(), jsonElement.getAsJsonArray());
-                   } else {
+                   } else if (jsonElement.isJsonObject()) { 
                      obj.add(entry.getKey(), jsonElement.getAsJsonObject());
                    }
                  }

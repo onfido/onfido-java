@@ -74,6 +74,10 @@ public class CheckShared {
   @SerializedName(SERIALIZED_NAME_REDIRECT_URI)
   private String redirectUri;
 
+  public static final String SERIALIZED_NAME_PRIVACY_NOTICES_READ_CONSENT_GIVEN = "privacy_notices_read_consent_given";
+  @SerializedName(SERIALIZED_NAME_PRIVACY_NOTICES_READ_CONSENT_GIVEN)
+  private Boolean privacyNoticesReadConsentGiven;
+
   public CheckShared() {
   }
 
@@ -187,6 +191,25 @@ public class CheckShared {
     this.redirectUri = redirectUri;
   }
 
+
+  public CheckShared privacyNoticesReadConsentGiven(Boolean privacyNoticesReadConsentGiven) {
+    this.privacyNoticesReadConsentGiven = privacyNoticesReadConsentGiven;
+    return this;
+  }
+
+   /**
+   * Get privacyNoticesReadConsentGiven
+   * @return privacyNoticesReadConsentGiven
+  **/
+  @javax.annotation.Nullable
+  public Boolean getPrivacyNoticesReadConsentGiven() {
+    return privacyNoticesReadConsentGiven;
+  }
+
+  public void setPrivacyNoticesReadConsentGiven(Boolean privacyNoticesReadConsentGiven) {
+    this.privacyNoticesReadConsentGiven = privacyNoticesReadConsentGiven;
+  }
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -246,13 +269,14 @@ public class CheckShared {
         Objects.equals(this.applicantId, checkShared.applicantId) &&
         Objects.equals(this.applicantProvidesData, checkShared.applicantProvidesData) &&
         Objects.equals(this.tags, checkShared.tags) &&
-        Objects.equals(this.redirectUri, checkShared.redirectUri)&&
+        Objects.equals(this.redirectUri, checkShared.redirectUri) &&
+        Objects.equals(this.privacyNoticesReadConsentGiven, checkShared.privacyNoticesReadConsentGiven)&&
         Objects.equals(this.additionalProperties, checkShared.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(webhookIds, applicantId, applicantProvidesData, tags, redirectUri, additionalProperties);
+    return Objects.hash(webhookIds, applicantId, applicantProvidesData, tags, redirectUri, privacyNoticesReadConsentGiven, additionalProperties);
   }
 
   @Override
@@ -264,6 +288,7 @@ public class CheckShared {
     sb.append("    applicantProvidesData: ").append(toIndentedString(applicantProvidesData)).append("\n");
     sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
     sb.append("    redirectUri: ").append(toIndentedString(redirectUri)).append("\n");
+    sb.append("    privacyNoticesReadConsentGiven: ").append(toIndentedString(privacyNoticesReadConsentGiven)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -292,6 +317,7 @@ public class CheckShared {
     openapiFields.add("applicant_provides_data");
     openapiFields.add("tags");
     openapiFields.add("redirect_uri");
+    openapiFields.add("privacy_notices_read_consent_given");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -365,7 +391,7 @@ public class CheckShared {
                    JsonElement jsonElement = gson.toJsonTree(entry.getValue());
                    if (jsonElement.isJsonArray()) {
                      obj.add(entry.getKey(), jsonElement.getAsJsonArray());
-                   } else {
+                   } else if (jsonElement.isJsonObject()) { 
                      obj.add(entry.getKey(), jsonElement.getAsJsonObject());
                    }
                  }

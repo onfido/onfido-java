@@ -22,6 +22,7 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.Arrays;
+import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -48,10 +49,10 @@ import java.util.Set;
 import com.onfido.JSON;
 
 /**
- * Object for the configuration of the Workflow Run link.
+ * WorkflowRunLink
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
-public class WorkflowRunSharedLink {
+public class WorkflowRunLink {
   public static final String SERIALIZED_NAME_URL = "url";
   @SerializedName(SERIALIZED_NAME_URL)
   private String url;
@@ -110,7 +111,7 @@ public class WorkflowRunSharedLink {
           return b;
         }
       }
-      return UNKNOWN_DEFAULT_OPEN_API;
+      return null;
     }
 
     public static class Adapter extends TypeAdapter<LanguageEnum> {
@@ -136,10 +137,10 @@ public class WorkflowRunSharedLink {
   @SerializedName(SERIALIZED_NAME_LANGUAGE)
   private LanguageEnum language;
 
-  public WorkflowRunSharedLink() {
+  public WorkflowRunLink() {
   }
 
-  public WorkflowRunSharedLink url(String url) {
+  public WorkflowRunLink url(String url) {
     this.url = url;
     return this;
   }
@@ -158,7 +159,7 @@ public class WorkflowRunSharedLink {
   }
 
 
-  public WorkflowRunSharedLink completedRedirectUrl(String completedRedirectUrl) {
+  public WorkflowRunLink completedRedirectUrl(String completedRedirectUrl) {
     this.completedRedirectUrl = completedRedirectUrl;
     return this;
   }
@@ -177,7 +178,7 @@ public class WorkflowRunSharedLink {
   }
 
 
-  public WorkflowRunSharedLink expiredRedirectUrl(String expiredRedirectUrl) {
+  public WorkflowRunLink expiredRedirectUrl(String expiredRedirectUrl) {
     this.expiredRedirectUrl = expiredRedirectUrl;
     return this;
   }
@@ -196,7 +197,7 @@ public class WorkflowRunSharedLink {
   }
 
 
-  public WorkflowRunSharedLink expiresAt(OffsetDateTime expiresAt) {
+  public WorkflowRunLink expiresAt(OffsetDateTime expiresAt) {
     this.expiresAt = expiresAt;
     return this;
   }
@@ -215,7 +216,7 @@ public class WorkflowRunSharedLink {
   }
 
 
-  public WorkflowRunSharedLink language(LanguageEnum language) {
+  public WorkflowRunLink language(LanguageEnum language) {
     this.language = language;
     return this;
   }
@@ -246,9 +247,9 @@ public class WorkflowRunSharedLink {
    *
    * @param key name of the property
    * @param value value of the property
-   * @return the WorkflowRunSharedLink instance itself
+   * @return the WorkflowRunLink instance itself
    */
-  public WorkflowRunSharedLink putAdditionalProperty(String key, Object value) {
+  public WorkflowRunLink putAdditionalProperty(String key, Object value) {
     if (this.additionalProperties == null) {
         this.additionalProperties = new HashMap<String, Object>();
     }
@@ -287,13 +288,17 @@ public class WorkflowRunSharedLink {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    WorkflowRunSharedLink workflowRunSharedLink = (WorkflowRunSharedLink) o;
-    return Objects.equals(this.url, workflowRunSharedLink.url) &&
-        Objects.equals(this.completedRedirectUrl, workflowRunSharedLink.completedRedirectUrl) &&
-        Objects.equals(this.expiredRedirectUrl, workflowRunSharedLink.expiredRedirectUrl) &&
-        Objects.equals(this.expiresAt, workflowRunSharedLink.expiresAt) &&
-        Objects.equals(this.language, workflowRunSharedLink.language)&&
-        Objects.equals(this.additionalProperties, workflowRunSharedLink.additionalProperties);
+    WorkflowRunLink workflowRunLink = (WorkflowRunLink) o;
+    return Objects.equals(this.url, workflowRunLink.url) &&
+        Objects.equals(this.completedRedirectUrl, workflowRunLink.completedRedirectUrl) &&
+        Objects.equals(this.expiredRedirectUrl, workflowRunLink.expiredRedirectUrl) &&
+        Objects.equals(this.expiresAt, workflowRunLink.expiresAt) &&
+        Objects.equals(this.language, workflowRunLink.language)&&
+        Objects.equals(this.additionalProperties, workflowRunLink.additionalProperties);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
@@ -301,10 +306,17 @@ public class WorkflowRunSharedLink {
     return Objects.hash(url, completedRedirectUrl, expiredRedirectUrl, expiresAt, language, additionalProperties);
   }
 
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+  }
+
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class WorkflowRunSharedLink {\n");
+    sb.append("class WorkflowRunLink {\n");
     sb.append("    url: ").append(toIndentedString(url)).append("\n");
     sb.append("    completedRedirectUrl: ").append(toIndentedString(completedRedirectUrl)).append("\n");
     sb.append("    expiredRedirectUrl: ").append(toIndentedString(expiredRedirectUrl)).append("\n");
@@ -347,12 +359,12 @@ public class WorkflowRunSharedLink {
   * Validates the JSON Element and throws an exception if issues found
   *
   * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to WorkflowRunSharedLink
+  * @throws IOException if the JSON Element is invalid with respect to WorkflowRunLink
   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!WorkflowRunSharedLink.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in WorkflowRunSharedLink is not found in the empty JSON string", WorkflowRunSharedLink.openapiRequiredFields.toString()));
+        if (!WorkflowRunLink.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in WorkflowRunLink is not found in the empty JSON string", WorkflowRunLink.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -378,16 +390,16 @@ public class WorkflowRunSharedLink {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!WorkflowRunSharedLink.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'WorkflowRunSharedLink' and its subtypes
+       if (!WorkflowRunLink.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'WorkflowRunLink' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<WorkflowRunSharedLink> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(WorkflowRunSharedLink.class));
+       final TypeAdapter<WorkflowRunLink> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(WorkflowRunLink.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<WorkflowRunSharedLink>() {
+       return (TypeAdapter<T>) new TypeAdapter<WorkflowRunLink>() {
            @Override
-           public void write(JsonWriter out, WorkflowRunSharedLink value) throws IOException {
+           public void write(JsonWriter out, WorkflowRunLink value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              obj.remove("additionalProperties");
              // serialize additional properties
@@ -405,7 +417,7 @@ public class WorkflowRunSharedLink {
                    JsonElement jsonElement = gson.toJsonTree(entry.getValue());
                    if (jsonElement.isJsonArray()) {
                      obj.add(entry.getKey(), jsonElement.getAsJsonArray());
-                   } else {
+                   } else if (jsonElement.isJsonObject()) { 
                      obj.add(entry.getKey(), jsonElement.getAsJsonObject());
                    }
                  }
@@ -415,12 +427,12 @@ public class WorkflowRunSharedLink {
            }
 
            @Override
-           public WorkflowRunSharedLink read(JsonReader in) throws IOException {
+           public WorkflowRunLink read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
-             WorkflowRunSharedLink instance = thisAdapter.fromJsonTree(jsonObj);
+             WorkflowRunLink instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
                if (!openapiFields.contains(entry.getKey())) {
                  if (entry.getValue().isJsonPrimitive()) { // primitive type
@@ -447,18 +459,18 @@ public class WorkflowRunSharedLink {
   }
 
  /**
-  * Create an instance of WorkflowRunSharedLink given an JSON string
+  * Create an instance of WorkflowRunLink given an JSON string
   *
   * @param jsonString JSON string
-  * @return An instance of WorkflowRunSharedLink
-  * @throws IOException if the JSON string is invalid with respect to WorkflowRunSharedLink
+  * @return An instance of WorkflowRunLink
+  * @throws IOException if the JSON string is invalid with respect to WorkflowRunLink
   */
-  public static WorkflowRunSharedLink fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, WorkflowRunSharedLink.class);
+  public static WorkflowRunLink fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, WorkflowRunLink.class);
   }
 
  /**
-  * Convert an instance of WorkflowRunSharedLink to an JSON string
+  * Convert an instance of WorkflowRunLink to an JSON string
   *
   * @return JSON string
   */

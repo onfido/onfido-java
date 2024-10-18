@@ -19,6 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.onfido.model.CheckStatus;
 import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
@@ -67,71 +68,9 @@ public class CheckResponse {
   @SerializedName(SERIALIZED_NAME_HREF)
   private String href;
 
-  /**
-   * The current state of the check in the checking process.
-   */
-  @JsonAdapter(StatusEnum.Adapter.class)
-  public enum StatusEnum {
-    IN_PROGRESS("in_progress"),
-    
-    AWAITING_APPLICANT("awaiting_applicant"),
-    
-    COMPLETE("complete"),
-    
-    WITHDRAWN("withdrawn"),
-    
-    PAUSED("paused"),
-    
-    REOPENED("reopened"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
-
-    private String value;
-
-    StatusEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static StatusEnum fromValue(String value) {
-      for (StatusEnum b : StatusEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      return UNKNOWN_DEFAULT_OPEN_API;
-    }
-
-    public static class Adapter extends TypeAdapter<StatusEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final StatusEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public StatusEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return StatusEnum.fromValue(value);
-      }
-    }
-
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-      String value = jsonElement.getAsString();
-      StatusEnum.fromValue(value);
-    }
-  }
-
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
-  private StatusEnum status;
+  private CheckStatus status;
 
   /**
    * The overall result of the check, based on the results of the constituent reports.
@@ -207,6 +146,14 @@ public class CheckResponse {
   @SerializedName(SERIALIZED_NAME_SANDBOX)
   private Boolean sandbox;
 
+  public static final String SERIALIZED_NAME_PAUSED = "paused";
+  @SerializedName(SERIALIZED_NAME_PAUSED)
+  private Boolean paused;
+
+  public static final String SERIALIZED_NAME_VERSION = "version";
+  @SerializedName(SERIALIZED_NAME_VERSION)
+  private String version;
+
   public CheckResponse() {
   }
 
@@ -267,21 +214,21 @@ public class CheckResponse {
   }
 
 
-  public CheckResponse status(StatusEnum status) {
+  public CheckResponse status(CheckStatus status) {
     this.status = status;
     return this;
   }
 
    /**
-   * The current state of the check in the checking process.
+   * Get status
    * @return status
   **/
   @javax.annotation.Nullable
-  public StatusEnum getStatus() {
+  public CheckStatus getStatus() {
     return status;
   }
 
-  public void setStatus(StatusEnum status) {
+  public void setStatus(CheckStatus status) {
     this.status = status;
   }
 
@@ -388,6 +335,44 @@ public class CheckResponse {
     this.sandbox = sandbox;
   }
 
+
+  public CheckResponse paused(Boolean paused) {
+    this.paused = paused;
+    return this;
+  }
+
+   /**
+   * Get paused
+   * @return paused
+  **/
+  @javax.annotation.Nullable
+  public Boolean getPaused() {
+    return paused;
+  }
+
+  public void setPaused(Boolean paused) {
+    this.paused = paused;
+  }
+
+
+  public CheckResponse version(String version) {
+    this.version = version;
+    return this;
+  }
+
+   /**
+   * Get version
+   * @return version
+  **/
+  @javax.annotation.Nullable
+  public String getVersion() {
+    return version;
+  }
+
+  public void setVersion(String version) {
+    this.version = version;
+  }
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -451,13 +436,15 @@ public class CheckResponse {
         Objects.equals(this.formUri, checkResponse.formUri) &&
         Objects.equals(this.resultsUri, checkResponse.resultsUri) &&
         Objects.equals(this.reportIds, checkResponse.reportIds) &&
-        Objects.equals(this.sandbox, checkResponse.sandbox)&&
+        Objects.equals(this.sandbox, checkResponse.sandbox) &&
+        Objects.equals(this.paused, checkResponse.paused) &&
+        Objects.equals(this.version, checkResponse.version)&&
         Objects.equals(this.additionalProperties, checkResponse.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, createdAt, href, status, result, formUri, resultsUri, reportIds, sandbox, additionalProperties);
+    return Objects.hash(id, createdAt, href, status, result, formUri, resultsUri, reportIds, sandbox, paused, version, additionalProperties);
   }
 
   @Override
@@ -473,6 +460,8 @@ public class CheckResponse {
     sb.append("    resultsUri: ").append(toIndentedString(resultsUri)).append("\n");
     sb.append("    reportIds: ").append(toIndentedString(reportIds)).append("\n");
     sb.append("    sandbox: ").append(toIndentedString(sandbox)).append("\n");
+    sb.append("    paused: ").append(toIndentedString(paused)).append("\n");
+    sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -505,6 +494,8 @@ public class CheckResponse {
     openapiFields.add("results_uri");
     openapiFields.add("report_ids");
     openapiFields.add("sandbox");
+    openapiFields.add("paused");
+    openapiFields.add("version");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -542,7 +533,7 @@ public class CheckResponse {
       }
       // validate the optional field `status`
       if (jsonObj.get("status") != null && !jsonObj.get("status").isJsonNull()) {
-        StatusEnum.validateJsonElement(jsonObj.get("status"));
+        CheckStatus.validateJsonElement(jsonObj.get("status"));
       }
       if ((jsonObj.get("result") != null && !jsonObj.get("result").isJsonNull()) && !jsonObj.get("result").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `result` to be a primitive type in the JSON string but got `%s`", jsonObj.get("result").toString()));
@@ -560,6 +551,9 @@ public class CheckResponse {
       // ensure the optional json data is an array if present
       if (jsonObj.get("report_ids") != null && !jsonObj.get("report_ids").isJsonNull() && !jsonObj.get("report_ids").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `report_ids` to be an array in the JSON string but got `%s`", jsonObj.get("report_ids").toString()));
+      }
+      if ((jsonObj.get("version") != null && !jsonObj.get("version").isJsonNull()) && !jsonObj.get("version").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `version` to be a primitive type in the JSON string but got `%s`", jsonObj.get("version").toString()));
       }
   }
 
@@ -594,7 +588,7 @@ public class CheckResponse {
                    JsonElement jsonElement = gson.toJsonTree(entry.getValue());
                    if (jsonElement.isJsonArray()) {
                      obj.add(entry.getKey(), jsonElement.getAsJsonArray());
-                   } else {
+                   } else if (jsonElement.isJsonObject()) { 
                      obj.add(entry.getKey(), jsonElement.getAsJsonObject());
                    }
                  }

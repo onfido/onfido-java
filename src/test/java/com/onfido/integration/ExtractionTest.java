@@ -27,7 +27,8 @@ public class ExtractionTest extends TestBase {
   @Test
   public void performExtractionTest() throws Exception {
 
-    Document document = uploadDocument(applicant, "sample_driving_licence.png", "driving_licence");
+    Document document =
+        uploadDocument(applicant, "sample_driving_licence.png", DocumentTypes.DRIVING_LICENCE);
     Extraction extraction = onfido.extract(new ExtractRequest().documentId(document.getId()));
 
     Assertions.assertEquals(document.getId(), extraction.getDocumentId());
@@ -50,5 +51,9 @@ public class ExtractionTest extends TestBase {
     Assertions.assertEquals("SARAH", extractedData.getFirstName());
     Assertions.assertEquals("MORGAN", extractedData.getLastName());
     Assertions.assertEquals(GenderEnum.FEMALE, extractedData.getGender());
+
+    Assertions.assertNotNull(extraction.toJson());
+    Assertions.assertNotNull(documentClassification.toJson());
+    Assertions.assertNotNull(extractedData.toJson());
   }
 }

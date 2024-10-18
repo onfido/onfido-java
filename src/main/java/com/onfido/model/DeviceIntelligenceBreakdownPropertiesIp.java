@@ -55,21 +55,6 @@ public class DeviceIntelligenceBreakdownPropertiesIp {
   @SerializedName(SERIALIZED_NAME_ADDRESS)
   private String address;
 
-  public static final String SERIALIZED_NAME_VPN_DETECTION = "vpn_detection";
-  @Deprecated
-  @SerializedName(SERIALIZED_NAME_VPN_DETECTION)
-  private String vpnDetection;
-
-  public static final String SERIALIZED_NAME_PROXY_DETECTION = "proxy_detection";
-  @Deprecated
-  @SerializedName(SERIALIZED_NAME_PROXY_DETECTION)
-  private String proxyDetection;
-
-  public static final String SERIALIZED_NAME_TYPE = "type";
-  @Deprecated
-  @SerializedName(SERIALIZED_NAME_TYPE)
-  private String type;
-
   public DeviceIntelligenceBreakdownPropertiesIp() {
   }
 
@@ -89,75 +74,6 @@ public class DeviceIntelligenceBreakdownPropertiesIp {
 
   public void setAddress(String address) {
     this.address = address;
-  }
-
-
-  @Deprecated
-  public DeviceIntelligenceBreakdownPropertiesIp vpnDetection(String vpnDetection) {
-    this.vpnDetection = vpnDetection;
-    return this;
-  }
-
-   /**
-   * The likelihood of the network connection being a VPN.
-   * @return vpnDetection
-   * @deprecated
-  **/
-  @Deprecated
-  @javax.annotation.Nullable
-  public String getVpnDetection() {
-    return vpnDetection;
-  }
-
-  @Deprecated
-  public void setVpnDetection(String vpnDetection) {
-    this.vpnDetection = vpnDetection;
-  }
-
-
-  @Deprecated
-  public DeviceIntelligenceBreakdownPropertiesIp proxyDetection(String proxyDetection) {
-    this.proxyDetection = proxyDetection;
-    return this;
-  }
-
-   /**
-   * The likelihood of the network connection being a Proxy.
-   * @return proxyDetection
-   * @deprecated
-  **/
-  @Deprecated
-  @javax.annotation.Nullable
-  public String getProxyDetection() {
-    return proxyDetection;
-  }
-
-  @Deprecated
-  public void setProxyDetection(String proxyDetection) {
-    this.proxyDetection = proxyDetection;
-  }
-
-
-  @Deprecated
-  public DeviceIntelligenceBreakdownPropertiesIp type(String type) {
-    this.type = type;
-    return this;
-  }
-
-   /**
-   * The type of organization that owns this IP address.
-   * @return type
-   * @deprecated
-  **/
-  @Deprecated
-  @javax.annotation.Nullable
-  public String getType() {
-    return type;
-  }
-
-  @Deprecated
-  public void setType(String type) {
-    this.type = type;
   }
 
   /**
@@ -215,16 +131,13 @@ public class DeviceIntelligenceBreakdownPropertiesIp {
       return false;
     }
     DeviceIntelligenceBreakdownPropertiesIp deviceIntelligenceBreakdownPropertiesIp = (DeviceIntelligenceBreakdownPropertiesIp) o;
-    return Objects.equals(this.address, deviceIntelligenceBreakdownPropertiesIp.address) &&
-        Objects.equals(this.vpnDetection, deviceIntelligenceBreakdownPropertiesIp.vpnDetection) &&
-        Objects.equals(this.proxyDetection, deviceIntelligenceBreakdownPropertiesIp.proxyDetection) &&
-        Objects.equals(this.type, deviceIntelligenceBreakdownPropertiesIp.type)&&
+    return Objects.equals(this.address, deviceIntelligenceBreakdownPropertiesIp.address)&&
         Objects.equals(this.additionalProperties, deviceIntelligenceBreakdownPropertiesIp.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(address, vpnDetection, proxyDetection, type, additionalProperties);
+    return Objects.hash(address, additionalProperties);
   }
 
   @Override
@@ -232,9 +145,6 @@ public class DeviceIntelligenceBreakdownPropertiesIp {
     StringBuilder sb = new StringBuilder();
     sb.append("class DeviceIntelligenceBreakdownPropertiesIp {\n");
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
-    sb.append("    vpnDetection: ").append(toIndentedString(vpnDetection)).append("\n");
-    sb.append("    proxyDetection: ").append(toIndentedString(proxyDetection)).append("\n");
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -259,9 +169,6 @@ public class DeviceIntelligenceBreakdownPropertiesIp {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
     openapiFields.add("address");
-    openapiFields.add("vpn_detection");
-    openapiFields.add("proxy_detection");
-    openapiFields.add("type");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -282,15 +189,6 @@ public class DeviceIntelligenceBreakdownPropertiesIp {
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("address") != null && !jsonObj.get("address").isJsonNull()) && !jsonObj.get("address").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `address` to be a primitive type in the JSON string but got `%s`", jsonObj.get("address").toString()));
-      }
-      if ((jsonObj.get("vpn_detection") != null && !jsonObj.get("vpn_detection").isJsonNull()) && !jsonObj.get("vpn_detection").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `vpn_detection` to be a primitive type in the JSON string but got `%s`", jsonObj.get("vpn_detection").toString()));
-      }
-      if ((jsonObj.get("proxy_detection") != null && !jsonObj.get("proxy_detection").isJsonNull()) && !jsonObj.get("proxy_detection").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `proxy_detection` to be a primitive type in the JSON string but got `%s`", jsonObj.get("proxy_detection").toString()));
-      }
-      if ((jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) && !jsonObj.get("type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
       }
   }
 
@@ -325,7 +223,7 @@ public class DeviceIntelligenceBreakdownPropertiesIp {
                    JsonElement jsonElement = gson.toJsonTree(entry.getValue());
                    if (jsonElement.isJsonArray()) {
                      obj.add(entry.getKey(), jsonElement.getAsJsonArray());
-                   } else {
+                   } else if (jsonElement.isJsonObject()) { 
                      obj.add(entry.getKey(), jsonElement.getAsJsonObject());
                    }
                  }

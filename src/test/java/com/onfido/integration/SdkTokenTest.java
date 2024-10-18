@@ -19,5 +19,7 @@ public class SdkTokenTest extends TestBase {
                 .referrer("https://*.example.com/example_page/*"));
 
     Assertions.assertTrue(token.getToken().length() > 0);
+
+    Assertions.assertNotNull(token.toJson());
   }
 }

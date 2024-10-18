@@ -6,6 +6,7 @@ import com.onfido.model.CheckBuilder;
 import com.onfido.model.Document;
 import com.onfido.model.DocumentBreakdown;
 import com.onfido.model.DocumentReport;
+import com.onfido.model.DocumentTypes;
 import com.onfido.model.IdentityEnhancedProperties;
 import com.onfido.model.IdentityEnhancedReport;
 import com.onfido.model.Report;
@@ -29,7 +30,8 @@ public class ReportTest extends TestBase {
   @BeforeEach
   public void setup() throws Exception {
     applicant = createApplicant();
-    document = uploadDocument(applicant, "sample_driving_licence.png", "driving_licence");
+    document =
+        uploadDocument(applicant, "sample_driving_licence.png", DocumentTypes.DRIVING_LICENCE);
     check =
         createCheck(
             applicant,

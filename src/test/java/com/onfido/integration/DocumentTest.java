@@ -5,6 +5,7 @@ import com.onfido.FileTransfer;
 import com.onfido.model.Applicant;
 import com.onfido.model.Document;
 import com.onfido.model.Document.FileTypeEnum;
+import com.onfido.model.DocumentTypes;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -19,12 +20,15 @@ public class DocumentTest extends TestBase {
   @BeforeEach
   public void setupTest() throws Exception {
     applicant = createApplicant();
-    document = uploadDocument(applicant, "sample_driving_licence.png", "driving_licence");
+    document =
+        uploadDocument(applicant, "sample_driving_licence.png", DocumentTypes.DRIVING_LICENCE);
   }
 
   @Test
   public void uploadDocumentTest() throws Exception {
     Assertions.assertEquals("sample_driving_licence.png", document.getFileName());
+
+    Assertions.assertNotNull(document.toJson());
   }
 
   @Test
@@ -51,11 +55,12 @@ public class DocumentTest extends TestBase {
     Document lookupDocument = onfido.findDocument(document.getId());
 
     Assertions.assertEquals("sample_driving_licence.png", lookupDocument.getFileName());
+    Assertions.assertNotNull(lookupDocument.toJson());
   }
 
   @Test
   public void listDocumentsTest() throws Exception {
-    uploadDocument(applicant, "another_sample_driving_licence.jpeg", "driving_licence");
+    uploadDocument(applicant, "another_sample_driving_licence.jpeg", DocumentTypes.DRIVING_LICENCE);
 
     List<Document> documents =
         onfido.listDocuments(applicant.getId()).getDocuments().stream()
@@ -66,6 +71,9 @@ public class DocumentTest extends TestBase {
     Assertions.assertEquals(FileTypeEnum.JPEG, documents.get(0).getFileType());
     Assertions.assertEquals("sample_driving_licence.png", documents.get(1).getFileName());
     Assertions.assertEquals(FileTypeEnum.PNG, documents.get(1).getFileType());
+
+    Assertions.assertNotNull(documents.get(0).toJson());
+    Assertions.assertNotNull(documents.get(1).toJson());
   }
 
   @Test

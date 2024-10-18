@@ -37,7 +37,7 @@ public class QualifiedElectronicSignatureTest extends TestBase {
                 .customData(customData));
     UUID workflowRunId = workflowRun.getId();
 
-    TaskItem task = onfido.listTasks(workflowRunId).get(0);
+    TaskItem task = onfido.listTasks(workflowRunId).get(1);
 
     LinkedTreeMap output =
         (LinkedTreeMap)

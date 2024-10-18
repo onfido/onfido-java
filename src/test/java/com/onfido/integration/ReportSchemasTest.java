@@ -16,7 +16,8 @@ public class ReportSchemasTest extends TestBase {
   @BeforeEach
   public void setup() throws Exception {
     applicant = createApplicant();
-    document = uploadDocument(applicant, "sample_driving_licence.png", "driving_licence");
+    document =
+        uploadDocument(applicant, "sample_driving_licence.png", DocumentTypes.DRIVING_LICENCE);
   }
 
   @Test
@@ -56,6 +57,10 @@ public class ReportSchemasTest extends TestBase {
     Assertions.assertNotNull(documentReport.getDocumentReport().getBreakdown());
     Assertions.assertNotNull(documentReport.getDocumentReport().getProperties());
     Assertions.assertNull(documentReport.getDocumentReport().getProperties().getDocumentSubtype());
+
+    Assertions.assertNotNull(documentReport.getDocumentReport().toJson());
+    Assertions.assertNotNull(documentReport.getDocumentReport().getBreakdown().toJson());
+    Assertions.assertNotNull(documentReport.getDocumentReport().getProperties().toJson());
   }
 
   @Test
@@ -89,5 +94,13 @@ public class ReportSchemasTest extends TestBase {
         facialSimilarityPhotoFullyAutoReport
             .getFacialSimilarityPhotoFullyAutoReport()
             .getProperties());
+
+    Assertions.assertNotNull(
+        facialSimilarityPhotoFullyAutoReport.getFacialSimilarityPhotoFullyAutoReport().toJson());
+    Assertions.assertNotNull(
+        facialSimilarityPhotoFullyAutoReport
+            .getFacialSimilarityPhotoFullyAutoReport()
+            .getProperties()
+            .toJson());
   }
 }

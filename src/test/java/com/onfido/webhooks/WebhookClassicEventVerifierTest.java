@@ -4,8 +4,10 @@ import com.onfido.OnfidoInvalidSignatureError;
 import com.onfido.WebhookEventVerifier;
 import com.onfido.integration.TestBase;
 import com.onfido.model.WebhookEvent;
+import com.onfido.model.WebhookEventObjectStatus;
 import com.onfido.model.WebhookEventPayload;
 import com.onfido.model.WebhookEventPayloadObject;
+import com.onfido.model.WebhookEventResourceType;
 import com.onfido.model.WebhookEventType;
 import java.time.OffsetDateTime;
 import org.junit.jupiter.api.Assertions;
@@ -26,13 +28,13 @@ public class WebhookClassicEventVerifierTest extends TestBase {
           .payload(
               new WebhookEventPayload()
                   .action(WebhookEventType.CHECK_COMPLETED)
-                  .resourceType("check")
+                  .resourceType(WebhookEventResourceType.CHECK)
                   ._object(
                       new WebhookEventPayloadObject()
                           .id("f2302f45-227d-413d-ad61-09ec077a086a")
                           .href(
                               "https://api.onfido.com/v3.6/checks/f2302f45-227d-413d-ad61-09ec077a086a")
-                          .status("complete")
+                          .status(WebhookEventObjectStatus.COMPLETE)
                           .completedAtIso8601(OffsetDateTime.parse("2024-04-04T09:21:21Z"))));
 
   @Test

@@ -4,7 +4,9 @@ import com.onfido.FileTransfer;
 import com.onfido.model.Applicant;
 import com.onfido.model.Check;
 import com.onfido.model.CheckBuilder;
+import com.onfido.model.CheckStatus;
 import com.onfido.model.Document;
+import com.onfido.model.DocumentTypes;
 import com.onfido.model.ReportName;
 import com.onfido.model.UsDrivingLicenceBuilder;
 import java.util.Arrays;
@@ -20,7 +22,8 @@ public class CheckTest extends TestBase {
   @BeforeEach
   public void setup() throws Exception {
     applicant = createApplicant();
-    document = uploadDocument(applicant, "sample_driving_licence.png", "driving_licence");
+    document =
+        uploadDocument(applicant, "sample_driving_licence.png", DocumentTypes.DRIVING_LICENCE);
   }
 
   @Test
@@ -29,10 +32,16 @@ public class CheckTest extends TestBase {
         createCheck(
             applicant,
             document,
-            new CheckBuilder().reportNames(Arrays.asList(ReportName.DOCUMENT)));
+            new CheckBuilder()
+                .reportNames(Arrays.asList(ReportName.DOCUMENT))
+                .privacyNoticesReadConsentGiven(true));
 
     Assertions.assertEquals(applicant.getId(), check.getApplicantId());
     Assertions.assertEquals(null, check.getWebhookIds());
+    Assertions.assertEquals(CheckStatus.IN_PROGRESS, check.getStatus());
+    Assertions.assertEquals(true, check.getPrivacyNoticesReadConsentGiven());
+
+    Assertions.assertNotNull(check.toJson());
   }
 
   @Test
@@ -85,6 +94,8 @@ public class CheckTest extends TestBase {
     Check lookupCheck = onfido.findCheck(check.getId());
 
     Assertions.assertEquals(check.getApplicantId(), lookupCheck.getApplicantId());
+
+    Assertions.assertNotNull(check.toJson());
   }
 
   @Test
@@ -96,6 +107,8 @@ public class CheckTest extends TestBase {
 
     Assertions.assertEquals(applicant.getId(), checks.get(0).getApplicantId());
     Assertions.assertEquals(1, checks.size());
+
+    Assertions.assertNotNull(checks.get(0).toJson());
   }
 
   @Test

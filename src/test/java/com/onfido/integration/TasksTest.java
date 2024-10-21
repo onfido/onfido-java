@@ -29,6 +29,9 @@ public class TasksTest extends TestBase {
     List<TaskItem> tasks = onfido.listTasks(workflowRunId);
 
     Assertions.assertEquals(2, tasks.size());
+
+    Assertions.assertNotNull(tasks.get(0).toJson());
+    Assertions.assertNotNull(tasks.get(1).toJson());
   }
 
   @Test
@@ -39,6 +42,8 @@ public class TasksTest extends TestBase {
 
     Assertions.assertEquals(lookupTask.getId(), task.getId());
     Assertions.assertEquals(lookupTask.getTaskDefId(), task.getTaskDefId());
+
+    Assertions.assertNotNull(task.toJson());
   }
 
   @Test

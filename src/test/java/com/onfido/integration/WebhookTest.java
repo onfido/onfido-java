@@ -36,6 +36,8 @@ public class WebhookTest extends TestBase {
   @Test
   public void createWebhookTest() throws Exception {
     Assertions.assertEquals("https://example.com/webhook", webhook.getUrl());
+
+    Assertions.assertNotNull(webhook.toJson());
   }
 
   @Test
@@ -43,6 +45,8 @@ public class WebhookTest extends TestBase {
     Webhook lookupWebhook = onfido.findWebhook(webhook.getId());
 
     Assertions.assertEquals("https://example.com/webhook", lookupWebhook.getUrl());
+
+    Assertions.assertNotNull(lookupWebhook.toJson());
   }
 
   @Test
@@ -52,6 +56,8 @@ public class WebhookTest extends TestBase {
             webhook.getId(), new WebhookUpdater().url("https://example.com/webhook/updated"));
 
     Assertions.assertEquals("https://example.com/webhook/updated", updatedWebhook.getUrl());
+
+    Assertions.assertNotNull(updatedWebhook.toJson());
   }
 
   @Test
@@ -72,6 +78,9 @@ public class WebhookTest extends TestBase {
     Assertions.assertEquals(3, webhooks.size());
     Assertions.assertEquals("https://example.com/firstWebhook", webhooks.get(0).getUrl());
     Assertions.assertEquals("https://example.com/secondWebhook", webhooks.get(1).getUrl());
+
+    Assertions.assertNotNull(webhooks.get(0).toJson());
+    Assertions.assertNotNull(webhooks.get(1).toJson());
   }
 
   @Test

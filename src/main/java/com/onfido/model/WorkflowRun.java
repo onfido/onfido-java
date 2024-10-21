@@ -19,8 +19,9 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.onfido.model.WorkflowRunResponseError;
-import com.onfido.model.WorkflowRunSharedLink;
+import com.onfido.model.WorkflowRunError;
+import com.onfido.model.WorkflowRunLink;
+import com.onfido.model.WorkflowRunStatus;
 import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
@@ -76,7 +77,7 @@ public class WorkflowRun {
 
   public static final String SERIALIZED_NAME_LINK = "link";
   @SerializedName(SERIALIZED_NAME_LINK)
-  private WorkflowRunSharedLink link;
+  private WorkflowRunLink link;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
@@ -98,73 +99,9 @@ public class WorkflowRun {
   @SerializedName(SERIALIZED_NAME_DASHBOARD_URL)
   private String dashboardUrl;
 
-  /**
-   * The status of the Workflow Run.
-   */
-  @JsonAdapter(StatusEnum.Adapter.class)
-  public enum StatusEnum {
-    AWAITING_INPUT("awaiting_input"),
-    
-    PROCESSING("processing"),
-    
-    ABANDONED("abandoned"),
-    
-    ERROR("error"),
-    
-    APPROVED("approved"),
-    
-    REVIEW("review"),
-    
-    DECLINED("declined"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
-
-    private String value;
-
-    StatusEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static StatusEnum fromValue(String value) {
-      for (StatusEnum b : StatusEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      return UNKNOWN_DEFAULT_OPEN_API;
-    }
-
-    public static class Adapter extends TypeAdapter<StatusEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final StatusEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public StatusEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return StatusEnum.fromValue(value);
-      }
-    }
-
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-      String value = jsonElement.getAsString();
-      StatusEnum.fromValue(value);
-    }
-  }
-
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
-  private StatusEnum status;
+  private WorkflowRunStatus status;
 
   public static final String SERIALIZED_NAME_OUTPUT = "output";
   @SerializedName(SERIALIZED_NAME_OUTPUT)
@@ -176,7 +113,7 @@ public class WorkflowRun {
 
   public static final String SERIALIZED_NAME_ERROR = "error";
   @SerializedName(SERIALIZED_NAME_ERROR)
-  private WorkflowRunResponseError error;
+  private WorkflowRunError error;
 
   public static final String SERIALIZED_NAME_SDK_TOKEN = "sdk_token";
   @SerializedName(SERIALIZED_NAME_SDK_TOKEN)
@@ -269,21 +206,21 @@ public class WorkflowRun {
   }
 
 
-  public WorkflowRun link(WorkflowRunSharedLink link) {
+  public WorkflowRun link(WorkflowRunLink link) {
     this.link = link;
     return this;
   }
 
    /**
-   * Get link
+   * Object for the configuration of the Workflow Run link.
    * @return link
   **/
   @javax.annotation.Nullable
-  public WorkflowRunSharedLink getLink() {
+  public WorkflowRunLink getLink() {
     return link;
   }
 
-  public void setLink(WorkflowRunSharedLink link) {
+  public void setLink(WorkflowRunLink link) {
     this.link = link;
   }
 
@@ -383,7 +320,7 @@ public class WorkflowRun {
   }
 
 
-  public WorkflowRun status(StatusEnum status) {
+  public WorkflowRun status(WorkflowRunStatus status) {
     this.status = status;
     return this;
   }
@@ -393,11 +330,11 @@ public class WorkflowRun {
    * @return status
   **/
   @javax.annotation.Nullable
-  public StatusEnum getStatus() {
+  public WorkflowRunStatus getStatus() {
     return status;
   }
 
-  public void setStatus(StatusEnum status) {
+  public void setStatus(WorkflowRunStatus status) {
     this.status = status;
   }
 
@@ -448,21 +385,21 @@ public class WorkflowRun {
   }
 
 
-  public WorkflowRun error(WorkflowRunResponseError error) {
+  public WorkflowRun error(WorkflowRunError error) {
     this.error = error;
     return this;
   }
 
    /**
-   * Get error
+   * Error object. Only set when the Workflow Run status is &#39;error&#39;.
    * @return error
   **/
   @javax.annotation.Nullable
-  public WorkflowRunResponseError getError() {
+  public WorkflowRunError getError() {
     return error;
   }
 
-  public void setError(WorkflowRunResponseError error) {
+  public void setError(WorkflowRunError error) {
     this.error = error;
   }
 
@@ -674,7 +611,7 @@ public class WorkflowRun {
       }
       // validate the optional field `link`
       if (jsonObj.get("link") != null && !jsonObj.get("link").isJsonNull()) {
-        WorkflowRunSharedLink.validateJsonElement(jsonObj.get("link"));
+        WorkflowRunLink.validateJsonElement(jsonObj.get("link"));
       }
       if (!jsonObj.get("id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
@@ -682,12 +619,9 @@ public class WorkflowRun {
       if ((jsonObj.get("dashboard_url") != null && !jsonObj.get("dashboard_url").isJsonNull()) && !jsonObj.get("dashboard_url").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `dashboard_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("dashboard_url").toString()));
       }
-      if ((jsonObj.get("status") != null && !jsonObj.get("status").isJsonNull()) && !jsonObj.get("status").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));
-      }
       // validate the optional field `status`
       if (jsonObj.get("status") != null && !jsonObj.get("status").isJsonNull()) {
-        StatusEnum.validateJsonElement(jsonObj.get("status"));
+        WorkflowRunStatus.validateJsonElement(jsonObj.get("status"));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("reasons") != null && !jsonObj.get("reasons").isJsonNull() && !jsonObj.get("reasons").isJsonArray()) {
@@ -695,7 +629,7 @@ public class WorkflowRun {
       }
       // validate the optional field `error`
       if (jsonObj.get("error") != null && !jsonObj.get("error").isJsonNull()) {
-        WorkflowRunResponseError.validateJsonElement(jsonObj.get("error"));
+        WorkflowRunError.validateJsonElement(jsonObj.get("error"));
       }
       if ((jsonObj.get("sdk_token") != null && !jsonObj.get("sdk_token").isJsonNull()) && !jsonObj.get("sdk_token").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `sdk_token` to be a primitive type in the JSON string but got `%s`", jsonObj.get("sdk_token").toString()));
@@ -733,7 +667,7 @@ public class WorkflowRun {
                    JsonElement jsonElement = gson.toJsonTree(entry.getValue());
                    if (jsonElement.isJsonArray()) {
                      obj.add(entry.getKey(), jsonElement.getAsJsonArray());
-                   } else {
+                   } else if (jsonElement.isJsonObject()) { 
                      obj.add(entry.getKey(), jsonElement.getAsJsonObject());
                    }
                  }

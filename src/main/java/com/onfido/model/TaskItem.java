@@ -22,6 +22,8 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.Arrays;
+import java.util.UUID;
+import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -56,9 +58,17 @@ public class TaskItem {
   @SerializedName(SERIALIZED_NAME_ID)
   private String id;
 
+  public static final String SERIALIZED_NAME_WORKFLOW_RUN_ID = "workflow_run_id";
+  @SerializedName(SERIALIZED_NAME_WORKFLOW_RUN_ID)
+  private UUID workflowRunId;
+
   public static final String SERIALIZED_NAME_TASK_DEF_ID = "task_def_id";
   @SerializedName(SERIALIZED_NAME_TASK_DEF_ID)
   private String taskDefId;
+
+  public static final String SERIALIZED_NAME_TASK_DEF_VERSION = "task_def_version";
+  @SerializedName(SERIALIZED_NAME_TASK_DEF_VERSION)
+  private String taskDefVersion;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
@@ -90,6 +100,25 @@ public class TaskItem {
   }
 
 
+  public TaskItem workflowRunId(UUID workflowRunId) {
+    this.workflowRunId = workflowRunId;
+    return this;
+  }
+
+   /**
+   * The workflow run id the task belongs to.
+   * @return workflowRunId
+  **/
+  @javax.annotation.Nullable
+  public UUID getWorkflowRunId() {
+    return workflowRunId;
+  }
+
+  public void setWorkflowRunId(UUID workflowRunId) {
+    this.workflowRunId = workflowRunId;
+  }
+
+
   public TaskItem taskDefId(String taskDefId) {
     this.taskDefId = taskDefId;
     return this;
@@ -106,6 +135,25 @@ public class TaskItem {
 
   public void setTaskDefId(String taskDefId) {
     this.taskDefId = taskDefId;
+  }
+
+
+  public TaskItem taskDefVersion(String taskDefVersion) {
+    this.taskDefVersion = taskDefVersion;
+    return this;
+  }
+
+   /**
+   * The task definition version.
+   * @return taskDefVersion
+  **/
+  @javax.annotation.Nullable
+  public String getTaskDefVersion() {
+    return taskDefVersion;
+  }
+
+  public void setTaskDefVersion(String taskDefVersion) {
+    this.taskDefVersion = taskDefVersion;
   }
 
 
@@ -202,15 +250,28 @@ public class TaskItem {
     }
     TaskItem taskItem = (TaskItem) o;
     return Objects.equals(this.id, taskItem.id) &&
+        Objects.equals(this.workflowRunId, taskItem.workflowRunId) &&
         Objects.equals(this.taskDefId, taskItem.taskDefId) &&
+        Objects.equals(this.taskDefVersion, taskItem.taskDefVersion) &&
         Objects.equals(this.createdAt, taskItem.createdAt) &&
         Objects.equals(this.updatedAt, taskItem.updatedAt)&&
         Objects.equals(this.additionalProperties, taskItem.additionalProperties);
   }
 
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+  }
+
   @Override
   public int hashCode() {
-    return Objects.hash(id, taskDefId, createdAt, updatedAt, additionalProperties);
+    return Objects.hash(id, workflowRunId, taskDefId, taskDefVersion, createdAt, updatedAt, additionalProperties);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -218,7 +279,9 @@ public class TaskItem {
     StringBuilder sb = new StringBuilder();
     sb.append("class TaskItem {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    workflowRunId: ").append(toIndentedString(workflowRunId)).append("\n");
     sb.append("    taskDefId: ").append(toIndentedString(taskDefId)).append("\n");
+    sb.append("    taskDefVersion: ").append(toIndentedString(taskDefVersion)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
@@ -245,7 +308,9 @@ public class TaskItem {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
     openapiFields.add("id");
+    openapiFields.add("workflow_run_id");
     openapiFields.add("task_def_id");
+    openapiFields.add("task_def_version");
     openapiFields.add("created_at");
     openapiFields.add("updated_at");
 
@@ -269,8 +334,14 @@ public class TaskItem {
       if ((jsonObj.get("id") != null && !jsonObj.get("id").isJsonNull()) && !jsonObj.get("id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
       }
+      if ((jsonObj.get("workflow_run_id") != null && !jsonObj.get("workflow_run_id").isJsonNull()) && !jsonObj.get("workflow_run_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `workflow_run_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("workflow_run_id").toString()));
+      }
       if ((jsonObj.get("task_def_id") != null && !jsonObj.get("task_def_id").isJsonNull()) && !jsonObj.get("task_def_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `task_def_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("task_def_id").toString()));
+      }
+      if ((jsonObj.get("task_def_version") != null && !jsonObj.get("task_def_version").isJsonNull()) && !jsonObj.get("task_def_version").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `task_def_version` to be a primitive type in the JSON string but got `%s`", jsonObj.get("task_def_version").toString()));
       }
   }
 
@@ -305,7 +376,7 @@ public class TaskItem {
                    JsonElement jsonElement = gson.toJsonTree(entry.getValue());
                    if (jsonElement.isJsonArray()) {
                      obj.add(entry.getKey(), jsonElement.getAsJsonArray());
-                   } else {
+                   } else if (jsonElement.isJsonObject()) { 
                      obj.add(entry.getKey(), jsonElement.getAsJsonObject());
                    }
                  }

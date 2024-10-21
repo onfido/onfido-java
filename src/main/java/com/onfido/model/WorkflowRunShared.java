@@ -19,7 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.onfido.model.WorkflowRunSharedLink;
+import com.onfido.model.WorkflowRunLink;
 import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
@@ -75,7 +75,7 @@ public class WorkflowRunShared {
 
   public static final String SERIALIZED_NAME_LINK = "link";
   @SerializedName(SERIALIZED_NAME_LINK)
-  private WorkflowRunSharedLink link;
+  private WorkflowRunLink link;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
@@ -172,21 +172,21 @@ public class WorkflowRunShared {
   }
 
 
-  public WorkflowRunShared link(WorkflowRunSharedLink link) {
+  public WorkflowRunShared link(WorkflowRunLink link) {
     this.link = link;
     return this;
   }
 
    /**
-   * Get link
+   * Object for the configuration of the Workflow Run link.
    * @return link
   **/
   @javax.annotation.Nullable
-  public WorkflowRunSharedLink getLink() {
+  public WorkflowRunLink getLink() {
     return link;
   }
 
-  public void setLink(WorkflowRunSharedLink link) {
+  public void setLink(WorkflowRunLink link) {
     this.link = link;
   }
 
@@ -392,7 +392,7 @@ public class WorkflowRunShared {
       }
       // validate the optional field `link`
       if (jsonObj.get("link") != null && !jsonObj.get("link").isJsonNull()) {
-        WorkflowRunSharedLink.validateJsonElement(jsonObj.get("link"));
+        WorkflowRunLink.validateJsonElement(jsonObj.get("link"));
       }
   }
 
@@ -427,7 +427,7 @@ public class WorkflowRunShared {
                    JsonElement jsonElement = gson.toJsonTree(entry.getValue());
                    if (jsonElement.isJsonArray()) {
                      obj.add(entry.getKey(), jsonElement.getAsJsonArray());
-                   } else {
+                   } else if (jsonElement.isJsonObject()) { 
                      obj.add(entry.getKey(), jsonElement.getAsJsonObject());
                    }
                  }

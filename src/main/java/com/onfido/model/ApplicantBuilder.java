@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.onfido.model.AddressBuilder;
-import com.onfido.model.ConsentsBuilder;
+import com.onfido.model.ApplicantConsentBuilder;
 import com.onfido.model.IdNumber;
 import com.onfido.model.LocationBuilder;
 import java.io.IOException;
@@ -76,7 +76,7 @@ public class ApplicantBuilder {
 
   public static final String SERIALIZED_NAME_CONSENTS = "consents";
   @SerializedName(SERIALIZED_NAME_CONSENTS)
-  private ConsentsBuilder consents;
+  private List<ApplicantConsentBuilder> consents = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_ADDRESS = "address";
   @SerializedName(SERIALIZED_NAME_ADDRESS)
@@ -181,21 +181,29 @@ public class ApplicantBuilder {
   }
 
 
-  public ApplicantBuilder consents(ConsentsBuilder consents) {
+  public ApplicantBuilder consents(List<ApplicantConsentBuilder> consents) {
     this.consents = consents;
     return this;
   }
 
+  public ApplicantBuilder addConsentsItem(ApplicantConsentBuilder consentsItem) {
+    if (this.consents == null) {
+      this.consents = new ArrayList<>();
+    }
+    this.consents.add(consentsItem);
+    return this;
+  }
+
    /**
-   * Get consents
+   * The applicant&#39;s consents
    * @return consents
   **/
   @javax.annotation.Nullable
-  public ConsentsBuilder getConsents() {
+  public List<ApplicantConsentBuilder> getConsents() {
     return consents;
   }
 
-  public void setConsents(ConsentsBuilder consents) {
+  public void setConsents(List<ApplicantConsentBuilder> consents) {
     this.consents = consents;
   }
 
@@ -439,9 +447,19 @@ public class ApplicantBuilder {
       if ((jsonObj.get("phone_number") != null && !jsonObj.get("phone_number").isJsonNull()) && !jsonObj.get("phone_number").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `phone_number` to be a primitive type in the JSON string but got `%s`", jsonObj.get("phone_number").toString()));
       }
-      // validate the optional field `consents`
       if (jsonObj.get("consents") != null && !jsonObj.get("consents").isJsonNull()) {
-        ConsentsBuilder.validateJsonElement(jsonObj.get("consents"));
+        JsonArray jsonArrayconsents = jsonObj.getAsJsonArray("consents");
+        if (jsonArrayconsents != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("consents").isJsonArray()) {
+            throw new IllegalArgumentException(String.format("Expected the field `consents` to be an array in the JSON string but got `%s`", jsonObj.get("consents").toString()));
+          }
+
+          // validate the optional field `consents` (array)
+          for (int i = 0; i < jsonArrayconsents.size(); i++) {
+            ApplicantConsentBuilder.validateJsonElement(jsonArrayconsents.get(i));
+          };
+        }
       }
       // validate the optional field `address`
       if (jsonObj.get("address") != null && !jsonObj.get("address").isJsonNull()) {
@@ -490,7 +508,7 @@ public class ApplicantBuilder {
                    JsonElement jsonElement = gson.toJsonTree(entry.getValue());
                    if (jsonElement.isJsonArray()) {
                      obj.add(entry.getKey(), jsonElement.getAsJsonArray());
-                   } else {
+                   } else if (jsonElement.isJsonObject()) { 
                      obj.add(entry.getKey(), jsonElement.getAsJsonObject());
                    }
                  }

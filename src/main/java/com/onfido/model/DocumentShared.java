@@ -20,6 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.onfido.model.CountryCodes;
+import com.onfido.model.DocumentTypes;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.UUID;
@@ -117,7 +118,7 @@ public class DocumentShared {
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
-  private String type;
+  private DocumentTypes type;
 
   /**
    * The side of the document, if applicable. The possible values are front and back
@@ -207,7 +208,7 @@ public class DocumentShared {
   }
 
 
-  public DocumentShared type(String type) {
+  public DocumentShared type(DocumentTypes type) {
     this.type = type;
     return this;
   }
@@ -217,11 +218,11 @@ public class DocumentShared {
    * @return type
   **/
   @javax.annotation.Nullable
-  public String getType() {
+  public DocumentTypes getType() {
     return type;
   }
 
-  public void setType(String type) {
+  public void setType(DocumentTypes type) {
     this.type = type;
   }
 
@@ -412,8 +413,9 @@ public class DocumentShared {
       if (jsonObj.get("file_type") != null && !jsonObj.get("file_type").isJsonNull()) {
         FileTypeEnum.validateJsonElement(jsonObj.get("file_type"));
       }
-      if ((jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) && !jsonObj.get("type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
+      // validate the optional field `type`
+      if (jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) {
+        DocumentTypes.validateJsonElement(jsonObj.get("type"));
       }
       if ((jsonObj.get("side") != null && !jsonObj.get("side").isJsonNull()) && !jsonObj.get("side").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `side` to be a primitive type in the JSON string but got `%s`", jsonObj.get("side").toString()));
@@ -462,7 +464,7 @@ public class DocumentShared {
                    JsonElement jsonElement = gson.toJsonTree(entry.getValue());
                    if (jsonElement.isJsonArray()) {
                      obj.add(entry.getKey(), jsonElement.getAsJsonArray());
-                   } else {
+                   } else if (jsonElement.isJsonObject()) { 
                      obj.add(entry.getKey(), jsonElement.getAsJsonObject());
                    }
                  }

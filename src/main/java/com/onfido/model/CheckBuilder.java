@@ -76,6 +76,10 @@ public class CheckBuilder {
   @SerializedName(SERIALIZED_NAME_REDIRECT_URI)
   private String redirectUri;
 
+  public static final String SERIALIZED_NAME_PRIVACY_NOTICES_READ_CONSENT_GIVEN = "privacy_notices_read_consent_given";
+  @SerializedName(SERIALIZED_NAME_PRIVACY_NOTICES_READ_CONSENT_GIVEN)
+  private Boolean privacyNoticesReadConsentGiven;
+
   public static final String SERIALIZED_NAME_REPORT_NAMES = "report_names";
   @SerializedName(SERIALIZED_NAME_REPORT_NAMES)
   private List<ReportName> reportNames = new ArrayList<>();
@@ -215,6 +219,25 @@ public class CheckBuilder {
 
   public void setRedirectUri(String redirectUri) {
     this.redirectUri = redirectUri;
+  }
+
+
+  public CheckBuilder privacyNoticesReadConsentGiven(Boolean privacyNoticesReadConsentGiven) {
+    this.privacyNoticesReadConsentGiven = privacyNoticesReadConsentGiven;
+    return this;
+  }
+
+   /**
+   * Get privacyNoticesReadConsentGiven
+   * @return privacyNoticesReadConsentGiven
+  **/
+  @javax.annotation.Nullable
+  public Boolean getPrivacyNoticesReadConsentGiven() {
+    return privacyNoticesReadConsentGiven;
+  }
+
+  public void setPrivacyNoticesReadConsentGiven(Boolean privacyNoticesReadConsentGiven) {
+    this.privacyNoticesReadConsentGiven = privacyNoticesReadConsentGiven;
   }
 
 
@@ -434,6 +457,7 @@ public class CheckBuilder {
         Objects.equals(this.applicantProvidesData, checkBuilder.applicantProvidesData) &&
         Objects.equals(this.tags, checkBuilder.tags) &&
         Objects.equals(this.redirectUri, checkBuilder.redirectUri) &&
+        Objects.equals(this.privacyNoticesReadConsentGiven, checkBuilder.privacyNoticesReadConsentGiven) &&
         Objects.equals(this.reportNames, checkBuilder.reportNames) &&
         Objects.equals(this.documentIds, checkBuilder.documentIds) &&
         Objects.equals(this.asynchronous, checkBuilder.asynchronous) &&
@@ -446,7 +470,7 @@ public class CheckBuilder {
 
   @Override
   public int hashCode() {
-    return Objects.hash(webhookIds, applicantId, applicantProvidesData, tags, redirectUri, reportNames, documentIds, asynchronous, suppressFormEmails, subResult, consider, usDrivingLicence, additionalProperties);
+    return Objects.hash(webhookIds, applicantId, applicantProvidesData, tags, redirectUri, privacyNoticesReadConsentGiven, reportNames, documentIds, asynchronous, suppressFormEmails, subResult, consider, usDrivingLicence, additionalProperties);
   }
 
   @Override
@@ -458,6 +482,7 @@ public class CheckBuilder {
     sb.append("    applicantProvidesData: ").append(toIndentedString(applicantProvidesData)).append("\n");
     sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
     sb.append("    redirectUri: ").append(toIndentedString(redirectUri)).append("\n");
+    sb.append("    privacyNoticesReadConsentGiven: ").append(toIndentedString(privacyNoticesReadConsentGiven)).append("\n");
     sb.append("    reportNames: ").append(toIndentedString(reportNames)).append("\n");
     sb.append("    documentIds: ").append(toIndentedString(documentIds)).append("\n");
     sb.append("    asynchronous: ").append(toIndentedString(asynchronous)).append("\n");
@@ -493,6 +518,7 @@ public class CheckBuilder {
     openapiFields.add("applicant_provides_data");
     openapiFields.add("tags");
     openapiFields.add("redirect_uri");
+    openapiFields.add("privacy_notices_read_consent_given");
     openapiFields.add("report_names");
     openapiFields.add("document_ids");
     openapiFields.add("asynchronous");
@@ -595,7 +621,7 @@ public class CheckBuilder {
                    JsonElement jsonElement = gson.toJsonTree(entry.getValue());
                    if (jsonElement.isJsonArray()) {
                      obj.add(entry.getKey(), jsonElement.getAsJsonArray());
-                   } else {
+                   } else if (jsonElement.isJsonObject()) { 
                      obj.add(entry.getKey(), jsonElement.getAsJsonObject());
                    }
                  }

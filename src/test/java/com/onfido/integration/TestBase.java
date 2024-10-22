@@ -57,7 +57,12 @@ public class TestBase {
                 .location(
                     new LocationBuilder()
                         .ipAddress("127.0.0.1")
-                        .countryOfResidence(CountryCodes.GBR)));
+                        .countryOfResidence(CountryCodes.GBR))
+                .consents(
+                    Arrays.asList(
+                        new ApplicantConsentBuilder()
+                            .name(ApplicantConsentName.PRIVACY_NOTICES_READ)
+                            .granted(true))));
 
     return applicant;
   }
@@ -66,7 +71,8 @@ public class TestBase {
     return createApplicant("First");
   }
 
-  protected Document uploadDocument(Applicant applicant, String filename, String document_type)
+  protected Document uploadDocument(
+      Applicant applicant, String filename, DocumentTypes document_type)
       throws IOException, InterruptedException, ApiException {
     File file = new File("media/" + filename);
     byte[] byteArray = Files.readAllBytes(file.toPath());

@@ -157,6 +157,7 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.AddressesList.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.Applicant.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.ApplicantBuilder.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.ApplicantConsentBuilder.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.ApplicantCreate.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.ApplicantRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.ApplicantResponse.CustomTypeAdapterFactory());
@@ -172,8 +173,6 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.ChecksList.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.CompleteTaskBuilder.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.CompleteTaskDataBuilder.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.ConsentItem.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.ConsentsBuilder.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.DeviceIntelligenceBreakdown.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.DeviceIntelligenceBreakdownBreakdown.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.DeviceIntelligenceBreakdownBreakdownDevice.CustomTypeAdapterFactory());
@@ -413,6 +412,7 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.WebhookEvent.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.WebhookEventPayload.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.WebhookEventPayloadObject.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.WebhookEventPayloadResource.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.WebhookResend.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.WebhookResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.WebhookShared.CustomTypeAdapterFactory());
@@ -422,11 +422,11 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.WebhooksResendItem.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.WorkflowRun.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.WorkflowRunBuilder.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.WorkflowRunError.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.WorkflowRunLink.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.WorkflowRunRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.WorkflowRunResponse.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.WorkflowRunResponseError.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.WorkflowRunShared.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.WorkflowRunSharedLink.CustomTypeAdapterFactory());
         gson = gsonBuilder.create();
     }
 

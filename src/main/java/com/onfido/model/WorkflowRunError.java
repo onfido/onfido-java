@@ -14,8 +14,13 @@
 package com.onfido.model;
 
 import java.util.Objects;
-import com.onfido.model.ConsentItem;
-import java.util.List;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+import java.util.Arrays;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -42,12 +47,58 @@ import java.util.Set;
 import com.onfido.JSON;
 
 /**
- * ConsentsBuilder
+ * WorkflowRunError
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
-public class ConsentsBuilder {
-  public ConsentsBuilder() {
+public class WorkflowRunError {
+  public static final String SERIALIZED_NAME_TYPE = "type";
+  @SerializedName(SERIALIZED_NAME_TYPE)
+  private String type;
+
+  public static final String SERIALIZED_NAME_MESSAGE = "message";
+  @SerializedName(SERIALIZED_NAME_MESSAGE)
+  private String message;
+
+  public WorkflowRunError() {
   }
+
+  public WorkflowRunError type(String type) {
+    this.type = type;
+    return this;
+  }
+
+   /**
+   * The type of error.
+   * @return type
+  **/
+  @javax.annotation.Nullable
+  public String getType() {
+    return type;
+  }
+
+  public void setType(String type) {
+    this.type = type;
+  }
+
+
+  public WorkflowRunError message(String message) {
+    this.message = message;
+    return this;
+  }
+
+   /**
+   * A textual description of the error.
+   * @return message
+  **/
+  @javax.annotation.Nullable
+  public String getMessage() {
+    return message;
+  }
+
+  public void setMessage(String message) {
+    this.message = message;
+  }
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -61,9 +112,9 @@ public class ConsentsBuilder {
    *
    * @param key name of the property
    * @param value value of the property
-   * @return the ConsentsBuilder instance itself
+   * @return the WorkflowRunError instance itself
    */
-  public ConsentsBuilder putAdditionalProperty(String key, Object value) {
+  public WorkflowRunError putAdditionalProperty(String key, Object value) {
     if (this.additionalProperties == null) {
         this.additionalProperties = new HashMap<String, Object>();
     }
@@ -102,18 +153,23 @@ public class ConsentsBuilder {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    return true;
+    WorkflowRunError workflowRunError = (WorkflowRunError) o;
+    return Objects.equals(this.type, workflowRunError.type) &&
+        Objects.equals(this.message, workflowRunError.message)&&
+        Objects.equals(this.additionalProperties, workflowRunError.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(additionalProperties);
+    return Objects.hash(type, message, additionalProperties);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ConsentsBuilder {\n");
+    sb.append("class WorkflowRunError {\n");
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    message: ").append(toIndentedString(message)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -137,6 +193,8 @@ public class ConsentsBuilder {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
+    openapiFields.add("type");
+    openapiFields.add("message");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -146,13 +204,20 @@ public class ConsentsBuilder {
   * Validates the JSON Element and throws an exception if issues found
   *
   * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ConsentsBuilder
+  * @throws IOException if the JSON Element is invalid with respect to WorkflowRunError
   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!ConsentsBuilder.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ConsentsBuilder is not found in the empty JSON string", ConsentsBuilder.openapiRequiredFields.toString()));
+        if (!WorkflowRunError.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in WorkflowRunError is not found in the empty JSON string", WorkflowRunError.openapiRequiredFields.toString()));
         }
+      }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) && !jsonObj.get("type").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
+      }
+      if ((jsonObj.get("message") != null && !jsonObj.get("message").isJsonNull()) && !jsonObj.get("message").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `message` to be a primitive type in the JSON string but got `%s`", jsonObj.get("message").toString()));
       }
   }
 
@@ -160,16 +225,16 @@ public class ConsentsBuilder {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!ConsentsBuilder.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'ConsentsBuilder' and its subtypes
+       if (!WorkflowRunError.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'WorkflowRunError' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<ConsentsBuilder> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(ConsentsBuilder.class));
+       final TypeAdapter<WorkflowRunError> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(WorkflowRunError.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<ConsentsBuilder>() {
+       return (TypeAdapter<T>) new TypeAdapter<WorkflowRunError>() {
            @Override
-           public void write(JsonWriter out, ConsentsBuilder value) throws IOException {
+           public void write(JsonWriter out, WorkflowRunError value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              obj.remove("additionalProperties");
              // serialize additional properties
@@ -187,7 +252,7 @@ public class ConsentsBuilder {
                    JsonElement jsonElement = gson.toJsonTree(entry.getValue());
                    if (jsonElement.isJsonArray()) {
                      obj.add(entry.getKey(), jsonElement.getAsJsonArray());
-                   } else {
+                   } else if (jsonElement.isJsonObject()) { 
                      obj.add(entry.getKey(), jsonElement.getAsJsonObject());
                    }
                  }
@@ -197,12 +262,12 @@ public class ConsentsBuilder {
            }
 
            @Override
-           public ConsentsBuilder read(JsonReader in) throws IOException {
+           public WorkflowRunError read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
-             ConsentsBuilder instance = thisAdapter.fromJsonTree(jsonObj);
+             WorkflowRunError instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
                if (!openapiFields.contains(entry.getKey())) {
                  if (entry.getValue().isJsonPrimitive()) { // primitive type
@@ -229,18 +294,18 @@ public class ConsentsBuilder {
   }
 
  /**
-  * Create an instance of ConsentsBuilder given an JSON string
+  * Create an instance of WorkflowRunError given an JSON string
   *
   * @param jsonString JSON string
-  * @return An instance of ConsentsBuilder
-  * @throws IOException if the JSON string is invalid with respect to ConsentsBuilder
+  * @return An instance of WorkflowRunError
+  * @throws IOException if the JSON string is invalid with respect to WorkflowRunError
   */
-  public static ConsentsBuilder fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, ConsentsBuilder.class);
+  public static WorkflowRunError fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, WorkflowRunError.class);
   }
 
  /**
-  * Convert an instance of ConsentsBuilder to an JSON string
+  * Convert an instance of WorkflowRunError to an JSON string
   *
   * @return JSON string
   */

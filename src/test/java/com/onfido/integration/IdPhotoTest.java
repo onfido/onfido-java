@@ -25,6 +25,8 @@ public class IdPhotoTest extends TestBase {
   @Test
   public void uploadIdPhotoTest() throws Exception {
     Assertions.assertEquals(idPhoto.getId() + ".png", idPhoto.getFileName());
+
+    Assertions.assertNotNull(idPhoto.toJson());
   }
 
   @Test
@@ -51,6 +53,8 @@ public class IdPhotoTest extends TestBase {
     IdPhoto lookupIdPhoto = onfido.findIdPhoto(idPhoto.getId());
 
     Assertions.assertEquals(idPhoto.getId() + ".png", lookupIdPhoto.getFileName());
+
+    Assertions.assertNotNull(idPhoto.toJson());
   }
 
   @Test
@@ -64,5 +68,8 @@ public class IdPhotoTest extends TestBase {
 
     Assertions.assertEquals(idPhotos.get(0).getId() + ".png", idPhotos.get(0).getFileName());
     Assertions.assertEquals(idPhotos.get(1).getId() + ".png", idPhotos.get(1).getFileName());
+
+    Assertions.assertNotNull(idPhotos.get(0).toJson());
+    Assertions.assertNotNull(idPhotos.get(1).toJson());
   }
 }

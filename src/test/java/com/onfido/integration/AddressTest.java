@@ -14,5 +14,7 @@ public class AddressTest extends TestBase {
     Assertions.assertNotNull(addresses);
     Assertions.assertEquals("S2 2DF", addresses.get(0).getPostcode());
     Assertions.assertEquals("S2 2DF", addresses.get(1).getPostcode());
+
+    Assertions.assertNotNull(addresses.get(0).toJson());
   }
 }

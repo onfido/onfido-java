@@ -20,6 +20,8 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.onfido.model.WebhookEventPayloadObject;
+import com.onfido.model.WebhookEventPayloadResource;
+import com.onfido.model.WebhookEventResourceType;
 import com.onfido.model.WebhookEventType;
 import java.io.IOException;
 import java.util.Arrays;
@@ -55,7 +57,7 @@ import com.onfido.JSON;
 public class WebhookEventPayload {
   public static final String SERIALIZED_NAME_RESOURCE_TYPE = "resource_type";
   @SerializedName(SERIALIZED_NAME_RESOURCE_TYPE)
-  private String resourceType;
+  private WebhookEventResourceType resourceType;
 
   public static final String SERIALIZED_NAME_ACTION = "action";
   @SerializedName(SERIALIZED_NAME_ACTION)
@@ -67,12 +69,12 @@ public class WebhookEventPayload {
 
   public static final String SERIALIZED_NAME_RESOURCE = "resource";
   @SerializedName(SERIALIZED_NAME_RESOURCE)
-  private Object resource;
+  private WebhookEventPayloadResource resource;
 
   public WebhookEventPayload() {
   }
 
-  public WebhookEventPayload resourceType(String resourceType) {
+  public WebhookEventPayload resourceType(WebhookEventResourceType resourceType) {
     this.resourceType = resourceType;
     return this;
   }
@@ -82,11 +84,11 @@ public class WebhookEventPayload {
    * @return resourceType
   **/
   @javax.annotation.Nonnull
-  public String getResourceType() {
+  public WebhookEventResourceType getResourceType() {
     return resourceType;
   }
 
-  public void setResourceType(String resourceType) {
+  public void setResourceType(WebhookEventResourceType resourceType) {
     this.resourceType = resourceType;
   }
 
@@ -129,21 +131,21 @@ public class WebhookEventPayload {
   }
 
 
-  public WebhookEventPayload resource(Object resource) {
+  public WebhookEventPayload resource(WebhookEventPayloadResource resource) {
     this.resource = resource;
     return this;
   }
 
    /**
-   * The resource affected by this event.
+   * Get resource
    * @return resource
   **/
   @javax.annotation.Nullable
-  public Object getResource() {
+  public WebhookEventPayloadResource getResource() {
     return resource;
   }
 
-  public void setResource(Object resource) {
+  public void setResource(WebhookEventPayloadResource resource) {
     this.resource = resource;
   }
 
@@ -275,9 +277,8 @@ public class WebhookEventPayload {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if (!jsonObj.get("resource_type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `resource_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("resource_type").toString()));
-      }
+      // validate the required field `resource_type`
+      WebhookEventResourceType.validateJsonElement(jsonObj.get("resource_type"));
       // validate the optional field `action`
       if (jsonObj.get("action") != null && !jsonObj.get("action").isJsonNull()) {
         WebhookEventType.validateJsonElement(jsonObj.get("action"));
@@ -285,6 +286,10 @@ public class WebhookEventPayload {
       // validate the optional field `object`
       if (jsonObj.get("object") != null && !jsonObj.get("object").isJsonNull()) {
         WebhookEventPayloadObject.validateJsonElement(jsonObj.get("object"));
+      }
+      // validate the optional field `resource`
+      if (jsonObj.get("resource") != null && !jsonObj.get("resource").isJsonNull()) {
+        WebhookEventPayloadResource.validateJsonElement(jsonObj.get("resource"));
       }
   }
 
@@ -319,7 +324,7 @@ public class WebhookEventPayload {
                    JsonElement jsonElement = gson.toJsonTree(entry.getValue());
                    if (jsonElement.isJsonArray()) {
                      obj.add(entry.getKey(), jsonElement.getAsJsonArray());
-                   } else {
+                   } else if (jsonElement.isJsonObject()) { 
                      obj.add(entry.getKey(), jsonElement.getAsJsonObject());
                    }
                  }

@@ -39,6 +39,7 @@ import com.onfido.model.ChecksList;
 import com.onfido.model.CompleteTaskBuilder;
 import com.onfido.model.CountryCodes;
 import com.onfido.model.Document;
+import com.onfido.model.DocumentTypes;
 import com.onfido.model.DocumentsList;
 import com.onfido.model.Error;
 import com.onfido.model.Error1;
@@ -8146,7 +8147,7 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call uploadDocumentCall(String type, UUID applicantId, FileTransfer _file, String fileType, String side, CountryCodes issuingCountry, Boolean validateImageQuality, LocationBuilder location, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call uploadDocumentCall(DocumentTypes type, UUID applicantId, FileTransfer _file, String fileType, String side, CountryCodes issuingCountry, Boolean validateImageQuality, LocationBuilder location, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -8224,7 +8225,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call uploadDocumentValidateBeforeCall(String type, UUID applicantId, FileTransfer _file, String fileType, String side, CountryCodes issuingCountry, Boolean validateImageQuality, LocationBuilder location, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call uploadDocumentValidateBeforeCall(DocumentTypes type, UUID applicantId, FileTransfer _file, String fileType, String side, CountryCodes issuingCountry, Boolean validateImageQuality, LocationBuilder location, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'type' is set
         if (type == null) {
             throw new ApiException("Missing the required parameter 'type' when calling uploadDocument(Async)");
@@ -8264,7 +8265,7 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public Document uploadDocument(String type, UUID applicantId, FileTransfer _file, String fileType, String side, CountryCodes issuingCountry, Boolean validateImageQuality, LocationBuilder location) throws ApiException {
+    public Document uploadDocument(DocumentTypes type, UUID applicantId, FileTransfer _file, String fileType, String side, CountryCodes issuingCountry, Boolean validateImageQuality, LocationBuilder location) throws ApiException {
         ApiResponse<Document> localVarResp = uploadDocumentWithHttpInfo(type, applicantId, _file, fileType, side, issuingCountry, validateImageQuality, location);
         return localVarResp.getData();
     }
@@ -8289,7 +8290,7 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Document> uploadDocumentWithHttpInfo(String type, UUID applicantId, FileTransfer _file, String fileType, String side, CountryCodes issuingCountry, Boolean validateImageQuality, LocationBuilder location) throws ApiException {
+    public ApiResponse<Document> uploadDocumentWithHttpInfo(DocumentTypes type, UUID applicantId, FileTransfer _file, String fileType, String side, CountryCodes issuingCountry, Boolean validateImageQuality, LocationBuilder location) throws ApiException {
         okhttp3.Call localVarCall = uploadDocumentValidateBeforeCall(type, applicantId, _file, fileType, side, issuingCountry, validateImageQuality, location, null);
         Type localVarReturnType = new TypeToken<Document>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -8316,7 +8317,7 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call uploadDocumentAsync(String type, UUID applicantId, FileTransfer _file, String fileType, String side, CountryCodes issuingCountry, Boolean validateImageQuality, LocationBuilder location, final ApiCallback<Document> _callback) throws ApiException {
+    public okhttp3.Call uploadDocumentAsync(DocumentTypes type, UUID applicantId, FileTransfer _file, String fileType, String side, CountryCodes issuingCountry, Boolean validateImageQuality, LocationBuilder location, final ApiCallback<Document> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = uploadDocumentValidateBeforeCall(type, applicantId, _file, fileType, side, issuingCountry, validateImageQuality, location, _callback);
         Type localVarReturnType = new TypeToken<Document>(){}.getType();

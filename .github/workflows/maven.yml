@@ -16,6 +16,8 @@ on:
   release:
     types:
       - published
+  schedule:
+    - cron: "0 13 * * 0"   # Every Sunday, 1 hour after midday
 jobs:
   integration-tests:
     runs-on: ubuntu-latest

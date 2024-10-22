@@ -19,6 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.onfido.model.ApplicantConsentName;
 import java.io.IOException;
 import java.util.Arrays;
 
@@ -47,78 +48,22 @@ import java.util.Set;
 import com.onfido.JSON;
 
 /**
- * The applicant&#39;s consents
+ * ApplicantConsentBuilder
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
-public class ConsentItem {
-  /**
-   * Gets or Sets name
-   */
-  @JsonAdapter(NameEnum.Adapter.class)
-  public enum NameEnum {
-    PRIVACY_NOTICES_READ("privacy_notices_read"),
-    
-    SSN_VERIFICATION("ssn_verification"),
-    
-    PHONE_NUMBER_VERIFICATION("phone_number_verification"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
-
-    private String value;
-
-    NameEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static NameEnum fromValue(String value) {
-      for (NameEnum b : NameEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      return UNKNOWN_DEFAULT_OPEN_API;
-    }
-
-    public static class Adapter extends TypeAdapter<NameEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final NameEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public NameEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return NameEnum.fromValue(value);
-      }
-    }
-
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-      String value = jsonElement.getAsString();
-      NameEnum.fromValue(value);
-    }
-  }
-
+public class ApplicantConsentBuilder {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  private NameEnum name;
+  private ApplicantConsentName name;
 
   public static final String SERIALIZED_NAME_GRANTED = "granted";
   @SerializedName(SERIALIZED_NAME_GRANTED)
   private Boolean granted;
 
-  public ConsentItem() {
+  public ApplicantConsentBuilder() {
   }
 
-  public ConsentItem name(NameEnum name) {
+  public ApplicantConsentBuilder name(ApplicantConsentName name) {
     this.name = name;
     return this;
   }
@@ -128,16 +73,16 @@ public class ConsentItem {
    * @return name
   **/
   @javax.annotation.Nonnull
-  public NameEnum getName() {
+  public ApplicantConsentName getName() {
     return name;
   }
 
-  public void setName(NameEnum name) {
+  public void setName(ApplicantConsentName name) {
     this.name = name;
   }
 
 
-  public ConsentItem granted(Boolean granted) {
+  public ApplicantConsentBuilder granted(Boolean granted) {
     this.granted = granted;
     return this;
   }
@@ -168,9 +113,9 @@ public class ConsentItem {
    *
    * @param key name of the property
    * @param value value of the property
-   * @return the ConsentItem instance itself
+   * @return the ApplicantConsentBuilder instance itself
    */
-  public ConsentItem putAdditionalProperty(String key, Object value) {
+  public ApplicantConsentBuilder putAdditionalProperty(String key, Object value) {
     if (this.additionalProperties == null) {
         this.additionalProperties = new HashMap<String, Object>();
     }
@@ -209,10 +154,10 @@ public class ConsentItem {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ConsentItem consentItem = (ConsentItem) o;
-    return Objects.equals(this.name, consentItem.name) &&
-        Objects.equals(this.granted, consentItem.granted)&&
-        Objects.equals(this.additionalProperties, consentItem.additionalProperties);
+    ApplicantConsentBuilder applicantConsentBuilder = (ApplicantConsentBuilder) o;
+    return Objects.equals(this.name, applicantConsentBuilder.name) &&
+        Objects.equals(this.granted, applicantConsentBuilder.granted)&&
+        Objects.equals(this.additionalProperties, applicantConsentBuilder.additionalProperties);
   }
 
   @Override
@@ -223,7 +168,7 @@ public class ConsentItem {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ConsentItem {\n");
+    sb.append("class ApplicantConsentBuilder {\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    granted: ").append(toIndentedString(granted)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
@@ -262,43 +207,40 @@ public class ConsentItem {
   * Validates the JSON Element and throws an exception if issues found
   *
   * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ConsentItem
+  * @throws IOException if the JSON Element is invalid with respect to ApplicantConsentBuilder
   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!ConsentItem.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ConsentItem is not found in the empty JSON string", ConsentItem.openapiRequiredFields.toString()));
+        if (!ApplicantConsentBuilder.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in ApplicantConsentBuilder is not found in the empty JSON string", ApplicantConsentBuilder.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : ConsentItem.openapiRequiredFields) {
+      for (String requiredField : ApplicantConsentBuilder.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
           throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if (!jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
-      }
       // validate the required field `name`
-      NameEnum.validateJsonElement(jsonObj.get("name"));
+      ApplicantConsentName.validateJsonElement(jsonObj.get("name"));
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!ConsentItem.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'ConsentItem' and its subtypes
+       if (!ApplicantConsentBuilder.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'ApplicantConsentBuilder' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<ConsentItem> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(ConsentItem.class));
+       final TypeAdapter<ApplicantConsentBuilder> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(ApplicantConsentBuilder.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<ConsentItem>() {
+       return (TypeAdapter<T>) new TypeAdapter<ApplicantConsentBuilder>() {
            @Override
-           public void write(JsonWriter out, ConsentItem value) throws IOException {
+           public void write(JsonWriter out, ApplicantConsentBuilder value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              obj.remove("additionalProperties");
              // serialize additional properties
@@ -316,7 +258,7 @@ public class ConsentItem {
                    JsonElement jsonElement = gson.toJsonTree(entry.getValue());
                    if (jsonElement.isJsonArray()) {
                      obj.add(entry.getKey(), jsonElement.getAsJsonArray());
-                   } else {
+                   } else if (jsonElement.isJsonObject()) { 
                      obj.add(entry.getKey(), jsonElement.getAsJsonObject());
                    }
                  }
@@ -326,12 +268,12 @@ public class ConsentItem {
            }
 
            @Override
-           public ConsentItem read(JsonReader in) throws IOException {
+           public ApplicantConsentBuilder read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
-             ConsentItem instance = thisAdapter.fromJsonTree(jsonObj);
+             ApplicantConsentBuilder instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
                if (!openapiFields.contains(entry.getKey())) {
                  if (entry.getValue().isJsonPrimitive()) { // primitive type
@@ -358,18 +300,18 @@ public class ConsentItem {
   }
 
  /**
-  * Create an instance of ConsentItem given an JSON string
+  * Create an instance of ApplicantConsentBuilder given an JSON string
   *
   * @param jsonString JSON string
-  * @return An instance of ConsentItem
-  * @throws IOException if the JSON string is invalid with respect to ConsentItem
+  * @return An instance of ApplicantConsentBuilder
+  * @throws IOException if the JSON string is invalid with respect to ApplicantConsentBuilder
   */
-  public static ConsentItem fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, ConsentItem.class);
+  public static ApplicantConsentBuilder fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, ApplicantConsentBuilder.class);
   }
 
  /**
-  * Convert an instance of ConsentItem to an JSON string
+  * Convert an instance of ApplicantConsentBuilder to an JSON string
   *
   * @return JSON string
   */

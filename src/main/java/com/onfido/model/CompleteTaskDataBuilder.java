@@ -52,7 +52,7 @@ import com.google.gson.JsonParseException;
 
 import com.onfido.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class CompleteTaskDataBuilder extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(CompleteTaskDataBuilder.class.getName());
 
@@ -65,8 +65,8 @@ public class CompleteTaskDataBuilder extends AbstractOpenApiSchema {
             }
             final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
 
-            final Type typeInstance = new TypeToken<List<Object>>(){}.getType();
-            final TypeAdapter<List<Object>> adapterListObject = (TypeAdapter<List<Object>>) gson.getDelegateAdapter(this, TypeToken.get(typeInstance));
+            final Type typeInstanceListObject = new TypeToken<List<Object>>(){}.getType();
+            final TypeAdapter<List<Object>> adapterListObject = (TypeAdapter<List<Object>>) gson.getDelegateAdapter(this, TypeToken.get(typeInstanceListObject));
             final TypeAdapter<Object> adapterObject = gson.getDelegateAdapter(this, TypeToken.get(Object.class));
 
             final TypeAdapter<ReportShared> adapterReportShared = gson.getDelegateAdapter(this, TypeToken.get(ReportShared.class));
@@ -159,11 +159,6 @@ public class CompleteTaskDataBuilder extends AbstractOpenApiSchema {
 
     public CompleteTaskDataBuilder() {
         super("oneOf", Boolean.FALSE);
-    }
-
-    public CompleteTaskDataBuilder(List<Object> o) {
-        super("oneOf", Boolean.FALSE);
-        setActualInstance(o);
     }
 
     public CompleteTaskDataBuilder(Object o) {

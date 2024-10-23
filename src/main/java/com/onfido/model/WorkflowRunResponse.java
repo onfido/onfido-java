@@ -43,7 +43,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -55,7 +54,7 @@ import com.onfido.JSON;
 /**
  * WorkflowRunResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class WorkflowRunResponse {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -97,10 +96,10 @@ public class WorkflowRunResponse {
     return this;
   }
 
-   /**
+  /**
    * The unique identifier for the Workflow Run.
    * @return id
-  **/
+   */
   @javax.annotation.Nonnull
   public UUID getId() {
     return id;
@@ -116,10 +115,10 @@ public class WorkflowRunResponse {
     return this;
   }
 
-   /**
+  /**
    * The identifier for the Workflow version.
    * @return workflowVersionId
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getWorkflowVersionId() {
     return workflowVersionId;
@@ -135,10 +134,10 @@ public class WorkflowRunResponse {
     return this;
   }
 
-   /**
+  /**
    * The URL for viewing the Workflow Run results on your Onfido Dashboard.
    * @return dashboardUrl
-  **/
+   */
   @javax.annotation.Nullable
   public String getDashboardUrl() {
     return dashboardUrl;
@@ -154,10 +153,10 @@ public class WorkflowRunResponse {
     return this;
   }
 
-   /**
+  /**
    * The status of the Workflow Run.
    * @return status
-  **/
+   */
   @javax.annotation.Nullable
   public WorkflowRunStatus getStatus() {
     return status;
@@ -173,10 +172,10 @@ public class WorkflowRunResponse {
     return this;
   }
 
-   /**
+  /**
    * Output object contains all of the properties configured on the Workflow version.
    * @return output
-  **/
+   */
   @javax.annotation.Nullable
   public Object getOutput() {
     return output;
@@ -200,10 +199,10 @@ public class WorkflowRunResponse {
     return this;
   }
 
-   /**
+  /**
    * The reasons the Workflow Run outcome was reached. Configurable when creating the Workflow version.
    * @return reasons
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getReasons() {
     return reasons;
@@ -219,10 +218,10 @@ public class WorkflowRunResponse {
     return this;
   }
 
-   /**
+  /**
    * Error object. Only set when the Workflow Run status is &#39;error&#39;.
    * @return error
-  **/
+   */
   @javax.annotation.Nullable
   public WorkflowRunError getError() {
     return error;
@@ -238,10 +237,10 @@ public class WorkflowRunResponse {
     return this;
   }
 
-   /**
+  /**
    * Client token to use when loading this workflow run in the Onfido SDK.
    * @return sdkToken
-  **/
+   */
   @javax.annotation.Nullable
   public String getSdkToken() {
     return sdkToken;
@@ -382,12 +381,12 @@ public class WorkflowRunResponse {
     openapiRequiredFields.add("id");
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to WorkflowRunResponse
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to WorkflowRunResponse
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!WorkflowRunResponse.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -497,22 +496,22 @@ public class WorkflowRunResponse {
     }
   }
 
- /**
-  * Create an instance of WorkflowRunResponse given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of WorkflowRunResponse
-  * @throws IOException if the JSON string is invalid with respect to WorkflowRunResponse
-  */
+  /**
+   * Create an instance of WorkflowRunResponse given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of WorkflowRunResponse
+   * @throws IOException if the JSON string is invalid with respect to WorkflowRunResponse
+   */
   public static WorkflowRunResponse fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, WorkflowRunResponse.class);
   }
 
- /**
-  * Convert an instance of WorkflowRunResponse to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of WorkflowRunResponse to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

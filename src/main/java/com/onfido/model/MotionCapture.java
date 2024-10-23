@@ -39,7 +39,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -51,7 +50,7 @@ import com.onfido.JSON;
 /**
  * MotionCapture
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class MotionCapture {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -89,10 +88,10 @@ public class MotionCapture {
     return this;
   }
 
-   /**
+  /**
    * The unique identifier for the motion capture.
    * @return id
-  **/
+   */
   @javax.annotation.Nullable
   public UUID getId() {
     return id;
@@ -108,10 +107,10 @@ public class MotionCapture {
     return this;
   }
 
-   /**
+  /**
    * The date and time at which the motion capture was uploaded.
    * @return createdAt
-  **/
+   */
   @javax.annotation.Nullable
   public OffsetDateTime getCreatedAt() {
     return createdAt;
@@ -127,10 +126,10 @@ public class MotionCapture {
     return this;
   }
 
-   /**
+  /**
    * The uri of this resource.
    * @return href
-  **/
+   */
   @javax.annotation.Nullable
   public String getHref() {
     return href;
@@ -146,10 +145,10 @@ public class MotionCapture {
     return this;
   }
 
-   /**
+  /**
    * The uri that can be used to download the motion capture.
    * @return downloadHref
-  **/
+   */
   @javax.annotation.Nullable
   public String getDownloadHref() {
     return downloadHref;
@@ -165,10 +164,10 @@ public class MotionCapture {
     return this;
   }
 
-   /**
+  /**
    * The name of the uploaded file.
    * @return fileName
-  **/
+   */
   @javax.annotation.Nullable
   public String getFileName() {
     return fileName;
@@ -184,10 +183,10 @@ public class MotionCapture {
     return this;
   }
 
-   /**
+  /**
    * The size of the file in bytes.
    * @return fileSize
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getFileSize() {
     return fileSize;
@@ -203,10 +202,10 @@ public class MotionCapture {
     return this;
   }
 
-   /**
+  /**
    * The file type of the uploaded file.
    * @return fileType
-  **/
+   */
   @javax.annotation.Nullable
   public String getFileType() {
     return fileType;
@@ -332,12 +331,12 @@ public class MotionCapture {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to MotionCapture
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to MotionCapture
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!MotionCapture.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -434,22 +433,22 @@ public class MotionCapture {
     }
   }
 
- /**
-  * Create an instance of MotionCapture given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of MotionCapture
-  * @throws IOException if the JSON string is invalid with respect to MotionCapture
-  */
+  /**
+   * Create an instance of MotionCapture given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of MotionCapture
+   * @throws IOException if the JSON string is invalid with respect to MotionCapture
+   */
   public static MotionCapture fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, MotionCapture.class);
   }
 
- /**
-  * Convert an instance of MotionCapture to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of MotionCapture to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

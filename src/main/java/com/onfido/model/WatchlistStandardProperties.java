@@ -39,7 +39,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -51,7 +50,7 @@ import com.onfido.JSON;
 /**
  * WatchlistStandardProperties
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class WatchlistStandardProperties {
   public static final String SERIALIZED_NAME_RECORDS = "records";
   @Deprecated
@@ -75,11 +74,11 @@ public class WatchlistStandardProperties {
     return this;
   }
 
-   /**
+  /**
    * Returns any matches including, but not limited to, name and date of birth of match, aliases and associates, and relevant events and sources.
    * @return records
    * @deprecated
-  **/
+   */
   @Deprecated
   @javax.annotation.Nullable
   public List<String> getRecords() {
@@ -189,12 +188,12 @@ public class WatchlistStandardProperties {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to WatchlistStandardProperties
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to WatchlistStandardProperties
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!WatchlistStandardProperties.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -280,22 +279,22 @@ public class WatchlistStandardProperties {
     }
   }
 
- /**
-  * Create an instance of WatchlistStandardProperties given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of WatchlistStandardProperties
-  * @throws IOException if the JSON string is invalid with respect to WatchlistStandardProperties
-  */
+  /**
+   * Create an instance of WatchlistStandardProperties given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of WatchlistStandardProperties
+   * @throws IOException if the JSON string is invalid with respect to WatchlistStandardProperties
+   */
   public static WatchlistStandardProperties fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, WatchlistStandardProperties.class);
   }
 
- /**
-  * Convert an instance of WatchlistStandardProperties to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of WatchlistStandardProperties to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

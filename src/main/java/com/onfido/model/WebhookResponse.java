@@ -38,7 +38,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -50,7 +49,7 @@ import com.onfido.JSON;
 /**
  * WebhookResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class WebhookResponse {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -76,10 +75,10 @@ public class WebhookResponse {
     return this;
   }
 
-   /**
+  /**
    * The unique identifier of the webhook.
    * @return id
-  **/
+   */
   @javax.annotation.Nonnull
   public UUID getId() {
     return id;
@@ -95,10 +94,10 @@ public class WebhookResponse {
     return this;
   }
 
-   /**
+  /**
    * The url that will listen to notifications (must be https).
    * @return url
-  **/
+   */
   @javax.annotation.Nullable
   public String getUrl() {
     return url;
@@ -114,10 +113,10 @@ public class WebhookResponse {
     return this;
   }
 
-   /**
+  /**
    * Webhook secret token used to sign the webhook&#39;s payload.
    * @return token
-  **/
+   */
   @javax.annotation.Nullable
   public String getToken() {
     return token;
@@ -133,10 +132,10 @@ public class WebhookResponse {
     return this;
   }
 
-   /**
+  /**
    * The API endpoint to retrieve the webhook.
    * @return href
-  **/
+   */
   @javax.annotation.Nullable
   public String getHref() {
     return href;
@@ -254,12 +253,12 @@ public class WebhookResponse {
     openapiRequiredFields.add("id");
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to WebhookResponse
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to WebhookResponse
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!WebhookResponse.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -360,22 +359,22 @@ public class WebhookResponse {
     }
   }
 
- /**
-  * Create an instance of WebhookResponse given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of WebhookResponse
-  * @throws IOException if the JSON string is invalid with respect to WebhookResponse
-  */
+  /**
+   * Create an instance of WebhookResponse given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of WebhookResponse
+   * @throws IOException if the JSON string is invalid with respect to WebhookResponse
+   */
   public static WebhookResponse fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, WebhookResponse.class);
   }
 
- /**
-  * Convert an instance of WebhookResponse to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of WebhookResponse to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

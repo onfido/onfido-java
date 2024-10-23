@@ -38,7 +38,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -50,7 +49,7 @@ import com.onfido.JSON;
 /**
  * DeviceIntelligenceBreakdownBreakdown
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class DeviceIntelligenceBreakdownBreakdown {
   public static final String SERIALIZED_NAME_DEVICE = "device";
   @SerializedName(SERIALIZED_NAME_DEVICE)
@@ -64,10 +63,10 @@ public class DeviceIntelligenceBreakdownBreakdown {
     return this;
   }
 
-   /**
+  /**
    * Get device
    * @return device
-  **/
+   */
   @javax.annotation.Nullable
   public DeviceIntelligenceBreakdownBreakdownDevice getDevice() {
     return device;
@@ -175,12 +174,12 @@ public class DeviceIntelligenceBreakdownBreakdown {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to DeviceIntelligenceBreakdownBreakdown
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to DeviceIntelligenceBreakdownBreakdown
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!DeviceIntelligenceBreakdownBreakdown.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -266,22 +265,22 @@ public class DeviceIntelligenceBreakdownBreakdown {
     }
   }
 
- /**
-  * Create an instance of DeviceIntelligenceBreakdownBreakdown given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of DeviceIntelligenceBreakdownBreakdown
-  * @throws IOException if the JSON string is invalid with respect to DeviceIntelligenceBreakdownBreakdown
-  */
+  /**
+   * Create an instance of DeviceIntelligenceBreakdownBreakdown given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of DeviceIntelligenceBreakdownBreakdown
+   * @throws IOException if the JSON string is invalid with respect to DeviceIntelligenceBreakdownBreakdown
+   */
   public static DeviceIntelligenceBreakdownBreakdown fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, DeviceIntelligenceBreakdownBreakdown.class);
   }
 
- /**
-  * Convert an instance of DeviceIntelligenceBreakdownBreakdown to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of DeviceIntelligenceBreakdownBreakdown to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

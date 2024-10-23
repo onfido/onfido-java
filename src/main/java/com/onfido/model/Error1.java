@@ -38,7 +38,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -50,7 +49,7 @@ import com.onfido.JSON;
 /**
  * Error1
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class Error1 {
   public static final String SERIALIZED_NAME_DOCUMENT_ID = "document_id";
   @SerializedName(SERIALIZED_NAME_DOCUMENT_ID)
@@ -68,10 +67,10 @@ public class Error1 {
     return this;
   }
 
-   /**
+  /**
    * The unique identifier of the uploaded document
    * @return documentId
-  **/
+   */
   @javax.annotation.Nullable
   public String getDocumentId() {
     return documentId;
@@ -87,10 +86,10 @@ public class Error1 {
     return this;
   }
 
-   /**
+  /**
    * Get error
    * @return error
-  **/
+   */
   @javax.annotation.Nullable
   public ErrorProperties1 getError() {
     return error;
@@ -201,12 +200,12 @@ public class Error1 {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to Error1
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to Error1
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!Error1.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -295,22 +294,22 @@ public class Error1 {
     }
   }
 
- /**
-  * Create an instance of Error1 given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of Error1
-  * @throws IOException if the JSON string is invalid with respect to Error1
-  */
+  /**
+   * Create an instance of Error1 given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of Error1
+   * @throws IOException if the JSON string is invalid with respect to Error1
+   */
   public static Error1 fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, Error1.class);
   }
 
- /**
-  * Convert an instance of Error1 to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of Error1 to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

@@ -40,7 +40,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -52,7 +51,7 @@ import com.onfido.JSON;
 /**
  * DeviceIntelligenceBreakdownProperties
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class DeviceIntelligenceBreakdownProperties {
   public static final String SERIALIZED_NAME_DEVICE = "device";
   @SerializedName(SERIALIZED_NAME_DEVICE)
@@ -74,10 +73,10 @@ public class DeviceIntelligenceBreakdownProperties {
     return this;
   }
 
-   /**
+  /**
    * Get device
    * @return device
-  **/
+   */
   @javax.annotation.Nullable
   public DeviceIntelligenceBreakdownPropertiesDevice getDevice() {
     return device;
@@ -93,10 +92,10 @@ public class DeviceIntelligenceBreakdownProperties {
     return this;
   }
 
-   /**
+  /**
    * Get ip
    * @return ip
-  **/
+   */
   @javax.annotation.Nullable
   public DeviceIntelligenceBreakdownPropertiesIp getIp() {
     return ip;
@@ -112,10 +111,10 @@ public class DeviceIntelligenceBreakdownProperties {
     return this;
   }
 
-   /**
+  /**
    * Get geolocation
    * @return geolocation
-  **/
+   */
   @javax.annotation.Nullable
   public DeviceIntelligenceBreakdownPropertiesGeolocation getGeolocation() {
     return geolocation;
@@ -229,12 +228,12 @@ public class DeviceIntelligenceBreakdownProperties {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to DeviceIntelligenceBreakdownProperties
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to DeviceIntelligenceBreakdownProperties
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!DeviceIntelligenceBreakdownProperties.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -328,22 +327,22 @@ public class DeviceIntelligenceBreakdownProperties {
     }
   }
 
- /**
-  * Create an instance of DeviceIntelligenceBreakdownProperties given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of DeviceIntelligenceBreakdownProperties
-  * @throws IOException if the JSON string is invalid with respect to DeviceIntelligenceBreakdownProperties
-  */
+  /**
+   * Create an instance of DeviceIntelligenceBreakdownProperties given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of DeviceIntelligenceBreakdownProperties
+   * @throws IOException if the JSON string is invalid with respect to DeviceIntelligenceBreakdownProperties
+   */
   public static DeviceIntelligenceBreakdownProperties fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, DeviceIntelligenceBreakdownProperties.class);
   }
 
- /**
-  * Convert an instance of DeviceIntelligenceBreakdownProperties to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of DeviceIntelligenceBreakdownProperties to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

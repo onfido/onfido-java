@@ -41,7 +41,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -53,7 +52,7 @@ import com.onfido.JSON;
 /**
  * RepeatAttemptsList
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class RepeatAttemptsList {
   public static final String SERIALIZED_NAME_REPORT_ID = "report_id";
   @SerializedName(SERIALIZED_NAME_REPORT_ID)
@@ -83,10 +82,10 @@ public class RepeatAttemptsList {
     return this;
   }
 
-   /**
+  /**
    * The unique identifier of the completed Document report.
    * @return reportId
-  **/
+   */
   @javax.annotation.Nullable
   public UUID getReportId() {
     return reportId;
@@ -110,10 +109,10 @@ public class RepeatAttemptsList {
     return this;
   }
 
-   /**
+  /**
    * An array of repeat attempt objects. If no repeat attempts were found, the array will be empty. The number of objects returned can increase over time if more matches are received. 
    * @return repeatAttempts
-  **/
+   */
   @javax.annotation.Nonnull
   public List<RepeatAttemptsListRepeatAttemptsInner> getRepeatAttempts() {
     return repeatAttempts;
@@ -129,10 +128,10 @@ public class RepeatAttemptsList {
     return this;
   }
 
-   /**
+  /**
    * The total number of attempts using the same document, including the current report under assessment.
    * @return attemptsCount
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getAttemptsCount() {
     return attemptsCount;
@@ -148,12 +147,12 @@ public class RepeatAttemptsList {
     return this;
   }
 
-   /**
+  /**
    * A number between 0 and 1 which indicates the proportion of attempts that have been cleared, including the current report under assessment.
    * minimum: 0
    * maximum: 1
    * @return attemptsClearRate
-  **/
+   */
   @javax.annotation.Nullable
   public Float getAttemptsClearRate() {
     return attemptsClearRate;
@@ -169,10 +168,10 @@ public class RepeatAttemptsList {
     return this;
   }
 
-   /**
+  /**
    * The number of unique entries in the repeat_attempts field for which at least one of the fields is a mismatch.
    * @return uniqueMismatchesCount
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getUniqueMismatchesCount() {
     return uniqueMismatchesCount;
@@ -293,12 +292,12 @@ public class RepeatAttemptsList {
     openapiRequiredFields.add("repeat_attempts");
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to RepeatAttemptsList
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to RepeatAttemptsList
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!RepeatAttemptsList.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -400,22 +399,22 @@ public class RepeatAttemptsList {
     }
   }
 
- /**
-  * Create an instance of RepeatAttemptsList given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of RepeatAttemptsList
-  * @throws IOException if the JSON string is invalid with respect to RepeatAttemptsList
-  */
+  /**
+   * Create an instance of RepeatAttemptsList given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of RepeatAttemptsList
+   * @throws IOException if the JSON string is invalid with respect to RepeatAttemptsList
+   */
   public static RepeatAttemptsList fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, RepeatAttemptsList.class);
   }
 
- /**
-  * Convert an instance of RepeatAttemptsList to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of RepeatAttemptsList to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

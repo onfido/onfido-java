@@ -41,7 +41,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -53,7 +52,7 @@ import com.onfido.JSON;
 /**
  * Webhook
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class Webhook {
   public static final String SERIALIZED_NAME_ENABLED = "enabled";
   @SerializedName(SERIALIZED_NAME_ENABLED)
@@ -95,10 +94,10 @@ public class Webhook {
     return this;
   }
 
-   /**
+  /**
    * Determine if the webhook is active.
    * @return enabled
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getEnabled() {
     return enabled;
@@ -122,10 +121,10 @@ public class Webhook {
     return this;
   }
 
-   /**
+  /**
    * The events that will be published to the webhook. If the events parameter is omitted all the events will be subscribed. 
    * @return events
-  **/
+   */
   @javax.annotation.Nullable
   public List<WebhookEventType> getEvents() {
     return events;
@@ -149,10 +148,10 @@ public class Webhook {
     return this;
   }
 
-   /**
+  /**
    * The environments from which the webhook will receive events. Allowed values are “sandbox” and “live”. If the environments parameter is omitted the webhook will receive events from both environments. 
    * @return environments
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getEnvironments() {
     return environments;
@@ -168,10 +167,10 @@ public class Webhook {
     return this;
   }
 
-   /**
+  /**
    * Webhook version used to control the payload object when sending webhooks.
    * @return payloadVersion
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getPayloadVersion() {
     return payloadVersion;
@@ -187,10 +186,10 @@ public class Webhook {
     return this;
   }
 
-   /**
+  /**
    * The unique identifier of the webhook.
    * @return id
-  **/
+   */
   @javax.annotation.Nonnull
   public UUID getId() {
     return id;
@@ -206,10 +205,10 @@ public class Webhook {
     return this;
   }
 
-   /**
+  /**
    * The url that will listen to notifications (must be https).
    * @return url
-  **/
+   */
   @javax.annotation.Nullable
   public String getUrl() {
     return url;
@@ -225,10 +224,10 @@ public class Webhook {
     return this;
   }
 
-   /**
+  /**
    * Webhook secret token used to sign the webhook&#39;s payload.
    * @return token
-  **/
+   */
   @javax.annotation.Nullable
   public String getToken() {
     return token;
@@ -244,10 +243,10 @@ public class Webhook {
     return this;
   }
 
-   /**
+  /**
    * The API endpoint to retrieve the webhook.
    * @return href
-  **/
+   */
   @javax.annotation.Nullable
   public String getHref() {
     return href;
@@ -377,12 +376,12 @@ public class Webhook {
     openapiRequiredFields.add("id");
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to Webhook
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to Webhook
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!Webhook.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -491,22 +490,22 @@ public class Webhook {
     }
   }
 
- /**
-  * Create an instance of Webhook given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of Webhook
-  * @throws IOException if the JSON string is invalid with respect to Webhook
-  */
+  /**
+   * Create an instance of Webhook given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of Webhook
+   * @throws IOException if the JSON string is invalid with respect to Webhook
+   */
   public static Webhook fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, Webhook.class);
   }
 
- /**
-  * Convert an instance of Webhook to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of Webhook to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

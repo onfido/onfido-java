@@ -41,7 +41,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -53,7 +52,7 @@ import com.onfido.JSON;
 /**
  * WebhookEventPayload
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class WebhookEventPayload {
   public static final String SERIALIZED_NAME_RESOURCE_TYPE = "resource_type";
   @SerializedName(SERIALIZED_NAME_RESOURCE_TYPE)
@@ -79,10 +78,10 @@ public class WebhookEventPayload {
     return this;
   }
 
-   /**
+  /**
    * Indicates the resource affected by this event.
    * @return resourceType
-  **/
+   */
   @javax.annotation.Nonnull
   public WebhookEventResourceType getResourceType() {
     return resourceType;
@@ -98,10 +97,10 @@ public class WebhookEventPayload {
     return this;
   }
 
-   /**
+  /**
    * The event that triggered this webhook.
    * @return action
-  **/
+   */
   @javax.annotation.Nullable
   public WebhookEventType getAction() {
     return action;
@@ -117,10 +116,10 @@ public class WebhookEventPayload {
     return this;
   }
 
-   /**
+  /**
    * Get _object
    * @return _object
-  **/
+   */
   @javax.annotation.Nullable
   public WebhookEventPayloadObject getObject() {
     return _object;
@@ -136,10 +135,10 @@ public class WebhookEventPayload {
     return this;
   }
 
-   /**
+  /**
    * Get resource
    * @return resource
-  **/
+   */
   @javax.annotation.Nullable
   public WebhookEventPayloadResource getResource() {
     return resource;
@@ -257,12 +256,12 @@ public class WebhookEventPayload {
     openapiRequiredFields.add("resource_type");
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to WebhookEventPayload
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to WebhookEventPayload
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!WebhookEventPayload.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -365,22 +364,22 @@ public class WebhookEventPayload {
     }
   }
 
- /**
-  * Create an instance of WebhookEventPayload given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of WebhookEventPayload
-  * @throws IOException if the JSON string is invalid with respect to WebhookEventPayload
-  */
+  /**
+   * Create an instance of WebhookEventPayload given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of WebhookEventPayload
+   * @throws IOException if the JSON string is invalid with respect to WebhookEventPayload
+   */
   public static WebhookEventPayload fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, WebhookEventPayload.class);
   }
 
- /**
-  * Convert an instance of WebhookEventPayload to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of WebhookEventPayload to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

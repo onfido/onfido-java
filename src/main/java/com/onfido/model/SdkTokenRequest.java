@@ -38,7 +38,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -50,7 +49,7 @@ import com.onfido.JSON;
 /**
  * SdkTokenRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class SdkTokenRequest {
   public static final String SERIALIZED_NAME_APPLICANT_ID = "applicant_id";
   @SerializedName(SERIALIZED_NAME_APPLICANT_ID)
@@ -76,10 +75,10 @@ public class SdkTokenRequest {
     return this;
   }
 
-   /**
+  /**
    * The unique identifier of the applicant
    * @return applicantId
-  **/
+   */
   @javax.annotation.Nonnull
   public UUID getApplicantId() {
     return applicantId;
@@ -95,10 +94,10 @@ public class SdkTokenRequest {
     return this;
   }
 
-   /**
+  /**
    * The referrer URL pattern
    * @return referrer
-  **/
+   */
   @javax.annotation.Nullable
   public String getReferrer() {
     return referrer;
@@ -114,10 +113,10 @@ public class SdkTokenRequest {
     return this;
   }
 
-   /**
+  /**
    * The application ID (iOS or Android)
    * @return applicationId
-  **/
+   */
   @javax.annotation.Nullable
   public String getApplicationId() {
     return applicationId;
@@ -133,10 +132,10 @@ public class SdkTokenRequest {
     return this;
   }
 
-   /**
+  /**
    * The URL to be used by the Web SDK for the cross device flow.
    * @return crossDeviceUrl
-  **/
+   */
   @javax.annotation.Nullable
   public String getCrossDeviceUrl() {
     return crossDeviceUrl;
@@ -254,12 +253,12 @@ public class SdkTokenRequest {
     openapiRequiredFields.add("applicant_id");
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to SdkTokenRequest
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to SdkTokenRequest
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!SdkTokenRequest.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -360,22 +359,22 @@ public class SdkTokenRequest {
     }
   }
 
- /**
-  * Create an instance of SdkTokenRequest given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of SdkTokenRequest
-  * @throws IOException if the JSON string is invalid with respect to SdkTokenRequest
-  */
+  /**
+   * Create an instance of SdkTokenRequest given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of SdkTokenRequest
+   * @throws IOException if the JSON string is invalid with respect to SdkTokenRequest
+   */
   public static SdkTokenRequest fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, SdkTokenRequest.class);
   }
 
- /**
-  * Convert an instance of SdkTokenRequest to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of SdkTokenRequest to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

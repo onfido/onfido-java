@@ -41,7 +41,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -53,7 +52,7 @@ import com.onfido.JSON;
 /**
  * Document
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class Document {
   /**
    * The file type of the uploaded file
@@ -219,10 +218,10 @@ public class Document {
     return this;
   }
 
-   /**
+  /**
    * The file type of the uploaded file
    * @return fileType
-  **/
+   */
   @javax.annotation.Nullable
   public FileTypeEnum getFileType() {
     return fileType;
@@ -238,10 +237,10 @@ public class Document {
     return this;
   }
 
-   /**
+  /**
    * The type of document
    * @return type
-  **/
+   */
   @javax.annotation.Nullable
   public DocumentTypes getType() {
     return type;
@@ -257,10 +256,10 @@ public class Document {
     return this;
   }
 
-   /**
+  /**
    * The side of the document, if applicable. The possible values are front and back
    * @return side
-  **/
+   */
   @javax.annotation.Nullable
   public SideEnum getSide() {
     return side;
@@ -276,10 +275,10 @@ public class Document {
     return this;
   }
 
-   /**
+  /**
    * The issuing country of the document, a 3-letter ISO code.
    * @return issuingCountry
-  **/
+   */
   @javax.annotation.Nullable
   public CountryCodes getIssuingCountry() {
     return issuingCountry;
@@ -295,10 +294,10 @@ public class Document {
     return this;
   }
 
-   /**
+  /**
    * The ID of the applicant whose document is being uploaded.
    * @return applicantId
-  **/
+   */
   @javax.annotation.Nullable
   public UUID getApplicantId() {
     return applicantId;
@@ -314,10 +313,10 @@ public class Document {
     return this;
   }
 
-   /**
+  /**
    * The unique identifier for the document
    * @return id
-  **/
+   */
   @javax.annotation.Nonnull
   public UUID getId() {
     return id;
@@ -333,10 +332,10 @@ public class Document {
     return this;
   }
 
-   /**
+  /**
    * The date and time at which the document was uploaded
    * @return createdAt
-  **/
+   */
   @javax.annotation.Nullable
   public OffsetDateTime getCreatedAt() {
     return createdAt;
@@ -352,10 +351,10 @@ public class Document {
     return this;
   }
 
-   /**
+  /**
    * The uri of this resource
    * @return href
-  **/
+   */
   @javax.annotation.Nullable
   public String getHref() {
     return href;
@@ -371,10 +370,10 @@ public class Document {
     return this;
   }
 
-   /**
+  /**
    * The uri that can be used to download the document
    * @return downloadHref
-  **/
+   */
   @javax.annotation.Nullable
   public String getDownloadHref() {
     return downloadHref;
@@ -390,10 +389,10 @@ public class Document {
     return this;
   }
 
-   /**
+  /**
    * The name of the uploaded file
    * @return fileName
-  **/
+   */
   @javax.annotation.Nullable
   public String getFileName() {
     return fileName;
@@ -409,10 +408,10 @@ public class Document {
     return this;
   }
 
-   /**
+  /**
    * The size of the file in bytes
    * @return fileSize
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getFileSize() {
     return fileSize;
@@ -551,12 +550,12 @@ public class Document {
     openapiRequiredFields.add("id");
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to Document
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to Document
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!Document.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -682,22 +681,22 @@ public class Document {
     }
   }
 
- /**
-  * Create an instance of Document given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of Document
-  * @throws IOException if the JSON string is invalid with respect to Document
-  */
+  /**
+   * Create an instance of Document given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of Document
+   * @throws IOException if the JSON string is invalid with respect to Document
+   */
   public static Document fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, Document.class);
   }
 
- /**
-  * Convert an instance of Document to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of Document to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

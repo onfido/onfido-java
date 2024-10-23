@@ -37,7 +37,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -49,7 +48,7 @@ import com.onfido.JSON;
 /**
  * IndiaPanReportAllOfPropertiesDevice
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class IndiaPanReportAllOfPropertiesDevice {
   public static final String SERIALIZED_NAME_PAN = "pan";
   @SerializedName(SERIALIZED_NAME_PAN)
@@ -67,10 +66,10 @@ public class IndiaPanReportAllOfPropertiesDevice {
     return this;
   }
 
-   /**
+  /**
    * The applicant&#39;s PAN (10 digit alphanumeric number).
    * @return pan
-  **/
+   */
   @javax.annotation.Nullable
   public String getPan() {
     return pan;
@@ -86,10 +85,10 @@ public class IndiaPanReportAllOfPropertiesDevice {
     return this;
   }
 
-   /**
+  /**
    * The applicant&#39;s full name.
    * @return fullName
-  **/
+   */
   @javax.annotation.Nullable
   public String getFullName() {
     return fullName;
@@ -200,12 +199,12 @@ public class IndiaPanReportAllOfPropertiesDevice {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to IndiaPanReportAllOfPropertiesDevice
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to IndiaPanReportAllOfPropertiesDevice
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!IndiaPanReportAllOfPropertiesDevice.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -293,22 +292,22 @@ public class IndiaPanReportAllOfPropertiesDevice {
     }
   }
 
- /**
-  * Create an instance of IndiaPanReportAllOfPropertiesDevice given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of IndiaPanReportAllOfPropertiesDevice
-  * @throws IOException if the JSON string is invalid with respect to IndiaPanReportAllOfPropertiesDevice
-  */
+  /**
+   * Create an instance of IndiaPanReportAllOfPropertiesDevice given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of IndiaPanReportAllOfPropertiesDevice
+   * @throws IOException if the JSON string is invalid with respect to IndiaPanReportAllOfPropertiesDevice
+   */
   public static IndiaPanReportAllOfPropertiesDevice fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, IndiaPanReportAllOfPropertiesDevice.class);
   }
 
- /**
-  * Convert an instance of IndiaPanReportAllOfPropertiesDevice to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of IndiaPanReportAllOfPropertiesDevice to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

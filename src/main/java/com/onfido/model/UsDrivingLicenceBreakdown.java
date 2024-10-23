@@ -40,7 +40,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -52,7 +51,7 @@ import com.onfido.JSON;
 /**
  * UsDrivingLicenceBreakdown
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class UsDrivingLicenceBreakdown {
   public static final String SERIALIZED_NAME_DOCUMENT = "document";
   @SerializedName(SERIALIZED_NAME_DOCUMENT)
@@ -74,10 +73,10 @@ public class UsDrivingLicenceBreakdown {
     return this;
   }
 
-   /**
+  /**
    * Get document
    * @return document
-  **/
+   */
   @javax.annotation.Nullable
   public UsDrivingLicenceBreakdownDocument getDocument() {
     return document;
@@ -93,10 +92,10 @@ public class UsDrivingLicenceBreakdown {
     return this;
   }
 
-   /**
+  /**
    * Get address
    * @return address
-  **/
+   */
   @javax.annotation.Nullable
   public UsDrivingLicenceBreakdownAddress getAddress() {
     return address;
@@ -112,10 +111,10 @@ public class UsDrivingLicenceBreakdown {
     return this;
   }
 
-   /**
+  /**
    * Get personal
    * @return personal
-  **/
+   */
   @javax.annotation.Nullable
   public UsDrivingLicenceBreakdownPersonal getPersonal() {
     return personal;
@@ -229,12 +228,12 @@ public class UsDrivingLicenceBreakdown {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to UsDrivingLicenceBreakdown
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to UsDrivingLicenceBreakdown
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!UsDrivingLicenceBreakdown.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -328,22 +327,22 @@ public class UsDrivingLicenceBreakdown {
     }
   }
 
- /**
-  * Create an instance of UsDrivingLicenceBreakdown given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of UsDrivingLicenceBreakdown
-  * @throws IOException if the JSON string is invalid with respect to UsDrivingLicenceBreakdown
-  */
+  /**
+   * Create an instance of UsDrivingLicenceBreakdown given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of UsDrivingLicenceBreakdown
+   * @throws IOException if the JSON string is invalid with respect to UsDrivingLicenceBreakdown
+   */
   public static UsDrivingLicenceBreakdown fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, UsDrivingLicenceBreakdown.class);
   }
 
- /**
-  * Convert an instance of UsDrivingLicenceBreakdown to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of UsDrivingLicenceBreakdown to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

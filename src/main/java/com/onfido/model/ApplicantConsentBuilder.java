@@ -38,7 +38,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -50,7 +49,7 @@ import com.onfido.JSON;
 /**
  * ApplicantConsentBuilder
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class ApplicantConsentBuilder {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -68,10 +67,10 @@ public class ApplicantConsentBuilder {
     return this;
   }
 
-   /**
+  /**
    * Get name
    * @return name
-  **/
+   */
   @javax.annotation.Nonnull
   public ApplicantConsentName getName() {
     return name;
@@ -87,10 +86,10 @@ public class ApplicantConsentBuilder {
     return this;
   }
 
-   /**
+  /**
    * Get granted
    * @return granted
-  **/
+   */
   @javax.annotation.Nonnull
   public Boolean getGranted() {
     return granted;
@@ -203,12 +202,12 @@ public class ApplicantConsentBuilder {
     openapiRequiredFields.add("granted");
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ApplicantConsentBuilder
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ApplicantConsentBuilder
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ApplicantConsentBuilder.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -299,22 +298,22 @@ public class ApplicantConsentBuilder {
     }
   }
 
- /**
-  * Create an instance of ApplicantConsentBuilder given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ApplicantConsentBuilder
-  * @throws IOException if the JSON string is invalid with respect to ApplicantConsentBuilder
-  */
+  /**
+   * Create an instance of ApplicantConsentBuilder given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ApplicantConsentBuilder
+   * @throws IOException if the JSON string is invalid with respect to ApplicantConsentBuilder
+   */
   public static ApplicantConsentBuilder fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ApplicantConsentBuilder.class);
   }
 
- /**
-  * Convert an instance of ApplicantConsentBuilder to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ApplicantConsentBuilder to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

@@ -39,7 +39,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -51,7 +50,7 @@ import com.onfido.JSON;
 /**
  * ErrorProperties
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class ErrorProperties {
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
@@ -73,10 +72,10 @@ public class ErrorProperties {
     return this;
   }
 
-   /**
+  /**
    * Get type
    * @return type
-  **/
+   */
   @javax.annotation.Nullable
   public String getType() {
     return type;
@@ -92,10 +91,10 @@ public class ErrorProperties {
     return this;
   }
 
-   /**
+  /**
    * Get message
    * @return message
-  **/
+   */
   @javax.annotation.Nullable
   public String getMessage() {
     return message;
@@ -119,10 +118,10 @@ public class ErrorProperties {
     return this;
   }
 
-   /**
+  /**
    * Get fields
    * @return fields
-  **/
+   */
   @javax.annotation.Nullable
   public Map<String, Object> getFields() {
     return fields;
@@ -236,12 +235,12 @@ public class ErrorProperties {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ErrorProperties
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ErrorProperties
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ErrorProperties.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -329,22 +328,22 @@ public class ErrorProperties {
     }
   }
 
- /**
-  * Create an instance of ErrorProperties given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ErrorProperties
-  * @throws IOException if the JSON string is invalid with respect to ErrorProperties
-  */
+  /**
+   * Create an instance of ErrorProperties given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ErrorProperties
+   * @throws IOException if the JSON string is invalid with respect to ErrorProperties
+   */
   public static ErrorProperties fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ErrorProperties.class);
   }
 
- /**
-  * Convert an instance of ErrorProperties to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ErrorProperties to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

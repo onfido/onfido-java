@@ -37,7 +37,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -49,7 +48,7 @@ import com.onfido.JSON;
 /**
  * VideoReasons
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class VideoReasons {
   public static final String SERIALIZED_NAME_FAKE_WEBCAM = "fake_webcam";
   @SerializedName(SERIALIZED_NAME_FAKE_WEBCAM)
@@ -75,10 +74,10 @@ public class VideoReasons {
     return this;
   }
 
-   /**
+  /**
    * Flags when evidence is found that a fake webcam was used.
    * @return fakeWebcam
-  **/
+   */
   @javax.annotation.Nullable
   public String getFakeWebcam() {
     return fakeWebcam;
@@ -94,10 +93,10 @@ public class VideoReasons {
     return this;
   }
 
-   /**
+  /**
    * Flags when evidence is found that the video was uploaded in an attempt to circumvent the randomness of the speaking and head turn challenges
    * @return challengeReuse
-  **/
+   */
   @javax.annotation.Nullable
   public String getChallengeReuse() {
     return challengeReuse;
@@ -113,10 +112,10 @@ public class VideoReasons {
     return this;
   }
 
-   /**
+  /**
    * Flags when evidence is found that an Android emulator was used.
    * @return emulator
-  **/
+   */
   @javax.annotation.Nullable
   public String getEmulator() {
     return emulator;
@@ -132,10 +131,10 @@ public class VideoReasons {
     return this;
   }
 
-   /**
+  /**
    * Additional comma separated details such as the name of the fake webcam.
    * @return reasons
-  **/
+   */
   @javax.annotation.Nullable
   public String getReasons() {
     return reasons;
@@ -252,12 +251,12 @@ public class VideoReasons {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to VideoReasons
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to VideoReasons
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!VideoReasons.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -351,22 +350,22 @@ public class VideoReasons {
     }
   }
 
- /**
-  * Create an instance of VideoReasons given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of VideoReasons
-  * @throws IOException if the JSON string is invalid with respect to VideoReasons
-  */
+  /**
+   * Create an instance of VideoReasons given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of VideoReasons
+   * @throws IOException if the JSON string is invalid with respect to VideoReasons
+   */
   public static VideoReasons fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, VideoReasons.class);
   }
 
- /**
-  * Convert an instance of VideoReasons to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of VideoReasons to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

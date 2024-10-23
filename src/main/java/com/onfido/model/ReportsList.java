@@ -40,7 +40,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -52,7 +51,7 @@ import com.onfido.JSON;
 /**
  * ReportsList
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class ReportsList {
   public static final String SERIALIZED_NAME_REPORTS = "reports";
   @SerializedName(SERIALIZED_NAME_REPORTS)
@@ -74,10 +73,10 @@ public class ReportsList {
     return this;
   }
 
-   /**
+  /**
    * Get reports
    * @return reports
-  **/
+   */
   @javax.annotation.Nonnull
   public List<Report> getReports() {
     return reports;
@@ -186,12 +185,12 @@ public class ReportsList {
     openapiRequiredFields.add("reports");
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ReportsList
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ReportsList
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ReportsList.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -290,22 +289,22 @@ public class ReportsList {
     }
   }
 
- /**
-  * Create an instance of ReportsList given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ReportsList
-  * @throws IOException if the JSON string is invalid with respect to ReportsList
-  */
+  /**
+   * Create an instance of ReportsList given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ReportsList
+   * @throws IOException if the JSON string is invalid with respect to ReportsList
+   */
   public static ReportsList fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ReportsList.class);
   }
 
- /**
-  * Convert an instance of ReportsList to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ReportsList to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

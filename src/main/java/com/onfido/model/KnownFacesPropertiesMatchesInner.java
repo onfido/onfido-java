@@ -38,7 +38,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -50,7 +49,7 @@ import com.onfido.JSON;
 /**
  * KnownFacesPropertiesMatchesInner
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class KnownFacesPropertiesMatchesInner {
   public static final String SERIALIZED_NAME_APPLICANT_ID = "applicant_id";
   @SerializedName(SERIALIZED_NAME_APPLICANT_ID)
@@ -80,10 +79,10 @@ public class KnownFacesPropertiesMatchesInner {
     return this;
   }
 
-   /**
+  /**
    * The applicant ID of the matched applicant.
    * @return applicantId
-  **/
+   */
   @javax.annotation.Nullable
   public UUID getApplicantId() {
     return applicantId;
@@ -99,10 +98,10 @@ public class KnownFacesPropertiesMatchesInner {
     return this;
   }
 
-   /**
+  /**
    * A floating point number between 0 and 1 that expresses how similar the two faces are, where 1 is a perfect match.
    * @return score
-  **/
+   */
   @javax.annotation.Nullable
   public Float getScore() {
     return score;
@@ -118,10 +117,10 @@ public class KnownFacesPropertiesMatchesInner {
     return this;
   }
 
-   /**
+  /**
    * The corresponding UUID for the media type.
    * @return mediaId
-  **/
+   */
   @javax.annotation.Nullable
   public UUID getMediaId() {
     return mediaId;
@@ -137,10 +136,10 @@ public class KnownFacesPropertiesMatchesInner {
     return this;
   }
 
-   /**
+  /**
    * The media type (for example live_photos or live_videos).
    * @return mediaType
-  **/
+   */
   @javax.annotation.Nullable
   public String getMediaType() {
     return mediaType;
@@ -156,10 +155,10 @@ public class KnownFacesPropertiesMatchesInner {
     return this;
   }
 
-   /**
+  /**
    * Indicates if match is suspected based on fuzzy name matching feature. Dependent on feature being active for account, otherwise defaults to true.
    * @return suspected
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getSuspected() {
     return suspected;
@@ -279,12 +278,12 @@ public class KnownFacesPropertiesMatchesInner {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to KnownFacesPropertiesMatchesInner
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to KnownFacesPropertiesMatchesInner
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!KnownFacesPropertiesMatchesInner.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -375,22 +374,22 @@ public class KnownFacesPropertiesMatchesInner {
     }
   }
 
- /**
-  * Create an instance of KnownFacesPropertiesMatchesInner given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of KnownFacesPropertiesMatchesInner
-  * @throws IOException if the JSON string is invalid with respect to KnownFacesPropertiesMatchesInner
-  */
+  /**
+   * Create an instance of KnownFacesPropertiesMatchesInner given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of KnownFacesPropertiesMatchesInner
+   * @throws IOException if the JSON string is invalid with respect to KnownFacesPropertiesMatchesInner
+   */
   public static KnownFacesPropertiesMatchesInner fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, KnownFacesPropertiesMatchesInner.class);
   }
 
- /**
-  * Convert an instance of KnownFacesPropertiesMatchesInner to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of KnownFacesPropertiesMatchesInner to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

@@ -45,7 +45,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -57,7 +56,7 @@ import com.onfido.JSON;
 /**
  * WatchlistEnhancedPropertiesRecordsInner
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class WatchlistEnhancedPropertiesRecordsInner {
   public static final String SERIALIZED_NAME_ADDRESS = "address";
   @SerializedName(SERIALIZED_NAME_ADDRESS)
@@ -111,10 +110,10 @@ public class WatchlistEnhancedPropertiesRecordsInner {
     return this;
   }
 
-   /**
+  /**
    * All addresses on file.
    * @return address
-  **/
+   */
   @javax.annotation.Nullable
   public List<WatchlistEnhancedPropertiesRecordsInnerAddressInner> getAddress() {
     return address;
@@ -138,10 +137,10 @@ public class WatchlistEnhancedPropertiesRecordsInner {
     return this;
   }
 
-   /**
+  /**
    * Any names that the person is also known as.
    * @return alias
-  **/
+   */
   @javax.annotation.Nullable
   public List<WatchlistEnhancedPropertiesRecordsInnerAliasInner> getAlias() {
     return alias;
@@ -165,10 +164,10 @@ public class WatchlistEnhancedPropertiesRecordsInner {
     return this;
   }
 
-   /**
+  /**
    * Any linked persons, for example family relatives or business partners.
    * @return associate
-  **/
+   */
   @javax.annotation.Nullable
   public List<WatchlistEnhancedPropertiesRecordsInnerAssociateInner> getAssociate() {
     return associate;
@@ -192,10 +191,10 @@ public class WatchlistEnhancedPropertiesRecordsInner {
     return this;
   }
 
-   /**
+  /**
    * Information about the person, for example hair color or nationality.
    * @return attribute
-  **/
+   */
   @javax.annotation.Nullable
   public List<WatchlistEnhancedPropertiesRecordsInnerAttributeInner> getAttribute() {
     return attribute;
@@ -219,10 +218,10 @@ public class WatchlistEnhancedPropertiesRecordsInner {
     return this;
   }
 
-   /**
+  /**
    * All the date of births on file.
    * @return dateOfBirth
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getDateOfBirth() {
     return dateOfBirth;
@@ -246,10 +245,10 @@ public class WatchlistEnhancedPropertiesRecordsInner {
     return this;
   }
 
-   /**
+  /**
    * Information about events that have occurred to the person, for example deportation or arrest.
    * @return event
-  **/
+   */
   @javax.annotation.Nullable
   public List<WatchlistEnhancedPropertiesRecordsInnerEventInner> getEvent() {
     return event;
@@ -265,10 +264,10 @@ public class WatchlistEnhancedPropertiesRecordsInner {
     return this;
   }
 
-   /**
+  /**
    * The name on file
    * @return fullName
-  **/
+   */
   @javax.annotation.Nullable
   public String getFullName() {
     return fullName;
@@ -292,10 +291,10 @@ public class WatchlistEnhancedPropertiesRecordsInner {
     return this;
   }
 
-   /**
+  /**
    * The role, country and date of each position.
    * @return position
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getPosition() {
     return position;
@@ -319,10 +318,10 @@ public class WatchlistEnhancedPropertiesRecordsInner {
     return this;
   }
 
-   /**
+  /**
    * Details about where the information was obtained.
    * @return source
-  **/
+   */
   @javax.annotation.Nullable
   public List<WatchlistEnhancedPropertiesRecordsInnerSourceInner> getSource() {
     return source;
@@ -454,12 +453,12 @@ public class WatchlistEnhancedPropertiesRecordsInner {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to WatchlistEnhancedPropertiesRecordsInner
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to WatchlistEnhancedPropertiesRecordsInner
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!WatchlistEnhancedPropertiesRecordsInner.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -636,22 +635,22 @@ public class WatchlistEnhancedPropertiesRecordsInner {
     }
   }
 
- /**
-  * Create an instance of WatchlistEnhancedPropertiesRecordsInner given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of WatchlistEnhancedPropertiesRecordsInner
-  * @throws IOException if the JSON string is invalid with respect to WatchlistEnhancedPropertiesRecordsInner
-  */
+  /**
+   * Create an instance of WatchlistEnhancedPropertiesRecordsInner given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of WatchlistEnhancedPropertiesRecordsInner
+   * @throws IOException if the JSON string is invalid with respect to WatchlistEnhancedPropertiesRecordsInner
+   */
   public static WatchlistEnhancedPropertiesRecordsInner fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, WatchlistEnhancedPropertiesRecordsInner.class);
   }
 
- /**
-  * Convert an instance of WatchlistEnhancedPropertiesRecordsInner to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of WatchlistEnhancedPropertiesRecordsInner to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

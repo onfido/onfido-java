@@ -90,7 +90,7 @@ import com.google.gson.JsonParseException;
 
 import com.onfido.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class Report extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(Report.class.getName());
 
@@ -730,107 +730,7 @@ public class Report extends AbstractOpenApiSchema {
         super("oneOf", Boolean.FALSE);
     }
 
-    public Report(DeviceIntelligenceReport o) {
-        super("oneOf", Boolean.FALSE);
-        setActualInstance(o);
-    }
-
-    public Report(DocumentReport o) {
-        super("oneOf", Boolean.FALSE);
-        setActualInstance(o);
-    }
-
-    public Report(DocumentVideoReport o) {
-        super("oneOf", Boolean.FALSE);
-        setActualInstance(o);
-    }
-
-    public Report(DocumentVideoWithAddressInformationReport o) {
-        super("oneOf", Boolean.FALSE);
-        setActualInstance(o);
-    }
-
-    public Report(DocumentWithAddressInformationReport o) {
-        super("oneOf", Boolean.FALSE);
-        setActualInstance(o);
-    }
-
-    public Report(DocumentWithDriverVerificationReport o) {
-        super("oneOf", Boolean.FALSE);
-        setActualInstance(o);
-    }
-
-    public Report(DocumentWithDrivingLicenceInformationReport o) {
-        super("oneOf", Boolean.FALSE);
-        setActualInstance(o);
-    }
-
-    public Report(FacialSimilarityMotionReport o) {
-        super("oneOf", Boolean.FALSE);
-        setActualInstance(o);
-    }
-
-    public Report(FacialSimilarityPhotoFullyAutoReport o) {
-        super("oneOf", Boolean.FALSE);
-        setActualInstance(o);
-    }
-
-    public Report(FacialSimilarityPhotoReport o) {
-        super("oneOf", Boolean.FALSE);
-        setActualInstance(o);
-    }
-
-    public Report(FacialSimilarityVideoReport o) {
-        super("oneOf", Boolean.FALSE);
-        setActualInstance(o);
-    }
-
-    public Report(IdentityEnhancedReport o) {
-        super("oneOf", Boolean.FALSE);
-        setActualInstance(o);
-    }
-
-    public Report(IndiaPanReport o) {
-        super("oneOf", Boolean.FALSE);
-        setActualInstance(o);
-    }
-
-    public Report(KnownFacesReport o) {
-        super("oneOf", Boolean.FALSE);
-        setActualInstance(o);
-    }
-
-    public Report(ProofOfAddressReport o) {
-        super("oneOf", Boolean.FALSE);
-        setActualInstance(o);
-    }
-
-    public Report(UsDrivingLicenceReport o) {
-        super("oneOf", Boolean.FALSE);
-        setActualInstance(o);
-    }
-
-    public Report(WatchlistAmlReport o) {
-        super("oneOf", Boolean.FALSE);
-        setActualInstance(o);
-    }
-
-    public Report(WatchlistEnhancedReport o) {
-        super("oneOf", Boolean.FALSE);
-        setActualInstance(o);
-    }
-
-    public Report(WatchlistPepsOnlyReport o) {
-        super("oneOf", Boolean.FALSE);
-        setActualInstance(o);
-    }
-
-    public Report(WatchlistSanctionsOnlyReport o) {
-        super("oneOf", Boolean.FALSE);
-        setActualInstance(o);
-    }
-
-    public Report(WatchlistStandardReport o) {
+    public Report(Object o) {
         super("oneOf", Boolean.FALSE);
         setActualInstance(o);
     }

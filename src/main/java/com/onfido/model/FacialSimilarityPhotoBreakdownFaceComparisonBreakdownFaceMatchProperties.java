@@ -38,7 +38,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -50,7 +49,7 @@ import com.onfido.JSON;
 /**
  * FacialSimilarityPhotoBreakdownFaceComparisonBreakdownFaceMatchProperties
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class FacialSimilarityPhotoBreakdownFaceComparisonBreakdownFaceMatchProperties {
   public static final String SERIALIZED_NAME_SCORE = "score";
   @SerializedName(SERIALIZED_NAME_SCORE)
@@ -68,10 +67,10 @@ public class FacialSimilarityPhotoBreakdownFaceComparisonBreakdownFaceMatchPrope
     return this;
   }
 
-   /**
+  /**
    * A floating point number between 0 and 1 that expresses how similar the two faces are, where 1 is a perfect match.
    * @return score
-  **/
+   */
   @javax.annotation.Nullable
   public Float getScore() {
     return score;
@@ -87,10 +86,10 @@ public class FacialSimilarityPhotoBreakdownFaceComparisonBreakdownFaceMatchPrope
     return this;
   }
 
-   /**
+  /**
    * The UUID for the document containing the extracted face that was used for face matching.
    * @return documentId
-  **/
+   */
   @javax.annotation.Nullable
   public UUID getDocumentId() {
     return documentId;
@@ -201,12 +200,12 @@ public class FacialSimilarityPhotoBreakdownFaceComparisonBreakdownFaceMatchPrope
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to FacialSimilarityPhotoBreakdownFaceComparisonBreakdownFaceMatchProperties
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to FacialSimilarityPhotoBreakdownFaceComparisonBreakdownFaceMatchProperties
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!FacialSimilarityPhotoBreakdownFaceComparisonBreakdownFaceMatchProperties.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -291,22 +290,22 @@ public class FacialSimilarityPhotoBreakdownFaceComparisonBreakdownFaceMatchPrope
     }
   }
 
- /**
-  * Create an instance of FacialSimilarityPhotoBreakdownFaceComparisonBreakdownFaceMatchProperties given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of FacialSimilarityPhotoBreakdownFaceComparisonBreakdownFaceMatchProperties
-  * @throws IOException if the JSON string is invalid with respect to FacialSimilarityPhotoBreakdownFaceComparisonBreakdownFaceMatchProperties
-  */
+  /**
+   * Create an instance of FacialSimilarityPhotoBreakdownFaceComparisonBreakdownFaceMatchProperties given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of FacialSimilarityPhotoBreakdownFaceComparisonBreakdownFaceMatchProperties
+   * @throws IOException if the JSON string is invalid with respect to FacialSimilarityPhotoBreakdownFaceComparisonBreakdownFaceMatchProperties
+   */
   public static FacialSimilarityPhotoBreakdownFaceComparisonBreakdownFaceMatchProperties fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, FacialSimilarityPhotoBreakdownFaceComparisonBreakdownFaceMatchProperties.class);
   }
 
- /**
-  * Convert an instance of FacialSimilarityPhotoBreakdownFaceComparisonBreakdownFaceMatchProperties to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of FacialSimilarityPhotoBreakdownFaceComparisonBreakdownFaceMatchProperties to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

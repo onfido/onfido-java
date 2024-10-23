@@ -43,7 +43,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.onfido</groupId>
   <artifactId>onfido-api-java</artifactId>
-  <version>4.3.0</version>
+  <version>5.0.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -59,7 +59,7 @@ Add this dependency to your project's build file:
   }
 
   dependencies {
-     implementation "com.onfido:onfido-api-java:4.3.0"
+     implementation "com.onfido:onfido-api-java:5.0.0"
   }
 ```
 
@@ -73,10 +73,10 @@ mvn clean package
 
 Then manually install the following JARs:
 
-- `target/onfido-api-java-4.3.0.jar`
+- `target/onfido-api-java-5.0.0.jar`
 - `target/lib/*.jar`
 
-The latest version can be found at: https://search.maven.org/artifact/com.onfido/4.3.0
+The latest version can be found at: https://search.maven.org/artifact/com.onfido/5.0.0
 
 ## Getting Started
 
@@ -164,7 +164,7 @@ Retain from using `getAdditionalProperty()` or `getAdditionalProperties()` metho
 
 ## Contributing
 
-This library is automatically generated using [OpenAPI Generator](https://openapi-generator.tech) (version: 7.6.0); therefore all the contributions, except tests files, should target [Onfido OpenAPI specification repository](https://github.com/onfido/onfido-openapi-spec/tree/master) instead of this repository.
+This library is automatically generated using [OpenAPI Generator](https://openapi-generator.tech) (version: 7.9.0); therefore all the contributions, except tests files, should target [Onfido OpenAPI specification repository](https://github.com/onfido/onfido-openapi-spec/tree/master) instead of this repository.
 
 For contributions to the tests instead, please follow the steps below:
 

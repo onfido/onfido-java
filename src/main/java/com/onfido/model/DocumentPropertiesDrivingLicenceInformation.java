@@ -38,7 +38,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -50,7 +49,7 @@ import com.onfido.JSON;
 /**
  * DocumentPropertiesDrivingLicenceInformation
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class DocumentPropertiesDrivingLicenceInformation {
   public static final String SERIALIZED_NAME_CATEGORY = "category";
   @SerializedName(SERIALIZED_NAME_CATEGORY)
@@ -76,10 +75,10 @@ public class DocumentPropertiesDrivingLicenceInformation {
     return this;
   }
 
-   /**
+  /**
    * Get category
    * @return category
-  **/
+   */
   @javax.annotation.Nullable
   public String getCategory() {
     return category;
@@ -95,10 +94,10 @@ public class DocumentPropertiesDrivingLicenceInformation {
     return this;
   }
 
-   /**
+  /**
    * Get obtainmentDate
    * @return obtainmentDate
-  **/
+   */
   @javax.annotation.Nullable
   public LocalDate getObtainmentDate() {
     return obtainmentDate;
@@ -114,10 +113,10 @@ public class DocumentPropertiesDrivingLicenceInformation {
     return this;
   }
 
-   /**
+  /**
    * Get expiryDate
    * @return expiryDate
-  **/
+   */
   @javax.annotation.Nullable
   public LocalDate getExpiryDate() {
     return expiryDate;
@@ -133,10 +132,10 @@ public class DocumentPropertiesDrivingLicenceInformation {
     return this;
   }
 
-   /**
+  /**
    * Get codes
    * @return codes
-  **/
+   */
   @javax.annotation.Nullable
   public String getCodes() {
     return codes;
@@ -253,12 +252,12 @@ public class DocumentPropertiesDrivingLicenceInformation {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to DocumentPropertiesDrivingLicenceInformation
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to DocumentPropertiesDrivingLicenceInformation
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!DocumentPropertiesDrivingLicenceInformation.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -346,22 +345,22 @@ public class DocumentPropertiesDrivingLicenceInformation {
     }
   }
 
- /**
-  * Create an instance of DocumentPropertiesDrivingLicenceInformation given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of DocumentPropertiesDrivingLicenceInformation
-  * @throws IOException if the JSON string is invalid with respect to DocumentPropertiesDrivingLicenceInformation
-  */
+  /**
+   * Create an instance of DocumentPropertiesDrivingLicenceInformation given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of DocumentPropertiesDrivingLicenceInformation
+   * @throws IOException if the JSON string is invalid with respect to DocumentPropertiesDrivingLicenceInformation
+   */
   public static DocumentPropertiesDrivingLicenceInformation fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, DocumentPropertiesDrivingLicenceInformation.class);
   }
 
- /**
-  * Convert an instance of DocumentPropertiesDrivingLicenceInformation to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of DocumentPropertiesDrivingLicenceInformation to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

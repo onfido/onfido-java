@@ -38,7 +38,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -50,7 +49,7 @@ import com.onfido.JSON;
 /**
  * ProofOfAddressBreakdownDataComparisonBreakdown
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class ProofOfAddressBreakdownDataComparisonBreakdown {
   public static final String SERIALIZED_NAME_ADDRESS = "address";
   @SerializedName(SERIALIZED_NAME_ADDRESS)
@@ -72,10 +71,10 @@ public class ProofOfAddressBreakdownDataComparisonBreakdown {
     return this;
   }
 
-   /**
+  /**
    * Get address
    * @return address
-  **/
+   */
   @javax.annotation.Nullable
   public DocumentBreakdownDataComparisonBreakdownIssuingCountry getAddress() {
     return address;
@@ -91,10 +90,10 @@ public class ProofOfAddressBreakdownDataComparisonBreakdown {
     return this;
   }
 
-   /**
+  /**
    * Get firstName
    * @return firstName
-  **/
+   */
   @javax.annotation.Nullable
   public DocumentBreakdownDataComparisonBreakdownIssuingCountry getFirstName() {
     return firstName;
@@ -110,10 +109,10 @@ public class ProofOfAddressBreakdownDataComparisonBreakdown {
     return this;
   }
 
-   /**
+  /**
    * Get lastName
    * @return lastName
-  **/
+   */
   @javax.annotation.Nullable
   public DocumentBreakdownDataComparisonBreakdownIssuingCountry getLastName() {
     return lastName;
@@ -227,12 +226,12 @@ public class ProofOfAddressBreakdownDataComparisonBreakdown {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ProofOfAddressBreakdownDataComparisonBreakdown
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ProofOfAddressBreakdownDataComparisonBreakdown
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ProofOfAddressBreakdownDataComparisonBreakdown.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -326,22 +325,22 @@ public class ProofOfAddressBreakdownDataComparisonBreakdown {
     }
   }
 
- /**
-  * Create an instance of ProofOfAddressBreakdownDataComparisonBreakdown given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ProofOfAddressBreakdownDataComparisonBreakdown
-  * @throws IOException if the JSON string is invalid with respect to ProofOfAddressBreakdownDataComparisonBreakdown
-  */
+  /**
+   * Create an instance of ProofOfAddressBreakdownDataComparisonBreakdown given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ProofOfAddressBreakdownDataComparisonBreakdown
+   * @throws IOException if the JSON string is invalid with respect to ProofOfAddressBreakdownDataComparisonBreakdown
+   */
   public static ProofOfAddressBreakdownDataComparisonBreakdown fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ProofOfAddressBreakdownDataComparisonBreakdown.class);
   }
 
- /**
-  * Convert an instance of ProofOfAddressBreakdownDataComparisonBreakdown to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ProofOfAddressBreakdownDataComparisonBreakdown to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

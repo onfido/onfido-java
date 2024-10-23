@@ -38,7 +38,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -50,7 +49,7 @@ import com.onfido.JSON;
 /**
  * Asserts whether the image of the document has been found in our internal database or if it was used in a suspicious way.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class DocumentBreakdownCompromisedDocument {
   public static final String SERIALIZED_NAME_RESULT = "result";
   @SerializedName(SERIALIZED_NAME_RESULT)
@@ -68,10 +67,10 @@ public class DocumentBreakdownCompromisedDocument {
     return this;
   }
 
-   /**
+  /**
    * Get result
    * @return result
-  **/
+   */
   @javax.annotation.Nullable
   public String getResult() {
     return result;
@@ -87,10 +86,10 @@ public class DocumentBreakdownCompromisedDocument {
     return this;
   }
 
-   /**
+  /**
    * Get breakdown
    * @return breakdown
-  **/
+   */
   @javax.annotation.Nullable
   public DocumentBreakdownCompromisedDocumentBreakdown getBreakdown() {
     return breakdown;
@@ -201,12 +200,12 @@ public class DocumentBreakdownCompromisedDocument {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to DocumentBreakdownCompromisedDocument
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to DocumentBreakdownCompromisedDocument
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!DocumentBreakdownCompromisedDocument.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -295,22 +294,22 @@ public class DocumentBreakdownCompromisedDocument {
     }
   }
 
- /**
-  * Create an instance of DocumentBreakdownCompromisedDocument given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of DocumentBreakdownCompromisedDocument
-  * @throws IOException if the JSON string is invalid with respect to DocumentBreakdownCompromisedDocument
-  */
+  /**
+   * Create an instance of DocumentBreakdownCompromisedDocument given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of DocumentBreakdownCompromisedDocument
+   * @throws IOException if the JSON string is invalid with respect to DocumentBreakdownCompromisedDocument
+   */
   public static DocumentBreakdownCompromisedDocument fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, DocumentBreakdownCompromisedDocument.class);
   }
 
- /**
-  * Convert an instance of DocumentBreakdownCompromisedDocument to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of DocumentBreakdownCompromisedDocument to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

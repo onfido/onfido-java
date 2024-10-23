@@ -37,7 +37,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -49,7 +48,7 @@ import com.onfido.JSON;
 /**
  * FacialSimilarityPhotoProperties
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class FacialSimilarityPhotoProperties {
   public static final String SERIALIZED_NAME_SCORE = "score";
   @SerializedName(SERIALIZED_NAME_SCORE)
@@ -63,10 +62,10 @@ public class FacialSimilarityPhotoProperties {
     return this;
   }
 
-   /**
+  /**
    * A floating point number between 0 and 1. The closer the score is to 0, the more likely it is to be a spoof (i.e. photos of printed photos, or photos of digital screens). Conversely, the closer it is to 1, the less likely it is to be a spoof. 
    * @return score
-  **/
+   */
   @javax.annotation.Nullable
   public Float getScore() {
     return score;
@@ -174,12 +173,12 @@ public class FacialSimilarityPhotoProperties {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to FacialSimilarityPhotoProperties
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to FacialSimilarityPhotoProperties
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!FacialSimilarityPhotoProperties.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -261,22 +260,22 @@ public class FacialSimilarityPhotoProperties {
     }
   }
 
- /**
-  * Create an instance of FacialSimilarityPhotoProperties given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of FacialSimilarityPhotoProperties
-  * @throws IOException if the JSON string is invalid with respect to FacialSimilarityPhotoProperties
-  */
+  /**
+   * Create an instance of FacialSimilarityPhotoProperties given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of FacialSimilarityPhotoProperties
+   * @throws IOException if the JSON string is invalid with respect to FacialSimilarityPhotoProperties
+   */
   public static FacialSimilarityPhotoProperties fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, FacialSimilarityPhotoProperties.class);
   }
 
- /**
-  * Convert an instance of FacialSimilarityPhotoProperties to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of FacialSimilarityPhotoProperties to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

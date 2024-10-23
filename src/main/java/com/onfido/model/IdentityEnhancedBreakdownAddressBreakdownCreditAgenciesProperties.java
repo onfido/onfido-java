@@ -37,7 +37,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -49,7 +48,7 @@ import com.onfido.JSON;
 /**
  * IdentityEnhancedBreakdownAddressBreakdownCreditAgenciesProperties
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class IdentityEnhancedBreakdownAddressBreakdownCreditAgenciesProperties {
   public static final String SERIALIZED_NAME_NUMBER_OF_MATCHES = "number_of_matches";
   @SerializedName(SERIALIZED_NAME_NUMBER_OF_MATCHES)
@@ -63,10 +62,10 @@ public class IdentityEnhancedBreakdownAddressBreakdownCreditAgenciesProperties {
     return this;
   }
 
-   /**
+  /**
    * Get numberOfMatches
    * @return numberOfMatches
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getNumberOfMatches() {
     return numberOfMatches;
@@ -174,12 +173,12 @@ public class IdentityEnhancedBreakdownAddressBreakdownCreditAgenciesProperties {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to IdentityEnhancedBreakdownAddressBreakdownCreditAgenciesProperties
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to IdentityEnhancedBreakdownAddressBreakdownCreditAgenciesProperties
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!IdentityEnhancedBreakdownAddressBreakdownCreditAgenciesProperties.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -261,22 +260,22 @@ public class IdentityEnhancedBreakdownAddressBreakdownCreditAgenciesProperties {
     }
   }
 
- /**
-  * Create an instance of IdentityEnhancedBreakdownAddressBreakdownCreditAgenciesProperties given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of IdentityEnhancedBreakdownAddressBreakdownCreditAgenciesProperties
-  * @throws IOException if the JSON string is invalid with respect to IdentityEnhancedBreakdownAddressBreakdownCreditAgenciesProperties
-  */
+  /**
+   * Create an instance of IdentityEnhancedBreakdownAddressBreakdownCreditAgenciesProperties given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of IdentityEnhancedBreakdownAddressBreakdownCreditAgenciesProperties
+   * @throws IOException if the JSON string is invalid with respect to IdentityEnhancedBreakdownAddressBreakdownCreditAgenciesProperties
+   */
   public static IdentityEnhancedBreakdownAddressBreakdownCreditAgenciesProperties fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, IdentityEnhancedBreakdownAddressBreakdownCreditAgenciesProperties.class);
   }
 
- /**
-  * Convert an instance of IdentityEnhancedBreakdownAddressBreakdownCreditAgenciesProperties to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of IdentityEnhancedBreakdownAddressBreakdownCreditAgenciesProperties to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

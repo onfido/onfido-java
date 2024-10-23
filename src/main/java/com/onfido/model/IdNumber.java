@@ -37,7 +37,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -49,7 +48,7 @@ import com.onfido.JSON;
 /**
  * IdNumber
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class IdNumber {
   /**
    * Type of ID number.
@@ -139,10 +138,10 @@ public class IdNumber {
     return this;
   }
 
-   /**
+  /**
    * Type of ID number.
    * @return type
-  **/
+   */
   @javax.annotation.Nullable
   public TypeEnum getType() {
     return type;
@@ -158,10 +157,10 @@ public class IdNumber {
     return this;
   }
 
-   /**
+  /**
    * Value of ID number
    * @return value
-  **/
+   */
   @javax.annotation.Nullable
   public String getValue() {
     return value;
@@ -177,10 +176,10 @@ public class IdNumber {
     return this;
   }
 
-   /**
+  /**
    * Two letter code of issuing state (state-issued driving licenses only)
    * @return stateCode
-  **/
+   */
   @javax.annotation.Nullable
   public String getStateCode() {
     return stateCode;
@@ -294,12 +293,12 @@ public class IdNumber {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to IdNumber
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to IdNumber
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!IdNumber.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -394,22 +393,22 @@ public class IdNumber {
     }
   }
 
- /**
-  * Create an instance of IdNumber given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of IdNumber
-  * @throws IOException if the JSON string is invalid with respect to IdNumber
-  */
+  /**
+   * Create an instance of IdNumber given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of IdNumber
+   * @throws IOException if the JSON string is invalid with respect to IdNumber
+   */
   public static IdNumber fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, IdNumber.class);
   }
 
- /**
-  * Convert an instance of IdNumber to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of IdNumber to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

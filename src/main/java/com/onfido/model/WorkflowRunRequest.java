@@ -39,7 +39,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -51,7 +50,7 @@ import com.onfido.JSON;
 /**
  * WorkflowRunRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class WorkflowRunRequest {
   public static final String SERIALIZED_NAME_CUSTOM_DATA = "custom_data";
   @SerializedName(SERIALIZED_NAME_CUSTOM_DATA)
@@ -73,10 +72,10 @@ public class WorkflowRunRequest {
     return this;
   }
 
-   /**
+  /**
    * Object with Custom Input Data to be used in the Workflow Run.
    * @return customData
-  **/
+   */
   @javax.annotation.Nullable
   public Map<String, Object> getCustomData() {
     return customData;
@@ -184,12 +183,12 @@ public class WorkflowRunRequest {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to WorkflowRunRequest
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to WorkflowRunRequest
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!WorkflowRunRequest.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -271,22 +270,22 @@ public class WorkflowRunRequest {
     }
   }
 
- /**
-  * Create an instance of WorkflowRunRequest given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of WorkflowRunRequest
-  * @throws IOException if the JSON string is invalid with respect to WorkflowRunRequest
-  */
+  /**
+   * Create an instance of WorkflowRunRequest given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of WorkflowRunRequest
+   * @throws IOException if the JSON string is invalid with respect to WorkflowRunRequest
+   */
   public static WorkflowRunRequest fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, WorkflowRunRequest.class);
   }
 
- /**
-  * Convert an instance of WorkflowRunRequest to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of WorkflowRunRequest to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

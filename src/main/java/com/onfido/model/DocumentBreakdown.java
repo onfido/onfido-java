@@ -46,7 +46,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -58,7 +57,7 @@ import com.onfido.JSON;
 /**
  * DocumentBreakdown
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class DocumentBreakdown {
   public static final String SERIALIZED_NAME_DATA_COMPARISON = "data_comparison";
   @SerializedName(SERIALIZED_NAME_DATA_COMPARISON)
@@ -104,10 +103,10 @@ public class DocumentBreakdown {
     return this;
   }
 
-   /**
+  /**
    * Get dataComparison
    * @return dataComparison
-  **/
+   */
   @javax.annotation.Nullable
   public DocumentBreakdownDataComparison getDataComparison() {
     return dataComparison;
@@ -123,10 +122,10 @@ public class DocumentBreakdown {
     return this;
   }
 
-   /**
+  /**
    * Get dataValidation
    * @return dataValidation
-  **/
+   */
   @javax.annotation.Nullable
   public DocumentBreakdownDataValidation getDataValidation() {
     return dataValidation;
@@ -142,10 +141,10 @@ public class DocumentBreakdown {
     return this;
   }
 
-   /**
+  /**
    * Get imageIntegrity
    * @return imageIntegrity
-  **/
+   */
   @javax.annotation.Nullable
   public DocumentBreakdownImageIntegrity getImageIntegrity() {
     return imageIntegrity;
@@ -161,10 +160,10 @@ public class DocumentBreakdown {
     return this;
   }
 
-   /**
+  /**
    * Get visualAuthenticity
    * @return visualAuthenticity
-  **/
+   */
   @javax.annotation.Nullable
   public DocumentBreakdownVisualAuthenticity getVisualAuthenticity() {
     return visualAuthenticity;
@@ -180,10 +179,10 @@ public class DocumentBreakdown {
     return this;
   }
 
-   /**
+  /**
    * Get dataConsistency
    * @return dataConsistency
-  **/
+   */
   @javax.annotation.Nullable
   public DocumentBreakdownDataConsistency getDataConsistency() {
     return dataConsistency;
@@ -199,10 +198,10 @@ public class DocumentBreakdown {
     return this;
   }
 
-   /**
+  /**
    * Get policeRecord
    * @return policeRecord
-  **/
+   */
   @javax.annotation.Nullable
   public DocumentBreakdownPoliceRecord getPoliceRecord() {
     return policeRecord;
@@ -218,10 +217,10 @@ public class DocumentBreakdown {
     return this;
   }
 
-   /**
+  /**
    * Get compromisedDocument
    * @return compromisedDocument
-  **/
+   */
   @javax.annotation.Nullable
   public DocumentBreakdownCompromisedDocument getCompromisedDocument() {
     return compromisedDocument;
@@ -237,10 +236,10 @@ public class DocumentBreakdown {
     return this;
   }
 
-   /**
+  /**
    * Get ageValidation
    * @return ageValidation
-  **/
+   */
   @javax.annotation.Nullable
   public DocumentBreakdownAgeValidation getAgeValidation() {
     return ageValidation;
@@ -256,10 +255,10 @@ public class DocumentBreakdown {
     return this;
   }
 
-   /**
+  /**
    * Get issuingAuthority
    * @return issuingAuthority
-  **/
+   */
   @javax.annotation.Nullable
   public DocumentBreakdownIssuingAuthority getIssuingAuthority() {
     return issuingAuthority;
@@ -391,12 +390,12 @@ public class DocumentBreakdown {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to DocumentBreakdown
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to DocumentBreakdown
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!DocumentBreakdown.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -514,22 +513,22 @@ public class DocumentBreakdown {
     }
   }
 
- /**
-  * Create an instance of DocumentBreakdown given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of DocumentBreakdown
-  * @throws IOException if the JSON string is invalid with respect to DocumentBreakdown
-  */
+  /**
+   * Create an instance of DocumentBreakdown given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of DocumentBreakdown
+   * @throws IOException if the JSON string is invalid with respect to DocumentBreakdown
+   */
   public static DocumentBreakdown fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, DocumentBreakdown.class);
   }
 
- /**
-  * Convert an instance of DocumentBreakdown to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of DocumentBreakdown to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

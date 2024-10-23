@@ -39,7 +39,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -51,7 +50,7 @@ import com.onfido.JSON;
 /**
  * WatchlistEnhancedPropertiesRecordsInnerEventInner
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class WatchlistEnhancedPropertiesRecordsInnerEventInner {
   public static final String SERIALIZED_NAME_CATEGORY = "category";
   @SerializedName(SERIALIZED_NAME_CATEGORY)
@@ -81,10 +80,10 @@ public class WatchlistEnhancedPropertiesRecordsInnerEventInner {
     return this;
   }
 
-   /**
+  /**
    * Get category
    * @return category
-  **/
+   */
   @javax.annotation.Nullable
   public String getCategory() {
     return category;
@@ -100,10 +99,10 @@ public class WatchlistEnhancedPropertiesRecordsInnerEventInner {
     return this;
   }
 
-   /**
+  /**
    * Get eventDate
    * @return eventDate
-  **/
+   */
   @javax.annotation.Nullable
   public LocalDate getEventDate() {
     return eventDate;
@@ -119,10 +118,10 @@ public class WatchlistEnhancedPropertiesRecordsInnerEventInner {
     return this;
   }
 
-   /**
+  /**
    * Get eventDescription
    * @return eventDescription
-  **/
+   */
   @javax.annotation.Nullable
   public String getEventDescription() {
     return eventDescription;
@@ -138,10 +137,10 @@ public class WatchlistEnhancedPropertiesRecordsInnerEventInner {
     return this;
   }
 
-   /**
+  /**
    * Get source
    * @return source
-  **/
+   */
   @javax.annotation.Nullable
   public WatchlistEnhancedPropertiesRecordsInnerEventInnerSource getSource() {
     return source;
@@ -157,10 +156,10 @@ public class WatchlistEnhancedPropertiesRecordsInnerEventInner {
     return this;
   }
 
-   /**
+  /**
    * Get subCategory
    * @return subCategory
-  **/
+   */
   @javax.annotation.Nullable
   public String getSubCategory() {
     return subCategory;
@@ -280,12 +279,12 @@ public class WatchlistEnhancedPropertiesRecordsInnerEventInner {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to WatchlistEnhancedPropertiesRecordsInnerEventInner
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to WatchlistEnhancedPropertiesRecordsInnerEventInner
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!WatchlistEnhancedPropertiesRecordsInnerEventInner.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -380,22 +379,22 @@ public class WatchlistEnhancedPropertiesRecordsInnerEventInner {
     }
   }
 
- /**
-  * Create an instance of WatchlistEnhancedPropertiesRecordsInnerEventInner given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of WatchlistEnhancedPropertiesRecordsInnerEventInner
-  * @throws IOException if the JSON string is invalid with respect to WatchlistEnhancedPropertiesRecordsInnerEventInner
-  */
+  /**
+   * Create an instance of WatchlistEnhancedPropertiesRecordsInnerEventInner given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of WatchlistEnhancedPropertiesRecordsInnerEventInner
+   * @throws IOException if the JSON string is invalid with respect to WatchlistEnhancedPropertiesRecordsInnerEventInner
+   */
   public static WatchlistEnhancedPropertiesRecordsInnerEventInner fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, WatchlistEnhancedPropertiesRecordsInnerEventInner.class);
   }
 
- /**
-  * Convert an instance of WatchlistEnhancedPropertiesRecordsInnerEventInner to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of WatchlistEnhancedPropertiesRecordsInnerEventInner to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

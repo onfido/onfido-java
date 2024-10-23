@@ -39,7 +39,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -51,7 +50,7 @@ import com.onfido.JSON;
 /**
  * WebhooksResendItem
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class WebhooksResendItem {
   public static final String SERIALIZED_NAME_RESOURCE_ID = "resource_id";
   @SerializedName(SERIALIZED_NAME_RESOURCE_ID)
@@ -69,10 +68,10 @@ public class WebhooksResendItem {
     return this;
   }
 
-   /**
+  /**
    * ID of the resource whose webhooks are to be retriggered.
    * @return resourceId
-  **/
+   */
   @javax.annotation.Nonnull
   public UUID getResourceId() {
     return resourceId;
@@ -88,10 +87,10 @@ public class WebhooksResendItem {
     return this;
   }
 
-   /**
+  /**
    * The events that should retrigger webhooks. Accepts values check.completed.
    * @return event
-  **/
+   */
   @javax.annotation.Nonnull
   public WebhookEventType getEvent() {
     return event;
@@ -204,12 +203,12 @@ public class WebhooksResendItem {
     openapiRequiredFields.add("event");
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to WebhooksResendItem
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to WebhooksResendItem
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!WebhooksResendItem.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -303,22 +302,22 @@ public class WebhooksResendItem {
     }
   }
 
- /**
-  * Create an instance of WebhooksResendItem given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of WebhooksResendItem
-  * @throws IOException if the JSON string is invalid with respect to WebhooksResendItem
-  */
+  /**
+   * Create an instance of WebhooksResendItem given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of WebhooksResendItem
+   * @throws IOException if the JSON string is invalid with respect to WebhooksResendItem
+   */
   public static WebhooksResendItem fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, WebhooksResendItem.class);
   }
 
- /**
-  * Convert an instance of WebhooksResendItem to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of WebhooksResendItem to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

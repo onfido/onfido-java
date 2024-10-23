@@ -38,7 +38,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -50,7 +49,7 @@ import com.onfido.JSON;
 /**
  * UsDrivingLicenceBuilder
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class UsDrivingLicenceBuilder {
   public static final String SERIALIZED_NAME_ID_NUMBER = "id_number";
   @SerializedName(SERIALIZED_NAME_ID_NUMBER)
@@ -317,10 +316,10 @@ public class UsDrivingLicenceBuilder {
     return this;
   }
 
-   /**
+  /**
    * Driving licence ID number
    * @return idNumber
-  **/
+   */
   @javax.annotation.Nonnull
   public String getIdNumber() {
     return idNumber;
@@ -336,10 +335,10 @@ public class UsDrivingLicenceBuilder {
     return this;
   }
 
-   /**
+  /**
    * Two letter code of issuing state (state-issued driving licenses only)
    * @return issueState
-  **/
+   */
   @javax.annotation.Nonnull
   public String getIssueState() {
     return issueState;
@@ -355,10 +354,10 @@ public class UsDrivingLicenceBuilder {
     return this;
   }
 
-   /**
+  /**
    * Line 1 of the address
    * @return addressLine1
-  **/
+   */
   @javax.annotation.Nullable
   public String getAddressLine1() {
     return addressLine1;
@@ -374,10 +373,10 @@ public class UsDrivingLicenceBuilder {
     return this;
   }
 
-   /**
+  /**
    * Line 2 of the address
    * @return addressLine2
-  **/
+   */
   @javax.annotation.Nullable
   public String getAddressLine2() {
     return addressLine2;
@@ -393,10 +392,10 @@ public class UsDrivingLicenceBuilder {
     return this;
   }
 
-   /**
+  /**
    * The city of the owner&#39;s address
    * @return city
-  **/
+   */
   @javax.annotation.Nullable
   public String getCity() {
     return city;
@@ -412,10 +411,10 @@ public class UsDrivingLicenceBuilder {
     return this;
   }
 
-   /**
+  /**
    * Date of birth in yyyy-mm-dd format
    * @return dateOfBirth
-  **/
+   */
   @javax.annotation.Nullable
   public LocalDate getDateOfBirth() {
     return dateOfBirth;
@@ -431,10 +430,10 @@ public class UsDrivingLicenceBuilder {
     return this;
   }
 
-   /**
+  /**
    * Document category.
    * @return documentCategory
-  **/
+   */
   @javax.annotation.Nullable
   public DocumentCategoryEnum getDocumentCategory() {
     return documentCategory;
@@ -450,10 +449,10 @@ public class UsDrivingLicenceBuilder {
     return this;
   }
 
-   /**
+  /**
    * Expiration date of the driving licence in yyyy-mm-dd format
    * @return expirationDate
-  **/
+   */
   @javax.annotation.Nullable
   public LocalDate getExpirationDate() {
     return expirationDate;
@@ -469,10 +468,10 @@ public class UsDrivingLicenceBuilder {
     return this;
   }
 
-   /**
+  /**
    * Eye color code.
    * @return eyeColorCode
-  **/
+   */
   @javax.annotation.Nullable
   public EyeColorCodeEnum getEyeColorCode() {
     return eyeColorCode;
@@ -488,10 +487,10 @@ public class UsDrivingLicenceBuilder {
     return this;
   }
 
-   /**
+  /**
    * The owner&#39;s first name
    * @return firstName
-  **/
+   */
   @javax.annotation.Nullable
   public String getFirstName() {
     return firstName;
@@ -502,10 +501,10 @@ public class UsDrivingLicenceBuilder {
   }
 
 
-   /**
+  /**
    * Get gender
    * @return gender
-  **/
+   */
   @javax.annotation.Nullable
   public GenderEnum getGender() {
     return gender;
@@ -518,10 +517,10 @@ public class UsDrivingLicenceBuilder {
     return this;
   }
 
-   /**
+  /**
    * Issue date in yyyy-mm-dd format
    * @return issueDate
-  **/
+   */
   @javax.annotation.Nullable
   public LocalDate getIssueDate() {
     return issueDate;
@@ -537,10 +536,10 @@ public class UsDrivingLicenceBuilder {
     return this;
   }
 
-   /**
+  /**
    * The owner&#39;s surname
    * @return lastName
-  **/
+   */
   @javax.annotation.Nullable
   public String getLastName() {
     return lastName;
@@ -556,10 +555,10 @@ public class UsDrivingLicenceBuilder {
     return this;
   }
 
-   /**
+  /**
    * The owner&#39;s middle name
    * @return middleName
-  **/
+   */
   @javax.annotation.Nullable
   public String getMiddleName() {
     return middleName;
@@ -575,10 +574,10 @@ public class UsDrivingLicenceBuilder {
     return this;
   }
 
-   /**
+  /**
    * The owner&#39;s name suffix
    * @return nameSuffix
-  **/
+   */
   @javax.annotation.Nullable
   public String getNameSuffix() {
     return nameSuffix;
@@ -594,10 +593,10 @@ public class UsDrivingLicenceBuilder {
     return this;
   }
 
-   /**
+  /**
    * The postcode or ZIP of the owner&#39;s address
    * @return postalCode
-  **/
+   */
   @javax.annotation.Nullable
   public String getPostalCode() {
     return postalCode;
@@ -613,10 +612,10 @@ public class UsDrivingLicenceBuilder {
     return this;
   }
 
-   /**
+  /**
    * 2-characters state code
    * @return state
-  **/
+   */
   @javax.annotation.Nullable
   public String getState() {
     return state;
@@ -632,10 +631,10 @@ public class UsDrivingLicenceBuilder {
     return this;
   }
 
-   /**
+  /**
    * Weight in pounds
    * @return weightMeasure
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getWeightMeasure() {
     return weightMeasure;
@@ -796,12 +795,12 @@ public class UsDrivingLicenceBuilder {
     openapiRequiredFields.add("issue_state");
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to UsDrivingLicenceBuilder
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to UsDrivingLicenceBuilder
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!UsDrivingLicenceBuilder.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -944,22 +943,22 @@ public class UsDrivingLicenceBuilder {
     }
   }
 
- /**
-  * Create an instance of UsDrivingLicenceBuilder given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of UsDrivingLicenceBuilder
-  * @throws IOException if the JSON string is invalid with respect to UsDrivingLicenceBuilder
-  */
+  /**
+   * Create an instance of UsDrivingLicenceBuilder given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of UsDrivingLicenceBuilder
+   * @throws IOException if the JSON string is invalid with respect to UsDrivingLicenceBuilder
+   */
   public static UsDrivingLicenceBuilder fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, UsDrivingLicenceBuilder.class);
   }
 
- /**
-  * Convert an instance of UsDrivingLicenceBuilder to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of UsDrivingLicenceBuilder to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

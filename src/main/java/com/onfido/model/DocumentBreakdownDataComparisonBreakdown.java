@@ -38,7 +38,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -50,7 +49,7 @@ import com.onfido.JSON;
 /**
  * DocumentBreakdownDataComparisonBreakdown
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class DocumentBreakdownDataComparisonBreakdown {
   public static final String SERIALIZED_NAME_ISSUING_COUNTRY = "issuing_country";
   @SerializedName(SERIALIZED_NAME_ISSUING_COUNTRY)
@@ -92,10 +91,10 @@ public class DocumentBreakdownDataComparisonBreakdown {
     return this;
   }
 
-   /**
+  /**
    * Get issuingCountry
    * @return issuingCountry
-  **/
+   */
   @javax.annotation.Nullable
   public DocumentBreakdownDataComparisonBreakdownIssuingCountry getIssuingCountry() {
     return issuingCountry;
@@ -111,10 +110,10 @@ public class DocumentBreakdownDataComparisonBreakdown {
     return this;
   }
 
-   /**
+  /**
    * Get gender
    * @return gender
-  **/
+   */
   @javax.annotation.Nullable
   public DocumentBreakdownDataComparisonBreakdownIssuingCountry getGender() {
     return gender;
@@ -130,10 +129,10 @@ public class DocumentBreakdownDataComparisonBreakdown {
     return this;
   }
 
-   /**
+  /**
    * Get dateOfExpiry
    * @return dateOfExpiry
-  **/
+   */
   @javax.annotation.Nullable
   public DocumentBreakdownDataComparisonBreakdownIssuingCountry getDateOfExpiry() {
     return dateOfExpiry;
@@ -149,10 +148,10 @@ public class DocumentBreakdownDataComparisonBreakdown {
     return this;
   }
 
-   /**
+  /**
    * Get lastName
    * @return lastName
-  **/
+   */
   @javax.annotation.Nullable
   public DocumentBreakdownDataComparisonBreakdownIssuingCountry getLastName() {
     return lastName;
@@ -168,10 +167,10 @@ public class DocumentBreakdownDataComparisonBreakdown {
     return this;
   }
 
-   /**
+  /**
    * Get documentType
    * @return documentType
-  **/
+   */
   @javax.annotation.Nullable
   public DocumentBreakdownDataComparisonBreakdownIssuingCountry getDocumentType() {
     return documentType;
@@ -187,10 +186,10 @@ public class DocumentBreakdownDataComparisonBreakdown {
     return this;
   }
 
-   /**
+  /**
    * Get documentNumbers
    * @return documentNumbers
-  **/
+   */
   @javax.annotation.Nullable
   public DocumentBreakdownDataComparisonBreakdownIssuingCountry getDocumentNumbers() {
     return documentNumbers;
@@ -206,10 +205,10 @@ public class DocumentBreakdownDataComparisonBreakdown {
     return this;
   }
 
-   /**
+  /**
    * Get firstName
    * @return firstName
-  **/
+   */
   @javax.annotation.Nullable
   public DocumentBreakdownDataComparisonBreakdownIssuingCountry getFirstName() {
     return firstName;
@@ -225,10 +224,10 @@ public class DocumentBreakdownDataComparisonBreakdown {
     return this;
   }
 
-   /**
+  /**
    * Get dateOfBirth
    * @return dateOfBirth
-  **/
+   */
   @javax.annotation.Nullable
   public DocumentBreakdownDataComparisonBreakdownIssuingCountry getDateOfBirth() {
     return dateOfBirth;
@@ -357,12 +356,12 @@ public class DocumentBreakdownDataComparisonBreakdown {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to DocumentBreakdownDataComparisonBreakdown
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to DocumentBreakdownDataComparisonBreakdown
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!DocumentBreakdownDataComparisonBreakdown.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -476,22 +475,22 @@ public class DocumentBreakdownDataComparisonBreakdown {
     }
   }
 
- /**
-  * Create an instance of DocumentBreakdownDataComparisonBreakdown given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of DocumentBreakdownDataComparisonBreakdown
-  * @throws IOException if the JSON string is invalid with respect to DocumentBreakdownDataComparisonBreakdown
-  */
+  /**
+   * Create an instance of DocumentBreakdownDataComparisonBreakdown given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of DocumentBreakdownDataComparisonBreakdown
+   * @throws IOException if the JSON string is invalid with respect to DocumentBreakdownDataComparisonBreakdown
+   */
   public static DocumentBreakdownDataComparisonBreakdown fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, DocumentBreakdownDataComparisonBreakdown.class);
   }
 
- /**
-  * Convert an instance of DocumentBreakdownDataComparisonBreakdown to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of DocumentBreakdownDataComparisonBreakdown to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

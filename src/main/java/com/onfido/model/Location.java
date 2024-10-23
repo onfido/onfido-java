@@ -38,7 +38,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -50,7 +49,7 @@ import com.onfido.JSON;
 /**
  * Location
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class Location {
   public static final String SERIALIZED_NAME_IP_ADDRESS = "ip_address";
   @SerializedName(SERIALIZED_NAME_IP_ADDRESS)
@@ -68,10 +67,10 @@ public class Location {
     return this;
   }
 
-   /**
+  /**
    * The applicant&#39;s ip address.
    * @return ipAddress
-  **/
+   */
   @javax.annotation.Nullable
   public String getIpAddress() {
     return ipAddress;
@@ -87,10 +86,10 @@ public class Location {
     return this;
   }
 
-   /**
+  /**
    * The applicant&#39;s country of residence in 3-letter ISO code.
    * @return countryOfResidence
-  **/
+   */
   @javax.annotation.Nullable
   public CountryCodes getCountryOfResidence() {
     return countryOfResidence;
@@ -201,12 +200,12 @@ public class Location {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to Location
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to Location
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!Location.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -295,22 +294,22 @@ public class Location {
     }
   }
 
- /**
-  * Create an instance of Location given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of Location
-  * @throws IOException if the JSON string is invalid with respect to Location
-  */
+  /**
+   * Create an instance of Location given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of Location
+   * @throws IOException if the JSON string is invalid with respect to Location
+   */
   public static Location fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, Location.class);
   }
 
- /**
-  * Convert an instance of Location to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of Location to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

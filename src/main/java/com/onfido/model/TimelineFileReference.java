@@ -38,7 +38,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -50,7 +49,7 @@ import com.onfido.JSON;
 /**
  * TimelineFileReference
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class TimelineFileReference {
   public static final String SERIALIZED_NAME_WORKFLOW_TIMELINE_FILE_ID = "workflow_timeline_file_id";
   @SerializedName(SERIALIZED_NAME_WORKFLOW_TIMELINE_FILE_ID)
@@ -68,10 +67,10 @@ public class TimelineFileReference {
     return this;
   }
 
-   /**
+  /**
    * The unique identifier for the Timefile File that will be created.
    * @return workflowTimelineFileId
-  **/
+   */
   @javax.annotation.Nonnull
   public UUID getWorkflowTimelineFileId() {
     return workflowTimelineFileId;
@@ -87,10 +86,10 @@ public class TimelineFileReference {
     return this;
   }
 
-   /**
+  /**
    * Link to access the Timefile File that will be created.
    * @return href
-  **/
+   */
   @javax.annotation.Nonnull
   public String getHref() {
     return href;
@@ -203,12 +202,12 @@ public class TimelineFileReference {
     openapiRequiredFields.add("href");
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to TimelineFileReference
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to TimelineFileReference
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!TimelineFileReference.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -303,22 +302,22 @@ public class TimelineFileReference {
     }
   }
 
- /**
-  * Create an instance of TimelineFileReference given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of TimelineFileReference
-  * @throws IOException if the JSON string is invalid with respect to TimelineFileReference
-  */
+  /**
+   * Create an instance of TimelineFileReference given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of TimelineFileReference
+   * @throws IOException if the JSON string is invalid with respect to TimelineFileReference
+   */
   public static TimelineFileReference fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, TimelineFileReference.class);
   }
 
- /**
-  * Convert an instance of TimelineFileReference to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of TimelineFileReference to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

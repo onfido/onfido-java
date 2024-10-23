@@ -45,7 +45,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -57,7 +56,7 @@ import com.onfido.JSON;
 /**
  * DocumentBreakdownVisualAuthenticityBreakdown
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class DocumentBreakdownVisualAuthenticityBreakdown {
   public static final String SERIALIZED_NAME_FONTS = "fonts";
   @SerializedName(SERIALIZED_NAME_FONTS)
@@ -99,10 +98,10 @@ public class DocumentBreakdownVisualAuthenticityBreakdown {
     return this;
   }
 
-   /**
+  /**
    * Get fonts
    * @return fonts
-  **/
+   */
   @javax.annotation.Nullable
   public DocumentBreakdownVisualAuthenticityBreakdownFonts getFonts() {
     return fonts;
@@ -118,10 +117,10 @@ public class DocumentBreakdownVisualAuthenticityBreakdown {
     return this;
   }
 
-   /**
+  /**
    * Get pictureFaceIntegrity
    * @return pictureFaceIntegrity
-  **/
+   */
   @javax.annotation.Nullable
   public DocumentBreakdownVisualAuthenticityBreakdownPictureFaceIntegrity getPictureFaceIntegrity() {
     return pictureFaceIntegrity;
@@ -137,10 +136,10 @@ public class DocumentBreakdownVisualAuthenticityBreakdown {
     return this;
   }
 
-   /**
+  /**
    * Get template
    * @return template
-  **/
+   */
   @javax.annotation.Nullable
   public DocumentBreakdownVisualAuthenticityBreakdownTemplate getTemplate() {
     return template;
@@ -156,10 +155,10 @@ public class DocumentBreakdownVisualAuthenticityBreakdown {
     return this;
   }
 
-   /**
+  /**
    * Get securityFeatures
    * @return securityFeatures
-  **/
+   */
   @javax.annotation.Nullable
   public DocumentBreakdownVisualAuthenticityBreakdownSecurityFeatures getSecurityFeatures() {
     return securityFeatures;
@@ -175,10 +174,10 @@ public class DocumentBreakdownVisualAuthenticityBreakdown {
     return this;
   }
 
-   /**
+  /**
    * Get originalDocumentPresent
    * @return originalDocumentPresent
-  **/
+   */
   @javax.annotation.Nullable
   public DocumentBreakdownVisualAuthenticityBreakdownOriginalDocumentPresent getOriginalDocumentPresent() {
     return originalDocumentPresent;
@@ -194,10 +193,10 @@ public class DocumentBreakdownVisualAuthenticityBreakdown {
     return this;
   }
 
-   /**
+  /**
    * Get digitalTampering
    * @return digitalTampering
-  **/
+   */
   @javax.annotation.Nullable
   public DocumentBreakdownVisualAuthenticityBreakdownDigitalTampering getDigitalTampering() {
     return digitalTampering;
@@ -213,10 +212,10 @@ public class DocumentBreakdownVisualAuthenticityBreakdown {
     return this;
   }
 
-   /**
+  /**
    * Get other
    * @return other
-  **/
+   */
   @javax.annotation.Nullable
   public DocumentBreakdownVisualAuthenticityBreakdownOther getOther() {
     return other;
@@ -232,10 +231,10 @@ public class DocumentBreakdownVisualAuthenticityBreakdown {
     return this;
   }
 
-   /**
+  /**
    * Get faceDetection
    * @return faceDetection
-  **/
+   */
   @javax.annotation.Nullable
   public DocumentBreakdownVisualAuthenticityBreakdownFaceDetection getFaceDetection() {
     return faceDetection;
@@ -364,12 +363,12 @@ public class DocumentBreakdownVisualAuthenticityBreakdown {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to DocumentBreakdownVisualAuthenticityBreakdown
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to DocumentBreakdownVisualAuthenticityBreakdown
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!DocumentBreakdownVisualAuthenticityBreakdown.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -483,22 +482,22 @@ public class DocumentBreakdownVisualAuthenticityBreakdown {
     }
   }
 
- /**
-  * Create an instance of DocumentBreakdownVisualAuthenticityBreakdown given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of DocumentBreakdownVisualAuthenticityBreakdown
-  * @throws IOException if the JSON string is invalid with respect to DocumentBreakdownVisualAuthenticityBreakdown
-  */
+  /**
+   * Create an instance of DocumentBreakdownVisualAuthenticityBreakdown given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of DocumentBreakdownVisualAuthenticityBreakdown
+   * @throws IOException if the JSON string is invalid with respect to DocumentBreakdownVisualAuthenticityBreakdown
+   */
   public static DocumentBreakdownVisualAuthenticityBreakdown fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, DocumentBreakdownVisualAuthenticityBreakdown.class);
   }
 
- /**
-  * Convert an instance of DocumentBreakdownVisualAuthenticityBreakdown to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of DocumentBreakdownVisualAuthenticityBreakdown to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

@@ -40,7 +40,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -52,7 +51,7 @@ import com.onfido.JSON;
 /**
  * LiveVideosList
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class LiveVideosList {
   public static final String SERIALIZED_NAME_LIVE_VIDEOS = "live_videos";
   @SerializedName(SERIALIZED_NAME_LIVE_VIDEOS)
@@ -74,10 +73,10 @@ public class LiveVideosList {
     return this;
   }
 
-   /**
+  /**
    * Get liveVideos
    * @return liveVideos
-  **/
+   */
   @javax.annotation.Nonnull
   public List<LiveVideo> getLiveVideos() {
     return liveVideos;
@@ -186,12 +185,12 @@ public class LiveVideosList {
     openapiRequiredFields.add("live_videos");
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to LiveVideosList
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to LiveVideosList
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!LiveVideosList.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -290,22 +289,22 @@ public class LiveVideosList {
     }
   }
 
- /**
-  * Create an instance of LiveVideosList given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of LiveVideosList
-  * @throws IOException if the JSON string is invalid with respect to LiveVideosList
-  */
+  /**
+   * Create an instance of LiveVideosList given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of LiveVideosList
+   * @throws IOException if the JSON string is invalid with respect to LiveVideosList
+   */
   public static LiveVideosList fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, LiveVideosList.class);
   }
 
- /**
-  * Convert an instance of LiveVideosList to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of LiveVideosList to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

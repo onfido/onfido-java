@@ -37,7 +37,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -49,7 +48,7 @@ import com.onfido.JSON;
 /**
  * DocumentPropertiesAddressLines
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class DocumentPropertiesAddressLines {
   public static final String SERIALIZED_NAME_STREET_ADDRESS = "street_address";
   @SerializedName(SERIALIZED_NAME_STREET_ADDRESS)
@@ -83,10 +82,10 @@ public class DocumentPropertiesAddressLines {
     return this;
   }
 
-   /**
+  /**
    * Get streetAddress
    * @return streetAddress
-  **/
+   */
   @javax.annotation.Nullable
   public String getStreetAddress() {
     return streetAddress;
@@ -102,10 +101,10 @@ public class DocumentPropertiesAddressLines {
     return this;
   }
 
-   /**
+  /**
    * Get state
    * @return state
-  **/
+   */
   @javax.annotation.Nullable
   public String getState() {
     return state;
@@ -121,10 +120,10 @@ public class DocumentPropertiesAddressLines {
     return this;
   }
 
-   /**
+  /**
    * Get postalCode
    * @return postalCode
-  **/
+   */
   @javax.annotation.Nullable
   public String getPostalCode() {
     return postalCode;
@@ -140,10 +139,10 @@ public class DocumentPropertiesAddressLines {
     return this;
   }
 
-   /**
+  /**
    * Get country
    * @return country
-  **/
+   */
   @javax.annotation.Nullable
   public String getCountry() {
     return country;
@@ -159,10 +158,10 @@ public class DocumentPropertiesAddressLines {
     return this;
   }
 
-   /**
+  /**
    * Get city
    * @return city
-  **/
+   */
   @javax.annotation.Nullable
   public String getCity() {
     return city;
@@ -178,10 +177,10 @@ public class DocumentPropertiesAddressLines {
     return this;
   }
 
-   /**
+  /**
    * Get countryCode
    * @return countryCode
-  **/
+   */
   @javax.annotation.Nullable
   public String getCountryCode() {
     return countryCode;
@@ -304,12 +303,12 @@ public class DocumentPropertiesAddressLines {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to DocumentPropertiesAddressLines
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to DocumentPropertiesAddressLines
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!DocumentPropertiesAddressLines.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -409,22 +408,22 @@ public class DocumentPropertiesAddressLines {
     }
   }
 
- /**
-  * Create an instance of DocumentPropertiesAddressLines given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of DocumentPropertiesAddressLines
-  * @throws IOException if the JSON string is invalid with respect to DocumentPropertiesAddressLines
-  */
+  /**
+   * Create an instance of DocumentPropertiesAddressLines given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of DocumentPropertiesAddressLines
+   * @throws IOException if the JSON string is invalid with respect to DocumentPropertiesAddressLines
+   */
   public static DocumentPropertiesAddressLines fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, DocumentPropertiesAddressLines.class);
   }
 
- /**
-  * Convert an instance of DocumentPropertiesAddressLines to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of DocumentPropertiesAddressLines to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

@@ -44,7 +44,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -56,7 +55,7 @@ import com.onfido.JSON;
 /**
  * The resource affected by this event.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class WebhookEventPayloadResource {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -126,10 +125,10 @@ public class WebhookEventPayloadResource {
     return this;
   }
 
-   /**
+  /**
    * The identifier of the resource.
    * @return id
-  **/
+   */
   @javax.annotation.Nullable
   public String getId() {
     return id;
@@ -145,10 +144,10 @@ public class WebhookEventPayloadResource {
     return this;
   }
 
-   /**
+  /**
    * The unique identifier for the Applicant.
    * @return applicantId
-  **/
+   */
   @javax.annotation.Nullable
   public UUID getApplicantId() {
     return applicantId;
@@ -164,10 +163,10 @@ public class WebhookEventPayloadResource {
     return this;
   }
 
-   /**
+  /**
    * The date and time when the resource was created.
    * @return createdAt
-  **/
+   */
   @javax.annotation.Nullable
   public OffsetDateTime getCreatedAt() {
     return createdAt;
@@ -183,10 +182,10 @@ public class WebhookEventPayloadResource {
     return this;
   }
 
-   /**
+  /**
    * The date and time when the resource was last updated.
    * @return updatedAt
-  **/
+   */
   @javax.annotation.Nullable
   public OffsetDateTime getUpdatedAt() {
     return updatedAt;
@@ -202,10 +201,10 @@ public class WebhookEventPayloadResource {
     return this;
   }
 
-   /**
+  /**
    * The URL for viewing the resource on Onfido Dashboard.
    * @return dashboardUrl
-  **/
+   */
   @javax.annotation.Nullable
   public String getDashboardUrl() {
     return dashboardUrl;
@@ -221,10 +220,10 @@ public class WebhookEventPayloadResource {
     return this;
   }
 
-   /**
+  /**
    * The unique identifier for the Workflow.
    * @return workflowId
-  **/
+   */
   @javax.annotation.Nullable
   public UUID getWorkflowId() {
     return workflowId;
@@ -240,10 +239,10 @@ public class WebhookEventPayloadResource {
     return this;
   }
 
-   /**
+  /**
    * Get workflowRunId
    * @return workflowRunId
-  **/
+   */
   @javax.annotation.Nullable
   public UUID getWorkflowRunId() {
     return workflowRunId;
@@ -259,10 +258,10 @@ public class WebhookEventPayloadResource {
     return this;
   }
 
-   /**
+  /**
    * The identifier for the Workflow version.
    * @return workflowVersionId
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getWorkflowVersionId() {
     return workflowVersionId;
@@ -278,10 +277,10 @@ public class WebhookEventPayloadResource {
     return this;
   }
 
-   /**
+  /**
    * The identifier for the Task Definition.
    * @return taskDefId
-  **/
+   */
   @javax.annotation.Nullable
   public String getTaskDefId() {
     return taskDefId;
@@ -297,10 +296,10 @@ public class WebhookEventPayloadResource {
     return this;
   }
 
-   /**
+  /**
    * The task definition version.
    * @return taskDefVersion
-  **/
+   */
   @javax.annotation.Nullable
   public String getTaskDefVersion() {
     return taskDefVersion;
@@ -316,10 +315,10 @@ public class WebhookEventPayloadResource {
     return this;
   }
 
-   /**
+  /**
    * Input object with the fields used by the Task execution.
    * @return input
-  **/
+   */
   @javax.annotation.Nullable
   public Object getInput() {
     return input;
@@ -335,10 +334,10 @@ public class WebhookEventPayloadResource {
     return this;
   }
 
-   /**
+  /**
    * Output object with the fields produced by the Task execution.
    * @return output
-  **/
+   */
   @javax.annotation.Nullable
   public Object getOutput() {
     return output;
@@ -362,10 +361,10 @@ public class WebhookEventPayloadResource {
     return this;
   }
 
-   /**
+  /**
    * The reasons the Workflow Run outcome was reached. Configurable when creating the Workflow Version.
    * @return reasons
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getReasons() {
     return reasons;
@@ -381,10 +380,10 @@ public class WebhookEventPayloadResource {
     return this;
   }
 
-   /**
+  /**
    * Object for the configuration of the Workflow Run link.
    * @return link
-  **/
+   */
   @javax.annotation.Nullable
   public WorkflowRunLink getLink() {
     return link;
@@ -400,10 +399,10 @@ public class WebhookEventPayloadResource {
     return this;
   }
 
-   /**
+  /**
    * Error object that details why a Workflow Run is in Error status.
    * @return error
-  **/
+   */
   @javax.annotation.Nullable
   public WorkflowRunError getError() {
     return error;
@@ -564,12 +563,12 @@ public class WebhookEventPayloadResource {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to WebhookEventPayloadResource
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to WebhookEventPayloadResource
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!WebhookEventPayloadResource.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -684,22 +683,22 @@ public class WebhookEventPayloadResource {
     }
   }
 
- /**
-  * Create an instance of WebhookEventPayloadResource given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of WebhookEventPayloadResource
-  * @throws IOException if the JSON string is invalid with respect to WebhookEventPayloadResource
-  */
+  /**
+   * Create an instance of WebhookEventPayloadResource given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of WebhookEventPayloadResource
+   * @throws IOException if the JSON string is invalid with respect to WebhookEventPayloadResource
+   */
   public static WebhookEventPayloadResource fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, WebhookEventPayloadResource.class);
   }
 
- /**
-  * Convert an instance of WebhookEventPayloadResource to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of WebhookEventPayloadResource to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

@@ -38,7 +38,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -50,7 +49,7 @@ import com.onfido.JSON;
 /**
  * ProofOfAddressProperties
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class ProofOfAddressProperties {
   public static final String SERIALIZED_NAME_ADDRESS = "address";
   @SerializedName(SERIALIZED_NAME_ADDRESS)
@@ -164,10 +163,10 @@ public class ProofOfAddressProperties {
     return this;
   }
 
-   /**
+  /**
    * This property provides the address on the document.
    * @return address
-  **/
+   */
   @javax.annotation.Nullable
   public String getAddress() {
     return address;
@@ -183,10 +182,10 @@ public class ProofOfAddressProperties {
     return this;
   }
 
-   /**
+  /**
    * This property provides the document type according to the set of supported documents.
    * @return documentType
-  **/
+   */
   @javax.annotation.Nullable
   public DocumentTypeEnum getDocumentType() {
     return documentType;
@@ -202,10 +201,10 @@ public class ProofOfAddressProperties {
     return this;
   }
 
-   /**
+  /**
    * This property provides the first names on the document, including any initials and middle names.
    * @return firstNames
-  **/
+   */
   @javax.annotation.Nullable
   public String getFirstNames() {
     return firstNames;
@@ -221,10 +220,10 @@ public class ProofOfAddressProperties {
     return this;
   }
 
-   /**
+  /**
    * This property provided the last names on the document.
    * @return lastNames
-  **/
+   */
   @javax.annotation.Nullable
   public String getLastNames() {
     return lastNames;
@@ -240,10 +239,10 @@ public class ProofOfAddressProperties {
     return this;
   }
 
-   /**
+  /**
    * This property provides the issue date of the document.
    * @return issueDate
-  **/
+   */
   @javax.annotation.Nullable
   public LocalDate getIssueDate() {
     return issueDate;
@@ -259,10 +258,10 @@ public class ProofOfAddressProperties {
     return this;
   }
 
-   /**
+  /**
    * This property provides the document issuer (e.g. HSBC, British Gas).
    * @return issuer
-  **/
+   */
   @javax.annotation.Nullable
   public String getIssuer() {
     return issuer;
@@ -278,10 +277,10 @@ public class ProofOfAddressProperties {
     return this;
   }
 
-   /**
+  /**
    * This property provides the summary period start date.
    * @return summaryPeriodStart
-  **/
+   */
   @javax.annotation.Nullable
   public LocalDate getSummaryPeriodStart() {
     return summaryPeriodStart;
@@ -297,10 +296,10 @@ public class ProofOfAddressProperties {
     return this;
   }
 
-   /**
+  /**
    * This property provides the summary period end date.
    * @return summaryPeriodEnd
-  **/
+   */
   @javax.annotation.Nullable
   public LocalDate getSummaryPeriodEnd() {
     return summaryPeriodEnd;
@@ -429,12 +428,12 @@ public class ProofOfAddressProperties {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ProofOfAddressProperties
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ProofOfAddressProperties
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ProofOfAddressProperties.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -535,22 +534,22 @@ public class ProofOfAddressProperties {
     }
   }
 
- /**
-  * Create an instance of ProofOfAddressProperties given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ProofOfAddressProperties
-  * @throws IOException if the JSON string is invalid with respect to ProofOfAddressProperties
-  */
+  /**
+   * Create an instance of ProofOfAddressProperties given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ProofOfAddressProperties
+   * @throws IOException if the JSON string is invalid with respect to ProofOfAddressProperties
+   */
   public static ProofOfAddressProperties fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ProofOfAddressProperties.class);
   }
 
- /**
-  * Convert an instance of ProofOfAddressProperties to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ProofOfAddressProperties to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

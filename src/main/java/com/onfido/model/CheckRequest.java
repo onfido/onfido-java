@@ -42,7 +42,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -54,7 +53,7 @@ import com.onfido.JSON;
 /**
  * CheckRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class CheckRequest {
   public static final String SERIALIZED_NAME_REPORT_NAMES = "report_names";
   @SerializedName(SERIALIZED_NAME_REPORT_NAMES)
@@ -104,10 +103,10 @@ public class CheckRequest {
     return this;
   }
 
-   /**
+  /**
    * An array of report names (strings).
    * @return reportNames
-  **/
+   */
   @javax.annotation.Nonnull
   public List<ReportName> getReportNames() {
     return reportNames;
@@ -131,10 +130,10 @@ public class CheckRequest {
     return this;
   }
 
-   /**
+  /**
    * Optional. An array of document ids, for use with Document reports only. If omitted, the Document report will use the most recently uploaded document by default.
    * @return documentIds
-  **/
+   */
   @javax.annotation.Nullable
   public List<UUID> getDocumentIds() {
     return documentIds;
@@ -150,10 +149,10 @@ public class CheckRequest {
     return this;
   }
 
-   /**
+  /**
    * Send an applicant form to applicant to complete to proceed with check. Defaults to false.
    * @return applicantProvidesData
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getApplicantProvidesData() {
     return applicantProvidesData;
@@ -169,10 +168,10 @@ public class CheckRequest {
     return this;
   }
 
-   /**
+  /**
    * Defaults to &#x60;true&#x60;. If set to &#x60;false&#x60;, you will only receive a response when all reports in your check have completed. 
    * @return asynchronous
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getAsynchronous() {
     return asynchronous;
@@ -188,10 +187,10 @@ public class CheckRequest {
     return this;
   }
 
-   /**
+  /**
    * For checks where &#x60;applicant_provides_data&#x60; is &#x60;true&#x60;, applicant form will not be automatically sent if &#x60;suppress_form_emails&#x60; is set to &#x60;true&#x60;. You can manually send the form at any time after the check has been created, using the link found in the form_uri attribute of the check object. Write-only. Defaults to false. 
    * @return suppressFormEmails
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getSuppressFormEmails() {
     return suppressFormEmails;
@@ -207,10 +206,10 @@ public class CheckRequest {
     return this;
   }
 
-   /**
+  /**
    * Triggers responses for particular sub-results for sandbox Document reports.
    * @return subResult
-  **/
+   */
   @javax.annotation.Nullable
   public String getSubResult() {
     return subResult;
@@ -234,10 +233,10 @@ public class CheckRequest {
     return this;
   }
 
-   /**
+  /**
    * Array of names of particular reports to return consider as their results. This is a feature available in sandbox testing
    * @return consider
-  **/
+   */
   @javax.annotation.Nullable
   public List<ReportName> getConsider() {
     return consider;
@@ -253,10 +252,10 @@ public class CheckRequest {
     return this;
   }
 
-   /**
+  /**
    * Get usDrivingLicence
    * @return usDrivingLicence
-  **/
+   */
   @javax.annotation.Nullable
   public UsDrivingLicenceBuilder getUsDrivingLicence() {
     return usDrivingLicence;
@@ -386,12 +385,12 @@ public class CheckRequest {
     openapiRequiredFields.add("report_names");
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to CheckRequest
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to CheckRequest
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!CheckRequest.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -501,22 +500,22 @@ public class CheckRequest {
     }
   }
 
- /**
-  * Create an instance of CheckRequest given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of CheckRequest
-  * @throws IOException if the JSON string is invalid with respect to CheckRequest
-  */
+  /**
+   * Create an instance of CheckRequest given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of CheckRequest
+   * @throws IOException if the JSON string is invalid with respect to CheckRequest
+   */
   public static CheckRequest fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, CheckRequest.class);
   }
 
- /**
-  * Convert an instance of CheckRequest to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of CheckRequest to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

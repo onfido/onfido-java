@@ -39,7 +39,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -51,7 +50,7 @@ import com.onfido.JSON;
 /**
  * DocumentBreakdownIssuingAuthorityBreakdown
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class DocumentBreakdownIssuingAuthorityBreakdown {
   public static final String SERIALIZED_NAME_NFC_ACTIVE_AUTHENTICATION = "nfc_active_authentication";
   @SerializedName(SERIALIZED_NAME_NFC_ACTIVE_AUTHENTICATION)
@@ -69,10 +68,10 @@ public class DocumentBreakdownIssuingAuthorityBreakdown {
     return this;
   }
 
-   /**
+  /**
    * Get nfcActiveAuthentication
    * @return nfcActiveAuthentication
-  **/
+   */
   @javax.annotation.Nullable
   public DocumentBreakdownIssuingAuthorityBreakdownNfcActiveAuthentication getNfcActiveAuthentication() {
     return nfcActiveAuthentication;
@@ -88,10 +87,10 @@ public class DocumentBreakdownIssuingAuthorityBreakdown {
     return this;
   }
 
-   /**
+  /**
    * Get nfcPassiveAuthentication
    * @return nfcPassiveAuthentication
-  **/
+   */
   @javax.annotation.Nullable
   public DocumentBreakdownIssuingAuthorityBreakdownNfcPassiveAuthentication getNfcPassiveAuthentication() {
     return nfcPassiveAuthentication;
@@ -202,12 +201,12 @@ public class DocumentBreakdownIssuingAuthorityBreakdown {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to DocumentBreakdownIssuingAuthorityBreakdown
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to DocumentBreakdownIssuingAuthorityBreakdown
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!DocumentBreakdownIssuingAuthorityBreakdown.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -297,22 +296,22 @@ public class DocumentBreakdownIssuingAuthorityBreakdown {
     }
   }
 
- /**
-  * Create an instance of DocumentBreakdownIssuingAuthorityBreakdown given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of DocumentBreakdownIssuingAuthorityBreakdown
-  * @throws IOException if the JSON string is invalid with respect to DocumentBreakdownIssuingAuthorityBreakdown
-  */
+  /**
+   * Create an instance of DocumentBreakdownIssuingAuthorityBreakdown given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of DocumentBreakdownIssuingAuthorityBreakdown
+   * @throws IOException if the JSON string is invalid with respect to DocumentBreakdownIssuingAuthorityBreakdown
+   */
   public static DocumentBreakdownIssuingAuthorityBreakdown fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, DocumentBreakdownIssuingAuthorityBreakdown.class);
   }
 
- /**
-  * Convert an instance of DocumentBreakdownIssuingAuthorityBreakdown to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of DocumentBreakdownIssuingAuthorityBreakdown to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

@@ -38,7 +38,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -50,7 +49,7 @@ import com.onfido.JSON;
 /**
  * ExtractRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class ExtractRequest {
   public static final String SERIALIZED_NAME_DOCUMENT_ID = "document_id";
   @SerializedName(SERIALIZED_NAME_DOCUMENT_ID)
@@ -64,10 +63,10 @@ public class ExtractRequest {
     return this;
   }
 
-   /**
+  /**
    * The unique identifier of the uploaded document to run extraction on
    * @return documentId
-  **/
+   */
   @javax.annotation.Nonnull
   public UUID getDocumentId() {
     return documentId;
@@ -176,12 +175,12 @@ public class ExtractRequest {
     openapiRequiredFields.add("document_id");
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ExtractRequest
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ExtractRequest
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ExtractRequest.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -273,22 +272,22 @@ public class ExtractRequest {
     }
   }
 
- /**
-  * Create an instance of ExtractRequest given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ExtractRequest
-  * @throws IOException if the JSON string is invalid with respect to ExtractRequest
-  */
+  /**
+   * Create an instance of ExtractRequest given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ExtractRequest
+   * @throws IOException if the JSON string is invalid with respect to ExtractRequest
+   */
   public static ExtractRequest fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ExtractRequest.class);
   }
 
- /**
-  * Convert an instance of ExtractRequest to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ExtractRequest to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

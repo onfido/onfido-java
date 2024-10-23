@@ -41,7 +41,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -53,7 +52,7 @@ import com.onfido.JSON;
 /**
  * DocumentBreakdownImageIntegrityBreakdown
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class DocumentBreakdownImageIntegrityBreakdown {
   public static final String SERIALIZED_NAME_IMAGE_QUALITY = "image_quality";
   @SerializedName(SERIALIZED_NAME_IMAGE_QUALITY)
@@ -79,10 +78,10 @@ public class DocumentBreakdownImageIntegrityBreakdown {
     return this;
   }
 
-   /**
+  /**
    * Get imageQuality
    * @return imageQuality
-  **/
+   */
   @javax.annotation.Nullable
   public DocumentBreakdownImageIntegrityBreakdownImageQuality getImageQuality() {
     return imageQuality;
@@ -98,10 +97,10 @@ public class DocumentBreakdownImageIntegrityBreakdown {
     return this;
   }
 
-   /**
+  /**
    * Get supportedDocument
    * @return supportedDocument
-  **/
+   */
   @javax.annotation.Nullable
   public DocumentBreakdownImageIntegrityBreakdownSupportedDocument getSupportedDocument() {
     return supportedDocument;
@@ -117,10 +116,10 @@ public class DocumentBreakdownImageIntegrityBreakdown {
     return this;
   }
 
-   /**
+  /**
    * Get colourPicture
    * @return colourPicture
-  **/
+   */
   @javax.annotation.Nullable
   public DocumentBreakdownImageIntegrityBreakdownColourPicture getColourPicture() {
     return colourPicture;
@@ -136,10 +135,10 @@ public class DocumentBreakdownImageIntegrityBreakdown {
     return this;
   }
 
-   /**
+  /**
    * Get conclusiveDocumentQuality
    * @return conclusiveDocumentQuality
-  **/
+   */
   @javax.annotation.Nullable
   public DocumentBreakdownImageIntegrityBreakdownConclusiveDocumentQuality getConclusiveDocumentQuality() {
     return conclusiveDocumentQuality;
@@ -256,12 +255,12 @@ public class DocumentBreakdownImageIntegrityBreakdown {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to DocumentBreakdownImageIntegrityBreakdown
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to DocumentBreakdownImageIntegrityBreakdown
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!DocumentBreakdownImageIntegrityBreakdown.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -359,22 +358,22 @@ public class DocumentBreakdownImageIntegrityBreakdown {
     }
   }
 
- /**
-  * Create an instance of DocumentBreakdownImageIntegrityBreakdown given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of DocumentBreakdownImageIntegrityBreakdown
-  * @throws IOException if the JSON string is invalid with respect to DocumentBreakdownImageIntegrityBreakdown
-  */
+  /**
+   * Create an instance of DocumentBreakdownImageIntegrityBreakdown given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of DocumentBreakdownImageIntegrityBreakdown
+   * @throws IOException if the JSON string is invalid with respect to DocumentBreakdownImageIntegrityBreakdown
+   */
   public static DocumentBreakdownImageIntegrityBreakdown fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, DocumentBreakdownImageIntegrityBreakdown.class);
   }
 
- /**
-  * Convert an instance of DocumentBreakdownImageIntegrityBreakdown to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of DocumentBreakdownImageIntegrityBreakdown to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

@@ -39,7 +39,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -51,7 +50,7 @@ import com.onfido.JSON;
 /**
  * WatchlistMonitorResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class WatchlistMonitorResponse {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -77,10 +76,10 @@ public class WatchlistMonitorResponse {
     return this;
   }
 
-   /**
+  /**
    * The unique identifier for the monitor.
    * @return id
-  **/
+   */
   @javax.annotation.Nonnull
   public UUID getId() {
     return id;
@@ -96,10 +95,10 @@ public class WatchlistMonitorResponse {
     return this;
   }
 
-   /**
+  /**
    * The date and time at which the monitor was created.
    * @return createdAt
-  **/
+   */
   @javax.annotation.Nullable
   public OffsetDateTime getCreatedAt() {
     return createdAt;
@@ -115,10 +114,10 @@ public class WatchlistMonitorResponse {
     return this;
   }
 
-   /**
+  /**
    * The date and time at which the monitor was deleted. If the monitor is still active, this field will be null.
    * @return deletedAt
-  **/
+   */
   @javax.annotation.Nullable
   public OffsetDateTime getDeletedAt() {
     return deletedAt;
@@ -134,10 +133,10 @@ public class WatchlistMonitorResponse {
     return this;
   }
 
-   /**
+  /**
    * Indicates whether the object was created in the sandbox or not.
    * @return isSandbox
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getIsSandbox() {
     return isSandbox;
@@ -255,12 +254,12 @@ public class WatchlistMonitorResponse {
     openapiRequiredFields.add("id");
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to WatchlistMonitorResponse
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to WatchlistMonitorResponse
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!WatchlistMonitorResponse.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -352,22 +351,22 @@ public class WatchlistMonitorResponse {
     }
   }
 
- /**
-  * Create an instance of WatchlistMonitorResponse given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of WatchlistMonitorResponse
-  * @throws IOException if the JSON string is invalid with respect to WatchlistMonitorResponse
-  */
+  /**
+   * Create an instance of WatchlistMonitorResponse given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of WatchlistMonitorResponse
+   * @throws IOException if the JSON string is invalid with respect to WatchlistMonitorResponse
+   */
   public static WatchlistMonitorResponse fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, WatchlistMonitorResponse.class);
   }
 
- /**
-  * Convert an instance of WatchlistMonitorResponse to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of WatchlistMonitorResponse to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

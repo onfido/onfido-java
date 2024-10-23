@@ -42,7 +42,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -54,7 +53,7 @@ import com.onfido.JSON;
 /**
  * LiveVideo
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class LiveVideo {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -96,10 +95,10 @@ public class LiveVideo {
     return this;
   }
 
-   /**
+  /**
    * The unique identifier for the video.
    * @return id
-  **/
+   */
   @javax.annotation.Nullable
   public UUID getId() {
     return id;
@@ -115,10 +114,10 @@ public class LiveVideo {
     return this;
   }
 
-   /**
+  /**
    * The date and time at which the video was uploaded.
    * @return createdAt
-  **/
+   */
   @javax.annotation.Nullable
   public OffsetDateTime getCreatedAt() {
     return createdAt;
@@ -134,10 +133,10 @@ public class LiveVideo {
     return this;
   }
 
-   /**
+  /**
    * The uri of this resource.
    * @return href
-  **/
+   */
   @javax.annotation.Nullable
   public String getHref() {
     return href;
@@ -153,10 +152,10 @@ public class LiveVideo {
     return this;
   }
 
-   /**
+  /**
    * The uri that can be used to download the video.
    * @return downloadHref
-  **/
+   */
   @javax.annotation.Nullable
   public String getDownloadHref() {
     return downloadHref;
@@ -172,10 +171,10 @@ public class LiveVideo {
     return this;
   }
 
-   /**
+  /**
    * The name of the uploaded file.
    * @return fileName
-  **/
+   */
   @javax.annotation.Nullable
   public String getFileName() {
     return fileName;
@@ -191,10 +190,10 @@ public class LiveVideo {
     return this;
   }
 
-   /**
+  /**
    * The size of the file in bytes.
    * @return fileSize
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getFileSize() {
     return fileSize;
@@ -210,10 +209,10 @@ public class LiveVideo {
     return this;
   }
 
-   /**
+  /**
    * The file type of the uploaded file.
    * @return fileType
-  **/
+   */
   @javax.annotation.Nullable
   public String getFileType() {
     return fileType;
@@ -237,10 +236,10 @@ public class LiveVideo {
     return this;
   }
 
-   /**
+  /**
    * Challenge the end user was asked to perform during the video recording.
    * @return challenge
-  **/
+   */
   @javax.annotation.Nullable
   public List<Map<String, Object>> getChallenge() {
     return challenge;
@@ -369,12 +368,12 @@ public class LiveVideo {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to LiveVideo
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to LiveVideo
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!LiveVideo.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -475,22 +474,22 @@ public class LiveVideo {
     }
   }
 
- /**
-  * Create an instance of LiveVideo given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of LiveVideo
-  * @throws IOException if the JSON string is invalid with respect to LiveVideo
-  */
+  /**
+   * Create an instance of LiveVideo given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of LiveVideo
+   * @throws IOException if the JSON string is invalid with respect to LiveVideo
+   */
   public static LiveVideo fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, LiveVideo.class);
   }
 
- /**
-  * Convert an instance of LiveVideo to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of LiveVideo to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

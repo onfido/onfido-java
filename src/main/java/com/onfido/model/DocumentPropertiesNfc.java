@@ -38,7 +38,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -50,7 +49,7 @@ import com.onfido.JSON;
 /**
  * DocumentPropertiesNfc
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class DocumentPropertiesNfc {
   public static final String SERIALIZED_NAME_DOCUMENT_TYPE = "document_type";
   @SerializedName(SERIALIZED_NAME_DOCUMENT_TYPE)
@@ -112,10 +111,10 @@ public class DocumentPropertiesNfc {
     return this;
   }
 
-   /**
+  /**
    * Get documentType
    * @return documentType
-  **/
+   */
   @javax.annotation.Nullable
   public String getDocumentType() {
     return documentType;
@@ -131,10 +130,10 @@ public class DocumentPropertiesNfc {
     return this;
   }
 
-   /**
+  /**
    * Get issuingCountry
    * @return issuingCountry
-  **/
+   */
   @javax.annotation.Nullable
   public String getIssuingCountry() {
     return issuingCountry;
@@ -150,10 +149,10 @@ public class DocumentPropertiesNfc {
     return this;
   }
 
-   /**
+  /**
    * Get fullName
    * @return fullName
-  **/
+   */
   @javax.annotation.Nullable
   public String getFullName() {
     return fullName;
@@ -169,10 +168,10 @@ public class DocumentPropertiesNfc {
     return this;
   }
 
-   /**
+  /**
    * Get documentNumber
    * @return documentNumber
-  **/
+   */
   @javax.annotation.Nullable
   public String getDocumentNumber() {
     return documentNumber;
@@ -188,10 +187,10 @@ public class DocumentPropertiesNfc {
     return this;
   }
 
-   /**
+  /**
    * Get nationality
    * @return nationality
-  **/
+   */
   @javax.annotation.Nullable
   public String getNationality() {
     return nationality;
@@ -207,10 +206,10 @@ public class DocumentPropertiesNfc {
     return this;
   }
 
-   /**
+  /**
    * Get dateOfBirth
    * @return dateOfBirth
-  **/
+   */
   @javax.annotation.Nullable
   public LocalDate getDateOfBirth() {
     return dateOfBirth;
@@ -226,10 +225,10 @@ public class DocumentPropertiesNfc {
     return this;
   }
 
-   /**
+  /**
    * Get gender
    * @return gender
-  **/
+   */
   @javax.annotation.Nullable
   public String getGender() {
     return gender;
@@ -245,10 +244,10 @@ public class DocumentPropertiesNfc {
     return this;
   }
 
-   /**
+  /**
    * Get dateOfExpiry
    * @return dateOfExpiry
-  **/
+   */
   @javax.annotation.Nullable
   public LocalDate getDateOfExpiry() {
     return dateOfExpiry;
@@ -264,10 +263,10 @@ public class DocumentPropertiesNfc {
     return this;
   }
 
-   /**
+  /**
    * Get personalNumber
    * @return personalNumber
-  **/
+   */
   @javax.annotation.Nullable
   public String getPersonalNumber() {
     return personalNumber;
@@ -283,10 +282,10 @@ public class DocumentPropertiesNfc {
     return this;
   }
 
-   /**
+  /**
    * Get placeOfBirth
    * @return placeOfBirth
-  **/
+   */
   @javax.annotation.Nullable
   public String getPlaceOfBirth() {
     return placeOfBirth;
@@ -302,10 +301,10 @@ public class DocumentPropertiesNfc {
     return this;
   }
 
-   /**
+  /**
    * Get address
    * @return address
-  **/
+   */
   @javax.annotation.Nullable
   public String getAddress() {
     return address;
@@ -321,10 +320,10 @@ public class DocumentPropertiesNfc {
     return this;
   }
 
-   /**
+  /**
    * Get issuingDate
    * @return issuingDate
-  **/
+   */
   @javax.annotation.Nullable
   public LocalDate getIssuingDate() {
     return issuingDate;
@@ -340,10 +339,10 @@ public class DocumentPropertiesNfc {
     return this;
   }
 
-   /**
+  /**
    * Get issuingAuthority
    * @return issuingAuthority
-  **/
+   */
   @javax.annotation.Nullable
   public String getIssuingAuthority() {
     return issuingAuthority;
@@ -487,12 +486,12 @@ public class DocumentPropertiesNfc {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to DocumentPropertiesNfc
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to DocumentPropertiesNfc
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!DocumentPropertiesNfc.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -604,22 +603,22 @@ public class DocumentPropertiesNfc {
     }
   }
 
- /**
-  * Create an instance of DocumentPropertiesNfc given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of DocumentPropertiesNfc
-  * @throws IOException if the JSON string is invalid with respect to DocumentPropertiesNfc
-  */
+  /**
+   * Create an instance of DocumentPropertiesNfc given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of DocumentPropertiesNfc
+   * @throws IOException if the JSON string is invalid with respect to DocumentPropertiesNfc
+   */
   public static DocumentPropertiesNfc fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, DocumentPropertiesNfc.class);
   }
 
- /**
-  * Convert an instance of DocumentPropertiesNfc to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of DocumentPropertiesNfc to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

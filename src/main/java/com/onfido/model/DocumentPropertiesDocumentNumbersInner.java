@@ -37,7 +37,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -49,7 +48,7 @@ import com.onfido.JSON;
 /**
  * DocumentPropertiesDocumentNumbersInner
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class DocumentPropertiesDocumentNumbersInner {
   public static final String SERIALIZED_NAME_VALUE = "value";
   @SerializedName(SERIALIZED_NAME_VALUE)
@@ -67,10 +66,10 @@ public class DocumentPropertiesDocumentNumbersInner {
     return this;
   }
 
-   /**
+  /**
    * Get value
    * @return value
-  **/
+   */
   @javax.annotation.Nullable
   public String getValue() {
     return value;
@@ -86,10 +85,10 @@ public class DocumentPropertiesDocumentNumbersInner {
     return this;
   }
 
-   /**
+  /**
    * Get type
    * @return type
-  **/
+   */
   @javax.annotation.Nullable
   public String getType() {
     return type;
@@ -200,12 +199,12 @@ public class DocumentPropertiesDocumentNumbersInner {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to DocumentPropertiesDocumentNumbersInner
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to DocumentPropertiesDocumentNumbersInner
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!DocumentPropertiesDocumentNumbersInner.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -293,22 +292,22 @@ public class DocumentPropertiesDocumentNumbersInner {
     }
   }
 
- /**
-  * Create an instance of DocumentPropertiesDocumentNumbersInner given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of DocumentPropertiesDocumentNumbersInner
-  * @throws IOException if the JSON string is invalid with respect to DocumentPropertiesDocumentNumbersInner
-  */
+  /**
+   * Create an instance of DocumentPropertiesDocumentNumbersInner given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of DocumentPropertiesDocumentNumbersInner
+   * @throws IOException if the JSON string is invalid with respect to DocumentPropertiesDocumentNumbersInner
+   */
   public static DocumentPropertiesDocumentNumbersInner fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, DocumentPropertiesDocumentNumbersInner.class);
   }
 
- /**
-  * Convert an instance of DocumentPropertiesDocumentNumbersInner to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of DocumentPropertiesDocumentNumbersInner to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

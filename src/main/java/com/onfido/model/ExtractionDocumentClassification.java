@@ -39,7 +39,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -51,7 +50,7 @@ import com.onfido.JSON;
 /**
  * ExtractionDocumentClassification
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class ExtractionDocumentClassification {
   public static final String SERIALIZED_NAME_ISSUING_COUNTRY = "issuing_country";
   @SerializedName(SERIALIZED_NAME_ISSUING_COUNTRY)
@@ -137,10 +136,10 @@ public class ExtractionDocumentClassification {
     return this;
   }
 
-   /**
+  /**
    * Document country in 3-letter ISO code.
    * @return issuingCountry
-  **/
+   */
   @javax.annotation.Nullable
   public CountryCodes getIssuingCountry() {
     return issuingCountry;
@@ -156,10 +155,10 @@ public class ExtractionDocumentClassification {
     return this;
   }
 
-   /**
+  /**
    * Type of document.
    * @return documentType
-  **/
+   */
   @javax.annotation.Nullable
   public DocumentTypes getDocumentType() {
     return documentType;
@@ -175,10 +174,10 @@ public class ExtractionDocumentClassification {
     return this;
   }
 
-   /**
+  /**
    * The state that issued the document (if available).
    * @return issuingState
-  **/
+   */
   @javax.annotation.Nullable
   public String getIssuingState() {
     return issuingState;
@@ -194,10 +193,10 @@ public class ExtractionDocumentClassification {
     return this;
   }
 
-   /**
+  /**
    * The document subtype (if available).
    * @return subtype
-  **/
+   */
   @javax.annotation.Nullable
   public SubtypeEnum getSubtype() {
     return subtype;
@@ -213,10 +212,10 @@ public class ExtractionDocumentClassification {
     return this;
   }
 
-   /**
+  /**
    * The document issuing version (if available).
    * @return version
-  **/
+   */
   @javax.annotation.Nullable
   public String getVersion() {
     return version;
@@ -336,12 +335,12 @@ public class ExtractionDocumentClassification {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ExtractionDocumentClassification
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ExtractionDocumentClassification
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ExtractionDocumentClassification.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -444,22 +443,22 @@ public class ExtractionDocumentClassification {
     }
   }
 
- /**
-  * Create an instance of ExtractionDocumentClassification given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ExtractionDocumentClassification
-  * @throws IOException if the JSON string is invalid with respect to ExtractionDocumentClassification
-  */
+  /**
+   * Create an instance of ExtractionDocumentClassification given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ExtractionDocumentClassification
+   * @throws IOException if the JSON string is invalid with respect to ExtractionDocumentClassification
+   */
   public static ExtractionDocumentClassification fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ExtractionDocumentClassification.class);
   }
 
- /**
-  * Convert an instance of ExtractionDocumentClassification to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ExtractionDocumentClassification to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

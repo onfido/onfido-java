@@ -39,7 +39,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -51,7 +50,7 @@ import com.onfido.JSON;
 /**
  * AddressShared
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class AddressShared {
   public static final String SERIALIZED_NAME_FLAT_NUMBER = "flat_number";
   @SerializedName(SERIALIZED_NAME_FLAT_NUMBER)
@@ -109,10 +108,10 @@ public class AddressShared {
     return this;
   }
 
-   /**
+  /**
    * The flat number of this address
    * @return flatNumber
-  **/
+   */
   @javax.annotation.Nullable
   public String getFlatNumber() {
     return flatNumber;
@@ -128,10 +127,10 @@ public class AddressShared {
     return this;
   }
 
-   /**
+  /**
    * The building number of this address
    * @return buildingNumber
-  **/
+   */
   @javax.annotation.Nullable
   public String getBuildingNumber() {
     return buildingNumber;
@@ -147,10 +146,10 @@ public class AddressShared {
     return this;
   }
 
-   /**
+  /**
    * The building name of this address
    * @return buildingName
-  **/
+   */
   @javax.annotation.Nullable
   public String getBuildingName() {
     return buildingName;
@@ -166,10 +165,10 @@ public class AddressShared {
     return this;
   }
 
-   /**
+  /**
    * The street of the applicant&#39;s address
    * @return street
-  **/
+   */
   @javax.annotation.Nullable
   public String getStreet() {
     return street;
@@ -185,10 +184,10 @@ public class AddressShared {
     return this;
   }
 
-   /**
+  /**
    * The sub-street of the applicant&#39;s address
    * @return subStreet
-  **/
+   */
   @javax.annotation.Nullable
   public String getSubStreet() {
     return subStreet;
@@ -204,10 +203,10 @@ public class AddressShared {
     return this;
   }
 
-   /**
+  /**
    * The town of the applicant&#39;s address
    * @return town
-  **/
+   */
   @javax.annotation.Nullable
   public String getTown() {
     return town;
@@ -223,10 +222,10 @@ public class AddressShared {
     return this;
   }
 
-   /**
+  /**
    * The postcode or ZIP of the applicant&#39;s address
    * @return postcode
-  **/
+   */
   @javax.annotation.Nonnull
   public String getPostcode() {
     return postcode;
@@ -242,10 +241,10 @@ public class AddressShared {
     return this;
   }
 
-   /**
+  /**
    * The 3 character ISO country code of this address. For example, GBR is the country code for the United Kingdom
    * @return country
-  **/
+   */
   @javax.annotation.Nonnull
   public CountryCodes getCountry() {
     return country;
@@ -261,10 +260,10 @@ public class AddressShared {
     return this;
   }
 
-   /**
+  /**
    * The address state. US states must use the USPS abbreviation (see also ISO 3166-2:US), for example AK, CA, or TX.
    * @return state
-  **/
+   */
   @javax.annotation.Nullable
   public String getState() {
     return state;
@@ -280,10 +279,10 @@ public class AddressShared {
     return this;
   }
 
-   /**
+  /**
    * Line 1 of the applicant&#39;s address
    * @return line1
-  **/
+   */
   @javax.annotation.Nullable
   public String getLine1() {
     return line1;
@@ -299,10 +298,10 @@ public class AddressShared {
     return this;
   }
 
-   /**
+  /**
    * Line 2 of the applicant&#39;s address
    * @return line2
-  **/
+   */
   @javax.annotation.Nullable
   public String getLine2() {
     return line2;
@@ -318,10 +317,10 @@ public class AddressShared {
     return this;
   }
 
-   /**
+  /**
    * Line 3 of the applicant&#39;s address
    * @return line3
-  **/
+   */
   @javax.annotation.Nullable
   public String getLine3() {
     return line3;
@@ -475,12 +474,12 @@ public class AddressShared {
     openapiRequiredFields.add("country");
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to AddressShared
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to AddressShared
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!AddressShared.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -604,22 +603,22 @@ public class AddressShared {
     }
   }
 
- /**
-  * Create an instance of AddressShared given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of AddressShared
-  * @throws IOException if the JSON string is invalid with respect to AddressShared
-  */
+  /**
+   * Create an instance of AddressShared given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of AddressShared
+   * @throws IOException if the JSON string is invalid with respect to AddressShared
+   */
   public static AddressShared fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, AddressShared.class);
   }
 
- /**
-  * Convert an instance of AddressShared to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of AddressShared to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

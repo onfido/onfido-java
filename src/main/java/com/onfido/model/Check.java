@@ -42,7 +42,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -54,7 +53,7 @@ import com.onfido.JSON;
 /**
  * Check
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class Check {
   public static final String SERIALIZED_NAME_WEBHOOK_IDS = "webhook_ids";
   @SerializedName(SERIALIZED_NAME_WEBHOOK_IDS)
@@ -194,10 +193,10 @@ public class Check {
     return this;
   }
 
-   /**
+  /**
    * An array of webhook ids describing which webhooks to trigger for this check.
    * @return webhookIds
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getWebhookIds() {
     return webhookIds;
@@ -213,10 +212,10 @@ public class Check {
     return this;
   }
 
-   /**
+  /**
    * The ID of the applicant to do the check on.
    * @return applicantId
-  **/
+   */
   @javax.annotation.Nonnull
   public UUID getApplicantId() {
     return applicantId;
@@ -232,10 +231,10 @@ public class Check {
     return this;
   }
 
-   /**
+  /**
    * Send an applicant form to applicant to complete to proceed with check. Defaults to false. 
    * @return applicantProvidesData
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getApplicantProvidesData() {
     return applicantProvidesData;
@@ -259,10 +258,10 @@ public class Check {
     return this;
   }
 
-   /**
+  /**
    * Array of tags being assigned to this check.
    * @return tags
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getTags() {
     return tags;
@@ -278,10 +277,10 @@ public class Check {
     return this;
   }
 
-   /**
+  /**
    * For checks where &#x60;applicant_provides_data&#x60; is &#x60;true&#x60;, redirect to this URI when the applicant has submitted their data.
    * @return redirectUri
-  **/
+   */
   @javax.annotation.Nullable
   public String getRedirectUri() {
     return redirectUri;
@@ -297,10 +296,10 @@ public class Check {
     return this;
   }
 
-   /**
+  /**
    * Get privacyNoticesReadConsentGiven
    * @return privacyNoticesReadConsentGiven
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getPrivacyNoticesReadConsentGiven() {
     return privacyNoticesReadConsentGiven;
@@ -316,10 +315,10 @@ public class Check {
     return this;
   }
 
-   /**
+  /**
    * The unique identifier for the check.
    * @return id
-  **/
+   */
   @javax.annotation.Nonnull
   public UUID getId() {
     return id;
@@ -335,10 +334,10 @@ public class Check {
     return this;
   }
 
-   /**
+  /**
    * The date and time when this check was created.
    * @return createdAt
-  **/
+   */
   @javax.annotation.Nullable
   public OffsetDateTime getCreatedAt() {
     return createdAt;
@@ -354,10 +353,10 @@ public class Check {
     return this;
   }
 
-   /**
+  /**
    * The uri of this resource.
    * @return href
-  **/
+   */
   @javax.annotation.Nullable
   public String getHref() {
     return href;
@@ -373,10 +372,10 @@ public class Check {
     return this;
   }
 
-   /**
+  /**
    * Get status
    * @return status
-  **/
+   */
   @javax.annotation.Nullable
   public CheckStatus getStatus() {
     return status;
@@ -392,10 +391,10 @@ public class Check {
     return this;
   }
 
-   /**
+  /**
    * The overall result of the check, based on the results of the constituent reports.
    * @return result
-  **/
+   */
   @javax.annotation.Nullable
   public ResultEnum getResult() {
     return result;
@@ -411,10 +410,10 @@ public class Check {
     return this;
   }
 
-   /**
+  /**
    * A link to the applicant form, if &#x60;applicant_provides_data&#x60; is &#x60;true&#x60;.
    * @return formUri
-  **/
+   */
   @javax.annotation.Nullable
   public String getFormUri() {
     return formUri;
@@ -430,10 +429,10 @@ public class Check {
     return this;
   }
 
-   /**
+  /**
    * A link to the corresponding results page on the Onfido dashboard.
    * @return resultsUri
-  **/
+   */
   @javax.annotation.Nullable
   public String getResultsUri() {
     return resultsUri;
@@ -457,10 +456,10 @@ public class Check {
     return this;
   }
 
-   /**
+  /**
    * An array of report ids.
    * @return reportIds
-  **/
+   */
   @javax.annotation.Nullable
   public List<UUID> getReportIds() {
     return reportIds;
@@ -476,10 +475,10 @@ public class Check {
     return this;
   }
 
-   /**
+  /**
    * Indicates whether the object was created in the sandbox or not.
    * @return sandbox
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getSandbox() {
     return sandbox;
@@ -495,10 +494,10 @@ public class Check {
     return this;
   }
 
-   /**
+  /**
    * Get paused
    * @return paused
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getPaused() {
     return paused;
@@ -514,10 +513,10 @@ public class Check {
     return this;
   }
 
-   /**
+  /**
    * Get version
    * @return version
-  **/
+   */
   @javax.annotation.Nullable
   public String getVersion() {
     return version;
@@ -675,12 +674,12 @@ public class Check {
     openapiRequiredFields.add("id");
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to Check
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to Check
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!Check.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -816,22 +815,22 @@ public class Check {
     }
   }
 
- /**
-  * Create an instance of Check given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of Check
-  * @throws IOException if the JSON string is invalid with respect to Check
-  */
+  /**
+   * Create an instance of Check given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of Check
+   * @throws IOException if the JSON string is invalid with respect to Check
+   */
   public static Check fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, Check.class);
   }
 
- /**
-  * Convert an instance of Check to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of Check to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

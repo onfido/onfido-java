@@ -38,7 +38,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -50,7 +49,7 @@ import com.onfido.JSON;
 /**
  * DeviceIntelligenceBreakdownPropertiesGeolocation
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class DeviceIntelligenceBreakdownPropertiesGeolocation {
   public static final String SERIALIZED_NAME_CITY = "city";
   @SerializedName(SERIALIZED_NAME_CITY)
@@ -72,10 +71,10 @@ public class DeviceIntelligenceBreakdownPropertiesGeolocation {
     return this;
   }
 
-   /**
+  /**
    * City location of the IP address.
    * @return city
-  **/
+   */
   @javax.annotation.Nullable
   public String getCity() {
     return city;
@@ -91,10 +90,10 @@ public class DeviceIntelligenceBreakdownPropertiesGeolocation {
     return this;
   }
 
-   /**
+  /**
    * Region location of the IP address.
    * @return region
-  **/
+   */
   @javax.annotation.Nullable
   public String getRegion() {
     return region;
@@ -110,10 +109,10 @@ public class DeviceIntelligenceBreakdownPropertiesGeolocation {
     return this;
   }
 
-   /**
+  /**
    * Country location of the IP address in a three letter format.
    * @return country
-  **/
+   */
   @javax.annotation.Nullable
   public CountryCodes getCountry() {
     return country;
@@ -227,12 +226,12 @@ public class DeviceIntelligenceBreakdownPropertiesGeolocation {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to DeviceIntelligenceBreakdownPropertiesGeolocation
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to DeviceIntelligenceBreakdownPropertiesGeolocation
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!DeviceIntelligenceBreakdownPropertiesGeolocation.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -324,22 +323,22 @@ public class DeviceIntelligenceBreakdownPropertiesGeolocation {
     }
   }
 
- /**
-  * Create an instance of DeviceIntelligenceBreakdownPropertiesGeolocation given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of DeviceIntelligenceBreakdownPropertiesGeolocation
-  * @throws IOException if the JSON string is invalid with respect to DeviceIntelligenceBreakdownPropertiesGeolocation
-  */
+  /**
+   * Create an instance of DeviceIntelligenceBreakdownPropertiesGeolocation given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of DeviceIntelligenceBreakdownPropertiesGeolocation
+   * @throws IOException if the JSON string is invalid with respect to DeviceIntelligenceBreakdownPropertiesGeolocation
+   */
   public static DeviceIntelligenceBreakdownPropertiesGeolocation fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, DeviceIntelligenceBreakdownPropertiesGeolocation.class);
   }
 
- /**
-  * Convert an instance of DeviceIntelligenceBreakdownPropertiesGeolocation to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of DeviceIntelligenceBreakdownPropertiesGeolocation to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

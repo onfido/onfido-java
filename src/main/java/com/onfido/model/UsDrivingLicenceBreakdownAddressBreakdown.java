@@ -38,7 +38,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -50,7 +49,7 @@ import com.onfido.JSON;
 /**
  * UsDrivingLicenceBreakdownAddressBreakdown
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class UsDrivingLicenceBreakdownAddressBreakdown {
   public static final String SERIALIZED_NAME_CITY = "city";
   @SerializedName(SERIALIZED_NAME_CITY)
@@ -84,10 +83,10 @@ public class UsDrivingLicenceBreakdownAddressBreakdown {
     return this;
   }
 
-   /**
+  /**
    * Get city
    * @return city
-  **/
+   */
   @javax.annotation.Nullable
   public DocumentBreakdownDataComparisonBreakdownIssuingCountry getCity() {
     return city;
@@ -103,10 +102,10 @@ public class UsDrivingLicenceBreakdownAddressBreakdown {
     return this;
   }
 
-   /**
+  /**
    * Get line1
    * @return line1
-  **/
+   */
   @javax.annotation.Nullable
   public DocumentBreakdownDataComparisonBreakdownIssuingCountry getLine1() {
     return line1;
@@ -122,10 +121,10 @@ public class UsDrivingLicenceBreakdownAddressBreakdown {
     return this;
   }
 
-   /**
+  /**
    * Get line2
    * @return line2
-  **/
+   */
   @javax.annotation.Nullable
   public DocumentBreakdownDataComparisonBreakdownIssuingCountry getLine2() {
     return line2;
@@ -141,10 +140,10 @@ public class UsDrivingLicenceBreakdownAddressBreakdown {
     return this;
   }
 
-   /**
+  /**
    * Get stateCode
    * @return stateCode
-  **/
+   */
   @javax.annotation.Nullable
   public DocumentBreakdownDataComparisonBreakdownIssuingCountry getStateCode() {
     return stateCode;
@@ -160,10 +159,10 @@ public class UsDrivingLicenceBreakdownAddressBreakdown {
     return this;
   }
 
-   /**
+  /**
    * Get zip4
    * @return zip4
-  **/
+   */
   @javax.annotation.Nullable
   public DocumentBreakdownDataComparisonBreakdownIssuingCountry getZip4() {
     return zip4;
@@ -179,10 +178,10 @@ public class UsDrivingLicenceBreakdownAddressBreakdown {
     return this;
   }
 
-   /**
+  /**
    * Get zip5
    * @return zip5
-  **/
+   */
   @javax.annotation.Nullable
   public DocumentBreakdownDataComparisonBreakdownIssuingCountry getZip5() {
     return zip5;
@@ -305,12 +304,12 @@ public class UsDrivingLicenceBreakdownAddressBreakdown {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to UsDrivingLicenceBreakdownAddressBreakdown
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to UsDrivingLicenceBreakdownAddressBreakdown
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!UsDrivingLicenceBreakdownAddressBreakdown.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -416,22 +415,22 @@ public class UsDrivingLicenceBreakdownAddressBreakdown {
     }
   }
 
- /**
-  * Create an instance of UsDrivingLicenceBreakdownAddressBreakdown given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of UsDrivingLicenceBreakdownAddressBreakdown
-  * @throws IOException if the JSON string is invalid with respect to UsDrivingLicenceBreakdownAddressBreakdown
-  */
+  /**
+   * Create an instance of UsDrivingLicenceBreakdownAddressBreakdown given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of UsDrivingLicenceBreakdownAddressBreakdown
+   * @throws IOException if the JSON string is invalid with respect to UsDrivingLicenceBreakdownAddressBreakdown
+   */
   public static UsDrivingLicenceBreakdownAddressBreakdown fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, UsDrivingLicenceBreakdownAddressBreakdown.class);
   }
 
- /**
-  * Convert an instance of UsDrivingLicenceBreakdownAddressBreakdown to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of UsDrivingLicenceBreakdownAddressBreakdown to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

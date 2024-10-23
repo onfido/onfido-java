@@ -40,7 +40,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -52,7 +51,7 @@ import com.onfido.JSON;
 /**
  * WatchlistMonitorBuilder
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class WatchlistMonitorBuilder {
   public static final String SERIALIZED_NAME_APPLICANT_ID = "applicant_id";
   @SerializedName(SERIALIZED_NAME_APPLICANT_ID)
@@ -128,10 +127,10 @@ public class WatchlistMonitorBuilder {
     return this;
   }
 
-   /**
+  /**
    * The ID for the applicant associated with the monitor.
    * @return applicantId
-  **/
+   */
   @javax.annotation.Nonnull
   public UUID getApplicantId() {
     return applicantId;
@@ -147,10 +146,10 @@ public class WatchlistMonitorBuilder {
     return this;
   }
 
-   /**
+  /**
    * The name of the report type the monitor creates.
    * @return reportName
-  **/
+   */
   @javax.annotation.Nonnull
   public ReportNameEnum getReportName() {
     return reportName;
@@ -174,10 +173,10 @@ public class WatchlistMonitorBuilder {
     return this;
   }
 
-   /**
+  /**
    * A list of tags associated with this monitor. These tags will be applied to each check this monitor creates.
    * @return tags
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getTags() {
     return tags;
@@ -293,12 +292,12 @@ public class WatchlistMonitorBuilder {
     openapiRequiredFields.add("report_name");
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to WatchlistMonitorBuilder
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to WatchlistMonitorBuilder
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!WatchlistMonitorBuilder.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -399,22 +398,22 @@ public class WatchlistMonitorBuilder {
     }
   }
 
- /**
-  * Create an instance of WatchlistMonitorBuilder given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of WatchlistMonitorBuilder
-  * @throws IOException if the JSON string is invalid with respect to WatchlistMonitorBuilder
-  */
+  /**
+   * Create an instance of WatchlistMonitorBuilder given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of WatchlistMonitorBuilder
+   * @throws IOException if the JSON string is invalid with respect to WatchlistMonitorBuilder
+   */
   public static WatchlistMonitorBuilder fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, WatchlistMonitorBuilder.class);
   }
 
- /**
-  * Convert an instance of WatchlistMonitorBuilder to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of WatchlistMonitorBuilder to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

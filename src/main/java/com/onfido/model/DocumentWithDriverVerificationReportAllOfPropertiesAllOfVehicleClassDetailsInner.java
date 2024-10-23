@@ -38,7 +38,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -50,7 +49,7 @@ import com.onfido.JSON;
 /**
  * DocumentWithDriverVerificationReportAllOfPropertiesAllOfVehicleClassDetailsInner
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class DocumentWithDriverVerificationReportAllOfPropertiesAllOfVehicleClassDetailsInner {
   public static final String SERIALIZED_NAME_CATEGORY = "category";
   @SerializedName(SERIALIZED_NAME_CATEGORY)
@@ -76,10 +75,10 @@ public class DocumentWithDriverVerificationReportAllOfPropertiesAllOfVehicleClas
     return this;
   }
 
-   /**
+  /**
    * Vehicle class/category
    * @return category
-  **/
+   */
   @javax.annotation.Nullable
   public String getCategory() {
     return category;
@@ -95,10 +94,10 @@ public class DocumentWithDriverVerificationReportAllOfPropertiesAllOfVehicleClas
     return this;
   }
 
-   /**
+  /**
    * Special conditions driver must meet
    * @return codes
-  **/
+   */
   @javax.annotation.Nullable
   public String getCodes() {
     return codes;
@@ -114,10 +113,10 @@ public class DocumentWithDriverVerificationReportAllOfPropertiesAllOfVehicleClas
     return this;
   }
 
-   /**
+  /**
    * Category obtainment date
    * @return obtainmentDate
-  **/
+   */
   @javax.annotation.Nullable
   public LocalDate getObtainmentDate() {
     return obtainmentDate;
@@ -133,10 +132,10 @@ public class DocumentWithDriverVerificationReportAllOfPropertiesAllOfVehicleClas
     return this;
   }
 
-   /**
+  /**
    * Category expiry date
    * @return expiryDate
-  **/
+   */
   @javax.annotation.Nullable
   public LocalDate getExpiryDate() {
     return expiryDate;
@@ -253,12 +252,12 @@ public class DocumentWithDriverVerificationReportAllOfPropertiesAllOfVehicleClas
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to DocumentWithDriverVerificationReportAllOfPropertiesAllOfVehicleClassDetailsInner
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to DocumentWithDriverVerificationReportAllOfPropertiesAllOfVehicleClassDetailsInner
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!DocumentWithDriverVerificationReportAllOfPropertiesAllOfVehicleClassDetailsInner.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -346,22 +345,22 @@ public class DocumentWithDriverVerificationReportAllOfPropertiesAllOfVehicleClas
     }
   }
 
- /**
-  * Create an instance of DocumentWithDriverVerificationReportAllOfPropertiesAllOfVehicleClassDetailsInner given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of DocumentWithDriverVerificationReportAllOfPropertiesAllOfVehicleClassDetailsInner
-  * @throws IOException if the JSON string is invalid with respect to DocumentWithDriverVerificationReportAllOfPropertiesAllOfVehicleClassDetailsInner
-  */
+  /**
+   * Create an instance of DocumentWithDriverVerificationReportAllOfPropertiesAllOfVehicleClassDetailsInner given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of DocumentWithDriverVerificationReportAllOfPropertiesAllOfVehicleClassDetailsInner
+   * @throws IOException if the JSON string is invalid with respect to DocumentWithDriverVerificationReportAllOfPropertiesAllOfVehicleClassDetailsInner
+   */
   public static DocumentWithDriverVerificationReportAllOfPropertiesAllOfVehicleClassDetailsInner fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, DocumentWithDriverVerificationReportAllOfPropertiesAllOfVehicleClassDetailsInner.class);
   }
 
- /**
-  * Convert an instance of DocumentWithDriverVerificationReportAllOfPropertiesAllOfVehicleClassDetailsInner to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of DocumentWithDriverVerificationReportAllOfPropertiesAllOfVehicleClassDetailsInner to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

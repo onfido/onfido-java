@@ -41,7 +41,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -53,7 +52,7 @@ import com.onfido.JSON;
 /**
  * ApplicantResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class ApplicantResponse {
   public static final String SERIALIZED_NAME_FIRST_NAME = "first_name";
   @SerializedName(SERIALIZED_NAME_FIRST_NAME)
@@ -99,10 +98,10 @@ public class ApplicantResponse {
     return this;
   }
 
-   /**
+  /**
    * The applicant&#39;s first name
    * @return firstName
-  **/
+   */
   @javax.annotation.Nullable
   public String getFirstName() {
     return firstName;
@@ -118,10 +117,10 @@ public class ApplicantResponse {
     return this;
   }
 
-   /**
+  /**
    * The applicant&#39;s surname
    * @return lastName
-  **/
+   */
   @javax.annotation.Nullable
   public String getLastName() {
     return lastName;
@@ -137,10 +136,10 @@ public class ApplicantResponse {
     return this;
   }
 
-   /**
+  /**
    * The unique identifier for the applicant.
    * @return id
-  **/
+   */
   @javax.annotation.Nonnull
   public UUID getId() {
     return id;
@@ -156,10 +155,10 @@ public class ApplicantResponse {
     return this;
   }
 
-   /**
+  /**
    * The date and time when this applicant was created.
    * @return createdAt
-  **/
+   */
   @javax.annotation.Nullable
   public OffsetDateTime getCreatedAt() {
     return createdAt;
@@ -175,10 +174,10 @@ public class ApplicantResponse {
     return this;
   }
 
-   /**
+  /**
    * The date and time when this applicant is scheduled to be deleted.
    * @return deleteAt
-  **/
+   */
   @javax.annotation.Nullable
   public OffsetDateTime getDeleteAt() {
     return deleteAt;
@@ -194,10 +193,10 @@ public class ApplicantResponse {
     return this;
   }
 
-   /**
+  /**
    * The uri of this resource.
    * @return href
-  **/
+   */
   @javax.annotation.Nullable
   public String getHref() {
     return href;
@@ -213,10 +212,10 @@ public class ApplicantResponse {
     return this;
   }
 
-   /**
+  /**
    * Get sandbox
    * @return sandbox
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getSandbox() {
     return sandbox;
@@ -232,10 +231,10 @@ public class ApplicantResponse {
     return this;
   }
 
-   /**
+  /**
    * Get address
    * @return address
-  **/
+   */
   @javax.annotation.Nullable
   public Address getAddress() {
     return address;
@@ -251,10 +250,10 @@ public class ApplicantResponse {
     return this;
   }
 
-   /**
+  /**
    * Get location
    * @return location
-  **/
+   */
   @javax.annotation.Nullable
   public Location getLocation() {
     return location;
@@ -387,12 +386,12 @@ public class ApplicantResponse {
     openapiRequiredFields.add("id");
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ApplicantResponse
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ApplicantResponse
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ApplicantResponse.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -501,22 +500,22 @@ public class ApplicantResponse {
     }
   }
 
- /**
-  * Create an instance of ApplicantResponse given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ApplicantResponse
-  * @throws IOException if the JSON string is invalid with respect to ApplicantResponse
-  */
+  /**
+   * Create an instance of ApplicantResponse given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ApplicantResponse
+   * @throws IOException if the JSON string is invalid with respect to ApplicantResponse
+   */
   public static ApplicantResponse fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ApplicantResponse.class);
   }
 
- /**
-  * Convert an instance of ApplicantResponse to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ApplicantResponse to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

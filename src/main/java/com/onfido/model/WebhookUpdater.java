@@ -40,7 +40,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -52,7 +51,7 @@ import com.onfido.JSON;
 /**
  * WebhookUpdater
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class WebhookUpdater {
   public static final String SERIALIZED_NAME_ENABLED = "enabled";
   @SerializedName(SERIALIZED_NAME_ENABLED)
@@ -82,10 +81,10 @@ public class WebhookUpdater {
     return this;
   }
 
-   /**
+  /**
    * Determine if the webhook is active.
    * @return enabled
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getEnabled() {
     return enabled;
@@ -109,10 +108,10 @@ public class WebhookUpdater {
     return this;
   }
 
-   /**
+  /**
    * The events that will be published to the webhook. If the events parameter is omitted all the events will be subscribed. 
    * @return events
-  **/
+   */
   @javax.annotation.Nullable
   public List<WebhookEventType> getEvents() {
     return events;
@@ -136,10 +135,10 @@ public class WebhookUpdater {
     return this;
   }
 
-   /**
+  /**
    * The environments from which the webhook will receive events. Allowed values are “sandbox” and “live”. If the environments parameter is omitted the webhook will receive events from both environments. 
    * @return environments
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getEnvironments() {
     return environments;
@@ -155,10 +154,10 @@ public class WebhookUpdater {
     return this;
   }
 
-   /**
+  /**
    * Webhook version used to control the payload object when sending webhooks.
    * @return payloadVersion
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getPayloadVersion() {
     return payloadVersion;
@@ -174,10 +173,10 @@ public class WebhookUpdater {
     return this;
   }
 
-   /**
+  /**
    * The url that will listen to notifications (must be https).
    * @return url
-  **/
+   */
   @javax.annotation.Nullable
   public String getUrl() {
     return url;
@@ -297,12 +296,12 @@ public class WebhookUpdater {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to WebhookUpdater
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to WebhookUpdater
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!WebhookUpdater.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -395,22 +394,22 @@ public class WebhookUpdater {
     }
   }
 
- /**
-  * Create an instance of WebhookUpdater given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of WebhookUpdater
-  * @throws IOException if the JSON string is invalid with respect to WebhookUpdater
-  */
+  /**
+   * Create an instance of WebhookUpdater given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of WebhookUpdater
+   * @throws IOException if the JSON string is invalid with respect to WebhookUpdater
+   */
   public static WebhookUpdater fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, WebhookUpdater.class);
   }
 
- /**
-  * Convert an instance of WebhookUpdater to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of WebhookUpdater to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

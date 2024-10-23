@@ -39,7 +39,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -51,7 +50,7 @@ import com.onfido.JSON;
 /**
  * WorkflowRunLink
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class WorkflowRunLink {
   public static final String SERIALIZED_NAME_URL = "url";
   @SerializedName(SERIALIZED_NAME_URL)
@@ -145,10 +144,10 @@ public class WorkflowRunLink {
     return this;
   }
 
-   /**
+  /**
    * Link to access the Workflow Run without the need to integrate with Onfido&#39;s SDKs.
    * @return url
-  **/
+   */
   @javax.annotation.Nullable
   public String getUrl() {
     return url;
@@ -164,10 +163,10 @@ public class WorkflowRunLink {
     return this;
   }
 
-   /**
+  /**
    * When the interactive section of the Workflow Run has completed successfully, the user will be redirected to this URL instead of seeing the default Onfido &#39;thank you&#39; page.
    * @return completedRedirectUrl
-  **/
+   */
   @javax.annotation.Nullable
   public String getCompletedRedirectUrl() {
     return completedRedirectUrl;
@@ -183,10 +182,10 @@ public class WorkflowRunLink {
     return this;
   }
 
-   /**
+  /**
    * When the link has expired, the user will be immediately redirected to this URL instead of seeing the default Onfido error message.
    * @return expiredRedirectUrl
-  **/
+   */
   @javax.annotation.Nullable
   public String getExpiredRedirectUrl() {
     return expiredRedirectUrl;
@@ -202,10 +201,10 @@ public class WorkflowRunLink {
     return this;
   }
 
-   /**
+  /**
    * Date and time when the link will expire.
    * @return expiresAt
-  **/
+   */
   @javax.annotation.Nullable
   public OffsetDateTime getExpiresAt() {
     return expiresAt;
@@ -221,10 +220,10 @@ public class WorkflowRunLink {
     return this;
   }
 
-   /**
+  /**
    * The code for the language when the workflow run is acessed using the link.
    * @return language
-  **/
+   */
   @javax.annotation.Nullable
   public LanguageEnum getLanguage() {
     return language;
@@ -355,12 +354,12 @@ public class WorkflowRunLink {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to WorkflowRunLink
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to WorkflowRunLink
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!WorkflowRunLink.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -458,22 +457,22 @@ public class WorkflowRunLink {
     }
   }
 
- /**
-  * Create an instance of WorkflowRunLink given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of WorkflowRunLink
-  * @throws IOException if the JSON string is invalid with respect to WorkflowRunLink
-  */
+  /**
+   * Create an instance of WorkflowRunLink given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of WorkflowRunLink
+   * @throws IOException if the JSON string is invalid with respect to WorkflowRunLink
+   */
   public static WorkflowRunLink fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, WorkflowRunLink.class);
   }
 
- /**
-  * Convert an instance of WorkflowRunLink to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of WorkflowRunLink to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

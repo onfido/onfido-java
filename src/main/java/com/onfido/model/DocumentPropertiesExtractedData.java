@@ -38,7 +38,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -50,7 +49,7 @@ import com.onfido.JSON;
 /**
  * DocumentPropertiesExtractedData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class DocumentPropertiesExtractedData {
   public static final String SERIALIZED_NAME_DOCUMENT_NUMBER = "document_number";
   @SerializedName(SERIALIZED_NAME_DOCUMENT_NUMBER)
@@ -144,10 +143,10 @@ public class DocumentPropertiesExtractedData {
     return this;
   }
 
-   /**
+  /**
    * Get documentNumber
    * @return documentNumber
-  **/
+   */
   @javax.annotation.Nullable
   public String getDocumentNumber() {
     return documentNumber;
@@ -163,10 +162,10 @@ public class DocumentPropertiesExtractedData {
     return this;
   }
 
-   /**
+  /**
    * Get dateOfBirth
    * @return dateOfBirth
-  **/
+   */
   @javax.annotation.Nullable
   public LocalDate getDateOfBirth() {
     return dateOfBirth;
@@ -182,10 +181,10 @@ public class DocumentPropertiesExtractedData {
     return this;
   }
 
-   /**
+  /**
    * Get dateOfExpiry
    * @return dateOfExpiry
-  **/
+   */
   @javax.annotation.Nullable
   public LocalDate getDateOfExpiry() {
     return dateOfExpiry;
@@ -201,10 +200,10 @@ public class DocumentPropertiesExtractedData {
     return this;
   }
 
-   /**
+  /**
    * Get firstName
    * @return firstName
-  **/
+   */
   @javax.annotation.Nullable
   public String getFirstName() {
     return firstName;
@@ -220,10 +219,10 @@ public class DocumentPropertiesExtractedData {
     return this;
   }
 
-   /**
+  /**
    * Get lastName
    * @return lastName
-  **/
+   */
   @javax.annotation.Nullable
   public String getLastName() {
     return lastName;
@@ -239,10 +238,10 @@ public class DocumentPropertiesExtractedData {
     return this;
   }
 
-   /**
+  /**
    * Get middleName
    * @return middleName
-  **/
+   */
   @javax.annotation.Nullable
   public String getMiddleName() {
     return middleName;
@@ -258,10 +257,10 @@ public class DocumentPropertiesExtractedData {
     return this;
   }
 
-   /**
+  /**
    * Get fullName
    * @return fullName
-  **/
+   */
   @javax.annotation.Nullable
   public String getFullName() {
     return fullName;
@@ -277,10 +276,10 @@ public class DocumentPropertiesExtractedData {
     return this;
   }
 
-   /**
+  /**
    * Get spouseName
    * @return spouseName
-  **/
+   */
   @javax.annotation.Nullable
   public String getSpouseName() {
     return spouseName;
@@ -296,10 +295,10 @@ public class DocumentPropertiesExtractedData {
     return this;
   }
 
-   /**
+  /**
    * Get widowName
    * @return widowName
-  **/
+   */
   @javax.annotation.Nullable
   public String getWidowName() {
     return widowName;
@@ -315,10 +314,10 @@ public class DocumentPropertiesExtractedData {
     return this;
   }
 
-   /**
+  /**
    * Get aliasName
    * @return aliasName
-  **/
+   */
   @javax.annotation.Nullable
   public String getAliasName() {
     return aliasName;
@@ -334,10 +333,10 @@ public class DocumentPropertiesExtractedData {
     return this;
   }
 
-   /**
+  /**
    * Get gender
    * @return gender
-  **/
+   */
   @javax.annotation.Nullable
   public String getGender() {
     return gender;
@@ -353,10 +352,10 @@ public class DocumentPropertiesExtractedData {
     return this;
   }
 
-   /**
+  /**
    * Get mrzLine1
    * @return mrzLine1
-  **/
+   */
   @javax.annotation.Nullable
   public String getMrzLine1() {
     return mrzLine1;
@@ -372,10 +371,10 @@ public class DocumentPropertiesExtractedData {
     return this;
   }
 
-   /**
+  /**
    * Get mrzLine2
    * @return mrzLine2
-  **/
+   */
   @javax.annotation.Nullable
   public String getMrzLine2() {
     return mrzLine2;
@@ -391,10 +390,10 @@ public class DocumentPropertiesExtractedData {
     return this;
   }
 
-   /**
+  /**
    * Get mrzLine3
    * @return mrzLine3
-  **/
+   */
   @javax.annotation.Nullable
   public String getMrzLine3() {
     return mrzLine3;
@@ -410,10 +409,10 @@ public class DocumentPropertiesExtractedData {
     return this;
   }
 
-   /**
+  /**
    * Get nationality
    * @return nationality
-  **/
+   */
   @javax.annotation.Nullable
   public String getNationality() {
     return nationality;
@@ -429,10 +428,10 @@ public class DocumentPropertiesExtractedData {
     return this;
   }
 
-   /**
+  /**
    * Get addressLine1
    * @return addressLine1
-  **/
+   */
   @javax.annotation.Nullable
   public String getAddressLine1() {
     return addressLine1;
@@ -448,10 +447,10 @@ public class DocumentPropertiesExtractedData {
     return this;
   }
 
-   /**
+  /**
    * Get addressLine2
    * @return addressLine2
-  **/
+   */
   @javax.annotation.Nullable
   public String getAddressLine2() {
     return addressLine2;
@@ -467,10 +466,10 @@ public class DocumentPropertiesExtractedData {
     return this;
   }
 
-   /**
+  /**
    * Get addressLine3
    * @return addressLine3
-  **/
+   */
   @javax.annotation.Nullable
   public String getAddressLine3() {
     return addressLine3;
@@ -486,10 +485,10 @@ public class DocumentPropertiesExtractedData {
     return this;
   }
 
-   /**
+  /**
    * Get addressLine4
    * @return addressLine4
-  **/
+   */
   @javax.annotation.Nullable
   public String getAddressLine4() {
     return addressLine4;
@@ -505,10 +504,10 @@ public class DocumentPropertiesExtractedData {
     return this;
   }
 
-   /**
+  /**
    * Get addressLine5
    * @return addressLine5
-  **/
+   */
   @javax.annotation.Nullable
   public String getAddressLine5() {
     return addressLine5;
@@ -524,10 +523,10 @@ public class DocumentPropertiesExtractedData {
     return this;
   }
 
-   /**
+  /**
    * Get issuingAuthority
    * @return issuingAuthority
-  **/
+   */
   @javax.annotation.Nullable
   public String getIssuingAuthority() {
     return issuingAuthority;
@@ -695,12 +694,12 @@ public class DocumentPropertiesExtractedData {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to DocumentPropertiesExtractedData
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to DocumentPropertiesExtractedData
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!DocumentPropertiesExtractedData.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -839,22 +838,22 @@ public class DocumentPropertiesExtractedData {
     }
   }
 
- /**
-  * Create an instance of DocumentPropertiesExtractedData given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of DocumentPropertiesExtractedData
-  * @throws IOException if the JSON string is invalid with respect to DocumentPropertiesExtractedData
-  */
+  /**
+   * Create an instance of DocumentPropertiesExtractedData given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of DocumentPropertiesExtractedData
+   * @throws IOException if the JSON string is invalid with respect to DocumentPropertiesExtractedData
+   */
   public static DocumentPropertiesExtractedData fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, DocumentPropertiesExtractedData.class);
   }
 
- /**
-  * Convert an instance of DocumentPropertiesExtractedData to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of DocumentPropertiesExtractedData to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

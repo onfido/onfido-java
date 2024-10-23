@@ -40,7 +40,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -52,7 +51,7 @@ import com.onfido.JSON;
 /**
  * KnownFacesProperties
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class KnownFacesProperties {
   public static final String SERIALIZED_NAME_MATCHES = "matches";
   @SerializedName(SERIALIZED_NAME_MATCHES)
@@ -74,10 +73,10 @@ public class KnownFacesProperties {
     return this;
   }
 
-   /**
+  /**
    * Returns any matching applicant IDs as entries inside a matches array under a properties bag.
    * @return matches
-  **/
+   */
   @javax.annotation.Nullable
   public List<KnownFacesPropertiesMatchesInner> getMatches() {
     return matches;
@@ -185,12 +184,12 @@ public class KnownFacesProperties {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to KnownFacesProperties
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to KnownFacesProperties
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!KnownFacesProperties.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -286,22 +285,22 @@ public class KnownFacesProperties {
     }
   }
 
- /**
-  * Create an instance of KnownFacesProperties given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of KnownFacesProperties
-  * @throws IOException if the JSON string is invalid with respect to KnownFacesProperties
-  */
+  /**
+   * Create an instance of KnownFacesProperties given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of KnownFacesProperties
+   * @throws IOException if the JSON string is invalid with respect to KnownFacesProperties
+   */
   public static KnownFacesProperties fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, KnownFacesProperties.class);
   }
 
- /**
-  * Convert an instance of KnownFacesProperties to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of KnownFacesProperties to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

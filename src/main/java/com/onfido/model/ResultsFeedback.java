@@ -38,7 +38,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -50,7 +49,7 @@ import com.onfido.JSON;
 /**
  * ResultsFeedback
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class ResultsFeedback {
   /**
    * The expected result for the check or report.
@@ -130,10 +129,10 @@ public class ResultsFeedback {
     return this;
   }
 
-   /**
+  /**
    * The expected result for the check or report.
    * @return expectedResult
-  **/
+   */
   @javax.annotation.Nullable
   public ExpectedResultEnum getExpectedResult() {
     return expectedResult;
@@ -149,10 +148,10 @@ public class ResultsFeedback {
     return this;
   }
 
-   /**
+  /**
    * The ID of the check (only if report_id is not provided).
    * @return checkId
-  **/
+   */
   @javax.annotation.Nullable
   public UUID getCheckId() {
     return checkId;
@@ -168,10 +167,10 @@ public class ResultsFeedback {
     return this;
   }
 
-   /**
+  /**
    * The ID of the check (only if check_id is not provided).
    * @return reportId
-  **/
+   */
   @javax.annotation.Nullable
   public UUID getReportId() {
     return reportId;
@@ -187,10 +186,10 @@ public class ResultsFeedback {
     return this;
   }
 
-   /**
+  /**
    * Any additional information or feedback.
    * @return feedbackNotes
-  **/
+   */
   @javax.annotation.Nullable
   public String getFeedbackNotes() {
     return feedbackNotes;
@@ -307,12 +306,12 @@ public class ResultsFeedback {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ResultsFeedback
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ResultsFeedback
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ResultsFeedback.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -410,22 +409,22 @@ public class ResultsFeedback {
     }
   }
 
- /**
-  * Create an instance of ResultsFeedback given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ResultsFeedback
-  * @throws IOException if the JSON string is invalid with respect to ResultsFeedback
-  */
+  /**
+   * Create an instance of ResultsFeedback given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ResultsFeedback
+   * @throws IOException if the JSON string is invalid with respect to ResultsFeedback
+   */
   public static ResultsFeedback fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ResultsFeedback.class);
   }
 
- /**
-  * Convert an instance of ResultsFeedback to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ResultsFeedback to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

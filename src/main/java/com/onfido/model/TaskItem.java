@@ -40,7 +40,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -52,7 +51,7 @@ import com.onfido.JSON;
 /**
  * TaskItem
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class TaskItem {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -86,10 +85,10 @@ public class TaskItem {
     return this;
   }
 
-   /**
+  /**
    * The identifier for the Task.
    * @return id
-  **/
+   */
   @javax.annotation.Nullable
   public String getId() {
     return id;
@@ -105,10 +104,10 @@ public class TaskItem {
     return this;
   }
 
-   /**
+  /**
    * The workflow run id the task belongs to.
    * @return workflowRunId
-  **/
+   */
   @javax.annotation.Nullable
   public UUID getWorkflowRunId() {
     return workflowRunId;
@@ -124,10 +123,10 @@ public class TaskItem {
     return this;
   }
 
-   /**
+  /**
    * The identifier for the Task Definition.
    * @return taskDefId
-  **/
+   */
   @javax.annotation.Nullable
   public String getTaskDefId() {
     return taskDefId;
@@ -143,10 +142,10 @@ public class TaskItem {
     return this;
   }
 
-   /**
+  /**
    * The task definition version.
    * @return taskDefVersion
-  **/
+   */
   @javax.annotation.Nullable
   public String getTaskDefVersion() {
     return taskDefVersion;
@@ -162,10 +161,10 @@ public class TaskItem {
     return this;
   }
 
-   /**
+  /**
    * The date and time when the Task was created.
    * @return createdAt
-  **/
+   */
   @javax.annotation.Nullable
   public OffsetDateTime getCreatedAt() {
     return createdAt;
@@ -181,10 +180,10 @@ public class TaskItem {
     return this;
   }
 
-   /**
+  /**
    * The date and time when the Task was last updated.
    * @return updatedAt
-  **/
+   */
   @javax.annotation.Nullable
   public OffsetDateTime getUpdatedAt() {
     return updatedAt;
@@ -318,12 +317,12 @@ public class TaskItem {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to TaskItem
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to TaskItem
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!TaskItem.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -417,22 +416,22 @@ public class TaskItem {
     }
   }
 
- /**
-  * Create an instance of TaskItem given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of TaskItem
-  * @throws IOException if the JSON string is invalid with respect to TaskItem
-  */
+  /**
+   * Create an instance of TaskItem given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of TaskItem
+   * @throws IOException if the JSON string is invalid with respect to TaskItem
+   */
   public static TaskItem fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, TaskItem.class);
   }
 
- /**
-  * Convert an instance of TaskItem to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of TaskItem to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

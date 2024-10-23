@@ -40,7 +40,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -52,7 +51,7 @@ import com.onfido.JSON;
 /**
  * IdentityEnhancedBreakdownAddressBreakdown
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class IdentityEnhancedBreakdownAddressBreakdown {
   public static final String SERIALIZED_NAME_CREDIT_AGENCIES = "credit_agencies";
   @SerializedName(SERIALIZED_NAME_CREDIT_AGENCIES)
@@ -74,10 +73,10 @@ public class IdentityEnhancedBreakdownAddressBreakdown {
     return this;
   }
 
-   /**
+  /**
    * Get creditAgencies
    * @return creditAgencies
-  **/
+   */
   @javax.annotation.Nullable
   public IdentityEnhancedBreakdownAddressBreakdownCreditAgencies getCreditAgencies() {
     return creditAgencies;
@@ -93,10 +92,10 @@ public class IdentityEnhancedBreakdownAddressBreakdown {
     return this;
   }
 
-   /**
+  /**
    * Get telephoneDatabase
    * @return telephoneDatabase
-  **/
+   */
   @javax.annotation.Nullable
   public IdentityEnhancedBreakdownAddressBreakdownTelephoneDatabase getTelephoneDatabase() {
     return telephoneDatabase;
@@ -112,10 +111,10 @@ public class IdentityEnhancedBreakdownAddressBreakdown {
     return this;
   }
 
-   /**
+  /**
    * Get votingRegister
    * @return votingRegister
-  **/
+   */
   @javax.annotation.Nullable
   public IdentityEnhancedBreakdownAddressBreakdownVotingRegister getVotingRegister() {
     return votingRegister;
@@ -229,12 +228,12 @@ public class IdentityEnhancedBreakdownAddressBreakdown {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to IdentityEnhancedBreakdownAddressBreakdown
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to IdentityEnhancedBreakdownAddressBreakdown
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!IdentityEnhancedBreakdownAddressBreakdown.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -328,22 +327,22 @@ public class IdentityEnhancedBreakdownAddressBreakdown {
     }
   }
 
- /**
-  * Create an instance of IdentityEnhancedBreakdownAddressBreakdown given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of IdentityEnhancedBreakdownAddressBreakdown
-  * @throws IOException if the JSON string is invalid with respect to IdentityEnhancedBreakdownAddressBreakdown
-  */
+  /**
+   * Create an instance of IdentityEnhancedBreakdownAddressBreakdown given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of IdentityEnhancedBreakdownAddressBreakdown
+   * @throws IOException if the JSON string is invalid with respect to IdentityEnhancedBreakdownAddressBreakdown
+   */
   public static IdentityEnhancedBreakdownAddressBreakdown fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, IdentityEnhancedBreakdownAddressBreakdown.class);
   }
 
- /**
-  * Convert an instance of IdentityEnhancedBreakdownAddressBreakdown to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of IdentityEnhancedBreakdownAddressBreakdown to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

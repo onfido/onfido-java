@@ -38,7 +38,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -50,7 +49,7 @@ import com.onfido.JSON;
 /**
  * DeviceIntelligenceBreakdownPropertiesDevice
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class DeviceIntelligenceBreakdownPropertiesDevice {
   public static final String SERIALIZED_NAME_SDK_VERSION = "sdk_version";
   @SerializedName(SERIALIZED_NAME_SDK_VERSION)
@@ -392,10 +391,10 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
     return this;
   }
 
-   /**
+  /**
    * The SDK version that was used.
    * @return sdkVersion
-  **/
+   */
   @javax.annotation.Nullable
   public String getSdkVersion() {
     return sdkVersion;
@@ -411,10 +410,10 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
     return this;
   }
 
-   /**
+  /**
    * The SDK used to upload the media.
    * @return sdkSource
-  **/
+   */
   @javax.annotation.Nullable
   public SdkSourceEnum getSdkSource() {
     return sdkSource;
@@ -430,10 +429,10 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
     return this;
   }
 
-   /**
+  /**
    * The token used to authenticate the request.
    * @return authenticationType
-  **/
+   */
   @javax.annotation.Nullable
   public AuthenticationTypeEnum getAuthenticationType() {
     return authenticationType;
@@ -449,10 +448,10 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
     return this;
   }
 
-   /**
+  /**
    * The model as set by the phone manufacturer (for Android and iOS) or the browser manufacturer (for Web). The model can be presented in name or number form depending on each manufacturer implementation.
    * @return rawModel
-  **/
+   */
   @javax.annotation.Nullable
   public String getRawModel() {
     return rawModel;
@@ -468,10 +467,10 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
     return this;
   }
 
-   /**
+  /**
    * The operating system of the device. The value came from manufacturer implementation (for Android and iOS) or browser&#39;s user agent (for Web).
    * @return os
-  **/
+   */
   @javax.annotation.Nullable
   public String getOs() {
     return os;
@@ -487,10 +486,10 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
     return this;
   }
 
-   /**
+  /**
    * The browser name reported by the browser&#39;s user agent.
    * @return browser
-  **/
+   */
   @javax.annotation.Nullable
   public String getBrowser() {
     return browser;
@@ -506,10 +505,10 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
     return this;
   }
 
-   /**
+  /**
    * Whether the device is an emulator.
    * @return emulator
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getEmulator() {
     return emulator;
@@ -525,10 +524,10 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
     return this;
   }
 
-   /**
+  /**
    * Whether the device is providing false randomized device and network information.
    * @return randomizedDevice
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getRandomizedDevice() {
     return randomizedDevice;
@@ -544,10 +543,10 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
     return this;
   }
 
-   /**
+  /**
    * Whether device is using stolen security tokens to send the network information.
    * @return fakeNetworkRequest
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getFakeNetworkRequest() {
     return fakeNetworkRequest;
@@ -563,10 +562,10 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
     return this;
   }
 
-   /**
+  /**
    * Whether there is highly suspicious traffic related to the IP address. The risk depends on the overall ratio of clear checks on a given IP.
    * @return ipReputation
-  **/
+   */
   @javax.annotation.Nullable
   public IpReputationEnum getIpReputation() {
     return ipReputation;
@@ -582,10 +581,10 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
     return this;
   }
 
-   /**
+  /**
    * The number of times the device was used to create a report for a new applicant. A value greater than 1 indicates potential device reuse.
    * @return deviceFingerprintReuse
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getDeviceFingerprintReuse() {
     return deviceFingerprintReuse;
@@ -601,10 +600,10 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
     return this;
   }
 
-   /**
+  /**
    * Whether the document or biometric media were uploaded from a single device.
    * @return singleDeviceUsed
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getSingleDeviceUsed() {
     return singleDeviceUsed;
@@ -620,10 +619,10 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
     return this;
   }
 
-   /**
+  /**
    * Whether the document media were live captured from the device camera.
    * @return documentCapture
-  **/
+   */
   @javax.annotation.Nullable
   public DocumentCaptureEnum getDocumentCapture() {
     return documentCapture;
@@ -639,10 +638,10 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
     return this;
   }
 
-   /**
+  /**
    * Whether the biometric media were live captured from the device camera.
    * @return biometricCapture
-  **/
+   */
   @javax.annotation.Nullable
   public BiometricCaptureEnum getBiometricCapture() {
     return biometricCapture;
@@ -800,12 +799,12 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to DeviceIntelligenceBreakdownPropertiesDevice
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to DeviceIntelligenceBreakdownPropertiesDevice
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!DeviceIntelligenceBreakdownPropertiesDevice.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -934,22 +933,22 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
     }
   }
 
- /**
-  * Create an instance of DeviceIntelligenceBreakdownPropertiesDevice given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of DeviceIntelligenceBreakdownPropertiesDevice
-  * @throws IOException if the JSON string is invalid with respect to DeviceIntelligenceBreakdownPropertiesDevice
-  */
+  /**
+   * Create an instance of DeviceIntelligenceBreakdownPropertiesDevice given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of DeviceIntelligenceBreakdownPropertiesDevice
+   * @throws IOException if the JSON string is invalid with respect to DeviceIntelligenceBreakdownPropertiesDevice
+   */
   public static DeviceIntelligenceBreakdownPropertiesDevice fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, DeviceIntelligenceBreakdownPropertiesDevice.class);
   }
 
- /**
-  * Convert an instance of DeviceIntelligenceBreakdownPropertiesDevice to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of DeviceIntelligenceBreakdownPropertiesDevice to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

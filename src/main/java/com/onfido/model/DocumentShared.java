@@ -40,7 +40,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -52,7 +51,7 @@ import com.onfido.JSON;
 /**
  * DocumentShared
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class DocumentShared {
   /**
    * The file type of the uploaded file
@@ -194,10 +193,10 @@ public class DocumentShared {
     return this;
   }
 
-   /**
+  /**
    * The file type of the uploaded file
    * @return fileType
-  **/
+   */
   @javax.annotation.Nullable
   public FileTypeEnum getFileType() {
     return fileType;
@@ -213,10 +212,10 @@ public class DocumentShared {
     return this;
   }
 
-   /**
+  /**
    * The type of document
    * @return type
-  **/
+   */
   @javax.annotation.Nullable
   public DocumentTypes getType() {
     return type;
@@ -232,10 +231,10 @@ public class DocumentShared {
     return this;
   }
 
-   /**
+  /**
    * The side of the document, if applicable. The possible values are front and back
    * @return side
-  **/
+   */
   @javax.annotation.Nullable
   public SideEnum getSide() {
     return side;
@@ -251,10 +250,10 @@ public class DocumentShared {
     return this;
   }
 
-   /**
+  /**
    * The issuing country of the document, a 3-letter ISO code.
    * @return issuingCountry
-  **/
+   */
   @javax.annotation.Nullable
   public CountryCodes getIssuingCountry() {
     return issuingCountry;
@@ -270,10 +269,10 @@ public class DocumentShared {
     return this;
   }
 
-   /**
+  /**
    * The ID of the applicant whose document is being uploaded.
    * @return applicantId
-  **/
+   */
   @javax.annotation.Nullable
   public UUID getApplicantId() {
     return applicantId;
@@ -393,12 +392,12 @@ public class DocumentShared {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to DocumentShared
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to DocumentShared
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!DocumentShared.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -505,22 +504,22 @@ public class DocumentShared {
     }
   }
 
- /**
-  * Create an instance of DocumentShared given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of DocumentShared
-  * @throws IOException if the JSON string is invalid with respect to DocumentShared
-  */
+  /**
+   * Create an instance of DocumentShared given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of DocumentShared
+   * @throws IOException if the JSON string is invalid with respect to DocumentShared
+   */
   public static DocumentShared fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, DocumentShared.class);
   }
 
- /**
-  * Convert an instance of DocumentShared to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of DocumentShared to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

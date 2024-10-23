@@ -37,7 +37,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -49,7 +48,7 @@ import com.onfido.JSON;
 /**
  * Asserts if there are any records found of negative events reported by publicly and generally available media sources.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class WatchlistAmlBreakdownAdverseMedia {
   public static final String SERIALIZED_NAME_RESULT = "result";
   @SerializedName(SERIALIZED_NAME_RESULT)
@@ -63,10 +62,10 @@ public class WatchlistAmlBreakdownAdverseMedia {
     return this;
   }
 
-   /**
+  /**
    * Get result
    * @return result
-  **/
+   */
   @javax.annotation.Nullable
   public String getResult() {
     return result;
@@ -174,12 +173,12 @@ public class WatchlistAmlBreakdownAdverseMedia {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to WatchlistAmlBreakdownAdverseMedia
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to WatchlistAmlBreakdownAdverseMedia
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!WatchlistAmlBreakdownAdverseMedia.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -264,22 +263,22 @@ public class WatchlistAmlBreakdownAdverseMedia {
     }
   }
 
- /**
-  * Create an instance of WatchlistAmlBreakdownAdverseMedia given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of WatchlistAmlBreakdownAdverseMedia
-  * @throws IOException if the JSON string is invalid with respect to WatchlistAmlBreakdownAdverseMedia
-  */
+  /**
+   * Create an instance of WatchlistAmlBreakdownAdverseMedia given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of WatchlistAmlBreakdownAdverseMedia
+   * @throws IOException if the JSON string is invalid with respect to WatchlistAmlBreakdownAdverseMedia
+   */
   public static WatchlistAmlBreakdownAdverseMedia fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, WatchlistAmlBreakdownAdverseMedia.class);
   }
 
- /**
-  * Convert an instance of WatchlistAmlBreakdownAdverseMedia to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of WatchlistAmlBreakdownAdverseMedia to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

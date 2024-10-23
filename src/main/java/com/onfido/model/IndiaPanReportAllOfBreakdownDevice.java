@@ -38,7 +38,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -50,7 +49,7 @@ import com.onfido.JSON;
 /**
  * IndiaPanReportAllOfBreakdownDevice
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class IndiaPanReportAllOfBreakdownDevice {
   public static final String SERIALIZED_NAME_BREAKDOWN = "breakdown";
   @SerializedName(SERIALIZED_NAME_BREAKDOWN)
@@ -64,10 +63,10 @@ public class IndiaPanReportAllOfBreakdownDevice {
     return this;
   }
 
-   /**
+  /**
    * Get breakdown
    * @return breakdown
-  **/
+   */
   @javax.annotation.Nullable
   public IndiaPanReportAllOfBreakdownDeviceBreakdown getBreakdown() {
     return breakdown;
@@ -175,12 +174,12 @@ public class IndiaPanReportAllOfBreakdownDevice {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to IndiaPanReportAllOfBreakdownDevice
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to IndiaPanReportAllOfBreakdownDevice
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!IndiaPanReportAllOfBreakdownDevice.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -266,22 +265,22 @@ public class IndiaPanReportAllOfBreakdownDevice {
     }
   }
 
- /**
-  * Create an instance of IndiaPanReportAllOfBreakdownDevice given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of IndiaPanReportAllOfBreakdownDevice
-  * @throws IOException if the JSON string is invalid with respect to IndiaPanReportAllOfBreakdownDevice
-  */
+  /**
+   * Create an instance of IndiaPanReportAllOfBreakdownDevice given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of IndiaPanReportAllOfBreakdownDevice
+   * @throws IOException if the JSON string is invalid with respect to IndiaPanReportAllOfBreakdownDevice
+   */
   public static IndiaPanReportAllOfBreakdownDevice fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, IndiaPanReportAllOfBreakdownDevice.class);
   }
 
- /**
-  * Convert an instance of IndiaPanReportAllOfBreakdownDevice to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of IndiaPanReportAllOfBreakdownDevice to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

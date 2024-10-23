@@ -41,7 +41,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -53,7 +52,7 @@ import com.onfido.JSON;
 /**
  * IdentityEnhancedBreakdown
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class IdentityEnhancedBreakdown {
   public static final String SERIALIZED_NAME_SOURCES = "sources";
   @SerializedName(SERIALIZED_NAME_SOURCES)
@@ -79,10 +78,10 @@ public class IdentityEnhancedBreakdown {
     return this;
   }
 
-   /**
+  /**
    * Get sources
    * @return sources
-  **/
+   */
   @javax.annotation.Nullable
   public IdentityEnhancedBreakdownSources getSources() {
     return sources;
@@ -98,10 +97,10 @@ public class IdentityEnhancedBreakdown {
     return this;
   }
 
-   /**
+  /**
    * Get address
    * @return address
-  **/
+   */
   @javax.annotation.Nullable
   public IdentityEnhancedBreakdownAddress getAddress() {
     return address;
@@ -117,10 +116,10 @@ public class IdentityEnhancedBreakdown {
     return this;
   }
 
-   /**
+  /**
    * Get dateOfBirth
    * @return dateOfBirth
-  **/
+   */
   @javax.annotation.Nullable
   public IdentityEnhancedBreakdownDateOfBirth getDateOfBirth() {
     return dateOfBirth;
@@ -136,10 +135,10 @@ public class IdentityEnhancedBreakdown {
     return this;
   }
 
-   /**
+  /**
    * Get mortality
    * @return mortality
-  **/
+   */
   @javax.annotation.Nullable
   public IdentityEnhancedBreakdownMortality getMortality() {
     return mortality;
@@ -256,12 +255,12 @@ public class IdentityEnhancedBreakdown {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to IdentityEnhancedBreakdown
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to IdentityEnhancedBreakdown
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!IdentityEnhancedBreakdown.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -359,22 +358,22 @@ public class IdentityEnhancedBreakdown {
     }
   }
 
- /**
-  * Create an instance of IdentityEnhancedBreakdown given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of IdentityEnhancedBreakdown
-  * @throws IOException if the JSON string is invalid with respect to IdentityEnhancedBreakdown
-  */
+  /**
+   * Create an instance of IdentityEnhancedBreakdown given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of IdentityEnhancedBreakdown
+   * @throws IOException if the JSON string is invalid with respect to IdentityEnhancedBreakdown
+   */
   public static IdentityEnhancedBreakdown fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, IdentityEnhancedBreakdown.class);
   }
 
- /**
-  * Convert an instance of IdentityEnhancedBreakdown to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of IdentityEnhancedBreakdown to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

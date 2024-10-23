@@ -38,7 +38,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -50,7 +49,7 @@ import com.onfido.JSON;
 /**
  * UsDrivingLicenceBreakdownDocumentBreakdown
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class UsDrivingLicenceBreakdownDocumentBreakdown {
   public static final String SERIALIZED_NAME_CATEGORY = "category";
   @SerializedName(SERIALIZED_NAME_CATEGORY)
@@ -76,10 +75,10 @@ public class UsDrivingLicenceBreakdownDocumentBreakdown {
     return this;
   }
 
-   /**
+  /**
    * Get category
    * @return category
-  **/
+   */
   @javax.annotation.Nullable
   public DocumentBreakdownDataComparisonBreakdownIssuingCountry getCategory() {
     return category;
@@ -95,10 +94,10 @@ public class UsDrivingLicenceBreakdownDocumentBreakdown {
     return this;
   }
 
-   /**
+  /**
    * Get expirationDate
    * @return expirationDate
-  **/
+   */
   @javax.annotation.Nullable
   public DocumentBreakdownDataComparisonBreakdownIssuingCountry getExpirationDate() {
     return expirationDate;
@@ -114,10 +113,10 @@ public class UsDrivingLicenceBreakdownDocumentBreakdown {
     return this;
   }
 
-   /**
+  /**
    * Get issueDate
    * @return issueDate
-  **/
+   */
   @javax.annotation.Nullable
   public DocumentBreakdownDataComparisonBreakdownIssuingCountry getIssueDate() {
     return issueDate;
@@ -133,10 +132,10 @@ public class UsDrivingLicenceBreakdownDocumentBreakdown {
     return this;
   }
 
-   /**
+  /**
    * Get documentNumber
    * @return documentNumber
-  **/
+   */
   @javax.annotation.Nullable
   public DocumentBreakdownDataComparisonBreakdownIssuingCountry getDocumentNumber() {
     return documentNumber;
@@ -253,12 +252,12 @@ public class UsDrivingLicenceBreakdownDocumentBreakdown {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to UsDrivingLicenceBreakdownDocumentBreakdown
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to UsDrivingLicenceBreakdownDocumentBreakdown
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!UsDrivingLicenceBreakdownDocumentBreakdown.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -356,22 +355,22 @@ public class UsDrivingLicenceBreakdownDocumentBreakdown {
     }
   }
 
- /**
-  * Create an instance of UsDrivingLicenceBreakdownDocumentBreakdown given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of UsDrivingLicenceBreakdownDocumentBreakdown
-  * @throws IOException if the JSON string is invalid with respect to UsDrivingLicenceBreakdownDocumentBreakdown
-  */
+  /**
+   * Create an instance of UsDrivingLicenceBreakdownDocumentBreakdown given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of UsDrivingLicenceBreakdownDocumentBreakdown
+   * @throws IOException if the JSON string is invalid with respect to UsDrivingLicenceBreakdownDocumentBreakdown
+   */
   public static UsDrivingLicenceBreakdownDocumentBreakdown fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, UsDrivingLicenceBreakdownDocumentBreakdown.class);
   }
 
- /**
-  * Convert an instance of UsDrivingLicenceBreakdownDocumentBreakdown to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of UsDrivingLicenceBreakdownDocumentBreakdown to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

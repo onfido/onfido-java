@@ -42,7 +42,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -54,7 +53,7 @@ import com.onfido.JSON;
 /**
  * ApplicantRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class ApplicantRequest {
   public static final String SERIALIZED_NAME_CONSENTS = "consents";
   @SerializedName(SERIALIZED_NAME_CONSENTS)
@@ -84,10 +83,10 @@ public class ApplicantRequest {
     return this;
   }
 
-   /**
+  /**
    * The applicant&#39;s consents
    * @return consents
-  **/
+   */
   @javax.annotation.Nullable
   public List<ApplicantConsentBuilder> getConsents() {
     return consents;
@@ -103,10 +102,10 @@ public class ApplicantRequest {
     return this;
   }
 
-   /**
+  /**
    * Get address
    * @return address
-  **/
+   */
   @javax.annotation.Nullable
   public AddressBuilder getAddress() {
     return address;
@@ -122,10 +121,10 @@ public class ApplicantRequest {
     return this;
   }
 
-   /**
+  /**
    * Get location
    * @return location
-  **/
+   */
   @javax.annotation.Nullable
   public LocationBuilder getLocation() {
     return location;
@@ -239,12 +238,12 @@ public class ApplicantRequest {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ApplicantRequest
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ApplicantRequest
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ApplicantRequest.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -348,22 +347,22 @@ public class ApplicantRequest {
     }
   }
 
- /**
-  * Create an instance of ApplicantRequest given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ApplicantRequest
-  * @throws IOException if the JSON string is invalid with respect to ApplicantRequest
-  */
+  /**
+   * Create an instance of ApplicantRequest given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ApplicantRequest
+   * @throws IOException if the JSON string is invalid with respect to ApplicantRequest
+   */
   public static ApplicantRequest fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ApplicantRequest.class);
   }
 
- /**
-  * Convert an instance of ApplicantRequest to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ApplicantRequest to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

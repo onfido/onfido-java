@@ -37,7 +37,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -49,7 +48,7 @@ import com.onfido.JSON;
 /**
  * DocumentIQReasons
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class DocumentIQReasons {
   public static final String SERIALIZED_NAME_DARK_PHOTO = "dark_photo";
   @SerializedName(SERIALIZED_NAME_DARK_PHOTO)
@@ -99,10 +98,10 @@ public class DocumentIQReasons {
     return this;
   }
 
-   /**
+  /**
    * When an image of the document is too dark to be able to see data points.
    * @return darkPhoto
-  **/
+   */
   @javax.annotation.Nullable
   public String getDarkPhoto() {
     return darkPhoto;
@@ -118,10 +117,10 @@ public class DocumentIQReasons {
     return this;
   }
 
-   /**
+  /**
    * When there is light reflecting on the document causing glare to obstruct data points.
    * @return glareOnPhoto
-  **/
+   */
   @javax.annotation.Nullable
   public String getGlareOnPhoto() {
     return glareOnPhoto;
@@ -137,10 +136,10 @@ public class DocumentIQReasons {
     return this;
   }
 
-   /**
+  /**
    * When data points are blurred and no reference can be made elsewhere in the document or if the data points are too blurry and &#39;they could be something else&#39;.
    * @return blurredPhoto
-  **/
+   */
   @javax.annotation.Nullable
   public String getBlurredPhoto() {
     return blurredPhoto;
@@ -156,10 +155,10 @@ public class DocumentIQReasons {
     return this;
   }
 
-   /**
+  /**
    * When data points have been covered either by the applicant or by another object such as a sticker.
    * @return coveredPhoto
-  **/
+   */
   @javax.annotation.Nullable
   public String getCoveredPhoto() {
     return coveredPhoto;
@@ -175,10 +174,10 @@ public class DocumentIQReasons {
     return this;
   }
 
-   /**
+  /**
    * Any other reason not listed, such as when holograms are obscuring data points.
    * @return otherPhotoIssue
-  **/
+   */
   @javax.annotation.Nullable
   public String getOtherPhotoIssue() {
     return otherPhotoIssue;
@@ -194,10 +193,10 @@ public class DocumentIQReasons {
     return this;
   }
 
-   /**
+  /**
    * When a document is damaged and we are unable to make out data points.
    * @return damagedDocument
-  **/
+   */
   @javax.annotation.Nullable
   public String getDamagedDocument() {
     return damagedDocument;
@@ -213,10 +212,10 @@ public class DocumentIQReasons {
     return this;
   }
 
-   /**
+  /**
    * When the incorrect side of a document has been uploaded, and we have not received the front.
    * @return incorrectSide
-  **/
+   */
   @javax.annotation.Nullable
   public String getIncorrectSide() {
     return incorrectSide;
@@ -232,10 +231,10 @@ public class DocumentIQReasons {
     return this;
   }
 
-   /**
+  /**
    * When data points are not included in the image due to the document being cut off.
    * @return cutOffDocument
-  **/
+   */
   @javax.annotation.Nullable
   public String getCutOffDocument() {
     return cutOffDocument;
@@ -251,10 +250,10 @@ public class DocumentIQReasons {
     return this;
   }
 
-   /**
+  /**
    * If no document has been uploaded or there is a blank image.
    * @return noDocumentInImage
-  **/
+   */
   @javax.annotation.Nullable
   public String getNoDocumentInImage() {
     return noDocumentInImage;
@@ -270,10 +269,10 @@ public class DocumentIQReasons {
     return this;
   }
 
-   /**
+  /**
    * When 2 different documents are submitted in the same check.
    * @return twoDocumentsUploaded
-  **/
+   */
   @javax.annotation.Nullable
   public String getTwoDocumentsUploaded() {
     return twoDocumentsUploaded;
@@ -408,12 +407,12 @@ public class DocumentIQReasons {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to DocumentIQReasons
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to DocumentIQReasons
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!DocumentIQReasons.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -525,22 +524,22 @@ public class DocumentIQReasons {
     }
   }
 
- /**
-  * Create an instance of DocumentIQReasons given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of DocumentIQReasons
-  * @throws IOException if the JSON string is invalid with respect to DocumentIQReasons
-  */
+  /**
+   * Create an instance of DocumentIQReasons given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of DocumentIQReasons
+   * @throws IOException if the JSON string is invalid with respect to DocumentIQReasons
+   */
   public static DocumentIQReasons fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, DocumentIQReasons.class);
   }
 
- /**
-  * Convert an instance of DocumentIQReasons to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of DocumentIQReasons to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

@@ -40,7 +40,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -52,7 +51,7 @@ import com.onfido.JSON;
 /**
  * ChecksList
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class ChecksList {
   public static final String SERIALIZED_NAME_CHECKS = "checks";
   @SerializedName(SERIALIZED_NAME_CHECKS)
@@ -74,10 +73,10 @@ public class ChecksList {
     return this;
   }
 
-   /**
+  /**
    * Get checks
    * @return checks
-  **/
+   */
   @javax.annotation.Nonnull
   public List<Check> getChecks() {
     return checks;
@@ -186,12 +185,12 @@ public class ChecksList {
     openapiRequiredFields.add("checks");
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ChecksList
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ChecksList
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ChecksList.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -290,22 +289,22 @@ public class ChecksList {
     }
   }
 
- /**
-  * Create an instance of ChecksList given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ChecksList
-  * @throws IOException if the JSON string is invalid with respect to ChecksList
-  */
+  /**
+   * Create an instance of ChecksList given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ChecksList
+   * @throws IOException if the JSON string is invalid with respect to ChecksList
+   */
   public static ChecksList fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ChecksList.class);
   }
 
- /**
-  * Convert an instance of ChecksList to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ChecksList to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

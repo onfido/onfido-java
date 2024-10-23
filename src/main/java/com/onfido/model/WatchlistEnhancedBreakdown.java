@@ -41,7 +41,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -53,7 +52,7 @@ import com.onfido.JSON;
 /**
  * WatchlistEnhancedBreakdown
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class WatchlistEnhancedBreakdown {
   public static final String SERIALIZED_NAME_POLITICALLY_EXPOSED_PERSON = "politically_exposed_person";
   @SerializedName(SERIALIZED_NAME_POLITICALLY_EXPOSED_PERSON)
@@ -79,10 +78,10 @@ public class WatchlistEnhancedBreakdown {
     return this;
   }
 
-   /**
+  /**
    * Get politicallyExposedPerson
    * @return politicallyExposedPerson
-  **/
+   */
   @javax.annotation.Nullable
   public WatchlistAmlBreakdownPoliticallyExposedPerson getPoliticallyExposedPerson() {
     return politicallyExposedPerson;
@@ -98,10 +97,10 @@ public class WatchlistEnhancedBreakdown {
     return this;
   }
 
-   /**
+  /**
    * Get sanction
    * @return sanction
-  **/
+   */
   @javax.annotation.Nullable
   public WatchlistAmlBreakdownSanction getSanction() {
     return sanction;
@@ -117,10 +116,10 @@ public class WatchlistEnhancedBreakdown {
     return this;
   }
 
-   /**
+  /**
    * Get adverseMedia
    * @return adverseMedia
-  **/
+   */
   @javax.annotation.Nullable
   public WatchlistAmlBreakdownAdverseMedia getAdverseMedia() {
     return adverseMedia;
@@ -136,10 +135,10 @@ public class WatchlistEnhancedBreakdown {
     return this;
   }
 
-   /**
+  /**
    * Get monitoredLists
    * @return monitoredLists
-  **/
+   */
   @javax.annotation.Nullable
   public WatchlistAmlBreakdownLegalAndRegulatoryWarnings getMonitoredLists() {
     return monitoredLists;
@@ -256,12 +255,12 @@ public class WatchlistEnhancedBreakdown {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to WatchlistEnhancedBreakdown
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to WatchlistEnhancedBreakdown
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!WatchlistEnhancedBreakdown.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -359,22 +358,22 @@ public class WatchlistEnhancedBreakdown {
     }
   }
 
- /**
-  * Create an instance of WatchlistEnhancedBreakdown given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of WatchlistEnhancedBreakdown
-  * @throws IOException if the JSON string is invalid with respect to WatchlistEnhancedBreakdown
-  */
+  /**
+   * Create an instance of WatchlistEnhancedBreakdown given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of WatchlistEnhancedBreakdown
+   * @throws IOException if the JSON string is invalid with respect to WatchlistEnhancedBreakdown
+   */
   public static WatchlistEnhancedBreakdown fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, WatchlistEnhancedBreakdown.class);
   }
 
- /**
-  * Convert an instance of WatchlistEnhancedBreakdown to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of WatchlistEnhancedBreakdown to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

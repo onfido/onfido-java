@@ -39,7 +39,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -51,7 +50,7 @@ import com.onfido.JSON;
 /**
  * RepeatAttemptsListRepeatAttemptsInner
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class RepeatAttemptsListRepeatAttemptsInner {
   public static final String SERIALIZED_NAME_REPORT_ID = "report_id";
   @SerializedName(SERIALIZED_NAME_REPORT_ID)
@@ -251,10 +250,10 @@ public class RepeatAttemptsListRepeatAttemptsInner {
     return this;
   }
 
-   /**
+  /**
    * The unique identifier of the matching Document report.
    * @return reportId
-  **/
+   */
   @javax.annotation.Nullable
   public UUID getReportId() {
     return reportId;
@@ -270,10 +269,10 @@ public class RepeatAttemptsListRepeatAttemptsInner {
     return this;
   }
 
-   /**
+  /**
    * The unique identifier of the applicant for the matching Document report.
    * @return applicantId
-  **/
+   */
   @javax.annotation.Nullable
   public UUID getApplicantId() {
     return applicantId;
@@ -289,10 +288,10 @@ public class RepeatAttemptsListRepeatAttemptsInner {
     return this;
   }
 
-   /**
+  /**
    * Whether the dates of birth are exactly the same or are different.
    * @return dateOfBirth
-  **/
+   */
   @javax.annotation.Nullable
   public DateOfBirthEnum getDateOfBirth() {
     return dateOfBirth;
@@ -308,10 +307,10 @@ public class RepeatAttemptsListRepeatAttemptsInner {
     return this;
   }
 
-   /**
+  /**
    * Whether the names are exactly the same or are different.
    * @return names
-  **/
+   */
   @javax.annotation.Nullable
   public NamesEnum getNames() {
     return names;
@@ -327,10 +326,10 @@ public class RepeatAttemptsListRepeatAttemptsInner {
     return this;
   }
 
-   /**
+  /**
    * The report result of this attempt.
    * @return result
-  **/
+   */
   @javax.annotation.Nullable
   public ResultEnum getResult() {
     return result;
@@ -346,10 +345,10 @@ public class RepeatAttemptsListRepeatAttemptsInner {
     return this;
   }
 
-   /**
+  /**
    * When the matching report was created.
    * @return createdAt
-  **/
+   */
   @javax.annotation.Nullable
   public OffsetDateTime getCreatedAt() {
     return createdAt;
@@ -365,10 +364,10 @@ public class RepeatAttemptsListRepeatAttemptsInner {
     return this;
   }
 
-   /**
+  /**
    * When the matching report was completed.
    * @return completedAt
-  **/
+   */
   @javax.annotation.Nullable
   public OffsetDateTime getCompletedAt() {
     return completedAt;
@@ -494,12 +493,12 @@ public class RepeatAttemptsListRepeatAttemptsInner {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to RepeatAttemptsListRepeatAttemptsInner
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to RepeatAttemptsListRepeatAttemptsInner
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!RepeatAttemptsListRepeatAttemptsInner.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -608,22 +607,22 @@ public class RepeatAttemptsListRepeatAttemptsInner {
     }
   }
 
- /**
-  * Create an instance of RepeatAttemptsListRepeatAttemptsInner given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of RepeatAttemptsListRepeatAttemptsInner
-  * @throws IOException if the JSON string is invalid with respect to RepeatAttemptsListRepeatAttemptsInner
-  */
+  /**
+   * Create an instance of RepeatAttemptsListRepeatAttemptsInner given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of RepeatAttemptsListRepeatAttemptsInner
+   * @throws IOException if the JSON string is invalid with respect to RepeatAttemptsListRepeatAttemptsInner
+   */
   public static RepeatAttemptsListRepeatAttemptsInner fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, RepeatAttemptsListRepeatAttemptsInner.class);
   }
 
- /**
-  * Convert an instance of RepeatAttemptsListRepeatAttemptsInner to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of RepeatAttemptsListRepeatAttemptsInner to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

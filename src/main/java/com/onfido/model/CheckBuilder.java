@@ -42,7 +42,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -54,7 +53,7 @@ import com.onfido.JSON;
 /**
  * CheckBuilder
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class CheckBuilder {
   public static final String SERIALIZED_NAME_WEBHOOK_IDS = "webhook_ids";
   @SerializedName(SERIALIZED_NAME_WEBHOOK_IDS)
@@ -124,10 +123,10 @@ public class CheckBuilder {
     return this;
   }
 
-   /**
+  /**
    * An array of webhook ids describing which webhooks to trigger for this check.
    * @return webhookIds
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getWebhookIds() {
     return webhookIds;
@@ -143,10 +142,10 @@ public class CheckBuilder {
     return this;
   }
 
-   /**
+  /**
    * The ID of the applicant to do the check on.
    * @return applicantId
-  **/
+   */
   @javax.annotation.Nonnull
   public UUID getApplicantId() {
     return applicantId;
@@ -162,10 +161,10 @@ public class CheckBuilder {
     return this;
   }
 
-   /**
+  /**
    * Send an applicant form to applicant to complete to proceed with check. Defaults to false.
    * @return applicantProvidesData
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getApplicantProvidesData() {
     return applicantProvidesData;
@@ -189,10 +188,10 @@ public class CheckBuilder {
     return this;
   }
 
-   /**
+  /**
    * Array of tags being assigned to this check.
    * @return tags
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getTags() {
     return tags;
@@ -208,10 +207,10 @@ public class CheckBuilder {
     return this;
   }
 
-   /**
+  /**
    * For checks where &#x60;applicant_provides_data&#x60; is &#x60;true&#x60;, redirect to this URI when the applicant has submitted their data.
    * @return redirectUri
-  **/
+   */
   @javax.annotation.Nullable
   public String getRedirectUri() {
     return redirectUri;
@@ -227,10 +226,10 @@ public class CheckBuilder {
     return this;
   }
 
-   /**
+  /**
    * Get privacyNoticesReadConsentGiven
    * @return privacyNoticesReadConsentGiven
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getPrivacyNoticesReadConsentGiven() {
     return privacyNoticesReadConsentGiven;
@@ -254,10 +253,10 @@ public class CheckBuilder {
     return this;
   }
 
-   /**
+  /**
    * An array of report names (strings).
    * @return reportNames
-  **/
+   */
   @javax.annotation.Nonnull
   public List<ReportName> getReportNames() {
     return reportNames;
@@ -281,10 +280,10 @@ public class CheckBuilder {
     return this;
   }
 
-   /**
+  /**
    * Optional. An array of document ids, for use with Document reports only. If omitted, the Document report will use the most recently uploaded document by default.
    * @return documentIds
-  **/
+   */
   @javax.annotation.Nullable
   public List<UUID> getDocumentIds() {
     return documentIds;
@@ -300,10 +299,10 @@ public class CheckBuilder {
     return this;
   }
 
-   /**
+  /**
    * Defaults to &#x60;true&#x60;. If set to &#x60;false&#x60;, you will only receive a response when all reports in your check have completed. 
    * @return asynchronous
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getAsynchronous() {
     return asynchronous;
@@ -319,10 +318,10 @@ public class CheckBuilder {
     return this;
   }
 
-   /**
+  /**
    * For checks where &#x60;applicant_provides_data&#x60; is &#x60;true&#x60;, applicant form will not be automatically sent if &#x60;suppress_form_emails&#x60; is set to &#x60;true&#x60;. You can manually send the form at any time after the check has been created, using the link found in the form_uri attribute of the check object. Write-only. Defaults to false. 
    * @return suppressFormEmails
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getSuppressFormEmails() {
     return suppressFormEmails;
@@ -338,10 +337,10 @@ public class CheckBuilder {
     return this;
   }
 
-   /**
+  /**
    * Triggers responses for particular sub-results for sandbox Document reports.
    * @return subResult
-  **/
+   */
   @javax.annotation.Nullable
   public String getSubResult() {
     return subResult;
@@ -365,10 +364,10 @@ public class CheckBuilder {
     return this;
   }
 
-   /**
+  /**
    * Array of names of particular reports to return consider as their results. This is a feature available in sandbox testing
    * @return consider
-  **/
+   */
   @javax.annotation.Nullable
   public List<ReportName> getConsider() {
     return consider;
@@ -384,10 +383,10 @@ public class CheckBuilder {
     return this;
   }
 
-   /**
+  /**
    * Get usDrivingLicence
    * @return usDrivingLicence
-  **/
+   */
   @javax.annotation.Nullable
   public UsDrivingLicenceBuilder getUsDrivingLicence() {
     return usDrivingLicence;
@@ -533,12 +532,12 @@ public class CheckBuilder {
     openapiRequiredFields.add("report_names");
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to CheckBuilder
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to CheckBuilder
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!CheckBuilder.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -662,22 +661,22 @@ public class CheckBuilder {
     }
   }
 
- /**
-  * Create an instance of CheckBuilder given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of CheckBuilder
-  * @throws IOException if the JSON string is invalid with respect to CheckBuilder
-  */
+  /**
+   * Create an instance of CheckBuilder given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of CheckBuilder
+   * @throws IOException if the JSON string is invalid with respect to CheckBuilder
+   */
   public static CheckBuilder fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, CheckBuilder.class);
   }
 
- /**
-  * Convert an instance of CheckBuilder to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of CheckBuilder to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

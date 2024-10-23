@@ -40,7 +40,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -52,7 +51,7 @@ import com.onfido.JSON;
 /**
  * DocumentBreakdownDataValidationBreakdown
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class DocumentBreakdownDataValidationBreakdown {
   public static final String SERIALIZED_NAME_GENDER = "gender";
   @SerializedName(SERIALIZED_NAME_GENDER)
@@ -90,10 +89,10 @@ public class DocumentBreakdownDataValidationBreakdown {
     return this;
   }
 
-   /**
+  /**
    * Get gender
    * @return gender
-  **/
+   */
   @javax.annotation.Nullable
   public DocumentBreakdownDataComparisonBreakdownIssuingCountry getGender() {
     return gender;
@@ -109,10 +108,10 @@ public class DocumentBreakdownDataValidationBreakdown {
     return this;
   }
 
-   /**
+  /**
    * Get dateOfBirth
    * @return dateOfBirth
-  **/
+   */
   @javax.annotation.Nullable
   public DocumentBreakdownDataComparisonBreakdownIssuingCountry getDateOfBirth() {
     return dateOfBirth;
@@ -128,10 +127,10 @@ public class DocumentBreakdownDataValidationBreakdown {
     return this;
   }
 
-   /**
+  /**
    * Get documentNumbers
    * @return documentNumbers
-  **/
+   */
   @javax.annotation.Nullable
   public DocumentBreakdownDataComparisonBreakdownIssuingCountry getDocumentNumbers() {
     return documentNumbers;
@@ -147,10 +146,10 @@ public class DocumentBreakdownDataValidationBreakdown {
     return this;
   }
 
-   /**
+  /**
    * Get documentExpiration
    * @return documentExpiration
-  **/
+   */
   @javax.annotation.Nullable
   public DocumentBreakdownDataValidationBreakdownDocumentExpiration getDocumentExpiration() {
     return documentExpiration;
@@ -166,10 +165,10 @@ public class DocumentBreakdownDataValidationBreakdown {
     return this;
   }
 
-   /**
+  /**
    * Get expiryDate
    * @return expiryDate
-  **/
+   */
   @javax.annotation.Nullable
   public DocumentBreakdownDataValidationBreakdownExpiryDate getExpiryDate() {
     return expiryDate;
@@ -185,10 +184,10 @@ public class DocumentBreakdownDataValidationBreakdown {
     return this;
   }
 
-   /**
+  /**
    * Get mrz
    * @return mrz
-  **/
+   */
   @javax.annotation.Nullable
   public DocumentBreakdownDataComparisonBreakdownIssuingCountry getMrz() {
     return mrz;
@@ -204,10 +203,10 @@ public class DocumentBreakdownDataValidationBreakdown {
     return this;
   }
 
-   /**
+  /**
    * Get barcode
    * @return barcode
-  **/
+   */
   @javax.annotation.Nullable
   public DocumentBreakdownDataComparisonBreakdownIssuingCountry getBarcode() {
     return barcode;
@@ -333,12 +332,12 @@ public class DocumentBreakdownDataValidationBreakdown {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to DocumentBreakdownDataValidationBreakdown
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to DocumentBreakdownDataValidationBreakdown
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!DocumentBreakdownDataValidationBreakdown.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -448,22 +447,22 @@ public class DocumentBreakdownDataValidationBreakdown {
     }
   }
 
- /**
-  * Create an instance of DocumentBreakdownDataValidationBreakdown given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of DocumentBreakdownDataValidationBreakdown
-  * @throws IOException if the JSON string is invalid with respect to DocumentBreakdownDataValidationBreakdown
-  */
+  /**
+   * Create an instance of DocumentBreakdownDataValidationBreakdown given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of DocumentBreakdownDataValidationBreakdown
+   * @throws IOException if the JSON string is invalid with respect to DocumentBreakdownDataValidationBreakdown
+   */
   public static DocumentBreakdownDataValidationBreakdown fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, DocumentBreakdownDataValidationBreakdown.class);
   }
 
- /**
-  * Convert an instance of DocumentBreakdownDataValidationBreakdown to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of DocumentBreakdownDataValidationBreakdown to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

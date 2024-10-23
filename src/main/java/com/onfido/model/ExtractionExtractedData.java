@@ -40,7 +40,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -52,7 +51,7 @@ import com.onfido.JSON;
 /**
  * ExtractionExtractedData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class ExtractionExtractedData {
   public static final String SERIALIZED_NAME_DOCUMENT_NUMBER = "document_number";
   @SerializedName(SERIALIZED_NAME_DOCUMENT_NUMBER)
@@ -224,10 +223,10 @@ public class ExtractionExtractedData {
     return this;
   }
 
-   /**
+  /**
    * The official document number.
    * @return documentNumber
-  **/
+   */
   @javax.annotation.Nullable
   public String getDocumentNumber() {
     return documentNumber;
@@ -243,10 +242,10 @@ public class ExtractionExtractedData {
     return this;
   }
 
-   /**
+  /**
    * First name.
    * @return firstName
-  **/
+   */
   @javax.annotation.Nullable
   public String getFirstName() {
     return firstName;
@@ -262,10 +261,10 @@ public class ExtractionExtractedData {
     return this;
   }
 
-   /**
+  /**
    * Last name.
    * @return lastName
-  **/
+   */
   @javax.annotation.Nullable
   public String getLastName() {
     return lastName;
@@ -281,10 +280,10 @@ public class ExtractionExtractedData {
     return this;
   }
 
-   /**
+  /**
    * Full name.
    * @return fullName
-  **/
+   */
   @javax.annotation.Nullable
   public String getFullName() {
     return fullName;
@@ -300,10 +299,10 @@ public class ExtractionExtractedData {
     return this;
   }
 
-   /**
+  /**
    * Spouse name (French documents only).
    * @return spouseName
-  **/
+   */
   @javax.annotation.Nullable
   public String getSpouseName() {
     return spouseName;
@@ -319,10 +318,10 @@ public class ExtractionExtractedData {
     return this;
   }
 
-   /**
+  /**
    * Widow name (French documents only).
    * @return widowName
-  **/
+   */
   @javax.annotation.Nullable
   public String getWidowName() {
     return widowName;
@@ -338,10 +337,10 @@ public class ExtractionExtractedData {
     return this;
   }
 
-   /**
+  /**
    * Alias name (French documents only).
    * @return aliasName
-  **/
+   */
   @javax.annotation.Nullable
   public String getAliasName() {
     return aliasName;
@@ -357,10 +356,10 @@ public class ExtractionExtractedData {
     return this;
   }
 
-   /**
+  /**
    * Gender (Valid values are Male and Female).
    * @return gender
-  **/
+   */
   @javax.annotation.Nullable
   public GenderEnum getGender() {
     return gender;
@@ -376,10 +375,10 @@ public class ExtractionExtractedData {
     return this;
   }
 
-   /**
+  /**
    * Date of birth in YYYY-MM-DD format.
    * @return dateOfBirth
-  **/
+   */
   @javax.annotation.Nullable
   public LocalDate getDateOfBirth() {
     return dateOfBirth;
@@ -395,10 +394,10 @@ public class ExtractionExtractedData {
     return this;
   }
 
-   /**
+  /**
    * Date of expiry in YYYY-MM-DD format.
    * @return dateOfExpiry
-  **/
+   */
   @javax.annotation.Nullable
   public LocalDate getDateOfExpiry() {
     return dateOfExpiry;
@@ -414,10 +413,10 @@ public class ExtractionExtractedData {
     return this;
   }
 
-   /**
+  /**
    * Date of expiry in YYYY-MM-DD format.
    * @return expiryDate
-  **/
+   */
   @javax.annotation.Nullable
   public LocalDate getExpiryDate() {
     return expiryDate;
@@ -433,10 +432,10 @@ public class ExtractionExtractedData {
     return this;
   }
 
-   /**
+  /**
    * Nationality in 3-letter ISO code.
    * @return nationality
-  **/
+   */
   @javax.annotation.Nullable
   public String getNationality() {
     return nationality;
@@ -452,10 +451,10 @@ public class ExtractionExtractedData {
     return this;
   }
 
-   /**
+  /**
    * Line 1 of the MRZ code.
    * @return mrzLine1
-  **/
+   */
   @javax.annotation.Nullable
   public String getMrzLine1() {
     return mrzLine1;
@@ -471,10 +470,10 @@ public class ExtractionExtractedData {
     return this;
   }
 
-   /**
+  /**
    * Line 2 of the MRZ code.
    * @return mrzLine2
-  **/
+   */
   @javax.annotation.Nullable
   public String getMrzLine2() {
     return mrzLine2;
@@ -490,10 +489,10 @@ public class ExtractionExtractedData {
     return this;
   }
 
-   /**
+  /**
    * Line 3 of the MRZ code.
    * @return mrzLine3
-  **/
+   */
   @javax.annotation.Nullable
   public String getMrzLine3() {
     return mrzLine3;
@@ -509,10 +508,10 @@ public class ExtractionExtractedData {
     return this;
   }
 
-   /**
+  /**
    * Line 1 of the address.
    * @return address1
-  **/
+   */
   @javax.annotation.Nullable
   public String getAddress1() {
     return address1;
@@ -528,10 +527,10 @@ public class ExtractionExtractedData {
     return this;
   }
 
-   /**
+  /**
    * Line 2 of the address.
    * @return address2
-  **/
+   */
   @javax.annotation.Nullable
   public String getAddress2() {
     return address2;
@@ -547,10 +546,10 @@ public class ExtractionExtractedData {
     return this;
   }
 
-   /**
+  /**
    * Line 3 of the address.
    * @return address3
-  **/
+   */
   @javax.annotation.Nullable
   public String getAddress3() {
     return address3;
@@ -566,10 +565,10 @@ public class ExtractionExtractedData {
     return this;
   }
 
-   /**
+  /**
    * Line 4 of the address.
    * @return address4
-  **/
+   */
   @javax.annotation.Nullable
   public String getAddress4() {
     return address4;
@@ -585,10 +584,10 @@ public class ExtractionExtractedData {
     return this;
   }
 
-   /**
+  /**
    * Line 5 of the address.
    * @return address5
-  **/
+   */
   @javax.annotation.Nullable
   public String getAddress5() {
     return address5;
@@ -604,10 +603,10 @@ public class ExtractionExtractedData {
     return this;
   }
 
-   /**
+  /**
    * Issuing authority.
    * @return issuingAuthority
-  **/
+   */
   @javax.annotation.Nullable
   public String getIssuingAuthority() {
     return issuingAuthority;
@@ -623,10 +622,10 @@ public class ExtractionExtractedData {
     return this;
   }
 
-   /**
+  /**
    * Document country in 3-letter ISO code.
    * @return issuingCountry
-  **/
+   */
   @javax.annotation.Nullable
   public CountryCodes getIssuingCountry() {
     return issuingCountry;
@@ -642,10 +641,10 @@ public class ExtractionExtractedData {
     return this;
   }
 
-   /**
+  /**
    * Type of document.
    * @return documentType
-  **/
+   */
   @javax.annotation.Nullable
   public DocumentTypes getDocumentType() {
     return documentType;
@@ -661,10 +660,10 @@ public class ExtractionExtractedData {
     return this;
   }
 
-   /**
+  /**
    * Place of birth.
    * @return placeOfBirth
-  **/
+   */
   @javax.annotation.Nullable
   public String getPlaceOfBirth() {
     return placeOfBirth;
@@ -680,10 +679,10 @@ public class ExtractionExtractedData {
     return this;
   }
 
-   /**
+  /**
    * The state that issued the document.
    * @return issuingState
-  **/
+   */
   @javax.annotation.Nullable
   public String getIssuingState() {
     return issuingState;
@@ -699,10 +698,10 @@ public class ExtractionExtractedData {
     return this;
   }
 
-   /**
+  /**
    * Issuing date in YYYY-MM-DD format.
    * @return issuingDate
-  **/
+   */
   @javax.annotation.Nullable
   public LocalDate getIssuingDate() {
     return issuingDate;
@@ -718,10 +717,10 @@ public class ExtractionExtractedData {
     return this;
   }
 
-   /**
+  /**
    * The owner&#39;s unique identification number.
    * @return personalNumber
-  **/
+   */
   @javax.annotation.Nullable
   public String getPersonalNumber() {
     return personalNumber;
@@ -907,12 +906,12 @@ public class ExtractionExtractedData {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ExtractionExtractedData
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ExtractionExtractedData
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ExtractionExtractedData.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -1069,22 +1068,22 @@ public class ExtractionExtractedData {
     }
   }
 
- /**
-  * Create an instance of ExtractionExtractedData given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ExtractionExtractedData
-  * @throws IOException if the JSON string is invalid with respect to ExtractionExtractedData
-  */
+  /**
+   * Create an instance of ExtractionExtractedData given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ExtractionExtractedData
+   * @throws IOException if the JSON string is invalid with respect to ExtractionExtractedData
+   */
   public static ExtractionExtractedData fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ExtractionExtractedData.class);
   }
 
- /**
-  * Convert an instance of ExtractionExtractedData to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ExtractionExtractedData to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

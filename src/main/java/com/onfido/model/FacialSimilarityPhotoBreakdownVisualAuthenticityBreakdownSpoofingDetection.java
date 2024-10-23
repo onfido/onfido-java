@@ -38,7 +38,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -50,7 +49,7 @@ import com.onfido.JSON;
 /**
  * Contains a score value under the properties bag.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class FacialSimilarityPhotoBreakdownVisualAuthenticityBreakdownSpoofingDetection {
   public static final String SERIALIZED_NAME_RESULT = "result";
   @SerializedName(SERIALIZED_NAME_RESULT)
@@ -68,10 +67,10 @@ public class FacialSimilarityPhotoBreakdownVisualAuthenticityBreakdownSpoofingDe
     return this;
   }
 
-   /**
+  /**
    * Get result
    * @return result
-  **/
+   */
   @javax.annotation.Nullable
   public String getResult() {
     return result;
@@ -87,10 +86,10 @@ public class FacialSimilarityPhotoBreakdownVisualAuthenticityBreakdownSpoofingDe
     return this;
   }
 
-   /**
+  /**
    * Get properties
    * @return properties
-  **/
+   */
   @javax.annotation.Nullable
   public FacialSimilarityPhotoBreakdownVisualAuthenticityBreakdownSpoofingDetectionProperties getProperties() {
     return properties;
@@ -201,12 +200,12 @@ public class FacialSimilarityPhotoBreakdownVisualAuthenticityBreakdownSpoofingDe
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to FacialSimilarityPhotoBreakdownVisualAuthenticityBreakdownSpoofingDetection
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to FacialSimilarityPhotoBreakdownVisualAuthenticityBreakdownSpoofingDetection
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!FacialSimilarityPhotoBreakdownVisualAuthenticityBreakdownSpoofingDetection.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -295,22 +294,22 @@ public class FacialSimilarityPhotoBreakdownVisualAuthenticityBreakdownSpoofingDe
     }
   }
 
- /**
-  * Create an instance of FacialSimilarityPhotoBreakdownVisualAuthenticityBreakdownSpoofingDetection given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of FacialSimilarityPhotoBreakdownVisualAuthenticityBreakdownSpoofingDetection
-  * @throws IOException if the JSON string is invalid with respect to FacialSimilarityPhotoBreakdownVisualAuthenticityBreakdownSpoofingDetection
-  */
+  /**
+   * Create an instance of FacialSimilarityPhotoBreakdownVisualAuthenticityBreakdownSpoofingDetection given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of FacialSimilarityPhotoBreakdownVisualAuthenticityBreakdownSpoofingDetection
+   * @throws IOException if the JSON string is invalid with respect to FacialSimilarityPhotoBreakdownVisualAuthenticityBreakdownSpoofingDetection
+   */
   public static FacialSimilarityPhotoBreakdownVisualAuthenticityBreakdownSpoofingDetection fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, FacialSimilarityPhotoBreakdownVisualAuthenticityBreakdownSpoofingDetection.class);
   }
 
- /**
-  * Convert an instance of FacialSimilarityPhotoBreakdownVisualAuthenticityBreakdownSpoofingDetection to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of FacialSimilarityPhotoBreakdownVisualAuthenticityBreakdownSpoofingDetection to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

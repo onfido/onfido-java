@@ -37,7 +37,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -49,7 +48,7 @@ import com.onfido.JSON;
 /**
  * WatchlistEnhancedPropertiesRecordsInnerAliasInner
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class WatchlistEnhancedPropertiesRecordsInnerAliasInner {
   public static final String SERIALIZED_NAME_ALIAS_NAME = "alias_name";
   @SerializedName(SERIALIZED_NAME_ALIAS_NAME)
@@ -67,10 +66,10 @@ public class WatchlistEnhancedPropertiesRecordsInnerAliasInner {
     return this;
   }
 
-   /**
+  /**
    * Get aliasName
    * @return aliasName
-  **/
+   */
   @javax.annotation.Nullable
   public String getAliasName() {
     return aliasName;
@@ -86,10 +85,10 @@ public class WatchlistEnhancedPropertiesRecordsInnerAliasInner {
     return this;
   }
 
-   /**
+  /**
    * Get aliasType
    * @return aliasType
-  **/
+   */
   @javax.annotation.Nullable
   public String getAliasType() {
     return aliasType;
@@ -200,12 +199,12 @@ public class WatchlistEnhancedPropertiesRecordsInnerAliasInner {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to WatchlistEnhancedPropertiesRecordsInnerAliasInner
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to WatchlistEnhancedPropertiesRecordsInnerAliasInner
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!WatchlistEnhancedPropertiesRecordsInnerAliasInner.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -293,22 +292,22 @@ public class WatchlistEnhancedPropertiesRecordsInnerAliasInner {
     }
   }
 
- /**
-  * Create an instance of WatchlistEnhancedPropertiesRecordsInnerAliasInner given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of WatchlistEnhancedPropertiesRecordsInnerAliasInner
-  * @throws IOException if the JSON string is invalid with respect to WatchlistEnhancedPropertiesRecordsInnerAliasInner
-  */
+  /**
+   * Create an instance of WatchlistEnhancedPropertiesRecordsInnerAliasInner given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of WatchlistEnhancedPropertiesRecordsInnerAliasInner
+   * @throws IOException if the JSON string is invalid with respect to WatchlistEnhancedPropertiesRecordsInnerAliasInner
+   */
   public static WatchlistEnhancedPropertiesRecordsInnerAliasInner fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, WatchlistEnhancedPropertiesRecordsInnerAliasInner.class);
   }
 
- /**
-  * Convert an instance of WatchlistEnhancedPropertiesRecordsInnerAliasInner to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of WatchlistEnhancedPropertiesRecordsInnerAliasInner to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

@@ -39,7 +39,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -51,7 +50,7 @@ import com.onfido.JSON;
 /**
  * IdentityEnhancedBreakdownDateOfBirthBreakdown
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class IdentityEnhancedBreakdownDateOfBirthBreakdown {
   public static final String SERIALIZED_NAME_CREDIT_AGENCIES = "credit_agencies";
   @SerializedName(SERIALIZED_NAME_CREDIT_AGENCIES)
@@ -69,10 +68,10 @@ public class IdentityEnhancedBreakdownDateOfBirthBreakdown {
     return this;
   }
 
-   /**
+  /**
    * Get creditAgencies
    * @return creditAgencies
-  **/
+   */
   @javax.annotation.Nullable
   public IdentityEnhancedBreakdownDateOfBirthBreakdownCreditAgencies getCreditAgencies() {
     return creditAgencies;
@@ -88,10 +87,10 @@ public class IdentityEnhancedBreakdownDateOfBirthBreakdown {
     return this;
   }
 
-   /**
+  /**
    * Get votingRegister
    * @return votingRegister
-  **/
+   */
   @javax.annotation.Nullable
   public IdentityEnhancedBreakdownDateOfBirthBreakdownVotingRegister getVotingRegister() {
     return votingRegister;
@@ -202,12 +201,12 @@ public class IdentityEnhancedBreakdownDateOfBirthBreakdown {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to IdentityEnhancedBreakdownDateOfBirthBreakdown
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to IdentityEnhancedBreakdownDateOfBirthBreakdown
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!IdentityEnhancedBreakdownDateOfBirthBreakdown.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -297,22 +296,22 @@ public class IdentityEnhancedBreakdownDateOfBirthBreakdown {
     }
   }
 
- /**
-  * Create an instance of IdentityEnhancedBreakdownDateOfBirthBreakdown given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of IdentityEnhancedBreakdownDateOfBirthBreakdown
-  * @throws IOException if the JSON string is invalid with respect to IdentityEnhancedBreakdownDateOfBirthBreakdown
-  */
+  /**
+   * Create an instance of IdentityEnhancedBreakdownDateOfBirthBreakdown given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of IdentityEnhancedBreakdownDateOfBirthBreakdown
+   * @throws IOException if the JSON string is invalid with respect to IdentityEnhancedBreakdownDateOfBirthBreakdown
+   */
   public static IdentityEnhancedBreakdownDateOfBirthBreakdown fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, IdentityEnhancedBreakdownDateOfBirthBreakdown.class);
   }
 
- /**
-  * Convert an instance of IdentityEnhancedBreakdownDateOfBirthBreakdown to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of IdentityEnhancedBreakdownDateOfBirthBreakdown to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

@@ -38,7 +38,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -50,7 +49,7 @@ import com.onfido.JSON;
 /**
  * Asserts whether the document is of a valid type as PoA.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class ProofOfAddressBreakdownDocumentClassification {
   public static final String SERIALIZED_NAME_RESULT = "result";
   @SerializedName(SERIALIZED_NAME_RESULT)
@@ -68,10 +67,10 @@ public class ProofOfAddressBreakdownDocumentClassification {
     return this;
   }
 
-   /**
+  /**
    * Get result
    * @return result
-  **/
+   */
   @javax.annotation.Nullable
   public String getResult() {
     return result;
@@ -87,10 +86,10 @@ public class ProofOfAddressBreakdownDocumentClassification {
     return this;
   }
 
-   /**
+  /**
    * Get breakdown
    * @return breakdown
-  **/
+   */
   @javax.annotation.Nullable
   public ProofOfAddressBreakdownDocumentClassificationBreakdown getBreakdown() {
     return breakdown;
@@ -201,12 +200,12 @@ public class ProofOfAddressBreakdownDocumentClassification {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ProofOfAddressBreakdownDocumentClassification
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ProofOfAddressBreakdownDocumentClassification
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ProofOfAddressBreakdownDocumentClassification.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -295,22 +294,22 @@ public class ProofOfAddressBreakdownDocumentClassification {
     }
   }
 
- /**
-  * Create an instance of ProofOfAddressBreakdownDocumentClassification given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ProofOfAddressBreakdownDocumentClassification
-  * @throws IOException if the JSON string is invalid with respect to ProofOfAddressBreakdownDocumentClassification
-  */
+  /**
+   * Create an instance of ProofOfAddressBreakdownDocumentClassification given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ProofOfAddressBreakdownDocumentClassification
+   * @throws IOException if the JSON string is invalid with respect to ProofOfAddressBreakdownDocumentClassification
+   */
   public static ProofOfAddressBreakdownDocumentClassification fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ProofOfAddressBreakdownDocumentClassification.class);
   }
 
- /**
-  * Convert an instance of ProofOfAddressBreakdownDocumentClassification to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ProofOfAddressBreakdownDocumentClassification to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

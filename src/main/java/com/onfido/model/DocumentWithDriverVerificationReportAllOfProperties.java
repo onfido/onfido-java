@@ -49,7 +49,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -61,7 +60,7 @@ import com.onfido.JSON;
 /**
  * DocumentWithDriverVerificationReportAllOfProperties
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class DocumentWithDriverVerificationReportAllOfProperties {
   public static final String SERIALIZED_NAME_DATE_OF_BIRTH = "date_of_birth";
   @SerializedName(SERIALIZED_NAME_DATE_OF_BIRTH)
@@ -455,10 +454,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return this;
   }
 
-   /**
+  /**
    * Get dateOfBirth
    * @return dateOfBirth
-  **/
+   */
   @javax.annotation.Nullable
   public LocalDate getDateOfBirth() {
     return dateOfBirth;
@@ -474,10 +473,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return this;
   }
 
-   /**
+  /**
    * Get dateOfExpiry
    * @return dateOfExpiry
-  **/
+   */
   @javax.annotation.Nullable
   public LocalDate getDateOfExpiry() {
     return dateOfExpiry;
@@ -493,10 +492,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return this;
   }
 
-   /**
+  /**
    * Get personalNumber
    * @return personalNumber
-  **/
+   */
   @javax.annotation.Nullable
   public String getPersonalNumber() {
     return personalNumber;
@@ -520,10 +519,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return this;
   }
 
-   /**
+  /**
    * Get documentNumbers
    * @return documentNumbers
-  **/
+   */
   @javax.annotation.Nullable
   public List<DocumentPropertiesDocumentNumbersInner> getDocumentNumbers() {
     return documentNumbers;
@@ -539,10 +538,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return this;
   }
 
-   /**
+  /**
    * Get documentType
    * @return documentType
-  **/
+   */
   @javax.annotation.Nullable
   public String getDocumentType() {
     return documentType;
@@ -558,10 +557,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return this;
   }
 
-   /**
+  /**
    * Get firstName
    * @return firstName
-  **/
+   */
   @javax.annotation.Nullable
   public String getFirstName() {
     return firstName;
@@ -577,10 +576,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return this;
   }
 
-   /**
+  /**
    * Get middleName
    * @return middleName
-  **/
+   */
   @javax.annotation.Nullable
   public String getMiddleName() {
     return middleName;
@@ -596,10 +595,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return this;
   }
 
-   /**
+  /**
    * Get lastName
    * @return lastName
-  **/
+   */
   @javax.annotation.Nullable
   public String getLastName() {
     return lastName;
@@ -615,10 +614,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return this;
   }
 
-   /**
+  /**
    * Get gender
    * @return gender
-  **/
+   */
   @javax.annotation.Nullable
   public String getGender() {
     return gender;
@@ -634,10 +633,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return this;
   }
 
-   /**
+  /**
    * Get issuingCountry
    * @return issuingCountry
-  **/
+   */
   @javax.annotation.Nullable
   public String getIssuingCountry() {
     return issuingCountry;
@@ -653,10 +652,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return this;
   }
 
-   /**
+  /**
    * Get nationality
    * @return nationality
-  **/
+   */
   @javax.annotation.Nullable
   public String getNationality() {
     return nationality;
@@ -672,10 +671,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return this;
   }
 
-   /**
+  /**
    * Get issuingState
    * @return issuingState
-  **/
+   */
   @javax.annotation.Nullable
   public String getIssuingState() {
     return issuingState;
@@ -691,10 +690,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return this;
   }
 
-   /**
+  /**
    * Get issuingDate
    * @return issuingDate
-  **/
+   */
   @javax.annotation.Nullable
   public LocalDate getIssuingDate() {
     return issuingDate;
@@ -710,10 +709,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return this;
   }
 
-   /**
+  /**
    * Get categorisation
    * @return categorisation
-  **/
+   */
   @javax.annotation.Nullable
   public String getCategorisation() {
     return categorisation;
@@ -729,10 +728,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return this;
   }
 
-   /**
+  /**
    * Get mrzLine1
    * @return mrzLine1
-  **/
+   */
   @javax.annotation.Nullable
   public String getMrzLine1() {
     return mrzLine1;
@@ -748,10 +747,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return this;
   }
 
-   /**
+  /**
    * Get mrzLine2
    * @return mrzLine2
-  **/
+   */
   @javax.annotation.Nullable
   public String getMrzLine2() {
     return mrzLine2;
@@ -767,10 +766,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return this;
   }
 
-   /**
+  /**
    * Get mrzLine3
    * @return mrzLine3
-  **/
+   */
   @javax.annotation.Nullable
   public String getMrzLine3() {
     return mrzLine3;
@@ -786,10 +785,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return this;
   }
 
-   /**
+  /**
    * Get address
    * @return address
-  **/
+   */
   @javax.annotation.Nullable
   public String getAddress() {
     return address;
@@ -805,10 +804,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return this;
   }
 
-   /**
+  /**
    * Get placeOfBirth
    * @return placeOfBirth
-  **/
+   */
   @javax.annotation.Nullable
   public String getPlaceOfBirth() {
     return placeOfBirth;
@@ -824,10 +823,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return this;
   }
 
-   /**
+  /**
    * Get spouseName
    * @return spouseName
-  **/
+   */
   @javax.annotation.Nullable
   public String getSpouseName() {
     return spouseName;
@@ -843,10 +842,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return this;
   }
 
-   /**
+  /**
    * Get widowName
    * @return widowName
-  **/
+   */
   @javax.annotation.Nullable
   public String getWidowName() {
     return widowName;
@@ -862,10 +861,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return this;
   }
 
-   /**
+  /**
    * Get aliasName
    * @return aliasName
-  **/
+   */
   @javax.annotation.Nullable
   public String getAliasName() {
     return aliasName;
@@ -881,10 +880,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return this;
   }
 
-   /**
+  /**
    * Get issuingAuthority
    * @return issuingAuthority
-  **/
+   */
   @javax.annotation.Nullable
   public String getIssuingAuthority() {
     return issuingAuthority;
@@ -900,10 +899,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return this;
   }
 
-   /**
+  /**
    * Get remarks
    * @return remarks
-  **/
+   */
   @javax.annotation.Nullable
   public String getRemarks() {
     return remarks;
@@ -919,10 +918,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return this;
   }
 
-   /**
+  /**
    * Get civilState
    * @return civilState
-  **/
+   */
   @javax.annotation.Nullable
   public String getCivilState() {
     return civilState;
@@ -938,10 +937,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return this;
   }
 
-   /**
+  /**
    * Get expatriation
    * @return expatriation
-  **/
+   */
   @javax.annotation.Nullable
   public String getExpatriation() {
     return expatriation;
@@ -957,10 +956,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return this;
   }
 
-   /**
+  /**
    * Get fatherName
    * @return fatherName
-  **/
+   */
   @javax.annotation.Nullable
   public String getFatherName() {
     return fatherName;
@@ -976,10 +975,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return this;
   }
 
-   /**
+  /**
    * Get motherName
    * @return motherName
-  **/
+   */
   @javax.annotation.Nullable
   public String getMotherName() {
     return motherName;
@@ -995,10 +994,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return this;
   }
 
-   /**
+  /**
    * Get religion
    * @return religion
-  **/
+   */
   @javax.annotation.Nullable
   public String getReligion() {
     return religion;
@@ -1014,10 +1013,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return this;
   }
 
-   /**
+  /**
    * Get typeOfPermit
    * @return typeOfPermit
-  **/
+   */
   @javax.annotation.Nullable
   public String getTypeOfPermit() {
     return typeOfPermit;
@@ -1033,10 +1032,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return this;
   }
 
-   /**
+  /**
    * Get versionNumber
    * @return versionNumber
-  **/
+   */
   @javax.annotation.Nullable
   public String getVersionNumber() {
     return versionNumber;
@@ -1052,10 +1051,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return this;
   }
 
-   /**
+  /**
    * Get documentSubtype
    * @return documentSubtype
-  **/
+   */
   @javax.annotation.Nullable
   public String getDocumentSubtype() {
     return documentSubtype;
@@ -1071,10 +1070,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return this;
   }
 
-   /**
+  /**
    * Get profession
    * @return profession
-  **/
+   */
   @javax.annotation.Nullable
   public String getProfession() {
     return profession;
@@ -1090,10 +1089,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return this;
   }
 
-   /**
+  /**
    * Get securityDocumentNumber
    * @return securityDocumentNumber
-  **/
+   */
   @javax.annotation.Nullable
   public String getSecurityDocumentNumber() {
     return securityDocumentNumber;
@@ -1109,10 +1108,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return this;
   }
 
-   /**
+  /**
    * Get taxNumber
    * @return taxNumber
-  **/
+   */
   @javax.annotation.Nullable
   public String getTaxNumber() {
     return taxNumber;
@@ -1128,10 +1127,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return this;
   }
 
-   /**
+  /**
    * Get nistIdentityEvidenceStrength
    * @return nistIdentityEvidenceStrength
-  **/
+   */
   @javax.annotation.Nullable
   public NistIdentityEvidenceStrengthEnum getNistIdentityEvidenceStrength() {
     return nistIdentityEvidenceStrength;
@@ -1147,10 +1146,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return this;
   }
 
-   /**
+  /**
    * Get hasIssuanceConfirmation
    * @return hasIssuanceConfirmation
-  **/
+   */
   @javax.annotation.Nullable
   public HasIssuanceConfirmationEnum getHasIssuanceConfirmation() {
     return hasIssuanceConfirmation;
@@ -1166,10 +1165,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return this;
   }
 
-   /**
+  /**
    * Get realIdCompliance
    * @return realIdCompliance
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getRealIdCompliance() {
     return realIdCompliance;
@@ -1185,10 +1184,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return this;
   }
 
-   /**
+  /**
    * Get securityTier
    * @return securityTier
-  **/
+   */
   @javax.annotation.Nullable
   public SecurityTierEnum getSecurityTier() {
     return securityTier;
@@ -1204,10 +1203,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return this;
   }
 
-   /**
+  /**
    * Get addressLines
    * @return addressLines
-  **/
+   */
   @javax.annotation.Nullable
   public DocumentPropertiesAddressLines getAddressLines() {
     return addressLines;
@@ -1231,10 +1230,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return this;
   }
 
-   /**
+  /**
    * Get barcode
    * @return barcode
-  **/
+   */
   @javax.annotation.Nullable
   public List<DocumentPropertiesBarcodeInner> getBarcode() {
     return barcode;
@@ -1250,10 +1249,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return this;
   }
 
-   /**
+  /**
    * Get nfc
    * @return nfc
-  **/
+   */
   @javax.annotation.Nullable
   public DocumentPropertiesNfc getNfc() {
     return nfc;
@@ -1269,10 +1268,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return this;
   }
 
-   /**
+  /**
    * Get drivingLicenceInformation
    * @return drivingLicenceInformation
-  **/
+   */
   @javax.annotation.Nullable
   public DocumentPropertiesDrivingLicenceInformation getDrivingLicenceInformation() {
     return drivingLicenceInformation;
@@ -1288,10 +1287,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return this;
   }
 
-   /**
+  /**
    * Get documentClassification
    * @return documentClassification
-  **/
+   */
   @javax.annotation.Nullable
   public DocumentPropertiesDocumentClassification getDocumentClassification() {
     return documentClassification;
@@ -1307,10 +1306,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return this;
   }
 
-   /**
+  /**
    * Get extractedData
    * @return extractedData
-  **/
+   */
   @javax.annotation.Nullable
   public DocumentPropertiesExtractedData getExtractedData() {
     return extractedData;
@@ -1326,10 +1325,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return this;
   }
 
-   /**
+  /**
    * True for **non-restricted** driving licences
    * @return driversLicence
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getDriversLicence() {
     return driversLicence;
@@ -1345,10 +1344,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return this;
   }
 
-   /**
+  /**
    * True for **limited/restricted** driving license, including learner&#39;s permits
    * @return restrictedLicence
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getRestrictedLicence() {
     return restrictedLicence;
@@ -1364,10 +1363,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return this;
   }
 
-   /**
+  /**
    * Underlying, non-normalised, licence category (e.g. \&quot;Junior operators license\&quot;)
    * @return rawLicenceCategory
-  **/
+   */
   @javax.annotation.Nullable
   public String getRawLicenceCategory() {
     return rawLicenceCategory;
@@ -1383,10 +1382,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return this;
   }
 
-   /**
+  /**
    * Comma-separated vehicle classes that the user is qualified for
    * @return rawVehicleClasses
-  **/
+   */
   @javax.annotation.Nullable
   public String getRawVehicleClasses() {
     return rawVehicleClasses;
@@ -1410,10 +1409,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return this;
   }
 
-   /**
+  /**
    * Detailed classes/categories information
    * @return vehicleClassDetails
-  **/
+   */
   @javax.annotation.Nullable
   public List<DocumentWithDriverVerificationReportAllOfPropertiesAllOfVehicleClassDetailsInner> getVehicleClassDetails() {
     return vehicleClassDetails;
@@ -1429,10 +1428,10 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return this;
   }
 
-   /**
+  /**
    * Get passengerVehicle
    * @return passengerVehicle
-  **/
+   */
   @javax.annotation.Nullable
   public DocumentWithDriverVerificationReportAllOfPropertiesAllOfPassengerVehicle getPassengerVehicle() {
     return passengerVehicle;
@@ -1690,12 +1689,12 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to DocumentWithDriverVerificationReportAllOfProperties
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to DocumentWithDriverVerificationReportAllOfProperties
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!DocumentWithDriverVerificationReportAllOfProperties.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -1963,22 +1962,22 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     }
   }
 
- /**
-  * Create an instance of DocumentWithDriverVerificationReportAllOfProperties given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of DocumentWithDriverVerificationReportAllOfProperties
-  * @throws IOException if the JSON string is invalid with respect to DocumentWithDriverVerificationReportAllOfProperties
-  */
+  /**
+   * Create an instance of DocumentWithDriverVerificationReportAllOfProperties given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of DocumentWithDriverVerificationReportAllOfProperties
+   * @throws IOException if the JSON string is invalid with respect to DocumentWithDriverVerificationReportAllOfProperties
+   */
   public static DocumentWithDriverVerificationReportAllOfProperties fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, DocumentWithDriverVerificationReportAllOfProperties.class);
   }
 
- /**
-  * Convert an instance of DocumentWithDriverVerificationReportAllOfProperties to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of DocumentWithDriverVerificationReportAllOfProperties to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

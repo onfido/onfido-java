@@ -40,7 +40,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -52,7 +51,7 @@ import com.onfido.JSON;
 /**
  * CheckShared
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class CheckShared {
   public static final String SERIALIZED_NAME_WEBHOOK_IDS = "webhook_ids";
   @SerializedName(SERIALIZED_NAME_WEBHOOK_IDS)
@@ -94,10 +93,10 @@ public class CheckShared {
     return this;
   }
 
-   /**
+  /**
    * An array of webhook ids describing which webhooks to trigger for this check.
    * @return webhookIds
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getWebhookIds() {
     return webhookIds;
@@ -113,10 +112,10 @@ public class CheckShared {
     return this;
   }
 
-   /**
+  /**
    * The ID of the applicant to do the check on.
    * @return applicantId
-  **/
+   */
   @javax.annotation.Nonnull
   public UUID getApplicantId() {
     return applicantId;
@@ -132,10 +131,10 @@ public class CheckShared {
     return this;
   }
 
-   /**
+  /**
    * Send an applicant form to applicant to complete to proceed with check. Defaults to false. 
    * @return applicantProvidesData
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getApplicantProvidesData() {
     return applicantProvidesData;
@@ -159,10 +158,10 @@ public class CheckShared {
     return this;
   }
 
-   /**
+  /**
    * Array of tags being assigned to this check.
    * @return tags
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getTags() {
     return tags;
@@ -178,10 +177,10 @@ public class CheckShared {
     return this;
   }
 
-   /**
+  /**
    * For checks where &#x60;applicant_provides_data&#x60; is &#x60;true&#x60;, redirect to this URI when the applicant has submitted their data.
    * @return redirectUri
-  **/
+   */
   @javax.annotation.Nullable
   public String getRedirectUri() {
     return redirectUri;
@@ -197,10 +196,10 @@ public class CheckShared {
     return this;
   }
 
-   /**
+  /**
    * Get privacyNoticesReadConsentGiven
    * @return privacyNoticesReadConsentGiven
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getPrivacyNoticesReadConsentGiven() {
     return privacyNoticesReadConsentGiven;
@@ -324,12 +323,12 @@ public class CheckShared {
     openapiRequiredFields.add("applicant_id");
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to CheckShared
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to CheckShared
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!CheckShared.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -432,22 +431,22 @@ public class CheckShared {
     }
   }
 
- /**
-  * Create an instance of CheckShared given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of CheckShared
-  * @throws IOException if the JSON string is invalid with respect to CheckShared
-  */
+  /**
+   * Create an instance of CheckShared given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of CheckShared
+   * @throws IOException if the JSON string is invalid with respect to CheckShared
+   */
   public static CheckShared fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, CheckShared.class);
   }
 
- /**
-  * Convert an instance of CheckShared to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of CheckShared to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

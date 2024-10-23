@@ -39,7 +39,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -51,7 +50,7 @@ import com.onfido.JSON;
 /**
  * The object affected by this event.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class WebhookEventPayloadObject {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -81,10 +80,10 @@ public class WebhookEventPayloadObject {
     return this;
   }
 
-   /**
+  /**
    * The unique identifier of the resource.
    * @return id
-  **/
+   */
   @javax.annotation.Nonnull
   public String getId() {
     return id;
@@ -100,10 +99,10 @@ public class WebhookEventPayloadObject {
     return this;
   }
 
-   /**
+  /**
    * Get status
    * @return status
-  **/
+   */
   @javax.annotation.Nullable
   public WebhookEventObjectStatus getStatus() {
     return status;
@@ -119,10 +118,10 @@ public class WebhookEventPayloadObject {
     return this;
   }
 
-   /**
+  /**
    * The date and time when the operation was started, if available.
    * @return startedAtIso8601
-  **/
+   */
   @javax.annotation.Nullable
   public OffsetDateTime getStartedAtIso8601() {
     return startedAtIso8601;
@@ -138,10 +137,10 @@ public class WebhookEventPayloadObject {
     return this;
   }
 
-   /**
+  /**
    * The date and time when the operation was completed, if available.
    * @return completedAtIso8601
-  **/
+   */
   @javax.annotation.Nullable
   public OffsetDateTime getCompletedAtIso8601() {
     return completedAtIso8601;
@@ -157,10 +156,10 @@ public class WebhookEventPayloadObject {
     return this;
   }
 
-   /**
+  /**
    * The uri of the resource.
    * @return href
-  **/
+   */
   @javax.annotation.Nonnull
   public String getHref() {
     return href;
@@ -282,12 +281,12 @@ public class WebhookEventPayloadObject {
     openapiRequiredFields.add("href");
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to WebhookEventPayloadObject
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to WebhookEventPayloadObject
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!WebhookEventPayloadObject.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -386,22 +385,22 @@ public class WebhookEventPayloadObject {
     }
   }
 
- /**
-  * Create an instance of WebhookEventPayloadObject given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of WebhookEventPayloadObject
-  * @throws IOException if the JSON string is invalid with respect to WebhookEventPayloadObject
-  */
+  /**
+   * Create an instance of WebhookEventPayloadObject given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of WebhookEventPayloadObject
+   * @throws IOException if the JSON string is invalid with respect to WebhookEventPayloadObject
+   */
   public static WebhookEventPayloadObject fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, WebhookEventPayloadObject.class);
   }
 
- /**
-  * Convert an instance of WebhookEventPayloadObject to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of WebhookEventPayloadObject to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

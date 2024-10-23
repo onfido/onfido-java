@@ -13,9 +13,9 @@
 
 package com.onfido;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class Configuration {
-    public static final String VERSION = "4.3.0";
+    public static final String VERSION = "5.0.0";
 
     private static ApiClient defaultApiClient = new ApiClient();
 

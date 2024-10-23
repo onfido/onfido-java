@@ -42,7 +42,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -54,7 +53,7 @@ import com.onfido.JSON;
 /**
  * CheckResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class CheckResponse {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -162,10 +161,10 @@ public class CheckResponse {
     return this;
   }
 
-   /**
+  /**
    * The unique identifier for the check.
    * @return id
-  **/
+   */
   @javax.annotation.Nonnull
   public UUID getId() {
     return id;
@@ -181,10 +180,10 @@ public class CheckResponse {
     return this;
   }
 
-   /**
+  /**
    * The date and time when this check was created.
    * @return createdAt
-  **/
+   */
   @javax.annotation.Nullable
   public OffsetDateTime getCreatedAt() {
     return createdAt;
@@ -200,10 +199,10 @@ public class CheckResponse {
     return this;
   }
 
-   /**
+  /**
    * The uri of this resource.
    * @return href
-  **/
+   */
   @javax.annotation.Nullable
   public String getHref() {
     return href;
@@ -219,10 +218,10 @@ public class CheckResponse {
     return this;
   }
 
-   /**
+  /**
    * Get status
    * @return status
-  **/
+   */
   @javax.annotation.Nullable
   public CheckStatus getStatus() {
     return status;
@@ -238,10 +237,10 @@ public class CheckResponse {
     return this;
   }
 
-   /**
+  /**
    * The overall result of the check, based on the results of the constituent reports.
    * @return result
-  **/
+   */
   @javax.annotation.Nullable
   public ResultEnum getResult() {
     return result;
@@ -257,10 +256,10 @@ public class CheckResponse {
     return this;
   }
 
-   /**
+  /**
    * A link to the applicant form, if &#x60;applicant_provides_data&#x60; is &#x60;true&#x60;.
    * @return formUri
-  **/
+   */
   @javax.annotation.Nullable
   public String getFormUri() {
     return formUri;
@@ -276,10 +275,10 @@ public class CheckResponse {
     return this;
   }
 
-   /**
+  /**
    * A link to the corresponding results page on the Onfido dashboard.
    * @return resultsUri
-  **/
+   */
   @javax.annotation.Nullable
   public String getResultsUri() {
     return resultsUri;
@@ -303,10 +302,10 @@ public class CheckResponse {
     return this;
   }
 
-   /**
+  /**
    * An array of report ids.
    * @return reportIds
-  **/
+   */
   @javax.annotation.Nullable
   public List<UUID> getReportIds() {
     return reportIds;
@@ -322,10 +321,10 @@ public class CheckResponse {
     return this;
   }
 
-   /**
+  /**
    * Indicates whether the object was created in the sandbox or not.
    * @return sandbox
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getSandbox() {
     return sandbox;
@@ -341,10 +340,10 @@ public class CheckResponse {
     return this;
   }
 
-   /**
+  /**
    * Get paused
    * @return paused
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getPaused() {
     return paused;
@@ -360,10 +359,10 @@ public class CheckResponse {
     return this;
   }
 
-   /**
+  /**
    * Get version
    * @return version
-  **/
+   */
   @javax.annotation.Nullable
   public String getVersion() {
     return version;
@@ -502,12 +501,12 @@ public class CheckResponse {
     openapiRequiredFields.add("id");
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to CheckResponse
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to CheckResponse
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!CheckResponse.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -629,22 +628,22 @@ public class CheckResponse {
     }
   }
 
- /**
-  * Create an instance of CheckResponse given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of CheckResponse
-  * @throws IOException if the JSON string is invalid with respect to CheckResponse
-  */
+  /**
+   * Create an instance of CheckResponse given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of CheckResponse
+   * @throws IOException if the JSON string is invalid with respect to CheckResponse
+   */
   public static CheckResponse fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, CheckResponse.class);
   }
 
- /**
-  * Convert an instance of CheckResponse to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of CheckResponse to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

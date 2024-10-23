@@ -44,7 +44,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -56,7 +55,7 @@ import com.onfido.JSON;
 /**
  * ApplicantUpdater
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class ApplicantUpdater {
   public static final String SERIALIZED_NAME_EMAIL = "email";
   @SerializedName(SERIALIZED_NAME_EMAIL)
@@ -102,10 +101,10 @@ public class ApplicantUpdater {
     return this;
   }
 
-   /**
+  /**
    * The applicant&#39;s email address. Required if doing a US check, or a UK check for which &#x60;applicant_provides_data&#x60; is &#x60;true&#x60;.
    * @return email
-  **/
+   */
   @javax.annotation.Nullable
   public String getEmail() {
     return email;
@@ -121,10 +120,10 @@ public class ApplicantUpdater {
     return this;
   }
 
-   /**
+  /**
    * The applicant&#39;s date of birth
    * @return dob
-  **/
+   */
   @javax.annotation.Nullable
   public LocalDate getDob() {
     return dob;
@@ -148,10 +147,10 @@ public class ApplicantUpdater {
     return this;
   }
 
-   /**
+  /**
    * Get idNumbers
    * @return idNumbers
-  **/
+   */
   @javax.annotation.Nullable
   public List<IdNumber> getIdNumbers() {
     return idNumbers;
@@ -167,10 +166,10 @@ public class ApplicantUpdater {
     return this;
   }
 
-   /**
+  /**
    * The applicant&#39;s phone number
    * @return phoneNumber
-  **/
+   */
   @javax.annotation.Nullable
   public String getPhoneNumber() {
     return phoneNumber;
@@ -194,10 +193,10 @@ public class ApplicantUpdater {
     return this;
   }
 
-   /**
+  /**
    * The applicant&#39;s consents
    * @return consents
-  **/
+   */
   @javax.annotation.Nullable
   public List<ApplicantConsentBuilder> getConsents() {
     return consents;
@@ -213,10 +212,10 @@ public class ApplicantUpdater {
     return this;
   }
 
-   /**
+  /**
    * Get address
    * @return address
-  **/
+   */
   @javax.annotation.Nullable
   public AddressBuilder getAddress() {
     return address;
@@ -232,10 +231,10 @@ public class ApplicantUpdater {
     return this;
   }
 
-   /**
+  /**
    * Get location
    * @return location
-  **/
+   */
   @javax.annotation.Nullable
   public LocationBuilder getLocation() {
     return location;
@@ -251,10 +250,10 @@ public class ApplicantUpdater {
     return this;
   }
 
-   /**
+  /**
    * The applicant&#39;s first name
    * @return firstName
-  **/
+   */
   @javax.annotation.Nullable
   public String getFirstName() {
     return firstName;
@@ -270,10 +269,10 @@ public class ApplicantUpdater {
     return this;
   }
 
-   /**
+  /**
    * The applicant&#39;s surname
    * @return lastName
-  **/
+   */
   @javax.annotation.Nullable
   public String getLastName() {
     return lastName;
@@ -405,12 +404,12 @@ public class ApplicantUpdater {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ApplicantUpdater
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ApplicantUpdater
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ApplicantUpdater.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -540,22 +539,22 @@ public class ApplicantUpdater {
     }
   }
 
- /**
-  * Create an instance of ApplicantUpdater given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ApplicantUpdater
-  * @throws IOException if the JSON string is invalid with respect to ApplicantUpdater
-  */
+  /**
+   * Create an instance of ApplicantUpdater given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ApplicantUpdater
+   * @throws IOException if the JSON string is invalid with respect to ApplicantUpdater
+   */
   public static ApplicantUpdater fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ApplicantUpdater.class);
   }
 
- /**
-  * Convert an instance of ApplicantUpdater to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ApplicantUpdater to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

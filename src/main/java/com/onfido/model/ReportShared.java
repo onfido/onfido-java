@@ -46,7 +46,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -58,7 +57,7 @@ import com.onfido.JSON;
 /**
  * ReportShared
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class ReportShared {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -104,10 +103,10 @@ public class ReportShared {
     return this;
   }
 
-   /**
+  /**
    * The unique identifier for the report. Read-only.
    * @return id
-  **/
+   */
   @javax.annotation.Nonnull
   public UUID getId() {
     return id;
@@ -123,10 +122,10 @@ public class ReportShared {
     return this;
   }
 
-   /**
+  /**
    * The date and time at which the report was first initiated. Read-only.
    * @return createdAt
-  **/
+   */
   @javax.annotation.Nullable
   public OffsetDateTime getCreatedAt() {
     return createdAt;
@@ -142,10 +141,10 @@ public class ReportShared {
     return this;
   }
 
-   /**
+  /**
    * The API endpoint to retrieve the report. Read-only.
    * @return href
-  **/
+   */
   @javax.annotation.Nullable
   public String getHref() {
     return href;
@@ -161,10 +160,10 @@ public class ReportShared {
     return this;
   }
 
-   /**
+  /**
    * Get status
    * @return status
-  **/
+   */
   @javax.annotation.Nullable
   public ReportStatus getStatus() {
     return status;
@@ -180,10 +179,10 @@ public class ReportShared {
     return this;
   }
 
-   /**
+  /**
    * Get result
    * @return result
-  **/
+   */
   @javax.annotation.Nullable
   public ReportResult getResult() {
     return result;
@@ -199,10 +198,10 @@ public class ReportShared {
     return this;
   }
 
-   /**
+  /**
    * Get subResult
    * @return subResult
-  **/
+   */
   @javax.annotation.Nullable
   public ReportSubResult getSubResult() {
     return subResult;
@@ -218,10 +217,10 @@ public class ReportShared {
     return this;
   }
 
-   /**
+  /**
    * The ID of the check to which the report belongs. Read-only.
    * @return checkId
-  **/
+   */
   @javax.annotation.Nullable
   public UUID getCheckId() {
     return checkId;
@@ -245,10 +244,10 @@ public class ReportShared {
     return this;
   }
 
-   /**
+  /**
    * Array of objects with document ids that were used in the Onfido engine. [ONLY POPULATED FOR DOCUMENT AND FACIAL SIMILARITY REPORTS]
    * @return documents
-  **/
+   */
   @javax.annotation.Nullable
   public List<ReportDocument> getDocuments() {
     return documents;
@@ -264,10 +263,10 @@ public class ReportShared {
     return this;
   }
 
-   /**
+  /**
    * Get name
    * @return name
-  **/
+   */
   @javax.annotation.Nonnull
   public ReportName getName() {
     return name;
@@ -401,12 +400,12 @@ public class ReportShared {
     openapiRequiredFields.add("name");
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ReportShared
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ReportShared
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ReportShared.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -532,22 +531,22 @@ public class ReportShared {
     }
   }
 
- /**
-  * Create an instance of ReportShared given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ReportShared
-  * @throws IOException if the JSON string is invalid with respect to ReportShared
-  */
+  /**
+   * Create an instance of ReportShared given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ReportShared
+   * @throws IOException if the JSON string is invalid with respect to ReportShared
+   */
   public static ReportShared fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ReportShared.class);
   }
 
- /**
-  * Convert an instance of ReportShared to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ReportShared to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

@@ -38,7 +38,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -50,7 +49,7 @@ import com.onfido.JSON;
 /**
  * DocumentPropertiesBarcodeInner
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class DocumentPropertiesBarcodeInner {
   public static final String SERIALIZED_NAME_FIRST_NAME = "first_name";
   @SerializedName(SERIALIZED_NAME_FIRST_NAME)
@@ -132,10 +131,10 @@ public class DocumentPropertiesBarcodeInner {
     return this;
   }
 
-   /**
+  /**
    * Get firstName
    * @return firstName
-  **/
+   */
   @javax.annotation.Nullable
   public String getFirstName() {
     return firstName;
@@ -151,10 +150,10 @@ public class DocumentPropertiesBarcodeInner {
     return this;
   }
 
-   /**
+  /**
    * Get middleName
    * @return middleName
-  **/
+   */
   @javax.annotation.Nullable
   public String getMiddleName() {
     return middleName;
@@ -170,10 +169,10 @@ public class DocumentPropertiesBarcodeInner {
     return this;
   }
 
-   /**
+  /**
    * Get lastName
    * @return lastName
-  **/
+   */
   @javax.annotation.Nullable
   public String getLastName() {
     return lastName;
@@ -189,10 +188,10 @@ public class DocumentPropertiesBarcodeInner {
     return this;
   }
 
-   /**
+  /**
    * Get documentType
    * @return documentType
-  **/
+   */
   @javax.annotation.Nullable
   public String getDocumentType() {
     return documentType;
@@ -208,10 +207,10 @@ public class DocumentPropertiesBarcodeInner {
     return this;
   }
 
-   /**
+  /**
    * Get dateOfExpiry
    * @return dateOfExpiry
-  **/
+   */
   @javax.annotation.Nullable
   public LocalDate getDateOfExpiry() {
     return dateOfExpiry;
@@ -227,10 +226,10 @@ public class DocumentPropertiesBarcodeInner {
     return this;
   }
 
-   /**
+  /**
    * Get dateOfBirth
    * @return dateOfBirth
-  **/
+   */
   @javax.annotation.Nullable
   public LocalDate getDateOfBirth() {
     return dateOfBirth;
@@ -246,10 +245,10 @@ public class DocumentPropertiesBarcodeInner {
     return this;
   }
 
-   /**
+  /**
    * Get issuingDate
    * @return issuingDate
-  **/
+   */
   @javax.annotation.Nullable
   public LocalDate getIssuingDate() {
     return issuingDate;
@@ -265,10 +264,10 @@ public class DocumentPropertiesBarcodeInner {
     return this;
   }
 
-   /**
+  /**
    * Get addressLine1
    * @return addressLine1
-  **/
+   */
   @javax.annotation.Nullable
   public String getAddressLine1() {
     return addressLine1;
@@ -284,10 +283,10 @@ public class DocumentPropertiesBarcodeInner {
     return this;
   }
 
-   /**
+  /**
    * Get addressLine2
    * @return addressLine2
-  **/
+   */
   @javax.annotation.Nullable
   public String getAddressLine2() {
     return addressLine2;
@@ -303,10 +302,10 @@ public class DocumentPropertiesBarcodeInner {
     return this;
   }
 
-   /**
+  /**
    * Get addressLine3
    * @return addressLine3
-  **/
+   */
   @javax.annotation.Nullable
   public String getAddressLine3() {
     return addressLine3;
@@ -322,10 +321,10 @@ public class DocumentPropertiesBarcodeInner {
     return this;
   }
 
-   /**
+  /**
    * Get addressLine4
    * @return addressLine4
-  **/
+   */
   @javax.annotation.Nullable
   public String getAddressLine4() {
     return addressLine4;
@@ -341,10 +340,10 @@ public class DocumentPropertiesBarcodeInner {
     return this;
   }
 
-   /**
+  /**
    * Get addressLine5
    * @return addressLine5
-  **/
+   */
   @javax.annotation.Nullable
   public String getAddressLine5() {
     return addressLine5;
@@ -360,10 +359,10 @@ public class DocumentPropertiesBarcodeInner {
     return this;
   }
 
-   /**
+  /**
    * Get issuingState
    * @return issuingState
-  **/
+   */
   @javax.annotation.Nullable
   public String getIssuingState() {
     return issuingState;
@@ -379,10 +378,10 @@ public class DocumentPropertiesBarcodeInner {
     return this;
   }
 
-   /**
+  /**
    * Get propertyClass
    * @return propertyClass
-  **/
+   */
   @javax.annotation.Nullable
   public String getPropertyClass() {
     return propertyClass;
@@ -398,10 +397,10 @@ public class DocumentPropertiesBarcodeInner {
     return this;
   }
 
-   /**
+  /**
    * Get gender
    * @return gender
-  **/
+   */
   @javax.annotation.Nullable
   public String getGender() {
     return gender;
@@ -417,10 +416,10 @@ public class DocumentPropertiesBarcodeInner {
     return this;
   }
 
-   /**
+  /**
    * Get issuingCountry
    * @return issuingCountry
-  **/
+   */
   @javax.annotation.Nullable
   public String getIssuingCountry() {
     return issuingCountry;
@@ -436,10 +435,10 @@ public class DocumentPropertiesBarcodeInner {
     return this;
   }
 
-   /**
+  /**
    * Get documentNumber
    * @return documentNumber
-  **/
+   */
   @javax.annotation.Nullable
   public String getDocumentNumber() {
     return documentNumber;
@@ -455,10 +454,10 @@ public class DocumentPropertiesBarcodeInner {
     return this;
   }
 
-   /**
+  /**
    * Get realIdClassification
    * @return realIdClassification
-  **/
+   */
   @javax.annotation.Nullable
   public String getRealIdClassification() {
     return realIdClassification;
@@ -617,12 +616,12 @@ public class DocumentPropertiesBarcodeInner {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to DocumentPropertiesBarcodeInner
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to DocumentPropertiesBarcodeInner
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!DocumentPropertiesBarcodeInner.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -749,22 +748,22 @@ public class DocumentPropertiesBarcodeInner {
     }
   }
 
- /**
-  * Create an instance of DocumentPropertiesBarcodeInner given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of DocumentPropertiesBarcodeInner
-  * @throws IOException if the JSON string is invalid with respect to DocumentPropertiesBarcodeInner
-  */
+  /**
+   * Create an instance of DocumentPropertiesBarcodeInner given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of DocumentPropertiesBarcodeInner
+   * @throws IOException if the JSON string is invalid with respect to DocumentPropertiesBarcodeInner
+   */
   public static DocumentPropertiesBarcodeInner fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, DocumentPropertiesBarcodeInner.class);
   }
 
- /**
-  * Convert an instance of DocumentPropertiesBarcodeInner to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of DocumentPropertiesBarcodeInner to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

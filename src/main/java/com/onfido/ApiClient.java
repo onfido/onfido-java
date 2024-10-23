@@ -160,7 +160,7 @@ public class ApiClient {
         json = new JSON();
 
         // Set default User-Agent.
-        setUserAgent("onfido-java/4.3.0");
+        setUserAgent("onfido-java/5.0.0");
 
         authentications = new HashMap<String, Authentication>();
     }
@@ -447,6 +447,19 @@ public class ApiClient {
     }
 
     /**
+     * Helper method to set credentials for AWSV4 Signature
+     *
+     * @param accessKey Access Key
+     * @param secretKey Secret Key
+     * @param sessionToken Session Token
+     * @param region Region
+     * @param service Service to access to
+     */
+    public void setAWS4Configuration(String accessKey, String secretKey, String sessionToken, String region, String service) {
+        throw new RuntimeException("No AWS4 authentication configured!");
+    }
+
+    /**
      * Set the User-Agent header's value (by adding to the default header map).
      *
      * @param userAgent HTTP request's user agent
@@ -700,6 +713,30 @@ public class ApiClient {
 
         return params;
     }
+
+    /**
+    * Formats the specified free-form query parameters to a list of {@code Pair} objects.
+    *
+    * @param value The free-form query parameters.
+    * @return A list of {@code Pair} objects.
+    */
+    public List<Pair> freeFormParameterToPairs(Object value) {
+        List<Pair> params = new ArrayList<>();
+
+        // preconditions
+        if (value == null || !(value instanceof Map )) {
+            return params;
+        }
+
+        final Map<String, Object> valuesMap = (Map<String, Object>) value;
+
+        for (Map.Entry<String, Object> entry : valuesMap.entrySet()) {
+            params.add(new Pair(entry.getKey(), parameterToString(entry.getValue())));
+        }
+
+        return params;
+    }
+
 
     /**
      * Formats the specified collection path parameter to a string value.
@@ -1137,10 +1174,6 @@ public class ApiClient {
      * @throws com.onfido.ApiException If fail to serialize the request body object
      */
     public Request buildRequest(String baseUrl, String path, String method, List<Pair> queryParams, List<Pair> collectionQueryParams, Object body, Map<String, String> headerParams, Map<String, String> cookieParams, Map<String, Object> formParams, String[] authNames, ApiCallback callback) throws ApiException {
-        // aggregate queryParams (non-collection) and collectionQueryParams into allQueryParams
-        List<Pair> allQueryParams = new ArrayList<Pair>(queryParams);
-        allQueryParams.addAll(collectionQueryParams);
-
         final String url = buildUrl(baseUrl, path, queryParams, collectionQueryParams);
 
         // prepare HTTP request body
@@ -1168,10 +1201,12 @@ public class ApiClient {
             reqBody = serialize(body, contentType);
         }
 
-        // update parameters with authentication settings
-        updateParamsForAuth(authNames, allQueryParams, headerParams, cookieParams, requestBodyToString(reqBody), method, URI.create(url));
+        List<Pair> updatedQueryParams = new ArrayList<>(queryParams);
 
-        final Request.Builder reqBuilder = new Request.Builder().url(url);
+        // update parameters with authentication settings
+        updateParamsForAuth(authNames, updatedQueryParams, headerParams, cookieParams, requestBodyToString(reqBody), method, URI.create(url));
+
+        final Request.Builder reqBuilder = new Request.Builder().url(buildUrl(baseUrl, path, updatedQueryParams, collectionQueryParams));
         processHeaderParams(headerParams, reqBuilder);
         processCookieParams(cookieParams, reqBuilder);
 

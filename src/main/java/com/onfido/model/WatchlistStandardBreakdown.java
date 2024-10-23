@@ -40,7 +40,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -52,7 +51,7 @@ import com.onfido.JSON;
 /**
  * WatchlistStandardBreakdown
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class WatchlistStandardBreakdown {
   public static final String SERIALIZED_NAME_SANCTION = "sanction";
   @SerializedName(SERIALIZED_NAME_SANCTION)
@@ -74,10 +73,10 @@ public class WatchlistStandardBreakdown {
     return this;
   }
 
-   /**
+  /**
    * Get sanction
    * @return sanction
-  **/
+   */
   @javax.annotation.Nullable
   public WatchlistAmlBreakdownSanction getSanction() {
     return sanction;
@@ -93,10 +92,10 @@ public class WatchlistStandardBreakdown {
     return this;
   }
 
-   /**
+  /**
    * Get politicallyExposedPerson
    * @return politicallyExposedPerson
-  **/
+   */
   @javax.annotation.Nullable
   public WatchlistAmlBreakdownPoliticallyExposedPerson getPoliticallyExposedPerson() {
     return politicallyExposedPerson;
@@ -112,10 +111,10 @@ public class WatchlistStandardBreakdown {
     return this;
   }
 
-   /**
+  /**
    * Get legalAndRegulatoryWarnings
    * @return legalAndRegulatoryWarnings
-  **/
+   */
   @javax.annotation.Nullable
   public WatchlistAmlBreakdownLegalAndRegulatoryWarnings getLegalAndRegulatoryWarnings() {
     return legalAndRegulatoryWarnings;
@@ -229,12 +228,12 @@ public class WatchlistStandardBreakdown {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to WatchlistStandardBreakdown
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to WatchlistStandardBreakdown
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!WatchlistStandardBreakdown.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -328,22 +327,22 @@ public class WatchlistStandardBreakdown {
     }
   }
 
- /**
-  * Create an instance of WatchlistStandardBreakdown given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of WatchlistStandardBreakdown
-  * @throws IOException if the JSON string is invalid with respect to WatchlistStandardBreakdown
-  */
+  /**
+   * Create an instance of WatchlistStandardBreakdown given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of WatchlistStandardBreakdown
+   * @throws IOException if the JSON string is invalid with respect to WatchlistStandardBreakdown
+   */
   public static WatchlistStandardBreakdown fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, WatchlistStandardBreakdown.class);
   }
 
- /**
-  * Convert an instance of WatchlistStandardBreakdown to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of WatchlistStandardBreakdown to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

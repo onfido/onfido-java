@@ -40,7 +40,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -52,7 +51,7 @@ import com.onfido.JSON;
 /**
  * WebhookShared
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class WebhookShared {
   public static final String SERIALIZED_NAME_ENABLED = "enabled";
   @SerializedName(SERIALIZED_NAME_ENABLED)
@@ -78,10 +77,10 @@ public class WebhookShared {
     return this;
   }
 
-   /**
+  /**
    * Determine if the webhook is active.
    * @return enabled
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getEnabled() {
     return enabled;
@@ -105,10 +104,10 @@ public class WebhookShared {
     return this;
   }
 
-   /**
+  /**
    * The events that will be published to the webhook. If the events parameter is omitted all the events will be subscribed. 
    * @return events
-  **/
+   */
   @javax.annotation.Nullable
   public List<WebhookEventType> getEvents() {
     return events;
@@ -132,10 +131,10 @@ public class WebhookShared {
     return this;
   }
 
-   /**
+  /**
    * The environments from which the webhook will receive events. Allowed values are “sandbox” and “live”. If the environments parameter is omitted the webhook will receive events from both environments. 
    * @return environments
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getEnvironments() {
     return environments;
@@ -151,10 +150,10 @@ public class WebhookShared {
     return this;
   }
 
-   /**
+  /**
    * Webhook version used to control the payload object when sending webhooks.
    * @return payloadVersion
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getPayloadVersion() {
     return payloadVersion;
@@ -271,12 +270,12 @@ public class WebhookShared {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to WebhookShared
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to WebhookShared
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!WebhookShared.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -366,22 +365,22 @@ public class WebhookShared {
     }
   }
 
- /**
-  * Create an instance of WebhookShared given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of WebhookShared
-  * @throws IOException if the JSON string is invalid with respect to WebhookShared
-  */
+  /**
+   * Create an instance of WebhookShared given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of WebhookShared
+   * @throws IOException if the JSON string is invalid with respect to WebhookShared
+   */
   public static WebhookShared fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, WebhookShared.class);
   }
 
- /**
-  * Convert an instance of WebhookShared to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of WebhookShared to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

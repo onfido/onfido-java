@@ -41,7 +41,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -53,7 +52,7 @@ import com.onfido.JSON;
 /**
  * IdentityEnhancedProperties
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class IdentityEnhancedProperties {
   public static final String SERIALIZED_NAME_MATCHED_ADDRESS = "matched_address";
   @SerializedName(SERIALIZED_NAME_MATCHED_ADDRESS)
@@ -71,10 +70,10 @@ public class IdentityEnhancedProperties {
     return this;
   }
 
-   /**
+  /**
    * Returns address number which has been matched.
    * @return matchedAddress
-  **/
+   */
   @javax.annotation.Nullable
   public BigDecimal getMatchedAddress() {
     return matchedAddress;
@@ -98,10 +97,10 @@ public class IdentityEnhancedProperties {
     return this;
   }
 
-   /**
+  /**
    * Returns array of sources which contain matched addresses for the corresponding address number.
    * @return matchedAddresses
-  **/
+   */
   @javax.annotation.Nullable
   public List<IdentityEnhancedPropertiesMatchedAddressesInner> getMatchedAddresses() {
     return matchedAddresses;
@@ -212,12 +211,12 @@ public class IdentityEnhancedProperties {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to IdentityEnhancedProperties
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to IdentityEnhancedProperties
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!IdentityEnhancedProperties.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -313,22 +312,22 @@ public class IdentityEnhancedProperties {
     }
   }
 
- /**
-  * Create an instance of IdentityEnhancedProperties given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of IdentityEnhancedProperties
-  * @throws IOException if the JSON string is invalid with respect to IdentityEnhancedProperties
-  */
+  /**
+   * Create an instance of IdentityEnhancedProperties given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of IdentityEnhancedProperties
+   * @throws IOException if the JSON string is invalid with respect to IdentityEnhancedProperties
+   */
   public static IdentityEnhancedProperties fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, IdentityEnhancedProperties.class);
   }
 
- /**
-  * Convert an instance of IdentityEnhancedProperties to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of IdentityEnhancedProperties to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

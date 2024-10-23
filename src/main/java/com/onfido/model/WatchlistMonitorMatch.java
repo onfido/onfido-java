@@ -38,7 +38,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -50,7 +49,7 @@ import com.onfido.JSON;
 /**
  * WatchlistMonitorMatch
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class WatchlistMonitorMatch {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -68,10 +67,10 @@ public class WatchlistMonitorMatch {
     return this;
   }
 
-   /**
+  /**
    * Monitor ID
    * @return id
-  **/
+   */
   @javax.annotation.Nullable
   public UUID getId() {
     return id;
@@ -87,10 +86,10 @@ public class WatchlistMonitorMatch {
     return this;
   }
 
-   /**
+  /**
    * Monitor status
    * @return enabled
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getEnabled() {
     return enabled;
@@ -201,12 +200,12 @@ public class WatchlistMonitorMatch {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to WatchlistMonitorMatch
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to WatchlistMonitorMatch
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!WatchlistMonitorMatch.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -291,22 +290,22 @@ public class WatchlistMonitorMatch {
     }
   }
 
- /**
-  * Create an instance of WatchlistMonitorMatch given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of WatchlistMonitorMatch
-  * @throws IOException if the JSON string is invalid with respect to WatchlistMonitorMatch
-  */
+  /**
+   * Create an instance of WatchlistMonitorMatch given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of WatchlistMonitorMatch
+   * @throws IOException if the JSON string is invalid with respect to WatchlistMonitorMatch
+   */
   public static WatchlistMonitorMatch fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, WatchlistMonitorMatch.class);
   }
 
- /**
-  * Convert an instance of WatchlistMonitorMatch to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of WatchlistMonitorMatch to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

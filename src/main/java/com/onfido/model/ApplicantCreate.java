@@ -37,7 +37,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -49,7 +48,7 @@ import com.onfido.JSON;
 /**
  * ApplicantCreate
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class ApplicantCreate {
   public static final String SERIALIZED_NAME_FIRST_NAME = "first_name";
   @SerializedName(SERIALIZED_NAME_FIRST_NAME)
@@ -67,10 +66,10 @@ public class ApplicantCreate {
     return this;
   }
 
-   /**
+  /**
    * The applicant&#39;s first name
    * @return firstName
-  **/
+   */
   @javax.annotation.Nonnull
   public String getFirstName() {
     return firstName;
@@ -86,10 +85,10 @@ public class ApplicantCreate {
     return this;
   }
 
-   /**
+  /**
    * The applicant&#39;s surname
    * @return lastName
-  **/
+   */
   @javax.annotation.Nonnull
   public String getLastName() {
     return lastName;
@@ -202,12 +201,12 @@ public class ApplicantCreate {
     openapiRequiredFields.add("last_name");
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ApplicantCreate
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ApplicantCreate
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ApplicantCreate.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -302,22 +301,22 @@ public class ApplicantCreate {
     }
   }
 
- /**
-  * Create an instance of ApplicantCreate given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ApplicantCreate
-  * @throws IOException if the JSON string is invalid with respect to ApplicantCreate
-  */
+  /**
+   * Create an instance of ApplicantCreate given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ApplicantCreate
+   * @throws IOException if the JSON string is invalid with respect to ApplicantCreate
+   */
   public static ApplicantCreate fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ApplicantCreate.class);
   }
 
- /**
-  * Convert an instance of ApplicantCreate to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ApplicantCreate to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

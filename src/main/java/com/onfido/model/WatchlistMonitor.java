@@ -41,7 +41,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -53,7 +52,7 @@ import com.onfido.JSON;
 /**
  * WatchlistMonitor
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class WatchlistMonitor {
   public static final String SERIALIZED_NAME_APPLICANT_ID = "applicant_id";
   @SerializedName(SERIALIZED_NAME_APPLICANT_ID)
@@ -145,10 +144,10 @@ public class WatchlistMonitor {
     return this;
   }
 
-   /**
+  /**
    * The ID for the applicant associated with the monitor.
    * @return applicantId
-  **/
+   */
   @javax.annotation.Nonnull
   public UUID getApplicantId() {
     return applicantId;
@@ -164,10 +163,10 @@ public class WatchlistMonitor {
     return this;
   }
 
-   /**
+  /**
    * The name of the report type the monitor creates.
    * @return reportName
-  **/
+   */
   @javax.annotation.Nonnull
   public ReportNameEnum getReportName() {
     return reportName;
@@ -191,10 +190,10 @@ public class WatchlistMonitor {
     return this;
   }
 
-   /**
+  /**
    * A list of tags associated with this monitor. These tags will be applied to each check this monitor creates.
    * @return tags
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getTags() {
     return tags;
@@ -210,10 +209,10 @@ public class WatchlistMonitor {
     return this;
   }
 
-   /**
+  /**
    * The unique identifier for the monitor.
    * @return id
-  **/
+   */
   @javax.annotation.Nonnull
   public UUID getId() {
     return id;
@@ -229,10 +228,10 @@ public class WatchlistMonitor {
     return this;
   }
 
-   /**
+  /**
    * The date and time at which the monitor was created.
    * @return createdAt
-  **/
+   */
   @javax.annotation.Nullable
   public OffsetDateTime getCreatedAt() {
     return createdAt;
@@ -248,10 +247,10 @@ public class WatchlistMonitor {
     return this;
   }
 
-   /**
+  /**
    * The date and time at which the monitor was deleted. If the monitor is still active, this field will be null.
    * @return deletedAt
-  **/
+   */
   @javax.annotation.Nullable
   public OffsetDateTime getDeletedAt() {
     return deletedAt;
@@ -267,10 +266,10 @@ public class WatchlistMonitor {
     return this;
   }
 
-   /**
+  /**
    * Indicates whether the object was created in the sandbox or not.
    * @return isSandbox
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getIsSandbox() {
     return isSandbox;
@@ -399,12 +398,12 @@ public class WatchlistMonitor {
     openapiRequiredFields.add("id");
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to WatchlistMonitor
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to WatchlistMonitor
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!WatchlistMonitor.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -508,22 +507,22 @@ public class WatchlistMonitor {
     }
   }
 
- /**
-  * Create an instance of WatchlistMonitor given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of WatchlistMonitor
-  * @throws IOException if the JSON string is invalid with respect to WatchlistMonitor
-  */
+  /**
+   * Create an instance of WatchlistMonitor given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of WatchlistMonitor
+   * @throws IOException if the JSON string is invalid with respect to WatchlistMonitor
+   */
   public static WatchlistMonitor fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, WatchlistMonitor.class);
   }
 
- /**
-  * Convert an instance of WatchlistMonitor to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of WatchlistMonitor to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

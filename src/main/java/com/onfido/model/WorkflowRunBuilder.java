@@ -45,7 +45,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -57,7 +56,7 @@ import com.onfido.JSON;
 /**
  * WorkflowRunBuilder
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class WorkflowRunBuilder {
   public static final String SERIALIZED_NAME_APPLICANT_ID = "applicant_id";
   @SerializedName(SERIALIZED_NAME_APPLICANT_ID)
@@ -99,10 +98,10 @@ public class WorkflowRunBuilder {
     return this;
   }
 
-   /**
+  /**
    * The unique identifier for the Applicant.
    * @return applicantId
-  **/
+   */
   @javax.annotation.Nonnull
   public UUID getApplicantId() {
     return applicantId;
@@ -118,10 +117,10 @@ public class WorkflowRunBuilder {
     return this;
   }
 
-   /**
+  /**
    * The unique identifier for the Workflow.
    * @return workflowId
-  **/
+   */
   @javax.annotation.Nonnull
   public UUID getWorkflowId() {
     return workflowId;
@@ -145,10 +144,10 @@ public class WorkflowRunBuilder {
     return this;
   }
 
-   /**
+  /**
    * Tags or labels assigned to the workflow run.
    * @return tags
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getTags() {
     return tags;
@@ -164,10 +163,10 @@ public class WorkflowRunBuilder {
     return this;
   }
 
-   /**
+  /**
    * Customer-provided user identifier.
    * @return customerUserId
-  **/
+   */
   @javax.annotation.Nullable
   public String getCustomerUserId() {
     return customerUserId;
@@ -183,10 +182,10 @@ public class WorkflowRunBuilder {
     return this;
   }
 
-   /**
+  /**
    * Object for the configuration of the Workflow Run link.
    * @return link
-  **/
+   */
   @javax.annotation.Nullable
   public WorkflowRunLink getLink() {
     return link;
@@ -202,10 +201,10 @@ public class WorkflowRunBuilder {
     return this;
   }
 
-   /**
+  /**
    * The date and time when the Workflow Run was created.
    * @return createdAt
-  **/
+   */
   @javax.annotation.Nullable
   public OffsetDateTime getCreatedAt() {
     return createdAt;
@@ -221,10 +220,10 @@ public class WorkflowRunBuilder {
     return this;
   }
 
-   /**
+  /**
    * The date and time when the Workflow Run was last updated.
    * @return updatedAt
-  **/
+   */
   @javax.annotation.Nullable
   public OffsetDateTime getUpdatedAt() {
     return updatedAt;
@@ -248,10 +247,10 @@ public class WorkflowRunBuilder {
     return this;
   }
 
-   /**
+  /**
    * Object with Custom Input Data to be used in the Workflow Run.
    * @return customData
-  **/
+   */
   @javax.annotation.Nullable
   public Map<String, Object> getCustomData() {
     return customData;
@@ -393,12 +392,12 @@ public class WorkflowRunBuilder {
     openapiRequiredFields.add("workflow_id");
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to WorkflowRunBuilder
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to WorkflowRunBuilder
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!WorkflowRunBuilder.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -504,22 +503,22 @@ public class WorkflowRunBuilder {
     }
   }
 
- /**
-  * Create an instance of WorkflowRunBuilder given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of WorkflowRunBuilder
-  * @throws IOException if the JSON string is invalid with respect to WorkflowRunBuilder
-  */
+  /**
+   * Create an instance of WorkflowRunBuilder given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of WorkflowRunBuilder
+   * @throws IOException if the JSON string is invalid with respect to WorkflowRunBuilder
+   */
   public static WorkflowRunBuilder fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, WorkflowRunBuilder.class);
   }
 
- /**
-  * Convert an instance of WorkflowRunBuilder to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of WorkflowRunBuilder to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

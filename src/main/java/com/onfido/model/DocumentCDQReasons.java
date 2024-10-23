@@ -37,7 +37,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -49,7 +48,7 @@ import com.onfido.JSON;
 /**
  * DocumentCDQReasons
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class DocumentCDQReasons {
   public static final String SERIALIZED_NAME_OBSCURED_DATA_POINTS = "obscured_data_points";
   @SerializedName(SERIALIZED_NAME_OBSCURED_DATA_POINTS)
@@ -91,10 +90,10 @@ public class DocumentCDQReasons {
     return this;
   }
 
-   /**
+  /**
    * When data points are obscured to the point that we cannot confirm if the fonts match the expected ones.
    * @return obscuredDataPoints
-  **/
+   */
   @javax.annotation.Nullable
   public String getObscuredDataPoints() {
     return obscuredDataPoints;
@@ -110,10 +109,10 @@ public class DocumentCDQReasons {
     return this;
   }
 
-   /**
+  /**
    * When a critical security feature is obscured. This can also refer to when the holder&#39;s wet signature, necessary for the document to be valid, is not present.
    * @return obscuredSecurityFeatures
-  **/
+   */
   @javax.annotation.Nullable
   public String getObscuredSecurityFeatures() {
     return obscuredSecurityFeatures;
@@ -129,10 +128,10 @@ public class DocumentCDQReasons {
     return this;
   }
 
-   /**
+  /**
    * One of 3 reasons (1) OCR Assisted Scans (i.e. when you&#39;re able to move the mouse and highlight part of text), (2) Severely Washed out Background, (3) Overlapping Text.
    * @return abnormalDocumentFeatures
-  **/
+   */
   @javax.annotation.Nullable
   public String getAbnormalDocumentFeatures() {
     return abnormalDocumentFeatures;
@@ -148,10 +147,10 @@ public class DocumentCDQReasons {
     return this;
   }
 
-   /**
+  /**
    * Any digital text or electronic watermarks on the document.
    * @return watermarksDigitalTextOverlay
-  **/
+   */
   @javax.annotation.Nullable
   public String getWatermarksDigitalTextOverlay() {
     return watermarksDigitalTextOverlay;
@@ -167,10 +166,10 @@ public class DocumentCDQReasons {
     return this;
   }
 
-   /**
+  /**
    * If the corner has been physically cut off. This can be found on some documents that are no longer valid.
    * @return cornerRemoved
-  **/
+   */
   @javax.annotation.Nullable
   public String getCornerRemoved() {
     return cornerRemoved;
@@ -186,10 +185,10 @@ public class DocumentCDQReasons {
     return this;
   }
 
-   /**
+  /**
    * A punched hole is present.
    * @return puncturedDocument
-  **/
+   */
   @javax.annotation.Nullable
   public String getPuncturedDocument() {
     return puncturedDocument;
@@ -205,10 +204,10 @@ public class DocumentCDQReasons {
     return this;
   }
 
-   /**
+  /**
    * When the back of a document is needed for processing, but is not available.
    * @return missingBack
-  **/
+   */
   @javax.annotation.Nullable
   public String getMissingBack() {
     return missingBack;
@@ -224,10 +223,10 @@ public class DocumentCDQReasons {
     return this;
   }
 
-   /**
+  /**
    * When a document has been published digitally, there aren&#39;t enough security features to review so we cannot perform a full fraud assessment.
    * @return digitalDocument
-  **/
+   */
   @javax.annotation.Nullable
   public String getDigitalDocument() {
     return digitalDocument;
@@ -356,12 +355,12 @@ public class DocumentCDQReasons {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to DocumentCDQReasons
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to DocumentCDQReasons
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!DocumentCDQReasons.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -467,22 +466,22 @@ public class DocumentCDQReasons {
     }
   }
 
- /**
-  * Create an instance of DocumentCDQReasons given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of DocumentCDQReasons
-  * @throws IOException if the JSON string is invalid with respect to DocumentCDQReasons
-  */
+  /**
+   * Create an instance of DocumentCDQReasons given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of DocumentCDQReasons
+   * @throws IOException if the JSON string is invalid with respect to DocumentCDQReasons
+   */
   public static DocumentCDQReasons fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, DocumentCDQReasons.class);
   }
 
- /**
-  * Convert an instance of DocumentCDQReasons to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of DocumentCDQReasons to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

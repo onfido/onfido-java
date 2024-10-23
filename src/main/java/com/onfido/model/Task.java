@@ -40,7 +40,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -52,7 +51,7 @@ import com.onfido.JSON;
 /**
  * Task
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class Task {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -94,10 +93,10 @@ public class Task {
     return this;
   }
 
-   /**
+  /**
    * The identifier for the Task.
    * @return id
-  **/
+   */
   @javax.annotation.Nullable
   public String getId() {
     return id;
@@ -113,10 +112,10 @@ public class Task {
     return this;
   }
 
-   /**
+  /**
    * The workflow run id the task belongs to.
    * @return workflowRunId
-  **/
+   */
   @javax.annotation.Nullable
   public UUID getWorkflowRunId() {
     return workflowRunId;
@@ -132,10 +131,10 @@ public class Task {
     return this;
   }
 
-   /**
+  /**
    * The identifier for the Task Definition.
    * @return taskDefId
-  **/
+   */
   @javax.annotation.Nullable
   public String getTaskDefId() {
     return taskDefId;
@@ -151,10 +150,10 @@ public class Task {
     return this;
   }
 
-   /**
+  /**
    * The task definition version.
    * @return taskDefVersion
-  **/
+   */
   @javax.annotation.Nullable
   public String getTaskDefVersion() {
     return taskDefVersion;
@@ -170,10 +169,10 @@ public class Task {
     return this;
   }
 
-   /**
+  /**
    * Input object with the fields used by the Task to execute.
    * @return input
-  **/
+   */
   @javax.annotation.Nullable
   public Object getInput() {
     return input;
@@ -189,10 +188,10 @@ public class Task {
     return this;
   }
 
-   /**
+  /**
    * Output object with the fields produced by the Task execution.
    * @return output
-  **/
+   */
   @javax.annotation.Nullable
   public Object getOutput() {
     return output;
@@ -208,10 +207,10 @@ public class Task {
     return this;
   }
 
-   /**
+  /**
    * The date and time when the Task was created.
    * @return createdAt
-  **/
+   */
   @javax.annotation.Nullable
   public OffsetDateTime getCreatedAt() {
     return createdAt;
@@ -227,10 +226,10 @@ public class Task {
     return this;
   }
 
-   /**
+  /**
    * The date and time when the Task was last updated.
    * @return updatedAt
-  **/
+   */
   @javax.annotation.Nullable
   public OffsetDateTime getUpdatedAt() {
     return updatedAt;
@@ -370,12 +369,12 @@ public class Task {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to Task
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to Task
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!Task.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -469,22 +468,22 @@ public class Task {
     }
   }
 
- /**
-  * Create an instance of Task given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of Task
-  * @throws IOException if the JSON string is invalid with respect to Task
-  */
+  /**
+   * Create an instance of Task given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of Task
+   * @throws IOException if the JSON string is invalid with respect to Task
+   */
   public static Task fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, Task.class);
   }
 
- /**
-  * Convert an instance of Task to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of Task to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

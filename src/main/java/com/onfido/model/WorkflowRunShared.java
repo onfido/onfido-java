@@ -43,7 +43,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -55,7 +54,7 @@ import com.onfido.JSON;
 /**
  * WorkflowRunShared
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class WorkflowRunShared {
   public static final String SERIALIZED_NAME_APPLICANT_ID = "applicant_id";
   @SerializedName(SERIALIZED_NAME_APPLICANT_ID)
@@ -93,10 +92,10 @@ public class WorkflowRunShared {
     return this;
   }
 
-   /**
+  /**
    * The unique identifier for the Applicant.
    * @return applicantId
-  **/
+   */
   @javax.annotation.Nonnull
   public UUID getApplicantId() {
     return applicantId;
@@ -112,10 +111,10 @@ public class WorkflowRunShared {
     return this;
   }
 
-   /**
+  /**
    * The unique identifier for the Workflow.
    * @return workflowId
-  **/
+   */
   @javax.annotation.Nonnull
   public UUID getWorkflowId() {
     return workflowId;
@@ -139,10 +138,10 @@ public class WorkflowRunShared {
     return this;
   }
 
-   /**
+  /**
    * Tags or labels assigned to the workflow run.
    * @return tags
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getTags() {
     return tags;
@@ -158,10 +157,10 @@ public class WorkflowRunShared {
     return this;
   }
 
-   /**
+  /**
    * Customer-provided user identifier.
    * @return customerUserId
-  **/
+   */
   @javax.annotation.Nullable
   public String getCustomerUserId() {
     return customerUserId;
@@ -177,10 +176,10 @@ public class WorkflowRunShared {
     return this;
   }
 
-   /**
+  /**
    * Object for the configuration of the Workflow Run link.
    * @return link
-  **/
+   */
   @javax.annotation.Nullable
   public WorkflowRunLink getLink() {
     return link;
@@ -196,10 +195,10 @@ public class WorkflowRunShared {
     return this;
   }
 
-   /**
+  /**
    * The date and time when the Workflow Run was created.
    * @return createdAt
-  **/
+   */
   @javax.annotation.Nullable
   public OffsetDateTime getCreatedAt() {
     return createdAt;
@@ -215,10 +214,10 @@ public class WorkflowRunShared {
     return this;
   }
 
-   /**
+  /**
    * The date and time when the Workflow Run was last updated.
    * @return updatedAt
-  **/
+   */
   @javax.annotation.Nullable
   public OffsetDateTime getUpdatedAt() {
     return updatedAt;
@@ -357,12 +356,12 @@ public class WorkflowRunShared {
     openapiRequiredFields.add("workflow_id");
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to WorkflowRunShared
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to WorkflowRunShared
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!WorkflowRunShared.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -468,22 +467,22 @@ public class WorkflowRunShared {
     }
   }
 
- /**
-  * Create an instance of WorkflowRunShared given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of WorkflowRunShared
-  * @throws IOException if the JSON string is invalid with respect to WorkflowRunShared
-  */
+  /**
+   * Create an instance of WorkflowRunShared given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of WorkflowRunShared
+   * @throws IOException if the JSON string is invalid with respect to WorkflowRunShared
+   */
   public static WorkflowRunShared fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, WorkflowRunShared.class);
   }
 
- /**
-  * Convert an instance of WorkflowRunShared to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of WorkflowRunShared to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

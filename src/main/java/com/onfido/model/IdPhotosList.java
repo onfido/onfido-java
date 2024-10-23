@@ -40,7 +40,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -52,7 +51,7 @@ import com.onfido.JSON;
 /**
  * IdPhotosList
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class IdPhotosList {
   public static final String SERIALIZED_NAME_ID_PHOTOS = "id_photos";
   @SerializedName(SERIALIZED_NAME_ID_PHOTOS)
@@ -74,10 +73,10 @@ public class IdPhotosList {
     return this;
   }
 
-   /**
+  /**
    * Get idPhotos
    * @return idPhotos
-  **/
+   */
   @javax.annotation.Nonnull
   public List<IdPhoto> getIdPhotos() {
     return idPhotos;
@@ -186,12 +185,12 @@ public class IdPhotosList {
     openapiRequiredFields.add("id_photos");
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to IdPhotosList
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to IdPhotosList
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!IdPhotosList.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -290,22 +289,22 @@ public class IdPhotosList {
     }
   }
 
- /**
-  * Create an instance of IdPhotosList given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of IdPhotosList
-  * @throws IOException if the JSON string is invalid with respect to IdPhotosList
-  */
+  /**
+   * Create an instance of IdPhotosList given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of IdPhotosList
+   * @throws IOException if the JSON string is invalid with respect to IdPhotosList
+   */
   public static IdPhotosList fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, IdPhotosList.class);
   }
 
- /**
-  * Convert an instance of IdPhotosList to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of IdPhotosList to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

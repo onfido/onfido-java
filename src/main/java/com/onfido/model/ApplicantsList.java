@@ -40,7 +40,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -52,7 +51,7 @@ import com.onfido.JSON;
 /**
  * ApplicantsList
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class ApplicantsList {
   public static final String SERIALIZED_NAME_APPLICANTS = "applicants";
   @SerializedName(SERIALIZED_NAME_APPLICANTS)
@@ -74,10 +73,10 @@ public class ApplicantsList {
     return this;
   }
 
-   /**
+  /**
    * Get applicants
    * @return applicants
-  **/
+   */
   @javax.annotation.Nonnull
   public List<Applicant> getApplicants() {
     return applicants;
@@ -186,12 +185,12 @@ public class ApplicantsList {
     openapiRequiredFields.add("applicants");
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ApplicantsList
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ApplicantsList
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ApplicantsList.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -290,22 +289,22 @@ public class ApplicantsList {
     }
   }
 
- /**
-  * Create an instance of ApplicantsList given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ApplicantsList
-  * @throws IOException if the JSON string is invalid with respect to ApplicantsList
-  */
+  /**
+   * Create an instance of ApplicantsList given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ApplicantsList
+   * @throws IOException if the JSON string is invalid with respect to ApplicantsList
+   */
   public static ApplicantsList fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ApplicantsList.class);
   }
 
- /**
-  * Convert an instance of ApplicantsList to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ApplicantsList to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

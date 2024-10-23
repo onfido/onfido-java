@@ -38,7 +38,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -50,7 +49,7 @@ import com.onfido.JSON;
 /**
  * DocumentBreakdownAgeValidationBreakdown
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class DocumentBreakdownAgeValidationBreakdown {
   public static final String SERIALIZED_NAME_MINIMUM_ACCEPTED_AGE = "minimum_accepted_age";
   @SerializedName(SERIALIZED_NAME_MINIMUM_ACCEPTED_AGE)
@@ -64,10 +63,10 @@ public class DocumentBreakdownAgeValidationBreakdown {
     return this;
   }
 
-   /**
+  /**
    * Get minimumAcceptedAge
    * @return minimumAcceptedAge
-  **/
+   */
   @javax.annotation.Nullable
   public DocumentBreakdownDataComparisonBreakdownIssuingCountry getMinimumAcceptedAge() {
     return minimumAcceptedAge;
@@ -175,12 +174,12 @@ public class DocumentBreakdownAgeValidationBreakdown {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to DocumentBreakdownAgeValidationBreakdown
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to DocumentBreakdownAgeValidationBreakdown
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!DocumentBreakdownAgeValidationBreakdown.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -266,22 +265,22 @@ public class DocumentBreakdownAgeValidationBreakdown {
     }
   }
 
- /**
-  * Create an instance of DocumentBreakdownAgeValidationBreakdown given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of DocumentBreakdownAgeValidationBreakdown
-  * @throws IOException if the JSON string is invalid with respect to DocumentBreakdownAgeValidationBreakdown
-  */
+  /**
+   * Create an instance of DocumentBreakdownAgeValidationBreakdown given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of DocumentBreakdownAgeValidationBreakdown
+   * @throws IOException if the JSON string is invalid with respect to DocumentBreakdownAgeValidationBreakdown
+   */
   public static DocumentBreakdownAgeValidationBreakdown fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, DocumentBreakdownAgeValidationBreakdown.class);
   }
 
- /**
-  * Convert an instance of DocumentBreakdownAgeValidationBreakdown to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of DocumentBreakdownAgeValidationBreakdown to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

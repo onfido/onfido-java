@@ -38,7 +38,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -50,7 +49,7 @@ import com.onfido.JSON;
 /**
  * CompleteTaskBuilder
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class CompleteTaskBuilder {
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
@@ -64,10 +63,10 @@ public class CompleteTaskBuilder {
     return this;
   }
 
-   /**
+  /**
    * Get data
    * @return data
-  **/
+   */
   @javax.annotation.Nonnull
   public CompleteTaskDataBuilder getData() {
     return data;
@@ -176,12 +175,12 @@ public class CompleteTaskBuilder {
     openapiRequiredFields.add("data");
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to CompleteTaskBuilder
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to CompleteTaskBuilder
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!CompleteTaskBuilder.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -272,22 +271,22 @@ public class CompleteTaskBuilder {
     }
   }
 
- /**
-  * Create an instance of CompleteTaskBuilder given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of CompleteTaskBuilder
-  * @throws IOException if the JSON string is invalid with respect to CompleteTaskBuilder
-  */
+  /**
+   * Create an instance of CompleteTaskBuilder given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of CompleteTaskBuilder
+   * @throws IOException if the JSON string is invalid with respect to CompleteTaskBuilder
+   */
   public static CompleteTaskBuilder fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, CompleteTaskBuilder.class);
   }
 
- /**
-  * Convert an instance of CompleteTaskBuilder to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of CompleteTaskBuilder to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

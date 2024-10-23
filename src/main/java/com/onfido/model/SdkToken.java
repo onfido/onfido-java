@@ -37,7 +37,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -49,7 +48,7 @@ import com.onfido.JSON;
 /**
  * SdkToken
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class SdkToken {
   public static final String SERIALIZED_NAME_TOKEN = "token";
   @SerializedName(SERIALIZED_NAME_TOKEN)
@@ -63,10 +62,10 @@ public class SdkToken {
     return this;
   }
 
-   /**
+  /**
    * The generated SDK token
    * @return token
-  **/
+   */
   @javax.annotation.Nonnull
   public String getToken() {
     return token;
@@ -175,12 +174,12 @@ public class SdkToken {
     openapiRequiredFields.add("token");
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to SdkToken
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to SdkToken
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!SdkToken.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -272,22 +271,22 @@ public class SdkToken {
     }
   }
 
- /**
-  * Create an instance of SdkToken given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of SdkToken
-  * @throws IOException if the JSON string is invalid with respect to SdkToken
-  */
+  /**
+   * Create an instance of SdkToken given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of SdkToken
+   * @throws IOException if the JSON string is invalid with respect to SdkToken
+   */
   public static SdkToken fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, SdkToken.class);
   }
 
- /**
-  * Convert an instance of SdkToken to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of SdkToken to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

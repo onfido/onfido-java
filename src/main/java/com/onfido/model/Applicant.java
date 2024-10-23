@@ -45,7 +45,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -57,7 +56,7 @@ import com.onfido.JSON;
 /**
  * Applicant
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class Applicant {
   public static final String SERIALIZED_NAME_EMAIL = "email";
   @SerializedName(SERIALIZED_NAME_EMAIL)
@@ -119,10 +118,10 @@ public class Applicant {
     return this;
   }
 
-   /**
+  /**
    * The applicant&#39;s email address. Required if doing a US check, or a UK check for which &#x60;applicant_provides_data&#x60; is &#x60;true&#x60;.
    * @return email
-  **/
+   */
   @javax.annotation.Nullable
   public String getEmail() {
     return email;
@@ -138,10 +137,10 @@ public class Applicant {
     return this;
   }
 
-   /**
+  /**
    * The applicant&#39;s date of birth
    * @return dob
-  **/
+   */
   @javax.annotation.Nullable
   public LocalDate getDob() {
     return dob;
@@ -165,10 +164,10 @@ public class Applicant {
     return this;
   }
 
-   /**
+  /**
    * Get idNumbers
    * @return idNumbers
-  **/
+   */
   @javax.annotation.Nullable
   public List<IdNumber> getIdNumbers() {
     return idNumbers;
@@ -184,10 +183,10 @@ public class Applicant {
     return this;
   }
 
-   /**
+  /**
    * The applicant&#39;s phone number
    * @return phoneNumber
-  **/
+   */
   @javax.annotation.Nullable
   public String getPhoneNumber() {
     return phoneNumber;
@@ -203,10 +202,10 @@ public class Applicant {
     return this;
   }
 
-   /**
+  /**
    * The applicant&#39;s first name
    * @return firstName
-  **/
+   */
   @javax.annotation.Nullable
   public String getFirstName() {
     return firstName;
@@ -222,10 +221,10 @@ public class Applicant {
     return this;
   }
 
-   /**
+  /**
    * The applicant&#39;s surname
    * @return lastName
-  **/
+   */
   @javax.annotation.Nullable
   public String getLastName() {
     return lastName;
@@ -241,10 +240,10 @@ public class Applicant {
     return this;
   }
 
-   /**
+  /**
    * The unique identifier for the applicant.
    * @return id
-  **/
+   */
   @javax.annotation.Nonnull
   public UUID getId() {
     return id;
@@ -260,10 +259,10 @@ public class Applicant {
     return this;
   }
 
-   /**
+  /**
    * The date and time when this applicant was created.
    * @return createdAt
-  **/
+   */
   @javax.annotation.Nullable
   public OffsetDateTime getCreatedAt() {
     return createdAt;
@@ -279,10 +278,10 @@ public class Applicant {
     return this;
   }
 
-   /**
+  /**
    * The date and time when this applicant is scheduled to be deleted.
    * @return deleteAt
-  **/
+   */
   @javax.annotation.Nullable
   public OffsetDateTime getDeleteAt() {
     return deleteAt;
@@ -298,10 +297,10 @@ public class Applicant {
     return this;
   }
 
-   /**
+  /**
    * The uri of this resource.
    * @return href
-  **/
+   */
   @javax.annotation.Nullable
   public String getHref() {
     return href;
@@ -317,10 +316,10 @@ public class Applicant {
     return this;
   }
 
-   /**
+  /**
    * Get sandbox
    * @return sandbox
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getSandbox() {
     return sandbox;
@@ -336,10 +335,10 @@ public class Applicant {
     return this;
   }
 
-   /**
+  /**
    * Get address
    * @return address
-  **/
+   */
   @javax.annotation.Nullable
   public Address getAddress() {
     return address;
@@ -355,10 +354,10 @@ public class Applicant {
     return this;
   }
 
-   /**
+  /**
    * Get location
    * @return location
-  **/
+   */
   @javax.annotation.Nullable
   public Location getLocation() {
     return location;
@@ -503,12 +502,12 @@ public class Applicant {
     openapiRequiredFields.add("id");
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to Applicant
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to Applicant
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!Applicant.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -637,22 +636,22 @@ public class Applicant {
     }
   }
 
- /**
-  * Create an instance of Applicant given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of Applicant
-  * @throws IOException if the JSON string is invalid with respect to Applicant
-  */
+  /**
+   * Create an instance of Applicant given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of Applicant
+   * @throws IOException if the JSON string is invalid with respect to Applicant
+   */
   public static Applicant fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, Applicant.class);
   }
 
- /**
-  * Convert an instance of Applicant to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of Applicant to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

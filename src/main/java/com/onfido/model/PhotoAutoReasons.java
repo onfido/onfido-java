@@ -37,7 +37,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -49,7 +48,7 @@ import com.onfido.JSON;
 /**
  * PhotoAutoReasons
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class PhotoAutoReasons {
   public static final String SERIALIZED_NAME_DIGITAL_TAMPERING = "digital_tampering";
   @SerializedName(SERIALIZED_NAME_DIGITAL_TAMPERING)
@@ -79,10 +78,10 @@ public class PhotoAutoReasons {
     return this;
   }
 
-   /**
+  /**
    * Flags when evidence is found that the image was manipulated by Photoshop, or other software.
    * @return digitalTampering
-  **/
+   */
   @javax.annotation.Nullable
   public String getDigitalTampering() {
     return digitalTampering;
@@ -98,10 +97,10 @@ public class PhotoAutoReasons {
     return this;
   }
 
-   /**
+  /**
    * Flags when evidence is found that a fake webcam was used.
    * @return fakeWebcam
-  **/
+   */
   @javax.annotation.Nullable
   public String getFakeWebcam() {
     return fakeWebcam;
@@ -117,10 +116,10 @@ public class PhotoAutoReasons {
     return this;
   }
 
-   /**
+  /**
    * Flags when evidence is found that the live photo was taken more than 24 hours before live photo upload.
    * @return timeOfCapture
-  **/
+   */
   @javax.annotation.Nullable
   public String getTimeOfCapture() {
     return timeOfCapture;
@@ -136,10 +135,10 @@ public class PhotoAutoReasons {
     return this;
   }
 
-   /**
+  /**
    * Flags when evidence is found that an Android emulator was used.
    * @return emulator
-  **/
+   */
   @javax.annotation.Nullable
   public String getEmulator() {
     return emulator;
@@ -155,10 +154,10 @@ public class PhotoAutoReasons {
     return this;
   }
 
-   /**
+  /**
    * Additional comma separated details such as the exact digital tampering software used, or the name of the fake webcam.
    * @return reasons
-  **/
+   */
   @javax.annotation.Nullable
   public String getReasons() {
     return reasons;
@@ -278,12 +277,12 @@ public class PhotoAutoReasons {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to PhotoAutoReasons
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to PhotoAutoReasons
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!PhotoAutoReasons.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -380,22 +379,22 @@ public class PhotoAutoReasons {
     }
   }
 
- /**
-  * Create an instance of PhotoAutoReasons given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of PhotoAutoReasons
-  * @throws IOException if the JSON string is invalid with respect to PhotoAutoReasons
-  */
+  /**
+   * Create an instance of PhotoAutoReasons given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of PhotoAutoReasons
+   * @throws IOException if the JSON string is invalid with respect to PhotoAutoReasons
+   */
   public static PhotoAutoReasons fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, PhotoAutoReasons.class);
   }
 
- /**
-  * Convert an instance of PhotoAutoReasons to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of PhotoAutoReasons to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

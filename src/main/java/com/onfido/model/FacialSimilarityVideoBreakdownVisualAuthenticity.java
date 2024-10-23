@@ -38,7 +38,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -50,7 +49,7 @@ import com.onfido.JSON;
 /**
  * Asserts whether the person in the live video is real (not a spoof) and live.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class FacialSimilarityVideoBreakdownVisualAuthenticity {
   public static final String SERIALIZED_NAME_RESULT = "result";
   @SerializedName(SERIALIZED_NAME_RESULT)
@@ -68,10 +67,10 @@ public class FacialSimilarityVideoBreakdownVisualAuthenticity {
     return this;
   }
 
-   /**
+  /**
    * Get result
    * @return result
-  **/
+   */
   @javax.annotation.Nullable
   public String getResult() {
     return result;
@@ -87,10 +86,10 @@ public class FacialSimilarityVideoBreakdownVisualAuthenticity {
     return this;
   }
 
-   /**
+  /**
    * Get breakdown
    * @return breakdown
-  **/
+   */
   @javax.annotation.Nullable
   public FacialSimilarityVideoBreakdownVisualAuthenticityBreakdown getBreakdown() {
     return breakdown;
@@ -201,12 +200,12 @@ public class FacialSimilarityVideoBreakdownVisualAuthenticity {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to FacialSimilarityVideoBreakdownVisualAuthenticity
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to FacialSimilarityVideoBreakdownVisualAuthenticity
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!FacialSimilarityVideoBreakdownVisualAuthenticity.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -295,22 +294,22 @@ public class FacialSimilarityVideoBreakdownVisualAuthenticity {
     }
   }
 
- /**
-  * Create an instance of FacialSimilarityVideoBreakdownVisualAuthenticity given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of FacialSimilarityVideoBreakdownVisualAuthenticity
-  * @throws IOException if the JSON string is invalid with respect to FacialSimilarityVideoBreakdownVisualAuthenticity
-  */
+  /**
+   * Create an instance of FacialSimilarityVideoBreakdownVisualAuthenticity given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of FacialSimilarityVideoBreakdownVisualAuthenticity
+   * @throws IOException if the JSON string is invalid with respect to FacialSimilarityVideoBreakdownVisualAuthenticity
+   */
   public static FacialSimilarityVideoBreakdownVisualAuthenticity fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, FacialSimilarityVideoBreakdownVisualAuthenticity.class);
   }
 
- /**
-  * Convert an instance of FacialSimilarityVideoBreakdownVisualAuthenticity to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of FacialSimilarityVideoBreakdownVisualAuthenticity to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

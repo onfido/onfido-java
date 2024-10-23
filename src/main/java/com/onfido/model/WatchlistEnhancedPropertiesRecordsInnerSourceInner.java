@@ -37,7 +37,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -49,7 +48,7 @@ import com.onfido.JSON;
 /**
  * WatchlistEnhancedPropertiesRecordsInnerSourceInner
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class WatchlistEnhancedPropertiesRecordsInnerSourceInner {
   public static final String SERIALIZED_NAME_SOURCE_HEADLINE = "source_headline";
   @SerializedName(SERIALIZED_NAME_SOURCE_HEADLINE)
@@ -75,10 +74,10 @@ public class WatchlistEnhancedPropertiesRecordsInnerSourceInner {
     return this;
   }
 
-   /**
+  /**
    * Get sourceHeadline
    * @return sourceHeadline
-  **/
+   */
   @javax.annotation.Nullable
   public String getSourceHeadline() {
     return sourceHeadline;
@@ -94,10 +93,10 @@ public class WatchlistEnhancedPropertiesRecordsInnerSourceInner {
     return this;
   }
 
-   /**
+  /**
    * Get sourceName
    * @return sourceName
-  **/
+   */
   @javax.annotation.Nullable
   public String getSourceName() {
     return sourceName;
@@ -113,10 +112,10 @@ public class WatchlistEnhancedPropertiesRecordsInnerSourceInner {
     return this;
   }
 
-   /**
+  /**
    * Get sourceUrl
    * @return sourceUrl
-  **/
+   */
   @javax.annotation.Nullable
   public String getSourceUrl() {
     return sourceUrl;
@@ -132,10 +131,10 @@ public class WatchlistEnhancedPropertiesRecordsInnerSourceInner {
     return this;
   }
 
-   /**
+  /**
    * Get sourceFormat
    * @return sourceFormat
-  **/
+   */
   @javax.annotation.Nullable
   public String getSourceFormat() {
     return sourceFormat;
@@ -252,12 +251,12 @@ public class WatchlistEnhancedPropertiesRecordsInnerSourceInner {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to WatchlistEnhancedPropertiesRecordsInnerSourceInner
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to WatchlistEnhancedPropertiesRecordsInnerSourceInner
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!WatchlistEnhancedPropertiesRecordsInnerSourceInner.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -351,22 +350,22 @@ public class WatchlistEnhancedPropertiesRecordsInnerSourceInner {
     }
   }
 
- /**
-  * Create an instance of WatchlistEnhancedPropertiesRecordsInnerSourceInner given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of WatchlistEnhancedPropertiesRecordsInnerSourceInner
-  * @throws IOException if the JSON string is invalid with respect to WatchlistEnhancedPropertiesRecordsInnerSourceInner
-  */
+  /**
+   * Create an instance of WatchlistEnhancedPropertiesRecordsInnerSourceInner given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of WatchlistEnhancedPropertiesRecordsInnerSourceInner
+   * @throws IOException if the JSON string is invalid with respect to WatchlistEnhancedPropertiesRecordsInnerSourceInner
+   */
   public static WatchlistEnhancedPropertiesRecordsInnerSourceInner fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, WatchlistEnhancedPropertiesRecordsInnerSourceInner.class);
   }
 
- /**
-  * Convert an instance of WatchlistEnhancedPropertiesRecordsInnerSourceInner to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of WatchlistEnhancedPropertiesRecordsInnerSourceInner to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

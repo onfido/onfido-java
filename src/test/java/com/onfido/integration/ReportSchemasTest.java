@@ -103,4 +103,35 @@ public class ReportSchemasTest extends TestBase {
             .getProperties()
             .toJson());
   }
+
+  @Test
+  public void schemaOfDocumentWithAddressInformationReportIsValid() throws Exception {
+    uploadLivePhoto(applicant, "sample_photo.png");
+
+    Check check =
+        createCheck(
+            applicant,
+            document,
+            new CheckBuilder()
+                .reportNames(Arrays.asList(ReportName.DOCUMENT_WITH_ADDRESS_INFORMATION)));
+
+    Report report =
+        (Report)
+            repeatRequestUntilStatusChanges(
+                "findReport", new Object[] {check.getReportIds().get(0)}, COMPLETE, 10, 1000);
+
+    Assertions.assertEquals(COMPLETE, report.getStatus());
+    Assertions.assertEquals(ReportName.DOCUMENT_WITH_ADDRESS_INFORMATION, report.getName());
+    Assertions.assertEquals(check.getId(), report.getReportShared().getCheckId());
+    Assertions.assertNotNull(report.getDocumentWithAddressInformationReport().getBreakdown());
+    Assertions.assertNotNull(report.getReportShared().getResult());
+
+    Assertions.assertEquals(
+        "driving_licence",
+        report
+            .getDocumentWithAddressInformationReport()
+            .getProperties()
+            .getBarcode()
+            .getDocumentType());
+  }
 }

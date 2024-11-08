@@ -216,7 +216,7 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.DocumentODPReasons.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.DocumentProperties.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.DocumentPropertiesAddressLines.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.DocumentPropertiesBarcodeInner.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.DocumentPropertiesBarcode.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.DocumentPropertiesDocumentClassification.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.DocumentPropertiesDocumentNumbersInner.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.DocumentPropertiesDrivingLicenceInformation.CustomTypeAdapterFactory());

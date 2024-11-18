@@ -29,6 +29,7 @@ import com.onfido.model.DocumentWithDrivingLicenceInformationReport;
 import com.onfido.model.FacialSimilarityMotionReport;
 import com.onfido.model.FacialSimilarityPhotoFullyAutoReport;
 import com.onfido.model.FacialSimilarityPhotoReport;
+import com.onfido.model.FacialSimilarityReportMedia;
 import com.onfido.model.FacialSimilarityVideoReport;
 import com.onfido.model.IdentityEnhancedReport;
 import com.onfido.model.IndiaPanReport;

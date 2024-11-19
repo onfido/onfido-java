@@ -160,7 +160,7 @@ public class ApiClient {
         json = new JSON();
 
         // Set default User-Agent.
-        setUserAgent("onfido-java/5.1.0");
+        setUserAgent("onfido-java/5.2.0");
 
         authentications = new HashMap<String, Authentication>();
     }
@@ -728,6 +728,7 @@ public class ApiClient {
             return params;
         }
 
+        @SuppressWarnings("unchecked")
         final Map<String, Object> valuesMap = (Map<String, Object>) value;
 
         for (Map.Entry<String, Object> entry : valuesMap.entrySet()) {

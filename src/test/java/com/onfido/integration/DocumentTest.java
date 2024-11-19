@@ -60,7 +60,7 @@ public class DocumentTest extends TestBase {
 
   @Test
   public void listDocumentsTest() throws Exception {
-    uploadDocument(applicant, "another_sample_driving_licence.jpeg", DocumentTypes.DRIVING_LICENCE);
+    uploadDocument(applicant, "another_sample_driving_licence.jpeg", DocumentTypes.UNKNOWN);
 
     List<Document> documents =
         onfido.listDocuments(applicant.getId()).getDocuments().stream()
@@ -69,8 +69,11 @@ public class DocumentTest extends TestBase {
 
     Assertions.assertEquals("another_sample_driving_licence.jpeg", documents.get(0).getFileName());
     Assertions.assertEquals(FileTypeEnum.JPEG, documents.get(0).getFileType());
+    Assertions.assertEquals(DocumentTypes.UNKNOWN, documents.get(0).getType());
+
     Assertions.assertEquals("sample_driving_licence.png", documents.get(1).getFileName());
     Assertions.assertEquals(FileTypeEnum.PNG, documents.get(1).getFileType());
+    Assertions.assertEquals(DocumentTypes.DRIVING_LICENCE, documents.get(1).getType());
 
     Assertions.assertNotNull(documents.get(0).toJson());
     Assertions.assertNotNull(documents.get(1).toJson());

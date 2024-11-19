@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.onfido.model.FacialSimilarityPhotoFullyAutoBreakdown;
 import com.onfido.model.FacialSimilarityPhotoFullyAutoProperties;
+import com.onfido.model.FacialSimilarityReportMedia;
 import com.onfido.model.ReportDocument;
 import com.onfido.model.ReportName;
 import com.onfido.model.ReportResult;
@@ -96,6 +97,22 @@ public class FacialSimilarityPhotoFullyAutoReport {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   private ReportName name;
+
+  public static final String SERIALIZED_NAME_LIVE_PHOTOS = "live_photos";
+  @SerializedName(SERIALIZED_NAME_LIVE_PHOTOS)
+  private List<FacialSimilarityReportMedia> livePhotos = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_LIVE_VIDEOS = "live_videos";
+  @SerializedName(SERIALIZED_NAME_LIVE_VIDEOS)
+  private List<FacialSimilarityReportMedia> liveVideos = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_MOTION_CAPTURES = "motion_captures";
+  @SerializedName(SERIALIZED_NAME_MOTION_CAPTURES)
+  private List<FacialSimilarityReportMedia> motionCaptures = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_ID_PHOTOS = "id_photos";
+  @SerializedName(SERIALIZED_NAME_ID_PHOTOS)
+  private List<FacialSimilarityReportMedia> idPhotos = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_BREAKDOWN = "breakdown";
   @SerializedName(SERIALIZED_NAME_BREAKDOWN)
@@ -287,6 +304,114 @@ public class FacialSimilarityPhotoFullyAutoReport {
   }
 
 
+  public FacialSimilarityPhotoFullyAutoReport livePhotos(List<FacialSimilarityReportMedia> livePhotos) {
+    this.livePhotos = livePhotos;
+    return this;
+  }
+
+  public FacialSimilarityPhotoFullyAutoReport addLivePhotosItem(FacialSimilarityReportMedia livePhotosItem) {
+    if (this.livePhotos == null) {
+      this.livePhotos = new ArrayList<>();
+    }
+    this.livePhotos.add(livePhotosItem);
+    return this;
+  }
+
+  /**
+   * Array of objects with live photo ids that were used in the Onfido engine.
+   * @return livePhotos
+   */
+  @javax.annotation.Nullable
+  public List<FacialSimilarityReportMedia> getLivePhotos() {
+    return livePhotos;
+  }
+
+  public void setLivePhotos(List<FacialSimilarityReportMedia> livePhotos) {
+    this.livePhotos = livePhotos;
+  }
+
+
+  public FacialSimilarityPhotoFullyAutoReport liveVideos(List<FacialSimilarityReportMedia> liveVideos) {
+    this.liveVideos = liveVideos;
+    return this;
+  }
+
+  public FacialSimilarityPhotoFullyAutoReport addLiveVideosItem(FacialSimilarityReportMedia liveVideosItem) {
+    if (this.liveVideos == null) {
+      this.liveVideos = new ArrayList<>();
+    }
+    this.liveVideos.add(liveVideosItem);
+    return this;
+  }
+
+  /**
+   * Array of objects with live video ids that were used in the Onfido engine.
+   * @return liveVideos
+   */
+  @javax.annotation.Nullable
+  public List<FacialSimilarityReportMedia> getLiveVideos() {
+    return liveVideos;
+  }
+
+  public void setLiveVideos(List<FacialSimilarityReportMedia> liveVideos) {
+    this.liveVideos = liveVideos;
+  }
+
+
+  public FacialSimilarityPhotoFullyAutoReport motionCaptures(List<FacialSimilarityReportMedia> motionCaptures) {
+    this.motionCaptures = motionCaptures;
+    return this;
+  }
+
+  public FacialSimilarityPhotoFullyAutoReport addMotionCapturesItem(FacialSimilarityReportMedia motionCapturesItem) {
+    if (this.motionCaptures == null) {
+      this.motionCaptures = new ArrayList<>();
+    }
+    this.motionCaptures.add(motionCapturesItem);
+    return this;
+  }
+
+  /**
+   * Array of objects with motion capture ids that were used in the Onfido engine.
+   * @return motionCaptures
+   */
+  @javax.annotation.Nullable
+  public List<FacialSimilarityReportMedia> getMotionCaptures() {
+    return motionCaptures;
+  }
+
+  public void setMotionCaptures(List<FacialSimilarityReportMedia> motionCaptures) {
+    this.motionCaptures = motionCaptures;
+  }
+
+
+  public FacialSimilarityPhotoFullyAutoReport idPhotos(List<FacialSimilarityReportMedia> idPhotos) {
+    this.idPhotos = idPhotos;
+    return this;
+  }
+
+  public FacialSimilarityPhotoFullyAutoReport addIdPhotosItem(FacialSimilarityReportMedia idPhotosItem) {
+    if (this.idPhotos == null) {
+      this.idPhotos = new ArrayList<>();
+    }
+    this.idPhotos.add(idPhotosItem);
+    return this;
+  }
+
+  /**
+   * Array of objects with id photo ids that were used in the Onfido engine.
+   * @return idPhotos
+   */
+  @javax.annotation.Nullable
+  public List<FacialSimilarityReportMedia> getIdPhotos() {
+    return idPhotos;
+  }
+
+  public void setIdPhotos(List<FacialSimilarityReportMedia> idPhotos) {
+    this.idPhotos = idPhotos;
+  }
+
+
   public FacialSimilarityPhotoFullyAutoReport breakdown(FacialSimilarityPhotoFullyAutoBreakdown breakdown) {
     this.breakdown = breakdown;
     return this;
@@ -388,6 +513,10 @@ public class FacialSimilarityPhotoFullyAutoReport {
         Objects.equals(this.checkId, facialSimilarityPhotoFullyAutoReport.checkId) &&
         Objects.equals(this.documents, facialSimilarityPhotoFullyAutoReport.documents) &&
         Objects.equals(this.name, facialSimilarityPhotoFullyAutoReport.name) &&
+        Objects.equals(this.livePhotos, facialSimilarityPhotoFullyAutoReport.livePhotos) &&
+        Objects.equals(this.liveVideos, facialSimilarityPhotoFullyAutoReport.liveVideos) &&
+        Objects.equals(this.motionCaptures, facialSimilarityPhotoFullyAutoReport.motionCaptures) &&
+        Objects.equals(this.idPhotos, facialSimilarityPhotoFullyAutoReport.idPhotos) &&
         Objects.equals(this.breakdown, facialSimilarityPhotoFullyAutoReport.breakdown) &&
         Objects.equals(this.properties, facialSimilarityPhotoFullyAutoReport.properties)&&
         Objects.equals(this.additionalProperties, facialSimilarityPhotoFullyAutoReport.additionalProperties);
@@ -395,7 +524,7 @@ public class FacialSimilarityPhotoFullyAutoReport {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, createdAt, href, status, result, subResult, checkId, documents, name, breakdown, properties, additionalProperties);
+    return Objects.hash(id, createdAt, href, status, result, subResult, checkId, documents, name, livePhotos, liveVideos, motionCaptures, idPhotos, breakdown, properties, additionalProperties);
   }
 
   @Override
@@ -411,6 +540,10 @@ public class FacialSimilarityPhotoFullyAutoReport {
     sb.append("    checkId: ").append(toIndentedString(checkId)).append("\n");
     sb.append("    documents: ").append(toIndentedString(documents)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    livePhotos: ").append(toIndentedString(livePhotos)).append("\n");
+    sb.append("    liveVideos: ").append(toIndentedString(liveVideos)).append("\n");
+    sb.append("    motionCaptures: ").append(toIndentedString(motionCaptures)).append("\n");
+    sb.append("    idPhotos: ").append(toIndentedString(idPhotos)).append("\n");
     sb.append("    breakdown: ").append(toIndentedString(breakdown)).append("\n");
     sb.append("    properties: ").append(toIndentedString(properties)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
@@ -445,6 +578,10 @@ public class FacialSimilarityPhotoFullyAutoReport {
     openapiFields.add("check_id");
     openapiFields.add("documents");
     openapiFields.add("name");
+    openapiFields.add("live_photos");
+    openapiFields.add("live_videos");
+    openapiFields.add("motion_captures");
+    openapiFields.add("id_photos");
     openapiFields.add("breakdown");
     openapiFields.add("properties");
 
@@ -511,6 +648,62 @@ public class FacialSimilarityPhotoFullyAutoReport {
       }
       // validate the required field `name`
       ReportName.validateJsonElement(jsonObj.get("name"));
+      if (jsonObj.get("live_photos") != null && !jsonObj.get("live_photos").isJsonNull()) {
+        JsonArray jsonArraylivePhotos = jsonObj.getAsJsonArray("live_photos");
+        if (jsonArraylivePhotos != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("live_photos").isJsonArray()) {
+            throw new IllegalArgumentException(String.format("Expected the field `live_photos` to be an array in the JSON string but got `%s`", jsonObj.get("live_photos").toString()));
+          }
+
+          // validate the optional field `live_photos` (array)
+          for (int i = 0; i < jsonArraylivePhotos.size(); i++) {
+            FacialSimilarityReportMedia.validateJsonElement(jsonArraylivePhotos.get(i));
+          };
+        }
+      }
+      if (jsonObj.get("live_videos") != null && !jsonObj.get("live_videos").isJsonNull()) {
+        JsonArray jsonArrayliveVideos = jsonObj.getAsJsonArray("live_videos");
+        if (jsonArrayliveVideos != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("live_videos").isJsonArray()) {
+            throw new IllegalArgumentException(String.format("Expected the field `live_videos` to be an array in the JSON string but got `%s`", jsonObj.get("live_videos").toString()));
+          }
+
+          // validate the optional field `live_videos` (array)
+          for (int i = 0; i < jsonArrayliveVideos.size(); i++) {
+            FacialSimilarityReportMedia.validateJsonElement(jsonArrayliveVideos.get(i));
+          };
+        }
+      }
+      if (jsonObj.get("motion_captures") != null && !jsonObj.get("motion_captures").isJsonNull()) {
+        JsonArray jsonArraymotionCaptures = jsonObj.getAsJsonArray("motion_captures");
+        if (jsonArraymotionCaptures != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("motion_captures").isJsonArray()) {
+            throw new IllegalArgumentException(String.format("Expected the field `motion_captures` to be an array in the JSON string but got `%s`", jsonObj.get("motion_captures").toString()));
+          }
+
+          // validate the optional field `motion_captures` (array)
+          for (int i = 0; i < jsonArraymotionCaptures.size(); i++) {
+            FacialSimilarityReportMedia.validateJsonElement(jsonArraymotionCaptures.get(i));
+          };
+        }
+      }
+      if (jsonObj.get("id_photos") != null && !jsonObj.get("id_photos").isJsonNull()) {
+        JsonArray jsonArrayidPhotos = jsonObj.getAsJsonArray("id_photos");
+        if (jsonArrayidPhotos != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("id_photos").isJsonArray()) {
+            throw new IllegalArgumentException(String.format("Expected the field `id_photos` to be an array in the JSON string but got `%s`", jsonObj.get("id_photos").toString()));
+          }
+
+          // validate the optional field `id_photos` (array)
+          for (int i = 0; i < jsonArrayidPhotos.size(); i++) {
+            FacialSimilarityReportMedia.validateJsonElement(jsonArrayidPhotos.get(i));
+          };
+        }
+      }
       // validate the optional field `breakdown`
       if (jsonObj.get("breakdown") != null && !jsonObj.get("breakdown").isJsonNull()) {
         FacialSimilarityPhotoFullyAutoBreakdown.validateJsonElement(jsonObj.get("breakdown"));

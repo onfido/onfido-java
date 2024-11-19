@@ -134,4 +134,33 @@ public class ReportSchemasTest extends TestBase {
             .getBarcode()
             .getDocumentType());
   }
+
+  @Test
+  public void schemaOfFacialSimilarityPhotoFullyAutoReportIsValid() throws Exception {
+    uploadLivePhoto(applicant, "sample_photo.png");
+
+    Check check =
+        createCheck(
+            applicant,
+            document,
+            new CheckBuilder()
+                .reportNames(Arrays.asList(ReportName.FACIAL_SIMILARITY_PHOTO_FULLY_AUTO)));
+
+    Report report =
+        (Report)
+            repeatRequestUntilStatusChanges(
+                "findReport", new Object[] {check.getReportIds().get(0)}, COMPLETE, 10, 1000);
+
+    Assertions.assertEquals(COMPLETE, report.getStatus());
+    Assertions.assertEquals(ReportName.FACIAL_SIMILARITY_PHOTO_FULLY_AUTO, report.getName());
+    Assertions.assertEquals(check.getId(), report.getReportShared().getCheckId());
+
+    FacialSimilarityPhotoFullyAutoReport facialSimilarityPhotoFullyAutoReport =
+        report.getFacialSimilarityPhotoFullyAutoReport();
+
+    Assertions.assertNotNull(facialSimilarityPhotoFullyAutoReport.getLivePhotos());
+    Assertions.assertNotNull(facialSimilarityPhotoFullyAutoReport.getLiveVideos());
+    Assertions.assertNotNull(facialSimilarityPhotoFullyAutoReport.getMotionCaptures());
+    Assertions.assertNotNull(facialSimilarityPhotoFullyAutoReport.getIdPhotos());
+  }
 }

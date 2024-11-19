@@ -274,6 +274,8 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.FacialSimilarityPhotoFullyAutoReport.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.FacialSimilarityPhotoProperties.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.FacialSimilarityPhotoReport.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.FacialSimilarityReportMedia.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.FacialSimilarityReportShared.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.FacialSimilarityVideoBreakdown.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.FacialSimilarityVideoBreakdownFaceComparison.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.FacialSimilarityVideoBreakdownImageIntegrity.CustomTypeAdapterFactory());

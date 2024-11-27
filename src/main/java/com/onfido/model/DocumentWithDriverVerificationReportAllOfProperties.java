@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.onfido.model.DocumentPropertiesAddressLines;
-import com.onfido.model.DocumentPropertiesBarcode;
+import com.onfido.model.DocumentPropertiesBarcodeInner;
 import com.onfido.model.DocumentPropertiesDocumentClassification;
 import com.onfido.model.DocumentPropertiesDocumentNumbersInner;
 import com.onfido.model.DocumentPropertiesDrivingLicenceInformation;
@@ -404,7 +404,7 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
 
   public static final String SERIALIZED_NAME_BARCODE = "barcode";
   @SerializedName(SERIALIZED_NAME_BARCODE)
-  private DocumentPropertiesBarcode barcode;
+  private List<DocumentPropertiesBarcodeInner> barcode = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_NFC = "nfc";
   @SerializedName(SERIALIZED_NAME_NFC)
@@ -1217,8 +1217,16 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties barcode(DocumentPropertiesBarcode barcode) {
+  public DocumentWithDriverVerificationReportAllOfProperties barcode(List<DocumentPropertiesBarcodeInner> barcode) {
     this.barcode = barcode;
+    return this;
+  }
+
+  public DocumentWithDriverVerificationReportAllOfProperties addBarcodeItem(DocumentPropertiesBarcodeInner barcodeItem) {
+    if (this.barcode == null) {
+      this.barcode = new ArrayList<>();
+    }
+    this.barcode.add(barcodeItem);
     return this;
   }
 
@@ -1227,11 +1235,11 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
    * @return barcode
    */
   @javax.annotation.Nullable
-  public DocumentPropertiesBarcode getBarcode() {
+  public List<DocumentPropertiesBarcodeInner> getBarcode() {
     return barcode;
   }
 
-  public void setBarcode(DocumentPropertiesBarcode barcode) {
+  public void setBarcode(List<DocumentPropertiesBarcodeInner> barcode) {
     this.barcode = barcode;
   }
 
@@ -1826,9 +1834,19 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
       if (jsonObj.get("address_lines") != null && !jsonObj.get("address_lines").isJsonNull()) {
         DocumentPropertiesAddressLines.validateJsonElement(jsonObj.get("address_lines"));
       }
-      // validate the optional field `barcode`
       if (jsonObj.get("barcode") != null && !jsonObj.get("barcode").isJsonNull()) {
-        DocumentPropertiesBarcode.validateJsonElement(jsonObj.get("barcode"));
+        JsonArray jsonArraybarcode = jsonObj.getAsJsonArray("barcode");
+        if (jsonArraybarcode != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("barcode").isJsonArray()) {
+            throw new IllegalArgumentException(String.format("Expected the field `barcode` to be an array in the JSON string but got `%s`", jsonObj.get("barcode").toString()));
+          }
+
+          // validate the optional field `barcode` (array)
+          for (int i = 0; i < jsonArraybarcode.size(); i++) {
+            DocumentPropertiesBarcodeInner.validateJsonElement(jsonArraybarcode.get(i));
+          };
+        }
       }
       // validate the optional field `nfc`
       if (jsonObj.get("nfc") != null && !jsonObj.get("nfc").isJsonNull()) {

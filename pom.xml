@@ -5,7 +5,7 @@
     <artifactId>onfido-api-java</artifactId>
     <packaging>jar</packaging>
     <name>onfido-api-java</name>
-    <version>5.2.0</version>
+    <version>5.3.0</version>
     <url>https://documentation.onfido.com</url>
     <description>Official Java API client library for the Onfido API</description>
     <scm>

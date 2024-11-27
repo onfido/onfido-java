@@ -47,10 +47,10 @@ import java.util.Set;
 import com.onfido.JSON;
 
 /**
- * DocumentPropertiesBarcode
+ * DocumentPropertiesBarcodeInner
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
-public class DocumentPropertiesBarcode {
+public class DocumentPropertiesBarcodeInner {
   public static final String SERIALIZED_NAME_FIRST_NAME = "first_name";
   @SerializedName(SERIALIZED_NAME_FIRST_NAME)
   private String firstName;
@@ -123,10 +123,10 @@ public class DocumentPropertiesBarcode {
   @SerializedName(SERIALIZED_NAME_REAL_ID_CLASSIFICATION)
   private String realIdClassification;
 
-  public DocumentPropertiesBarcode() {
+  public DocumentPropertiesBarcodeInner() {
   }
 
-  public DocumentPropertiesBarcode firstName(String firstName) {
+  public DocumentPropertiesBarcodeInner firstName(String firstName) {
     this.firstName = firstName;
     return this;
   }
@@ -145,7 +145,7 @@ public class DocumentPropertiesBarcode {
   }
 
 
-  public DocumentPropertiesBarcode middleName(String middleName) {
+  public DocumentPropertiesBarcodeInner middleName(String middleName) {
     this.middleName = middleName;
     return this;
   }
@@ -164,7 +164,7 @@ public class DocumentPropertiesBarcode {
   }
 
 
-  public DocumentPropertiesBarcode lastName(String lastName) {
+  public DocumentPropertiesBarcodeInner lastName(String lastName) {
     this.lastName = lastName;
     return this;
   }
@@ -183,7 +183,7 @@ public class DocumentPropertiesBarcode {
   }
 
 
-  public DocumentPropertiesBarcode documentType(String documentType) {
+  public DocumentPropertiesBarcodeInner documentType(String documentType) {
     this.documentType = documentType;
     return this;
   }
@@ -202,7 +202,7 @@ public class DocumentPropertiesBarcode {
   }
 
 
-  public DocumentPropertiesBarcode dateOfExpiry(LocalDate dateOfExpiry) {
+  public DocumentPropertiesBarcodeInner dateOfExpiry(LocalDate dateOfExpiry) {
     this.dateOfExpiry = dateOfExpiry;
     return this;
   }
@@ -221,7 +221,7 @@ public class DocumentPropertiesBarcode {
   }
 
 
-  public DocumentPropertiesBarcode dateOfBirth(LocalDate dateOfBirth) {
+  public DocumentPropertiesBarcodeInner dateOfBirth(LocalDate dateOfBirth) {
     this.dateOfBirth = dateOfBirth;
     return this;
   }
@@ -240,7 +240,7 @@ public class DocumentPropertiesBarcode {
   }
 
 
-  public DocumentPropertiesBarcode issuingDate(LocalDate issuingDate) {
+  public DocumentPropertiesBarcodeInner issuingDate(LocalDate issuingDate) {
     this.issuingDate = issuingDate;
     return this;
   }
@@ -259,7 +259,7 @@ public class DocumentPropertiesBarcode {
   }
 
 
-  public DocumentPropertiesBarcode addressLine1(String addressLine1) {
+  public DocumentPropertiesBarcodeInner addressLine1(String addressLine1) {
     this.addressLine1 = addressLine1;
     return this;
   }
@@ -278,7 +278,7 @@ public class DocumentPropertiesBarcode {
   }
 
 
-  public DocumentPropertiesBarcode addressLine2(String addressLine2) {
+  public DocumentPropertiesBarcodeInner addressLine2(String addressLine2) {
     this.addressLine2 = addressLine2;
     return this;
   }
@@ -297,7 +297,7 @@ public class DocumentPropertiesBarcode {
   }
 
 
-  public DocumentPropertiesBarcode addressLine3(String addressLine3) {
+  public DocumentPropertiesBarcodeInner addressLine3(String addressLine3) {
     this.addressLine3 = addressLine3;
     return this;
   }
@@ -316,7 +316,7 @@ public class DocumentPropertiesBarcode {
   }
 
 
-  public DocumentPropertiesBarcode addressLine4(String addressLine4) {
+  public DocumentPropertiesBarcodeInner addressLine4(String addressLine4) {
     this.addressLine4 = addressLine4;
     return this;
   }
@@ -335,7 +335,7 @@ public class DocumentPropertiesBarcode {
   }
 
 
-  public DocumentPropertiesBarcode addressLine5(String addressLine5) {
+  public DocumentPropertiesBarcodeInner addressLine5(String addressLine5) {
     this.addressLine5 = addressLine5;
     return this;
   }
@@ -354,7 +354,7 @@ public class DocumentPropertiesBarcode {
   }
 
 
-  public DocumentPropertiesBarcode issuingState(String issuingState) {
+  public DocumentPropertiesBarcodeInner issuingState(String issuingState) {
     this.issuingState = issuingState;
     return this;
   }
@@ -373,7 +373,7 @@ public class DocumentPropertiesBarcode {
   }
 
 
-  public DocumentPropertiesBarcode propertyClass(String propertyClass) {
+  public DocumentPropertiesBarcodeInner propertyClass(String propertyClass) {
     this.propertyClass = propertyClass;
     return this;
   }
@@ -392,7 +392,7 @@ public class DocumentPropertiesBarcode {
   }
 
 
-  public DocumentPropertiesBarcode gender(String gender) {
+  public DocumentPropertiesBarcodeInner gender(String gender) {
     this.gender = gender;
     return this;
   }
@@ -411,7 +411,7 @@ public class DocumentPropertiesBarcode {
   }
 
 
-  public DocumentPropertiesBarcode issuingCountry(String issuingCountry) {
+  public DocumentPropertiesBarcodeInner issuingCountry(String issuingCountry) {
     this.issuingCountry = issuingCountry;
     return this;
   }
@@ -430,7 +430,7 @@ public class DocumentPropertiesBarcode {
   }
 
 
-  public DocumentPropertiesBarcode documentNumber(String documentNumber) {
+  public DocumentPropertiesBarcodeInner documentNumber(String documentNumber) {
     this.documentNumber = documentNumber;
     return this;
   }
@@ -449,7 +449,7 @@ public class DocumentPropertiesBarcode {
   }
 
 
-  public DocumentPropertiesBarcode realIdClassification(String realIdClassification) {
+  public DocumentPropertiesBarcodeInner realIdClassification(String realIdClassification) {
     this.realIdClassification = realIdClassification;
     return this;
   }
@@ -480,9 +480,9 @@ public class DocumentPropertiesBarcode {
    *
    * @param key name of the property
    * @param value value of the property
-   * @return the DocumentPropertiesBarcode instance itself
+   * @return the DocumentPropertiesBarcodeInner instance itself
    */
-  public DocumentPropertiesBarcode putAdditionalProperty(String key, Object value) {
+  public DocumentPropertiesBarcodeInner putAdditionalProperty(String key, Object value) {
     if (this.additionalProperties == null) {
         this.additionalProperties = new HashMap<String, Object>();
     }
@@ -521,26 +521,26 @@ public class DocumentPropertiesBarcode {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    DocumentPropertiesBarcode documentPropertiesBarcode = (DocumentPropertiesBarcode) o;
-    return Objects.equals(this.firstName, documentPropertiesBarcode.firstName) &&
-        Objects.equals(this.middleName, documentPropertiesBarcode.middleName) &&
-        Objects.equals(this.lastName, documentPropertiesBarcode.lastName) &&
-        Objects.equals(this.documentType, documentPropertiesBarcode.documentType) &&
-        Objects.equals(this.dateOfExpiry, documentPropertiesBarcode.dateOfExpiry) &&
-        Objects.equals(this.dateOfBirth, documentPropertiesBarcode.dateOfBirth) &&
-        Objects.equals(this.issuingDate, documentPropertiesBarcode.issuingDate) &&
-        Objects.equals(this.addressLine1, documentPropertiesBarcode.addressLine1) &&
-        Objects.equals(this.addressLine2, documentPropertiesBarcode.addressLine2) &&
-        Objects.equals(this.addressLine3, documentPropertiesBarcode.addressLine3) &&
-        Objects.equals(this.addressLine4, documentPropertiesBarcode.addressLine4) &&
-        Objects.equals(this.addressLine5, documentPropertiesBarcode.addressLine5) &&
-        Objects.equals(this.issuingState, documentPropertiesBarcode.issuingState) &&
-        Objects.equals(this.propertyClass, documentPropertiesBarcode.propertyClass) &&
-        Objects.equals(this.gender, documentPropertiesBarcode.gender) &&
-        Objects.equals(this.issuingCountry, documentPropertiesBarcode.issuingCountry) &&
-        Objects.equals(this.documentNumber, documentPropertiesBarcode.documentNumber) &&
-        Objects.equals(this.realIdClassification, documentPropertiesBarcode.realIdClassification)&&
-        Objects.equals(this.additionalProperties, documentPropertiesBarcode.additionalProperties);
+    DocumentPropertiesBarcodeInner documentPropertiesBarcodeInner = (DocumentPropertiesBarcodeInner) o;
+    return Objects.equals(this.firstName, documentPropertiesBarcodeInner.firstName) &&
+        Objects.equals(this.middleName, documentPropertiesBarcodeInner.middleName) &&
+        Objects.equals(this.lastName, documentPropertiesBarcodeInner.lastName) &&
+        Objects.equals(this.documentType, documentPropertiesBarcodeInner.documentType) &&
+        Objects.equals(this.dateOfExpiry, documentPropertiesBarcodeInner.dateOfExpiry) &&
+        Objects.equals(this.dateOfBirth, documentPropertiesBarcodeInner.dateOfBirth) &&
+        Objects.equals(this.issuingDate, documentPropertiesBarcodeInner.issuingDate) &&
+        Objects.equals(this.addressLine1, documentPropertiesBarcodeInner.addressLine1) &&
+        Objects.equals(this.addressLine2, documentPropertiesBarcodeInner.addressLine2) &&
+        Objects.equals(this.addressLine3, documentPropertiesBarcodeInner.addressLine3) &&
+        Objects.equals(this.addressLine4, documentPropertiesBarcodeInner.addressLine4) &&
+        Objects.equals(this.addressLine5, documentPropertiesBarcodeInner.addressLine5) &&
+        Objects.equals(this.issuingState, documentPropertiesBarcodeInner.issuingState) &&
+        Objects.equals(this.propertyClass, documentPropertiesBarcodeInner.propertyClass) &&
+        Objects.equals(this.gender, documentPropertiesBarcodeInner.gender) &&
+        Objects.equals(this.issuingCountry, documentPropertiesBarcodeInner.issuingCountry) &&
+        Objects.equals(this.documentNumber, documentPropertiesBarcodeInner.documentNumber) &&
+        Objects.equals(this.realIdClassification, documentPropertiesBarcodeInner.realIdClassification)&&
+        Objects.equals(this.additionalProperties, documentPropertiesBarcodeInner.additionalProperties);
   }
 
   @Override
@@ -551,7 +551,7 @@ public class DocumentPropertiesBarcode {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class DocumentPropertiesBarcode {\n");
+    sb.append("class DocumentPropertiesBarcodeInner {\n");
     sb.append("    firstName: ").append(toIndentedString(firstName)).append("\n");
     sb.append("    middleName: ").append(toIndentedString(middleName)).append("\n");
     sb.append("    lastName: ").append(toIndentedString(lastName)).append("\n");
@@ -620,12 +620,12 @@ public class DocumentPropertiesBarcode {
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to DocumentPropertiesBarcode
+   * @throws IOException if the JSON Element is invalid with respect to DocumentPropertiesBarcodeInner
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!DocumentPropertiesBarcode.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in DocumentPropertiesBarcode is not found in the empty JSON string", DocumentPropertiesBarcode.openapiRequiredFields.toString()));
+        if (!DocumentPropertiesBarcodeInner.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in DocumentPropertiesBarcodeInner is not found in the empty JSON string", DocumentPropertiesBarcodeInner.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -680,16 +680,16 @@ public class DocumentPropertiesBarcode {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!DocumentPropertiesBarcode.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'DocumentPropertiesBarcode' and its subtypes
+       if (!DocumentPropertiesBarcodeInner.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'DocumentPropertiesBarcodeInner' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<DocumentPropertiesBarcode> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(DocumentPropertiesBarcode.class));
+       final TypeAdapter<DocumentPropertiesBarcodeInner> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(DocumentPropertiesBarcodeInner.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<DocumentPropertiesBarcode>() {
+       return (TypeAdapter<T>) new TypeAdapter<DocumentPropertiesBarcodeInner>() {
            @Override
-           public void write(JsonWriter out, DocumentPropertiesBarcode value) throws IOException {
+           public void write(JsonWriter out, DocumentPropertiesBarcodeInner value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              obj.remove("additionalProperties");
              // serialize additional properties
@@ -717,12 +717,12 @@ public class DocumentPropertiesBarcode {
            }
 
            @Override
-           public DocumentPropertiesBarcode read(JsonReader in) throws IOException {
+           public DocumentPropertiesBarcodeInner read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
-             DocumentPropertiesBarcode instance = thisAdapter.fromJsonTree(jsonObj);
+             DocumentPropertiesBarcodeInner instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
                if (!openapiFields.contains(entry.getKey())) {
                  if (entry.getValue().isJsonPrimitive()) { // primitive type
@@ -749,18 +749,18 @@ public class DocumentPropertiesBarcode {
   }
 
   /**
-   * Create an instance of DocumentPropertiesBarcode given an JSON string
+   * Create an instance of DocumentPropertiesBarcodeInner given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of DocumentPropertiesBarcode
-   * @throws IOException if the JSON string is invalid with respect to DocumentPropertiesBarcode
+   * @return An instance of DocumentPropertiesBarcodeInner
+   * @throws IOException if the JSON string is invalid with respect to DocumentPropertiesBarcodeInner
    */
-  public static DocumentPropertiesBarcode fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, DocumentPropertiesBarcode.class);
+  public static DocumentPropertiesBarcodeInner fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, DocumentPropertiesBarcodeInner.class);
   }
 
   /**
-   * Convert an instance of DocumentPropertiesBarcode to an JSON string
+   * Convert an instance of DocumentPropertiesBarcodeInner to an JSON string
    *
    * @return JSON string
    */

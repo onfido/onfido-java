@@ -132,6 +132,7 @@ public class ReportSchemasTest extends TestBase {
             .getDocumentWithAddressInformationReport()
             .getProperties()
             .getBarcode()
+            .get(0)
             .getDocumentType());
   }
 

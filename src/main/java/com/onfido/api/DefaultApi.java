@@ -6825,6 +6825,7 @@ public class DefaultApi {
      * @param createdAtGt A ISO-8601 date to filter results with a created date greater than (after) the one provided. (optional)
      * @param createdAtLt A ISO-8601 date to filter results with a created date less than (before) the one provided. (optional)
      * @param sort A string with the value &#39;desc&#39; or &#39;asc&#39; that allows to sort the returned list by the completed datetime either descending or ascending, respectively. If not specified, defaults to &#39;desc&#39;. (optional, default to desc)
+     * @param applicantId the applicant&#39;s id. (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -6835,7 +6836,7 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listWorkflowRunsCall(Integer page, String status, OffsetDateTime createdAtGt, OffsetDateTime createdAtLt, String sort, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listWorkflowRunsCall(Integer page, String status, OffsetDateTime createdAtGt, OffsetDateTime createdAtLt, String sort, UUID applicantId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -6880,6 +6881,10 @@ public class DefaultApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("sort", sort));
         }
 
+        if (applicantId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("applicant_id", applicantId));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -6900,8 +6905,8 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listWorkflowRunsValidateBeforeCall(Integer page, String status, OffsetDateTime createdAtGt, OffsetDateTime createdAtLt, String sort, final ApiCallback _callback) throws ApiException {
-        return listWorkflowRunsCall(page, status, createdAtGt, createdAtLt, sort, _callback);
+    private okhttp3.Call listWorkflowRunsValidateBeforeCall(Integer page, String status, OffsetDateTime createdAtGt, OffsetDateTime createdAtLt, String sort, UUID applicantId, final ApiCallback _callback) throws ApiException {
+        return listWorkflowRunsCall(page, status, createdAtGt, createdAtLt, sort, applicantId, _callback);
 
     }
 
@@ -6913,6 +6918,7 @@ public class DefaultApi {
      * @param createdAtGt A ISO-8601 date to filter results with a created date greater than (after) the one provided. (optional)
      * @param createdAtLt A ISO-8601 date to filter results with a created date less than (before) the one provided. (optional)
      * @param sort A string with the value &#39;desc&#39; or &#39;asc&#39; that allows to sort the returned list by the completed datetime either descending or ascending, respectively. If not specified, defaults to &#39;desc&#39;. (optional, default to desc)
+     * @param applicantId the applicant&#39;s id. (optional)
      * @return List&lt;WorkflowRun&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -6922,8 +6928,8 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public List<WorkflowRun> listWorkflowRuns(Integer page, String status, OffsetDateTime createdAtGt, OffsetDateTime createdAtLt, String sort) throws ApiException {
-        ApiResponse<List<WorkflowRun>> localVarResp = listWorkflowRunsWithHttpInfo(page, status, createdAtGt, createdAtLt, sort);
+    public List<WorkflowRun> listWorkflowRuns(Integer page, String status, OffsetDateTime createdAtGt, OffsetDateTime createdAtLt, String sort, UUID applicantId) throws ApiException {
+        ApiResponse<List<WorkflowRun>> localVarResp = listWorkflowRunsWithHttpInfo(page, status, createdAtGt, createdAtLt, sort, applicantId);
         return localVarResp.getData();
     }
 
@@ -6935,6 +6941,7 @@ public class DefaultApi {
      * @param createdAtGt A ISO-8601 date to filter results with a created date greater than (after) the one provided. (optional)
      * @param createdAtLt A ISO-8601 date to filter results with a created date less than (before) the one provided. (optional)
      * @param sort A string with the value &#39;desc&#39; or &#39;asc&#39; that allows to sort the returned list by the completed datetime either descending or ascending, respectively. If not specified, defaults to &#39;desc&#39;. (optional, default to desc)
+     * @param applicantId the applicant&#39;s id. (optional)
      * @return ApiResponse&lt;List&lt;WorkflowRun&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -6944,8 +6951,8 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<WorkflowRun>> listWorkflowRunsWithHttpInfo(Integer page, String status, OffsetDateTime createdAtGt, OffsetDateTime createdAtLt, String sort) throws ApiException {
-        okhttp3.Call localVarCall = listWorkflowRunsValidateBeforeCall(page, status, createdAtGt, createdAtLt, sort, null);
+    public ApiResponse<List<WorkflowRun>> listWorkflowRunsWithHttpInfo(Integer page, String status, OffsetDateTime createdAtGt, OffsetDateTime createdAtLt, String sort, UUID applicantId) throws ApiException {
+        okhttp3.Call localVarCall = listWorkflowRunsValidateBeforeCall(page, status, createdAtGt, createdAtLt, sort, applicantId, null);
         Type localVarReturnType = new TypeToken<List<WorkflowRun>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -6958,6 +6965,7 @@ public class DefaultApi {
      * @param createdAtGt A ISO-8601 date to filter results with a created date greater than (after) the one provided. (optional)
      * @param createdAtLt A ISO-8601 date to filter results with a created date less than (before) the one provided. (optional)
      * @param sort A string with the value &#39;desc&#39; or &#39;asc&#39; that allows to sort the returned list by the completed datetime either descending or ascending, respectively. If not specified, defaults to &#39;desc&#39;. (optional, default to desc)
+     * @param applicantId the applicant&#39;s id. (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -6968,9 +6976,9 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listWorkflowRunsAsync(Integer page, String status, OffsetDateTime createdAtGt, OffsetDateTime createdAtLt, String sort, final ApiCallback<List<WorkflowRun>> _callback) throws ApiException {
+    public okhttp3.Call listWorkflowRunsAsync(Integer page, String status, OffsetDateTime createdAtGt, OffsetDateTime createdAtLt, String sort, UUID applicantId, final ApiCallback<List<WorkflowRun>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listWorkflowRunsValidateBeforeCall(page, status, createdAtGt, createdAtLt, sort, _callback);
+        okhttp3.Call localVarCall = listWorkflowRunsValidateBeforeCall(page, status, createdAtGt, createdAtLt, sort, applicantId, _callback);
         Type localVarReturnType = new TypeToken<List<WorkflowRun>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

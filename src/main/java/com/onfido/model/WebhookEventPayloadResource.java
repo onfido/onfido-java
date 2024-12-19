@@ -335,7 +335,7 @@ public class WebhookEventPayloadResource {
   }
 
   /**
-   * Output object with the fields produced by the Task execution.
+   * Value field (it can be an Object, List, etc.) with the fields produced by the Task execution.
    * @return output
    */
   @javax.annotation.Nullable

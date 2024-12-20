@@ -10,6 +10,8 @@ import com.onfido.model.WebhookEventPayloadObject;
 import com.onfido.model.WebhookEventPayloadResource;
 import com.onfido.model.WebhookEventResourceType;
 import com.onfido.model.WebhookEventType;
+import java.io.File;
+import java.nio.file.Files;
 import java.time.OffsetDateTime;
 import java.util.HashMap;
 import java.util.UUID;
@@ -67,5 +69,44 @@ public class WebhookStudioEventVerifierTest extends TestBase {
     Assertions.assertThrows(
         OnfidoInvalidSignatureError.class,
         () -> webhookEventVerifier.readPayload(rawEvent, signature));
+  }
+
+  @Test
+  public void validSignatureWithObjectInOutputTest() throws Exception {
+    final String signature = "e3e5565647f5ccf07b2fd8ac22eab94a0a0619413d981fb768295c820523f7d7";
+
+    String rawEventFromFile =
+        new String(
+            Files.readAllBytes(
+                new File("media/studio_webhook_event_with_object_in_output.json").toPath()));
+
+    WebhookEvent event = webhookEventVerifier.readPayload(rawEventFromFile, signature);
+
+    Assertions.assertTrue(
+        event
+            .getPayload()
+            .getResource()
+            .getOutput()
+            .toString()
+            .contains(
+                "properties={date_of_birth=1990-01-01, date_of_expiry=2031-05-28,"
+                    + " document_numbers=[{type=document_number, value=999999999}]"));
+  }
+
+  @Test
+  public void validSignatureWithListInOutputTest() throws Exception {
+    final String signature = "f3a5170acfcecf8c1bf6d9cb9995c0d9dec941af83056a721530f8de7af2c293";
+
+    String rawEventFromFile =
+        new String(
+            Files.readAllBytes(
+                new File("media/studio_webhook_event_with_list_in_output.json").toPath()));
+
+    WebhookEvent event = webhookEventVerifier.readPayload(rawEventFromFile, signature);
+
+    Assertions.assertEquals(
+        event.getPayload().getResource().getOutput().toString(),
+        "[{type=document_photo, id=7af75a3a-ba34-4aa5-9e3e-096c9f56256b,"
+            + " checksum_sha256=hiwV2PLmeQZzeySPGGwVL48sxVXcyfpXy9LDl1u3lWU=}]");
   }
 }

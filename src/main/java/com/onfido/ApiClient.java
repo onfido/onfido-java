@@ -160,7 +160,7 @@ public class ApiClient {
         json = new JSON();
 
         // Set default User-Agent.
-        setUserAgent("onfido-java/5.4.0");
+        setUserAgent("onfido-java/5.5.0");
 
         authentications = new HashMap<String, Authentication>();
     }

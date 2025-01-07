@@ -1905,6 +1905,138 @@ public class DefaultApi {
         return localVarCall;
     }
     /**
+     * Build call for downloadEvidenceFolder
+     * @param workflowRunId Workflow Run ID (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 302 </td><td> Found </td><td>  * Location - Link to the Timeline File. <br>  </td></tr>
+        <tr><td> 200 </td><td> The evidence folder binary data. </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call downloadEvidenceFolderCall(UUID workflowRunId, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/workflow_runs/{workflow_run_id}/evidence_folder"
+            .replace("{" + "workflow_run_id" + "}", localVarApiClient.escapeString(workflowRunId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/zip",
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "Token" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call downloadEvidenceFolderValidateBeforeCall(UUID workflowRunId, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'workflowRunId' is set
+        if (workflowRunId == null) {
+            throw new ApiException("Missing the required parameter 'workflowRunId' when calling downloadEvidenceFolder(Async)");
+        }
+
+        return downloadEvidenceFolderCall(workflowRunId, _callback);
+
+    }
+
+    /**
+     * Retrieve Workflow Run Evidence Folder
+     * Retrieves the evidence folder for the designated Workflow Run 
+     * @param workflowRunId Workflow Run ID (required)
+     * @return FileTransfer
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 302 </td><td> Found </td><td>  * Location - Link to the Timeline File. <br>  </td></tr>
+        <tr><td> 200 </td><td> The evidence folder binary data. </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+     </table>
+     */
+    public FileTransfer downloadEvidenceFolder(UUID workflowRunId) throws ApiException {
+        ApiResponse<FileTransfer> localVarResp = downloadEvidenceFolderWithHttpInfo(workflowRunId);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Retrieve Workflow Run Evidence Folder
+     * Retrieves the evidence folder for the designated Workflow Run 
+     * @param workflowRunId Workflow Run ID (required)
+     * @return ApiResponse&lt;FileTransfer&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 302 </td><td> Found </td><td>  * Location - Link to the Timeline File. <br>  </td></tr>
+        <tr><td> 200 </td><td> The evidence folder binary data. </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<FileTransfer> downloadEvidenceFolderWithHttpInfo(UUID workflowRunId) throws ApiException {
+        okhttp3.Call localVarCall = downloadEvidenceFolderValidateBeforeCall(workflowRunId, null);
+        Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Retrieve Workflow Run Evidence Folder (asynchronously)
+     * Retrieves the evidence folder for the designated Workflow Run 
+     * @param workflowRunId Workflow Run ID (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 302 </td><td> Found </td><td>  * Location - Link to the Timeline File. <br>  </td></tr>
+        <tr><td> 200 </td><td> The evidence folder binary data. </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call downloadEvidenceFolderAsync(UUID workflowRunId, final ApiCallback<FileTransfer> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = downloadEvidenceFolderValidateBeforeCall(workflowRunId, _callback);
+        Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
      * Build call for downloadIdPhoto
      * @param idPhotoId The ID photo&#39;s unique identifier. (required)
      * @param _callback Callback for upload/download progress

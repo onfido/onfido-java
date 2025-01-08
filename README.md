@@ -43,7 +43,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.onfido</groupId>
   <artifactId>onfido-api-java</artifactId>
-  <version>5.4.0</version>
+  <version>5.5.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -59,7 +59,7 @@ Add this dependency to your project's build file:
   }
 
   dependencies {
-     implementation "com.onfido:onfido-api-java:5.4.0"
+     implementation "com.onfido:onfido-api-java:5.5.0"
   }
 ```
 
@@ -73,10 +73,10 @@ mvn clean package
 
 Then manually install the following JARs:
 
-- `target/onfido-api-java-5.4.0.jar`
+- `target/onfido-api-java-5.5.0.jar`
 - `target/lib/*.jar`
 
-The latest version can be found at: https://search.maven.org/artifact/com.onfido/5.4.0
+The latest version can be found at: https://search.maven.org/artifact/com.onfido/5.5.0
 
 ## Getting Started
 

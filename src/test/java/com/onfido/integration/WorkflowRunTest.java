@@ -5,9 +5,12 @@ import com.onfido.model.TimelineFileReference;
 import com.onfido.model.WorkflowRun;
 import com.onfido.model.WorkflowRunBuilder;
 import com.onfido.model.WorkflowRunStatus;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
+import java.util.zip.ZipFile;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -18,7 +21,8 @@ public class WorkflowRunTest extends TestBase {
   private UUID workflowRunId;
 
   static final UUID WORKFLOW_ID = UUID.fromString("e8c921eb-0495-44fe-b655-bcdcaffdafe5");
-  static final UUID WORKFLOW_ID_TIMELINE = UUID.fromString("221f9d24-cf72-4762-ac4a-01bf3ccc09dd");
+  static final UUID WORKFLOW_ID_AUTO_APPROVE =
+      UUID.fromString("221f9d24-cf72-4762-ac4a-01bf3ccc09dd");
 
   @BeforeEach
   public void setup() throws Exception {
@@ -76,7 +80,7 @@ public class WorkflowRunTest extends TestBase {
 
   @Test
   public void generateTimelineFileTest() throws Exception {
-    UUID workflowRunId = createWorkflowRun(WORKFLOW_ID_TIMELINE, applicantId).getId();
+    UUID workflowRunId = createWorkflowRun(WORKFLOW_ID_AUTO_APPROVE, applicantId).getId();
 
     repeatRequestUntilStatusChanges(
         "findWorkflowRun", new UUID[] {workflowRunId}, WorkflowRunStatus.APPROVED, 10, 1000);
@@ -90,7 +94,7 @@ public class WorkflowRunTest extends TestBase {
 
   @Test
   public void findTimelineFileTest() throws Exception {
-    UUID workflowRunId = createWorkflowRun(WORKFLOW_ID_TIMELINE, applicantId).getId();
+    UUID workflowRunId = createWorkflowRun(WORKFLOW_ID_AUTO_APPROVE, applicantId).getId();
 
     repeatRequestUntilStatusChanges(
         "findWorkflowRun", new UUID[] {workflowRunId}, WorkflowRunStatus.APPROVED, 10, 1000);
@@ -104,6 +108,23 @@ public class WorkflowRunTest extends TestBase {
     byte[] byteArray = download.getByteArray();
 
     Assertions.assertEquals("%PDF", new String(byteArray, 0, 4));
+    Assertions.assertTrue(byteArray.length > 0);
+  }
+
+  @Test
+  public void downloadEvidenceFolderTest() throws Exception {
+    UUID workflowRunId = createWorkflowRun(WORKFLOW_ID_AUTO_APPROVE, applicantId).getId();
+
+    repeatRequestUntilStatusChanges(
+        "findWorkflowRun", new UUID[] {workflowRunId}, WorkflowRunStatus.APPROVED, 10, 1000);
+
+    byte[] byteArray = onfido.downloadEvidenceFolder(workflowRunId).getByteArray();
+
+    Path path = Files.createTempFile("evidence-folder", ".zip");
+    path.toFile().deleteOnExit();
+    Files.write(path, byteArray);
+
+    Assertions.assertDoesNotThrow(() -> new ZipFile(path.toFile()));
     Assertions.assertTrue(byteArray.length > 0);
   }
 }

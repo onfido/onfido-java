@@ -12,6 +12,8 @@ import org.junit.jupiter.api.Test;
 public class ReportSchemasTest extends TestBase {
   private Applicant applicant;
   private Document document;
+  private final int MAX_RETRIES = 15;
+  private final int SLEEP_TIME = 1000;
 
   @BeforeEach
   public void setup() throws Exception {
@@ -31,7 +33,11 @@ public class ReportSchemasTest extends TestBase {
     Report documentReport =
         (Report)
             repeatRequestUntilStatusChanges(
-                "findReport", new Object[] {check.getReportIds().get(0)}, COMPLETE, 10, 1000);
+                "findReport",
+                new Object[] {check.getReportIds().get(0)},
+                COMPLETE,
+                MAX_RETRIES,
+                SLEEP_TIME);
 
     Assertions.assertEquals(COMPLETE, documentReport.getStatus());
     Assertions.assertEquals(ReportName.DOCUMENT, documentReport.getName());
@@ -77,7 +83,11 @@ public class ReportSchemasTest extends TestBase {
     Report facialSimilarityPhotoFullyAutoReport =
         (Report)
             repeatRequestUntilStatusChanges(
-                "findReport", new Object[] {check.getReportIds().get(0)}, COMPLETE, 10, 1000);
+                "findReport",
+                new Object[] {check.getReportIds().get(0)},
+                COMPLETE,
+                MAX_RETRIES,
+                SLEEP_TIME);
 
     Assertions.assertEquals(COMPLETE, facialSimilarityPhotoFullyAutoReport.getStatus());
     Assertions.assertEquals(
@@ -118,7 +128,11 @@ public class ReportSchemasTest extends TestBase {
     Report report =
         (Report)
             repeatRequestUntilStatusChanges(
-                "findReport", new Object[] {check.getReportIds().get(0)}, COMPLETE, 10, 1000);
+                "findReport",
+                new Object[] {check.getReportIds().get(0)},
+                COMPLETE,
+                MAX_RETRIES,
+                SLEEP_TIME);
 
     Assertions.assertEquals(COMPLETE, report.getStatus());
     Assertions.assertEquals(ReportName.DOCUMENT_WITH_ADDRESS_INFORMATION, report.getName());
@@ -150,7 +164,11 @@ public class ReportSchemasTest extends TestBase {
     Report report =
         (Report)
             repeatRequestUntilStatusChanges(
-                "findReport", new Object[] {check.getReportIds().get(0)}, COMPLETE, 10, 1000);
+                "findReport",
+                new Object[] {check.getReportIds().get(0)},
+                COMPLETE,
+                MAX_RETRIES,
+                SLEEP_TIME);
 
     Assertions.assertEquals(COMPLETE, report.getStatus());
     Assertions.assertEquals(ReportName.FACIAL_SIMILARITY_PHOTO_FULLY_AUTO, report.getName());

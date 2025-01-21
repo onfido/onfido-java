@@ -12,8 +12,6 @@ import org.junit.jupiter.api.Test;
 public class WorkflowRunOutputsTest extends TestBase {
   private Applicant applicant;
   private final Gson gson = new Gson();
-  private final int MAX_RETRIES = 15;
-  private final int SLEEP_TIME = 1000;
 
   @BeforeEach
   public void setup() throws Exception {

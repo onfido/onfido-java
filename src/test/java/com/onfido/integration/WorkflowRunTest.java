@@ -23,8 +23,6 @@ public class WorkflowRunTest extends TestBase {
   static final UUID WORKFLOW_ID = UUID.fromString("e8c921eb-0495-44fe-b655-bcdcaffdafe5");
   static final UUID WORKFLOW_ID_AUTO_APPROVE =
       UUID.fromString("221f9d24-cf72-4762-ac4a-01bf3ccc09dd");
-  private final int MAX_RETRIES = 15;
-  private final int SLEEP_TIME = 1000;
 
   @BeforeEach
   public void setup() throws Exception {

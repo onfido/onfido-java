@@ -27,6 +27,9 @@ public class TestBase {
   protected static final UUID nonExistingId =
       UUID.fromString("00000000-0000-0000-0000-000000000000");
 
+  protected final int MAX_RETRIES = 15;
+  protected final int SLEEP_TIME = 1000;
+
   protected DefaultApi onfido;
 
   public TestBase() {

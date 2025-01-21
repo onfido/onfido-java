@@ -12,8 +12,6 @@ import org.junit.jupiter.api.Test;
 public class ReportSchemasTest extends TestBase {
   private Applicant applicant;
   private Document document;
-  private final int MAX_RETRIES = 15;
-  private final int SLEEP_TIME = 1000;
 
   @BeforeEach
   public void setup() throws Exception {

@@ -4,7 +4,6 @@ import com.onfido.model.Applicant;
 import com.onfido.model.Check;
 import com.onfido.model.CheckBuilder;
 import com.onfido.model.Document;
-import com.onfido.model.DocumentBreakdown;
 import com.onfido.model.DocumentReport;
 import com.onfido.model.DocumentTypes;
 import com.onfido.model.IdentityEnhancedProperties;
@@ -23,13 +22,12 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class ReportTest extends TestBase {
-  private Applicant applicant;
   private Document document;
   private Check check;
 
   @BeforeEach
   public void setup() throws Exception {
-    applicant = createApplicant();
+    Applicant applicant = createApplicant();
     document =
         uploadDocument(applicant, "sample_driving_licence.png", DocumentTypes.DRIVING_LICENCE);
     check =
@@ -54,13 +52,26 @@ public class ReportTest extends TestBase {
       List<Report> reports =
           sortReports(
               Arrays.asList(
-                  onfido.findReport(reportIds.get(0)), onfido.findReport(reportIds.get(1))));
+                  (Report)
+                      repeatRequestUntilStatusChanges(
+                          "findReport",
+                          new Object[] {reportIds.get(0)},
+                          ReportStatus.COMPLETE,
+                          MAX_RETRIES,
+                          SLEEP_TIME),
+                  (Report)
+                      repeatRequestUntilStatusChanges(
+                          "findReport",
+                          new Object[] {reportIds.get(1)},
+                          ReportStatus.COMPLETE,
+                          MAX_RETRIES,
+                          SLEEP_TIME)));
 
       DocumentReport documentReport = reports.get(0).getDocumentReport();
       IdentityEnhancedReport identityEnhancedReport = reports.get(1).getIdentityEnhancedReport();
 
       Assertions.assertEquals(ReportName.DOCUMENT, documentReport.getName());
-      Assertions.assertEquals(ReportStatus.AWAITING_DATA, documentReport.getStatus());
+      Assertions.assertEquals(ReportStatus.COMPLETE, documentReport.getStatus());
 
       Assertions.assertEquals(ReportName.IDENTITY_ENHANCED, identityEnhancedReport.getName());
       Assertions.assertEquals(check.getId(), identityEnhancedReport.getCheckId());
@@ -70,7 +81,6 @@ public class ReportTest extends TestBase {
       Assertions.assertNotNull(documents);
       Assertions.assertEquals(documents.get(0).getId(), document.getId());
 
-      Assertions.assertEquals(new DocumentBreakdown(), documentReport.getBreakdown());
       Assertions.assertEquals(
           new IdentityEnhancedProperties(), identityEnhancedReport.getProperties());
     } else {

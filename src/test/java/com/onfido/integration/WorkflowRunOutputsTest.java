@@ -87,8 +87,8 @@ public class WorkflowRunOutputsTest extends TestBase {
                 "findWorkflowRun",
                 new UUID[] {workflowRunId},
                 WorkflowRunStatus.APPROVED,
-                10,
-                1000);
+                MAX_RETRIES,
+                SLEEP_TIME);
 
     Assertions.assertEquals(WorkflowRunStatus.APPROVED, workflowRun.getStatus());
 

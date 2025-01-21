@@ -83,7 +83,11 @@ public class WorkflowRunTest extends TestBase {
     UUID workflowRunId = createWorkflowRun(WORKFLOW_ID_AUTO_APPROVE, applicantId).getId();
 
     repeatRequestUntilStatusChanges(
-        "findWorkflowRun", new UUID[] {workflowRunId}, WorkflowRunStatus.APPROVED, 10, 1000);
+        "findWorkflowRun",
+        new UUID[] {workflowRunId},
+        WorkflowRunStatus.APPROVED,
+        MAX_RETRIES,
+        SLEEP_TIME);
     TimelineFileReference workflowTimelineFileData = onfido.createTimelineFile(workflowRunId);
 
     Assertions.assertNotNull(workflowTimelineFileData.getWorkflowTimelineFileId());
@@ -97,13 +101,20 @@ public class WorkflowRunTest extends TestBase {
     UUID workflowRunId = createWorkflowRun(WORKFLOW_ID_AUTO_APPROVE, applicantId).getId();
 
     repeatRequestUntilStatusChanges(
-        "findWorkflowRun", new UUID[] {workflowRunId}, WorkflowRunStatus.APPROVED, 10, 1000);
+        "findWorkflowRun",
+        new UUID[] {workflowRunId},
+        WorkflowRunStatus.APPROVED,
+        MAX_RETRIES,
+        SLEEP_TIME);
     UUID timelineFileId = onfido.createTimelineFile(workflowRunId).getWorkflowTimelineFileId();
 
     FileTransfer download =
         (FileTransfer)
             repeatRequestUntilHttpCodeChanges(
-                "findTimelineFile", new UUID[] {workflowRunId, timelineFileId}, 10, 1000);
+                "findTimelineFile",
+                new UUID[] {workflowRunId, timelineFileId},
+                MAX_RETRIES,
+                SLEEP_TIME);
 
     byte[] byteArray = download.getByteArray();
 
@@ -116,9 +127,18 @@ public class WorkflowRunTest extends TestBase {
     UUID workflowRunId = createWorkflowRun(WORKFLOW_ID_AUTO_APPROVE, applicantId).getId();
 
     repeatRequestUntilStatusChanges(
-        "findWorkflowRun", new UUID[] {workflowRunId}, WorkflowRunStatus.APPROVED, 10, 1000);
+        "findWorkflowRun",
+        new UUID[] {workflowRunId},
+        WorkflowRunStatus.APPROVED,
+        MAX_RETRIES,
+        SLEEP_TIME);
 
-    byte[] byteArray = onfido.downloadEvidenceFolder(workflowRunId).getByteArray();
+    FileTransfer evidenceFolderDownload =
+        (FileTransfer)
+            repeatRequestUntilHttpCodeChanges(
+                "downloadEvidenceFolder", new UUID[] {workflowRunId}, MAX_RETRIES, SLEEP_TIME);
+
+    byte[] byteArray = evidenceFolderDownload.getByteArray();
 
     Path path = Files.createTempFile("evidence-folder", ".zip");
     path.toFile().deleteOnExit();

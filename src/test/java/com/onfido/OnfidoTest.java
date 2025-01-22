@@ -5,6 +5,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.onfido.ApiClient.Region;
 import com.onfido.api.DefaultApi;
+import java.net.InetSocketAddress;
+import java.net.Proxy;
 import java.util.UUID;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -72,5 +74,13 @@ public class OnfidoTest {
     String url = onfido.getApiClient().buildUrl(null, "", null, null);
 
     Assertions.assertEquals("https://api.ca.onfido.com/v3.6", url);
+  }
+
+  @Test()
+  public void usesProxy() {
+    Proxy proxy = new Proxy(Proxy.Type.HTTP, new InetSocketAddress("localhost", 3128));
+    DefaultApi onfido = new DefaultApi(apiClient.setApiToken("token").setProxy(proxy));
+
+    Assertions.assertEquals(proxy, onfido.getApiClient().getProxy());
   }
 }

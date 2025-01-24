@@ -117,6 +117,10 @@ public class WebhookEventPayloadResource {
   @SerializedName(SERIALIZED_NAME_ERROR)
   private WorkflowRunError error;
 
+  public static final String SERIALIZED_NAME_CUSTOMER_USER_ID = "customer_user_id";
+  @SerializedName(SERIALIZED_NAME_CUSTOMER_USER_ID)
+  private String customerUserId;
+
   public WebhookEventPayloadResource() {
   }
 
@@ -412,6 +416,25 @@ public class WebhookEventPayloadResource {
     this.error = error;
   }
 
+
+  public WebhookEventPayloadResource customerUserId(String customerUserId) {
+    this.customerUserId = customerUserId;
+    return this;
+  }
+
+  /**
+   * Customer-provided user identifier.
+   * @return customerUserId
+   */
+  @javax.annotation.Nullable
+  public String getCustomerUserId() {
+    return customerUserId;
+  }
+
+  public void setCustomerUserId(String customerUserId) {
+    this.customerUserId = customerUserId;
+  }
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -481,7 +504,8 @@ public class WebhookEventPayloadResource {
         Objects.equals(this.output, webhookEventPayloadResource.output) &&
         Objects.equals(this.reasons, webhookEventPayloadResource.reasons) &&
         Objects.equals(this.link, webhookEventPayloadResource.link) &&
-        Objects.equals(this.error, webhookEventPayloadResource.error)&&
+        Objects.equals(this.error, webhookEventPayloadResource.error) &&
+        Objects.equals(this.customerUserId, webhookEventPayloadResource.customerUserId)&&
         Objects.equals(this.additionalProperties, webhookEventPayloadResource.additionalProperties);
   }
 
@@ -491,7 +515,7 @@ public class WebhookEventPayloadResource {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, applicantId, createdAt, updatedAt, dashboardUrl, workflowId, workflowRunId, workflowVersionId, taskDefId, taskDefVersion, input, output, reasons, link, error, additionalProperties);
+    return Objects.hash(id, applicantId, createdAt, updatedAt, dashboardUrl, workflowId, workflowRunId, workflowVersionId, taskDefId, taskDefVersion, input, output, reasons, link, error, customerUserId, additionalProperties);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -520,6 +544,7 @@ public class WebhookEventPayloadResource {
     sb.append("    reasons: ").append(toIndentedString(reasons)).append("\n");
     sb.append("    link: ").append(toIndentedString(link)).append("\n");
     sb.append("    error: ").append(toIndentedString(error)).append("\n");
+    sb.append("    customerUserId: ").append(toIndentedString(customerUserId)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -558,6 +583,7 @@ public class WebhookEventPayloadResource {
     openapiFields.add("reasons");
     openapiFields.add("link");
     openapiFields.add("error");
+    openapiFields.add("customer_user_id");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -608,6 +634,9 @@ public class WebhookEventPayloadResource {
       // validate the optional field `error`
       if (jsonObj.get("error") != null && !jsonObj.get("error").isJsonNull()) {
         WorkflowRunError.validateJsonElement(jsonObj.get("error"));
+      }
+      if ((jsonObj.get("customer_user_id") != null && !jsonObj.get("customer_user_id").isJsonNull()) && !jsonObj.get("customer_user_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `customer_user_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("customer_user_id").toString()));
       }
   }
 

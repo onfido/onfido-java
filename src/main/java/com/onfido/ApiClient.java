@@ -50,6 +50,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.function.Supplier;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.net.Proxy;
 
 import com.onfido.auth.Authentication;
 import com.onfido.auth.HttpBasicAuth;
@@ -160,7 +161,7 @@ public class ApiClient {
         json = new JSON();
 
         // Set default User-Agent.
-        setUserAgent("onfido-java/5.5.0");
+        setUserAgent("onfido-java/5.6.0");
 
         authentications = new HashMap<String, Authentication>();
     }
@@ -406,12 +407,24 @@ public class ApiClient {
 
 
 
+    /**
+     * Sets the Api Token.
+     *
+     * @param apiToken a String with the api token
+     * @return Api client
+     */
     public ApiClient setApiToken(String apiToken) {
         this.setApiKey("Token token=" + apiToken);
 
         return this;
     }
 
+    /**
+     * Sets the region.
+     *
+     * @param region a Region enum value
+     * @return Api client
+     */
     public ApiClient setRegion(Region region) {
         Map<String, String> serverVariables = getServerVariables();
 
@@ -424,6 +437,27 @@ public class ApiClient {
 
         return this;
     }
+
+    /**
+     * Return the HTTP proxy used by connections.
+     *
+     * @return Proxy
+     */
+    public Proxy getProxy() {
+        return httpClient.proxy();
+    }
+
+    /**
+     * Sets the HTTP proxy that will be used by connections.
+     *
+     * @param proxy a Proxy object
+     * @return Api client
+     */
+    public ApiClient setProxy(Proxy proxy) {
+        httpClient = httpClient.newBuilder().proxy(proxy).build();
+        return this;
+    }
+
 
     /**
      * Helper method to set access token for the first OAuth2 authentication.

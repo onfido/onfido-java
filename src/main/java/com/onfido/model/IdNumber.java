@@ -63,6 +63,8 @@ public class IdNumber {
     
     IDENTITY_CARD("identity_card"),
     
+    DRIVING_LICENSE("driving_license"),
+    
     DRIVING_LICENCE("driving_licence"),
     
     SHARE_CODE("share_code"),

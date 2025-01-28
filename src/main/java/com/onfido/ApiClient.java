@@ -13,6 +13,7 @@
 
 package com.onfido;
 
+import com.google.gson.JsonParseException;
 import okhttp3.*;
 import okhttp3.internal.http.HttpMethod;
 import okhttp3.internal.tls.OkHostnameVerifier;
@@ -952,7 +953,15 @@ public class ApiClient {
             contentType = "application/json";
         }
         if (isJsonMime(contentType)) {
-            return JSON.deserialize(respBody, returnType);
+            try {
+                return JSON.deserialize(respBody, returnType);
+            } catch (JsonParseException e) {
+                throw new ApiException(
+                        "Unable to deserialize a response body \"" + respBody + "\" into type: " + returnType,
+                        response.code(),
+                        response.headers().toMultimap(),
+                        respBody);
+            }
         } else if (returnType.equals(String.class)) {
             // Expecting string, return the raw response body.
             return (T) respBody;

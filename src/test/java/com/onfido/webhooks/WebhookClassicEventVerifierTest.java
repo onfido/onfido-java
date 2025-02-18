@@ -54,4 +54,15 @@ public class WebhookClassicEventVerifierTest extends TestBase {
         OnfidoInvalidSignatureError.class,
         () -> webhookEventVerifier.readPayload(rawEvent, signature));
   }
+
+  @Test
+  public void invalidPayloadTest() throws Exception {
+    final String signature = "f9f913a02e5c7e96cf43d46a6d1b0cf93237fa72e93ef25c365eae29b7945453";
+
+    Assertions.assertThrows(
+        com.google.gson.JsonSyntaxException.class,
+        () ->
+            webhookEventVerifier.readPayload(
+                "{\"payload\":{\"resource_type\":\"check\"}", signature));
+  }
 }

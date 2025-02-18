@@ -20,6 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.onfido.model.FacialSimilarityReportMedia;
+import com.onfido.model.ReportDocument;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -53,6 +54,10 @@ import com.onfido.JSON;
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class FacialSimilarityReportShared {
+  public static final String SERIALIZED_NAME_DOCUMENTS = "documents";
+  @SerializedName(SERIALIZED_NAME_DOCUMENTS)
+  private List<ReportDocument> documents = new ArrayList<>();
+
   public static final String SERIALIZED_NAME_LIVE_PHOTOS = "live_photos";
   @SerializedName(SERIALIZED_NAME_LIVE_PHOTOS)
   private List<FacialSimilarityReportMedia> livePhotos = new ArrayList<>();
@@ -71,6 +76,33 @@ public class FacialSimilarityReportShared {
 
   public FacialSimilarityReportShared() {
   }
+
+  public FacialSimilarityReportShared documents(List<ReportDocument> documents) {
+    this.documents = documents;
+    return this;
+  }
+
+  public FacialSimilarityReportShared addDocumentsItem(ReportDocument documentsItem) {
+    if (this.documents == null) {
+      this.documents = new ArrayList<>();
+    }
+    this.documents.add(documentsItem);
+    return this;
+  }
+
+  /**
+   * Array of objects with document ids that were used in the Onfido engine.
+   * @return documents
+   */
+  @javax.annotation.Nullable
+  public List<ReportDocument> getDocuments() {
+    return documents;
+  }
+
+  public void setDocuments(List<ReportDocument> documents) {
+    this.documents = documents;
+  }
+
 
   public FacialSimilarityReportShared livePhotos(List<FacialSimilarityReportMedia> livePhotos) {
     this.livePhotos = livePhotos;
@@ -234,7 +266,8 @@ public class FacialSimilarityReportShared {
       return false;
     }
     FacialSimilarityReportShared facialSimilarityReportShared = (FacialSimilarityReportShared) o;
-    return Objects.equals(this.livePhotos, facialSimilarityReportShared.livePhotos) &&
+    return Objects.equals(this.documents, facialSimilarityReportShared.documents) &&
+        Objects.equals(this.livePhotos, facialSimilarityReportShared.livePhotos) &&
         Objects.equals(this.liveVideos, facialSimilarityReportShared.liveVideos) &&
         Objects.equals(this.motionCaptures, facialSimilarityReportShared.motionCaptures) &&
         Objects.equals(this.idPhotos, facialSimilarityReportShared.idPhotos)&&
@@ -243,13 +276,14 @@ public class FacialSimilarityReportShared {
 
   @Override
   public int hashCode() {
-    return Objects.hash(livePhotos, liveVideos, motionCaptures, idPhotos, additionalProperties);
+    return Objects.hash(documents, livePhotos, liveVideos, motionCaptures, idPhotos, additionalProperties);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class FacialSimilarityReportShared {\n");
+    sb.append("    documents: ").append(toIndentedString(documents)).append("\n");
     sb.append("    livePhotos: ").append(toIndentedString(livePhotos)).append("\n");
     sb.append("    liveVideos: ").append(toIndentedString(liveVideos)).append("\n");
     sb.append("    motionCaptures: ").append(toIndentedString(motionCaptures)).append("\n");
@@ -277,6 +311,7 @@ public class FacialSimilarityReportShared {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
+    openapiFields.add("documents");
     openapiFields.add("live_photos");
     openapiFields.add("live_videos");
     openapiFields.add("motion_captures");
@@ -299,6 +334,20 @@ public class FacialSimilarityReportShared {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if (jsonObj.get("documents") != null && !jsonObj.get("documents").isJsonNull()) {
+        JsonArray jsonArraydocuments = jsonObj.getAsJsonArray("documents");
+        if (jsonArraydocuments != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("documents").isJsonArray()) {
+            throw new IllegalArgumentException(String.format("Expected the field `documents` to be an array in the JSON string but got `%s`", jsonObj.get("documents").toString()));
+          }
+
+          // validate the optional field `documents` (array)
+          for (int i = 0; i < jsonArraydocuments.size(); i++) {
+            ReportDocument.validateJsonElement(jsonArraydocuments.get(i));
+          };
+        }
+      }
       if (jsonObj.get("live_photos") != null && !jsonObj.get("live_photos").isJsonNull()) {
         JsonArray jsonArraylivePhotos = jsonObj.getAsJsonArray("live_photos");
         if (jsonArraylivePhotos != null) {

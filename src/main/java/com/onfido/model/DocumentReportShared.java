@@ -19,6 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.onfido.model.ReportDocument;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -48,46 +49,41 @@ import java.util.Set;
 import com.onfido.JSON;
 
 /**
- * WatchlistAmlProperties
+ * DocumentReportShared
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
-public class WatchlistAmlProperties {
-  public static final String SERIALIZED_NAME_RECORDS = "records";
-  @Deprecated
-  @SerializedName(SERIALIZED_NAME_RECORDS)
-  private List<Object> records = new ArrayList<>();
+public class DocumentReportShared {
+  public static final String SERIALIZED_NAME_DOCUMENTS = "documents";
+  @SerializedName(SERIALIZED_NAME_DOCUMENTS)
+  private List<ReportDocument> documents = new ArrayList<>();
 
-  public WatchlistAmlProperties() {
+  public DocumentReportShared() {
   }
 
-  @Deprecated
-  public WatchlistAmlProperties records(List<Object> records) {
-    this.records = records;
+  public DocumentReportShared documents(List<ReportDocument> documents) {
+    this.documents = documents;
     return this;
   }
 
-  public WatchlistAmlProperties addRecordsItem(Object recordsItem) {
-    if (this.records == null) {
-      this.records = new ArrayList<>();
+  public DocumentReportShared addDocumentsItem(ReportDocument documentsItem) {
+    if (this.documents == null) {
+      this.documents = new ArrayList<>();
     }
-    this.records.add(recordsItem);
+    this.documents.add(documentsItem);
     return this;
   }
 
   /**
-   * Returns any matches including, but not limited to, name and date of birth of match, aliases and associates, and relevant events and sources.
-   * @return records
-   * @deprecated
+   * Array of objects with document ids that were used in the Onfido engine.
+   * @return documents
    */
-  @Deprecated
   @javax.annotation.Nullable
-  public List<Object> getRecords() {
-    return records;
+  public List<ReportDocument> getDocuments() {
+    return documents;
   }
 
-  @Deprecated
-  public void setRecords(List<Object> records) {
-    this.records = records;
+  public void setDocuments(List<ReportDocument> documents) {
+    this.documents = documents;
   }
 
   /**
@@ -103,9 +99,9 @@ public class WatchlistAmlProperties {
    *
    * @param key name of the property
    * @param value value of the property
-   * @return the WatchlistAmlProperties instance itself
+   * @return the DocumentReportShared instance itself
    */
-  public WatchlistAmlProperties putAdditionalProperty(String key, Object value) {
+  public DocumentReportShared putAdditionalProperty(String key, Object value) {
     if (this.additionalProperties == null) {
         this.additionalProperties = new HashMap<String, Object>();
     }
@@ -144,21 +140,21 @@ public class WatchlistAmlProperties {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    WatchlistAmlProperties watchlistAmlProperties = (WatchlistAmlProperties) o;
-    return Objects.equals(this.records, watchlistAmlProperties.records)&&
-        Objects.equals(this.additionalProperties, watchlistAmlProperties.additionalProperties);
+    DocumentReportShared documentReportShared = (DocumentReportShared) o;
+    return Objects.equals(this.documents, documentReportShared.documents)&&
+        Objects.equals(this.additionalProperties, documentReportShared.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(records, additionalProperties);
+    return Objects.hash(documents, additionalProperties);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class WatchlistAmlProperties {\n");
-    sb.append("    records: ").append(toIndentedString(records)).append("\n");
+    sb.append("class DocumentReportShared {\n");
+    sb.append("    documents: ").append(toIndentedString(documents)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -182,7 +178,7 @@ public class WatchlistAmlProperties {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("records");
+    openapiFields.add("documents");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -192,18 +188,28 @@ public class WatchlistAmlProperties {
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to WatchlistAmlProperties
+   * @throws IOException if the JSON Element is invalid with respect to DocumentReportShared
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!WatchlistAmlProperties.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in WatchlistAmlProperties is not found in the empty JSON string", WatchlistAmlProperties.openapiRequiredFields.toString()));
+        if (!DocumentReportShared.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in DocumentReportShared is not found in the empty JSON string", DocumentReportShared.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // ensure the optional json data is an array if present
-      if (jsonObj.get("records") != null && !jsonObj.get("records").isJsonNull() && !jsonObj.get("records").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `records` to be an array in the JSON string but got `%s`", jsonObj.get("records").toString()));
+      if (jsonObj.get("documents") != null && !jsonObj.get("documents").isJsonNull()) {
+        JsonArray jsonArraydocuments = jsonObj.getAsJsonArray("documents");
+        if (jsonArraydocuments != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("documents").isJsonArray()) {
+            throw new IllegalArgumentException(String.format("Expected the field `documents` to be an array in the JSON string but got `%s`", jsonObj.get("documents").toString()));
+          }
+
+          // validate the optional field `documents` (array)
+          for (int i = 0; i < jsonArraydocuments.size(); i++) {
+            ReportDocument.validateJsonElement(jsonArraydocuments.get(i));
+          };
+        }
       }
   }
 
@@ -211,16 +217,16 @@ public class WatchlistAmlProperties {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!WatchlistAmlProperties.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'WatchlistAmlProperties' and its subtypes
+       if (!DocumentReportShared.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'DocumentReportShared' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<WatchlistAmlProperties> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(WatchlistAmlProperties.class));
+       final TypeAdapter<DocumentReportShared> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(DocumentReportShared.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<WatchlistAmlProperties>() {
+       return (TypeAdapter<T>) new TypeAdapter<DocumentReportShared>() {
            @Override
-           public void write(JsonWriter out, WatchlistAmlProperties value) throws IOException {
+           public void write(JsonWriter out, DocumentReportShared value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              obj.remove("additionalProperties");
              // serialize additional properties
@@ -248,12 +254,12 @@ public class WatchlistAmlProperties {
            }
 
            @Override
-           public WatchlistAmlProperties read(JsonReader in) throws IOException {
+           public DocumentReportShared read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
-             WatchlistAmlProperties instance = thisAdapter.fromJsonTree(jsonObj);
+             DocumentReportShared instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
                if (!openapiFields.contains(entry.getKey())) {
                  if (entry.getValue().isJsonPrimitive()) { // primitive type
@@ -280,18 +286,18 @@ public class WatchlistAmlProperties {
   }
 
   /**
-   * Create an instance of WatchlistAmlProperties given an JSON string
+   * Create an instance of DocumentReportShared given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of WatchlistAmlProperties
-   * @throws IOException if the JSON string is invalid with respect to WatchlistAmlProperties
+   * @return An instance of DocumentReportShared
+   * @throws IOException if the JSON string is invalid with respect to DocumentReportShared
    */
-  public static WatchlistAmlProperties fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, WatchlistAmlProperties.class);
+  public static DocumentReportShared fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, DocumentReportShared.class);
   }
 
   /**
-   * Convert an instance of WatchlistAmlProperties to an JSON string
+   * Convert an instance of DocumentReportShared to an JSON string
    *
    * @return JSON string
    */

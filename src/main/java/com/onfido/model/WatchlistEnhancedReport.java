@@ -19,7 +19,6 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.onfido.model.ReportDocument;
 import com.onfido.model.ReportName;
 import com.onfido.model.ReportResult;
 import com.onfido.model.ReportStatus;
@@ -28,9 +27,7 @@ import com.onfido.model.WatchlistEnhancedBreakdown;
 import com.onfido.model.WatchlistEnhancedProperties;
 import java.io.IOException;
 import java.time.OffsetDateTime;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import java.util.UUID;
 
 import com.google.gson.Gson;
@@ -88,10 +85,6 @@ public class WatchlistEnhancedReport {
   public static final String SERIALIZED_NAME_CHECK_ID = "check_id";
   @SerializedName(SERIALIZED_NAME_CHECK_ID)
   private UUID checkId;
-
-  public static final String SERIALIZED_NAME_DOCUMENTS = "documents";
-  @SerializedName(SERIALIZED_NAME_DOCUMENTS)
-  private List<ReportDocument> documents = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -241,33 +234,6 @@ public class WatchlistEnhancedReport {
   }
 
 
-  public WatchlistEnhancedReport documents(List<ReportDocument> documents) {
-    this.documents = documents;
-    return this;
-  }
-
-  public WatchlistEnhancedReport addDocumentsItem(ReportDocument documentsItem) {
-    if (this.documents == null) {
-      this.documents = new ArrayList<>();
-    }
-    this.documents.add(documentsItem);
-    return this;
-  }
-
-  /**
-   * Array of objects with document ids that were used in the Onfido engine. [ONLY POPULATED FOR DOCUMENT AND FACIAL SIMILARITY REPORTS]
-   * @return documents
-   */
-  @javax.annotation.Nullable
-  public List<ReportDocument> getDocuments() {
-    return documents;
-  }
-
-  public void setDocuments(List<ReportDocument> documents) {
-    this.documents = documents;
-  }
-
-
   public WatchlistEnhancedReport name(ReportName name) {
     this.name = name;
     return this;
@@ -386,7 +352,6 @@ public class WatchlistEnhancedReport {
         Objects.equals(this.result, watchlistEnhancedReport.result) &&
         Objects.equals(this.subResult, watchlistEnhancedReport.subResult) &&
         Objects.equals(this.checkId, watchlistEnhancedReport.checkId) &&
-        Objects.equals(this.documents, watchlistEnhancedReport.documents) &&
         Objects.equals(this.name, watchlistEnhancedReport.name) &&
         Objects.equals(this.breakdown, watchlistEnhancedReport.breakdown) &&
         Objects.equals(this.properties, watchlistEnhancedReport.properties)&&
@@ -395,7 +360,7 @@ public class WatchlistEnhancedReport {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, createdAt, href, status, result, subResult, checkId, documents, name, breakdown, properties, additionalProperties);
+    return Objects.hash(id, createdAt, href, status, result, subResult, checkId, name, breakdown, properties, additionalProperties);
   }
 
   @Override
@@ -409,7 +374,6 @@ public class WatchlistEnhancedReport {
     sb.append("    result: ").append(toIndentedString(result)).append("\n");
     sb.append("    subResult: ").append(toIndentedString(subResult)).append("\n");
     sb.append("    checkId: ").append(toIndentedString(checkId)).append("\n");
-    sb.append("    documents: ").append(toIndentedString(documents)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    breakdown: ").append(toIndentedString(breakdown)).append("\n");
     sb.append("    properties: ").append(toIndentedString(properties)).append("\n");
@@ -443,7 +407,6 @@ public class WatchlistEnhancedReport {
     openapiFields.add("result");
     openapiFields.add("sub_result");
     openapiFields.add("check_id");
-    openapiFields.add("documents");
     openapiFields.add("name");
     openapiFields.add("breakdown");
     openapiFields.add("properties");
@@ -494,20 +457,6 @@ public class WatchlistEnhancedReport {
       }
       if ((jsonObj.get("check_id") != null && !jsonObj.get("check_id").isJsonNull()) && !jsonObj.get("check_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `check_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("check_id").toString()));
-      }
-      if (jsonObj.get("documents") != null && !jsonObj.get("documents").isJsonNull()) {
-        JsonArray jsonArraydocuments = jsonObj.getAsJsonArray("documents");
-        if (jsonArraydocuments != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("documents").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `documents` to be an array in the JSON string but got `%s`", jsonObj.get("documents").toString()));
-          }
-
-          // validate the optional field `documents` (array)
-          for (int i = 0; i < jsonArraydocuments.size(); i++) {
-            ReportDocument.validateJsonElement(jsonArraydocuments.get(i));
-          };
-        }
       }
       // validate the required field `name`
       ReportName.validateJsonElement(jsonObj.get("name"));

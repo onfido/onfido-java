@@ -53,67 +53,9 @@ import com.onfido.JSON;
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
 public class DocumentShared {
-  /**
-   * The file type of the uploaded file
-   */
-  @JsonAdapter(FileTypeEnum.Adapter.class)
-  public enum FileTypeEnum {
-    JPG("jpg"),
-    
-    JPEG("jpeg"),
-    
-    PNG("png"),
-    
-    PDF("pdf"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
-
-    private String value;
-
-    FileTypeEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static FileTypeEnum fromValue(String value) {
-      for (FileTypeEnum b : FileTypeEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      return UNKNOWN_DEFAULT_OPEN_API;
-    }
-
-    public static class Adapter extends TypeAdapter<FileTypeEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final FileTypeEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public FileTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return FileTypeEnum.fromValue(value);
-      }
-    }
-
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-      String value = jsonElement.getAsString();
-      FileTypeEnum.fromValue(value);
-    }
-  }
-
   public static final String SERIALIZED_NAME_FILE_TYPE = "file_type";
   @SerializedName(SERIALIZED_NAME_FILE_TYPE)
-  private FileTypeEnum fileType;
+  private String fileType;
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
@@ -188,7 +130,7 @@ public class DocumentShared {
   public DocumentShared() {
   }
 
-  public DocumentShared fileType(FileTypeEnum fileType) {
+  public DocumentShared fileType(String fileType) {
     this.fileType = fileType;
     return this;
   }
@@ -198,11 +140,11 @@ public class DocumentShared {
    * @return fileType
    */
   @javax.annotation.Nullable
-  public FileTypeEnum getFileType() {
+  public String getFileType() {
     return fileType;
   }
 
-  public void setFileType(FileTypeEnum fileType) {
+  public void setFileType(String fileType) {
     this.fileType = fileType;
   }
 
@@ -407,10 +349,6 @@ public class DocumentShared {
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("file_type") != null && !jsonObj.get("file_type").isJsonNull()) && !jsonObj.get("file_type").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `file_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("file_type").toString()));
-      }
-      // validate the optional field `file_type`
-      if (jsonObj.get("file_type") != null && !jsonObj.get("file_type").isJsonNull()) {
-        FileTypeEnum.validateJsonElement(jsonObj.get("file_type"));
       }
       // validate the optional field `type`
       if (jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) {

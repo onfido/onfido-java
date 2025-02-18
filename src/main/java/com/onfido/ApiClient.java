@@ -51,6 +51,7 @@ import java.util.function.Supplier;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.net.Proxy;
+import com.google.gson.JsonParseException;
 
 import com.onfido.auth.Authentication;
 import com.onfido.auth.HttpBasicAuth;
@@ -161,7 +162,7 @@ public class ApiClient {
         json = new JSON();
 
         // Set default User-Agent.
-        setUserAgent("onfido-java/5.6.0");
+        setUserAgent("onfido-java/6.0.0");
 
         authentications = new HashMap<String, Authentication>();
     }
@@ -952,7 +953,17 @@ public class ApiClient {
             contentType = "application/json";
         }
         if (isJsonMime(contentType)) {
-            return JSON.deserialize(respBody, returnType);
+            try {
+                return JSON.deserialize(respBody, returnType);
+            } catch (JsonParseException e) {
+                throw new ApiException(
+                        e.getMessage(),
+                        e,
+                        response.code(),
+                        response.headers().toMultimap(),
+                        respBody
+                );
+            }
         } else if (returnType.equals(String.class)) {
             // Expecting string, return the raw response body.
             return (T) respBody;

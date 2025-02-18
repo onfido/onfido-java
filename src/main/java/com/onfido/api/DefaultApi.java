@@ -2805,6 +2805,134 @@ public class DefaultApi {
         return localVarCall;
     }
     /**
+     * Build call for downloadNfcFace
+     * @param documentId  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The image binary data </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call downloadNfcFaceCall(UUID documentId, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/documents/{document_id}/nfc_face"
+            .replace("{" + "document_id" + "}", localVarApiClient.escapeString(documentId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "*/*",
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "Token" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call downloadNfcFaceValidateBeforeCall(UUID documentId, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'documentId' is set
+        if (documentId == null) {
+            throw new ApiException("Missing the required parameter 'documentId' when calling downloadNfcFace(Async)");
+        }
+
+        return downloadNfcFaceCall(documentId, _callback);
+
+    }
+
+    /**
+     * Download NFC face
+     * Downloads digital photos extracted from specific documents belonging to an applicant. If successful, the response will be the binary data representing the image. 
+     * @param documentId  (required)
+     * @return FileTransfer
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The image binary data </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+     </table>
+     */
+    public FileTransfer downloadNfcFace(UUID documentId) throws ApiException {
+        ApiResponse<FileTransfer> localVarResp = downloadNfcFaceWithHttpInfo(documentId);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Download NFC face
+     * Downloads digital photos extracted from specific documents belonging to an applicant. If successful, the response will be the binary data representing the image. 
+     * @param documentId  (required)
+     * @return ApiResponse&lt;FileTransfer&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The image binary data </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<FileTransfer> downloadNfcFaceWithHttpInfo(UUID documentId) throws ApiException {
+        okhttp3.Call localVarCall = downloadNfcFaceValidateBeforeCall(documentId, null);
+        Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Download NFC face (asynchronously)
+     * Downloads digital photos extracted from specific documents belonging to an applicant. If successful, the response will be the binary data representing the image. 
+     * @param documentId  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The image binary data </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call downloadNfcFaceAsync(UUID documentId, final ApiCallback<FileTransfer> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = downloadNfcFaceValidateBeforeCall(documentId, _callback);
+        Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
      * Build call for downloadQesDocument
      * @param workflowRunId The unique identifier of the Workflow Run for which you want to retrieve the signed document. (required)
      * @param fileId The unique identifier of the file which you want to retrieve. (required)
@@ -6957,6 +7085,7 @@ public class DefaultApi {
      * @param createdAtGt A ISO-8601 date to filter results with a created date greater than (after) the one provided. (optional)
      * @param createdAtLt A ISO-8601 date to filter results with a created date less than (before) the one provided. (optional)
      * @param sort A string with the value &#39;desc&#39; or &#39;asc&#39; that allows to sort the returned list by the completed datetime either descending or ascending, respectively. If not specified, defaults to &#39;desc&#39;. (optional, default to desc)
+     * @param applicantId the applicant&#39;s id. (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -6967,7 +7096,7 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listWorkflowRunsCall(Integer page, String status, OffsetDateTime createdAtGt, OffsetDateTime createdAtLt, String sort, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listWorkflowRunsCall(Integer page, String status, OffsetDateTime createdAtGt, OffsetDateTime createdAtLt, String sort, UUID applicantId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -7012,6 +7141,10 @@ public class DefaultApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("sort", sort));
         }
 
+        if (applicantId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("applicant_id", applicantId));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -7032,8 +7165,8 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listWorkflowRunsValidateBeforeCall(Integer page, String status, OffsetDateTime createdAtGt, OffsetDateTime createdAtLt, String sort, final ApiCallback _callback) throws ApiException {
-        return listWorkflowRunsCall(page, status, createdAtGt, createdAtLt, sort, _callback);
+    private okhttp3.Call listWorkflowRunsValidateBeforeCall(Integer page, String status, OffsetDateTime createdAtGt, OffsetDateTime createdAtLt, String sort, UUID applicantId, final ApiCallback _callback) throws ApiException {
+        return listWorkflowRunsCall(page, status, createdAtGt, createdAtLt, sort, applicantId, _callback);
 
     }
 
@@ -7045,6 +7178,7 @@ public class DefaultApi {
      * @param createdAtGt A ISO-8601 date to filter results with a created date greater than (after) the one provided. (optional)
      * @param createdAtLt A ISO-8601 date to filter results with a created date less than (before) the one provided. (optional)
      * @param sort A string with the value &#39;desc&#39; or &#39;asc&#39; that allows to sort the returned list by the completed datetime either descending or ascending, respectively. If not specified, defaults to &#39;desc&#39;. (optional, default to desc)
+     * @param applicantId the applicant&#39;s id. (optional)
      * @return List&lt;WorkflowRun&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -7054,8 +7188,8 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public List<WorkflowRun> listWorkflowRuns(Integer page, String status, OffsetDateTime createdAtGt, OffsetDateTime createdAtLt, String sort) throws ApiException {
-        ApiResponse<List<WorkflowRun>> localVarResp = listWorkflowRunsWithHttpInfo(page, status, createdAtGt, createdAtLt, sort);
+    public List<WorkflowRun> listWorkflowRuns(Integer page, String status, OffsetDateTime createdAtGt, OffsetDateTime createdAtLt, String sort, UUID applicantId) throws ApiException {
+        ApiResponse<List<WorkflowRun>> localVarResp = listWorkflowRunsWithHttpInfo(page, status, createdAtGt, createdAtLt, sort, applicantId);
         return localVarResp.getData();
     }
 
@@ -7067,6 +7201,7 @@ public class DefaultApi {
      * @param createdAtGt A ISO-8601 date to filter results with a created date greater than (after) the one provided. (optional)
      * @param createdAtLt A ISO-8601 date to filter results with a created date less than (before) the one provided. (optional)
      * @param sort A string with the value &#39;desc&#39; or &#39;asc&#39; that allows to sort the returned list by the completed datetime either descending or ascending, respectively. If not specified, defaults to &#39;desc&#39;. (optional, default to desc)
+     * @param applicantId the applicant&#39;s id. (optional)
      * @return ApiResponse&lt;List&lt;WorkflowRun&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -7076,8 +7211,8 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<WorkflowRun>> listWorkflowRunsWithHttpInfo(Integer page, String status, OffsetDateTime createdAtGt, OffsetDateTime createdAtLt, String sort) throws ApiException {
-        okhttp3.Call localVarCall = listWorkflowRunsValidateBeforeCall(page, status, createdAtGt, createdAtLt, sort, null);
+    public ApiResponse<List<WorkflowRun>> listWorkflowRunsWithHttpInfo(Integer page, String status, OffsetDateTime createdAtGt, OffsetDateTime createdAtLt, String sort, UUID applicantId) throws ApiException {
+        okhttp3.Call localVarCall = listWorkflowRunsValidateBeforeCall(page, status, createdAtGt, createdAtLt, sort, applicantId, null);
         Type localVarReturnType = new TypeToken<List<WorkflowRun>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -7090,6 +7225,7 @@ public class DefaultApi {
      * @param createdAtGt A ISO-8601 date to filter results with a created date greater than (after) the one provided. (optional)
      * @param createdAtLt A ISO-8601 date to filter results with a created date less than (before) the one provided. (optional)
      * @param sort A string with the value &#39;desc&#39; or &#39;asc&#39; that allows to sort the returned list by the completed datetime either descending or ascending, respectively. If not specified, defaults to &#39;desc&#39;. (optional, default to desc)
+     * @param applicantId the applicant&#39;s id. (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -7100,9 +7236,9 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listWorkflowRunsAsync(Integer page, String status, OffsetDateTime createdAtGt, OffsetDateTime createdAtLt, String sort, final ApiCallback<List<WorkflowRun>> _callback) throws ApiException {
+    public okhttp3.Call listWorkflowRunsAsync(Integer page, String status, OffsetDateTime createdAtGt, OffsetDateTime createdAtLt, String sort, UUID applicantId, final ApiCallback<List<WorkflowRun>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listWorkflowRunsValidateBeforeCall(page, status, createdAtGt, createdAtLt, sort, _callback);
+        okhttp3.Call localVarCall = listWorkflowRunsValidateBeforeCall(page, status, createdAtGt, createdAtLt, sort, applicantId, _callback);
         Type localVarReturnType = new TypeToken<List<WorkflowRun>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

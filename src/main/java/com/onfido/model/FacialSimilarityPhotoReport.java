@@ -90,13 +90,13 @@ public class FacialSimilarityPhotoReport {
   @SerializedName(SERIALIZED_NAME_CHECK_ID)
   private UUID checkId;
 
-  public static final String SERIALIZED_NAME_DOCUMENTS = "documents";
-  @SerializedName(SERIALIZED_NAME_DOCUMENTS)
-  private List<ReportDocument> documents = new ArrayList<>();
-
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   private ReportName name;
+
+  public static final String SERIALIZED_NAME_DOCUMENTS = "documents";
+  @SerializedName(SERIALIZED_NAME_DOCUMENTS)
+  private List<ReportDocument> documents = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_LIVE_PHOTOS = "live_photos";
   @SerializedName(SERIALIZED_NAME_LIVE_PHOTOS)
@@ -258,33 +258,6 @@ public class FacialSimilarityPhotoReport {
   }
 
 
-  public FacialSimilarityPhotoReport documents(List<ReportDocument> documents) {
-    this.documents = documents;
-    return this;
-  }
-
-  public FacialSimilarityPhotoReport addDocumentsItem(ReportDocument documentsItem) {
-    if (this.documents == null) {
-      this.documents = new ArrayList<>();
-    }
-    this.documents.add(documentsItem);
-    return this;
-  }
-
-  /**
-   * Array of objects with document ids that were used in the Onfido engine. [ONLY POPULATED FOR DOCUMENT AND FACIAL SIMILARITY REPORTS]
-   * @return documents
-   */
-  @javax.annotation.Nullable
-  public List<ReportDocument> getDocuments() {
-    return documents;
-  }
-
-  public void setDocuments(List<ReportDocument> documents) {
-    this.documents = documents;
-  }
-
-
   public FacialSimilarityPhotoReport name(ReportName name) {
     this.name = name;
     return this;
@@ -301,6 +274,33 @@ public class FacialSimilarityPhotoReport {
 
   public void setName(ReportName name) {
     this.name = name;
+  }
+
+
+  public FacialSimilarityPhotoReport documents(List<ReportDocument> documents) {
+    this.documents = documents;
+    return this;
+  }
+
+  public FacialSimilarityPhotoReport addDocumentsItem(ReportDocument documentsItem) {
+    if (this.documents == null) {
+      this.documents = new ArrayList<>();
+    }
+    this.documents.add(documentsItem);
+    return this;
+  }
+
+  /**
+   * Array of objects with document ids that were used in the Onfido engine.
+   * @return documents
+   */
+  @javax.annotation.Nullable
+  public List<ReportDocument> getDocuments() {
+    return documents;
+  }
+
+  public void setDocuments(List<ReportDocument> documents) {
+    this.documents = documents;
   }
 
 
@@ -511,8 +511,8 @@ public class FacialSimilarityPhotoReport {
         Objects.equals(this.result, facialSimilarityPhotoReport.result) &&
         Objects.equals(this.subResult, facialSimilarityPhotoReport.subResult) &&
         Objects.equals(this.checkId, facialSimilarityPhotoReport.checkId) &&
-        Objects.equals(this.documents, facialSimilarityPhotoReport.documents) &&
         Objects.equals(this.name, facialSimilarityPhotoReport.name) &&
+        Objects.equals(this.documents, facialSimilarityPhotoReport.documents) &&
         Objects.equals(this.livePhotos, facialSimilarityPhotoReport.livePhotos) &&
         Objects.equals(this.liveVideos, facialSimilarityPhotoReport.liveVideos) &&
         Objects.equals(this.motionCaptures, facialSimilarityPhotoReport.motionCaptures) &&
@@ -524,7 +524,7 @@ public class FacialSimilarityPhotoReport {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, createdAt, href, status, result, subResult, checkId, documents, name, livePhotos, liveVideos, motionCaptures, idPhotos, breakdown, properties, additionalProperties);
+    return Objects.hash(id, createdAt, href, status, result, subResult, checkId, name, documents, livePhotos, liveVideos, motionCaptures, idPhotos, breakdown, properties, additionalProperties);
   }
 
   @Override
@@ -538,8 +538,8 @@ public class FacialSimilarityPhotoReport {
     sb.append("    result: ").append(toIndentedString(result)).append("\n");
     sb.append("    subResult: ").append(toIndentedString(subResult)).append("\n");
     sb.append("    checkId: ").append(toIndentedString(checkId)).append("\n");
-    sb.append("    documents: ").append(toIndentedString(documents)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    documents: ").append(toIndentedString(documents)).append("\n");
     sb.append("    livePhotos: ").append(toIndentedString(livePhotos)).append("\n");
     sb.append("    liveVideos: ").append(toIndentedString(liveVideos)).append("\n");
     sb.append("    motionCaptures: ").append(toIndentedString(motionCaptures)).append("\n");
@@ -576,8 +576,8 @@ public class FacialSimilarityPhotoReport {
     openapiFields.add("result");
     openapiFields.add("sub_result");
     openapiFields.add("check_id");
-    openapiFields.add("documents");
     openapiFields.add("name");
+    openapiFields.add("documents");
     openapiFields.add("live_photos");
     openapiFields.add("live_videos");
     openapiFields.add("motion_captures");
@@ -632,6 +632,8 @@ public class FacialSimilarityPhotoReport {
       if ((jsonObj.get("check_id") != null && !jsonObj.get("check_id").isJsonNull()) && !jsonObj.get("check_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `check_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("check_id").toString()));
       }
+      // validate the required field `name`
+      ReportName.validateJsonElement(jsonObj.get("name"));
       if (jsonObj.get("documents") != null && !jsonObj.get("documents").isJsonNull()) {
         JsonArray jsonArraydocuments = jsonObj.getAsJsonArray("documents");
         if (jsonArraydocuments != null) {
@@ -646,8 +648,6 @@ public class FacialSimilarityPhotoReport {
           };
         }
       }
-      // validate the required field `name`
-      ReportName.validateJsonElement(jsonObj.get("name"));
       if (jsonObj.get("live_photos") != null && !jsonObj.get("live_photos").isJsonNull()) {
         JsonArray jsonArraylivePhotos = jsonObj.getAsJsonArray("live_photos");
         if (jsonArraylivePhotos != null) {

@@ -4,7 +4,6 @@ import com.onfido.ApiException;
 import com.onfido.FileTransfer;
 import com.onfido.model.Applicant;
 import com.onfido.model.Document;
-import com.onfido.model.Document.FileTypeEnum;
 import com.onfido.model.DocumentTypes;
 import java.util.Comparator;
 import java.util.List;
@@ -68,11 +67,11 @@ public class DocumentTest extends TestBase {
             .collect(Collectors.toList());
 
     Assertions.assertEquals("another_sample_driving_licence.jpeg", documents.get(0).getFileName());
-    Assertions.assertEquals(FileTypeEnum.JPEG, documents.get(0).getFileType());
+    Assertions.assertEquals("jpeg", documents.get(0).getFileType());
     Assertions.assertEquals(DocumentTypes.UNKNOWN, documents.get(0).getType());
 
     Assertions.assertEquals("sample_driving_licence.png", documents.get(1).getFileName());
-    Assertions.assertEquals(FileTypeEnum.PNG, documents.get(1).getFileType());
+    Assertions.assertEquals("png", documents.get(1).getFileType());
     Assertions.assertEquals(DocumentTypes.DRIVING_LICENCE, documents.get(1).getType());
 
     Assertions.assertNotNull(documents.get(0).toJson());

@@ -160,7 +160,7 @@ public class WebhookEventPayloadObject {
    * The uri of the resource.
    * @return href
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public String getHref() {
     return href;
   }
@@ -278,7 +278,6 @@ public class WebhookEventPayloadObject {
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
     openapiRequiredFields.add("id");
-    openapiRequiredFields.add("href");
   }
 
   /**
@@ -308,7 +307,7 @@ public class WebhookEventPayloadObject {
       if (jsonObj.get("status") != null && !jsonObj.get("status").isJsonNull()) {
         WebhookEventObjectStatus.validateJsonElement(jsonObj.get("status"));
       }
-      if (!jsonObj.get("href").isJsonPrimitive()) {
+      if ((jsonObj.get("href") != null && !jsonObj.get("href").isJsonNull()) && !jsonObj.get("href").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `href` to be a primitive type in the JSON string but got `%s`", jsonObj.get("href").toString()));
       }
   }

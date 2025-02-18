@@ -76,10 +76,11 @@ public class WebhookEventVerifier {
    * @param rawEventBody the raw event body
    * @param hexSignature the hex signature
    * @return the webhook event
-   * @throws OnfidoInvalidSignatureError the onfido exception
+   * @throws OnfidoInvalidSignatureError on verification error
+   * @throws JsonParseException on JSON parsing error
    */
   public WebhookEvent readPayload(String rawEventBody, String hexSignature)
-      throws OnfidoInvalidSignatureError {
+      throws OnfidoInvalidSignatureError, JsonParseException {
     Mac sha256Hmac;
     SecretKeySpec secretKey;
 
@@ -100,14 +101,10 @@ public class WebhookEventVerifier {
       throw new OnfidoInvalidSignatureError("Invalid signature for webhook event");
     }
 
-    try {
-      JsonReader jsonReader = new JsonReader(new StringReader(rawEventBody));
-      jsonReader.setLenient(true);
+    JsonReader jsonReader = new JsonReader(new StringReader(rawEventBody));
+    jsonReader.setLenient(true);
 
-      return gson.fromJson(jsonReader, WebhookEvent.class);
-    } catch (JsonParseException e) {
-      throw new OnfidoInvalidSignatureError("Invalid payload for webhook event", e);
-    }
+    return gson.fromJson(jsonReader, WebhookEvent.class);
   }
 
   private String encodeHexString(byte[] byteArray) {

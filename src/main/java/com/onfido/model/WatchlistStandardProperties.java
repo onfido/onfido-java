@@ -55,18 +55,18 @@ public class WatchlistStandardProperties {
   public static final String SERIALIZED_NAME_RECORDS = "records";
   @Deprecated
   @SerializedName(SERIALIZED_NAME_RECORDS)
-  private List<String> records = new ArrayList<>();
+  private List<Object> records = new ArrayList<>();
 
   public WatchlistStandardProperties() {
   }
 
   @Deprecated
-  public WatchlistStandardProperties records(List<String> records) {
+  public WatchlistStandardProperties records(List<Object> records) {
     this.records = records;
     return this;
   }
 
-  public WatchlistStandardProperties addRecordsItem(String recordsItem) {
+  public WatchlistStandardProperties addRecordsItem(Object recordsItem) {
     if (this.records == null) {
       this.records = new ArrayList<>();
     }
@@ -81,12 +81,12 @@ public class WatchlistStandardProperties {
    */
   @Deprecated
   @javax.annotation.Nullable
-  public List<String> getRecords() {
+  public List<Object> getRecords() {
     return records;
   }
 
   @Deprecated
-  public void setRecords(List<String> records) {
+  public void setRecords(List<Object> records) {
     this.records = records;
   }
 

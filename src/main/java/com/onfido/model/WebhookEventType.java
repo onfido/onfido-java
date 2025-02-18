@@ -61,8 +61,6 @@ public enum WebhookEventType {
   
   WORKFLOW_TIMELINE_FILE_CREATED("workflow_timeline_file.created"),
   
-  WORKFLOW_SIGNED_EVIDENCE_FILE_CREATED("workflow_signed_evidence_file.created"),
-  
   WORKFLOW_RUN_EVIDENCE_FOLDER_CREATED("workflow_run_evidence_folder.created"),
   
   UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");

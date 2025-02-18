@@ -89,13 +89,13 @@ public class DocumentReport {
   @SerializedName(SERIALIZED_NAME_CHECK_ID)
   private UUID checkId;
 
-  public static final String SERIALIZED_NAME_DOCUMENTS = "documents";
-  @SerializedName(SERIALIZED_NAME_DOCUMENTS)
-  private List<ReportDocument> documents = new ArrayList<>();
-
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   private ReportName name;
+
+  public static final String SERIALIZED_NAME_DOCUMENTS = "documents";
+  @SerializedName(SERIALIZED_NAME_DOCUMENTS)
+  private List<ReportDocument> documents = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_BREAKDOWN = "breakdown";
   @SerializedName(SERIALIZED_NAME_BREAKDOWN)
@@ -241,33 +241,6 @@ public class DocumentReport {
   }
 
 
-  public DocumentReport documents(List<ReportDocument> documents) {
-    this.documents = documents;
-    return this;
-  }
-
-  public DocumentReport addDocumentsItem(ReportDocument documentsItem) {
-    if (this.documents == null) {
-      this.documents = new ArrayList<>();
-    }
-    this.documents.add(documentsItem);
-    return this;
-  }
-
-  /**
-   * Array of objects with document ids that were used in the Onfido engine. [ONLY POPULATED FOR DOCUMENT AND FACIAL SIMILARITY REPORTS]
-   * @return documents
-   */
-  @javax.annotation.Nullable
-  public List<ReportDocument> getDocuments() {
-    return documents;
-  }
-
-  public void setDocuments(List<ReportDocument> documents) {
-    this.documents = documents;
-  }
-
-
   public DocumentReport name(ReportName name) {
     this.name = name;
     return this;
@@ -284,6 +257,33 @@ public class DocumentReport {
 
   public void setName(ReportName name) {
     this.name = name;
+  }
+
+
+  public DocumentReport documents(List<ReportDocument> documents) {
+    this.documents = documents;
+    return this;
+  }
+
+  public DocumentReport addDocumentsItem(ReportDocument documentsItem) {
+    if (this.documents == null) {
+      this.documents = new ArrayList<>();
+    }
+    this.documents.add(documentsItem);
+    return this;
+  }
+
+  /**
+   * Array of objects with document ids that were used in the Onfido engine.
+   * @return documents
+   */
+  @javax.annotation.Nullable
+  public List<ReportDocument> getDocuments() {
+    return documents;
+  }
+
+  public void setDocuments(List<ReportDocument> documents) {
+    this.documents = documents;
   }
 
 
@@ -386,8 +386,8 @@ public class DocumentReport {
         Objects.equals(this.result, documentReport.result) &&
         Objects.equals(this.subResult, documentReport.subResult) &&
         Objects.equals(this.checkId, documentReport.checkId) &&
-        Objects.equals(this.documents, documentReport.documents) &&
         Objects.equals(this.name, documentReport.name) &&
+        Objects.equals(this.documents, documentReport.documents) &&
         Objects.equals(this.breakdown, documentReport.breakdown) &&
         Objects.equals(this.properties, documentReport.properties)&&
         Objects.equals(this.additionalProperties, documentReport.additionalProperties);
@@ -395,7 +395,7 @@ public class DocumentReport {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, createdAt, href, status, result, subResult, checkId, documents, name, breakdown, properties, additionalProperties);
+    return Objects.hash(id, createdAt, href, status, result, subResult, checkId, name, documents, breakdown, properties, additionalProperties);
   }
 
   @Override
@@ -409,8 +409,8 @@ public class DocumentReport {
     sb.append("    result: ").append(toIndentedString(result)).append("\n");
     sb.append("    subResult: ").append(toIndentedString(subResult)).append("\n");
     sb.append("    checkId: ").append(toIndentedString(checkId)).append("\n");
-    sb.append("    documents: ").append(toIndentedString(documents)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    documents: ").append(toIndentedString(documents)).append("\n");
     sb.append("    breakdown: ").append(toIndentedString(breakdown)).append("\n");
     sb.append("    properties: ").append(toIndentedString(properties)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
@@ -443,8 +443,8 @@ public class DocumentReport {
     openapiFields.add("result");
     openapiFields.add("sub_result");
     openapiFields.add("check_id");
-    openapiFields.add("documents");
     openapiFields.add("name");
+    openapiFields.add("documents");
     openapiFields.add("breakdown");
     openapiFields.add("properties");
 
@@ -495,6 +495,8 @@ public class DocumentReport {
       if ((jsonObj.get("check_id") != null && !jsonObj.get("check_id").isJsonNull()) && !jsonObj.get("check_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `check_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("check_id").toString()));
       }
+      // validate the required field `name`
+      ReportName.validateJsonElement(jsonObj.get("name"));
       if (jsonObj.get("documents") != null && !jsonObj.get("documents").isJsonNull()) {
         JsonArray jsonArraydocuments = jsonObj.getAsJsonArray("documents");
         if (jsonArraydocuments != null) {
@@ -509,8 +511,6 @@ public class DocumentReport {
           };
         }
       }
-      // validate the required field `name`
-      ReportName.validateJsonElement(jsonObj.get("name"));
       // validate the optional field `breakdown`
       if (jsonObj.get("breakdown") != null && !jsonObj.get("breakdown").isJsonNull()) {
         DocumentBreakdown.validateJsonElement(jsonObj.get("breakdown"));

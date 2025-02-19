@@ -24,7 +24,7 @@ public class DocumentTest extends TestBase {
   }
 
   @Test
-  public void uploadDocumentTest() throws Exception {
+  public void uploadDocumentTest() {
     Assertions.assertEquals("sample_driving_licence.png", document.getFileName());
 
     Assertions.assertNotNull(document.toJson());
@@ -35,12 +35,12 @@ public class DocumentTest extends TestBase {
     FileTransfer download = onfido.downloadDocument(document.getId());
 
     Assertions.assertEquals("image/png", download.getContentType());
-    Assertions.assertTrue(download.getFilename() != null);
+    Assertions.assertNotNull(download.getFilename());
     Assertions.assertTrue(download.getByteArray().length > 0);
   }
 
   @Test
-  public void downloadErrorTest() throws Exception {
+  public void downloadErrorTest() {
     try {
       onfido.downloadDocument(nonExistingId);
       Assertions.fail();
@@ -79,12 +79,33 @@ public class DocumentTest extends TestBase {
   }
 
   @Test
-  public void nullParamRequestTest() throws Exception {
+  public void nullParamRequestTest() {
     try {
       onfido.uploadDocument(null, null, null, "file.png", null, null, null, null);
       Assertions.fail();
     } catch (ApiException ex) {
       Assertions.assertEquals(0, ex.getCode());
+    }
+  }
+
+  @Test
+  public void downloadNfcFaceTest() throws Exception {
+    Document nfcFace = uploadDocument(applicant, "nfc_data.json", DocumentTypes.PASSPORT);
+
+    FileTransfer download = onfido.downloadNfcFace(nfcFace.getId());
+
+    Assertions.assertEquals("image/png", download.getContentType());
+    Assertions.assertNotNull(download.getFilename());
+    Assertions.assertTrue(download.getByteArray().length > 0);
+  }
+
+  @Test
+  public void downloadNfcFaceNotFoundTest() {
+    try {
+      onfido.downloadNfcFace(nonExistingId);
+      Assertions.fail();
+    } catch (ApiException ex) {
+      Assertions.assertEquals(404, ex.getCode());
     }
   }
 }

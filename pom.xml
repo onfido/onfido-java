@@ -255,7 +255,7 @@
                     <plugin>
                         <groupId>org.sonatype.plugins</groupId>
                         <artifactId>nexus-staging-maven-plugin</artifactId>
-                        <version>1.6.8</version>
+                        <version>1.6.13</version>
                         <extensions>true</extensions>
                         <configuration>
                             <serverId>ossrh</serverId>
@@ -263,13 +263,6 @@
                             <autoReleaseAfterClose>true</autoReleaseAfterClose>
                             <stagingProgressTimeoutMinutes>10</stagingProgressTimeoutMinutes>
                         </configuration>
-                        <dependencies>
-                            <dependency>
-                            <groupId>com.thoughtworks.xstream</groupId>
-                            <artifactId>xstream</artifactId>
-                            <version>1.4.15</version>
-                            </dependency>
-                        </dependencies>
                     </plugin>
                 </plugins>
             </build>

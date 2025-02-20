@@ -52,48 +52,57 @@ import com.onfido.JSON;
 /**
  * ApplicantResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class ApplicantResponse {
   public static final String SERIALIZED_NAME_FIRST_NAME = "first_name";
   @SerializedName(SERIALIZED_NAME_FIRST_NAME)
+  @javax.annotation.Nullable
   private String firstName;
 
   public static final String SERIALIZED_NAME_LAST_NAME = "last_name";
   @SerializedName(SERIALIZED_NAME_LAST_NAME)
+  @javax.annotation.Nullable
   private String lastName;
 
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nonnull
   private UUID id;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
+  @javax.annotation.Nullable
   private OffsetDateTime createdAt;
 
   public static final String SERIALIZED_NAME_DELETE_AT = "delete_at";
   @SerializedName(SERIALIZED_NAME_DELETE_AT)
+  @javax.annotation.Nullable
   private OffsetDateTime deleteAt;
 
   public static final String SERIALIZED_NAME_HREF = "href";
   @SerializedName(SERIALIZED_NAME_HREF)
+  @javax.annotation.Nullable
   private String href;
 
   public static final String SERIALIZED_NAME_SANDBOX = "sandbox";
   @SerializedName(SERIALIZED_NAME_SANDBOX)
+  @javax.annotation.Nullable
   private Boolean sandbox;
 
   public static final String SERIALIZED_NAME_ADDRESS = "address";
   @SerializedName(SERIALIZED_NAME_ADDRESS)
+  @javax.annotation.Nullable
   private Address address;
 
   public static final String SERIALIZED_NAME_LOCATION = "location";
   @SerializedName(SERIALIZED_NAME_LOCATION)
+  @javax.annotation.Nullable
   private Location location;
 
   public ApplicantResponse() {
   }
 
-  public ApplicantResponse firstName(String firstName) {
+  public ApplicantResponse firstName(@javax.annotation.Nullable String firstName) {
     this.firstName = firstName;
     return this;
   }
@@ -107,12 +116,12 @@ public class ApplicantResponse {
     return firstName;
   }
 
-  public void setFirstName(String firstName) {
+  public void setFirstName(@javax.annotation.Nullable String firstName) {
     this.firstName = firstName;
   }
 
 
-  public ApplicantResponse lastName(String lastName) {
+  public ApplicantResponse lastName(@javax.annotation.Nullable String lastName) {
     this.lastName = lastName;
     return this;
   }
@@ -126,12 +135,12 @@ public class ApplicantResponse {
     return lastName;
   }
 
-  public void setLastName(String lastName) {
+  public void setLastName(@javax.annotation.Nullable String lastName) {
     this.lastName = lastName;
   }
 
 
-  public ApplicantResponse id(UUID id) {
+  public ApplicantResponse id(@javax.annotation.Nonnull UUID id) {
     this.id = id;
     return this;
   }
@@ -145,12 +154,12 @@ public class ApplicantResponse {
     return id;
   }
 
-  public void setId(UUID id) {
+  public void setId(@javax.annotation.Nonnull UUID id) {
     this.id = id;
   }
 
 
-  public ApplicantResponse createdAt(OffsetDateTime createdAt) {
+  public ApplicantResponse createdAt(@javax.annotation.Nullable OffsetDateTime createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -164,12 +173,12 @@ public class ApplicantResponse {
     return createdAt;
   }
 
-  public void setCreatedAt(OffsetDateTime createdAt) {
+  public void setCreatedAt(@javax.annotation.Nullable OffsetDateTime createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public ApplicantResponse deleteAt(OffsetDateTime deleteAt) {
+  public ApplicantResponse deleteAt(@javax.annotation.Nullable OffsetDateTime deleteAt) {
     this.deleteAt = deleteAt;
     return this;
   }
@@ -183,12 +192,12 @@ public class ApplicantResponse {
     return deleteAt;
   }
 
-  public void setDeleteAt(OffsetDateTime deleteAt) {
+  public void setDeleteAt(@javax.annotation.Nullable OffsetDateTime deleteAt) {
     this.deleteAt = deleteAt;
   }
 
 
-  public ApplicantResponse href(String href) {
+  public ApplicantResponse href(@javax.annotation.Nullable String href) {
     this.href = href;
     return this;
   }
@@ -202,12 +211,12 @@ public class ApplicantResponse {
     return href;
   }
 
-  public void setHref(String href) {
+  public void setHref(@javax.annotation.Nullable String href) {
     this.href = href;
   }
 
 
-  public ApplicantResponse sandbox(Boolean sandbox) {
+  public ApplicantResponse sandbox(@javax.annotation.Nullable Boolean sandbox) {
     this.sandbox = sandbox;
     return this;
   }
@@ -221,12 +230,12 @@ public class ApplicantResponse {
     return sandbox;
   }
 
-  public void setSandbox(Boolean sandbox) {
+  public void setSandbox(@javax.annotation.Nullable Boolean sandbox) {
     this.sandbox = sandbox;
   }
 
 
-  public ApplicantResponse address(Address address) {
+  public ApplicantResponse address(@javax.annotation.Nullable Address address) {
     this.address = address;
     return this;
   }
@@ -240,12 +249,12 @@ public class ApplicantResponse {
     return address;
   }
 
-  public void setAddress(Address address) {
+  public void setAddress(@javax.annotation.Nullable Address address) {
     this.address = address;
   }
 
 
-  public ApplicantResponse location(Location location) {
+  public ApplicantResponse location(@javax.annotation.Nullable Location location) {
     this.location = location;
     return this;
   }
@@ -259,7 +268,7 @@ public class ApplicantResponse {
     return location;
   }
 
-  public void setLocation(Location location) {
+  public void setLocation(@javax.annotation.Nullable Location location) {
     this.location = location;
   }
 

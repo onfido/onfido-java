@@ -49,20 +49,22 @@ import com.onfido.JSON;
 /**
  * Error1
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class Error1 {
   public static final String SERIALIZED_NAME_DOCUMENT_ID = "document_id";
   @SerializedName(SERIALIZED_NAME_DOCUMENT_ID)
+  @javax.annotation.Nullable
   private String documentId;
 
   public static final String SERIALIZED_NAME_ERROR = "error";
   @SerializedName(SERIALIZED_NAME_ERROR)
+  @javax.annotation.Nullable
   private ErrorProperties1 error;
 
   public Error1() {
   }
 
-  public Error1 documentId(String documentId) {
+  public Error1 documentId(@javax.annotation.Nullable String documentId) {
     this.documentId = documentId;
     return this;
   }
@@ -76,12 +78,12 @@ public class Error1 {
     return documentId;
   }
 
-  public void setDocumentId(String documentId) {
+  public void setDocumentId(@javax.annotation.Nullable String documentId) {
     this.documentId = documentId;
   }
 
 
-  public Error1 error(ErrorProperties1 error) {
+  public Error1 error(@javax.annotation.Nullable ErrorProperties1 error) {
     this.error = error;
     return this;
   }
@@ -95,7 +97,7 @@ public class Error1 {
     return error;
   }
 
-  public void setError(ErrorProperties1 error) {
+  public void setError(@javax.annotation.Nullable ErrorProperties1 error) {
     this.error = error;
   }
 

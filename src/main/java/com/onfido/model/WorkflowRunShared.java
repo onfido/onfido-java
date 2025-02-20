@@ -54,40 +54,47 @@ import com.onfido.JSON;
 /**
  * WorkflowRunShared
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class WorkflowRunShared {
   public static final String SERIALIZED_NAME_APPLICANT_ID = "applicant_id";
   @SerializedName(SERIALIZED_NAME_APPLICANT_ID)
+  @javax.annotation.Nonnull
   private UUID applicantId;
 
   public static final String SERIALIZED_NAME_WORKFLOW_ID = "workflow_id";
   @SerializedName(SERIALIZED_NAME_WORKFLOW_ID)
+  @javax.annotation.Nonnull
   private UUID workflowId;
 
   public static final String SERIALIZED_NAME_TAGS = "tags";
   @SerializedName(SERIALIZED_NAME_TAGS)
+  @javax.annotation.Nullable
   private List<String> tags;
 
   public static final String SERIALIZED_NAME_CUSTOMER_USER_ID = "customer_user_id";
   @SerializedName(SERIALIZED_NAME_CUSTOMER_USER_ID)
+  @javax.annotation.Nullable
   private String customerUserId;
 
   public static final String SERIALIZED_NAME_LINK = "link";
   @SerializedName(SERIALIZED_NAME_LINK)
+  @javax.annotation.Nullable
   private WorkflowRunLink link;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
+  @javax.annotation.Nullable
   private OffsetDateTime createdAt;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
+  @javax.annotation.Nullable
   private OffsetDateTime updatedAt;
 
   public WorkflowRunShared() {
   }
 
-  public WorkflowRunShared applicantId(UUID applicantId) {
+  public WorkflowRunShared applicantId(@javax.annotation.Nonnull UUID applicantId) {
     this.applicantId = applicantId;
     return this;
   }
@@ -101,12 +108,12 @@ public class WorkflowRunShared {
     return applicantId;
   }
 
-  public void setApplicantId(UUID applicantId) {
+  public void setApplicantId(@javax.annotation.Nonnull UUID applicantId) {
     this.applicantId = applicantId;
   }
 
 
-  public WorkflowRunShared workflowId(UUID workflowId) {
+  public WorkflowRunShared workflowId(@javax.annotation.Nonnull UUID workflowId) {
     this.workflowId = workflowId;
     return this;
   }
@@ -120,12 +127,12 @@ public class WorkflowRunShared {
     return workflowId;
   }
 
-  public void setWorkflowId(UUID workflowId) {
+  public void setWorkflowId(@javax.annotation.Nonnull UUID workflowId) {
     this.workflowId = workflowId;
   }
 
 
-  public WorkflowRunShared tags(List<String> tags) {
+  public WorkflowRunShared tags(@javax.annotation.Nullable List<String> tags) {
     this.tags = tags;
     return this;
   }
@@ -147,12 +154,12 @@ public class WorkflowRunShared {
     return tags;
   }
 
-  public void setTags(List<String> tags) {
+  public void setTags(@javax.annotation.Nullable List<String> tags) {
     this.tags = tags;
   }
 
 
-  public WorkflowRunShared customerUserId(String customerUserId) {
+  public WorkflowRunShared customerUserId(@javax.annotation.Nullable String customerUserId) {
     this.customerUserId = customerUserId;
     return this;
   }
@@ -166,12 +173,12 @@ public class WorkflowRunShared {
     return customerUserId;
   }
 
-  public void setCustomerUserId(String customerUserId) {
+  public void setCustomerUserId(@javax.annotation.Nullable String customerUserId) {
     this.customerUserId = customerUserId;
   }
 
 
-  public WorkflowRunShared link(WorkflowRunLink link) {
+  public WorkflowRunShared link(@javax.annotation.Nullable WorkflowRunLink link) {
     this.link = link;
     return this;
   }
@@ -185,12 +192,12 @@ public class WorkflowRunShared {
     return link;
   }
 
-  public void setLink(WorkflowRunLink link) {
+  public void setLink(@javax.annotation.Nullable WorkflowRunLink link) {
     this.link = link;
   }
 
 
-  public WorkflowRunShared createdAt(OffsetDateTime createdAt) {
+  public WorkflowRunShared createdAt(@javax.annotation.Nullable OffsetDateTime createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -204,12 +211,12 @@ public class WorkflowRunShared {
     return createdAt;
   }
 
-  public void setCreatedAt(OffsetDateTime createdAt) {
+  public void setCreatedAt(@javax.annotation.Nullable OffsetDateTime createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public WorkflowRunShared updatedAt(OffsetDateTime updatedAt) {
+  public WorkflowRunShared updatedAt(@javax.annotation.Nullable OffsetDateTime updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -223,7 +230,7 @@ public class WorkflowRunShared {
     return updatedAt;
   }
 
-  public void setUpdatedAt(OffsetDateTime updatedAt) {
+  public void setUpdatedAt(@javax.annotation.Nullable OffsetDateTime updatedAt) {
     this.updatedAt = updatedAt;
   }
 

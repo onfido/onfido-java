@@ -49,16 +49,17 @@ import com.onfido.JSON;
 /**
  * IndiaPanReportAllOfBreakdownDevice
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class IndiaPanReportAllOfBreakdownDevice {
   public static final String SERIALIZED_NAME_BREAKDOWN = "breakdown";
   @SerializedName(SERIALIZED_NAME_BREAKDOWN)
+  @javax.annotation.Nullable
   private IndiaPanReportAllOfBreakdownDeviceBreakdown breakdown;
 
   public IndiaPanReportAllOfBreakdownDevice() {
   }
 
-  public IndiaPanReportAllOfBreakdownDevice breakdown(IndiaPanReportAllOfBreakdownDeviceBreakdown breakdown) {
+  public IndiaPanReportAllOfBreakdownDevice breakdown(@javax.annotation.Nullable IndiaPanReportAllOfBreakdownDeviceBreakdown breakdown) {
     this.breakdown = breakdown;
     return this;
   }
@@ -72,7 +73,7 @@ public class IndiaPanReportAllOfBreakdownDevice {
     return breakdown;
   }
 
-  public void setBreakdown(IndiaPanReportAllOfBreakdownDeviceBreakdown breakdown) {
+  public void setBreakdown(@javax.annotation.Nullable IndiaPanReportAllOfBreakdownDeviceBreakdown breakdown) {
     this.breakdown = breakdown;
   }
 

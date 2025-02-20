@@ -49,44 +49,52 @@ import com.onfido.JSON;
 /**
  * DocumentBreakdownDataComparisonBreakdown
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class DocumentBreakdownDataComparisonBreakdown {
   public static final String SERIALIZED_NAME_ISSUING_COUNTRY = "issuing_country";
   @SerializedName(SERIALIZED_NAME_ISSUING_COUNTRY)
+  @javax.annotation.Nullable
   private DocumentBreakdownDataComparisonBreakdownIssuingCountry issuingCountry;
 
   public static final String SERIALIZED_NAME_GENDER = "gender";
   @SerializedName(SERIALIZED_NAME_GENDER)
+  @javax.annotation.Nullable
   private DocumentBreakdownDataComparisonBreakdownIssuingCountry gender;
 
   public static final String SERIALIZED_NAME_DATE_OF_EXPIRY = "date_of_expiry";
   @SerializedName(SERIALIZED_NAME_DATE_OF_EXPIRY)
+  @javax.annotation.Nullable
   private DocumentBreakdownDataComparisonBreakdownIssuingCountry dateOfExpiry;
 
   public static final String SERIALIZED_NAME_LAST_NAME = "last_name";
   @SerializedName(SERIALIZED_NAME_LAST_NAME)
+  @javax.annotation.Nullable
   private DocumentBreakdownDataComparisonBreakdownIssuingCountry lastName;
 
   public static final String SERIALIZED_NAME_DOCUMENT_TYPE = "document_type";
   @SerializedName(SERIALIZED_NAME_DOCUMENT_TYPE)
+  @javax.annotation.Nullable
   private DocumentBreakdownDataComparisonBreakdownIssuingCountry documentType;
 
   public static final String SERIALIZED_NAME_DOCUMENT_NUMBERS = "document_numbers";
   @SerializedName(SERIALIZED_NAME_DOCUMENT_NUMBERS)
+  @javax.annotation.Nullable
   private DocumentBreakdownDataComparisonBreakdownIssuingCountry documentNumbers;
 
   public static final String SERIALIZED_NAME_FIRST_NAME = "first_name";
   @SerializedName(SERIALIZED_NAME_FIRST_NAME)
+  @javax.annotation.Nullable
   private DocumentBreakdownDataComparisonBreakdownIssuingCountry firstName;
 
   public static final String SERIALIZED_NAME_DATE_OF_BIRTH = "date_of_birth";
   @SerializedName(SERIALIZED_NAME_DATE_OF_BIRTH)
+  @javax.annotation.Nullable
   private DocumentBreakdownDataComparisonBreakdownIssuingCountry dateOfBirth;
 
   public DocumentBreakdownDataComparisonBreakdown() {
   }
 
-  public DocumentBreakdownDataComparisonBreakdown issuingCountry(DocumentBreakdownDataComparisonBreakdownIssuingCountry issuingCountry) {
+  public DocumentBreakdownDataComparisonBreakdown issuingCountry(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry issuingCountry) {
     this.issuingCountry = issuingCountry;
     return this;
   }
@@ -100,12 +108,12 @@ public class DocumentBreakdownDataComparisonBreakdown {
     return issuingCountry;
   }
 
-  public void setIssuingCountry(DocumentBreakdownDataComparisonBreakdownIssuingCountry issuingCountry) {
+  public void setIssuingCountry(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry issuingCountry) {
     this.issuingCountry = issuingCountry;
   }
 
 
-  public DocumentBreakdownDataComparisonBreakdown gender(DocumentBreakdownDataComparisonBreakdownIssuingCountry gender) {
+  public DocumentBreakdownDataComparisonBreakdown gender(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry gender) {
     this.gender = gender;
     return this;
   }
@@ -119,12 +127,12 @@ public class DocumentBreakdownDataComparisonBreakdown {
     return gender;
   }
 
-  public void setGender(DocumentBreakdownDataComparisonBreakdownIssuingCountry gender) {
+  public void setGender(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry gender) {
     this.gender = gender;
   }
 
 
-  public DocumentBreakdownDataComparisonBreakdown dateOfExpiry(DocumentBreakdownDataComparisonBreakdownIssuingCountry dateOfExpiry) {
+  public DocumentBreakdownDataComparisonBreakdown dateOfExpiry(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry dateOfExpiry) {
     this.dateOfExpiry = dateOfExpiry;
     return this;
   }
@@ -138,12 +146,12 @@ public class DocumentBreakdownDataComparisonBreakdown {
     return dateOfExpiry;
   }
 
-  public void setDateOfExpiry(DocumentBreakdownDataComparisonBreakdownIssuingCountry dateOfExpiry) {
+  public void setDateOfExpiry(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry dateOfExpiry) {
     this.dateOfExpiry = dateOfExpiry;
   }
 
 
-  public DocumentBreakdownDataComparisonBreakdown lastName(DocumentBreakdownDataComparisonBreakdownIssuingCountry lastName) {
+  public DocumentBreakdownDataComparisonBreakdown lastName(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry lastName) {
     this.lastName = lastName;
     return this;
   }
@@ -157,12 +165,12 @@ public class DocumentBreakdownDataComparisonBreakdown {
     return lastName;
   }
 
-  public void setLastName(DocumentBreakdownDataComparisonBreakdownIssuingCountry lastName) {
+  public void setLastName(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry lastName) {
     this.lastName = lastName;
   }
 
 
-  public DocumentBreakdownDataComparisonBreakdown documentType(DocumentBreakdownDataComparisonBreakdownIssuingCountry documentType) {
+  public DocumentBreakdownDataComparisonBreakdown documentType(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry documentType) {
     this.documentType = documentType;
     return this;
   }
@@ -176,12 +184,12 @@ public class DocumentBreakdownDataComparisonBreakdown {
     return documentType;
   }
 
-  public void setDocumentType(DocumentBreakdownDataComparisonBreakdownIssuingCountry documentType) {
+  public void setDocumentType(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry documentType) {
     this.documentType = documentType;
   }
 
 
-  public DocumentBreakdownDataComparisonBreakdown documentNumbers(DocumentBreakdownDataComparisonBreakdownIssuingCountry documentNumbers) {
+  public DocumentBreakdownDataComparisonBreakdown documentNumbers(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry documentNumbers) {
     this.documentNumbers = documentNumbers;
     return this;
   }
@@ -195,12 +203,12 @@ public class DocumentBreakdownDataComparisonBreakdown {
     return documentNumbers;
   }
 
-  public void setDocumentNumbers(DocumentBreakdownDataComparisonBreakdownIssuingCountry documentNumbers) {
+  public void setDocumentNumbers(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry documentNumbers) {
     this.documentNumbers = documentNumbers;
   }
 
 
-  public DocumentBreakdownDataComparisonBreakdown firstName(DocumentBreakdownDataComparisonBreakdownIssuingCountry firstName) {
+  public DocumentBreakdownDataComparisonBreakdown firstName(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry firstName) {
     this.firstName = firstName;
     return this;
   }
@@ -214,12 +222,12 @@ public class DocumentBreakdownDataComparisonBreakdown {
     return firstName;
   }
 
-  public void setFirstName(DocumentBreakdownDataComparisonBreakdownIssuingCountry firstName) {
+  public void setFirstName(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry firstName) {
     this.firstName = firstName;
   }
 
 
-  public DocumentBreakdownDataComparisonBreakdown dateOfBirth(DocumentBreakdownDataComparisonBreakdownIssuingCountry dateOfBirth) {
+  public DocumentBreakdownDataComparisonBreakdown dateOfBirth(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry dateOfBirth) {
     this.dateOfBirth = dateOfBirth;
     return this;
   }
@@ -233,7 +241,7 @@ public class DocumentBreakdownDataComparisonBreakdown {
     return dateOfBirth;
   }
 
-  public void setDateOfBirth(DocumentBreakdownDataComparisonBreakdownIssuingCountry dateOfBirth) {
+  public void setDateOfBirth(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry dateOfBirth) {
     this.dateOfBirth = dateOfBirth;
   }
 

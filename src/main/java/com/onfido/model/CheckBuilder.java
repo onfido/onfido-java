@@ -53,64 +53,77 @@ import com.onfido.JSON;
 /**
  * CheckBuilder
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class CheckBuilder {
   public static final String SERIALIZED_NAME_WEBHOOK_IDS = "webhook_ids";
   @SerializedName(SERIALIZED_NAME_WEBHOOK_IDS)
+  @javax.annotation.Nullable
   private List<String> webhookIds = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_APPLICANT_ID = "applicant_id";
   @SerializedName(SERIALIZED_NAME_APPLICANT_ID)
+  @javax.annotation.Nonnull
   private UUID applicantId;
 
   public static final String SERIALIZED_NAME_APPLICANT_PROVIDES_DATA = "applicant_provides_data";
   @SerializedName(SERIALIZED_NAME_APPLICANT_PROVIDES_DATA)
+  @javax.annotation.Nullable
   private Boolean applicantProvidesData = false;
 
   public static final String SERIALIZED_NAME_TAGS = "tags";
   @SerializedName(SERIALIZED_NAME_TAGS)
+  @javax.annotation.Nullable
   private List<String> tags = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_REDIRECT_URI = "redirect_uri";
   @SerializedName(SERIALIZED_NAME_REDIRECT_URI)
+  @javax.annotation.Nullable
   private String redirectUri;
 
   public static final String SERIALIZED_NAME_PRIVACY_NOTICES_READ_CONSENT_GIVEN = "privacy_notices_read_consent_given";
   @SerializedName(SERIALIZED_NAME_PRIVACY_NOTICES_READ_CONSENT_GIVEN)
+  @javax.annotation.Nullable
   private Boolean privacyNoticesReadConsentGiven;
 
   public static final String SERIALIZED_NAME_REPORT_NAMES = "report_names";
   @SerializedName(SERIALIZED_NAME_REPORT_NAMES)
+  @javax.annotation.Nonnull
   private List<ReportName> reportNames = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_DOCUMENT_IDS = "document_ids";
   @SerializedName(SERIALIZED_NAME_DOCUMENT_IDS)
+  @javax.annotation.Nullable
   private List<UUID> documentIds = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_ASYNCHRONOUS = "asynchronous";
   @SerializedName(SERIALIZED_NAME_ASYNCHRONOUS)
+  @javax.annotation.Nullable
   private Boolean asynchronous = true;
 
   public static final String SERIALIZED_NAME_SUPPRESS_FORM_EMAILS = "suppress_form_emails";
   @SerializedName(SERIALIZED_NAME_SUPPRESS_FORM_EMAILS)
+  @javax.annotation.Nullable
   private Boolean suppressFormEmails;
 
   public static final String SERIALIZED_NAME_SUB_RESULT = "sub_result";
   @SerializedName(SERIALIZED_NAME_SUB_RESULT)
+  @javax.annotation.Nullable
   private String subResult;
 
   public static final String SERIALIZED_NAME_CONSIDER = "consider";
   @SerializedName(SERIALIZED_NAME_CONSIDER)
+  @javax.annotation.Nullable
   private List<ReportName> consider = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_US_DRIVING_LICENCE = "us_driving_licence";
   @SerializedName(SERIALIZED_NAME_US_DRIVING_LICENCE)
+  @javax.annotation.Nullable
   private UsDrivingLicenceBuilder usDrivingLicence;
 
   public CheckBuilder() {
   }
 
-  public CheckBuilder webhookIds(List<String> webhookIds) {
+  public CheckBuilder webhookIds(@javax.annotation.Nullable List<String> webhookIds) {
     this.webhookIds = webhookIds;
     return this;
   }
@@ -132,12 +145,12 @@ public class CheckBuilder {
     return webhookIds;
   }
 
-  public void setWebhookIds(List<String> webhookIds) {
+  public void setWebhookIds(@javax.annotation.Nullable List<String> webhookIds) {
     this.webhookIds = webhookIds;
   }
 
 
-  public CheckBuilder applicantId(UUID applicantId) {
+  public CheckBuilder applicantId(@javax.annotation.Nonnull UUID applicantId) {
     this.applicantId = applicantId;
     return this;
   }
@@ -151,12 +164,12 @@ public class CheckBuilder {
     return applicantId;
   }
 
-  public void setApplicantId(UUID applicantId) {
+  public void setApplicantId(@javax.annotation.Nonnull UUID applicantId) {
     this.applicantId = applicantId;
   }
 
 
-  public CheckBuilder applicantProvidesData(Boolean applicantProvidesData) {
+  public CheckBuilder applicantProvidesData(@javax.annotation.Nullable Boolean applicantProvidesData) {
     this.applicantProvidesData = applicantProvidesData;
     return this;
   }
@@ -170,12 +183,12 @@ public class CheckBuilder {
     return applicantProvidesData;
   }
 
-  public void setApplicantProvidesData(Boolean applicantProvidesData) {
+  public void setApplicantProvidesData(@javax.annotation.Nullable Boolean applicantProvidesData) {
     this.applicantProvidesData = applicantProvidesData;
   }
 
 
-  public CheckBuilder tags(List<String> tags) {
+  public CheckBuilder tags(@javax.annotation.Nullable List<String> tags) {
     this.tags = tags;
     return this;
   }
@@ -197,12 +210,12 @@ public class CheckBuilder {
     return tags;
   }
 
-  public void setTags(List<String> tags) {
+  public void setTags(@javax.annotation.Nullable List<String> tags) {
     this.tags = tags;
   }
 
 
-  public CheckBuilder redirectUri(String redirectUri) {
+  public CheckBuilder redirectUri(@javax.annotation.Nullable String redirectUri) {
     this.redirectUri = redirectUri;
     return this;
   }
@@ -216,12 +229,12 @@ public class CheckBuilder {
     return redirectUri;
   }
 
-  public void setRedirectUri(String redirectUri) {
+  public void setRedirectUri(@javax.annotation.Nullable String redirectUri) {
     this.redirectUri = redirectUri;
   }
 
 
-  public CheckBuilder privacyNoticesReadConsentGiven(Boolean privacyNoticesReadConsentGiven) {
+  public CheckBuilder privacyNoticesReadConsentGiven(@javax.annotation.Nullable Boolean privacyNoticesReadConsentGiven) {
     this.privacyNoticesReadConsentGiven = privacyNoticesReadConsentGiven;
     return this;
   }
@@ -235,12 +248,12 @@ public class CheckBuilder {
     return privacyNoticesReadConsentGiven;
   }
 
-  public void setPrivacyNoticesReadConsentGiven(Boolean privacyNoticesReadConsentGiven) {
+  public void setPrivacyNoticesReadConsentGiven(@javax.annotation.Nullable Boolean privacyNoticesReadConsentGiven) {
     this.privacyNoticesReadConsentGiven = privacyNoticesReadConsentGiven;
   }
 
 
-  public CheckBuilder reportNames(List<ReportName> reportNames) {
+  public CheckBuilder reportNames(@javax.annotation.Nonnull List<ReportName> reportNames) {
     this.reportNames = reportNames;
     return this;
   }
@@ -262,12 +275,12 @@ public class CheckBuilder {
     return reportNames;
   }
 
-  public void setReportNames(List<ReportName> reportNames) {
+  public void setReportNames(@javax.annotation.Nonnull List<ReportName> reportNames) {
     this.reportNames = reportNames;
   }
 
 
-  public CheckBuilder documentIds(List<UUID> documentIds) {
+  public CheckBuilder documentIds(@javax.annotation.Nullable List<UUID> documentIds) {
     this.documentIds = documentIds;
     return this;
   }
@@ -289,12 +302,12 @@ public class CheckBuilder {
     return documentIds;
   }
 
-  public void setDocumentIds(List<UUID> documentIds) {
+  public void setDocumentIds(@javax.annotation.Nullable List<UUID> documentIds) {
     this.documentIds = documentIds;
   }
 
 
-  public CheckBuilder asynchronous(Boolean asynchronous) {
+  public CheckBuilder asynchronous(@javax.annotation.Nullable Boolean asynchronous) {
     this.asynchronous = asynchronous;
     return this;
   }
@@ -308,12 +321,12 @@ public class CheckBuilder {
     return asynchronous;
   }
 
-  public void setAsynchronous(Boolean asynchronous) {
+  public void setAsynchronous(@javax.annotation.Nullable Boolean asynchronous) {
     this.asynchronous = asynchronous;
   }
 
 
-  public CheckBuilder suppressFormEmails(Boolean suppressFormEmails) {
+  public CheckBuilder suppressFormEmails(@javax.annotation.Nullable Boolean suppressFormEmails) {
     this.suppressFormEmails = suppressFormEmails;
     return this;
   }
@@ -327,12 +340,12 @@ public class CheckBuilder {
     return suppressFormEmails;
   }
 
-  public void setSuppressFormEmails(Boolean suppressFormEmails) {
+  public void setSuppressFormEmails(@javax.annotation.Nullable Boolean suppressFormEmails) {
     this.suppressFormEmails = suppressFormEmails;
   }
 
 
-  public CheckBuilder subResult(String subResult) {
+  public CheckBuilder subResult(@javax.annotation.Nullable String subResult) {
     this.subResult = subResult;
     return this;
   }
@@ -346,12 +359,12 @@ public class CheckBuilder {
     return subResult;
   }
 
-  public void setSubResult(String subResult) {
+  public void setSubResult(@javax.annotation.Nullable String subResult) {
     this.subResult = subResult;
   }
 
 
-  public CheckBuilder consider(List<ReportName> consider) {
+  public CheckBuilder consider(@javax.annotation.Nullable List<ReportName> consider) {
     this.consider = consider;
     return this;
   }
@@ -373,12 +386,12 @@ public class CheckBuilder {
     return consider;
   }
 
-  public void setConsider(List<ReportName> consider) {
+  public void setConsider(@javax.annotation.Nullable List<ReportName> consider) {
     this.consider = consider;
   }
 
 
-  public CheckBuilder usDrivingLicence(UsDrivingLicenceBuilder usDrivingLicence) {
+  public CheckBuilder usDrivingLicence(@javax.annotation.Nullable UsDrivingLicenceBuilder usDrivingLicence) {
     this.usDrivingLicence = usDrivingLicence;
     return this;
   }
@@ -392,7 +405,7 @@ public class CheckBuilder {
     return usDrivingLicence;
   }
 
-  public void setUsDrivingLicence(UsDrivingLicenceBuilder usDrivingLicence) {
+  public void setUsDrivingLicence(@javax.annotation.Nullable UsDrivingLicenceBuilder usDrivingLicence) {
     this.usDrivingLicence = usDrivingLicence;
   }
 

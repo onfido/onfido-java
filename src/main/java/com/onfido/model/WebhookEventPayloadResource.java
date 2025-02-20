@@ -55,76 +55,92 @@ import com.onfido.JSON;
 /**
  * The resource affected by this event.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class WebhookEventPayloadResource {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nullable
   private String id;
 
   public static final String SERIALIZED_NAME_APPLICANT_ID = "applicant_id";
   @SerializedName(SERIALIZED_NAME_APPLICANT_ID)
+  @javax.annotation.Nullable
   private UUID applicantId;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
+  @javax.annotation.Nullable
   private OffsetDateTime createdAt;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
+  @javax.annotation.Nullable
   private OffsetDateTime updatedAt;
 
   public static final String SERIALIZED_NAME_DASHBOARD_URL = "dashboard_url";
   @SerializedName(SERIALIZED_NAME_DASHBOARD_URL)
+  @javax.annotation.Nullable
   private String dashboardUrl;
 
   public static final String SERIALIZED_NAME_WORKFLOW_ID = "workflow_id";
   @SerializedName(SERIALIZED_NAME_WORKFLOW_ID)
+  @javax.annotation.Nullable
   private UUID workflowId;
 
   public static final String SERIALIZED_NAME_WORKFLOW_RUN_ID = "workflow_run_id";
   @SerializedName(SERIALIZED_NAME_WORKFLOW_RUN_ID)
+  @javax.annotation.Nullable
   private UUID workflowRunId;
 
   public static final String SERIALIZED_NAME_WORKFLOW_VERSION_ID = "workflow_version_id";
   @SerializedName(SERIALIZED_NAME_WORKFLOW_VERSION_ID)
+  @javax.annotation.Nullable
   private Integer workflowVersionId;
 
   public static final String SERIALIZED_NAME_TASK_DEF_ID = "task_def_id";
   @SerializedName(SERIALIZED_NAME_TASK_DEF_ID)
+  @javax.annotation.Nullable
   private String taskDefId;
 
   public static final String SERIALIZED_NAME_TASK_DEF_VERSION = "task_def_version";
   @SerializedName(SERIALIZED_NAME_TASK_DEF_VERSION)
+  @javax.annotation.Nullable
   private String taskDefVersion;
 
   public static final String SERIALIZED_NAME_INPUT = "input";
   @SerializedName(SERIALIZED_NAME_INPUT)
+  @javax.annotation.Nullable
   private Object input;
 
   public static final String SERIALIZED_NAME_OUTPUT = "output";
   @SerializedName(SERIALIZED_NAME_OUTPUT)
+  @javax.annotation.Nullable
   private Object output;
 
   public static final String SERIALIZED_NAME_REASONS = "reasons";
   @SerializedName(SERIALIZED_NAME_REASONS)
+  @javax.annotation.Nullable
   private List<String> reasons = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_LINK = "link";
   @SerializedName(SERIALIZED_NAME_LINK)
+  @javax.annotation.Nullable
   private WorkflowRunLink link;
 
   public static final String SERIALIZED_NAME_ERROR = "error";
   @SerializedName(SERIALIZED_NAME_ERROR)
+  @javax.annotation.Nullable
   private WorkflowRunError error;
 
   public static final String SERIALIZED_NAME_CUSTOMER_USER_ID = "customer_user_id";
   @SerializedName(SERIALIZED_NAME_CUSTOMER_USER_ID)
+  @javax.annotation.Nullable
   private String customerUserId;
 
   public WebhookEventPayloadResource() {
   }
 
-  public WebhookEventPayloadResource id(String id) {
+  public WebhookEventPayloadResource id(@javax.annotation.Nullable String id) {
     this.id = id;
     return this;
   }
@@ -138,12 +154,12 @@ public class WebhookEventPayloadResource {
     return id;
   }
 
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nullable String id) {
     this.id = id;
   }
 
 
-  public WebhookEventPayloadResource applicantId(UUID applicantId) {
+  public WebhookEventPayloadResource applicantId(@javax.annotation.Nullable UUID applicantId) {
     this.applicantId = applicantId;
     return this;
   }
@@ -157,12 +173,12 @@ public class WebhookEventPayloadResource {
     return applicantId;
   }
 
-  public void setApplicantId(UUID applicantId) {
+  public void setApplicantId(@javax.annotation.Nullable UUID applicantId) {
     this.applicantId = applicantId;
   }
 
 
-  public WebhookEventPayloadResource createdAt(OffsetDateTime createdAt) {
+  public WebhookEventPayloadResource createdAt(@javax.annotation.Nullable OffsetDateTime createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -176,12 +192,12 @@ public class WebhookEventPayloadResource {
     return createdAt;
   }
 
-  public void setCreatedAt(OffsetDateTime createdAt) {
+  public void setCreatedAt(@javax.annotation.Nullable OffsetDateTime createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public WebhookEventPayloadResource updatedAt(OffsetDateTime updatedAt) {
+  public WebhookEventPayloadResource updatedAt(@javax.annotation.Nullable OffsetDateTime updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -195,12 +211,12 @@ public class WebhookEventPayloadResource {
     return updatedAt;
   }
 
-  public void setUpdatedAt(OffsetDateTime updatedAt) {
+  public void setUpdatedAt(@javax.annotation.Nullable OffsetDateTime updatedAt) {
     this.updatedAt = updatedAt;
   }
 
 
-  public WebhookEventPayloadResource dashboardUrl(String dashboardUrl) {
+  public WebhookEventPayloadResource dashboardUrl(@javax.annotation.Nullable String dashboardUrl) {
     this.dashboardUrl = dashboardUrl;
     return this;
   }
@@ -214,12 +230,12 @@ public class WebhookEventPayloadResource {
     return dashboardUrl;
   }
 
-  public void setDashboardUrl(String dashboardUrl) {
+  public void setDashboardUrl(@javax.annotation.Nullable String dashboardUrl) {
     this.dashboardUrl = dashboardUrl;
   }
 
 
-  public WebhookEventPayloadResource workflowId(UUID workflowId) {
+  public WebhookEventPayloadResource workflowId(@javax.annotation.Nullable UUID workflowId) {
     this.workflowId = workflowId;
     return this;
   }
@@ -233,12 +249,12 @@ public class WebhookEventPayloadResource {
     return workflowId;
   }
 
-  public void setWorkflowId(UUID workflowId) {
+  public void setWorkflowId(@javax.annotation.Nullable UUID workflowId) {
     this.workflowId = workflowId;
   }
 
 
-  public WebhookEventPayloadResource workflowRunId(UUID workflowRunId) {
+  public WebhookEventPayloadResource workflowRunId(@javax.annotation.Nullable UUID workflowRunId) {
     this.workflowRunId = workflowRunId;
     return this;
   }
@@ -252,12 +268,12 @@ public class WebhookEventPayloadResource {
     return workflowRunId;
   }
 
-  public void setWorkflowRunId(UUID workflowRunId) {
+  public void setWorkflowRunId(@javax.annotation.Nullable UUID workflowRunId) {
     this.workflowRunId = workflowRunId;
   }
 
 
-  public WebhookEventPayloadResource workflowVersionId(Integer workflowVersionId) {
+  public WebhookEventPayloadResource workflowVersionId(@javax.annotation.Nullable Integer workflowVersionId) {
     this.workflowVersionId = workflowVersionId;
     return this;
   }
@@ -271,12 +287,12 @@ public class WebhookEventPayloadResource {
     return workflowVersionId;
   }
 
-  public void setWorkflowVersionId(Integer workflowVersionId) {
+  public void setWorkflowVersionId(@javax.annotation.Nullable Integer workflowVersionId) {
     this.workflowVersionId = workflowVersionId;
   }
 
 
-  public WebhookEventPayloadResource taskDefId(String taskDefId) {
+  public WebhookEventPayloadResource taskDefId(@javax.annotation.Nullable String taskDefId) {
     this.taskDefId = taskDefId;
     return this;
   }
@@ -290,12 +306,12 @@ public class WebhookEventPayloadResource {
     return taskDefId;
   }
 
-  public void setTaskDefId(String taskDefId) {
+  public void setTaskDefId(@javax.annotation.Nullable String taskDefId) {
     this.taskDefId = taskDefId;
   }
 
 
-  public WebhookEventPayloadResource taskDefVersion(String taskDefVersion) {
+  public WebhookEventPayloadResource taskDefVersion(@javax.annotation.Nullable String taskDefVersion) {
     this.taskDefVersion = taskDefVersion;
     return this;
   }
@@ -309,12 +325,12 @@ public class WebhookEventPayloadResource {
     return taskDefVersion;
   }
 
-  public void setTaskDefVersion(String taskDefVersion) {
+  public void setTaskDefVersion(@javax.annotation.Nullable String taskDefVersion) {
     this.taskDefVersion = taskDefVersion;
   }
 
 
-  public WebhookEventPayloadResource input(Object input) {
+  public WebhookEventPayloadResource input(@javax.annotation.Nullable Object input) {
     this.input = input;
     return this;
   }
@@ -328,12 +344,12 @@ public class WebhookEventPayloadResource {
     return input;
   }
 
-  public void setInput(Object input) {
+  public void setInput(@javax.annotation.Nullable Object input) {
     this.input = input;
   }
 
 
-  public WebhookEventPayloadResource output(Object output) {
+  public WebhookEventPayloadResource output(@javax.annotation.Nullable Object output) {
     this.output = output;
     return this;
   }
@@ -347,12 +363,12 @@ public class WebhookEventPayloadResource {
     return output;
   }
 
-  public void setOutput(Object output) {
+  public void setOutput(@javax.annotation.Nullable Object output) {
     this.output = output;
   }
 
 
-  public WebhookEventPayloadResource reasons(List<String> reasons) {
+  public WebhookEventPayloadResource reasons(@javax.annotation.Nullable List<String> reasons) {
     this.reasons = reasons;
     return this;
   }
@@ -374,12 +390,12 @@ public class WebhookEventPayloadResource {
     return reasons;
   }
 
-  public void setReasons(List<String> reasons) {
+  public void setReasons(@javax.annotation.Nullable List<String> reasons) {
     this.reasons = reasons;
   }
 
 
-  public WebhookEventPayloadResource link(WorkflowRunLink link) {
+  public WebhookEventPayloadResource link(@javax.annotation.Nullable WorkflowRunLink link) {
     this.link = link;
     return this;
   }
@@ -393,12 +409,12 @@ public class WebhookEventPayloadResource {
     return link;
   }
 
-  public void setLink(WorkflowRunLink link) {
+  public void setLink(@javax.annotation.Nullable WorkflowRunLink link) {
     this.link = link;
   }
 
 
-  public WebhookEventPayloadResource error(WorkflowRunError error) {
+  public WebhookEventPayloadResource error(@javax.annotation.Nullable WorkflowRunError error) {
     this.error = error;
     return this;
   }
@@ -412,12 +428,12 @@ public class WebhookEventPayloadResource {
     return error;
   }
 
-  public void setError(WorkflowRunError error) {
+  public void setError(@javax.annotation.Nullable WorkflowRunError error) {
     this.error = error;
   }
 
 
-  public WebhookEventPayloadResource customerUserId(String customerUserId) {
+  public WebhookEventPayloadResource customerUserId(@javax.annotation.Nullable String customerUserId) {
     this.customerUserId = customerUserId;
     return this;
   }
@@ -431,7 +447,7 @@ public class WebhookEventPayloadResource {
     return customerUserId;
   }
 
-  public void setCustomerUserId(String customerUserId) {
+  public void setCustomerUserId(@javax.annotation.Nullable String customerUserId) {
     this.customerUserId = customerUserId;
   }
 

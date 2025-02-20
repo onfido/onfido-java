@@ -50,20 +50,22 @@ import com.onfido.JSON;
 /**
  * KnownFacesBreakdown
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class KnownFacesBreakdown {
   public static final String SERIALIZED_NAME_PREVIOUSLY_SEEN_FACES = "previously_seen_faces";
   @SerializedName(SERIALIZED_NAME_PREVIOUSLY_SEEN_FACES)
+  @javax.annotation.Nullable
   private KnownFacesBreakdownPreviouslySeenFaces previouslySeenFaces;
 
   public static final String SERIALIZED_NAME_IMAGE_INTEGRITY = "image_integrity";
   @SerializedName(SERIALIZED_NAME_IMAGE_INTEGRITY)
+  @javax.annotation.Nullable
   private KnownFacesBreakdownImageIntegrity imageIntegrity;
 
   public KnownFacesBreakdown() {
   }
 
-  public KnownFacesBreakdown previouslySeenFaces(KnownFacesBreakdownPreviouslySeenFaces previouslySeenFaces) {
+  public KnownFacesBreakdown previouslySeenFaces(@javax.annotation.Nullable KnownFacesBreakdownPreviouslySeenFaces previouslySeenFaces) {
     this.previouslySeenFaces = previouslySeenFaces;
     return this;
   }
@@ -77,12 +79,12 @@ public class KnownFacesBreakdown {
     return previouslySeenFaces;
   }
 
-  public void setPreviouslySeenFaces(KnownFacesBreakdownPreviouslySeenFaces previouslySeenFaces) {
+  public void setPreviouslySeenFaces(@javax.annotation.Nullable KnownFacesBreakdownPreviouslySeenFaces previouslySeenFaces) {
     this.previouslySeenFaces = previouslySeenFaces;
   }
 
 
-  public KnownFacesBreakdown imageIntegrity(KnownFacesBreakdownImageIntegrity imageIntegrity) {
+  public KnownFacesBreakdown imageIntegrity(@javax.annotation.Nullable KnownFacesBreakdownImageIntegrity imageIntegrity) {
     this.imageIntegrity = imageIntegrity;
     return this;
   }
@@ -96,7 +98,7 @@ public class KnownFacesBreakdown {
     return imageIntegrity;
   }
 
-  public void setImageIntegrity(KnownFacesBreakdownImageIntegrity imageIntegrity) {
+  public void setImageIntegrity(@javax.annotation.Nullable KnownFacesBreakdownImageIntegrity imageIntegrity) {
     this.imageIntegrity = imageIntegrity;
   }
 

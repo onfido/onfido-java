@@ -49,24 +49,27 @@ import com.onfido.JSON;
 /**
  * DeviceIntelligenceBreakdownPropertiesGeolocation
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class DeviceIntelligenceBreakdownPropertiesGeolocation {
   public static final String SERIALIZED_NAME_CITY = "city";
   @SerializedName(SERIALIZED_NAME_CITY)
+  @javax.annotation.Nullable
   private String city;
 
   public static final String SERIALIZED_NAME_REGION = "region";
   @SerializedName(SERIALIZED_NAME_REGION)
+  @javax.annotation.Nullable
   private String region;
 
   public static final String SERIALIZED_NAME_COUNTRY = "country";
   @SerializedName(SERIALIZED_NAME_COUNTRY)
+  @javax.annotation.Nullable
   private CountryCodes country;
 
   public DeviceIntelligenceBreakdownPropertiesGeolocation() {
   }
 
-  public DeviceIntelligenceBreakdownPropertiesGeolocation city(String city) {
+  public DeviceIntelligenceBreakdownPropertiesGeolocation city(@javax.annotation.Nullable String city) {
     this.city = city;
     return this;
   }
@@ -80,12 +83,12 @@ public class DeviceIntelligenceBreakdownPropertiesGeolocation {
     return city;
   }
 
-  public void setCity(String city) {
+  public void setCity(@javax.annotation.Nullable String city) {
     this.city = city;
   }
 
 
-  public DeviceIntelligenceBreakdownPropertiesGeolocation region(String region) {
+  public DeviceIntelligenceBreakdownPropertiesGeolocation region(@javax.annotation.Nullable String region) {
     this.region = region;
     return this;
   }
@@ -99,12 +102,12 @@ public class DeviceIntelligenceBreakdownPropertiesGeolocation {
     return region;
   }
 
-  public void setRegion(String region) {
+  public void setRegion(@javax.annotation.Nullable String region) {
     this.region = region;
   }
 
 
-  public DeviceIntelligenceBreakdownPropertiesGeolocation country(CountryCodes country) {
+  public DeviceIntelligenceBreakdownPropertiesGeolocation country(@javax.annotation.Nullable CountryCodes country) {
     this.country = country;
     return this;
   }
@@ -118,7 +121,7 @@ public class DeviceIntelligenceBreakdownPropertiesGeolocation {
     return country;
   }
 
-  public void setCountry(CountryCodes country) {
+  public void setCountry(@javax.annotation.Nullable CountryCodes country) {
     this.country = country;
   }
 

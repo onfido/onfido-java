@@ -48,16 +48,17 @@ import com.onfido.JSON;
 /**
  * IdentityEnhancedBreakdownSourcesBreakdownTotalSourcesProperties
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class IdentityEnhancedBreakdownSourcesBreakdownTotalSourcesProperties {
   public static final String SERIALIZED_NAME_TOTAL_NUMBER_OF_SOURCES = "total_number_of_sources";
   @SerializedName(SERIALIZED_NAME_TOTAL_NUMBER_OF_SOURCES)
+  @javax.annotation.Nullable
   private Integer totalNumberOfSources;
 
   public IdentityEnhancedBreakdownSourcesBreakdownTotalSourcesProperties() {
   }
 
-  public IdentityEnhancedBreakdownSourcesBreakdownTotalSourcesProperties totalNumberOfSources(Integer totalNumberOfSources) {
+  public IdentityEnhancedBreakdownSourcesBreakdownTotalSourcesProperties totalNumberOfSources(@javax.annotation.Nullable Integer totalNumberOfSources) {
     this.totalNumberOfSources = totalNumberOfSources;
     return this;
   }
@@ -71,7 +72,7 @@ public class IdentityEnhancedBreakdownSourcesBreakdownTotalSourcesProperties {
     return totalNumberOfSources;
   }
 
-  public void setTotalNumberOfSources(Integer totalNumberOfSources) {
+  public void setTotalNumberOfSources(@javax.annotation.Nullable Integer totalNumberOfSources) {
     this.totalNumberOfSources = totalNumberOfSources;
   }
 

@@ -56,48 +56,57 @@ import com.onfido.JSON;
 /**
  * WatchlistEnhancedPropertiesRecordsInner
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class WatchlistEnhancedPropertiesRecordsInner {
   public static final String SERIALIZED_NAME_ADDRESS = "address";
   @SerializedName(SERIALIZED_NAME_ADDRESS)
+  @javax.annotation.Nullable
   private List<WatchlistEnhancedPropertiesRecordsInnerAddressInner> address = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_ALIAS = "alias";
   @SerializedName(SERIALIZED_NAME_ALIAS)
+  @javax.annotation.Nullable
   private List<WatchlistEnhancedPropertiesRecordsInnerAliasInner> alias = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_ASSOCIATE = "associate";
   @SerializedName(SERIALIZED_NAME_ASSOCIATE)
+  @javax.annotation.Nullable
   private List<WatchlistEnhancedPropertiesRecordsInnerAssociateInner> associate = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_ATTRIBUTE = "attribute";
   @SerializedName(SERIALIZED_NAME_ATTRIBUTE)
+  @javax.annotation.Nullable
   private List<WatchlistEnhancedPropertiesRecordsInnerAttributeInner> attribute = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_DATE_OF_BIRTH = "date_of_birth";
   @SerializedName(SERIALIZED_NAME_DATE_OF_BIRTH)
+  @javax.annotation.Nullable
   private List<String> dateOfBirth = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_EVENT = "event";
   @SerializedName(SERIALIZED_NAME_EVENT)
+  @javax.annotation.Nullable
   private List<WatchlistEnhancedPropertiesRecordsInnerEventInner> event = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_FULL_NAME = "full_name";
   @SerializedName(SERIALIZED_NAME_FULL_NAME)
+  @javax.annotation.Nullable
   private String fullName;
 
   public static final String SERIALIZED_NAME_POSITION = "position";
   @SerializedName(SERIALIZED_NAME_POSITION)
+  @javax.annotation.Nullable
   private List<String> position = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SOURCE = "source";
   @SerializedName(SERIALIZED_NAME_SOURCE)
+  @javax.annotation.Nullable
   private List<WatchlistEnhancedPropertiesRecordsInnerSourceInner> source = new ArrayList<>();
 
   public WatchlistEnhancedPropertiesRecordsInner() {
   }
 
-  public WatchlistEnhancedPropertiesRecordsInner address(List<WatchlistEnhancedPropertiesRecordsInnerAddressInner> address) {
+  public WatchlistEnhancedPropertiesRecordsInner address(@javax.annotation.Nullable List<WatchlistEnhancedPropertiesRecordsInnerAddressInner> address) {
     this.address = address;
     return this;
   }
@@ -119,12 +128,12 @@ public class WatchlistEnhancedPropertiesRecordsInner {
     return address;
   }
 
-  public void setAddress(List<WatchlistEnhancedPropertiesRecordsInnerAddressInner> address) {
+  public void setAddress(@javax.annotation.Nullable List<WatchlistEnhancedPropertiesRecordsInnerAddressInner> address) {
     this.address = address;
   }
 
 
-  public WatchlistEnhancedPropertiesRecordsInner alias(List<WatchlistEnhancedPropertiesRecordsInnerAliasInner> alias) {
+  public WatchlistEnhancedPropertiesRecordsInner alias(@javax.annotation.Nullable List<WatchlistEnhancedPropertiesRecordsInnerAliasInner> alias) {
     this.alias = alias;
     return this;
   }
@@ -146,12 +155,12 @@ public class WatchlistEnhancedPropertiesRecordsInner {
     return alias;
   }
 
-  public void setAlias(List<WatchlistEnhancedPropertiesRecordsInnerAliasInner> alias) {
+  public void setAlias(@javax.annotation.Nullable List<WatchlistEnhancedPropertiesRecordsInnerAliasInner> alias) {
     this.alias = alias;
   }
 
 
-  public WatchlistEnhancedPropertiesRecordsInner associate(List<WatchlistEnhancedPropertiesRecordsInnerAssociateInner> associate) {
+  public WatchlistEnhancedPropertiesRecordsInner associate(@javax.annotation.Nullable List<WatchlistEnhancedPropertiesRecordsInnerAssociateInner> associate) {
     this.associate = associate;
     return this;
   }
@@ -173,12 +182,12 @@ public class WatchlistEnhancedPropertiesRecordsInner {
     return associate;
   }
 
-  public void setAssociate(List<WatchlistEnhancedPropertiesRecordsInnerAssociateInner> associate) {
+  public void setAssociate(@javax.annotation.Nullable List<WatchlistEnhancedPropertiesRecordsInnerAssociateInner> associate) {
     this.associate = associate;
   }
 
 
-  public WatchlistEnhancedPropertiesRecordsInner attribute(List<WatchlistEnhancedPropertiesRecordsInnerAttributeInner> attribute) {
+  public WatchlistEnhancedPropertiesRecordsInner attribute(@javax.annotation.Nullable List<WatchlistEnhancedPropertiesRecordsInnerAttributeInner> attribute) {
     this.attribute = attribute;
     return this;
   }
@@ -200,12 +209,12 @@ public class WatchlistEnhancedPropertiesRecordsInner {
     return attribute;
   }
 
-  public void setAttribute(List<WatchlistEnhancedPropertiesRecordsInnerAttributeInner> attribute) {
+  public void setAttribute(@javax.annotation.Nullable List<WatchlistEnhancedPropertiesRecordsInnerAttributeInner> attribute) {
     this.attribute = attribute;
   }
 
 
-  public WatchlistEnhancedPropertiesRecordsInner dateOfBirth(List<String> dateOfBirth) {
+  public WatchlistEnhancedPropertiesRecordsInner dateOfBirth(@javax.annotation.Nullable List<String> dateOfBirth) {
     this.dateOfBirth = dateOfBirth;
     return this;
   }
@@ -227,12 +236,12 @@ public class WatchlistEnhancedPropertiesRecordsInner {
     return dateOfBirth;
   }
 
-  public void setDateOfBirth(List<String> dateOfBirth) {
+  public void setDateOfBirth(@javax.annotation.Nullable List<String> dateOfBirth) {
     this.dateOfBirth = dateOfBirth;
   }
 
 
-  public WatchlistEnhancedPropertiesRecordsInner event(List<WatchlistEnhancedPropertiesRecordsInnerEventInner> event) {
+  public WatchlistEnhancedPropertiesRecordsInner event(@javax.annotation.Nullable List<WatchlistEnhancedPropertiesRecordsInnerEventInner> event) {
     this.event = event;
     return this;
   }
@@ -254,12 +263,12 @@ public class WatchlistEnhancedPropertiesRecordsInner {
     return event;
   }
 
-  public void setEvent(List<WatchlistEnhancedPropertiesRecordsInnerEventInner> event) {
+  public void setEvent(@javax.annotation.Nullable List<WatchlistEnhancedPropertiesRecordsInnerEventInner> event) {
     this.event = event;
   }
 
 
-  public WatchlistEnhancedPropertiesRecordsInner fullName(String fullName) {
+  public WatchlistEnhancedPropertiesRecordsInner fullName(@javax.annotation.Nullable String fullName) {
     this.fullName = fullName;
     return this;
   }
@@ -273,12 +282,12 @@ public class WatchlistEnhancedPropertiesRecordsInner {
     return fullName;
   }
 
-  public void setFullName(String fullName) {
+  public void setFullName(@javax.annotation.Nullable String fullName) {
     this.fullName = fullName;
   }
 
 
-  public WatchlistEnhancedPropertiesRecordsInner position(List<String> position) {
+  public WatchlistEnhancedPropertiesRecordsInner position(@javax.annotation.Nullable List<String> position) {
     this.position = position;
     return this;
   }
@@ -300,12 +309,12 @@ public class WatchlistEnhancedPropertiesRecordsInner {
     return position;
   }
 
-  public void setPosition(List<String> position) {
+  public void setPosition(@javax.annotation.Nullable List<String> position) {
     this.position = position;
   }
 
 
-  public WatchlistEnhancedPropertiesRecordsInner source(List<WatchlistEnhancedPropertiesRecordsInnerSourceInner> source) {
+  public WatchlistEnhancedPropertiesRecordsInner source(@javax.annotation.Nullable List<WatchlistEnhancedPropertiesRecordsInnerSourceInner> source) {
     this.source = source;
     return this;
   }
@@ -327,7 +336,7 @@ public class WatchlistEnhancedPropertiesRecordsInner {
     return source;
   }
 
-  public void setSource(List<WatchlistEnhancedPropertiesRecordsInnerSourceInner> source) {
+  public void setSource(@javax.annotation.Nullable List<WatchlistEnhancedPropertiesRecordsInnerSourceInner> source) {
     this.source = source;
   }
 

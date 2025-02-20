@@ -48,20 +48,22 @@ import com.onfido.JSON;
 /**
  * ErrorProperties1
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class ErrorProperties1 {
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
+  @javax.annotation.Nullable
   private String type;
 
   public static final String SERIALIZED_NAME_MESSAGE = "message";
   @SerializedName(SERIALIZED_NAME_MESSAGE)
+  @javax.annotation.Nullable
   private String message;
 
   public ErrorProperties1() {
   }
 
-  public ErrorProperties1 type(String type) {
+  public ErrorProperties1 type(@javax.annotation.Nullable String type) {
     this.type = type;
     return this;
   }
@@ -75,12 +77,12 @@ public class ErrorProperties1 {
     return type;
   }
 
-  public void setType(String type) {
+  public void setType(@javax.annotation.Nullable String type) {
     this.type = type;
   }
 
 
-  public ErrorProperties1 message(String message) {
+  public ErrorProperties1 message(@javax.annotation.Nullable String message) {
     this.message = message;
     return this;
   }
@@ -94,7 +96,7 @@ public class ErrorProperties1 {
     return message;
   }
 
-  public void setMessage(String message) {
+  public void setMessage(@javax.annotation.Nullable String message) {
     this.message = message;
   }
 

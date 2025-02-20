@@ -50,20 +50,22 @@ import com.onfido.JSON;
 /**
  * DeviceIntelligenceBreakdown
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class DeviceIntelligenceBreakdown {
   public static final String SERIALIZED_NAME_BREAKDOWN = "breakdown";
   @SerializedName(SERIALIZED_NAME_BREAKDOWN)
+  @javax.annotation.Nullable
   private DeviceIntelligenceBreakdownBreakdown breakdown;
 
   public static final String SERIALIZED_NAME_PROPERTIES = "properties";
   @SerializedName(SERIALIZED_NAME_PROPERTIES)
+  @javax.annotation.Nullable
   private DeviceIntelligenceBreakdownProperties properties;
 
   public DeviceIntelligenceBreakdown() {
   }
 
-  public DeviceIntelligenceBreakdown breakdown(DeviceIntelligenceBreakdownBreakdown breakdown) {
+  public DeviceIntelligenceBreakdown breakdown(@javax.annotation.Nullable DeviceIntelligenceBreakdownBreakdown breakdown) {
     this.breakdown = breakdown;
     return this;
   }
@@ -77,12 +79,12 @@ public class DeviceIntelligenceBreakdown {
     return breakdown;
   }
 
-  public void setBreakdown(DeviceIntelligenceBreakdownBreakdown breakdown) {
+  public void setBreakdown(@javax.annotation.Nullable DeviceIntelligenceBreakdownBreakdown breakdown) {
     this.breakdown = breakdown;
   }
 
 
-  public DeviceIntelligenceBreakdown properties(DeviceIntelligenceBreakdownProperties properties) {
+  public DeviceIntelligenceBreakdown properties(@javax.annotation.Nullable DeviceIntelligenceBreakdownProperties properties) {
     this.properties = properties;
     return this;
   }
@@ -96,7 +98,7 @@ public class DeviceIntelligenceBreakdown {
     return properties;
   }
 
-  public void setProperties(DeviceIntelligenceBreakdownProperties properties) {
+  public void setProperties(@javax.annotation.Nullable DeviceIntelligenceBreakdownProperties properties) {
     this.properties = properties;
   }
 

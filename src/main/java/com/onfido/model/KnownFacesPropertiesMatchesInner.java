@@ -49,32 +49,37 @@ import com.onfido.JSON;
 /**
  * KnownFacesPropertiesMatchesInner
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class KnownFacesPropertiesMatchesInner {
   public static final String SERIALIZED_NAME_APPLICANT_ID = "applicant_id";
   @SerializedName(SERIALIZED_NAME_APPLICANT_ID)
+  @javax.annotation.Nullable
   private UUID applicantId;
 
   public static final String SERIALIZED_NAME_SCORE = "score";
   @SerializedName(SERIALIZED_NAME_SCORE)
+  @javax.annotation.Nullable
   private Float score;
 
   public static final String SERIALIZED_NAME_MEDIA_ID = "media_id";
   @SerializedName(SERIALIZED_NAME_MEDIA_ID)
+  @javax.annotation.Nullable
   private UUID mediaId;
 
   public static final String SERIALIZED_NAME_MEDIA_TYPE = "media_type";
   @SerializedName(SERIALIZED_NAME_MEDIA_TYPE)
+  @javax.annotation.Nullable
   private String mediaType;
 
   public static final String SERIALIZED_NAME_SUSPECTED = "suspected";
   @SerializedName(SERIALIZED_NAME_SUSPECTED)
+  @javax.annotation.Nullable
   private Boolean suspected;
 
   public KnownFacesPropertiesMatchesInner() {
   }
 
-  public KnownFacesPropertiesMatchesInner applicantId(UUID applicantId) {
+  public KnownFacesPropertiesMatchesInner applicantId(@javax.annotation.Nullable UUID applicantId) {
     this.applicantId = applicantId;
     return this;
   }
@@ -88,12 +93,12 @@ public class KnownFacesPropertiesMatchesInner {
     return applicantId;
   }
 
-  public void setApplicantId(UUID applicantId) {
+  public void setApplicantId(@javax.annotation.Nullable UUID applicantId) {
     this.applicantId = applicantId;
   }
 
 
-  public KnownFacesPropertiesMatchesInner score(Float score) {
+  public KnownFacesPropertiesMatchesInner score(@javax.annotation.Nullable Float score) {
     this.score = score;
     return this;
   }
@@ -107,12 +112,12 @@ public class KnownFacesPropertiesMatchesInner {
     return score;
   }
 
-  public void setScore(Float score) {
+  public void setScore(@javax.annotation.Nullable Float score) {
     this.score = score;
   }
 
 
-  public KnownFacesPropertiesMatchesInner mediaId(UUID mediaId) {
+  public KnownFacesPropertiesMatchesInner mediaId(@javax.annotation.Nullable UUID mediaId) {
     this.mediaId = mediaId;
     return this;
   }
@@ -126,12 +131,12 @@ public class KnownFacesPropertiesMatchesInner {
     return mediaId;
   }
 
-  public void setMediaId(UUID mediaId) {
+  public void setMediaId(@javax.annotation.Nullable UUID mediaId) {
     this.mediaId = mediaId;
   }
 
 
-  public KnownFacesPropertiesMatchesInner mediaType(String mediaType) {
+  public KnownFacesPropertiesMatchesInner mediaType(@javax.annotation.Nullable String mediaType) {
     this.mediaType = mediaType;
     return this;
   }
@@ -145,12 +150,12 @@ public class KnownFacesPropertiesMatchesInner {
     return mediaType;
   }
 
-  public void setMediaType(String mediaType) {
+  public void setMediaType(@javax.annotation.Nullable String mediaType) {
     this.mediaType = mediaType;
   }
 
 
-  public KnownFacesPropertiesMatchesInner suspected(Boolean suspected) {
+  public KnownFacesPropertiesMatchesInner suspected(@javax.annotation.Nullable Boolean suspected) {
     this.suspected = suspected;
     return this;
   }
@@ -164,7 +169,7 @@ public class KnownFacesPropertiesMatchesInner {
     return suspected;
   }
 
-  public void setSuspected(Boolean suspected) {
+  public void setSuspected(@javax.annotation.Nullable Boolean suspected) {
     this.suspected = suspected;
   }
 

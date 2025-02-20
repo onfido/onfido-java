@@ -50,24 +50,27 @@ import com.onfido.JSON;
 /**
  * ErrorProperties
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class ErrorProperties {
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
+  @javax.annotation.Nullable
   private String type;
 
   public static final String SERIALIZED_NAME_MESSAGE = "message";
   @SerializedName(SERIALIZED_NAME_MESSAGE)
+  @javax.annotation.Nullable
   private String message;
 
   public static final String SERIALIZED_NAME_FIELDS = "fields";
   @SerializedName(SERIALIZED_NAME_FIELDS)
+  @javax.annotation.Nullable
   private Map<String, Object> fields = new HashMap<>();
 
   public ErrorProperties() {
   }
 
-  public ErrorProperties type(String type) {
+  public ErrorProperties type(@javax.annotation.Nullable String type) {
     this.type = type;
     return this;
   }
@@ -81,12 +84,12 @@ public class ErrorProperties {
     return type;
   }
 
-  public void setType(String type) {
+  public void setType(@javax.annotation.Nullable String type) {
     this.type = type;
   }
 
 
-  public ErrorProperties message(String message) {
+  public ErrorProperties message(@javax.annotation.Nullable String message) {
     this.message = message;
     return this;
   }
@@ -100,12 +103,12 @@ public class ErrorProperties {
     return message;
   }
 
-  public void setMessage(String message) {
+  public void setMessage(@javax.annotation.Nullable String message) {
     this.message = message;
   }
 
 
-  public ErrorProperties fields(Map<String, Object> fields) {
+  public ErrorProperties fields(@javax.annotation.Nullable Map<String, Object> fields) {
     this.fields = fields;
     return this;
   }
@@ -127,7 +130,7 @@ public class ErrorProperties {
     return fields;
   }
 
-  public void setFields(Map<String, Object> fields) {
+  public void setFields(@javax.annotation.Nullable Map<String, Object> fields) {
     this.fields = fields;
   }
 

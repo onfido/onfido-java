@@ -51,16 +51,17 @@ import com.onfido.JSON;
 /**
  * ChecksList
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class ChecksList {
   public static final String SERIALIZED_NAME_CHECKS = "checks";
   @SerializedName(SERIALIZED_NAME_CHECKS)
+  @javax.annotation.Nonnull
   private List<Check> checks = new ArrayList<>();
 
   public ChecksList() {
   }
 
-  public ChecksList checks(List<Check> checks) {
+  public ChecksList checks(@javax.annotation.Nonnull List<Check> checks) {
     this.checks = checks;
     return this;
   }
@@ -82,7 +83,7 @@ public class ChecksList {
     return checks;
   }
 
-  public void setChecks(List<Check> checks) {
+  public void setChecks(@javax.annotation.Nonnull List<Check> checks) {
     this.checks = checks;
   }
 

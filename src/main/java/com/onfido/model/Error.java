@@ -49,16 +49,17 @@ import com.onfido.JSON;
 /**
  * Error
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class Error {
   public static final String SERIALIZED_NAME_ERROR = "error";
   @SerializedName(SERIALIZED_NAME_ERROR)
+  @javax.annotation.Nullable
   private ErrorProperties error;
 
   public Error() {
   }
 
-  public Error error(ErrorProperties error) {
+  public Error error(@javax.annotation.Nullable ErrorProperties error) {
     this.error = error;
     return this;
   }
@@ -72,7 +73,7 @@ public class Error {
     return error;
   }
 
-  public void setError(ErrorProperties error) {
+  public void setError(@javax.annotation.Nullable ErrorProperties error) {
     this.error = error;
   }
 

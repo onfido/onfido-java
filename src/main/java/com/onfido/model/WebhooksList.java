@@ -51,16 +51,17 @@ import com.onfido.JSON;
 /**
  * WebhooksList
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class WebhooksList {
   public static final String SERIALIZED_NAME_WEBHOOKS = "webhooks";
   @SerializedName(SERIALIZED_NAME_WEBHOOKS)
+  @javax.annotation.Nonnull
   private List<Webhook> webhooks = new ArrayList<>();
 
   public WebhooksList() {
   }
 
-  public WebhooksList webhooks(List<Webhook> webhooks) {
+  public WebhooksList webhooks(@javax.annotation.Nonnull List<Webhook> webhooks) {
     this.webhooks = webhooks;
     return this;
   }
@@ -82,7 +83,7 @@ public class WebhooksList {
     return webhooks;
   }
 
-  public void setWebhooks(List<Webhook> webhooks) {
+  public void setWebhooks(@javax.annotation.Nonnull List<Webhook> webhooks) {
     this.webhooks = webhooks;
   }
 

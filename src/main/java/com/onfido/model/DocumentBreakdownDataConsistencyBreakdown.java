@@ -49,52 +49,62 @@ import com.onfido.JSON;
 /**
  * DocumentBreakdownDataConsistencyBreakdown
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class DocumentBreakdownDataConsistencyBreakdown {
   public static final String SERIALIZED_NAME_DATE_OF_EXPIRY = "date_of_expiry";
   @SerializedName(SERIALIZED_NAME_DATE_OF_EXPIRY)
+  @javax.annotation.Nullable
   private DocumentBreakdownDataComparisonBreakdownIssuingCountry dateOfExpiry;
 
   public static final String SERIALIZED_NAME_DOCUMENT_NUMBERS = "document_numbers";
   @SerializedName(SERIALIZED_NAME_DOCUMENT_NUMBERS)
+  @javax.annotation.Nullable
   private DocumentBreakdownDataComparisonBreakdownIssuingCountry documentNumbers;
 
   public static final String SERIALIZED_NAME_ISSUING_COUNTRY = "issuing_country";
   @SerializedName(SERIALIZED_NAME_ISSUING_COUNTRY)
+  @javax.annotation.Nullable
   private DocumentBreakdownDataComparisonBreakdownIssuingCountry issuingCountry;
 
   public static final String SERIALIZED_NAME_DOCUMENT_TYPE = "document_type";
   @SerializedName(SERIALIZED_NAME_DOCUMENT_TYPE)
+  @javax.annotation.Nullable
   private DocumentBreakdownDataComparisonBreakdownIssuingCountry documentType;
 
   public static final String SERIALIZED_NAME_DATE_OF_BIRTH = "date_of_birth";
   @SerializedName(SERIALIZED_NAME_DATE_OF_BIRTH)
+  @javax.annotation.Nullable
   private DocumentBreakdownDataComparisonBreakdownIssuingCountry dateOfBirth;
 
   public static final String SERIALIZED_NAME_GENDER = "gender";
   @SerializedName(SERIALIZED_NAME_GENDER)
+  @javax.annotation.Nullable
   private DocumentBreakdownDataComparisonBreakdownIssuingCountry gender;
 
   public static final String SERIALIZED_NAME_FIRST_NAME = "first_name";
   @SerializedName(SERIALIZED_NAME_FIRST_NAME)
+  @javax.annotation.Nullable
   private DocumentBreakdownDataComparisonBreakdownIssuingCountry firstName;
 
   public static final String SERIALIZED_NAME_NATIONALITY = "nationality";
   @SerializedName(SERIALIZED_NAME_NATIONALITY)
+  @javax.annotation.Nullable
   private DocumentBreakdownDataComparisonBreakdownIssuingCountry nationality;
 
   public static final String SERIALIZED_NAME_LAST_NAME = "last_name";
   @SerializedName(SERIALIZED_NAME_LAST_NAME)
+  @javax.annotation.Nullable
   private DocumentBreakdownDataComparisonBreakdownIssuingCountry lastName;
 
   public static final String SERIALIZED_NAME_MULTIPLE_DATA_SOURCES_PRESENT = "multiple_data_sources_present";
   @SerializedName(SERIALIZED_NAME_MULTIPLE_DATA_SOURCES_PRESENT)
+  @javax.annotation.Nullable
   private DocumentBreakdownDataComparisonBreakdownIssuingCountry multipleDataSourcesPresent;
 
   public DocumentBreakdownDataConsistencyBreakdown() {
   }
 
-  public DocumentBreakdownDataConsistencyBreakdown dateOfExpiry(DocumentBreakdownDataComparisonBreakdownIssuingCountry dateOfExpiry) {
+  public DocumentBreakdownDataConsistencyBreakdown dateOfExpiry(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry dateOfExpiry) {
     this.dateOfExpiry = dateOfExpiry;
     return this;
   }
@@ -108,12 +118,12 @@ public class DocumentBreakdownDataConsistencyBreakdown {
     return dateOfExpiry;
   }
 
-  public void setDateOfExpiry(DocumentBreakdownDataComparisonBreakdownIssuingCountry dateOfExpiry) {
+  public void setDateOfExpiry(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry dateOfExpiry) {
     this.dateOfExpiry = dateOfExpiry;
   }
 
 
-  public DocumentBreakdownDataConsistencyBreakdown documentNumbers(DocumentBreakdownDataComparisonBreakdownIssuingCountry documentNumbers) {
+  public DocumentBreakdownDataConsistencyBreakdown documentNumbers(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry documentNumbers) {
     this.documentNumbers = documentNumbers;
     return this;
   }
@@ -127,12 +137,12 @@ public class DocumentBreakdownDataConsistencyBreakdown {
     return documentNumbers;
   }
 
-  public void setDocumentNumbers(DocumentBreakdownDataComparisonBreakdownIssuingCountry documentNumbers) {
+  public void setDocumentNumbers(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry documentNumbers) {
     this.documentNumbers = documentNumbers;
   }
 
 
-  public DocumentBreakdownDataConsistencyBreakdown issuingCountry(DocumentBreakdownDataComparisonBreakdownIssuingCountry issuingCountry) {
+  public DocumentBreakdownDataConsistencyBreakdown issuingCountry(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry issuingCountry) {
     this.issuingCountry = issuingCountry;
     return this;
   }
@@ -146,12 +156,12 @@ public class DocumentBreakdownDataConsistencyBreakdown {
     return issuingCountry;
   }
 
-  public void setIssuingCountry(DocumentBreakdownDataComparisonBreakdownIssuingCountry issuingCountry) {
+  public void setIssuingCountry(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry issuingCountry) {
     this.issuingCountry = issuingCountry;
   }
 
 
-  public DocumentBreakdownDataConsistencyBreakdown documentType(DocumentBreakdownDataComparisonBreakdownIssuingCountry documentType) {
+  public DocumentBreakdownDataConsistencyBreakdown documentType(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry documentType) {
     this.documentType = documentType;
     return this;
   }
@@ -165,12 +175,12 @@ public class DocumentBreakdownDataConsistencyBreakdown {
     return documentType;
   }
 
-  public void setDocumentType(DocumentBreakdownDataComparisonBreakdownIssuingCountry documentType) {
+  public void setDocumentType(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry documentType) {
     this.documentType = documentType;
   }
 
 
-  public DocumentBreakdownDataConsistencyBreakdown dateOfBirth(DocumentBreakdownDataComparisonBreakdownIssuingCountry dateOfBirth) {
+  public DocumentBreakdownDataConsistencyBreakdown dateOfBirth(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry dateOfBirth) {
     this.dateOfBirth = dateOfBirth;
     return this;
   }
@@ -184,12 +194,12 @@ public class DocumentBreakdownDataConsistencyBreakdown {
     return dateOfBirth;
   }
 
-  public void setDateOfBirth(DocumentBreakdownDataComparisonBreakdownIssuingCountry dateOfBirth) {
+  public void setDateOfBirth(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry dateOfBirth) {
     this.dateOfBirth = dateOfBirth;
   }
 
 
-  public DocumentBreakdownDataConsistencyBreakdown gender(DocumentBreakdownDataComparisonBreakdownIssuingCountry gender) {
+  public DocumentBreakdownDataConsistencyBreakdown gender(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry gender) {
     this.gender = gender;
     return this;
   }
@@ -203,12 +213,12 @@ public class DocumentBreakdownDataConsistencyBreakdown {
     return gender;
   }
 
-  public void setGender(DocumentBreakdownDataComparisonBreakdownIssuingCountry gender) {
+  public void setGender(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry gender) {
     this.gender = gender;
   }
 
 
-  public DocumentBreakdownDataConsistencyBreakdown firstName(DocumentBreakdownDataComparisonBreakdownIssuingCountry firstName) {
+  public DocumentBreakdownDataConsistencyBreakdown firstName(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry firstName) {
     this.firstName = firstName;
     return this;
   }
@@ -222,12 +232,12 @@ public class DocumentBreakdownDataConsistencyBreakdown {
     return firstName;
   }
 
-  public void setFirstName(DocumentBreakdownDataComparisonBreakdownIssuingCountry firstName) {
+  public void setFirstName(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry firstName) {
     this.firstName = firstName;
   }
 
 
-  public DocumentBreakdownDataConsistencyBreakdown nationality(DocumentBreakdownDataComparisonBreakdownIssuingCountry nationality) {
+  public DocumentBreakdownDataConsistencyBreakdown nationality(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry nationality) {
     this.nationality = nationality;
     return this;
   }
@@ -241,12 +251,12 @@ public class DocumentBreakdownDataConsistencyBreakdown {
     return nationality;
   }
 
-  public void setNationality(DocumentBreakdownDataComparisonBreakdownIssuingCountry nationality) {
+  public void setNationality(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry nationality) {
     this.nationality = nationality;
   }
 
 
-  public DocumentBreakdownDataConsistencyBreakdown lastName(DocumentBreakdownDataComparisonBreakdownIssuingCountry lastName) {
+  public DocumentBreakdownDataConsistencyBreakdown lastName(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry lastName) {
     this.lastName = lastName;
     return this;
   }
@@ -260,12 +270,12 @@ public class DocumentBreakdownDataConsistencyBreakdown {
     return lastName;
   }
 
-  public void setLastName(DocumentBreakdownDataComparisonBreakdownIssuingCountry lastName) {
+  public void setLastName(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry lastName) {
     this.lastName = lastName;
   }
 
 
-  public DocumentBreakdownDataConsistencyBreakdown multipleDataSourcesPresent(DocumentBreakdownDataComparisonBreakdownIssuingCountry multipleDataSourcesPresent) {
+  public DocumentBreakdownDataConsistencyBreakdown multipleDataSourcesPresent(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry multipleDataSourcesPresent) {
     this.multipleDataSourcesPresent = multipleDataSourcesPresent;
     return this;
   }
@@ -279,7 +289,7 @@ public class DocumentBreakdownDataConsistencyBreakdown {
     return multipleDataSourcesPresent;
   }
 
-  public void setMultipleDataSourcesPresent(DocumentBreakdownDataComparisonBreakdownIssuingCountry multipleDataSourcesPresent) {
+  public void setMultipleDataSourcesPresent(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry multipleDataSourcesPresent) {
     this.multipleDataSourcesPresent = multipleDataSourcesPresent;
   }
 

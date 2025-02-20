@@ -49,20 +49,22 @@ import com.onfido.JSON;
 /**
  * ApplicantConsentBuilder
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class ApplicantConsentBuilder {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nonnull
   private ApplicantConsentName name;
 
   public static final String SERIALIZED_NAME_GRANTED = "granted";
   @SerializedName(SERIALIZED_NAME_GRANTED)
+  @javax.annotation.Nonnull
   private Boolean granted;
 
   public ApplicantConsentBuilder() {
   }
 
-  public ApplicantConsentBuilder name(ApplicantConsentName name) {
+  public ApplicantConsentBuilder name(@javax.annotation.Nonnull ApplicantConsentName name) {
     this.name = name;
     return this;
   }
@@ -76,12 +78,12 @@ public class ApplicantConsentBuilder {
     return name;
   }
 
-  public void setName(ApplicantConsentName name) {
+  public void setName(@javax.annotation.Nonnull ApplicantConsentName name) {
     this.name = name;
   }
 
 
-  public ApplicantConsentBuilder granted(Boolean granted) {
+  public ApplicantConsentBuilder granted(@javax.annotation.Nonnull Boolean granted) {
     this.granted = granted;
     return this;
   }
@@ -95,7 +97,7 @@ public class ApplicantConsentBuilder {
     return granted;
   }
 
-  public void setGranted(Boolean granted) {
+  public void setGranted(@javax.annotation.Nonnull Boolean granted) {
     this.granted = granted;
   }
 

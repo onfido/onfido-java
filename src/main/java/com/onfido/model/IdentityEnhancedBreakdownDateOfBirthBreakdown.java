@@ -50,20 +50,22 @@ import com.onfido.JSON;
 /**
  * IdentityEnhancedBreakdownDateOfBirthBreakdown
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class IdentityEnhancedBreakdownDateOfBirthBreakdown {
   public static final String SERIALIZED_NAME_CREDIT_AGENCIES = "credit_agencies";
   @SerializedName(SERIALIZED_NAME_CREDIT_AGENCIES)
+  @javax.annotation.Nullable
   private IdentityEnhancedBreakdownDateOfBirthBreakdownCreditAgencies creditAgencies;
 
   public static final String SERIALIZED_NAME_VOTING_REGISTER = "voting_register";
   @SerializedName(SERIALIZED_NAME_VOTING_REGISTER)
+  @javax.annotation.Nullable
   private IdentityEnhancedBreakdownDateOfBirthBreakdownVotingRegister votingRegister;
 
   public IdentityEnhancedBreakdownDateOfBirthBreakdown() {
   }
 
-  public IdentityEnhancedBreakdownDateOfBirthBreakdown creditAgencies(IdentityEnhancedBreakdownDateOfBirthBreakdownCreditAgencies creditAgencies) {
+  public IdentityEnhancedBreakdownDateOfBirthBreakdown creditAgencies(@javax.annotation.Nullable IdentityEnhancedBreakdownDateOfBirthBreakdownCreditAgencies creditAgencies) {
     this.creditAgencies = creditAgencies;
     return this;
   }
@@ -77,12 +79,12 @@ public class IdentityEnhancedBreakdownDateOfBirthBreakdown {
     return creditAgencies;
   }
 
-  public void setCreditAgencies(IdentityEnhancedBreakdownDateOfBirthBreakdownCreditAgencies creditAgencies) {
+  public void setCreditAgencies(@javax.annotation.Nullable IdentityEnhancedBreakdownDateOfBirthBreakdownCreditAgencies creditAgencies) {
     this.creditAgencies = creditAgencies;
   }
 
 
-  public IdentityEnhancedBreakdownDateOfBirthBreakdown votingRegister(IdentityEnhancedBreakdownDateOfBirthBreakdownVotingRegister votingRegister) {
+  public IdentityEnhancedBreakdownDateOfBirthBreakdown votingRegister(@javax.annotation.Nullable IdentityEnhancedBreakdownDateOfBirthBreakdownVotingRegister votingRegister) {
     this.votingRegister = votingRegister;
     return this;
   }
@@ -96,7 +98,7 @@ public class IdentityEnhancedBreakdownDateOfBirthBreakdown {
     return votingRegister;
   }
 
-  public void setVotingRegister(IdentityEnhancedBreakdownDateOfBirthBreakdownVotingRegister votingRegister) {
+  public void setVotingRegister(@javax.annotation.Nullable IdentityEnhancedBreakdownDateOfBirthBreakdownVotingRegister votingRegister) {
     this.votingRegister = votingRegister;
   }
 

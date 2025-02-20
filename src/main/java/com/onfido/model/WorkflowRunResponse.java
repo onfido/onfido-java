@@ -54,44 +54,52 @@ import com.onfido.JSON;
 /**
  * WorkflowRunResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class WorkflowRunResponse {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nonnull
   private UUID id;
 
   public static final String SERIALIZED_NAME_WORKFLOW_VERSION_ID = "workflow_version_id";
   @SerializedName(SERIALIZED_NAME_WORKFLOW_VERSION_ID)
+  @javax.annotation.Nullable
   private Integer workflowVersionId;
 
   public static final String SERIALIZED_NAME_DASHBOARD_URL = "dashboard_url";
   @SerializedName(SERIALIZED_NAME_DASHBOARD_URL)
+  @javax.annotation.Nullable
   private String dashboardUrl;
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
+  @javax.annotation.Nullable
   private WorkflowRunStatus status;
 
   public static final String SERIALIZED_NAME_OUTPUT = "output";
   @SerializedName(SERIALIZED_NAME_OUTPUT)
+  @javax.annotation.Nullable
   private Object output;
 
   public static final String SERIALIZED_NAME_REASONS = "reasons";
   @SerializedName(SERIALIZED_NAME_REASONS)
+  @javax.annotation.Nullable
   private List<String> reasons = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_ERROR = "error";
   @SerializedName(SERIALIZED_NAME_ERROR)
+  @javax.annotation.Nullable
   private WorkflowRunError error;
 
   public static final String SERIALIZED_NAME_SDK_TOKEN = "sdk_token";
   @SerializedName(SERIALIZED_NAME_SDK_TOKEN)
+  @javax.annotation.Nullable
   private String sdkToken;
 
   public WorkflowRunResponse() {
   }
 
-  public WorkflowRunResponse id(UUID id) {
+  public WorkflowRunResponse id(@javax.annotation.Nonnull UUID id) {
     this.id = id;
     return this;
   }
@@ -105,12 +113,12 @@ public class WorkflowRunResponse {
     return id;
   }
 
-  public void setId(UUID id) {
+  public void setId(@javax.annotation.Nonnull UUID id) {
     this.id = id;
   }
 
 
-  public WorkflowRunResponse workflowVersionId(Integer workflowVersionId) {
+  public WorkflowRunResponse workflowVersionId(@javax.annotation.Nullable Integer workflowVersionId) {
     this.workflowVersionId = workflowVersionId;
     return this;
   }
@@ -124,12 +132,12 @@ public class WorkflowRunResponse {
     return workflowVersionId;
   }
 
-  public void setWorkflowVersionId(Integer workflowVersionId) {
+  public void setWorkflowVersionId(@javax.annotation.Nullable Integer workflowVersionId) {
     this.workflowVersionId = workflowVersionId;
   }
 
 
-  public WorkflowRunResponse dashboardUrl(String dashboardUrl) {
+  public WorkflowRunResponse dashboardUrl(@javax.annotation.Nullable String dashboardUrl) {
     this.dashboardUrl = dashboardUrl;
     return this;
   }
@@ -143,12 +151,12 @@ public class WorkflowRunResponse {
     return dashboardUrl;
   }
 
-  public void setDashboardUrl(String dashboardUrl) {
+  public void setDashboardUrl(@javax.annotation.Nullable String dashboardUrl) {
     this.dashboardUrl = dashboardUrl;
   }
 
 
-  public WorkflowRunResponse status(WorkflowRunStatus status) {
+  public WorkflowRunResponse status(@javax.annotation.Nullable WorkflowRunStatus status) {
     this.status = status;
     return this;
   }
@@ -162,12 +170,12 @@ public class WorkflowRunResponse {
     return status;
   }
 
-  public void setStatus(WorkflowRunStatus status) {
+  public void setStatus(@javax.annotation.Nullable WorkflowRunStatus status) {
     this.status = status;
   }
 
 
-  public WorkflowRunResponse output(Object output) {
+  public WorkflowRunResponse output(@javax.annotation.Nullable Object output) {
     this.output = output;
     return this;
   }
@@ -181,12 +189,12 @@ public class WorkflowRunResponse {
     return output;
   }
 
-  public void setOutput(Object output) {
+  public void setOutput(@javax.annotation.Nullable Object output) {
     this.output = output;
   }
 
 
-  public WorkflowRunResponse reasons(List<String> reasons) {
+  public WorkflowRunResponse reasons(@javax.annotation.Nullable List<String> reasons) {
     this.reasons = reasons;
     return this;
   }
@@ -208,12 +216,12 @@ public class WorkflowRunResponse {
     return reasons;
   }
 
-  public void setReasons(List<String> reasons) {
+  public void setReasons(@javax.annotation.Nullable List<String> reasons) {
     this.reasons = reasons;
   }
 
 
-  public WorkflowRunResponse error(WorkflowRunError error) {
+  public WorkflowRunResponse error(@javax.annotation.Nullable WorkflowRunError error) {
     this.error = error;
     return this;
   }
@@ -227,12 +235,12 @@ public class WorkflowRunResponse {
     return error;
   }
 
-  public void setError(WorkflowRunError error) {
+  public void setError(@javax.annotation.Nullable WorkflowRunError error) {
     this.error = error;
   }
 
 
-  public WorkflowRunResponse sdkToken(String sdkToken) {
+  public WorkflowRunResponse sdkToken(@javax.annotation.Nullable String sdkToken) {
     this.sdkToken = sdkToken;
     return this;
   }
@@ -246,7 +254,7 @@ public class WorkflowRunResponse {
     return sdkToken;
   }
 
-  public void setSdkToken(String sdkToken) {
+  public void setSdkToken(@javax.annotation.Nullable String sdkToken) {
     this.sdkToken = sdkToken;
   }
 

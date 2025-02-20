@@ -49,20 +49,22 @@ import com.onfido.JSON;
 /**
  * Asserts if the applicant&#39;s date of birth matches any sources.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class IdentityEnhancedBreakdownDateOfBirth {
   public static final String SERIALIZED_NAME_RESULT = "result";
   @SerializedName(SERIALIZED_NAME_RESULT)
+  @javax.annotation.Nullable
   private String result;
 
   public static final String SERIALIZED_NAME_BREAKDOWN = "breakdown";
   @SerializedName(SERIALIZED_NAME_BREAKDOWN)
+  @javax.annotation.Nullable
   private IdentityEnhancedBreakdownDateOfBirthBreakdown breakdown;
 
   public IdentityEnhancedBreakdownDateOfBirth() {
   }
 
-  public IdentityEnhancedBreakdownDateOfBirth result(String result) {
+  public IdentityEnhancedBreakdownDateOfBirth result(@javax.annotation.Nullable String result) {
     this.result = result;
     return this;
   }
@@ -76,12 +78,12 @@ public class IdentityEnhancedBreakdownDateOfBirth {
     return result;
   }
 
-  public void setResult(String result) {
+  public void setResult(@javax.annotation.Nullable String result) {
     this.result = result;
   }
 
 
-  public IdentityEnhancedBreakdownDateOfBirth breakdown(IdentityEnhancedBreakdownDateOfBirthBreakdown breakdown) {
+  public IdentityEnhancedBreakdownDateOfBirth breakdown(@javax.annotation.Nullable IdentityEnhancedBreakdownDateOfBirthBreakdown breakdown) {
     this.breakdown = breakdown;
     return this;
   }
@@ -95,7 +97,7 @@ public class IdentityEnhancedBreakdownDateOfBirth {
     return breakdown;
   }
 
-  public void setBreakdown(IdentityEnhancedBreakdownDateOfBirthBreakdown breakdown) {
+  public void setBreakdown(@javax.annotation.Nullable IdentityEnhancedBreakdownDateOfBirthBreakdown breakdown) {
     this.breakdown = breakdown;
   }
 

@@ -49,20 +49,22 @@ import com.onfido.JSON;
 /**
  * Asserts whether the image of the document has been found in our internal database or if it was used in a suspicious way.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class DocumentBreakdownCompromisedDocument {
   public static final String SERIALIZED_NAME_RESULT = "result";
   @SerializedName(SERIALIZED_NAME_RESULT)
+  @javax.annotation.Nullable
   private String result;
 
   public static final String SERIALIZED_NAME_BREAKDOWN = "breakdown";
   @SerializedName(SERIALIZED_NAME_BREAKDOWN)
+  @javax.annotation.Nullable
   private DocumentBreakdownCompromisedDocumentBreakdown breakdown;
 
   public DocumentBreakdownCompromisedDocument() {
   }
 
-  public DocumentBreakdownCompromisedDocument result(String result) {
+  public DocumentBreakdownCompromisedDocument result(@javax.annotation.Nullable String result) {
     this.result = result;
     return this;
   }
@@ -76,12 +78,12 @@ public class DocumentBreakdownCompromisedDocument {
     return result;
   }
 
-  public void setResult(String result) {
+  public void setResult(@javax.annotation.Nullable String result) {
     this.result = result;
   }
 
 
-  public DocumentBreakdownCompromisedDocument breakdown(DocumentBreakdownCompromisedDocumentBreakdown breakdown) {
+  public DocumentBreakdownCompromisedDocument breakdown(@javax.annotation.Nullable DocumentBreakdownCompromisedDocumentBreakdown breakdown) {
     this.breakdown = breakdown;
     return this;
   }
@@ -95,7 +97,7 @@ public class DocumentBreakdownCompromisedDocument {
     return breakdown;
   }
 
-  public void setBreakdown(DocumentBreakdownCompromisedDocumentBreakdown breakdown) {
+  public void setBreakdown(@javax.annotation.Nullable DocumentBreakdownCompromisedDocumentBreakdown breakdown) {
     this.breakdown = breakdown;
   }
 

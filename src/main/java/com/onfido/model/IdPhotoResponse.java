@@ -50,40 +50,47 @@ import com.onfido.JSON;
 /**
  * IdPhotoResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class IdPhotoResponse {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nonnull
   private UUID id;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
+  @javax.annotation.Nullable
   private OffsetDateTime createdAt;
 
   public static final String SERIALIZED_NAME_HREF = "href";
   @SerializedName(SERIALIZED_NAME_HREF)
+  @javax.annotation.Nullable
   private String href;
 
   public static final String SERIALIZED_NAME_DOWNLOAD_HREF = "download_href";
   @SerializedName(SERIALIZED_NAME_DOWNLOAD_HREF)
+  @javax.annotation.Nullable
   private String downloadHref;
 
   public static final String SERIALIZED_NAME_FILE_NAME = "file_name";
   @SerializedName(SERIALIZED_NAME_FILE_NAME)
+  @javax.annotation.Nullable
   private String fileName;
 
   public static final String SERIALIZED_NAME_FILE_TYPE = "file_type";
   @SerializedName(SERIALIZED_NAME_FILE_TYPE)
+  @javax.annotation.Nullable
   private String fileType;
 
   public static final String SERIALIZED_NAME_FILE_SIZE = "file_size";
   @SerializedName(SERIALIZED_NAME_FILE_SIZE)
+  @javax.annotation.Nullable
   private Integer fileSize;
 
   public IdPhotoResponse() {
   }
 
-  public IdPhotoResponse id(UUID id) {
+  public IdPhotoResponse id(@javax.annotation.Nonnull UUID id) {
     this.id = id;
     return this;
   }
@@ -97,12 +104,12 @@ public class IdPhotoResponse {
     return id;
   }
 
-  public void setId(UUID id) {
+  public void setId(@javax.annotation.Nonnull UUID id) {
     this.id = id;
   }
 
 
-  public IdPhotoResponse createdAt(OffsetDateTime createdAt) {
+  public IdPhotoResponse createdAt(@javax.annotation.Nullable OffsetDateTime createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -116,12 +123,12 @@ public class IdPhotoResponse {
     return createdAt;
   }
 
-  public void setCreatedAt(OffsetDateTime createdAt) {
+  public void setCreatedAt(@javax.annotation.Nullable OffsetDateTime createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public IdPhotoResponse href(String href) {
+  public IdPhotoResponse href(@javax.annotation.Nullable String href) {
     this.href = href;
     return this;
   }
@@ -135,12 +142,12 @@ public class IdPhotoResponse {
     return href;
   }
 
-  public void setHref(String href) {
+  public void setHref(@javax.annotation.Nullable String href) {
     this.href = href;
   }
 
 
-  public IdPhotoResponse downloadHref(String downloadHref) {
+  public IdPhotoResponse downloadHref(@javax.annotation.Nullable String downloadHref) {
     this.downloadHref = downloadHref;
     return this;
   }
@@ -154,12 +161,12 @@ public class IdPhotoResponse {
     return downloadHref;
   }
 
-  public void setDownloadHref(String downloadHref) {
+  public void setDownloadHref(@javax.annotation.Nullable String downloadHref) {
     this.downloadHref = downloadHref;
   }
 
 
-  public IdPhotoResponse fileName(String fileName) {
+  public IdPhotoResponse fileName(@javax.annotation.Nullable String fileName) {
     this.fileName = fileName;
     return this;
   }
@@ -173,12 +180,12 @@ public class IdPhotoResponse {
     return fileName;
   }
 
-  public void setFileName(String fileName) {
+  public void setFileName(@javax.annotation.Nullable String fileName) {
     this.fileName = fileName;
   }
 
 
-  public IdPhotoResponse fileType(String fileType) {
+  public IdPhotoResponse fileType(@javax.annotation.Nullable String fileType) {
     this.fileType = fileType;
     return this;
   }
@@ -192,12 +199,12 @@ public class IdPhotoResponse {
     return fileType;
   }
 
-  public void setFileType(String fileType) {
+  public void setFileType(@javax.annotation.Nullable String fileType) {
     this.fileType = fileType;
   }
 
 
-  public IdPhotoResponse fileSize(Integer fileSize) {
+  public IdPhotoResponse fileSize(@javax.annotation.Nullable Integer fileSize) {
     this.fileSize = fileSize;
     return this;
   }
@@ -211,7 +218,7 @@ public class IdPhotoResponse {
     return fileSize;
   }
 
-  public void setFileSize(Integer fileSize) {
+  public void setFileSize(@javax.annotation.Nullable Integer fileSize) {
     this.fileSize = fileSize;
   }
 

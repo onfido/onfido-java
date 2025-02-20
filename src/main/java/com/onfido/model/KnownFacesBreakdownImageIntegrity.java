@@ -48,16 +48,17 @@ import com.onfido.JSON;
 /**
  * Asserts whether the uploaded live photo or live video and the content contained within it were of sufficient quality to perform a face comparison.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class KnownFacesBreakdownImageIntegrity {
   public static final String SERIALIZED_NAME_RESULT = "result";
   @SerializedName(SERIALIZED_NAME_RESULT)
+  @javax.annotation.Nullable
   private String result;
 
   public KnownFacesBreakdownImageIntegrity() {
   }
 
-  public KnownFacesBreakdownImageIntegrity result(String result) {
+  public KnownFacesBreakdownImageIntegrity result(@javax.annotation.Nullable String result) {
     this.result = result;
     return this;
   }
@@ -71,7 +72,7 @@ public class KnownFacesBreakdownImageIntegrity {
     return result;
   }
 
-  public void setResult(String result) {
+  public void setResult(@javax.annotation.Nullable String result) {
     this.result = result;
   }
 

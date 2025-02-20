@@ -52,32 +52,37 @@ import com.onfido.JSON;
 /**
  * FacialSimilarityReportShared
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class FacialSimilarityReportShared {
   public static final String SERIALIZED_NAME_DOCUMENTS = "documents";
   @SerializedName(SERIALIZED_NAME_DOCUMENTS)
+  @javax.annotation.Nullable
   private List<ReportDocument> documents = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_LIVE_PHOTOS = "live_photos";
   @SerializedName(SERIALIZED_NAME_LIVE_PHOTOS)
+  @javax.annotation.Nullable
   private List<FacialSimilarityReportMedia> livePhotos = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_LIVE_VIDEOS = "live_videos";
   @SerializedName(SERIALIZED_NAME_LIVE_VIDEOS)
+  @javax.annotation.Nullable
   private List<FacialSimilarityReportMedia> liveVideos = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_MOTION_CAPTURES = "motion_captures";
   @SerializedName(SERIALIZED_NAME_MOTION_CAPTURES)
+  @javax.annotation.Nullable
   private List<FacialSimilarityReportMedia> motionCaptures = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_ID_PHOTOS = "id_photos";
   @SerializedName(SERIALIZED_NAME_ID_PHOTOS)
+  @javax.annotation.Nullable
   private List<FacialSimilarityReportMedia> idPhotos = new ArrayList<>();
 
   public FacialSimilarityReportShared() {
   }
 
-  public FacialSimilarityReportShared documents(List<ReportDocument> documents) {
+  public FacialSimilarityReportShared documents(@javax.annotation.Nullable List<ReportDocument> documents) {
     this.documents = documents;
     return this;
   }
@@ -99,12 +104,12 @@ public class FacialSimilarityReportShared {
     return documents;
   }
 
-  public void setDocuments(List<ReportDocument> documents) {
+  public void setDocuments(@javax.annotation.Nullable List<ReportDocument> documents) {
     this.documents = documents;
   }
 
 
-  public FacialSimilarityReportShared livePhotos(List<FacialSimilarityReportMedia> livePhotos) {
+  public FacialSimilarityReportShared livePhotos(@javax.annotation.Nullable List<FacialSimilarityReportMedia> livePhotos) {
     this.livePhotos = livePhotos;
     return this;
   }
@@ -126,12 +131,12 @@ public class FacialSimilarityReportShared {
     return livePhotos;
   }
 
-  public void setLivePhotos(List<FacialSimilarityReportMedia> livePhotos) {
+  public void setLivePhotos(@javax.annotation.Nullable List<FacialSimilarityReportMedia> livePhotos) {
     this.livePhotos = livePhotos;
   }
 
 
-  public FacialSimilarityReportShared liveVideos(List<FacialSimilarityReportMedia> liveVideos) {
+  public FacialSimilarityReportShared liveVideos(@javax.annotation.Nullable List<FacialSimilarityReportMedia> liveVideos) {
     this.liveVideos = liveVideos;
     return this;
   }
@@ -153,12 +158,12 @@ public class FacialSimilarityReportShared {
     return liveVideos;
   }
 
-  public void setLiveVideos(List<FacialSimilarityReportMedia> liveVideos) {
+  public void setLiveVideos(@javax.annotation.Nullable List<FacialSimilarityReportMedia> liveVideos) {
     this.liveVideos = liveVideos;
   }
 
 
-  public FacialSimilarityReportShared motionCaptures(List<FacialSimilarityReportMedia> motionCaptures) {
+  public FacialSimilarityReportShared motionCaptures(@javax.annotation.Nullable List<FacialSimilarityReportMedia> motionCaptures) {
     this.motionCaptures = motionCaptures;
     return this;
   }
@@ -180,12 +185,12 @@ public class FacialSimilarityReportShared {
     return motionCaptures;
   }
 
-  public void setMotionCaptures(List<FacialSimilarityReportMedia> motionCaptures) {
+  public void setMotionCaptures(@javax.annotation.Nullable List<FacialSimilarityReportMedia> motionCaptures) {
     this.motionCaptures = motionCaptures;
   }
 
 
-  public FacialSimilarityReportShared idPhotos(List<FacialSimilarityReportMedia> idPhotos) {
+  public FacialSimilarityReportShared idPhotos(@javax.annotation.Nullable List<FacialSimilarityReportMedia> idPhotos) {
     this.idPhotos = idPhotos;
     return this;
   }
@@ -207,7 +212,7 @@ public class FacialSimilarityReportShared {
     return idPhotos;
   }
 
-  public void setIdPhotos(List<FacialSimilarityReportMedia> idPhotos) {
+  public void setIdPhotos(@javax.annotation.Nullable List<FacialSimilarityReportMedia> idPhotos) {
     this.idPhotos = idPhotos;
   }
 

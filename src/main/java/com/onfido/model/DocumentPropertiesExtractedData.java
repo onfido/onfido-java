@@ -49,96 +49,117 @@ import com.onfido.JSON;
 /**
  * DocumentPropertiesExtractedData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class DocumentPropertiesExtractedData {
   public static final String SERIALIZED_NAME_DOCUMENT_NUMBER = "document_number";
   @SerializedName(SERIALIZED_NAME_DOCUMENT_NUMBER)
+  @javax.annotation.Nullable
   private String documentNumber;
 
   public static final String SERIALIZED_NAME_DATE_OF_BIRTH = "date_of_birth";
   @SerializedName(SERIALIZED_NAME_DATE_OF_BIRTH)
+  @javax.annotation.Nullable
   private LocalDate dateOfBirth;
 
   public static final String SERIALIZED_NAME_DATE_OF_EXPIRY = "date_of_expiry";
   @SerializedName(SERIALIZED_NAME_DATE_OF_EXPIRY)
+  @javax.annotation.Nullable
   private LocalDate dateOfExpiry;
 
   public static final String SERIALIZED_NAME_FIRST_NAME = "first_name";
   @SerializedName(SERIALIZED_NAME_FIRST_NAME)
+  @javax.annotation.Nullable
   private String firstName;
 
   public static final String SERIALIZED_NAME_LAST_NAME = "last_name";
   @SerializedName(SERIALIZED_NAME_LAST_NAME)
+  @javax.annotation.Nullable
   private String lastName;
 
   public static final String SERIALIZED_NAME_MIDDLE_NAME = "middle_name";
   @SerializedName(SERIALIZED_NAME_MIDDLE_NAME)
+  @javax.annotation.Nullable
   private String middleName;
 
   public static final String SERIALIZED_NAME_FULL_NAME = "full_name";
   @SerializedName(SERIALIZED_NAME_FULL_NAME)
+  @javax.annotation.Nullable
   private String fullName;
 
   public static final String SERIALIZED_NAME_SPOUSE_NAME = "spouse_name";
   @SerializedName(SERIALIZED_NAME_SPOUSE_NAME)
+  @javax.annotation.Nullable
   private String spouseName;
 
   public static final String SERIALIZED_NAME_WIDOW_NAME = "widow_name";
   @SerializedName(SERIALIZED_NAME_WIDOW_NAME)
+  @javax.annotation.Nullable
   private String widowName;
 
   public static final String SERIALIZED_NAME_ALIAS_NAME = "alias_name";
   @SerializedName(SERIALIZED_NAME_ALIAS_NAME)
+  @javax.annotation.Nullable
   private String aliasName;
 
   public static final String SERIALIZED_NAME_GENDER = "gender";
   @SerializedName(SERIALIZED_NAME_GENDER)
+  @javax.annotation.Nullable
   private String gender;
 
   public static final String SERIALIZED_NAME_MRZ_LINE1 = "mrz_line1";
   @SerializedName(SERIALIZED_NAME_MRZ_LINE1)
+  @javax.annotation.Nullable
   private String mrzLine1;
 
   public static final String SERIALIZED_NAME_MRZ_LINE2 = "mrz_line2";
   @SerializedName(SERIALIZED_NAME_MRZ_LINE2)
+  @javax.annotation.Nullable
   private String mrzLine2;
 
   public static final String SERIALIZED_NAME_MRZ_LINE3 = "mrz_line3";
   @SerializedName(SERIALIZED_NAME_MRZ_LINE3)
+  @javax.annotation.Nullable
   private String mrzLine3;
 
   public static final String SERIALIZED_NAME_NATIONALITY = "nationality";
   @SerializedName(SERIALIZED_NAME_NATIONALITY)
+  @javax.annotation.Nullable
   private String nationality;
 
   public static final String SERIALIZED_NAME_ADDRESS_LINE1 = "address_line_1";
   @SerializedName(SERIALIZED_NAME_ADDRESS_LINE1)
+  @javax.annotation.Nullable
   private String addressLine1;
 
   public static final String SERIALIZED_NAME_ADDRESS_LINE2 = "address_line_2";
   @SerializedName(SERIALIZED_NAME_ADDRESS_LINE2)
+  @javax.annotation.Nullable
   private String addressLine2;
 
   public static final String SERIALIZED_NAME_ADDRESS_LINE3 = "address_line_3";
   @SerializedName(SERIALIZED_NAME_ADDRESS_LINE3)
+  @javax.annotation.Nullable
   private String addressLine3;
 
   public static final String SERIALIZED_NAME_ADDRESS_LINE4 = "address_line_4";
   @SerializedName(SERIALIZED_NAME_ADDRESS_LINE4)
+  @javax.annotation.Nullable
   private String addressLine4;
 
   public static final String SERIALIZED_NAME_ADDRESS_LINE5 = "address_line_5";
   @SerializedName(SERIALIZED_NAME_ADDRESS_LINE5)
+  @javax.annotation.Nullable
   private String addressLine5;
 
   public static final String SERIALIZED_NAME_ISSUING_AUTHORITY = "issuing_authority";
   @SerializedName(SERIALIZED_NAME_ISSUING_AUTHORITY)
+  @javax.annotation.Nullable
   private String issuingAuthority;
 
   public DocumentPropertiesExtractedData() {
   }
 
-  public DocumentPropertiesExtractedData documentNumber(String documentNumber) {
+  public DocumentPropertiesExtractedData documentNumber(@javax.annotation.Nullable String documentNumber) {
     this.documentNumber = documentNumber;
     return this;
   }
@@ -152,12 +173,12 @@ public class DocumentPropertiesExtractedData {
     return documentNumber;
   }
 
-  public void setDocumentNumber(String documentNumber) {
+  public void setDocumentNumber(@javax.annotation.Nullable String documentNumber) {
     this.documentNumber = documentNumber;
   }
 
 
-  public DocumentPropertiesExtractedData dateOfBirth(LocalDate dateOfBirth) {
+  public DocumentPropertiesExtractedData dateOfBirth(@javax.annotation.Nullable LocalDate dateOfBirth) {
     this.dateOfBirth = dateOfBirth;
     return this;
   }
@@ -171,12 +192,12 @@ public class DocumentPropertiesExtractedData {
     return dateOfBirth;
   }
 
-  public void setDateOfBirth(LocalDate dateOfBirth) {
+  public void setDateOfBirth(@javax.annotation.Nullable LocalDate dateOfBirth) {
     this.dateOfBirth = dateOfBirth;
   }
 
 
-  public DocumentPropertiesExtractedData dateOfExpiry(LocalDate dateOfExpiry) {
+  public DocumentPropertiesExtractedData dateOfExpiry(@javax.annotation.Nullable LocalDate dateOfExpiry) {
     this.dateOfExpiry = dateOfExpiry;
     return this;
   }
@@ -190,12 +211,12 @@ public class DocumentPropertiesExtractedData {
     return dateOfExpiry;
   }
 
-  public void setDateOfExpiry(LocalDate dateOfExpiry) {
+  public void setDateOfExpiry(@javax.annotation.Nullable LocalDate dateOfExpiry) {
     this.dateOfExpiry = dateOfExpiry;
   }
 
 
-  public DocumentPropertiesExtractedData firstName(String firstName) {
+  public DocumentPropertiesExtractedData firstName(@javax.annotation.Nullable String firstName) {
     this.firstName = firstName;
     return this;
   }
@@ -209,12 +230,12 @@ public class DocumentPropertiesExtractedData {
     return firstName;
   }
 
-  public void setFirstName(String firstName) {
+  public void setFirstName(@javax.annotation.Nullable String firstName) {
     this.firstName = firstName;
   }
 
 
-  public DocumentPropertiesExtractedData lastName(String lastName) {
+  public DocumentPropertiesExtractedData lastName(@javax.annotation.Nullable String lastName) {
     this.lastName = lastName;
     return this;
   }
@@ -228,12 +249,12 @@ public class DocumentPropertiesExtractedData {
     return lastName;
   }
 
-  public void setLastName(String lastName) {
+  public void setLastName(@javax.annotation.Nullable String lastName) {
     this.lastName = lastName;
   }
 
 
-  public DocumentPropertiesExtractedData middleName(String middleName) {
+  public DocumentPropertiesExtractedData middleName(@javax.annotation.Nullable String middleName) {
     this.middleName = middleName;
     return this;
   }
@@ -247,12 +268,12 @@ public class DocumentPropertiesExtractedData {
     return middleName;
   }
 
-  public void setMiddleName(String middleName) {
+  public void setMiddleName(@javax.annotation.Nullable String middleName) {
     this.middleName = middleName;
   }
 
 
-  public DocumentPropertiesExtractedData fullName(String fullName) {
+  public DocumentPropertiesExtractedData fullName(@javax.annotation.Nullable String fullName) {
     this.fullName = fullName;
     return this;
   }
@@ -266,12 +287,12 @@ public class DocumentPropertiesExtractedData {
     return fullName;
   }
 
-  public void setFullName(String fullName) {
+  public void setFullName(@javax.annotation.Nullable String fullName) {
     this.fullName = fullName;
   }
 
 
-  public DocumentPropertiesExtractedData spouseName(String spouseName) {
+  public DocumentPropertiesExtractedData spouseName(@javax.annotation.Nullable String spouseName) {
     this.spouseName = spouseName;
     return this;
   }
@@ -285,12 +306,12 @@ public class DocumentPropertiesExtractedData {
     return spouseName;
   }
 
-  public void setSpouseName(String spouseName) {
+  public void setSpouseName(@javax.annotation.Nullable String spouseName) {
     this.spouseName = spouseName;
   }
 
 
-  public DocumentPropertiesExtractedData widowName(String widowName) {
+  public DocumentPropertiesExtractedData widowName(@javax.annotation.Nullable String widowName) {
     this.widowName = widowName;
     return this;
   }
@@ -304,12 +325,12 @@ public class DocumentPropertiesExtractedData {
     return widowName;
   }
 
-  public void setWidowName(String widowName) {
+  public void setWidowName(@javax.annotation.Nullable String widowName) {
     this.widowName = widowName;
   }
 
 
-  public DocumentPropertiesExtractedData aliasName(String aliasName) {
+  public DocumentPropertiesExtractedData aliasName(@javax.annotation.Nullable String aliasName) {
     this.aliasName = aliasName;
     return this;
   }
@@ -323,12 +344,12 @@ public class DocumentPropertiesExtractedData {
     return aliasName;
   }
 
-  public void setAliasName(String aliasName) {
+  public void setAliasName(@javax.annotation.Nullable String aliasName) {
     this.aliasName = aliasName;
   }
 
 
-  public DocumentPropertiesExtractedData gender(String gender) {
+  public DocumentPropertiesExtractedData gender(@javax.annotation.Nullable String gender) {
     this.gender = gender;
     return this;
   }
@@ -342,12 +363,12 @@ public class DocumentPropertiesExtractedData {
     return gender;
   }
 
-  public void setGender(String gender) {
+  public void setGender(@javax.annotation.Nullable String gender) {
     this.gender = gender;
   }
 
 
-  public DocumentPropertiesExtractedData mrzLine1(String mrzLine1) {
+  public DocumentPropertiesExtractedData mrzLine1(@javax.annotation.Nullable String mrzLine1) {
     this.mrzLine1 = mrzLine1;
     return this;
   }
@@ -361,12 +382,12 @@ public class DocumentPropertiesExtractedData {
     return mrzLine1;
   }
 
-  public void setMrzLine1(String mrzLine1) {
+  public void setMrzLine1(@javax.annotation.Nullable String mrzLine1) {
     this.mrzLine1 = mrzLine1;
   }
 
 
-  public DocumentPropertiesExtractedData mrzLine2(String mrzLine2) {
+  public DocumentPropertiesExtractedData mrzLine2(@javax.annotation.Nullable String mrzLine2) {
     this.mrzLine2 = mrzLine2;
     return this;
   }
@@ -380,12 +401,12 @@ public class DocumentPropertiesExtractedData {
     return mrzLine2;
   }
 
-  public void setMrzLine2(String mrzLine2) {
+  public void setMrzLine2(@javax.annotation.Nullable String mrzLine2) {
     this.mrzLine2 = mrzLine2;
   }
 
 
-  public DocumentPropertiesExtractedData mrzLine3(String mrzLine3) {
+  public DocumentPropertiesExtractedData mrzLine3(@javax.annotation.Nullable String mrzLine3) {
     this.mrzLine3 = mrzLine3;
     return this;
   }
@@ -399,12 +420,12 @@ public class DocumentPropertiesExtractedData {
     return mrzLine3;
   }
 
-  public void setMrzLine3(String mrzLine3) {
+  public void setMrzLine3(@javax.annotation.Nullable String mrzLine3) {
     this.mrzLine3 = mrzLine3;
   }
 
 
-  public DocumentPropertiesExtractedData nationality(String nationality) {
+  public DocumentPropertiesExtractedData nationality(@javax.annotation.Nullable String nationality) {
     this.nationality = nationality;
     return this;
   }
@@ -418,12 +439,12 @@ public class DocumentPropertiesExtractedData {
     return nationality;
   }
 
-  public void setNationality(String nationality) {
+  public void setNationality(@javax.annotation.Nullable String nationality) {
     this.nationality = nationality;
   }
 
 
-  public DocumentPropertiesExtractedData addressLine1(String addressLine1) {
+  public DocumentPropertiesExtractedData addressLine1(@javax.annotation.Nullable String addressLine1) {
     this.addressLine1 = addressLine1;
     return this;
   }
@@ -437,12 +458,12 @@ public class DocumentPropertiesExtractedData {
     return addressLine1;
   }
 
-  public void setAddressLine1(String addressLine1) {
+  public void setAddressLine1(@javax.annotation.Nullable String addressLine1) {
     this.addressLine1 = addressLine1;
   }
 
 
-  public DocumentPropertiesExtractedData addressLine2(String addressLine2) {
+  public DocumentPropertiesExtractedData addressLine2(@javax.annotation.Nullable String addressLine2) {
     this.addressLine2 = addressLine2;
     return this;
   }
@@ -456,12 +477,12 @@ public class DocumentPropertiesExtractedData {
     return addressLine2;
   }
 
-  public void setAddressLine2(String addressLine2) {
+  public void setAddressLine2(@javax.annotation.Nullable String addressLine2) {
     this.addressLine2 = addressLine2;
   }
 
 
-  public DocumentPropertiesExtractedData addressLine3(String addressLine3) {
+  public DocumentPropertiesExtractedData addressLine3(@javax.annotation.Nullable String addressLine3) {
     this.addressLine3 = addressLine3;
     return this;
   }
@@ -475,12 +496,12 @@ public class DocumentPropertiesExtractedData {
     return addressLine3;
   }
 
-  public void setAddressLine3(String addressLine3) {
+  public void setAddressLine3(@javax.annotation.Nullable String addressLine3) {
     this.addressLine3 = addressLine3;
   }
 
 
-  public DocumentPropertiesExtractedData addressLine4(String addressLine4) {
+  public DocumentPropertiesExtractedData addressLine4(@javax.annotation.Nullable String addressLine4) {
     this.addressLine4 = addressLine4;
     return this;
   }
@@ -494,12 +515,12 @@ public class DocumentPropertiesExtractedData {
     return addressLine4;
   }
 
-  public void setAddressLine4(String addressLine4) {
+  public void setAddressLine4(@javax.annotation.Nullable String addressLine4) {
     this.addressLine4 = addressLine4;
   }
 
 
-  public DocumentPropertiesExtractedData addressLine5(String addressLine5) {
+  public DocumentPropertiesExtractedData addressLine5(@javax.annotation.Nullable String addressLine5) {
     this.addressLine5 = addressLine5;
     return this;
   }
@@ -513,12 +534,12 @@ public class DocumentPropertiesExtractedData {
     return addressLine5;
   }
 
-  public void setAddressLine5(String addressLine5) {
+  public void setAddressLine5(@javax.annotation.Nullable String addressLine5) {
     this.addressLine5 = addressLine5;
   }
 
 
-  public DocumentPropertiesExtractedData issuingAuthority(String issuingAuthority) {
+  public DocumentPropertiesExtractedData issuingAuthority(@javax.annotation.Nullable String issuingAuthority) {
     this.issuingAuthority = issuingAuthority;
     return this;
   }
@@ -532,7 +553,7 @@ public class DocumentPropertiesExtractedData {
     return issuingAuthority;
   }
 
-  public void setIssuingAuthority(String issuingAuthority) {
+  public void setIssuingAuthority(@javax.annotation.Nullable String issuingAuthority) {
     this.issuingAuthority = issuingAuthority;
   }
 

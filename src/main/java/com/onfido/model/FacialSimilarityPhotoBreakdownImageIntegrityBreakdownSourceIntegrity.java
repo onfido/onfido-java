@@ -49,20 +49,22 @@ import com.onfido.JSON;
 /**
  * Asserts whether the live photo is trustworthy - i.e. not digitally tampered, from a fake webcam, or from other dubious sources.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class FacialSimilarityPhotoBreakdownImageIntegrityBreakdownSourceIntegrity {
   public static final String SERIALIZED_NAME_RESULT = "result";
   @SerializedName(SERIALIZED_NAME_RESULT)
+  @javax.annotation.Nullable
   private String result;
 
   public static final String SERIALIZED_NAME_PROPERTIES = "properties";
   @SerializedName(SERIALIZED_NAME_PROPERTIES)
+  @javax.annotation.Nullable
   private PhotoReasons properties;
 
   public FacialSimilarityPhotoBreakdownImageIntegrityBreakdownSourceIntegrity() {
   }
 
-  public FacialSimilarityPhotoBreakdownImageIntegrityBreakdownSourceIntegrity result(String result) {
+  public FacialSimilarityPhotoBreakdownImageIntegrityBreakdownSourceIntegrity result(@javax.annotation.Nullable String result) {
     this.result = result;
     return this;
   }
@@ -76,12 +78,12 @@ public class FacialSimilarityPhotoBreakdownImageIntegrityBreakdownSourceIntegrit
     return result;
   }
 
-  public void setResult(String result) {
+  public void setResult(@javax.annotation.Nullable String result) {
     this.result = result;
   }
 
 
-  public FacialSimilarityPhotoBreakdownImageIntegrityBreakdownSourceIntegrity properties(PhotoReasons properties) {
+  public FacialSimilarityPhotoBreakdownImageIntegrityBreakdownSourceIntegrity properties(@javax.annotation.Nullable PhotoReasons properties) {
     this.properties = properties;
     return this;
   }
@@ -95,7 +97,7 @@ public class FacialSimilarityPhotoBreakdownImageIntegrityBreakdownSourceIntegrit
     return properties;
   }
 
-  public void setProperties(PhotoReasons properties) {
+  public void setProperties(@javax.annotation.Nullable PhotoReasons properties) {
     this.properties = properties;
   }
 

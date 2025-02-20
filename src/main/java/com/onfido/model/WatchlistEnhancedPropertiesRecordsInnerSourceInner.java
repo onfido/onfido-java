@@ -48,28 +48,32 @@ import com.onfido.JSON;
 /**
  * WatchlistEnhancedPropertiesRecordsInnerSourceInner
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class WatchlistEnhancedPropertiesRecordsInnerSourceInner {
   public static final String SERIALIZED_NAME_SOURCE_HEADLINE = "source_headline";
   @SerializedName(SERIALIZED_NAME_SOURCE_HEADLINE)
+  @javax.annotation.Nullable
   private String sourceHeadline;
 
   public static final String SERIALIZED_NAME_SOURCE_NAME = "source_name";
   @SerializedName(SERIALIZED_NAME_SOURCE_NAME)
+  @javax.annotation.Nullable
   private String sourceName;
 
   public static final String SERIALIZED_NAME_SOURCE_URL = "source_url";
   @SerializedName(SERIALIZED_NAME_SOURCE_URL)
+  @javax.annotation.Nullable
   private String sourceUrl;
 
   public static final String SERIALIZED_NAME_SOURCE_FORMAT = "source_format";
   @SerializedName(SERIALIZED_NAME_SOURCE_FORMAT)
+  @javax.annotation.Nullable
   private String sourceFormat;
 
   public WatchlistEnhancedPropertiesRecordsInnerSourceInner() {
   }
 
-  public WatchlistEnhancedPropertiesRecordsInnerSourceInner sourceHeadline(String sourceHeadline) {
+  public WatchlistEnhancedPropertiesRecordsInnerSourceInner sourceHeadline(@javax.annotation.Nullable String sourceHeadline) {
     this.sourceHeadline = sourceHeadline;
     return this;
   }
@@ -83,12 +87,12 @@ public class WatchlistEnhancedPropertiesRecordsInnerSourceInner {
     return sourceHeadline;
   }
 
-  public void setSourceHeadline(String sourceHeadline) {
+  public void setSourceHeadline(@javax.annotation.Nullable String sourceHeadline) {
     this.sourceHeadline = sourceHeadline;
   }
 
 
-  public WatchlistEnhancedPropertiesRecordsInnerSourceInner sourceName(String sourceName) {
+  public WatchlistEnhancedPropertiesRecordsInnerSourceInner sourceName(@javax.annotation.Nullable String sourceName) {
     this.sourceName = sourceName;
     return this;
   }
@@ -102,12 +106,12 @@ public class WatchlistEnhancedPropertiesRecordsInnerSourceInner {
     return sourceName;
   }
 
-  public void setSourceName(String sourceName) {
+  public void setSourceName(@javax.annotation.Nullable String sourceName) {
     this.sourceName = sourceName;
   }
 
 
-  public WatchlistEnhancedPropertiesRecordsInnerSourceInner sourceUrl(String sourceUrl) {
+  public WatchlistEnhancedPropertiesRecordsInnerSourceInner sourceUrl(@javax.annotation.Nullable String sourceUrl) {
     this.sourceUrl = sourceUrl;
     return this;
   }
@@ -121,12 +125,12 @@ public class WatchlistEnhancedPropertiesRecordsInnerSourceInner {
     return sourceUrl;
   }
 
-  public void setSourceUrl(String sourceUrl) {
+  public void setSourceUrl(@javax.annotation.Nullable String sourceUrl) {
     this.sourceUrl = sourceUrl;
   }
 
 
-  public WatchlistEnhancedPropertiesRecordsInnerSourceInner sourceFormat(String sourceFormat) {
+  public WatchlistEnhancedPropertiesRecordsInnerSourceInner sourceFormat(@javax.annotation.Nullable String sourceFormat) {
     this.sourceFormat = sourceFormat;
     return this;
   }
@@ -140,7 +144,7 @@ public class WatchlistEnhancedPropertiesRecordsInnerSourceInner {
     return sourceFormat;
   }
 
-  public void setSourceFormat(String sourceFormat) {
+  public void setSourceFormat(@javax.annotation.Nullable String sourceFormat) {
     this.sourceFormat = sourceFormat;
   }
 

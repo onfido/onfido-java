@@ -50,20 +50,22 @@ import com.onfido.JSON;
 /**
  * DocumentBreakdownIssuingAuthorityBreakdown
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class DocumentBreakdownIssuingAuthorityBreakdown {
   public static final String SERIALIZED_NAME_NFC_ACTIVE_AUTHENTICATION = "nfc_active_authentication";
   @SerializedName(SERIALIZED_NAME_NFC_ACTIVE_AUTHENTICATION)
+  @javax.annotation.Nullable
   private DocumentBreakdownIssuingAuthorityBreakdownNfcActiveAuthentication nfcActiveAuthentication;
 
   public static final String SERIALIZED_NAME_NFC_PASSIVE_AUTHENTICATION = "nfc_passive_authentication";
   @SerializedName(SERIALIZED_NAME_NFC_PASSIVE_AUTHENTICATION)
+  @javax.annotation.Nullable
   private DocumentBreakdownIssuingAuthorityBreakdownNfcPassiveAuthentication nfcPassiveAuthentication;
 
   public DocumentBreakdownIssuingAuthorityBreakdown() {
   }
 
-  public DocumentBreakdownIssuingAuthorityBreakdown nfcActiveAuthentication(DocumentBreakdownIssuingAuthorityBreakdownNfcActiveAuthentication nfcActiveAuthentication) {
+  public DocumentBreakdownIssuingAuthorityBreakdown nfcActiveAuthentication(@javax.annotation.Nullable DocumentBreakdownIssuingAuthorityBreakdownNfcActiveAuthentication nfcActiveAuthentication) {
     this.nfcActiveAuthentication = nfcActiveAuthentication;
     return this;
   }
@@ -77,12 +79,12 @@ public class DocumentBreakdownIssuingAuthorityBreakdown {
     return nfcActiveAuthentication;
   }
 
-  public void setNfcActiveAuthentication(DocumentBreakdownIssuingAuthorityBreakdownNfcActiveAuthentication nfcActiveAuthentication) {
+  public void setNfcActiveAuthentication(@javax.annotation.Nullable DocumentBreakdownIssuingAuthorityBreakdownNfcActiveAuthentication nfcActiveAuthentication) {
     this.nfcActiveAuthentication = nfcActiveAuthentication;
   }
 
 
-  public DocumentBreakdownIssuingAuthorityBreakdown nfcPassiveAuthentication(DocumentBreakdownIssuingAuthorityBreakdownNfcPassiveAuthentication nfcPassiveAuthentication) {
+  public DocumentBreakdownIssuingAuthorityBreakdown nfcPassiveAuthentication(@javax.annotation.Nullable DocumentBreakdownIssuingAuthorityBreakdownNfcPassiveAuthentication nfcPassiveAuthentication) {
     this.nfcPassiveAuthentication = nfcPassiveAuthentication;
     return this;
   }
@@ -96,7 +98,7 @@ public class DocumentBreakdownIssuingAuthorityBreakdown {
     return nfcPassiveAuthentication;
   }
 
-  public void setNfcPassiveAuthentication(DocumentBreakdownIssuingAuthorityBreakdownNfcPassiveAuthentication nfcPassiveAuthentication) {
+  public void setNfcPassiveAuthentication(@javax.annotation.Nullable DocumentBreakdownIssuingAuthorityBreakdownNfcPassiveAuthentication nfcPassiveAuthentication) {
     this.nfcPassiveAuthentication = nfcPassiveAuthentication;
   }
 

@@ -51,24 +51,27 @@ import com.onfido.JSON;
 /**
  * Extraction
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class Extraction {
   public static final String SERIALIZED_NAME_DOCUMENT_ID = "document_id";
   @SerializedName(SERIALIZED_NAME_DOCUMENT_ID)
+  @javax.annotation.Nullable
   private UUID documentId;
 
   public static final String SERIALIZED_NAME_DOCUMENT_CLASSIFICATION = "document_classification";
   @SerializedName(SERIALIZED_NAME_DOCUMENT_CLASSIFICATION)
+  @javax.annotation.Nullable
   private ExtractionDocumentClassification documentClassification;
 
   public static final String SERIALIZED_NAME_EXTRACTED_DATA = "extracted_data";
   @SerializedName(SERIALIZED_NAME_EXTRACTED_DATA)
+  @javax.annotation.Nullable
   private ExtractionExtractedData extractedData;
 
   public Extraction() {
   }
 
-  public Extraction documentId(UUID documentId) {
+  public Extraction documentId(@javax.annotation.Nullable UUID documentId) {
     this.documentId = documentId;
     return this;
   }
@@ -82,12 +85,12 @@ public class Extraction {
     return documentId;
   }
 
-  public void setDocumentId(UUID documentId) {
+  public void setDocumentId(@javax.annotation.Nullable UUID documentId) {
     this.documentId = documentId;
   }
 
 
-  public Extraction documentClassification(ExtractionDocumentClassification documentClassification) {
+  public Extraction documentClassification(@javax.annotation.Nullable ExtractionDocumentClassification documentClassification) {
     this.documentClassification = documentClassification;
     return this;
   }
@@ -101,12 +104,12 @@ public class Extraction {
     return documentClassification;
   }
 
-  public void setDocumentClassification(ExtractionDocumentClassification documentClassification) {
+  public void setDocumentClassification(@javax.annotation.Nullable ExtractionDocumentClassification documentClassification) {
     this.documentClassification = documentClassification;
   }
 
 
-  public Extraction extractedData(ExtractionExtractedData extractedData) {
+  public Extraction extractedData(@javax.annotation.Nullable ExtractionExtractedData extractedData) {
     this.extractedData = extractedData;
     return this;
   }
@@ -120,7 +123,7 @@ public class Extraction {
     return extractedData;
   }
 
-  public void setExtractedData(ExtractionExtractedData extractedData) {
+  public void setExtractedData(@javax.annotation.Nullable ExtractionExtractedData extractedData) {
     this.extractedData = extractedData;
   }
 

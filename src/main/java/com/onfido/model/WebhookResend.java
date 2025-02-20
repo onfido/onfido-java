@@ -51,16 +51,17 @@ import com.onfido.JSON;
 /**
  * WebhookResend
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class WebhookResend {
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
+  @javax.annotation.Nullable
   private List<WebhooksResendItem> data = new ArrayList<>();
 
   public WebhookResend() {
   }
 
-  public WebhookResend data(List<WebhooksResendItem> data) {
+  public WebhookResend data(@javax.annotation.Nullable List<WebhooksResendItem> data) {
     this.data = data;
     return this;
   }
@@ -82,7 +83,7 @@ public class WebhookResend {
     return data;
   }
 
-  public void setData(List<WebhooksResendItem> data) {
+  public void setData(@javax.annotation.Nullable List<WebhooksResendItem> data) {
     this.data = data;
   }
 

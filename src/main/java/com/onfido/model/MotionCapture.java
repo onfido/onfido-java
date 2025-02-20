@@ -50,40 +50,47 @@ import com.onfido.JSON;
 /**
  * MotionCapture
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class MotionCapture {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nullable
   private UUID id;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
+  @javax.annotation.Nullable
   private OffsetDateTime createdAt;
 
   public static final String SERIALIZED_NAME_HREF = "href";
   @SerializedName(SERIALIZED_NAME_HREF)
+  @javax.annotation.Nullable
   private String href;
 
   public static final String SERIALIZED_NAME_DOWNLOAD_HREF = "download_href";
   @SerializedName(SERIALIZED_NAME_DOWNLOAD_HREF)
+  @javax.annotation.Nullable
   private String downloadHref;
 
   public static final String SERIALIZED_NAME_FILE_NAME = "file_name";
   @SerializedName(SERIALIZED_NAME_FILE_NAME)
+  @javax.annotation.Nullable
   private String fileName;
 
   public static final String SERIALIZED_NAME_FILE_SIZE = "file_size";
   @SerializedName(SERIALIZED_NAME_FILE_SIZE)
+  @javax.annotation.Nullable
   private Integer fileSize;
 
   public static final String SERIALIZED_NAME_FILE_TYPE = "file_type";
   @SerializedName(SERIALIZED_NAME_FILE_TYPE)
+  @javax.annotation.Nullable
   private String fileType;
 
   public MotionCapture() {
   }
 
-  public MotionCapture id(UUID id) {
+  public MotionCapture id(@javax.annotation.Nullable UUID id) {
     this.id = id;
     return this;
   }
@@ -97,12 +104,12 @@ public class MotionCapture {
     return id;
   }
 
-  public void setId(UUID id) {
+  public void setId(@javax.annotation.Nullable UUID id) {
     this.id = id;
   }
 
 
-  public MotionCapture createdAt(OffsetDateTime createdAt) {
+  public MotionCapture createdAt(@javax.annotation.Nullable OffsetDateTime createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -116,12 +123,12 @@ public class MotionCapture {
     return createdAt;
   }
 
-  public void setCreatedAt(OffsetDateTime createdAt) {
+  public void setCreatedAt(@javax.annotation.Nullable OffsetDateTime createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public MotionCapture href(String href) {
+  public MotionCapture href(@javax.annotation.Nullable String href) {
     this.href = href;
     return this;
   }
@@ -135,12 +142,12 @@ public class MotionCapture {
     return href;
   }
 
-  public void setHref(String href) {
+  public void setHref(@javax.annotation.Nullable String href) {
     this.href = href;
   }
 
 
-  public MotionCapture downloadHref(String downloadHref) {
+  public MotionCapture downloadHref(@javax.annotation.Nullable String downloadHref) {
     this.downloadHref = downloadHref;
     return this;
   }
@@ -154,12 +161,12 @@ public class MotionCapture {
     return downloadHref;
   }
 
-  public void setDownloadHref(String downloadHref) {
+  public void setDownloadHref(@javax.annotation.Nullable String downloadHref) {
     this.downloadHref = downloadHref;
   }
 
 
-  public MotionCapture fileName(String fileName) {
+  public MotionCapture fileName(@javax.annotation.Nullable String fileName) {
     this.fileName = fileName;
     return this;
   }
@@ -173,12 +180,12 @@ public class MotionCapture {
     return fileName;
   }
 
-  public void setFileName(String fileName) {
+  public void setFileName(@javax.annotation.Nullable String fileName) {
     this.fileName = fileName;
   }
 
 
-  public MotionCapture fileSize(Integer fileSize) {
+  public MotionCapture fileSize(@javax.annotation.Nullable Integer fileSize) {
     this.fileSize = fileSize;
     return this;
   }
@@ -192,12 +199,12 @@ public class MotionCapture {
     return fileSize;
   }
 
-  public void setFileSize(Integer fileSize) {
+  public void setFileSize(@javax.annotation.Nullable Integer fileSize) {
     this.fileSize = fileSize;
   }
 
 
-  public MotionCapture fileType(String fileType) {
+  public MotionCapture fileType(@javax.annotation.Nullable String fileType) {
     this.fileType = fileType;
     return this;
   }
@@ -211,7 +218,7 @@ public class MotionCapture {
     return fileType;
   }
 
-  public void setFileType(String fileType) {
+  public void setFileType(@javax.annotation.Nullable String fileType) {
     this.fileType = fileType;
   }
 

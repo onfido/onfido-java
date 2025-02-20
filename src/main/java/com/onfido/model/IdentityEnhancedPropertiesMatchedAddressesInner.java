@@ -51,20 +51,22 @@ import com.onfido.JSON;
 /**
  * IdentityEnhancedPropertiesMatchedAddressesInner
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class IdentityEnhancedPropertiesMatchedAddressesInner {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nullable
   private BigDecimal id;
 
   public static final String SERIALIZED_NAME_MATCH_TYPES = "match_types";
   @SerializedName(SERIALIZED_NAME_MATCH_TYPES)
+  @javax.annotation.Nullable
   private List<String> matchTypes = new ArrayList<>();
 
   public IdentityEnhancedPropertiesMatchedAddressesInner() {
   }
 
-  public IdentityEnhancedPropertiesMatchedAddressesInner id(BigDecimal id) {
+  public IdentityEnhancedPropertiesMatchedAddressesInner id(@javax.annotation.Nullable BigDecimal id) {
     this.id = id;
     return this;
   }
@@ -78,12 +80,12 @@ public class IdentityEnhancedPropertiesMatchedAddressesInner {
     return id;
   }
 
-  public void setId(BigDecimal id) {
+  public void setId(@javax.annotation.Nullable BigDecimal id) {
     this.id = id;
   }
 
 
-  public IdentityEnhancedPropertiesMatchedAddressesInner matchTypes(List<String> matchTypes) {
+  public IdentityEnhancedPropertiesMatchedAddressesInner matchTypes(@javax.annotation.Nullable List<String> matchTypes) {
     this.matchTypes = matchTypes;
     return this;
   }
@@ -105,7 +107,7 @@ public class IdentityEnhancedPropertiesMatchedAddressesInner {
     return matchTypes;
   }
 
-  public void setMatchTypes(List<String> matchTypes) {
+  public void setMatchTypes(@javax.annotation.Nullable List<String> matchTypes) {
     this.matchTypes = matchTypes;
   }
 

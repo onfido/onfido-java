@@ -49,20 +49,22 @@ import com.onfido.JSON;
 /**
  * Asserts whether the quality of the image was sufficient for processing.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class DocumentBreakdownImageIntegrityBreakdownImageQuality {
   public static final String SERIALIZED_NAME_RESULT = "result";
   @SerializedName(SERIALIZED_NAME_RESULT)
+  @javax.annotation.Nullable
   private String result;
 
   public static final String SERIALIZED_NAME_PROPERTIES = "properties";
   @SerializedName(SERIALIZED_NAME_PROPERTIES)
+  @javax.annotation.Nullable
   private DocumentIQReasons properties;
 
   public DocumentBreakdownImageIntegrityBreakdownImageQuality() {
   }
 
-  public DocumentBreakdownImageIntegrityBreakdownImageQuality result(String result) {
+  public DocumentBreakdownImageIntegrityBreakdownImageQuality result(@javax.annotation.Nullable String result) {
     this.result = result;
     return this;
   }
@@ -76,12 +78,12 @@ public class DocumentBreakdownImageIntegrityBreakdownImageQuality {
     return result;
   }
 
-  public void setResult(String result) {
+  public void setResult(@javax.annotation.Nullable String result) {
     this.result = result;
   }
 
 
-  public DocumentBreakdownImageIntegrityBreakdownImageQuality properties(DocumentIQReasons properties) {
+  public DocumentBreakdownImageIntegrityBreakdownImageQuality properties(@javax.annotation.Nullable DocumentIQReasons properties) {
     this.properties = properties;
     return this;
   }
@@ -95,7 +97,7 @@ public class DocumentBreakdownImageIntegrityBreakdownImageQuality {
     return properties;
   }
 
-  public void setProperties(DocumentIQReasons properties) {
+  public void setProperties(@javax.annotation.Nullable DocumentIQReasons properties) {
     this.properties = properties;
   }
 

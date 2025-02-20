@@ -48,44 +48,52 @@ import com.onfido.JSON;
 /**
  * DocumentCDQReasons
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class DocumentCDQReasons {
   public static final String SERIALIZED_NAME_OBSCURED_DATA_POINTS = "obscured_data_points";
   @SerializedName(SERIALIZED_NAME_OBSCURED_DATA_POINTS)
+  @javax.annotation.Nullable
   private String obscuredDataPoints;
 
   public static final String SERIALIZED_NAME_OBSCURED_SECURITY_FEATURES = "obscured_security_features";
   @SerializedName(SERIALIZED_NAME_OBSCURED_SECURITY_FEATURES)
+  @javax.annotation.Nullable
   private String obscuredSecurityFeatures;
 
   public static final String SERIALIZED_NAME_ABNORMAL_DOCUMENT_FEATURES = "abnormal_document_features";
   @SerializedName(SERIALIZED_NAME_ABNORMAL_DOCUMENT_FEATURES)
+  @javax.annotation.Nullable
   private String abnormalDocumentFeatures;
 
   public static final String SERIALIZED_NAME_WATERMARKS_DIGITAL_TEXT_OVERLAY = "watermarks_digital_text_overlay";
   @SerializedName(SERIALIZED_NAME_WATERMARKS_DIGITAL_TEXT_OVERLAY)
+  @javax.annotation.Nullable
   private String watermarksDigitalTextOverlay;
 
   public static final String SERIALIZED_NAME_CORNER_REMOVED = "corner_removed";
   @SerializedName(SERIALIZED_NAME_CORNER_REMOVED)
+  @javax.annotation.Nullable
   private String cornerRemoved;
 
   public static final String SERIALIZED_NAME_PUNCTURED_DOCUMENT = "punctured_document";
   @SerializedName(SERIALIZED_NAME_PUNCTURED_DOCUMENT)
+  @javax.annotation.Nullable
   private String puncturedDocument;
 
   public static final String SERIALIZED_NAME_MISSING_BACK = "missing_back";
   @SerializedName(SERIALIZED_NAME_MISSING_BACK)
+  @javax.annotation.Nullable
   private String missingBack;
 
   public static final String SERIALIZED_NAME_DIGITAL_DOCUMENT = "digital_document";
   @SerializedName(SERIALIZED_NAME_DIGITAL_DOCUMENT)
+  @javax.annotation.Nullable
   private String digitalDocument;
 
   public DocumentCDQReasons() {
   }
 
-  public DocumentCDQReasons obscuredDataPoints(String obscuredDataPoints) {
+  public DocumentCDQReasons obscuredDataPoints(@javax.annotation.Nullable String obscuredDataPoints) {
     this.obscuredDataPoints = obscuredDataPoints;
     return this;
   }
@@ -99,12 +107,12 @@ public class DocumentCDQReasons {
     return obscuredDataPoints;
   }
 
-  public void setObscuredDataPoints(String obscuredDataPoints) {
+  public void setObscuredDataPoints(@javax.annotation.Nullable String obscuredDataPoints) {
     this.obscuredDataPoints = obscuredDataPoints;
   }
 
 
-  public DocumentCDQReasons obscuredSecurityFeatures(String obscuredSecurityFeatures) {
+  public DocumentCDQReasons obscuredSecurityFeatures(@javax.annotation.Nullable String obscuredSecurityFeatures) {
     this.obscuredSecurityFeatures = obscuredSecurityFeatures;
     return this;
   }
@@ -118,12 +126,12 @@ public class DocumentCDQReasons {
     return obscuredSecurityFeatures;
   }
 
-  public void setObscuredSecurityFeatures(String obscuredSecurityFeatures) {
+  public void setObscuredSecurityFeatures(@javax.annotation.Nullable String obscuredSecurityFeatures) {
     this.obscuredSecurityFeatures = obscuredSecurityFeatures;
   }
 
 
-  public DocumentCDQReasons abnormalDocumentFeatures(String abnormalDocumentFeatures) {
+  public DocumentCDQReasons abnormalDocumentFeatures(@javax.annotation.Nullable String abnormalDocumentFeatures) {
     this.abnormalDocumentFeatures = abnormalDocumentFeatures;
     return this;
   }
@@ -137,12 +145,12 @@ public class DocumentCDQReasons {
     return abnormalDocumentFeatures;
   }
 
-  public void setAbnormalDocumentFeatures(String abnormalDocumentFeatures) {
+  public void setAbnormalDocumentFeatures(@javax.annotation.Nullable String abnormalDocumentFeatures) {
     this.abnormalDocumentFeatures = abnormalDocumentFeatures;
   }
 
 
-  public DocumentCDQReasons watermarksDigitalTextOverlay(String watermarksDigitalTextOverlay) {
+  public DocumentCDQReasons watermarksDigitalTextOverlay(@javax.annotation.Nullable String watermarksDigitalTextOverlay) {
     this.watermarksDigitalTextOverlay = watermarksDigitalTextOverlay;
     return this;
   }
@@ -156,12 +164,12 @@ public class DocumentCDQReasons {
     return watermarksDigitalTextOverlay;
   }
 
-  public void setWatermarksDigitalTextOverlay(String watermarksDigitalTextOverlay) {
+  public void setWatermarksDigitalTextOverlay(@javax.annotation.Nullable String watermarksDigitalTextOverlay) {
     this.watermarksDigitalTextOverlay = watermarksDigitalTextOverlay;
   }
 
 
-  public DocumentCDQReasons cornerRemoved(String cornerRemoved) {
+  public DocumentCDQReasons cornerRemoved(@javax.annotation.Nullable String cornerRemoved) {
     this.cornerRemoved = cornerRemoved;
     return this;
   }
@@ -175,12 +183,12 @@ public class DocumentCDQReasons {
     return cornerRemoved;
   }
 
-  public void setCornerRemoved(String cornerRemoved) {
+  public void setCornerRemoved(@javax.annotation.Nullable String cornerRemoved) {
     this.cornerRemoved = cornerRemoved;
   }
 
 
-  public DocumentCDQReasons puncturedDocument(String puncturedDocument) {
+  public DocumentCDQReasons puncturedDocument(@javax.annotation.Nullable String puncturedDocument) {
     this.puncturedDocument = puncturedDocument;
     return this;
   }
@@ -194,12 +202,12 @@ public class DocumentCDQReasons {
     return puncturedDocument;
   }
 
-  public void setPuncturedDocument(String puncturedDocument) {
+  public void setPuncturedDocument(@javax.annotation.Nullable String puncturedDocument) {
     this.puncturedDocument = puncturedDocument;
   }
 
 
-  public DocumentCDQReasons missingBack(String missingBack) {
+  public DocumentCDQReasons missingBack(@javax.annotation.Nullable String missingBack) {
     this.missingBack = missingBack;
     return this;
   }
@@ -213,12 +221,12 @@ public class DocumentCDQReasons {
     return missingBack;
   }
 
-  public void setMissingBack(String missingBack) {
+  public void setMissingBack(@javax.annotation.Nullable String missingBack) {
     this.missingBack = missingBack;
   }
 
 
-  public DocumentCDQReasons digitalDocument(String digitalDocument) {
+  public DocumentCDQReasons digitalDocument(@javax.annotation.Nullable String digitalDocument) {
     this.digitalDocument = digitalDocument;
     return this;
   }
@@ -232,7 +240,7 @@ public class DocumentCDQReasons {
     return digitalDocument;
   }
 
-  public void setDigitalDocument(String digitalDocument) {
+  public void setDigitalDocument(@javax.annotation.Nullable String digitalDocument) {
     this.digitalDocument = digitalDocument;
   }
 

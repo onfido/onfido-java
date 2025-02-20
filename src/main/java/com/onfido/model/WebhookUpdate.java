@@ -48,16 +48,17 @@ import com.onfido.JSON;
 /**
  * WebhookUpdate
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class WebhookUpdate {
   public static final String SERIALIZED_NAME_URL = "url";
   @SerializedName(SERIALIZED_NAME_URL)
+  @javax.annotation.Nullable
   private String url;
 
   public WebhookUpdate() {
   }
 
-  public WebhookUpdate url(String url) {
+  public WebhookUpdate url(@javax.annotation.Nullable String url) {
     this.url = url;
     return this;
   }
@@ -71,7 +72,7 @@ public class WebhookUpdate {
     return url;
   }
 
-  public void setUrl(String url) {
+  public void setUrl(@javax.annotation.Nullable String url) {
     this.url = url;
   }
 

@@ -49,16 +49,17 @@ import com.onfido.JSON;
 /**
  * ProofOfAddressBreakdownImageIntegrityBreakdown
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class ProofOfAddressBreakdownImageIntegrityBreakdown {
   public static final String SERIALIZED_NAME_IMAGE_QUALITY = "image_quality";
   @SerializedName(SERIALIZED_NAME_IMAGE_QUALITY)
+  @javax.annotation.Nullable
   private DocumentBreakdownDataComparisonBreakdownIssuingCountry imageQuality;
 
   public ProofOfAddressBreakdownImageIntegrityBreakdown() {
   }
 
-  public ProofOfAddressBreakdownImageIntegrityBreakdown imageQuality(DocumentBreakdownDataComparisonBreakdownIssuingCountry imageQuality) {
+  public ProofOfAddressBreakdownImageIntegrityBreakdown imageQuality(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry imageQuality) {
     this.imageQuality = imageQuality;
     return this;
   }
@@ -72,7 +73,7 @@ public class ProofOfAddressBreakdownImageIntegrityBreakdown {
     return imageQuality;
   }
 
-  public void setImageQuality(DocumentBreakdownDataComparisonBreakdownIssuingCountry imageQuality) {
+  public void setImageQuality(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry imageQuality) {
     this.imageQuality = imageQuality;
   }
 

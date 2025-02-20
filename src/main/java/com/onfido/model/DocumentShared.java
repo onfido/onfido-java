@@ -51,14 +51,16 @@ import com.onfido.JSON;
 /**
  * DocumentShared
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class DocumentShared {
   public static final String SERIALIZED_NAME_FILE_TYPE = "file_type";
   @SerializedName(SERIALIZED_NAME_FILE_TYPE)
+  @javax.annotation.Nullable
   private String fileType;
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
+  @javax.annotation.Nullable
   private DocumentTypes type;
 
   /**
@@ -117,20 +119,23 @@ public class DocumentShared {
 
   public static final String SERIALIZED_NAME_SIDE = "side";
   @SerializedName(SERIALIZED_NAME_SIDE)
+  @javax.annotation.Nullable
   private SideEnum side;
 
   public static final String SERIALIZED_NAME_ISSUING_COUNTRY = "issuing_country";
   @SerializedName(SERIALIZED_NAME_ISSUING_COUNTRY)
+  @javax.annotation.Nullable
   private CountryCodes issuingCountry;
 
   public static final String SERIALIZED_NAME_APPLICANT_ID = "applicant_id";
   @SerializedName(SERIALIZED_NAME_APPLICANT_ID)
+  @javax.annotation.Nullable
   private UUID applicantId;
 
   public DocumentShared() {
   }
 
-  public DocumentShared fileType(String fileType) {
+  public DocumentShared fileType(@javax.annotation.Nullable String fileType) {
     this.fileType = fileType;
     return this;
   }
@@ -144,12 +149,12 @@ public class DocumentShared {
     return fileType;
   }
 
-  public void setFileType(String fileType) {
+  public void setFileType(@javax.annotation.Nullable String fileType) {
     this.fileType = fileType;
   }
 
 
-  public DocumentShared type(DocumentTypes type) {
+  public DocumentShared type(@javax.annotation.Nullable DocumentTypes type) {
     this.type = type;
     return this;
   }
@@ -163,12 +168,12 @@ public class DocumentShared {
     return type;
   }
 
-  public void setType(DocumentTypes type) {
+  public void setType(@javax.annotation.Nullable DocumentTypes type) {
     this.type = type;
   }
 
 
-  public DocumentShared side(SideEnum side) {
+  public DocumentShared side(@javax.annotation.Nullable SideEnum side) {
     this.side = side;
     return this;
   }
@@ -182,12 +187,12 @@ public class DocumentShared {
     return side;
   }
 
-  public void setSide(SideEnum side) {
+  public void setSide(@javax.annotation.Nullable SideEnum side) {
     this.side = side;
   }
 
 
-  public DocumentShared issuingCountry(CountryCodes issuingCountry) {
+  public DocumentShared issuingCountry(@javax.annotation.Nullable CountryCodes issuingCountry) {
     this.issuingCountry = issuingCountry;
     return this;
   }
@@ -201,12 +206,12 @@ public class DocumentShared {
     return issuingCountry;
   }
 
-  public void setIssuingCountry(CountryCodes issuingCountry) {
+  public void setIssuingCountry(@javax.annotation.Nullable CountryCodes issuingCountry) {
     this.issuingCountry = issuingCountry;
   }
 
 
-  public DocumentShared applicantId(UUID applicantId) {
+  public DocumentShared applicantId(@javax.annotation.Nullable UUID applicantId) {
     this.applicantId = applicantId;
     return this;
   }
@@ -220,7 +225,7 @@ public class DocumentShared {
     return applicantId;
   }
 
-  public void setApplicantId(UUID applicantId) {
+  public void setApplicantId(@javax.annotation.Nullable UUID applicantId) {
     this.applicantId = applicantId;
   }
 

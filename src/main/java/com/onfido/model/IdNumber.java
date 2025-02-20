@@ -48,7 +48,7 @@ import com.onfido.JSON;
 /**
  * IdNumber
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class IdNumber {
   /**
    * Type of ID number.
@@ -122,20 +122,23 @@ public class IdNumber {
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
+  @javax.annotation.Nullable
   private TypeEnum type;
 
   public static final String SERIALIZED_NAME_VALUE = "value";
   @SerializedName(SERIALIZED_NAME_VALUE)
+  @javax.annotation.Nullable
   private String value;
 
   public static final String SERIALIZED_NAME_STATE_CODE = "state_code";
   @SerializedName(SERIALIZED_NAME_STATE_CODE)
+  @javax.annotation.Nullable
   private String stateCode;
 
   public IdNumber() {
   }
 
-  public IdNumber type(TypeEnum type) {
+  public IdNumber type(@javax.annotation.Nullable TypeEnum type) {
     this.type = type;
     return this;
   }
@@ -149,12 +152,12 @@ public class IdNumber {
     return type;
   }
 
-  public void setType(TypeEnum type) {
+  public void setType(@javax.annotation.Nullable TypeEnum type) {
     this.type = type;
   }
 
 
-  public IdNumber value(String value) {
+  public IdNumber value(@javax.annotation.Nullable String value) {
     this.value = value;
     return this;
   }
@@ -168,12 +171,12 @@ public class IdNumber {
     return value;
   }
 
-  public void setValue(String value) {
+  public void setValue(@javax.annotation.Nullable String value) {
     this.value = value;
   }
 
 
-  public IdNumber stateCode(String stateCode) {
+  public IdNumber stateCode(@javax.annotation.Nullable String stateCode) {
     this.stateCode = stateCode;
     return this;
   }
@@ -187,7 +190,7 @@ public class IdNumber {
     return stateCode;
   }
 
-  public void setStateCode(String stateCode) {
+  public void setStateCode(@javax.annotation.Nullable String stateCode) {
     this.stateCode = stateCode;
   }
 

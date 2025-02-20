@@ -48,16 +48,17 @@ import com.onfido.JSON;
 /**
  * IndiaPanReportAllOfBreakdownDeviceBreakdownPanValid
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class IndiaPanReportAllOfBreakdownDeviceBreakdownPanValid {
   public static final String SERIALIZED_NAME_RESULT = "result";
   @SerializedName(SERIALIZED_NAME_RESULT)
+  @javax.annotation.Nullable
   private String result;
 
   public IndiaPanReportAllOfBreakdownDeviceBreakdownPanValid() {
   }
 
-  public IndiaPanReportAllOfBreakdownDeviceBreakdownPanValid result(String result) {
+  public IndiaPanReportAllOfBreakdownDeviceBreakdownPanValid result(@javax.annotation.Nullable String result) {
     this.result = result;
     return this;
   }
@@ -71,7 +72,7 @@ public class IndiaPanReportAllOfBreakdownDeviceBreakdownPanValid {
     return result;
   }
 
-  public void setResult(String result) {
+  public void setResult(@javax.annotation.Nullable String result) {
     this.result = result;
   }
 

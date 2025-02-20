@@ -49,10 +49,11 @@ import com.onfido.JSON;
 /**
  * DeviceIntelligenceBreakdownPropertiesDevice
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class DeviceIntelligenceBreakdownPropertiesDevice {
   public static final String SERIALIZED_NAME_SDK_VERSION = "sdk_version";
   @SerializedName(SERIALIZED_NAME_SDK_VERSION)
+  @javax.annotation.Nullable
   private String sdkVersion;
 
   /**
@@ -113,6 +114,7 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
 
   public static final String SERIALIZED_NAME_SDK_SOURCE = "sdk_source";
   @SerializedName(SERIALIZED_NAME_SDK_SOURCE)
+  @javax.annotation.Nullable
   private SdkSourceEnum sdkSource;
 
   /**
@@ -173,30 +175,37 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
 
   public static final String SERIALIZED_NAME_AUTHENTICATION_TYPE = "authentication_type";
   @SerializedName(SERIALIZED_NAME_AUTHENTICATION_TYPE)
+  @javax.annotation.Nullable
   private AuthenticationTypeEnum authenticationType;
 
   public static final String SERIALIZED_NAME_RAW_MODEL = "raw_model";
   @SerializedName(SERIALIZED_NAME_RAW_MODEL)
+  @javax.annotation.Nullable
   private String rawModel;
 
   public static final String SERIALIZED_NAME_OS = "os";
   @SerializedName(SERIALIZED_NAME_OS)
+  @javax.annotation.Nullable
   private String os;
 
   public static final String SERIALIZED_NAME_BROWSER = "browser";
   @SerializedName(SERIALIZED_NAME_BROWSER)
+  @javax.annotation.Nullable
   private String browser;
 
   public static final String SERIALIZED_NAME_EMULATOR = "emulator";
   @SerializedName(SERIALIZED_NAME_EMULATOR)
+  @javax.annotation.Nullable
   private Boolean emulator;
 
   public static final String SERIALIZED_NAME_RANDOMIZED_DEVICE = "randomized_device";
   @SerializedName(SERIALIZED_NAME_RANDOMIZED_DEVICE)
+  @javax.annotation.Nullable
   private Boolean randomizedDevice;
 
   public static final String SERIALIZED_NAME_FAKE_NETWORK_REQUEST = "fake_network_request";
   @SerializedName(SERIALIZED_NAME_FAKE_NETWORK_REQUEST)
+  @javax.annotation.Nullable
   private Boolean fakeNetworkRequest;
 
   /**
@@ -257,14 +266,17 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
 
   public static final String SERIALIZED_NAME_IP_REPUTATION = "ip_reputation";
   @SerializedName(SERIALIZED_NAME_IP_REPUTATION)
+  @javax.annotation.Nullable
   private IpReputationEnum ipReputation;
 
   public static final String SERIALIZED_NAME_DEVICE_FINGERPRINT_REUSE = "device_fingerprint_reuse";
   @SerializedName(SERIALIZED_NAME_DEVICE_FINGERPRINT_REUSE)
+  @javax.annotation.Nullable
   private Integer deviceFingerprintReuse;
 
   public static final String SERIALIZED_NAME_SINGLE_DEVICE_USED = "single_device_used";
   @SerializedName(SERIALIZED_NAME_SINGLE_DEVICE_USED)
+  @javax.annotation.Nullable
   private Boolean singleDeviceUsed;
 
   /**
@@ -323,6 +335,7 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
 
   public static final String SERIALIZED_NAME_DOCUMENT_CAPTURE = "document_capture";
   @SerializedName(SERIALIZED_NAME_DOCUMENT_CAPTURE)
+  @javax.annotation.Nullable
   private DocumentCaptureEnum documentCapture;
 
   /**
@@ -381,12 +394,13 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
 
   public static final String SERIALIZED_NAME_BIOMETRIC_CAPTURE = "biometric_capture";
   @SerializedName(SERIALIZED_NAME_BIOMETRIC_CAPTURE)
+  @javax.annotation.Nullable
   private BiometricCaptureEnum biometricCapture;
 
   public DeviceIntelligenceBreakdownPropertiesDevice() {
   }
 
-  public DeviceIntelligenceBreakdownPropertiesDevice sdkVersion(String sdkVersion) {
+  public DeviceIntelligenceBreakdownPropertiesDevice sdkVersion(@javax.annotation.Nullable String sdkVersion) {
     this.sdkVersion = sdkVersion;
     return this;
   }
@@ -400,12 +414,12 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
     return sdkVersion;
   }
 
-  public void setSdkVersion(String sdkVersion) {
+  public void setSdkVersion(@javax.annotation.Nullable String sdkVersion) {
     this.sdkVersion = sdkVersion;
   }
 
 
-  public DeviceIntelligenceBreakdownPropertiesDevice sdkSource(SdkSourceEnum sdkSource) {
+  public DeviceIntelligenceBreakdownPropertiesDevice sdkSource(@javax.annotation.Nullable SdkSourceEnum sdkSource) {
     this.sdkSource = sdkSource;
     return this;
   }
@@ -419,12 +433,12 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
     return sdkSource;
   }
 
-  public void setSdkSource(SdkSourceEnum sdkSource) {
+  public void setSdkSource(@javax.annotation.Nullable SdkSourceEnum sdkSource) {
     this.sdkSource = sdkSource;
   }
 
 
-  public DeviceIntelligenceBreakdownPropertiesDevice authenticationType(AuthenticationTypeEnum authenticationType) {
+  public DeviceIntelligenceBreakdownPropertiesDevice authenticationType(@javax.annotation.Nullable AuthenticationTypeEnum authenticationType) {
     this.authenticationType = authenticationType;
     return this;
   }
@@ -438,12 +452,12 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
     return authenticationType;
   }
 
-  public void setAuthenticationType(AuthenticationTypeEnum authenticationType) {
+  public void setAuthenticationType(@javax.annotation.Nullable AuthenticationTypeEnum authenticationType) {
     this.authenticationType = authenticationType;
   }
 
 
-  public DeviceIntelligenceBreakdownPropertiesDevice rawModel(String rawModel) {
+  public DeviceIntelligenceBreakdownPropertiesDevice rawModel(@javax.annotation.Nullable String rawModel) {
     this.rawModel = rawModel;
     return this;
   }
@@ -457,12 +471,12 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
     return rawModel;
   }
 
-  public void setRawModel(String rawModel) {
+  public void setRawModel(@javax.annotation.Nullable String rawModel) {
     this.rawModel = rawModel;
   }
 
 
-  public DeviceIntelligenceBreakdownPropertiesDevice os(String os) {
+  public DeviceIntelligenceBreakdownPropertiesDevice os(@javax.annotation.Nullable String os) {
     this.os = os;
     return this;
   }
@@ -476,12 +490,12 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
     return os;
   }
 
-  public void setOs(String os) {
+  public void setOs(@javax.annotation.Nullable String os) {
     this.os = os;
   }
 
 
-  public DeviceIntelligenceBreakdownPropertiesDevice browser(String browser) {
+  public DeviceIntelligenceBreakdownPropertiesDevice browser(@javax.annotation.Nullable String browser) {
     this.browser = browser;
     return this;
   }
@@ -495,12 +509,12 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
     return browser;
   }
 
-  public void setBrowser(String browser) {
+  public void setBrowser(@javax.annotation.Nullable String browser) {
     this.browser = browser;
   }
 
 
-  public DeviceIntelligenceBreakdownPropertiesDevice emulator(Boolean emulator) {
+  public DeviceIntelligenceBreakdownPropertiesDevice emulator(@javax.annotation.Nullable Boolean emulator) {
     this.emulator = emulator;
     return this;
   }
@@ -514,12 +528,12 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
     return emulator;
   }
 
-  public void setEmulator(Boolean emulator) {
+  public void setEmulator(@javax.annotation.Nullable Boolean emulator) {
     this.emulator = emulator;
   }
 
 
-  public DeviceIntelligenceBreakdownPropertiesDevice randomizedDevice(Boolean randomizedDevice) {
+  public DeviceIntelligenceBreakdownPropertiesDevice randomizedDevice(@javax.annotation.Nullable Boolean randomizedDevice) {
     this.randomizedDevice = randomizedDevice;
     return this;
   }
@@ -533,12 +547,12 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
     return randomizedDevice;
   }
 
-  public void setRandomizedDevice(Boolean randomizedDevice) {
+  public void setRandomizedDevice(@javax.annotation.Nullable Boolean randomizedDevice) {
     this.randomizedDevice = randomizedDevice;
   }
 
 
-  public DeviceIntelligenceBreakdownPropertiesDevice fakeNetworkRequest(Boolean fakeNetworkRequest) {
+  public DeviceIntelligenceBreakdownPropertiesDevice fakeNetworkRequest(@javax.annotation.Nullable Boolean fakeNetworkRequest) {
     this.fakeNetworkRequest = fakeNetworkRequest;
     return this;
   }
@@ -552,12 +566,12 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
     return fakeNetworkRequest;
   }
 
-  public void setFakeNetworkRequest(Boolean fakeNetworkRequest) {
+  public void setFakeNetworkRequest(@javax.annotation.Nullable Boolean fakeNetworkRequest) {
     this.fakeNetworkRequest = fakeNetworkRequest;
   }
 
 
-  public DeviceIntelligenceBreakdownPropertiesDevice ipReputation(IpReputationEnum ipReputation) {
+  public DeviceIntelligenceBreakdownPropertiesDevice ipReputation(@javax.annotation.Nullable IpReputationEnum ipReputation) {
     this.ipReputation = ipReputation;
     return this;
   }
@@ -571,12 +585,12 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
     return ipReputation;
   }
 
-  public void setIpReputation(IpReputationEnum ipReputation) {
+  public void setIpReputation(@javax.annotation.Nullable IpReputationEnum ipReputation) {
     this.ipReputation = ipReputation;
   }
 
 
-  public DeviceIntelligenceBreakdownPropertiesDevice deviceFingerprintReuse(Integer deviceFingerprintReuse) {
+  public DeviceIntelligenceBreakdownPropertiesDevice deviceFingerprintReuse(@javax.annotation.Nullable Integer deviceFingerprintReuse) {
     this.deviceFingerprintReuse = deviceFingerprintReuse;
     return this;
   }
@@ -590,12 +604,12 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
     return deviceFingerprintReuse;
   }
 
-  public void setDeviceFingerprintReuse(Integer deviceFingerprintReuse) {
+  public void setDeviceFingerprintReuse(@javax.annotation.Nullable Integer deviceFingerprintReuse) {
     this.deviceFingerprintReuse = deviceFingerprintReuse;
   }
 
 
-  public DeviceIntelligenceBreakdownPropertiesDevice singleDeviceUsed(Boolean singleDeviceUsed) {
+  public DeviceIntelligenceBreakdownPropertiesDevice singleDeviceUsed(@javax.annotation.Nullable Boolean singleDeviceUsed) {
     this.singleDeviceUsed = singleDeviceUsed;
     return this;
   }
@@ -609,12 +623,12 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
     return singleDeviceUsed;
   }
 
-  public void setSingleDeviceUsed(Boolean singleDeviceUsed) {
+  public void setSingleDeviceUsed(@javax.annotation.Nullable Boolean singleDeviceUsed) {
     this.singleDeviceUsed = singleDeviceUsed;
   }
 
 
-  public DeviceIntelligenceBreakdownPropertiesDevice documentCapture(DocumentCaptureEnum documentCapture) {
+  public DeviceIntelligenceBreakdownPropertiesDevice documentCapture(@javax.annotation.Nullable DocumentCaptureEnum documentCapture) {
     this.documentCapture = documentCapture;
     return this;
   }
@@ -628,12 +642,12 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
     return documentCapture;
   }
 
-  public void setDocumentCapture(DocumentCaptureEnum documentCapture) {
+  public void setDocumentCapture(@javax.annotation.Nullable DocumentCaptureEnum documentCapture) {
     this.documentCapture = documentCapture;
   }
 
 
-  public DeviceIntelligenceBreakdownPropertiesDevice biometricCapture(BiometricCaptureEnum biometricCapture) {
+  public DeviceIntelligenceBreakdownPropertiesDevice biometricCapture(@javax.annotation.Nullable BiometricCaptureEnum biometricCapture) {
     this.biometricCapture = biometricCapture;
     return this;
   }
@@ -647,7 +661,7 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
     return biometricCapture;
   }
 
-  public void setBiometricCapture(BiometricCaptureEnum biometricCapture) {
+  public void setBiometricCapture(@javax.annotation.Nullable BiometricCaptureEnum biometricCapture) {
     this.biometricCapture = biometricCapture;
   }
 

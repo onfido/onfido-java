@@ -52,28 +52,32 @@ import com.onfido.JSON;
 /**
  * ApplicantShared
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class ApplicantShared {
   public static final String SERIALIZED_NAME_EMAIL = "email";
   @SerializedName(SERIALIZED_NAME_EMAIL)
+  @javax.annotation.Nullable
   private String email;
 
   public static final String SERIALIZED_NAME_DOB = "dob";
   @SerializedName(SERIALIZED_NAME_DOB)
+  @javax.annotation.Nullable
   private LocalDate dob;
 
   public static final String SERIALIZED_NAME_ID_NUMBERS = "id_numbers";
   @SerializedName(SERIALIZED_NAME_ID_NUMBERS)
+  @javax.annotation.Nullable
   private List<IdNumber> idNumbers = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_PHONE_NUMBER = "phone_number";
   @SerializedName(SERIALIZED_NAME_PHONE_NUMBER)
+  @javax.annotation.Nullable
   private String phoneNumber;
 
   public ApplicantShared() {
   }
 
-  public ApplicantShared email(String email) {
+  public ApplicantShared email(@javax.annotation.Nullable String email) {
     this.email = email;
     return this;
   }
@@ -87,12 +91,12 @@ public class ApplicantShared {
     return email;
   }
 
-  public void setEmail(String email) {
+  public void setEmail(@javax.annotation.Nullable String email) {
     this.email = email;
   }
 
 
-  public ApplicantShared dob(LocalDate dob) {
+  public ApplicantShared dob(@javax.annotation.Nullable LocalDate dob) {
     this.dob = dob;
     return this;
   }
@@ -106,12 +110,12 @@ public class ApplicantShared {
     return dob;
   }
 
-  public void setDob(LocalDate dob) {
+  public void setDob(@javax.annotation.Nullable LocalDate dob) {
     this.dob = dob;
   }
 
 
-  public ApplicantShared idNumbers(List<IdNumber> idNumbers) {
+  public ApplicantShared idNumbers(@javax.annotation.Nullable List<IdNumber> idNumbers) {
     this.idNumbers = idNumbers;
     return this;
   }
@@ -133,12 +137,12 @@ public class ApplicantShared {
     return idNumbers;
   }
 
-  public void setIdNumbers(List<IdNumber> idNumbers) {
+  public void setIdNumbers(@javax.annotation.Nullable List<IdNumber> idNumbers) {
     this.idNumbers = idNumbers;
   }
 
 
-  public ApplicantShared phoneNumber(String phoneNumber) {
+  public ApplicantShared phoneNumber(@javax.annotation.Nullable String phoneNumber) {
     this.phoneNumber = phoneNumber;
     return this;
   }
@@ -152,7 +156,7 @@ public class ApplicantShared {
     return phoneNumber;
   }
 
-  public void setPhoneNumber(String phoneNumber) {
+  public void setPhoneNumber(@javax.annotation.Nullable String phoneNumber) {
     this.phoneNumber = phoneNumber;
   }
 

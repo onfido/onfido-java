@@ -49,16 +49,17 @@ import com.onfido.JSON;
 /**
  * CompleteTaskBuilder
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class CompleteTaskBuilder {
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
+  @javax.annotation.Nonnull
   private CompleteTaskDataBuilder data;
 
   public CompleteTaskBuilder() {
   }
 
-  public CompleteTaskBuilder data(CompleteTaskDataBuilder data) {
+  public CompleteTaskBuilder data(@javax.annotation.Nonnull CompleteTaskDataBuilder data) {
     this.data = data;
     return this;
   }
@@ -72,7 +73,7 @@ public class CompleteTaskBuilder {
     return data;
   }
 
-  public void setData(CompleteTaskDataBuilder data) {
+  public void setData(@javax.annotation.Nonnull CompleteTaskDataBuilder data) {
     this.data = data;
   }
 

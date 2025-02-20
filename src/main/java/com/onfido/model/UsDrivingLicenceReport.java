@@ -56,52 +56,62 @@ import com.onfido.JSON;
 /**
  * UsDrivingLicenceReport
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class UsDrivingLicenceReport {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nonnull
   private UUID id;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
+  @javax.annotation.Nullable
   private OffsetDateTime createdAt;
 
   public static final String SERIALIZED_NAME_HREF = "href";
   @SerializedName(SERIALIZED_NAME_HREF)
+  @javax.annotation.Nullable
   private String href;
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
+  @javax.annotation.Nullable
   private ReportStatus status;
 
   public static final String SERIALIZED_NAME_RESULT = "result";
   @SerializedName(SERIALIZED_NAME_RESULT)
+  @javax.annotation.Nullable
   private ReportResult result;
 
   public static final String SERIALIZED_NAME_SUB_RESULT = "sub_result";
   @SerializedName(SERIALIZED_NAME_SUB_RESULT)
+  @javax.annotation.Nullable
   private ReportSubResult subResult;
 
   public static final String SERIALIZED_NAME_CHECK_ID = "check_id";
   @SerializedName(SERIALIZED_NAME_CHECK_ID)
+  @javax.annotation.Nullable
   private UUID checkId;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nonnull
   private ReportName name;
 
   public static final String SERIALIZED_NAME_BREAKDOWN = "breakdown";
   @SerializedName(SERIALIZED_NAME_BREAKDOWN)
+  @javax.annotation.Nullable
   private UsDrivingLicenceBreakdown breakdown;
 
   public static final String SERIALIZED_NAME_PROPERTIES = "properties";
   @SerializedName(SERIALIZED_NAME_PROPERTIES)
+  @javax.annotation.Nullable
   private DocumentProperties properties;
 
   public UsDrivingLicenceReport() {
   }
 
-  public UsDrivingLicenceReport id(UUID id) {
+  public UsDrivingLicenceReport id(@javax.annotation.Nonnull UUID id) {
     this.id = id;
     return this;
   }
@@ -115,12 +125,12 @@ public class UsDrivingLicenceReport {
     return id;
   }
 
-  public void setId(UUID id) {
+  public void setId(@javax.annotation.Nonnull UUID id) {
     this.id = id;
   }
 
 
-  public UsDrivingLicenceReport createdAt(OffsetDateTime createdAt) {
+  public UsDrivingLicenceReport createdAt(@javax.annotation.Nullable OffsetDateTime createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -134,12 +144,12 @@ public class UsDrivingLicenceReport {
     return createdAt;
   }
 
-  public void setCreatedAt(OffsetDateTime createdAt) {
+  public void setCreatedAt(@javax.annotation.Nullable OffsetDateTime createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public UsDrivingLicenceReport href(String href) {
+  public UsDrivingLicenceReport href(@javax.annotation.Nullable String href) {
     this.href = href;
     return this;
   }
@@ -153,12 +163,12 @@ public class UsDrivingLicenceReport {
     return href;
   }
 
-  public void setHref(String href) {
+  public void setHref(@javax.annotation.Nullable String href) {
     this.href = href;
   }
 
 
-  public UsDrivingLicenceReport status(ReportStatus status) {
+  public UsDrivingLicenceReport status(@javax.annotation.Nullable ReportStatus status) {
     this.status = status;
     return this;
   }
@@ -172,12 +182,12 @@ public class UsDrivingLicenceReport {
     return status;
   }
 
-  public void setStatus(ReportStatus status) {
+  public void setStatus(@javax.annotation.Nullable ReportStatus status) {
     this.status = status;
   }
 
 
-  public UsDrivingLicenceReport result(ReportResult result) {
+  public UsDrivingLicenceReport result(@javax.annotation.Nullable ReportResult result) {
     this.result = result;
     return this;
   }
@@ -191,12 +201,12 @@ public class UsDrivingLicenceReport {
     return result;
   }
 
-  public void setResult(ReportResult result) {
+  public void setResult(@javax.annotation.Nullable ReportResult result) {
     this.result = result;
   }
 
 
-  public UsDrivingLicenceReport subResult(ReportSubResult subResult) {
+  public UsDrivingLicenceReport subResult(@javax.annotation.Nullable ReportSubResult subResult) {
     this.subResult = subResult;
     return this;
   }
@@ -210,12 +220,12 @@ public class UsDrivingLicenceReport {
     return subResult;
   }
 
-  public void setSubResult(ReportSubResult subResult) {
+  public void setSubResult(@javax.annotation.Nullable ReportSubResult subResult) {
     this.subResult = subResult;
   }
 
 
-  public UsDrivingLicenceReport checkId(UUID checkId) {
+  public UsDrivingLicenceReport checkId(@javax.annotation.Nullable UUID checkId) {
     this.checkId = checkId;
     return this;
   }
@@ -229,12 +239,12 @@ public class UsDrivingLicenceReport {
     return checkId;
   }
 
-  public void setCheckId(UUID checkId) {
+  public void setCheckId(@javax.annotation.Nullable UUID checkId) {
     this.checkId = checkId;
   }
 
 
-  public UsDrivingLicenceReport name(ReportName name) {
+  public UsDrivingLicenceReport name(@javax.annotation.Nonnull ReportName name) {
     this.name = name;
     return this;
   }
@@ -248,12 +258,12 @@ public class UsDrivingLicenceReport {
     return name;
   }
 
-  public void setName(ReportName name) {
+  public void setName(@javax.annotation.Nonnull ReportName name) {
     this.name = name;
   }
 
 
-  public UsDrivingLicenceReport breakdown(UsDrivingLicenceBreakdown breakdown) {
+  public UsDrivingLicenceReport breakdown(@javax.annotation.Nullable UsDrivingLicenceBreakdown breakdown) {
     this.breakdown = breakdown;
     return this;
   }
@@ -267,12 +277,12 @@ public class UsDrivingLicenceReport {
     return breakdown;
   }
 
-  public void setBreakdown(UsDrivingLicenceBreakdown breakdown) {
+  public void setBreakdown(@javax.annotation.Nullable UsDrivingLicenceBreakdown breakdown) {
     this.breakdown = breakdown;
   }
 
 
-  public UsDrivingLicenceReport properties(DocumentProperties properties) {
+  public UsDrivingLicenceReport properties(@javax.annotation.Nullable DocumentProperties properties) {
     this.properties = properties;
     return this;
   }
@@ -286,7 +296,7 @@ public class UsDrivingLicenceReport {
     return properties;
   }
 
-  public void setProperties(DocumentProperties properties) {
+  public void setProperties(@javax.annotation.Nullable DocumentProperties properties) {
     this.properties = properties;
   }
 

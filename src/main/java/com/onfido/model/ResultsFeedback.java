@@ -49,7 +49,7 @@ import com.onfido.JSON;
 /**
  * ResultsFeedback
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class ResultsFeedback {
   /**
    * The expected result for the check or report.
@@ -107,24 +107,28 @@ public class ResultsFeedback {
 
   public static final String SERIALIZED_NAME_EXPECTED_RESULT = "expected_result";
   @SerializedName(SERIALIZED_NAME_EXPECTED_RESULT)
+  @javax.annotation.Nullable
   private ExpectedResultEnum expectedResult;
 
   public static final String SERIALIZED_NAME_CHECK_ID = "check_id";
   @SerializedName(SERIALIZED_NAME_CHECK_ID)
+  @javax.annotation.Nullable
   private UUID checkId;
 
   public static final String SERIALIZED_NAME_REPORT_ID = "report_id";
   @SerializedName(SERIALIZED_NAME_REPORT_ID)
+  @javax.annotation.Nullable
   private UUID reportId;
 
   public static final String SERIALIZED_NAME_FEEDBACK_NOTES = "feedback_notes";
   @SerializedName(SERIALIZED_NAME_FEEDBACK_NOTES)
+  @javax.annotation.Nullable
   private String feedbackNotes;
 
   public ResultsFeedback() {
   }
 
-  public ResultsFeedback expectedResult(ExpectedResultEnum expectedResult) {
+  public ResultsFeedback expectedResult(@javax.annotation.Nullable ExpectedResultEnum expectedResult) {
     this.expectedResult = expectedResult;
     return this;
   }
@@ -138,12 +142,12 @@ public class ResultsFeedback {
     return expectedResult;
   }
 
-  public void setExpectedResult(ExpectedResultEnum expectedResult) {
+  public void setExpectedResult(@javax.annotation.Nullable ExpectedResultEnum expectedResult) {
     this.expectedResult = expectedResult;
   }
 
 
-  public ResultsFeedback checkId(UUID checkId) {
+  public ResultsFeedback checkId(@javax.annotation.Nullable UUID checkId) {
     this.checkId = checkId;
     return this;
   }
@@ -157,12 +161,12 @@ public class ResultsFeedback {
     return checkId;
   }
 
-  public void setCheckId(UUID checkId) {
+  public void setCheckId(@javax.annotation.Nullable UUID checkId) {
     this.checkId = checkId;
   }
 
 
-  public ResultsFeedback reportId(UUID reportId) {
+  public ResultsFeedback reportId(@javax.annotation.Nullable UUID reportId) {
     this.reportId = reportId;
     return this;
   }
@@ -176,12 +180,12 @@ public class ResultsFeedback {
     return reportId;
   }
 
-  public void setReportId(UUID reportId) {
+  public void setReportId(@javax.annotation.Nullable UUID reportId) {
     this.reportId = reportId;
   }
 
 
-  public ResultsFeedback feedbackNotes(String feedbackNotes) {
+  public ResultsFeedback feedbackNotes(@javax.annotation.Nullable String feedbackNotes) {
     this.feedbackNotes = feedbackNotes;
     return this;
   }
@@ -195,7 +199,7 @@ public class ResultsFeedback {
     return feedbackNotes;
   }
 
-  public void setFeedbackNotes(String feedbackNotes) {
+  public void setFeedbackNotes(@javax.annotation.Nullable String feedbackNotes) {
     this.feedbackNotes = feedbackNotes;
   }
 

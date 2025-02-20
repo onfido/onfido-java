@@ -49,16 +49,17 @@ import com.onfido.JSON;
 /**
  * Asserts whether the device used to upload the media is trustworthy, i.e. it is a real, physical device.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class DeviceIntelligenceBreakdownBreakdownDevice {
   public static final String SERIALIZED_NAME_BREAKDOWN = "breakdown";
   @SerializedName(SERIALIZED_NAME_BREAKDOWN)
+  @javax.annotation.Nullable
   private DeviceIntelligenceBreakdownBreakdownDeviceBreakdown breakdown;
 
   public DeviceIntelligenceBreakdownBreakdownDevice() {
   }
 
-  public DeviceIntelligenceBreakdownBreakdownDevice breakdown(DeviceIntelligenceBreakdownBreakdownDeviceBreakdown breakdown) {
+  public DeviceIntelligenceBreakdownBreakdownDevice breakdown(@javax.annotation.Nullable DeviceIntelligenceBreakdownBreakdownDeviceBreakdown breakdown) {
     this.breakdown = breakdown;
     return this;
   }
@@ -72,7 +73,7 @@ public class DeviceIntelligenceBreakdownBreakdownDevice {
     return breakdown;
   }
 
-  public void setBreakdown(DeviceIntelligenceBreakdownBreakdownDeviceBreakdown breakdown) {
+  public void setBreakdown(@javax.annotation.Nullable DeviceIntelligenceBreakdownBreakdownDeviceBreakdown breakdown) {
     this.breakdown = breakdown;
   }
 

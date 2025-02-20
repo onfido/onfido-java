@@ -53,44 +53,52 @@ import com.onfido.JSON;
 /**
  * CheckRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class CheckRequest {
   public static final String SERIALIZED_NAME_REPORT_NAMES = "report_names";
   @SerializedName(SERIALIZED_NAME_REPORT_NAMES)
+  @javax.annotation.Nonnull
   private List<ReportName> reportNames = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_DOCUMENT_IDS = "document_ids";
   @SerializedName(SERIALIZED_NAME_DOCUMENT_IDS)
+  @javax.annotation.Nullable
   private List<UUID> documentIds = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_APPLICANT_PROVIDES_DATA = "applicant_provides_data";
   @SerializedName(SERIALIZED_NAME_APPLICANT_PROVIDES_DATA)
+  @javax.annotation.Nullable
   private Boolean applicantProvidesData = false;
 
   public static final String SERIALIZED_NAME_ASYNCHRONOUS = "asynchronous";
   @SerializedName(SERIALIZED_NAME_ASYNCHRONOUS)
+  @javax.annotation.Nullable
   private Boolean asynchronous = true;
 
   public static final String SERIALIZED_NAME_SUPPRESS_FORM_EMAILS = "suppress_form_emails";
   @SerializedName(SERIALIZED_NAME_SUPPRESS_FORM_EMAILS)
+  @javax.annotation.Nullable
   private Boolean suppressFormEmails;
 
   public static final String SERIALIZED_NAME_SUB_RESULT = "sub_result";
   @SerializedName(SERIALIZED_NAME_SUB_RESULT)
+  @javax.annotation.Nullable
   private String subResult;
 
   public static final String SERIALIZED_NAME_CONSIDER = "consider";
   @SerializedName(SERIALIZED_NAME_CONSIDER)
+  @javax.annotation.Nullable
   private List<ReportName> consider = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_US_DRIVING_LICENCE = "us_driving_licence";
   @SerializedName(SERIALIZED_NAME_US_DRIVING_LICENCE)
+  @javax.annotation.Nullable
   private UsDrivingLicenceBuilder usDrivingLicence;
 
   public CheckRequest() {
   }
 
-  public CheckRequest reportNames(List<ReportName> reportNames) {
+  public CheckRequest reportNames(@javax.annotation.Nonnull List<ReportName> reportNames) {
     this.reportNames = reportNames;
     return this;
   }
@@ -112,12 +120,12 @@ public class CheckRequest {
     return reportNames;
   }
 
-  public void setReportNames(List<ReportName> reportNames) {
+  public void setReportNames(@javax.annotation.Nonnull List<ReportName> reportNames) {
     this.reportNames = reportNames;
   }
 
 
-  public CheckRequest documentIds(List<UUID> documentIds) {
+  public CheckRequest documentIds(@javax.annotation.Nullable List<UUID> documentIds) {
     this.documentIds = documentIds;
     return this;
   }
@@ -139,12 +147,12 @@ public class CheckRequest {
     return documentIds;
   }
 
-  public void setDocumentIds(List<UUID> documentIds) {
+  public void setDocumentIds(@javax.annotation.Nullable List<UUID> documentIds) {
     this.documentIds = documentIds;
   }
 
 
-  public CheckRequest applicantProvidesData(Boolean applicantProvidesData) {
+  public CheckRequest applicantProvidesData(@javax.annotation.Nullable Boolean applicantProvidesData) {
     this.applicantProvidesData = applicantProvidesData;
     return this;
   }
@@ -158,12 +166,12 @@ public class CheckRequest {
     return applicantProvidesData;
   }
 
-  public void setApplicantProvidesData(Boolean applicantProvidesData) {
+  public void setApplicantProvidesData(@javax.annotation.Nullable Boolean applicantProvidesData) {
     this.applicantProvidesData = applicantProvidesData;
   }
 
 
-  public CheckRequest asynchronous(Boolean asynchronous) {
+  public CheckRequest asynchronous(@javax.annotation.Nullable Boolean asynchronous) {
     this.asynchronous = asynchronous;
     return this;
   }
@@ -177,12 +185,12 @@ public class CheckRequest {
     return asynchronous;
   }
 
-  public void setAsynchronous(Boolean asynchronous) {
+  public void setAsynchronous(@javax.annotation.Nullable Boolean asynchronous) {
     this.asynchronous = asynchronous;
   }
 
 
-  public CheckRequest suppressFormEmails(Boolean suppressFormEmails) {
+  public CheckRequest suppressFormEmails(@javax.annotation.Nullable Boolean suppressFormEmails) {
     this.suppressFormEmails = suppressFormEmails;
     return this;
   }
@@ -196,12 +204,12 @@ public class CheckRequest {
     return suppressFormEmails;
   }
 
-  public void setSuppressFormEmails(Boolean suppressFormEmails) {
+  public void setSuppressFormEmails(@javax.annotation.Nullable Boolean suppressFormEmails) {
     this.suppressFormEmails = suppressFormEmails;
   }
 
 
-  public CheckRequest subResult(String subResult) {
+  public CheckRequest subResult(@javax.annotation.Nullable String subResult) {
     this.subResult = subResult;
     return this;
   }
@@ -215,12 +223,12 @@ public class CheckRequest {
     return subResult;
   }
 
-  public void setSubResult(String subResult) {
+  public void setSubResult(@javax.annotation.Nullable String subResult) {
     this.subResult = subResult;
   }
 
 
-  public CheckRequest consider(List<ReportName> consider) {
+  public CheckRequest consider(@javax.annotation.Nullable List<ReportName> consider) {
     this.consider = consider;
     return this;
   }
@@ -242,12 +250,12 @@ public class CheckRequest {
     return consider;
   }
 
-  public void setConsider(List<ReportName> consider) {
+  public void setConsider(@javax.annotation.Nullable List<ReportName> consider) {
     this.consider = consider;
   }
 
 
-  public CheckRequest usDrivingLicence(UsDrivingLicenceBuilder usDrivingLicence) {
+  public CheckRequest usDrivingLicence(@javax.annotation.Nullable UsDrivingLicenceBuilder usDrivingLicence) {
     this.usDrivingLicence = usDrivingLicence;
     return this;
   }
@@ -261,7 +269,7 @@ public class CheckRequest {
     return usDrivingLicence;
   }
 
-  public void setUsDrivingLicence(UsDrivingLicenceBuilder usDrivingLicence) {
+  public void setUsDrivingLicence(@javax.annotation.Nullable UsDrivingLicenceBuilder usDrivingLicence) {
     this.usDrivingLicence = usDrivingLicence;
   }
 

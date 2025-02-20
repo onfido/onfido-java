@@ -49,16 +49,17 @@ import com.onfido.JSON;
 /**
  * ExtractRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class ExtractRequest {
   public static final String SERIALIZED_NAME_DOCUMENT_ID = "document_id";
   @SerializedName(SERIALIZED_NAME_DOCUMENT_ID)
+  @javax.annotation.Nonnull
   private UUID documentId;
 
   public ExtractRequest() {
   }
 
-  public ExtractRequest documentId(UUID documentId) {
+  public ExtractRequest documentId(@javax.annotation.Nonnull UUID documentId) {
     this.documentId = documentId;
     return this;
   }
@@ -72,7 +73,7 @@ public class ExtractRequest {
     return documentId;
   }
 
-  public void setDocumentId(UUID documentId) {
+  public void setDocumentId(@javax.annotation.Nonnull UUID documentId) {
     this.documentId = documentId;
   }
 

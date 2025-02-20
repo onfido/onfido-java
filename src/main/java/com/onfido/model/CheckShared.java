@@ -51,36 +51,42 @@ import com.onfido.JSON;
 /**
  * CheckShared
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class CheckShared {
   public static final String SERIALIZED_NAME_WEBHOOK_IDS = "webhook_ids";
   @SerializedName(SERIALIZED_NAME_WEBHOOK_IDS)
+  @javax.annotation.Nullable
   private List<String> webhookIds = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_APPLICANT_ID = "applicant_id";
   @SerializedName(SERIALIZED_NAME_APPLICANT_ID)
+  @javax.annotation.Nonnull
   private UUID applicantId;
 
   public static final String SERIALIZED_NAME_APPLICANT_PROVIDES_DATA = "applicant_provides_data";
   @SerializedName(SERIALIZED_NAME_APPLICANT_PROVIDES_DATA)
+  @javax.annotation.Nullable
   private Boolean applicantProvidesData;
 
   public static final String SERIALIZED_NAME_TAGS = "tags";
   @SerializedName(SERIALIZED_NAME_TAGS)
+  @javax.annotation.Nullable
   private List<String> tags = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_REDIRECT_URI = "redirect_uri";
   @SerializedName(SERIALIZED_NAME_REDIRECT_URI)
+  @javax.annotation.Nullable
   private String redirectUri;
 
   public static final String SERIALIZED_NAME_PRIVACY_NOTICES_READ_CONSENT_GIVEN = "privacy_notices_read_consent_given";
   @SerializedName(SERIALIZED_NAME_PRIVACY_NOTICES_READ_CONSENT_GIVEN)
+  @javax.annotation.Nullable
   private Boolean privacyNoticesReadConsentGiven;
 
   public CheckShared() {
   }
 
-  public CheckShared webhookIds(List<String> webhookIds) {
+  public CheckShared webhookIds(@javax.annotation.Nullable List<String> webhookIds) {
     this.webhookIds = webhookIds;
     return this;
   }
@@ -102,12 +108,12 @@ public class CheckShared {
     return webhookIds;
   }
 
-  public void setWebhookIds(List<String> webhookIds) {
+  public void setWebhookIds(@javax.annotation.Nullable List<String> webhookIds) {
     this.webhookIds = webhookIds;
   }
 
 
-  public CheckShared applicantId(UUID applicantId) {
+  public CheckShared applicantId(@javax.annotation.Nonnull UUID applicantId) {
     this.applicantId = applicantId;
     return this;
   }
@@ -121,12 +127,12 @@ public class CheckShared {
     return applicantId;
   }
 
-  public void setApplicantId(UUID applicantId) {
+  public void setApplicantId(@javax.annotation.Nonnull UUID applicantId) {
     this.applicantId = applicantId;
   }
 
 
-  public CheckShared applicantProvidesData(Boolean applicantProvidesData) {
+  public CheckShared applicantProvidesData(@javax.annotation.Nullable Boolean applicantProvidesData) {
     this.applicantProvidesData = applicantProvidesData;
     return this;
   }
@@ -140,12 +146,12 @@ public class CheckShared {
     return applicantProvidesData;
   }
 
-  public void setApplicantProvidesData(Boolean applicantProvidesData) {
+  public void setApplicantProvidesData(@javax.annotation.Nullable Boolean applicantProvidesData) {
     this.applicantProvidesData = applicantProvidesData;
   }
 
 
-  public CheckShared tags(List<String> tags) {
+  public CheckShared tags(@javax.annotation.Nullable List<String> tags) {
     this.tags = tags;
     return this;
   }
@@ -167,12 +173,12 @@ public class CheckShared {
     return tags;
   }
 
-  public void setTags(List<String> tags) {
+  public void setTags(@javax.annotation.Nullable List<String> tags) {
     this.tags = tags;
   }
 
 
-  public CheckShared redirectUri(String redirectUri) {
+  public CheckShared redirectUri(@javax.annotation.Nullable String redirectUri) {
     this.redirectUri = redirectUri;
     return this;
   }
@@ -186,12 +192,12 @@ public class CheckShared {
     return redirectUri;
   }
 
-  public void setRedirectUri(String redirectUri) {
+  public void setRedirectUri(@javax.annotation.Nullable String redirectUri) {
     this.redirectUri = redirectUri;
   }
 
 
-  public CheckShared privacyNoticesReadConsentGiven(Boolean privacyNoticesReadConsentGiven) {
+  public CheckShared privacyNoticesReadConsentGiven(@javax.annotation.Nullable Boolean privacyNoticesReadConsentGiven) {
     this.privacyNoticesReadConsentGiven = privacyNoticesReadConsentGiven;
     return this;
   }
@@ -205,7 +211,7 @@ public class CheckShared {
     return privacyNoticesReadConsentGiven;
   }
 
-  public void setPrivacyNoticesReadConsentGiven(Boolean privacyNoticesReadConsentGiven) {
+  public void setPrivacyNoticesReadConsentGiven(@javax.annotation.Nullable Boolean privacyNoticesReadConsentGiven) {
     this.privacyNoticesReadConsentGiven = privacyNoticesReadConsentGiven;
   }
 

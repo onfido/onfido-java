@@ -52,28 +52,32 @@ import com.onfido.JSON;
 /**
  * WatchlistAmlBreakdown
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class WatchlistAmlBreakdown {
   public static final String SERIALIZED_NAME_SANCTION = "sanction";
   @SerializedName(SERIALIZED_NAME_SANCTION)
+  @javax.annotation.Nullable
   private WatchlistAmlBreakdownSanction sanction;
 
   public static final String SERIALIZED_NAME_POLITICALLY_EXPOSED_PERSON = "politically_exposed_person";
   @SerializedName(SERIALIZED_NAME_POLITICALLY_EXPOSED_PERSON)
+  @javax.annotation.Nullable
   private WatchlistAmlBreakdownPoliticallyExposedPerson politicallyExposedPerson;
 
   public static final String SERIALIZED_NAME_LEGAL_AND_REGULATORY_WARNINGS = "legal_and_regulatory_warnings";
   @SerializedName(SERIALIZED_NAME_LEGAL_AND_REGULATORY_WARNINGS)
+  @javax.annotation.Nullable
   private WatchlistAmlBreakdownLegalAndRegulatoryWarnings legalAndRegulatoryWarnings;
 
   public static final String SERIALIZED_NAME_ADVERSE_MEDIA = "adverse_media";
   @SerializedName(SERIALIZED_NAME_ADVERSE_MEDIA)
+  @javax.annotation.Nullable
   private WatchlistAmlBreakdownAdverseMedia adverseMedia;
 
   public WatchlistAmlBreakdown() {
   }
 
-  public WatchlistAmlBreakdown sanction(WatchlistAmlBreakdownSanction sanction) {
+  public WatchlistAmlBreakdown sanction(@javax.annotation.Nullable WatchlistAmlBreakdownSanction sanction) {
     this.sanction = sanction;
     return this;
   }
@@ -87,12 +91,12 @@ public class WatchlistAmlBreakdown {
     return sanction;
   }
 
-  public void setSanction(WatchlistAmlBreakdownSanction sanction) {
+  public void setSanction(@javax.annotation.Nullable WatchlistAmlBreakdownSanction sanction) {
     this.sanction = sanction;
   }
 
 
-  public WatchlistAmlBreakdown politicallyExposedPerson(WatchlistAmlBreakdownPoliticallyExposedPerson politicallyExposedPerson) {
+  public WatchlistAmlBreakdown politicallyExposedPerson(@javax.annotation.Nullable WatchlistAmlBreakdownPoliticallyExposedPerson politicallyExposedPerson) {
     this.politicallyExposedPerson = politicallyExposedPerson;
     return this;
   }
@@ -106,12 +110,12 @@ public class WatchlistAmlBreakdown {
     return politicallyExposedPerson;
   }
 
-  public void setPoliticallyExposedPerson(WatchlistAmlBreakdownPoliticallyExposedPerson politicallyExposedPerson) {
+  public void setPoliticallyExposedPerson(@javax.annotation.Nullable WatchlistAmlBreakdownPoliticallyExposedPerson politicallyExposedPerson) {
     this.politicallyExposedPerson = politicallyExposedPerson;
   }
 
 
-  public WatchlistAmlBreakdown legalAndRegulatoryWarnings(WatchlistAmlBreakdownLegalAndRegulatoryWarnings legalAndRegulatoryWarnings) {
+  public WatchlistAmlBreakdown legalAndRegulatoryWarnings(@javax.annotation.Nullable WatchlistAmlBreakdownLegalAndRegulatoryWarnings legalAndRegulatoryWarnings) {
     this.legalAndRegulatoryWarnings = legalAndRegulatoryWarnings;
     return this;
   }
@@ -125,12 +129,12 @@ public class WatchlistAmlBreakdown {
     return legalAndRegulatoryWarnings;
   }
 
-  public void setLegalAndRegulatoryWarnings(WatchlistAmlBreakdownLegalAndRegulatoryWarnings legalAndRegulatoryWarnings) {
+  public void setLegalAndRegulatoryWarnings(@javax.annotation.Nullable WatchlistAmlBreakdownLegalAndRegulatoryWarnings legalAndRegulatoryWarnings) {
     this.legalAndRegulatoryWarnings = legalAndRegulatoryWarnings;
   }
 
 
-  public WatchlistAmlBreakdown adverseMedia(WatchlistAmlBreakdownAdverseMedia adverseMedia) {
+  public WatchlistAmlBreakdown adverseMedia(@javax.annotation.Nullable WatchlistAmlBreakdownAdverseMedia adverseMedia) {
     this.adverseMedia = adverseMedia;
     return this;
   }
@@ -144,7 +148,7 @@ public class WatchlistAmlBreakdown {
     return adverseMedia;
   }
 
-  public void setAdverseMedia(WatchlistAmlBreakdownAdverseMedia adverseMedia) {
+  public void setAdverseMedia(@javax.annotation.Nullable WatchlistAmlBreakdownAdverseMedia adverseMedia) {
     this.adverseMedia = adverseMedia;
   }
 

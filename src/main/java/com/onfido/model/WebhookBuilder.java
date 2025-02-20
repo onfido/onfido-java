@@ -51,32 +51,37 @@ import com.onfido.JSON;
 /**
  * WebhookBuilder
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class WebhookBuilder {
   public static final String SERIALIZED_NAME_ENABLED = "enabled";
   @SerializedName(SERIALIZED_NAME_ENABLED)
+  @javax.annotation.Nullable
   private Boolean enabled;
 
   public static final String SERIALIZED_NAME_EVENTS = "events";
   @SerializedName(SERIALIZED_NAME_EVENTS)
+  @javax.annotation.Nullable
   private List<WebhookEventType> events = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_ENVIRONMENTS = "environments";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENTS)
+  @javax.annotation.Nullable
   private List<String> environments = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_PAYLOAD_VERSION = "payload_version";
   @SerializedName(SERIALIZED_NAME_PAYLOAD_VERSION)
+  @javax.annotation.Nullable
   private Integer payloadVersion;
 
   public static final String SERIALIZED_NAME_URL = "url";
   @SerializedName(SERIALIZED_NAME_URL)
+  @javax.annotation.Nonnull
   private String url;
 
   public WebhookBuilder() {
   }
 
-  public WebhookBuilder enabled(Boolean enabled) {
+  public WebhookBuilder enabled(@javax.annotation.Nullable Boolean enabled) {
     this.enabled = enabled;
     return this;
   }
@@ -90,12 +95,12 @@ public class WebhookBuilder {
     return enabled;
   }
 
-  public void setEnabled(Boolean enabled) {
+  public void setEnabled(@javax.annotation.Nullable Boolean enabled) {
     this.enabled = enabled;
   }
 
 
-  public WebhookBuilder events(List<WebhookEventType> events) {
+  public WebhookBuilder events(@javax.annotation.Nullable List<WebhookEventType> events) {
     this.events = events;
     return this;
   }
@@ -117,12 +122,12 @@ public class WebhookBuilder {
     return events;
   }
 
-  public void setEvents(List<WebhookEventType> events) {
+  public void setEvents(@javax.annotation.Nullable List<WebhookEventType> events) {
     this.events = events;
   }
 
 
-  public WebhookBuilder environments(List<String> environments) {
+  public WebhookBuilder environments(@javax.annotation.Nullable List<String> environments) {
     this.environments = environments;
     return this;
   }
@@ -144,12 +149,12 @@ public class WebhookBuilder {
     return environments;
   }
 
-  public void setEnvironments(List<String> environments) {
+  public void setEnvironments(@javax.annotation.Nullable List<String> environments) {
     this.environments = environments;
   }
 
 
-  public WebhookBuilder payloadVersion(Integer payloadVersion) {
+  public WebhookBuilder payloadVersion(@javax.annotation.Nullable Integer payloadVersion) {
     this.payloadVersion = payloadVersion;
     return this;
   }
@@ -163,12 +168,12 @@ public class WebhookBuilder {
     return payloadVersion;
   }
 
-  public void setPayloadVersion(Integer payloadVersion) {
+  public void setPayloadVersion(@javax.annotation.Nullable Integer payloadVersion) {
     this.payloadVersion = payloadVersion;
   }
 
 
-  public WebhookBuilder url(String url) {
+  public WebhookBuilder url(@javax.annotation.Nonnull String url) {
     this.url = url;
     return this;
   }
@@ -182,7 +187,7 @@ public class WebhookBuilder {
     return url;
   }
 
-  public void setUrl(String url) {
+  public void setUrl(@javax.annotation.Nonnull String url) {
     this.url = url;
   }
 

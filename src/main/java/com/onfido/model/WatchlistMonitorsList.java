@@ -51,16 +51,17 @@ import com.onfido.JSON;
 /**
  * WatchlistMonitorsList
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class WatchlistMonitorsList {
   public static final String SERIALIZED_NAME_MONITORS = "monitors";
   @SerializedName(SERIALIZED_NAME_MONITORS)
+  @javax.annotation.Nonnull
   private List<WatchlistMonitor> monitors = new ArrayList<>();
 
   public WatchlistMonitorsList() {
   }
 
-  public WatchlistMonitorsList monitors(List<WatchlistMonitor> monitors) {
+  public WatchlistMonitorsList monitors(@javax.annotation.Nonnull List<WatchlistMonitor> monitors) {
     this.monitors = monitors;
     return this;
   }
@@ -82,7 +83,7 @@ public class WatchlistMonitorsList {
     return monitors;
   }
 
-  public void setMonitors(List<WatchlistMonitor> monitors) {
+  public void setMonitors(@javax.annotation.Nonnull List<WatchlistMonitor> monitors) {
     this.monitors = monitors;
   }
 

@@ -48,20 +48,22 @@ import com.onfido.JSON;
 /**
  * Address match against telephone database.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class IdentityEnhancedBreakdownAddressBreakdownTelephoneDatabase {
   public static final String SERIALIZED_NAME_RESULT = "result";
   @SerializedName(SERIALIZED_NAME_RESULT)
+  @javax.annotation.Nullable
   private String result;
 
   public static final String SERIALIZED_NAME_PROPERTIES = "properties";
   @SerializedName(SERIALIZED_NAME_PROPERTIES)
+  @javax.annotation.Nullable
   private Object properties;
 
   public IdentityEnhancedBreakdownAddressBreakdownTelephoneDatabase() {
   }
 
-  public IdentityEnhancedBreakdownAddressBreakdownTelephoneDatabase result(String result) {
+  public IdentityEnhancedBreakdownAddressBreakdownTelephoneDatabase result(@javax.annotation.Nullable String result) {
     this.result = result;
     return this;
   }
@@ -75,12 +77,12 @@ public class IdentityEnhancedBreakdownAddressBreakdownTelephoneDatabase {
     return result;
   }
 
-  public void setResult(String result) {
+  public void setResult(@javax.annotation.Nullable String result) {
     this.result = result;
   }
 
 
-  public IdentityEnhancedBreakdownAddressBreakdownTelephoneDatabase properties(Object properties) {
+  public IdentityEnhancedBreakdownAddressBreakdownTelephoneDatabase properties(@javax.annotation.Nullable Object properties) {
     this.properties = properties;
     return this;
   }
@@ -94,7 +96,7 @@ public class IdentityEnhancedBreakdownAddressBreakdownTelephoneDatabase {
     return properties;
   }
 
-  public void setProperties(Object properties) {
+  public void setProperties(@javax.annotation.Nullable Object properties) {
     this.properties = properties;
   }
 

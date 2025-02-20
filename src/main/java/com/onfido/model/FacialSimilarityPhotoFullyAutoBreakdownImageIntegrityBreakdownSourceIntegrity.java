@@ -49,20 +49,22 @@ import com.onfido.JSON;
 /**
  * Asserts whether the live photo is trustworthy - i.e. not digitally tampered, from a fake webcam, or from other dubious sources.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class FacialSimilarityPhotoFullyAutoBreakdownImageIntegrityBreakdownSourceIntegrity {
   public static final String SERIALIZED_NAME_RESULT = "result";
   @SerializedName(SERIALIZED_NAME_RESULT)
+  @javax.annotation.Nullable
   private String result;
 
   public static final String SERIALIZED_NAME_PROPERTIES = "properties";
   @SerializedName(SERIALIZED_NAME_PROPERTIES)
+  @javax.annotation.Nullable
   private PhotoAutoReasons properties;
 
   public FacialSimilarityPhotoFullyAutoBreakdownImageIntegrityBreakdownSourceIntegrity() {
   }
 
-  public FacialSimilarityPhotoFullyAutoBreakdownImageIntegrityBreakdownSourceIntegrity result(String result) {
+  public FacialSimilarityPhotoFullyAutoBreakdownImageIntegrityBreakdownSourceIntegrity result(@javax.annotation.Nullable String result) {
     this.result = result;
     return this;
   }
@@ -76,12 +78,12 @@ public class FacialSimilarityPhotoFullyAutoBreakdownImageIntegrityBreakdownSourc
     return result;
   }
 
-  public void setResult(String result) {
+  public void setResult(@javax.annotation.Nullable String result) {
     this.result = result;
   }
 
 
-  public FacialSimilarityPhotoFullyAutoBreakdownImageIntegrityBreakdownSourceIntegrity properties(PhotoAutoReasons properties) {
+  public FacialSimilarityPhotoFullyAutoBreakdownImageIntegrityBreakdownSourceIntegrity properties(@javax.annotation.Nullable PhotoAutoReasons properties) {
     this.properties = properties;
     return this;
   }
@@ -95,7 +97,7 @@ public class FacialSimilarityPhotoFullyAutoBreakdownImageIntegrityBreakdownSourc
     return properties;
   }
 
-  public void setProperties(PhotoAutoReasons properties) {
+  public void setProperties(@javax.annotation.Nullable PhotoAutoReasons properties) {
     this.properties = properties;
   }
 

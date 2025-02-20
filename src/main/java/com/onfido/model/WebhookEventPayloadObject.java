@@ -50,32 +50,37 @@ import com.onfido.JSON;
 /**
  * The object affected by this event.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class WebhookEventPayloadObject {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nonnull
   private String id;
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
+  @javax.annotation.Nullable
   private WebhookEventObjectStatus status;
 
   public static final String SERIALIZED_NAME_STARTED_AT_ISO8601 = "started_at_iso8601";
   @SerializedName(SERIALIZED_NAME_STARTED_AT_ISO8601)
+  @javax.annotation.Nullable
   private OffsetDateTime startedAtIso8601;
 
   public static final String SERIALIZED_NAME_COMPLETED_AT_ISO8601 = "completed_at_iso8601";
   @SerializedName(SERIALIZED_NAME_COMPLETED_AT_ISO8601)
+  @javax.annotation.Nullable
   private OffsetDateTime completedAtIso8601;
 
   public static final String SERIALIZED_NAME_HREF = "href";
   @SerializedName(SERIALIZED_NAME_HREF)
+  @javax.annotation.Nullable
   private String href;
 
   public WebhookEventPayloadObject() {
   }
 
-  public WebhookEventPayloadObject id(String id) {
+  public WebhookEventPayloadObject id(@javax.annotation.Nonnull String id) {
     this.id = id;
     return this;
   }
@@ -89,12 +94,12 @@ public class WebhookEventPayloadObject {
     return id;
   }
 
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nonnull String id) {
     this.id = id;
   }
 
 
-  public WebhookEventPayloadObject status(WebhookEventObjectStatus status) {
+  public WebhookEventPayloadObject status(@javax.annotation.Nullable WebhookEventObjectStatus status) {
     this.status = status;
     return this;
   }
@@ -108,12 +113,12 @@ public class WebhookEventPayloadObject {
     return status;
   }
 
-  public void setStatus(WebhookEventObjectStatus status) {
+  public void setStatus(@javax.annotation.Nullable WebhookEventObjectStatus status) {
     this.status = status;
   }
 
 
-  public WebhookEventPayloadObject startedAtIso8601(OffsetDateTime startedAtIso8601) {
+  public WebhookEventPayloadObject startedAtIso8601(@javax.annotation.Nullable OffsetDateTime startedAtIso8601) {
     this.startedAtIso8601 = startedAtIso8601;
     return this;
   }
@@ -127,12 +132,12 @@ public class WebhookEventPayloadObject {
     return startedAtIso8601;
   }
 
-  public void setStartedAtIso8601(OffsetDateTime startedAtIso8601) {
+  public void setStartedAtIso8601(@javax.annotation.Nullable OffsetDateTime startedAtIso8601) {
     this.startedAtIso8601 = startedAtIso8601;
   }
 
 
-  public WebhookEventPayloadObject completedAtIso8601(OffsetDateTime completedAtIso8601) {
+  public WebhookEventPayloadObject completedAtIso8601(@javax.annotation.Nullable OffsetDateTime completedAtIso8601) {
     this.completedAtIso8601 = completedAtIso8601;
     return this;
   }
@@ -146,12 +151,12 @@ public class WebhookEventPayloadObject {
     return completedAtIso8601;
   }
 
-  public void setCompletedAtIso8601(OffsetDateTime completedAtIso8601) {
+  public void setCompletedAtIso8601(@javax.annotation.Nullable OffsetDateTime completedAtIso8601) {
     this.completedAtIso8601 = completedAtIso8601;
   }
 
 
-  public WebhookEventPayloadObject href(String href) {
+  public WebhookEventPayloadObject href(@javax.annotation.Nullable String href) {
     this.href = href;
     return this;
   }
@@ -165,7 +170,7 @@ public class WebhookEventPayloadObject {
     return href;
   }
 
-  public void setHref(String href) {
+  public void setHref(@javax.annotation.Nullable String href) {
     this.href = href;
   }
 

@@ -51,16 +51,17 @@ import com.onfido.JSON;
 /**
  * MotionCapturesList
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class MotionCapturesList {
   public static final String SERIALIZED_NAME_MOTION_CAPTURES = "motion_captures";
   @SerializedName(SERIALIZED_NAME_MOTION_CAPTURES)
+  @javax.annotation.Nonnull
   private List<MotionCapture> motionCaptures = new ArrayList<>();
 
   public MotionCapturesList() {
   }
 
-  public MotionCapturesList motionCaptures(List<MotionCapture> motionCaptures) {
+  public MotionCapturesList motionCaptures(@javax.annotation.Nonnull List<MotionCapture> motionCaptures) {
     this.motionCaptures = motionCaptures;
     return this;
   }
@@ -82,7 +83,7 @@ public class MotionCapturesList {
     return motionCaptures;
   }
 
-  public void setMotionCaptures(List<MotionCapture> motionCaptures) {
+  public void setMotionCaptures(@javax.annotation.Nonnull List<MotionCapture> motionCaptures) {
     this.motionCaptures = motionCaptures;
   }
 

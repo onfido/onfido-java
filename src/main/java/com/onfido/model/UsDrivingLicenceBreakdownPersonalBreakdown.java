@@ -49,64 +49,77 @@ import com.onfido.JSON;
 /**
  * UsDrivingLicenceBreakdownPersonalBreakdown
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class UsDrivingLicenceBreakdownPersonalBreakdown {
   public static final String SERIALIZED_NAME_FIRST_NAME = "first_name";
   @SerializedName(SERIALIZED_NAME_FIRST_NAME)
+  @javax.annotation.Nullable
   private DocumentBreakdownDataComparisonBreakdownIssuingCountry firstName;
 
   public static final String SERIALIZED_NAME_NAME_SUFFIX = "name_suffix";
   @SerializedName(SERIALIZED_NAME_NAME_SUFFIX)
+  @javax.annotation.Nullable
   private DocumentBreakdownDataComparisonBreakdownIssuingCountry nameSuffix;
 
   public static final String SERIALIZED_NAME_HEIGHT = "height";
   @SerializedName(SERIALIZED_NAME_HEIGHT)
+  @javax.annotation.Nullable
   private DocumentBreakdownDataComparisonBreakdownIssuingCountry height;
 
   public static final String SERIALIZED_NAME_WEIGHT = "weight";
   @SerializedName(SERIALIZED_NAME_WEIGHT)
+  @javax.annotation.Nullable
   private DocumentBreakdownDataComparisonBreakdownIssuingCountry weight;
 
   public static final String SERIALIZED_NAME_SEX_CODE = "sex_code";
   @SerializedName(SERIALIZED_NAME_SEX_CODE)
+  @javax.annotation.Nullable
   private DocumentBreakdownDataComparisonBreakdownIssuingCountry sexCode;
 
   public static final String SERIALIZED_NAME_EYE_COLOR = "eye_color";
   @SerializedName(SERIALIZED_NAME_EYE_COLOR)
+  @javax.annotation.Nullable
   private DocumentBreakdownDataComparisonBreakdownIssuingCountry eyeColor;
 
   public static final String SERIALIZED_NAME_DATE_OF_BIRTH = "date_of_birth";
   @SerializedName(SERIALIZED_NAME_DATE_OF_BIRTH)
+  @javax.annotation.Nullable
   private DocumentBreakdownDataComparisonBreakdownIssuingCountry dateOfBirth;
 
   public static final String SERIALIZED_NAME_LAST_NAME = "last_name";
   @SerializedName(SERIALIZED_NAME_LAST_NAME)
+  @javax.annotation.Nullable
   private DocumentBreakdownDataComparisonBreakdownIssuingCountry lastName;
 
   public static final String SERIALIZED_NAME_MIDDLE_NAME = "middle_name";
   @SerializedName(SERIALIZED_NAME_MIDDLE_NAME)
+  @javax.annotation.Nullable
   private DocumentBreakdownDataComparisonBreakdownIssuingCountry middleName;
 
   public static final String SERIALIZED_NAME_FIRST_NAME_FUZZY = "first_name_fuzzy";
   @SerializedName(SERIALIZED_NAME_FIRST_NAME_FUZZY)
+  @javax.annotation.Nullable
   private DocumentBreakdownDataComparisonBreakdownIssuingCountry firstNameFuzzy;
 
   public static final String SERIALIZED_NAME_MIDDLE_NAME_FUZZY = "middle_name_fuzzy";
   @SerializedName(SERIALIZED_NAME_MIDDLE_NAME_FUZZY)
+  @javax.annotation.Nullable
   private DocumentBreakdownDataComparisonBreakdownIssuingCountry middleNameFuzzy;
 
   public static final String SERIALIZED_NAME_LAST_NAME_FUZZY = "last_name_fuzzy";
   @SerializedName(SERIALIZED_NAME_LAST_NAME_FUZZY)
+  @javax.annotation.Nullable
   private DocumentBreakdownDataComparisonBreakdownIssuingCountry lastNameFuzzy;
 
   public static final String SERIALIZED_NAME_MIDDLE_INITIAL = "middle_initial";
   @SerializedName(SERIALIZED_NAME_MIDDLE_INITIAL)
+  @javax.annotation.Nullable
   private DocumentBreakdownDataComparisonBreakdownIssuingCountry middleInitial;
 
   public UsDrivingLicenceBreakdownPersonalBreakdown() {
   }
 
-  public UsDrivingLicenceBreakdownPersonalBreakdown firstName(DocumentBreakdownDataComparisonBreakdownIssuingCountry firstName) {
+  public UsDrivingLicenceBreakdownPersonalBreakdown firstName(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry firstName) {
     this.firstName = firstName;
     return this;
   }
@@ -120,12 +133,12 @@ public class UsDrivingLicenceBreakdownPersonalBreakdown {
     return firstName;
   }
 
-  public void setFirstName(DocumentBreakdownDataComparisonBreakdownIssuingCountry firstName) {
+  public void setFirstName(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry firstName) {
     this.firstName = firstName;
   }
 
 
-  public UsDrivingLicenceBreakdownPersonalBreakdown nameSuffix(DocumentBreakdownDataComparisonBreakdownIssuingCountry nameSuffix) {
+  public UsDrivingLicenceBreakdownPersonalBreakdown nameSuffix(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry nameSuffix) {
     this.nameSuffix = nameSuffix;
     return this;
   }
@@ -139,12 +152,12 @@ public class UsDrivingLicenceBreakdownPersonalBreakdown {
     return nameSuffix;
   }
 
-  public void setNameSuffix(DocumentBreakdownDataComparisonBreakdownIssuingCountry nameSuffix) {
+  public void setNameSuffix(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry nameSuffix) {
     this.nameSuffix = nameSuffix;
   }
 
 
-  public UsDrivingLicenceBreakdownPersonalBreakdown height(DocumentBreakdownDataComparisonBreakdownIssuingCountry height) {
+  public UsDrivingLicenceBreakdownPersonalBreakdown height(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry height) {
     this.height = height;
     return this;
   }
@@ -158,12 +171,12 @@ public class UsDrivingLicenceBreakdownPersonalBreakdown {
     return height;
   }
 
-  public void setHeight(DocumentBreakdownDataComparisonBreakdownIssuingCountry height) {
+  public void setHeight(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry height) {
     this.height = height;
   }
 
 
-  public UsDrivingLicenceBreakdownPersonalBreakdown weight(DocumentBreakdownDataComparisonBreakdownIssuingCountry weight) {
+  public UsDrivingLicenceBreakdownPersonalBreakdown weight(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry weight) {
     this.weight = weight;
     return this;
   }
@@ -177,12 +190,12 @@ public class UsDrivingLicenceBreakdownPersonalBreakdown {
     return weight;
   }
 
-  public void setWeight(DocumentBreakdownDataComparisonBreakdownIssuingCountry weight) {
+  public void setWeight(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry weight) {
     this.weight = weight;
   }
 
 
-  public UsDrivingLicenceBreakdownPersonalBreakdown sexCode(DocumentBreakdownDataComparisonBreakdownIssuingCountry sexCode) {
+  public UsDrivingLicenceBreakdownPersonalBreakdown sexCode(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry sexCode) {
     this.sexCode = sexCode;
     return this;
   }
@@ -196,12 +209,12 @@ public class UsDrivingLicenceBreakdownPersonalBreakdown {
     return sexCode;
   }
 
-  public void setSexCode(DocumentBreakdownDataComparisonBreakdownIssuingCountry sexCode) {
+  public void setSexCode(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry sexCode) {
     this.sexCode = sexCode;
   }
 
 
-  public UsDrivingLicenceBreakdownPersonalBreakdown eyeColor(DocumentBreakdownDataComparisonBreakdownIssuingCountry eyeColor) {
+  public UsDrivingLicenceBreakdownPersonalBreakdown eyeColor(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry eyeColor) {
     this.eyeColor = eyeColor;
     return this;
   }
@@ -215,12 +228,12 @@ public class UsDrivingLicenceBreakdownPersonalBreakdown {
     return eyeColor;
   }
 
-  public void setEyeColor(DocumentBreakdownDataComparisonBreakdownIssuingCountry eyeColor) {
+  public void setEyeColor(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry eyeColor) {
     this.eyeColor = eyeColor;
   }
 
 
-  public UsDrivingLicenceBreakdownPersonalBreakdown dateOfBirth(DocumentBreakdownDataComparisonBreakdownIssuingCountry dateOfBirth) {
+  public UsDrivingLicenceBreakdownPersonalBreakdown dateOfBirth(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry dateOfBirth) {
     this.dateOfBirth = dateOfBirth;
     return this;
   }
@@ -234,12 +247,12 @@ public class UsDrivingLicenceBreakdownPersonalBreakdown {
     return dateOfBirth;
   }
 
-  public void setDateOfBirth(DocumentBreakdownDataComparisonBreakdownIssuingCountry dateOfBirth) {
+  public void setDateOfBirth(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry dateOfBirth) {
     this.dateOfBirth = dateOfBirth;
   }
 
 
-  public UsDrivingLicenceBreakdownPersonalBreakdown lastName(DocumentBreakdownDataComparisonBreakdownIssuingCountry lastName) {
+  public UsDrivingLicenceBreakdownPersonalBreakdown lastName(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry lastName) {
     this.lastName = lastName;
     return this;
   }
@@ -253,12 +266,12 @@ public class UsDrivingLicenceBreakdownPersonalBreakdown {
     return lastName;
   }
 
-  public void setLastName(DocumentBreakdownDataComparisonBreakdownIssuingCountry lastName) {
+  public void setLastName(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry lastName) {
     this.lastName = lastName;
   }
 
 
-  public UsDrivingLicenceBreakdownPersonalBreakdown middleName(DocumentBreakdownDataComparisonBreakdownIssuingCountry middleName) {
+  public UsDrivingLicenceBreakdownPersonalBreakdown middleName(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry middleName) {
     this.middleName = middleName;
     return this;
   }
@@ -272,12 +285,12 @@ public class UsDrivingLicenceBreakdownPersonalBreakdown {
     return middleName;
   }
 
-  public void setMiddleName(DocumentBreakdownDataComparisonBreakdownIssuingCountry middleName) {
+  public void setMiddleName(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry middleName) {
     this.middleName = middleName;
   }
 
 
-  public UsDrivingLicenceBreakdownPersonalBreakdown firstNameFuzzy(DocumentBreakdownDataComparisonBreakdownIssuingCountry firstNameFuzzy) {
+  public UsDrivingLicenceBreakdownPersonalBreakdown firstNameFuzzy(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry firstNameFuzzy) {
     this.firstNameFuzzy = firstNameFuzzy;
     return this;
   }
@@ -291,12 +304,12 @@ public class UsDrivingLicenceBreakdownPersonalBreakdown {
     return firstNameFuzzy;
   }
 
-  public void setFirstNameFuzzy(DocumentBreakdownDataComparisonBreakdownIssuingCountry firstNameFuzzy) {
+  public void setFirstNameFuzzy(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry firstNameFuzzy) {
     this.firstNameFuzzy = firstNameFuzzy;
   }
 
 
-  public UsDrivingLicenceBreakdownPersonalBreakdown middleNameFuzzy(DocumentBreakdownDataComparisonBreakdownIssuingCountry middleNameFuzzy) {
+  public UsDrivingLicenceBreakdownPersonalBreakdown middleNameFuzzy(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry middleNameFuzzy) {
     this.middleNameFuzzy = middleNameFuzzy;
     return this;
   }
@@ -310,12 +323,12 @@ public class UsDrivingLicenceBreakdownPersonalBreakdown {
     return middleNameFuzzy;
   }
 
-  public void setMiddleNameFuzzy(DocumentBreakdownDataComparisonBreakdownIssuingCountry middleNameFuzzy) {
+  public void setMiddleNameFuzzy(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry middleNameFuzzy) {
     this.middleNameFuzzy = middleNameFuzzy;
   }
 
 
-  public UsDrivingLicenceBreakdownPersonalBreakdown lastNameFuzzy(DocumentBreakdownDataComparisonBreakdownIssuingCountry lastNameFuzzy) {
+  public UsDrivingLicenceBreakdownPersonalBreakdown lastNameFuzzy(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry lastNameFuzzy) {
     this.lastNameFuzzy = lastNameFuzzy;
     return this;
   }
@@ -329,12 +342,12 @@ public class UsDrivingLicenceBreakdownPersonalBreakdown {
     return lastNameFuzzy;
   }
 
-  public void setLastNameFuzzy(DocumentBreakdownDataComparisonBreakdownIssuingCountry lastNameFuzzy) {
+  public void setLastNameFuzzy(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry lastNameFuzzy) {
     this.lastNameFuzzy = lastNameFuzzy;
   }
 
 
-  public UsDrivingLicenceBreakdownPersonalBreakdown middleInitial(DocumentBreakdownDataComparisonBreakdownIssuingCountry middleInitial) {
+  public UsDrivingLicenceBreakdownPersonalBreakdown middleInitial(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry middleInitial) {
     this.middleInitial = middleInitial;
     return this;
   }
@@ -348,7 +361,7 @@ public class UsDrivingLicenceBreakdownPersonalBreakdown {
     return middleInitial;
   }
 
-  public void setMiddleInitial(DocumentBreakdownDataComparisonBreakdownIssuingCountry middleInitial) {
+  public void setMiddleInitial(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry middleInitial) {
     this.middleInitial = middleInitial;
   }
 

@@ -48,20 +48,22 @@ import com.onfido.JSON;
 /**
  * WatchlistEnhancedPropertiesRecordsInnerAliasInner
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class WatchlistEnhancedPropertiesRecordsInnerAliasInner {
   public static final String SERIALIZED_NAME_ALIAS_NAME = "alias_name";
   @SerializedName(SERIALIZED_NAME_ALIAS_NAME)
+  @javax.annotation.Nullable
   private String aliasName;
 
   public static final String SERIALIZED_NAME_ALIAS_TYPE = "alias_type";
   @SerializedName(SERIALIZED_NAME_ALIAS_TYPE)
+  @javax.annotation.Nullable
   private String aliasType;
 
   public WatchlistEnhancedPropertiesRecordsInnerAliasInner() {
   }
 
-  public WatchlistEnhancedPropertiesRecordsInnerAliasInner aliasName(String aliasName) {
+  public WatchlistEnhancedPropertiesRecordsInnerAliasInner aliasName(@javax.annotation.Nullable String aliasName) {
     this.aliasName = aliasName;
     return this;
   }
@@ -75,12 +77,12 @@ public class WatchlistEnhancedPropertiesRecordsInnerAliasInner {
     return aliasName;
   }
 
-  public void setAliasName(String aliasName) {
+  public void setAliasName(@javax.annotation.Nullable String aliasName) {
     this.aliasName = aliasName;
   }
 
 
-  public WatchlistEnhancedPropertiesRecordsInnerAliasInner aliasType(String aliasType) {
+  public WatchlistEnhancedPropertiesRecordsInnerAliasInner aliasType(@javax.annotation.Nullable String aliasType) {
     this.aliasType = aliasType;
     return this;
   }
@@ -94,7 +96,7 @@ public class WatchlistEnhancedPropertiesRecordsInnerAliasInner {
     return aliasType;
   }
 
-  public void setAliasType(String aliasType) {
+  public void setAliasType(@javax.annotation.Nullable String aliasType) {
     this.aliasType = aliasType;
   }
 

@@ -51,16 +51,17 @@ import com.onfido.JSON;
 /**
  * KnownFacesProperties
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class KnownFacesProperties {
   public static final String SERIALIZED_NAME_MATCHES = "matches";
   @SerializedName(SERIALIZED_NAME_MATCHES)
+  @javax.annotation.Nullable
   private List<KnownFacesPropertiesMatchesInner> matches = new ArrayList<>();
 
   public KnownFacesProperties() {
   }
 
-  public KnownFacesProperties matches(List<KnownFacesPropertiesMatchesInner> matches) {
+  public KnownFacesProperties matches(@javax.annotation.Nullable List<KnownFacesPropertiesMatchesInner> matches) {
     this.matches = matches;
     return this;
   }
@@ -82,7 +83,7 @@ public class KnownFacesProperties {
     return matches;
   }
 
-  public void setMatches(List<KnownFacesPropertiesMatchesInner> matches) {
+  public void setMatches(@javax.annotation.Nullable List<KnownFacesPropertiesMatchesInner> matches) {
     this.matches = matches;
   }
 

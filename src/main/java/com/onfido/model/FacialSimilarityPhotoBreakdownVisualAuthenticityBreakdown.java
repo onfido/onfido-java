@@ -49,16 +49,17 @@ import com.onfido.JSON;
 /**
  * FacialSimilarityPhotoBreakdownVisualAuthenticityBreakdown
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class FacialSimilarityPhotoBreakdownVisualAuthenticityBreakdown {
   public static final String SERIALIZED_NAME_SPOOFING_DETECTION = "spoofing_detection";
   @SerializedName(SERIALIZED_NAME_SPOOFING_DETECTION)
+  @javax.annotation.Nullable
   private FacialSimilarityPhotoBreakdownVisualAuthenticityBreakdownSpoofingDetection spoofingDetection;
 
   public FacialSimilarityPhotoBreakdownVisualAuthenticityBreakdown() {
   }
 
-  public FacialSimilarityPhotoBreakdownVisualAuthenticityBreakdown spoofingDetection(FacialSimilarityPhotoBreakdownVisualAuthenticityBreakdownSpoofingDetection spoofingDetection) {
+  public FacialSimilarityPhotoBreakdownVisualAuthenticityBreakdown spoofingDetection(@javax.annotation.Nullable FacialSimilarityPhotoBreakdownVisualAuthenticityBreakdownSpoofingDetection spoofingDetection) {
     this.spoofingDetection = spoofingDetection;
     return this;
   }
@@ -72,7 +73,7 @@ public class FacialSimilarityPhotoBreakdownVisualAuthenticityBreakdown {
     return spoofingDetection;
   }
 
-  public void setSpoofingDetection(FacialSimilarityPhotoBreakdownVisualAuthenticityBreakdownSpoofingDetection spoofingDetection) {
+  public void setSpoofingDetection(@javax.annotation.Nullable FacialSimilarityPhotoBreakdownVisualAuthenticityBreakdownSpoofingDetection spoofingDetection) {
     this.spoofingDetection = spoofingDetection;
   }
 

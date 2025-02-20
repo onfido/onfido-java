@@ -50,18 +50,19 @@ import com.onfido.JSON;
 /**
  * WatchlistAmlProperties
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class WatchlistAmlProperties {
   public static final String SERIALIZED_NAME_RECORDS = "records";
   @Deprecated
   @SerializedName(SERIALIZED_NAME_RECORDS)
+  @javax.annotation.Nullable
   private List<Object> records = new ArrayList<>();
 
   public WatchlistAmlProperties() {
   }
 
   @Deprecated
-  public WatchlistAmlProperties records(List<Object> records) {
+  public WatchlistAmlProperties records(@javax.annotation.Nullable List<Object> records) {
     this.records = records;
     return this;
   }
@@ -86,7 +87,7 @@ public class WatchlistAmlProperties {
   }
 
   @Deprecated
-  public void setRecords(List<Object> records) {
+  public void setRecords(@javax.annotation.Nullable List<Object> records) {
     this.records = records;
   }
 

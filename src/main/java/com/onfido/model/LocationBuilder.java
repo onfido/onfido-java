@@ -49,20 +49,22 @@ import com.onfido.JSON;
 /**
  * LocationBuilder
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class LocationBuilder {
   public static final String SERIALIZED_NAME_IP_ADDRESS = "ip_address";
   @SerializedName(SERIALIZED_NAME_IP_ADDRESS)
+  @javax.annotation.Nullable
   private String ipAddress;
 
   public static final String SERIALIZED_NAME_COUNTRY_OF_RESIDENCE = "country_of_residence";
   @SerializedName(SERIALIZED_NAME_COUNTRY_OF_RESIDENCE)
+  @javax.annotation.Nullable
   private CountryCodes countryOfResidence;
 
   public LocationBuilder() {
   }
 
-  public LocationBuilder ipAddress(String ipAddress) {
+  public LocationBuilder ipAddress(@javax.annotation.Nullable String ipAddress) {
     this.ipAddress = ipAddress;
     return this;
   }
@@ -76,12 +78,12 @@ public class LocationBuilder {
     return ipAddress;
   }
 
-  public void setIpAddress(String ipAddress) {
+  public void setIpAddress(@javax.annotation.Nullable String ipAddress) {
     this.ipAddress = ipAddress;
   }
 
 
-  public LocationBuilder countryOfResidence(CountryCodes countryOfResidence) {
+  public LocationBuilder countryOfResidence(@javax.annotation.Nullable CountryCodes countryOfResidence) {
     this.countryOfResidence = countryOfResidence;
     return this;
   }
@@ -95,7 +97,7 @@ public class LocationBuilder {
     return countryOfResidence;
   }
 
-  public void setCountryOfResidence(CountryCodes countryOfResidence) {
+  public void setCountryOfResidence(@javax.annotation.Nullable CountryCodes countryOfResidence) {
     this.countryOfResidence = countryOfResidence;
   }
 

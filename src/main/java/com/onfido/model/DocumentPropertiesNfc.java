@@ -49,64 +49,77 @@ import com.onfido.JSON;
 /**
  * DocumentPropertiesNfc
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class DocumentPropertiesNfc {
   public static final String SERIALIZED_NAME_DOCUMENT_TYPE = "document_type";
   @SerializedName(SERIALIZED_NAME_DOCUMENT_TYPE)
+  @javax.annotation.Nullable
   private String documentType;
 
   public static final String SERIALIZED_NAME_ISSUING_COUNTRY = "issuing_country";
   @SerializedName(SERIALIZED_NAME_ISSUING_COUNTRY)
+  @javax.annotation.Nullable
   private String issuingCountry;
 
   public static final String SERIALIZED_NAME_FULL_NAME = "full_name";
   @SerializedName(SERIALIZED_NAME_FULL_NAME)
+  @javax.annotation.Nullable
   private String fullName;
 
   public static final String SERIALIZED_NAME_DOCUMENT_NUMBER = "document_number";
   @SerializedName(SERIALIZED_NAME_DOCUMENT_NUMBER)
+  @javax.annotation.Nullable
   private String documentNumber;
 
   public static final String SERIALIZED_NAME_NATIONALITY = "nationality";
   @SerializedName(SERIALIZED_NAME_NATIONALITY)
+  @javax.annotation.Nullable
   private String nationality;
 
   public static final String SERIALIZED_NAME_DATE_OF_BIRTH = "date_of_birth";
   @SerializedName(SERIALIZED_NAME_DATE_OF_BIRTH)
+  @javax.annotation.Nullable
   private LocalDate dateOfBirth;
 
   public static final String SERIALIZED_NAME_GENDER = "gender";
   @SerializedName(SERIALIZED_NAME_GENDER)
+  @javax.annotation.Nullable
   private String gender;
 
   public static final String SERIALIZED_NAME_DATE_OF_EXPIRY = "date_of_expiry";
   @SerializedName(SERIALIZED_NAME_DATE_OF_EXPIRY)
+  @javax.annotation.Nullable
   private LocalDate dateOfExpiry;
 
   public static final String SERIALIZED_NAME_PERSONAL_NUMBER = "personal_number";
   @SerializedName(SERIALIZED_NAME_PERSONAL_NUMBER)
+  @javax.annotation.Nullable
   private String personalNumber;
 
   public static final String SERIALIZED_NAME_PLACE_OF_BIRTH = "place_of_birth";
   @SerializedName(SERIALIZED_NAME_PLACE_OF_BIRTH)
+  @javax.annotation.Nullable
   private String placeOfBirth;
 
   public static final String SERIALIZED_NAME_ADDRESS = "address";
   @SerializedName(SERIALIZED_NAME_ADDRESS)
+  @javax.annotation.Nullable
   private String address;
 
   public static final String SERIALIZED_NAME_ISSUING_DATE = "issuing_date";
   @SerializedName(SERIALIZED_NAME_ISSUING_DATE)
+  @javax.annotation.Nullable
   private LocalDate issuingDate;
 
   public static final String SERIALIZED_NAME_ISSUING_AUTHORITY = "issuing_authority";
   @SerializedName(SERIALIZED_NAME_ISSUING_AUTHORITY)
+  @javax.annotation.Nullable
   private String issuingAuthority;
 
   public DocumentPropertiesNfc() {
   }
 
-  public DocumentPropertiesNfc documentType(String documentType) {
+  public DocumentPropertiesNfc documentType(@javax.annotation.Nullable String documentType) {
     this.documentType = documentType;
     return this;
   }
@@ -120,12 +133,12 @@ public class DocumentPropertiesNfc {
     return documentType;
   }
 
-  public void setDocumentType(String documentType) {
+  public void setDocumentType(@javax.annotation.Nullable String documentType) {
     this.documentType = documentType;
   }
 
 
-  public DocumentPropertiesNfc issuingCountry(String issuingCountry) {
+  public DocumentPropertiesNfc issuingCountry(@javax.annotation.Nullable String issuingCountry) {
     this.issuingCountry = issuingCountry;
     return this;
   }
@@ -139,12 +152,12 @@ public class DocumentPropertiesNfc {
     return issuingCountry;
   }
 
-  public void setIssuingCountry(String issuingCountry) {
+  public void setIssuingCountry(@javax.annotation.Nullable String issuingCountry) {
     this.issuingCountry = issuingCountry;
   }
 
 
-  public DocumentPropertiesNfc fullName(String fullName) {
+  public DocumentPropertiesNfc fullName(@javax.annotation.Nullable String fullName) {
     this.fullName = fullName;
     return this;
   }
@@ -158,12 +171,12 @@ public class DocumentPropertiesNfc {
     return fullName;
   }
 
-  public void setFullName(String fullName) {
+  public void setFullName(@javax.annotation.Nullable String fullName) {
     this.fullName = fullName;
   }
 
 
-  public DocumentPropertiesNfc documentNumber(String documentNumber) {
+  public DocumentPropertiesNfc documentNumber(@javax.annotation.Nullable String documentNumber) {
     this.documentNumber = documentNumber;
     return this;
   }
@@ -177,12 +190,12 @@ public class DocumentPropertiesNfc {
     return documentNumber;
   }
 
-  public void setDocumentNumber(String documentNumber) {
+  public void setDocumentNumber(@javax.annotation.Nullable String documentNumber) {
     this.documentNumber = documentNumber;
   }
 
 
-  public DocumentPropertiesNfc nationality(String nationality) {
+  public DocumentPropertiesNfc nationality(@javax.annotation.Nullable String nationality) {
     this.nationality = nationality;
     return this;
   }
@@ -196,12 +209,12 @@ public class DocumentPropertiesNfc {
     return nationality;
   }
 
-  public void setNationality(String nationality) {
+  public void setNationality(@javax.annotation.Nullable String nationality) {
     this.nationality = nationality;
   }
 
 
-  public DocumentPropertiesNfc dateOfBirth(LocalDate dateOfBirth) {
+  public DocumentPropertiesNfc dateOfBirth(@javax.annotation.Nullable LocalDate dateOfBirth) {
     this.dateOfBirth = dateOfBirth;
     return this;
   }
@@ -215,12 +228,12 @@ public class DocumentPropertiesNfc {
     return dateOfBirth;
   }
 
-  public void setDateOfBirth(LocalDate dateOfBirth) {
+  public void setDateOfBirth(@javax.annotation.Nullable LocalDate dateOfBirth) {
     this.dateOfBirth = dateOfBirth;
   }
 
 
-  public DocumentPropertiesNfc gender(String gender) {
+  public DocumentPropertiesNfc gender(@javax.annotation.Nullable String gender) {
     this.gender = gender;
     return this;
   }
@@ -234,12 +247,12 @@ public class DocumentPropertiesNfc {
     return gender;
   }
 
-  public void setGender(String gender) {
+  public void setGender(@javax.annotation.Nullable String gender) {
     this.gender = gender;
   }
 
 
-  public DocumentPropertiesNfc dateOfExpiry(LocalDate dateOfExpiry) {
+  public DocumentPropertiesNfc dateOfExpiry(@javax.annotation.Nullable LocalDate dateOfExpiry) {
     this.dateOfExpiry = dateOfExpiry;
     return this;
   }
@@ -253,12 +266,12 @@ public class DocumentPropertiesNfc {
     return dateOfExpiry;
   }
 
-  public void setDateOfExpiry(LocalDate dateOfExpiry) {
+  public void setDateOfExpiry(@javax.annotation.Nullable LocalDate dateOfExpiry) {
     this.dateOfExpiry = dateOfExpiry;
   }
 
 
-  public DocumentPropertiesNfc personalNumber(String personalNumber) {
+  public DocumentPropertiesNfc personalNumber(@javax.annotation.Nullable String personalNumber) {
     this.personalNumber = personalNumber;
     return this;
   }
@@ -272,12 +285,12 @@ public class DocumentPropertiesNfc {
     return personalNumber;
   }
 
-  public void setPersonalNumber(String personalNumber) {
+  public void setPersonalNumber(@javax.annotation.Nullable String personalNumber) {
     this.personalNumber = personalNumber;
   }
 
 
-  public DocumentPropertiesNfc placeOfBirth(String placeOfBirth) {
+  public DocumentPropertiesNfc placeOfBirth(@javax.annotation.Nullable String placeOfBirth) {
     this.placeOfBirth = placeOfBirth;
     return this;
   }
@@ -291,12 +304,12 @@ public class DocumentPropertiesNfc {
     return placeOfBirth;
   }
 
-  public void setPlaceOfBirth(String placeOfBirth) {
+  public void setPlaceOfBirth(@javax.annotation.Nullable String placeOfBirth) {
     this.placeOfBirth = placeOfBirth;
   }
 
 
-  public DocumentPropertiesNfc address(String address) {
+  public DocumentPropertiesNfc address(@javax.annotation.Nullable String address) {
     this.address = address;
     return this;
   }
@@ -310,12 +323,12 @@ public class DocumentPropertiesNfc {
     return address;
   }
 
-  public void setAddress(String address) {
+  public void setAddress(@javax.annotation.Nullable String address) {
     this.address = address;
   }
 
 
-  public DocumentPropertiesNfc issuingDate(LocalDate issuingDate) {
+  public DocumentPropertiesNfc issuingDate(@javax.annotation.Nullable LocalDate issuingDate) {
     this.issuingDate = issuingDate;
     return this;
   }
@@ -329,12 +342,12 @@ public class DocumentPropertiesNfc {
     return issuingDate;
   }
 
-  public void setIssuingDate(LocalDate issuingDate) {
+  public void setIssuingDate(@javax.annotation.Nullable LocalDate issuingDate) {
     this.issuingDate = issuingDate;
   }
 
 
-  public DocumentPropertiesNfc issuingAuthority(String issuingAuthority) {
+  public DocumentPropertiesNfc issuingAuthority(@javax.annotation.Nullable String issuingAuthority) {
     this.issuingAuthority = issuingAuthority;
     return this;
   }
@@ -348,7 +361,7 @@ public class DocumentPropertiesNfc {
     return issuingAuthority;
   }
 
-  public void setIssuingAuthority(String issuingAuthority) {
+  public void setIssuingAuthority(@javax.annotation.Nullable String issuingAuthority) {
     this.issuingAuthority = issuingAuthority;
   }
 

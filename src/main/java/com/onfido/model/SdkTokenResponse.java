@@ -48,16 +48,17 @@ import com.onfido.JSON;
 /**
  * SdkTokenResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class SdkTokenResponse {
   public static final String SERIALIZED_NAME_TOKEN = "token";
   @SerializedName(SERIALIZED_NAME_TOKEN)
+  @javax.annotation.Nonnull
   private String token;
 
   public SdkTokenResponse() {
   }
 
-  public SdkTokenResponse token(String token) {
+  public SdkTokenResponse token(@javax.annotation.Nonnull String token) {
     this.token = token;
     return this;
   }
@@ -71,7 +72,7 @@ public class SdkTokenResponse {
     return token;
   }
 
-  public void setToken(String token) {
+  public void setToken(@javax.annotation.Nonnull String token) {
     this.token = token;
   }
 

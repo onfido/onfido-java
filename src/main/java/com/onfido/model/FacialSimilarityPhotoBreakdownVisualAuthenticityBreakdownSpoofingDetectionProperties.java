@@ -48,16 +48,17 @@ import com.onfido.JSON;
 /**
  * FacialSimilarityPhotoBreakdownVisualAuthenticityBreakdownSpoofingDetectionProperties
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class FacialSimilarityPhotoBreakdownVisualAuthenticityBreakdownSpoofingDetectionProperties {
   public static final String SERIALIZED_NAME_SCORE = "score";
   @SerializedName(SERIALIZED_NAME_SCORE)
+  @javax.annotation.Nullable
   private Float score;
 
   public FacialSimilarityPhotoBreakdownVisualAuthenticityBreakdownSpoofingDetectionProperties() {
   }
 
-  public FacialSimilarityPhotoBreakdownVisualAuthenticityBreakdownSpoofingDetectionProperties score(Float score) {
+  public FacialSimilarityPhotoBreakdownVisualAuthenticityBreakdownSpoofingDetectionProperties score(@javax.annotation.Nullable Float score) {
     this.score = score;
     return this;
   }
@@ -71,7 +72,7 @@ public class FacialSimilarityPhotoBreakdownVisualAuthenticityBreakdownSpoofingDe
     return score;
   }
 
-  public void setScore(Float score) {
+  public void setScore(@javax.annotation.Nullable Float score) {
     this.score = score;
   }
 

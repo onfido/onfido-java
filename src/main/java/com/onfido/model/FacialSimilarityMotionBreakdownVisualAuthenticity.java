@@ -49,20 +49,22 @@ import com.onfido.JSON;
 /**
  * Asserts whether the person in the motion capture is real (not a spoof) and live.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class FacialSimilarityMotionBreakdownVisualAuthenticity {
   public static final String SERIALIZED_NAME_RESULT = "result";
   @SerializedName(SERIALIZED_NAME_RESULT)
+  @javax.annotation.Nullable
   private String result;
 
   public static final String SERIALIZED_NAME_BREAKDOWN = "breakdown";
   @SerializedName(SERIALIZED_NAME_BREAKDOWN)
+  @javax.annotation.Nullable
   private FacialSimilarityMotionBreakdownVisualAuthenticityBreakdown breakdown;
 
   public FacialSimilarityMotionBreakdownVisualAuthenticity() {
   }
 
-  public FacialSimilarityMotionBreakdownVisualAuthenticity result(String result) {
+  public FacialSimilarityMotionBreakdownVisualAuthenticity result(@javax.annotation.Nullable String result) {
     this.result = result;
     return this;
   }
@@ -76,12 +78,12 @@ public class FacialSimilarityMotionBreakdownVisualAuthenticity {
     return result;
   }
 
-  public void setResult(String result) {
+  public void setResult(@javax.annotation.Nullable String result) {
     this.result = result;
   }
 
 
-  public FacialSimilarityMotionBreakdownVisualAuthenticity breakdown(FacialSimilarityMotionBreakdownVisualAuthenticityBreakdown breakdown) {
+  public FacialSimilarityMotionBreakdownVisualAuthenticity breakdown(@javax.annotation.Nullable FacialSimilarityMotionBreakdownVisualAuthenticityBreakdown breakdown) {
     this.breakdown = breakdown;
     return this;
   }
@@ -95,7 +97,7 @@ public class FacialSimilarityMotionBreakdownVisualAuthenticity {
     return breakdown;
   }
 
-  public void setBreakdown(FacialSimilarityMotionBreakdownVisualAuthenticityBreakdown breakdown) {
+  public void setBreakdown(@javax.annotation.Nullable FacialSimilarityMotionBreakdownVisualAuthenticityBreakdown breakdown) {
     this.breakdown = breakdown;
   }
 

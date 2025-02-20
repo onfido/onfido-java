@@ -50,22 +50,26 @@ import com.onfido.JSON;
 /**
  * WorkflowRunLink
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class WorkflowRunLink {
   public static final String SERIALIZED_NAME_URL = "url";
   @SerializedName(SERIALIZED_NAME_URL)
+  @javax.annotation.Nullable
   private String url;
 
   public static final String SERIALIZED_NAME_COMPLETED_REDIRECT_URL = "completed_redirect_url";
   @SerializedName(SERIALIZED_NAME_COMPLETED_REDIRECT_URL)
+  @javax.annotation.Nullable
   private String completedRedirectUrl;
 
   public static final String SERIALIZED_NAME_EXPIRED_REDIRECT_URL = "expired_redirect_url";
   @SerializedName(SERIALIZED_NAME_EXPIRED_REDIRECT_URL)
+  @javax.annotation.Nullable
   private String expiredRedirectUrl;
 
   public static final String SERIALIZED_NAME_EXPIRES_AT = "expires_at";
   @SerializedName(SERIALIZED_NAME_EXPIRES_AT)
+  @javax.annotation.Nullable
   private OffsetDateTime expiresAt;
 
   /**
@@ -134,12 +138,13 @@ public class WorkflowRunLink {
 
   public static final String SERIALIZED_NAME_LANGUAGE = "language";
   @SerializedName(SERIALIZED_NAME_LANGUAGE)
+  @javax.annotation.Nullable
   private LanguageEnum language;
 
   public WorkflowRunLink() {
   }
 
-  public WorkflowRunLink url(String url) {
+  public WorkflowRunLink url(@javax.annotation.Nullable String url) {
     this.url = url;
     return this;
   }
@@ -153,12 +158,12 @@ public class WorkflowRunLink {
     return url;
   }
 
-  public void setUrl(String url) {
+  public void setUrl(@javax.annotation.Nullable String url) {
     this.url = url;
   }
 
 
-  public WorkflowRunLink completedRedirectUrl(String completedRedirectUrl) {
+  public WorkflowRunLink completedRedirectUrl(@javax.annotation.Nullable String completedRedirectUrl) {
     this.completedRedirectUrl = completedRedirectUrl;
     return this;
   }
@@ -172,12 +177,12 @@ public class WorkflowRunLink {
     return completedRedirectUrl;
   }
 
-  public void setCompletedRedirectUrl(String completedRedirectUrl) {
+  public void setCompletedRedirectUrl(@javax.annotation.Nullable String completedRedirectUrl) {
     this.completedRedirectUrl = completedRedirectUrl;
   }
 
 
-  public WorkflowRunLink expiredRedirectUrl(String expiredRedirectUrl) {
+  public WorkflowRunLink expiredRedirectUrl(@javax.annotation.Nullable String expiredRedirectUrl) {
     this.expiredRedirectUrl = expiredRedirectUrl;
     return this;
   }
@@ -191,12 +196,12 @@ public class WorkflowRunLink {
     return expiredRedirectUrl;
   }
 
-  public void setExpiredRedirectUrl(String expiredRedirectUrl) {
+  public void setExpiredRedirectUrl(@javax.annotation.Nullable String expiredRedirectUrl) {
     this.expiredRedirectUrl = expiredRedirectUrl;
   }
 
 
-  public WorkflowRunLink expiresAt(OffsetDateTime expiresAt) {
+  public WorkflowRunLink expiresAt(@javax.annotation.Nullable OffsetDateTime expiresAt) {
     this.expiresAt = expiresAt;
     return this;
   }
@@ -210,12 +215,12 @@ public class WorkflowRunLink {
     return expiresAt;
   }
 
-  public void setExpiresAt(OffsetDateTime expiresAt) {
+  public void setExpiresAt(@javax.annotation.Nullable OffsetDateTime expiresAt) {
     this.expiresAt = expiresAt;
   }
 
 
-  public WorkflowRunLink language(LanguageEnum language) {
+  public WorkflowRunLink language(@javax.annotation.Nullable LanguageEnum language) {
     this.language = language;
     return this;
   }
@@ -229,7 +234,7 @@ public class WorkflowRunLink {
     return language;
   }
 
-  public void setLanguage(LanguageEnum language) {
+  public void setLanguage(@javax.annotation.Nullable LanguageEnum language) {
     this.language = language;
   }
 

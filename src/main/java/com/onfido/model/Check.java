@@ -53,46 +53,56 @@ import com.onfido.JSON;
 /**
  * Check
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class Check {
   public static final String SERIALIZED_NAME_WEBHOOK_IDS = "webhook_ids";
   @SerializedName(SERIALIZED_NAME_WEBHOOK_IDS)
+  @javax.annotation.Nullable
   private List<String> webhookIds = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_APPLICANT_ID = "applicant_id";
   @SerializedName(SERIALIZED_NAME_APPLICANT_ID)
+  @javax.annotation.Nonnull
   private UUID applicantId;
 
   public static final String SERIALIZED_NAME_APPLICANT_PROVIDES_DATA = "applicant_provides_data";
   @SerializedName(SERIALIZED_NAME_APPLICANT_PROVIDES_DATA)
+  @javax.annotation.Nullable
   private Boolean applicantProvidesData;
 
   public static final String SERIALIZED_NAME_TAGS = "tags";
   @SerializedName(SERIALIZED_NAME_TAGS)
+  @javax.annotation.Nullable
   private List<String> tags = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_REDIRECT_URI = "redirect_uri";
   @SerializedName(SERIALIZED_NAME_REDIRECT_URI)
+  @javax.annotation.Nullable
   private String redirectUri;
 
   public static final String SERIALIZED_NAME_PRIVACY_NOTICES_READ_CONSENT_GIVEN = "privacy_notices_read_consent_given";
   @SerializedName(SERIALIZED_NAME_PRIVACY_NOTICES_READ_CONSENT_GIVEN)
+  @javax.annotation.Nullable
   private Boolean privacyNoticesReadConsentGiven;
 
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nonnull
   private UUID id;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
+  @javax.annotation.Nullable
   private OffsetDateTime createdAt;
 
   public static final String SERIALIZED_NAME_HREF = "href";
   @SerializedName(SERIALIZED_NAME_HREF)
+  @javax.annotation.Nullable
   private String href;
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
+  @javax.annotation.Nullable
   private CheckStatus status;
 
   /**
@@ -151,36 +161,43 @@ public class Check {
 
   public static final String SERIALIZED_NAME_RESULT = "result";
   @SerializedName(SERIALIZED_NAME_RESULT)
+  @javax.annotation.Nullable
   private ResultEnum result;
 
   public static final String SERIALIZED_NAME_FORM_URI = "form_uri";
   @SerializedName(SERIALIZED_NAME_FORM_URI)
+  @javax.annotation.Nullable
   private String formUri;
 
   public static final String SERIALIZED_NAME_RESULTS_URI = "results_uri";
   @SerializedName(SERIALIZED_NAME_RESULTS_URI)
+  @javax.annotation.Nullable
   private String resultsUri;
 
   public static final String SERIALIZED_NAME_REPORT_IDS = "report_ids";
   @SerializedName(SERIALIZED_NAME_REPORT_IDS)
+  @javax.annotation.Nullable
   private List<UUID> reportIds = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SANDBOX = "sandbox";
   @SerializedName(SERIALIZED_NAME_SANDBOX)
+  @javax.annotation.Nullable
   private Boolean sandbox;
 
   public static final String SERIALIZED_NAME_PAUSED = "paused";
   @SerializedName(SERIALIZED_NAME_PAUSED)
+  @javax.annotation.Nullable
   private Boolean paused;
 
   public static final String SERIALIZED_NAME_VERSION = "version";
   @SerializedName(SERIALIZED_NAME_VERSION)
+  @javax.annotation.Nullable
   private String version;
 
   public Check() {
   }
 
-  public Check webhookIds(List<String> webhookIds) {
+  public Check webhookIds(@javax.annotation.Nullable List<String> webhookIds) {
     this.webhookIds = webhookIds;
     return this;
   }
@@ -202,12 +219,12 @@ public class Check {
     return webhookIds;
   }
 
-  public void setWebhookIds(List<String> webhookIds) {
+  public void setWebhookIds(@javax.annotation.Nullable List<String> webhookIds) {
     this.webhookIds = webhookIds;
   }
 
 
-  public Check applicantId(UUID applicantId) {
+  public Check applicantId(@javax.annotation.Nonnull UUID applicantId) {
     this.applicantId = applicantId;
     return this;
   }
@@ -221,12 +238,12 @@ public class Check {
     return applicantId;
   }
 
-  public void setApplicantId(UUID applicantId) {
+  public void setApplicantId(@javax.annotation.Nonnull UUID applicantId) {
     this.applicantId = applicantId;
   }
 
 
-  public Check applicantProvidesData(Boolean applicantProvidesData) {
+  public Check applicantProvidesData(@javax.annotation.Nullable Boolean applicantProvidesData) {
     this.applicantProvidesData = applicantProvidesData;
     return this;
   }
@@ -240,12 +257,12 @@ public class Check {
     return applicantProvidesData;
   }
 
-  public void setApplicantProvidesData(Boolean applicantProvidesData) {
+  public void setApplicantProvidesData(@javax.annotation.Nullable Boolean applicantProvidesData) {
     this.applicantProvidesData = applicantProvidesData;
   }
 
 
-  public Check tags(List<String> tags) {
+  public Check tags(@javax.annotation.Nullable List<String> tags) {
     this.tags = tags;
     return this;
   }
@@ -267,12 +284,12 @@ public class Check {
     return tags;
   }
 
-  public void setTags(List<String> tags) {
+  public void setTags(@javax.annotation.Nullable List<String> tags) {
     this.tags = tags;
   }
 
 
-  public Check redirectUri(String redirectUri) {
+  public Check redirectUri(@javax.annotation.Nullable String redirectUri) {
     this.redirectUri = redirectUri;
     return this;
   }
@@ -286,12 +303,12 @@ public class Check {
     return redirectUri;
   }
 
-  public void setRedirectUri(String redirectUri) {
+  public void setRedirectUri(@javax.annotation.Nullable String redirectUri) {
     this.redirectUri = redirectUri;
   }
 
 
-  public Check privacyNoticesReadConsentGiven(Boolean privacyNoticesReadConsentGiven) {
+  public Check privacyNoticesReadConsentGiven(@javax.annotation.Nullable Boolean privacyNoticesReadConsentGiven) {
     this.privacyNoticesReadConsentGiven = privacyNoticesReadConsentGiven;
     return this;
   }
@@ -305,12 +322,12 @@ public class Check {
     return privacyNoticesReadConsentGiven;
   }
 
-  public void setPrivacyNoticesReadConsentGiven(Boolean privacyNoticesReadConsentGiven) {
+  public void setPrivacyNoticesReadConsentGiven(@javax.annotation.Nullable Boolean privacyNoticesReadConsentGiven) {
     this.privacyNoticesReadConsentGiven = privacyNoticesReadConsentGiven;
   }
 
 
-  public Check id(UUID id) {
+  public Check id(@javax.annotation.Nonnull UUID id) {
     this.id = id;
     return this;
   }
@@ -324,12 +341,12 @@ public class Check {
     return id;
   }
 
-  public void setId(UUID id) {
+  public void setId(@javax.annotation.Nonnull UUID id) {
     this.id = id;
   }
 
 
-  public Check createdAt(OffsetDateTime createdAt) {
+  public Check createdAt(@javax.annotation.Nullable OffsetDateTime createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -343,12 +360,12 @@ public class Check {
     return createdAt;
   }
 
-  public void setCreatedAt(OffsetDateTime createdAt) {
+  public void setCreatedAt(@javax.annotation.Nullable OffsetDateTime createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public Check href(String href) {
+  public Check href(@javax.annotation.Nullable String href) {
     this.href = href;
     return this;
   }
@@ -362,12 +379,12 @@ public class Check {
     return href;
   }
 
-  public void setHref(String href) {
+  public void setHref(@javax.annotation.Nullable String href) {
     this.href = href;
   }
 
 
-  public Check status(CheckStatus status) {
+  public Check status(@javax.annotation.Nullable CheckStatus status) {
     this.status = status;
     return this;
   }
@@ -381,12 +398,12 @@ public class Check {
     return status;
   }
 
-  public void setStatus(CheckStatus status) {
+  public void setStatus(@javax.annotation.Nullable CheckStatus status) {
     this.status = status;
   }
 
 
-  public Check result(ResultEnum result) {
+  public Check result(@javax.annotation.Nullable ResultEnum result) {
     this.result = result;
     return this;
   }
@@ -400,12 +417,12 @@ public class Check {
     return result;
   }
 
-  public void setResult(ResultEnum result) {
+  public void setResult(@javax.annotation.Nullable ResultEnum result) {
     this.result = result;
   }
 
 
-  public Check formUri(String formUri) {
+  public Check formUri(@javax.annotation.Nullable String formUri) {
     this.formUri = formUri;
     return this;
   }
@@ -419,12 +436,12 @@ public class Check {
     return formUri;
   }
 
-  public void setFormUri(String formUri) {
+  public void setFormUri(@javax.annotation.Nullable String formUri) {
     this.formUri = formUri;
   }
 
 
-  public Check resultsUri(String resultsUri) {
+  public Check resultsUri(@javax.annotation.Nullable String resultsUri) {
     this.resultsUri = resultsUri;
     return this;
   }
@@ -438,12 +455,12 @@ public class Check {
     return resultsUri;
   }
 
-  public void setResultsUri(String resultsUri) {
+  public void setResultsUri(@javax.annotation.Nullable String resultsUri) {
     this.resultsUri = resultsUri;
   }
 
 
-  public Check reportIds(List<UUID> reportIds) {
+  public Check reportIds(@javax.annotation.Nullable List<UUID> reportIds) {
     this.reportIds = reportIds;
     return this;
   }
@@ -465,12 +482,12 @@ public class Check {
     return reportIds;
   }
 
-  public void setReportIds(List<UUID> reportIds) {
+  public void setReportIds(@javax.annotation.Nullable List<UUID> reportIds) {
     this.reportIds = reportIds;
   }
 
 
-  public Check sandbox(Boolean sandbox) {
+  public Check sandbox(@javax.annotation.Nullable Boolean sandbox) {
     this.sandbox = sandbox;
     return this;
   }
@@ -484,12 +501,12 @@ public class Check {
     return sandbox;
   }
 
-  public void setSandbox(Boolean sandbox) {
+  public void setSandbox(@javax.annotation.Nullable Boolean sandbox) {
     this.sandbox = sandbox;
   }
 
 
-  public Check paused(Boolean paused) {
+  public Check paused(@javax.annotation.Nullable Boolean paused) {
     this.paused = paused;
     return this;
   }
@@ -503,12 +520,12 @@ public class Check {
     return paused;
   }
 
-  public void setPaused(Boolean paused) {
+  public void setPaused(@javax.annotation.Nullable Boolean paused) {
     this.paused = paused;
   }
 
 
-  public Check version(String version) {
+  public Check version(@javax.annotation.Nullable String version) {
     this.version = version;
     return this;
   }
@@ -522,7 +539,7 @@ public class Check {
     return version;
   }
 
-  public void setVersion(String version) {
+  public void setVersion(@javax.annotation.Nullable String version) {
     this.version = version;
   }
 

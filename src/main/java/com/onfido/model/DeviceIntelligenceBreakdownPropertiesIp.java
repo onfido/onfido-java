@@ -48,16 +48,17 @@ import com.onfido.JSON;
 /**
  * DeviceIntelligenceBreakdownPropertiesIp
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class DeviceIntelligenceBreakdownPropertiesIp {
   public static final String SERIALIZED_NAME_ADDRESS = "address";
   @SerializedName(SERIALIZED_NAME_ADDRESS)
+  @javax.annotation.Nullable
   private String address;
 
   public DeviceIntelligenceBreakdownPropertiesIp() {
   }
 
-  public DeviceIntelligenceBreakdownPropertiesIp address(String address) {
+  public DeviceIntelligenceBreakdownPropertiesIp address(@javax.annotation.Nullable String address) {
     this.address = address;
     return this;
   }
@@ -71,7 +72,7 @@ public class DeviceIntelligenceBreakdownPropertiesIp {
     return address;
   }
 
-  public void setAddress(String address) {
+  public void setAddress(@javax.annotation.Nullable String address) {
     this.address = address;
   }
 

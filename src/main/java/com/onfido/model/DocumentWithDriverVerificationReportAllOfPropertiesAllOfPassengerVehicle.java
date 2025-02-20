@@ -49,24 +49,27 @@ import com.onfido.JSON;
 /**
  * Normalised data for passenger cars
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class DocumentWithDriverVerificationReportAllOfPropertiesAllOfPassengerVehicle {
   public static final String SERIALIZED_NAME_IS_QUALIFIED = "is_qualified";
   @SerializedName(SERIALIZED_NAME_IS_QUALIFIED)
+  @javax.annotation.Nullable
   private Boolean isQualified;
 
   public static final String SERIALIZED_NAME_OBTAINMENT_DATE = "obtainment_date";
   @SerializedName(SERIALIZED_NAME_OBTAINMENT_DATE)
+  @javax.annotation.Nullable
   private LocalDate obtainmentDate;
 
   public static final String SERIALIZED_NAME_EXPIRY_DATE = "expiry_date";
   @SerializedName(SERIALIZED_NAME_EXPIRY_DATE)
+  @javax.annotation.Nullable
   private LocalDate expiryDate;
 
   public DocumentWithDriverVerificationReportAllOfPropertiesAllOfPassengerVehicle() {
   }
 
-  public DocumentWithDriverVerificationReportAllOfPropertiesAllOfPassengerVehicle isQualified(Boolean isQualified) {
+  public DocumentWithDriverVerificationReportAllOfPropertiesAllOfPassengerVehicle isQualified(@javax.annotation.Nullable Boolean isQualified) {
     this.isQualified = isQualified;
     return this;
   }
@@ -80,12 +83,12 @@ public class DocumentWithDriverVerificationReportAllOfPropertiesAllOfPassengerVe
     return isQualified;
   }
 
-  public void setIsQualified(Boolean isQualified) {
+  public void setIsQualified(@javax.annotation.Nullable Boolean isQualified) {
     this.isQualified = isQualified;
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfPropertiesAllOfPassengerVehicle obtainmentDate(LocalDate obtainmentDate) {
+  public DocumentWithDriverVerificationReportAllOfPropertiesAllOfPassengerVehicle obtainmentDate(@javax.annotation.Nullable LocalDate obtainmentDate) {
     this.obtainmentDate = obtainmentDate;
     return this;
   }
@@ -99,12 +102,12 @@ public class DocumentWithDriverVerificationReportAllOfPropertiesAllOfPassengerVe
     return obtainmentDate;
   }
 
-  public void setObtainmentDate(LocalDate obtainmentDate) {
+  public void setObtainmentDate(@javax.annotation.Nullable LocalDate obtainmentDate) {
     this.obtainmentDate = obtainmentDate;
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfPropertiesAllOfPassengerVehicle expiryDate(LocalDate expiryDate) {
+  public DocumentWithDriverVerificationReportAllOfPropertiesAllOfPassengerVehicle expiryDate(@javax.annotation.Nullable LocalDate expiryDate) {
     this.expiryDate = expiryDate;
     return this;
   }
@@ -118,7 +121,7 @@ public class DocumentWithDriverVerificationReportAllOfPropertiesAllOfPassengerVe
     return expiryDate;
   }
 
-  public void setExpiryDate(LocalDate expiryDate) {
+  public void setExpiryDate(@javax.annotation.Nullable LocalDate expiryDate) {
     this.expiryDate = expiryDate;
   }
 

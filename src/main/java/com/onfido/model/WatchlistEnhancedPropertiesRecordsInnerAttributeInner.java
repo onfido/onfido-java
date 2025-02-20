@@ -48,20 +48,22 @@ import com.onfido.JSON;
 /**
  * WatchlistEnhancedPropertiesRecordsInnerAttributeInner
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class WatchlistEnhancedPropertiesRecordsInnerAttributeInner {
   public static final String SERIALIZED_NAME_ATTRIBUTE_TYPE = "attribute_type";
   @SerializedName(SERIALIZED_NAME_ATTRIBUTE_TYPE)
+  @javax.annotation.Nullable
   private String attributeType;
 
   public static final String SERIALIZED_NAME_ATTRIBUTE_VALUE = "attribute_value";
   @SerializedName(SERIALIZED_NAME_ATTRIBUTE_VALUE)
+  @javax.annotation.Nullable
   private String attributeValue;
 
   public WatchlistEnhancedPropertiesRecordsInnerAttributeInner() {
   }
 
-  public WatchlistEnhancedPropertiesRecordsInnerAttributeInner attributeType(String attributeType) {
+  public WatchlistEnhancedPropertiesRecordsInnerAttributeInner attributeType(@javax.annotation.Nullable String attributeType) {
     this.attributeType = attributeType;
     return this;
   }
@@ -75,12 +77,12 @@ public class WatchlistEnhancedPropertiesRecordsInnerAttributeInner {
     return attributeType;
   }
 
-  public void setAttributeType(String attributeType) {
+  public void setAttributeType(@javax.annotation.Nullable String attributeType) {
     this.attributeType = attributeType;
   }
 
 
-  public WatchlistEnhancedPropertiesRecordsInnerAttributeInner attributeValue(String attributeValue) {
+  public WatchlistEnhancedPropertiesRecordsInnerAttributeInner attributeValue(@javax.annotation.Nullable String attributeValue) {
     this.attributeValue = attributeValue;
     return this;
   }
@@ -94,7 +96,7 @@ public class WatchlistEnhancedPropertiesRecordsInnerAttributeInner {
     return attributeValue;
   }
 
-  public void setAttributeValue(String attributeValue) {
+  public void setAttributeValue(@javax.annotation.Nullable String attributeValue) {
     this.attributeValue = attributeValue;
   }
 

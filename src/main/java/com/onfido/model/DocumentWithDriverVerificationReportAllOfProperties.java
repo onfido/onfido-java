@@ -60,146 +60,181 @@ import com.onfido.JSON;
 /**
  * DocumentWithDriverVerificationReportAllOfProperties
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class DocumentWithDriverVerificationReportAllOfProperties {
   public static final String SERIALIZED_NAME_DATE_OF_BIRTH = "date_of_birth";
   @SerializedName(SERIALIZED_NAME_DATE_OF_BIRTH)
+  @javax.annotation.Nullable
   private LocalDate dateOfBirth;
 
   public static final String SERIALIZED_NAME_DATE_OF_EXPIRY = "date_of_expiry";
   @SerializedName(SERIALIZED_NAME_DATE_OF_EXPIRY)
+  @javax.annotation.Nullable
   private LocalDate dateOfExpiry;
 
   public static final String SERIALIZED_NAME_PERSONAL_NUMBER = "personal_number";
   @SerializedName(SERIALIZED_NAME_PERSONAL_NUMBER)
+  @javax.annotation.Nullable
   private String personalNumber;
 
   public static final String SERIALIZED_NAME_DOCUMENT_NUMBERS = "document_numbers";
   @SerializedName(SERIALIZED_NAME_DOCUMENT_NUMBERS)
+  @javax.annotation.Nullable
   private List<DocumentPropertiesDocumentNumbersInner> documentNumbers = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_DOCUMENT_TYPE = "document_type";
   @SerializedName(SERIALIZED_NAME_DOCUMENT_TYPE)
+  @javax.annotation.Nullable
   private String documentType;
 
   public static final String SERIALIZED_NAME_FIRST_NAME = "first_name";
   @SerializedName(SERIALIZED_NAME_FIRST_NAME)
+  @javax.annotation.Nullable
   private String firstName;
 
   public static final String SERIALIZED_NAME_MIDDLE_NAME = "middle_name";
   @SerializedName(SERIALIZED_NAME_MIDDLE_NAME)
+  @javax.annotation.Nullable
   private String middleName;
 
   public static final String SERIALIZED_NAME_LAST_NAME = "last_name";
   @SerializedName(SERIALIZED_NAME_LAST_NAME)
+  @javax.annotation.Nullable
   private String lastName;
 
   public static final String SERIALIZED_NAME_GENDER = "gender";
   @SerializedName(SERIALIZED_NAME_GENDER)
+  @javax.annotation.Nullable
   private String gender;
 
   public static final String SERIALIZED_NAME_ISSUING_COUNTRY = "issuing_country";
   @SerializedName(SERIALIZED_NAME_ISSUING_COUNTRY)
+  @javax.annotation.Nullable
   private String issuingCountry;
 
   public static final String SERIALIZED_NAME_NATIONALITY = "nationality";
   @SerializedName(SERIALIZED_NAME_NATIONALITY)
+  @javax.annotation.Nullable
   private String nationality;
 
   public static final String SERIALIZED_NAME_ISSUING_STATE = "issuing_state";
   @SerializedName(SERIALIZED_NAME_ISSUING_STATE)
+  @javax.annotation.Nullable
   private String issuingState;
 
   public static final String SERIALIZED_NAME_ISSUING_DATE = "issuing_date";
   @SerializedName(SERIALIZED_NAME_ISSUING_DATE)
+  @javax.annotation.Nullable
   private LocalDate issuingDate;
 
   public static final String SERIALIZED_NAME_CATEGORISATION = "categorisation";
   @SerializedName(SERIALIZED_NAME_CATEGORISATION)
+  @javax.annotation.Nullable
   private String categorisation;
 
   public static final String SERIALIZED_NAME_MRZ_LINE1 = "mrz_line1";
   @SerializedName(SERIALIZED_NAME_MRZ_LINE1)
+  @javax.annotation.Nullable
   private String mrzLine1;
 
   public static final String SERIALIZED_NAME_MRZ_LINE2 = "mrz_line2";
   @SerializedName(SERIALIZED_NAME_MRZ_LINE2)
+  @javax.annotation.Nullable
   private String mrzLine2;
 
   public static final String SERIALIZED_NAME_MRZ_LINE3 = "mrz_line3";
   @SerializedName(SERIALIZED_NAME_MRZ_LINE3)
+  @javax.annotation.Nullable
   private String mrzLine3;
 
   public static final String SERIALIZED_NAME_ADDRESS = "address";
   @SerializedName(SERIALIZED_NAME_ADDRESS)
+  @javax.annotation.Nullable
   private String address;
 
   public static final String SERIALIZED_NAME_PLACE_OF_BIRTH = "place_of_birth";
   @SerializedName(SERIALIZED_NAME_PLACE_OF_BIRTH)
+  @javax.annotation.Nullable
   private String placeOfBirth;
 
   public static final String SERIALIZED_NAME_SPOUSE_NAME = "spouse_name";
   @SerializedName(SERIALIZED_NAME_SPOUSE_NAME)
+  @javax.annotation.Nullable
   private String spouseName;
 
   public static final String SERIALIZED_NAME_WIDOW_NAME = "widow_name";
   @SerializedName(SERIALIZED_NAME_WIDOW_NAME)
+  @javax.annotation.Nullable
   private String widowName;
 
   public static final String SERIALIZED_NAME_ALIAS_NAME = "alias_name";
   @SerializedName(SERIALIZED_NAME_ALIAS_NAME)
+  @javax.annotation.Nullable
   private String aliasName;
 
   public static final String SERIALIZED_NAME_ISSUING_AUTHORITY = "issuing_authority";
   @SerializedName(SERIALIZED_NAME_ISSUING_AUTHORITY)
+  @javax.annotation.Nullable
   private String issuingAuthority;
 
   public static final String SERIALIZED_NAME_REMARKS = "remarks";
   @SerializedName(SERIALIZED_NAME_REMARKS)
+  @javax.annotation.Nullable
   private String remarks;
 
   public static final String SERIALIZED_NAME_CIVIL_STATE = "civil_state";
   @SerializedName(SERIALIZED_NAME_CIVIL_STATE)
+  @javax.annotation.Nullable
   private String civilState;
 
   public static final String SERIALIZED_NAME_EXPATRIATION = "expatriation";
   @SerializedName(SERIALIZED_NAME_EXPATRIATION)
+  @javax.annotation.Nullable
   private String expatriation;
 
   public static final String SERIALIZED_NAME_FATHER_NAME = "father_name";
   @SerializedName(SERIALIZED_NAME_FATHER_NAME)
+  @javax.annotation.Nullable
   private String fatherName;
 
   public static final String SERIALIZED_NAME_MOTHER_NAME = "mother_name";
   @SerializedName(SERIALIZED_NAME_MOTHER_NAME)
+  @javax.annotation.Nullable
   private String motherName;
 
   public static final String SERIALIZED_NAME_RELIGION = "religion";
   @SerializedName(SERIALIZED_NAME_RELIGION)
+  @javax.annotation.Nullable
   private String religion;
 
   public static final String SERIALIZED_NAME_TYPE_OF_PERMIT = "type_of_permit";
   @SerializedName(SERIALIZED_NAME_TYPE_OF_PERMIT)
+  @javax.annotation.Nullable
   private String typeOfPermit;
 
   public static final String SERIALIZED_NAME_VERSION_NUMBER = "version_number";
   @SerializedName(SERIALIZED_NAME_VERSION_NUMBER)
+  @javax.annotation.Nullable
   private String versionNumber;
 
   public static final String SERIALIZED_NAME_DOCUMENT_SUBTYPE = "document_subtype";
   @SerializedName(SERIALIZED_NAME_DOCUMENT_SUBTYPE)
+  @javax.annotation.Nullable
   private String documentSubtype;
 
   public static final String SERIALIZED_NAME_PROFESSION = "profession";
   @SerializedName(SERIALIZED_NAME_PROFESSION)
+  @javax.annotation.Nullable
   private String profession;
 
   public static final String SERIALIZED_NAME_SECURITY_DOCUMENT_NUMBER = "security_document_number";
   @SerializedName(SERIALIZED_NAME_SECURITY_DOCUMENT_NUMBER)
+  @javax.annotation.Nullable
   private String securityDocumentNumber;
 
   public static final String SERIALIZED_NAME_TAX_NUMBER = "tax_number";
   @SerializedName(SERIALIZED_NAME_TAX_NUMBER)
+  @javax.annotation.Nullable
   private String taxNumber;
 
   /**
@@ -266,6 +301,7 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
 
   public static final String SERIALIZED_NAME_NIST_IDENTITY_EVIDENCE_STRENGTH = "nist_identity_evidence_strength";
   @SerializedName(SERIALIZED_NAME_NIST_IDENTITY_EVIDENCE_STRENGTH)
+  @javax.annotation.Nullable
   private NistIdentityEvidenceStrengthEnum nistIdentityEvidenceStrength;
 
   /**
@@ -326,10 +362,12 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
 
   public static final String SERIALIZED_NAME_HAS_ISSUANCE_CONFIRMATION = "has_issuance_confirmation";
   @SerializedName(SERIALIZED_NAME_HAS_ISSUANCE_CONFIRMATION)
+  @javax.annotation.Nullable
   private HasIssuanceConfirmationEnum hasIssuanceConfirmation;
 
   public static final String SERIALIZED_NAME_REAL_ID_COMPLIANCE = "real_id_compliance";
   @SerializedName(SERIALIZED_NAME_REAL_ID_COMPLIANCE)
+  @javax.annotation.Nullable
   private Boolean realIdCompliance;
 
   /**
@@ -396,60 +434,73 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
 
   public static final String SERIALIZED_NAME_SECURITY_TIER = "security_tier";
   @SerializedName(SERIALIZED_NAME_SECURITY_TIER)
+  @javax.annotation.Nullable
   private SecurityTierEnum securityTier;
 
   public static final String SERIALIZED_NAME_ADDRESS_LINES = "address_lines";
   @SerializedName(SERIALIZED_NAME_ADDRESS_LINES)
+  @javax.annotation.Nullable
   private DocumentPropertiesAddressLines addressLines;
 
   public static final String SERIALIZED_NAME_BARCODE = "barcode";
   @SerializedName(SERIALIZED_NAME_BARCODE)
+  @javax.annotation.Nullable
   private List<DocumentPropertiesBarcodeInner> barcode = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_NFC = "nfc";
   @SerializedName(SERIALIZED_NAME_NFC)
+  @javax.annotation.Nullable
   private DocumentPropertiesNfc nfc;
 
   public static final String SERIALIZED_NAME_DRIVING_LICENCE_INFORMATION = "driving_licence_information";
   @SerializedName(SERIALIZED_NAME_DRIVING_LICENCE_INFORMATION)
+  @javax.annotation.Nullable
   private DocumentPropertiesDrivingLicenceInformation drivingLicenceInformation;
 
   public static final String SERIALIZED_NAME_DOCUMENT_CLASSIFICATION = "document_classification";
   @SerializedName(SERIALIZED_NAME_DOCUMENT_CLASSIFICATION)
+  @javax.annotation.Nullable
   private DocumentPropertiesDocumentClassification documentClassification;
 
   public static final String SERIALIZED_NAME_EXTRACTED_DATA = "extracted_data";
   @SerializedName(SERIALIZED_NAME_EXTRACTED_DATA)
+  @javax.annotation.Nullable
   private DocumentPropertiesExtractedData extractedData;
 
   public static final String SERIALIZED_NAME_DRIVERS_LICENCE = "drivers_licence";
   @SerializedName(SERIALIZED_NAME_DRIVERS_LICENCE)
+  @javax.annotation.Nullable
   private Boolean driversLicence;
 
   public static final String SERIALIZED_NAME_RESTRICTED_LICENCE = "restricted_licence";
   @SerializedName(SERIALIZED_NAME_RESTRICTED_LICENCE)
+  @javax.annotation.Nullable
   private Boolean restrictedLicence;
 
   public static final String SERIALIZED_NAME_RAW_LICENCE_CATEGORY = "raw_licence_category";
   @SerializedName(SERIALIZED_NAME_RAW_LICENCE_CATEGORY)
+  @javax.annotation.Nullable
   private String rawLicenceCategory;
 
   public static final String SERIALIZED_NAME_RAW_VEHICLE_CLASSES = "raw_vehicle_classes";
   @SerializedName(SERIALIZED_NAME_RAW_VEHICLE_CLASSES)
+  @javax.annotation.Nullable
   private String rawVehicleClasses;
 
   public static final String SERIALIZED_NAME_VEHICLE_CLASS_DETAILS = "vehicle_class_details";
   @SerializedName(SERIALIZED_NAME_VEHICLE_CLASS_DETAILS)
+  @javax.annotation.Nullable
   private List<DocumentWithDriverVerificationReportAllOfPropertiesAllOfVehicleClassDetailsInner> vehicleClassDetails = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_PASSENGER_VEHICLE = "passenger_vehicle";
   @SerializedName(SERIALIZED_NAME_PASSENGER_VEHICLE)
+  @javax.annotation.Nullable
   private DocumentWithDriverVerificationReportAllOfPropertiesAllOfPassengerVehicle passengerVehicle;
 
   public DocumentWithDriverVerificationReportAllOfProperties() {
   }
 
-  public DocumentWithDriverVerificationReportAllOfProperties dateOfBirth(LocalDate dateOfBirth) {
+  public DocumentWithDriverVerificationReportAllOfProperties dateOfBirth(@javax.annotation.Nullable LocalDate dateOfBirth) {
     this.dateOfBirth = dateOfBirth;
     return this;
   }
@@ -463,12 +514,12 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return dateOfBirth;
   }
 
-  public void setDateOfBirth(LocalDate dateOfBirth) {
+  public void setDateOfBirth(@javax.annotation.Nullable LocalDate dateOfBirth) {
     this.dateOfBirth = dateOfBirth;
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties dateOfExpiry(LocalDate dateOfExpiry) {
+  public DocumentWithDriverVerificationReportAllOfProperties dateOfExpiry(@javax.annotation.Nullable LocalDate dateOfExpiry) {
     this.dateOfExpiry = dateOfExpiry;
     return this;
   }
@@ -482,12 +533,12 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return dateOfExpiry;
   }
 
-  public void setDateOfExpiry(LocalDate dateOfExpiry) {
+  public void setDateOfExpiry(@javax.annotation.Nullable LocalDate dateOfExpiry) {
     this.dateOfExpiry = dateOfExpiry;
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties personalNumber(String personalNumber) {
+  public DocumentWithDriverVerificationReportAllOfProperties personalNumber(@javax.annotation.Nullable String personalNumber) {
     this.personalNumber = personalNumber;
     return this;
   }
@@ -501,12 +552,12 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return personalNumber;
   }
 
-  public void setPersonalNumber(String personalNumber) {
+  public void setPersonalNumber(@javax.annotation.Nullable String personalNumber) {
     this.personalNumber = personalNumber;
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties documentNumbers(List<DocumentPropertiesDocumentNumbersInner> documentNumbers) {
+  public DocumentWithDriverVerificationReportAllOfProperties documentNumbers(@javax.annotation.Nullable List<DocumentPropertiesDocumentNumbersInner> documentNumbers) {
     this.documentNumbers = documentNumbers;
     return this;
   }
@@ -528,12 +579,12 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return documentNumbers;
   }
 
-  public void setDocumentNumbers(List<DocumentPropertiesDocumentNumbersInner> documentNumbers) {
+  public void setDocumentNumbers(@javax.annotation.Nullable List<DocumentPropertiesDocumentNumbersInner> documentNumbers) {
     this.documentNumbers = documentNumbers;
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties documentType(String documentType) {
+  public DocumentWithDriverVerificationReportAllOfProperties documentType(@javax.annotation.Nullable String documentType) {
     this.documentType = documentType;
     return this;
   }
@@ -547,12 +598,12 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return documentType;
   }
 
-  public void setDocumentType(String documentType) {
+  public void setDocumentType(@javax.annotation.Nullable String documentType) {
     this.documentType = documentType;
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties firstName(String firstName) {
+  public DocumentWithDriverVerificationReportAllOfProperties firstName(@javax.annotation.Nullable String firstName) {
     this.firstName = firstName;
     return this;
   }
@@ -566,12 +617,12 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return firstName;
   }
 
-  public void setFirstName(String firstName) {
+  public void setFirstName(@javax.annotation.Nullable String firstName) {
     this.firstName = firstName;
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties middleName(String middleName) {
+  public DocumentWithDriverVerificationReportAllOfProperties middleName(@javax.annotation.Nullable String middleName) {
     this.middleName = middleName;
     return this;
   }
@@ -585,12 +636,12 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return middleName;
   }
 
-  public void setMiddleName(String middleName) {
+  public void setMiddleName(@javax.annotation.Nullable String middleName) {
     this.middleName = middleName;
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties lastName(String lastName) {
+  public DocumentWithDriverVerificationReportAllOfProperties lastName(@javax.annotation.Nullable String lastName) {
     this.lastName = lastName;
     return this;
   }
@@ -604,12 +655,12 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return lastName;
   }
 
-  public void setLastName(String lastName) {
+  public void setLastName(@javax.annotation.Nullable String lastName) {
     this.lastName = lastName;
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties gender(String gender) {
+  public DocumentWithDriverVerificationReportAllOfProperties gender(@javax.annotation.Nullable String gender) {
     this.gender = gender;
     return this;
   }
@@ -623,12 +674,12 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return gender;
   }
 
-  public void setGender(String gender) {
+  public void setGender(@javax.annotation.Nullable String gender) {
     this.gender = gender;
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties issuingCountry(String issuingCountry) {
+  public DocumentWithDriverVerificationReportAllOfProperties issuingCountry(@javax.annotation.Nullable String issuingCountry) {
     this.issuingCountry = issuingCountry;
     return this;
   }
@@ -642,12 +693,12 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return issuingCountry;
   }
 
-  public void setIssuingCountry(String issuingCountry) {
+  public void setIssuingCountry(@javax.annotation.Nullable String issuingCountry) {
     this.issuingCountry = issuingCountry;
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties nationality(String nationality) {
+  public DocumentWithDriverVerificationReportAllOfProperties nationality(@javax.annotation.Nullable String nationality) {
     this.nationality = nationality;
     return this;
   }
@@ -661,12 +712,12 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return nationality;
   }
 
-  public void setNationality(String nationality) {
+  public void setNationality(@javax.annotation.Nullable String nationality) {
     this.nationality = nationality;
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties issuingState(String issuingState) {
+  public DocumentWithDriverVerificationReportAllOfProperties issuingState(@javax.annotation.Nullable String issuingState) {
     this.issuingState = issuingState;
     return this;
   }
@@ -680,12 +731,12 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return issuingState;
   }
 
-  public void setIssuingState(String issuingState) {
+  public void setIssuingState(@javax.annotation.Nullable String issuingState) {
     this.issuingState = issuingState;
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties issuingDate(LocalDate issuingDate) {
+  public DocumentWithDriverVerificationReportAllOfProperties issuingDate(@javax.annotation.Nullable LocalDate issuingDate) {
     this.issuingDate = issuingDate;
     return this;
   }
@@ -699,12 +750,12 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return issuingDate;
   }
 
-  public void setIssuingDate(LocalDate issuingDate) {
+  public void setIssuingDate(@javax.annotation.Nullable LocalDate issuingDate) {
     this.issuingDate = issuingDate;
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties categorisation(String categorisation) {
+  public DocumentWithDriverVerificationReportAllOfProperties categorisation(@javax.annotation.Nullable String categorisation) {
     this.categorisation = categorisation;
     return this;
   }
@@ -718,12 +769,12 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return categorisation;
   }
 
-  public void setCategorisation(String categorisation) {
+  public void setCategorisation(@javax.annotation.Nullable String categorisation) {
     this.categorisation = categorisation;
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties mrzLine1(String mrzLine1) {
+  public DocumentWithDriverVerificationReportAllOfProperties mrzLine1(@javax.annotation.Nullable String mrzLine1) {
     this.mrzLine1 = mrzLine1;
     return this;
   }
@@ -737,12 +788,12 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return mrzLine1;
   }
 
-  public void setMrzLine1(String mrzLine1) {
+  public void setMrzLine1(@javax.annotation.Nullable String mrzLine1) {
     this.mrzLine1 = mrzLine1;
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties mrzLine2(String mrzLine2) {
+  public DocumentWithDriverVerificationReportAllOfProperties mrzLine2(@javax.annotation.Nullable String mrzLine2) {
     this.mrzLine2 = mrzLine2;
     return this;
   }
@@ -756,12 +807,12 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return mrzLine2;
   }
 
-  public void setMrzLine2(String mrzLine2) {
+  public void setMrzLine2(@javax.annotation.Nullable String mrzLine2) {
     this.mrzLine2 = mrzLine2;
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties mrzLine3(String mrzLine3) {
+  public DocumentWithDriverVerificationReportAllOfProperties mrzLine3(@javax.annotation.Nullable String mrzLine3) {
     this.mrzLine3 = mrzLine3;
     return this;
   }
@@ -775,12 +826,12 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return mrzLine3;
   }
 
-  public void setMrzLine3(String mrzLine3) {
+  public void setMrzLine3(@javax.annotation.Nullable String mrzLine3) {
     this.mrzLine3 = mrzLine3;
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties address(String address) {
+  public DocumentWithDriverVerificationReportAllOfProperties address(@javax.annotation.Nullable String address) {
     this.address = address;
     return this;
   }
@@ -794,12 +845,12 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return address;
   }
 
-  public void setAddress(String address) {
+  public void setAddress(@javax.annotation.Nullable String address) {
     this.address = address;
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties placeOfBirth(String placeOfBirth) {
+  public DocumentWithDriverVerificationReportAllOfProperties placeOfBirth(@javax.annotation.Nullable String placeOfBirth) {
     this.placeOfBirth = placeOfBirth;
     return this;
   }
@@ -813,12 +864,12 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return placeOfBirth;
   }
 
-  public void setPlaceOfBirth(String placeOfBirth) {
+  public void setPlaceOfBirth(@javax.annotation.Nullable String placeOfBirth) {
     this.placeOfBirth = placeOfBirth;
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties spouseName(String spouseName) {
+  public DocumentWithDriverVerificationReportAllOfProperties spouseName(@javax.annotation.Nullable String spouseName) {
     this.spouseName = spouseName;
     return this;
   }
@@ -832,12 +883,12 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return spouseName;
   }
 
-  public void setSpouseName(String spouseName) {
+  public void setSpouseName(@javax.annotation.Nullable String spouseName) {
     this.spouseName = spouseName;
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties widowName(String widowName) {
+  public DocumentWithDriverVerificationReportAllOfProperties widowName(@javax.annotation.Nullable String widowName) {
     this.widowName = widowName;
     return this;
   }
@@ -851,12 +902,12 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return widowName;
   }
 
-  public void setWidowName(String widowName) {
+  public void setWidowName(@javax.annotation.Nullable String widowName) {
     this.widowName = widowName;
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties aliasName(String aliasName) {
+  public DocumentWithDriverVerificationReportAllOfProperties aliasName(@javax.annotation.Nullable String aliasName) {
     this.aliasName = aliasName;
     return this;
   }
@@ -870,12 +921,12 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return aliasName;
   }
 
-  public void setAliasName(String aliasName) {
+  public void setAliasName(@javax.annotation.Nullable String aliasName) {
     this.aliasName = aliasName;
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties issuingAuthority(String issuingAuthority) {
+  public DocumentWithDriverVerificationReportAllOfProperties issuingAuthority(@javax.annotation.Nullable String issuingAuthority) {
     this.issuingAuthority = issuingAuthority;
     return this;
   }
@@ -889,12 +940,12 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return issuingAuthority;
   }
 
-  public void setIssuingAuthority(String issuingAuthority) {
+  public void setIssuingAuthority(@javax.annotation.Nullable String issuingAuthority) {
     this.issuingAuthority = issuingAuthority;
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties remarks(String remarks) {
+  public DocumentWithDriverVerificationReportAllOfProperties remarks(@javax.annotation.Nullable String remarks) {
     this.remarks = remarks;
     return this;
   }
@@ -908,12 +959,12 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return remarks;
   }
 
-  public void setRemarks(String remarks) {
+  public void setRemarks(@javax.annotation.Nullable String remarks) {
     this.remarks = remarks;
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties civilState(String civilState) {
+  public DocumentWithDriverVerificationReportAllOfProperties civilState(@javax.annotation.Nullable String civilState) {
     this.civilState = civilState;
     return this;
   }
@@ -927,12 +978,12 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return civilState;
   }
 
-  public void setCivilState(String civilState) {
+  public void setCivilState(@javax.annotation.Nullable String civilState) {
     this.civilState = civilState;
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties expatriation(String expatriation) {
+  public DocumentWithDriverVerificationReportAllOfProperties expatriation(@javax.annotation.Nullable String expatriation) {
     this.expatriation = expatriation;
     return this;
   }
@@ -946,12 +997,12 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return expatriation;
   }
 
-  public void setExpatriation(String expatriation) {
+  public void setExpatriation(@javax.annotation.Nullable String expatriation) {
     this.expatriation = expatriation;
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties fatherName(String fatherName) {
+  public DocumentWithDriverVerificationReportAllOfProperties fatherName(@javax.annotation.Nullable String fatherName) {
     this.fatherName = fatherName;
     return this;
   }
@@ -965,12 +1016,12 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return fatherName;
   }
 
-  public void setFatherName(String fatherName) {
+  public void setFatherName(@javax.annotation.Nullable String fatherName) {
     this.fatherName = fatherName;
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties motherName(String motherName) {
+  public DocumentWithDriverVerificationReportAllOfProperties motherName(@javax.annotation.Nullable String motherName) {
     this.motherName = motherName;
     return this;
   }
@@ -984,12 +1035,12 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return motherName;
   }
 
-  public void setMotherName(String motherName) {
+  public void setMotherName(@javax.annotation.Nullable String motherName) {
     this.motherName = motherName;
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties religion(String religion) {
+  public DocumentWithDriverVerificationReportAllOfProperties religion(@javax.annotation.Nullable String religion) {
     this.religion = religion;
     return this;
   }
@@ -1003,12 +1054,12 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return religion;
   }
 
-  public void setReligion(String religion) {
+  public void setReligion(@javax.annotation.Nullable String religion) {
     this.religion = religion;
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties typeOfPermit(String typeOfPermit) {
+  public DocumentWithDriverVerificationReportAllOfProperties typeOfPermit(@javax.annotation.Nullable String typeOfPermit) {
     this.typeOfPermit = typeOfPermit;
     return this;
   }
@@ -1022,12 +1073,12 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return typeOfPermit;
   }
 
-  public void setTypeOfPermit(String typeOfPermit) {
+  public void setTypeOfPermit(@javax.annotation.Nullable String typeOfPermit) {
     this.typeOfPermit = typeOfPermit;
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties versionNumber(String versionNumber) {
+  public DocumentWithDriverVerificationReportAllOfProperties versionNumber(@javax.annotation.Nullable String versionNumber) {
     this.versionNumber = versionNumber;
     return this;
   }
@@ -1041,12 +1092,12 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return versionNumber;
   }
 
-  public void setVersionNumber(String versionNumber) {
+  public void setVersionNumber(@javax.annotation.Nullable String versionNumber) {
     this.versionNumber = versionNumber;
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties documentSubtype(String documentSubtype) {
+  public DocumentWithDriverVerificationReportAllOfProperties documentSubtype(@javax.annotation.Nullable String documentSubtype) {
     this.documentSubtype = documentSubtype;
     return this;
   }
@@ -1060,12 +1111,12 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return documentSubtype;
   }
 
-  public void setDocumentSubtype(String documentSubtype) {
+  public void setDocumentSubtype(@javax.annotation.Nullable String documentSubtype) {
     this.documentSubtype = documentSubtype;
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties profession(String profession) {
+  public DocumentWithDriverVerificationReportAllOfProperties profession(@javax.annotation.Nullable String profession) {
     this.profession = profession;
     return this;
   }
@@ -1079,12 +1130,12 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return profession;
   }
 
-  public void setProfession(String profession) {
+  public void setProfession(@javax.annotation.Nullable String profession) {
     this.profession = profession;
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties securityDocumentNumber(String securityDocumentNumber) {
+  public DocumentWithDriverVerificationReportAllOfProperties securityDocumentNumber(@javax.annotation.Nullable String securityDocumentNumber) {
     this.securityDocumentNumber = securityDocumentNumber;
     return this;
   }
@@ -1098,12 +1149,12 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return securityDocumentNumber;
   }
 
-  public void setSecurityDocumentNumber(String securityDocumentNumber) {
+  public void setSecurityDocumentNumber(@javax.annotation.Nullable String securityDocumentNumber) {
     this.securityDocumentNumber = securityDocumentNumber;
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties taxNumber(String taxNumber) {
+  public DocumentWithDriverVerificationReportAllOfProperties taxNumber(@javax.annotation.Nullable String taxNumber) {
     this.taxNumber = taxNumber;
     return this;
   }
@@ -1117,12 +1168,12 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return taxNumber;
   }
 
-  public void setTaxNumber(String taxNumber) {
+  public void setTaxNumber(@javax.annotation.Nullable String taxNumber) {
     this.taxNumber = taxNumber;
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties nistIdentityEvidenceStrength(NistIdentityEvidenceStrengthEnum nistIdentityEvidenceStrength) {
+  public DocumentWithDriverVerificationReportAllOfProperties nistIdentityEvidenceStrength(@javax.annotation.Nullable NistIdentityEvidenceStrengthEnum nistIdentityEvidenceStrength) {
     this.nistIdentityEvidenceStrength = nistIdentityEvidenceStrength;
     return this;
   }
@@ -1136,12 +1187,12 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return nistIdentityEvidenceStrength;
   }
 
-  public void setNistIdentityEvidenceStrength(NistIdentityEvidenceStrengthEnum nistIdentityEvidenceStrength) {
+  public void setNistIdentityEvidenceStrength(@javax.annotation.Nullable NistIdentityEvidenceStrengthEnum nistIdentityEvidenceStrength) {
     this.nistIdentityEvidenceStrength = nistIdentityEvidenceStrength;
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties hasIssuanceConfirmation(HasIssuanceConfirmationEnum hasIssuanceConfirmation) {
+  public DocumentWithDriverVerificationReportAllOfProperties hasIssuanceConfirmation(@javax.annotation.Nullable HasIssuanceConfirmationEnum hasIssuanceConfirmation) {
     this.hasIssuanceConfirmation = hasIssuanceConfirmation;
     return this;
   }
@@ -1155,12 +1206,12 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return hasIssuanceConfirmation;
   }
 
-  public void setHasIssuanceConfirmation(HasIssuanceConfirmationEnum hasIssuanceConfirmation) {
+  public void setHasIssuanceConfirmation(@javax.annotation.Nullable HasIssuanceConfirmationEnum hasIssuanceConfirmation) {
     this.hasIssuanceConfirmation = hasIssuanceConfirmation;
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties realIdCompliance(Boolean realIdCompliance) {
+  public DocumentWithDriverVerificationReportAllOfProperties realIdCompliance(@javax.annotation.Nullable Boolean realIdCompliance) {
     this.realIdCompliance = realIdCompliance;
     return this;
   }
@@ -1174,12 +1225,12 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return realIdCompliance;
   }
 
-  public void setRealIdCompliance(Boolean realIdCompliance) {
+  public void setRealIdCompliance(@javax.annotation.Nullable Boolean realIdCompliance) {
     this.realIdCompliance = realIdCompliance;
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties securityTier(SecurityTierEnum securityTier) {
+  public DocumentWithDriverVerificationReportAllOfProperties securityTier(@javax.annotation.Nullable SecurityTierEnum securityTier) {
     this.securityTier = securityTier;
     return this;
   }
@@ -1193,12 +1244,12 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return securityTier;
   }
 
-  public void setSecurityTier(SecurityTierEnum securityTier) {
+  public void setSecurityTier(@javax.annotation.Nullable SecurityTierEnum securityTier) {
     this.securityTier = securityTier;
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties addressLines(DocumentPropertiesAddressLines addressLines) {
+  public DocumentWithDriverVerificationReportAllOfProperties addressLines(@javax.annotation.Nullable DocumentPropertiesAddressLines addressLines) {
     this.addressLines = addressLines;
     return this;
   }
@@ -1212,12 +1263,12 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return addressLines;
   }
 
-  public void setAddressLines(DocumentPropertiesAddressLines addressLines) {
+  public void setAddressLines(@javax.annotation.Nullable DocumentPropertiesAddressLines addressLines) {
     this.addressLines = addressLines;
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties barcode(List<DocumentPropertiesBarcodeInner> barcode) {
+  public DocumentWithDriverVerificationReportAllOfProperties barcode(@javax.annotation.Nullable List<DocumentPropertiesBarcodeInner> barcode) {
     this.barcode = barcode;
     return this;
   }
@@ -1239,12 +1290,12 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return barcode;
   }
 
-  public void setBarcode(List<DocumentPropertiesBarcodeInner> barcode) {
+  public void setBarcode(@javax.annotation.Nullable List<DocumentPropertiesBarcodeInner> barcode) {
     this.barcode = barcode;
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties nfc(DocumentPropertiesNfc nfc) {
+  public DocumentWithDriverVerificationReportAllOfProperties nfc(@javax.annotation.Nullable DocumentPropertiesNfc nfc) {
     this.nfc = nfc;
     return this;
   }
@@ -1258,12 +1309,12 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return nfc;
   }
 
-  public void setNfc(DocumentPropertiesNfc nfc) {
+  public void setNfc(@javax.annotation.Nullable DocumentPropertiesNfc nfc) {
     this.nfc = nfc;
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties drivingLicenceInformation(DocumentPropertiesDrivingLicenceInformation drivingLicenceInformation) {
+  public DocumentWithDriverVerificationReportAllOfProperties drivingLicenceInformation(@javax.annotation.Nullable DocumentPropertiesDrivingLicenceInformation drivingLicenceInformation) {
     this.drivingLicenceInformation = drivingLicenceInformation;
     return this;
   }
@@ -1277,12 +1328,12 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return drivingLicenceInformation;
   }
 
-  public void setDrivingLicenceInformation(DocumentPropertiesDrivingLicenceInformation drivingLicenceInformation) {
+  public void setDrivingLicenceInformation(@javax.annotation.Nullable DocumentPropertiesDrivingLicenceInformation drivingLicenceInformation) {
     this.drivingLicenceInformation = drivingLicenceInformation;
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties documentClassification(DocumentPropertiesDocumentClassification documentClassification) {
+  public DocumentWithDriverVerificationReportAllOfProperties documentClassification(@javax.annotation.Nullable DocumentPropertiesDocumentClassification documentClassification) {
     this.documentClassification = documentClassification;
     return this;
   }
@@ -1296,12 +1347,12 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return documentClassification;
   }
 
-  public void setDocumentClassification(DocumentPropertiesDocumentClassification documentClassification) {
+  public void setDocumentClassification(@javax.annotation.Nullable DocumentPropertiesDocumentClassification documentClassification) {
     this.documentClassification = documentClassification;
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties extractedData(DocumentPropertiesExtractedData extractedData) {
+  public DocumentWithDriverVerificationReportAllOfProperties extractedData(@javax.annotation.Nullable DocumentPropertiesExtractedData extractedData) {
     this.extractedData = extractedData;
     return this;
   }
@@ -1315,12 +1366,12 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return extractedData;
   }
 
-  public void setExtractedData(DocumentPropertiesExtractedData extractedData) {
+  public void setExtractedData(@javax.annotation.Nullable DocumentPropertiesExtractedData extractedData) {
     this.extractedData = extractedData;
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties driversLicence(Boolean driversLicence) {
+  public DocumentWithDriverVerificationReportAllOfProperties driversLicence(@javax.annotation.Nullable Boolean driversLicence) {
     this.driversLicence = driversLicence;
     return this;
   }
@@ -1334,12 +1385,12 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return driversLicence;
   }
 
-  public void setDriversLicence(Boolean driversLicence) {
+  public void setDriversLicence(@javax.annotation.Nullable Boolean driversLicence) {
     this.driversLicence = driversLicence;
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties restrictedLicence(Boolean restrictedLicence) {
+  public DocumentWithDriverVerificationReportAllOfProperties restrictedLicence(@javax.annotation.Nullable Boolean restrictedLicence) {
     this.restrictedLicence = restrictedLicence;
     return this;
   }
@@ -1353,12 +1404,12 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return restrictedLicence;
   }
 
-  public void setRestrictedLicence(Boolean restrictedLicence) {
+  public void setRestrictedLicence(@javax.annotation.Nullable Boolean restrictedLicence) {
     this.restrictedLicence = restrictedLicence;
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties rawLicenceCategory(String rawLicenceCategory) {
+  public DocumentWithDriverVerificationReportAllOfProperties rawLicenceCategory(@javax.annotation.Nullable String rawLicenceCategory) {
     this.rawLicenceCategory = rawLicenceCategory;
     return this;
   }
@@ -1372,12 +1423,12 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return rawLicenceCategory;
   }
 
-  public void setRawLicenceCategory(String rawLicenceCategory) {
+  public void setRawLicenceCategory(@javax.annotation.Nullable String rawLicenceCategory) {
     this.rawLicenceCategory = rawLicenceCategory;
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties rawVehicleClasses(String rawVehicleClasses) {
+  public DocumentWithDriverVerificationReportAllOfProperties rawVehicleClasses(@javax.annotation.Nullable String rawVehicleClasses) {
     this.rawVehicleClasses = rawVehicleClasses;
     return this;
   }
@@ -1391,12 +1442,12 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return rawVehicleClasses;
   }
 
-  public void setRawVehicleClasses(String rawVehicleClasses) {
+  public void setRawVehicleClasses(@javax.annotation.Nullable String rawVehicleClasses) {
     this.rawVehicleClasses = rawVehicleClasses;
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties vehicleClassDetails(List<DocumentWithDriverVerificationReportAllOfPropertiesAllOfVehicleClassDetailsInner> vehicleClassDetails) {
+  public DocumentWithDriverVerificationReportAllOfProperties vehicleClassDetails(@javax.annotation.Nullable List<DocumentWithDriverVerificationReportAllOfPropertiesAllOfVehicleClassDetailsInner> vehicleClassDetails) {
     this.vehicleClassDetails = vehicleClassDetails;
     return this;
   }
@@ -1418,12 +1469,12 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return vehicleClassDetails;
   }
 
-  public void setVehicleClassDetails(List<DocumentWithDriverVerificationReportAllOfPropertiesAllOfVehicleClassDetailsInner> vehicleClassDetails) {
+  public void setVehicleClassDetails(@javax.annotation.Nullable List<DocumentWithDriverVerificationReportAllOfPropertiesAllOfVehicleClassDetailsInner> vehicleClassDetails) {
     this.vehicleClassDetails = vehicleClassDetails;
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties passengerVehicle(DocumentWithDriverVerificationReportAllOfPropertiesAllOfPassengerVehicle passengerVehicle) {
+  public DocumentWithDriverVerificationReportAllOfProperties passengerVehicle(@javax.annotation.Nullable DocumentWithDriverVerificationReportAllOfPropertiesAllOfPassengerVehicle passengerVehicle) {
     this.passengerVehicle = passengerVehicle;
     return this;
   }
@@ -1437,7 +1488,7 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     return passengerVehicle;
   }
 
-  public void setPassengerVehicle(DocumentWithDriverVerificationReportAllOfPropertiesAllOfPassengerVehicle passengerVehicle) {
+  public void setPassengerVehicle(@javax.annotation.Nullable DocumentWithDriverVerificationReportAllOfPropertiesAllOfPassengerVehicle passengerVehicle) {
     this.passengerVehicle = passengerVehicle;
   }
 

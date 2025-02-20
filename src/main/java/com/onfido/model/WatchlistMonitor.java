@@ -52,10 +52,11 @@ import com.onfido.JSON;
 /**
  * WatchlistMonitor
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class WatchlistMonitor {
   public static final String SERIALIZED_NAME_APPLICANT_ID = "applicant_id";
   @SerializedName(SERIALIZED_NAME_APPLICANT_ID)
+  @javax.annotation.Nonnull
   private UUID applicantId;
 
   /**
@@ -114,32 +115,38 @@ public class WatchlistMonitor {
 
   public static final String SERIALIZED_NAME_REPORT_NAME = "report_name";
   @SerializedName(SERIALIZED_NAME_REPORT_NAME)
+  @javax.annotation.Nonnull
   private ReportNameEnum reportName;
 
   public static final String SERIALIZED_NAME_TAGS = "tags";
   @SerializedName(SERIALIZED_NAME_TAGS)
+  @javax.annotation.Nullable
   private List<String> tags = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nonnull
   private UUID id;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
+  @javax.annotation.Nullable
   private OffsetDateTime createdAt;
 
   public static final String SERIALIZED_NAME_DELETED_AT = "deleted_at";
   @SerializedName(SERIALIZED_NAME_DELETED_AT)
+  @javax.annotation.Nullable
   private OffsetDateTime deletedAt;
 
   public static final String SERIALIZED_NAME_IS_SANDBOX = "is_sandbox";
   @SerializedName(SERIALIZED_NAME_IS_SANDBOX)
+  @javax.annotation.Nullable
   private Boolean isSandbox = false;
 
   public WatchlistMonitor() {
   }
 
-  public WatchlistMonitor applicantId(UUID applicantId) {
+  public WatchlistMonitor applicantId(@javax.annotation.Nonnull UUID applicantId) {
     this.applicantId = applicantId;
     return this;
   }
@@ -153,12 +160,12 @@ public class WatchlistMonitor {
     return applicantId;
   }
 
-  public void setApplicantId(UUID applicantId) {
+  public void setApplicantId(@javax.annotation.Nonnull UUID applicantId) {
     this.applicantId = applicantId;
   }
 
 
-  public WatchlistMonitor reportName(ReportNameEnum reportName) {
+  public WatchlistMonitor reportName(@javax.annotation.Nonnull ReportNameEnum reportName) {
     this.reportName = reportName;
     return this;
   }
@@ -172,12 +179,12 @@ public class WatchlistMonitor {
     return reportName;
   }
 
-  public void setReportName(ReportNameEnum reportName) {
+  public void setReportName(@javax.annotation.Nonnull ReportNameEnum reportName) {
     this.reportName = reportName;
   }
 
 
-  public WatchlistMonitor tags(List<String> tags) {
+  public WatchlistMonitor tags(@javax.annotation.Nullable List<String> tags) {
     this.tags = tags;
     return this;
   }
@@ -199,12 +206,12 @@ public class WatchlistMonitor {
     return tags;
   }
 
-  public void setTags(List<String> tags) {
+  public void setTags(@javax.annotation.Nullable List<String> tags) {
     this.tags = tags;
   }
 
 
-  public WatchlistMonitor id(UUID id) {
+  public WatchlistMonitor id(@javax.annotation.Nonnull UUID id) {
     this.id = id;
     return this;
   }
@@ -218,12 +225,12 @@ public class WatchlistMonitor {
     return id;
   }
 
-  public void setId(UUID id) {
+  public void setId(@javax.annotation.Nonnull UUID id) {
     this.id = id;
   }
 
 
-  public WatchlistMonitor createdAt(OffsetDateTime createdAt) {
+  public WatchlistMonitor createdAt(@javax.annotation.Nullable OffsetDateTime createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -237,12 +244,12 @@ public class WatchlistMonitor {
     return createdAt;
   }
 
-  public void setCreatedAt(OffsetDateTime createdAt) {
+  public void setCreatedAt(@javax.annotation.Nullable OffsetDateTime createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public WatchlistMonitor deletedAt(OffsetDateTime deletedAt) {
+  public WatchlistMonitor deletedAt(@javax.annotation.Nullable OffsetDateTime deletedAt) {
     this.deletedAt = deletedAt;
     return this;
   }
@@ -256,12 +263,12 @@ public class WatchlistMonitor {
     return deletedAt;
   }
 
-  public void setDeletedAt(OffsetDateTime deletedAt) {
+  public void setDeletedAt(@javax.annotation.Nullable OffsetDateTime deletedAt) {
     this.deletedAt = deletedAt;
   }
 
 
-  public WatchlistMonitor isSandbox(Boolean isSandbox) {
+  public WatchlistMonitor isSandbox(@javax.annotation.Nullable Boolean isSandbox) {
     this.isSandbox = isSandbox;
     return this;
   }
@@ -275,7 +282,7 @@ public class WatchlistMonitor {
     return isSandbox;
   }
 
-  public void setIsSandbox(Boolean isSandbox) {
+  public void setIsSandbox(@javax.annotation.Nullable Boolean isSandbox) {
     this.isSandbox = isSandbox;
   }
 

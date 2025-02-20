@@ -49,20 +49,22 @@ import com.onfido.JSON;
 /**
  * WatchlistMonitorMatch
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class WatchlistMonitorMatch {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nullable
   private UUID id;
 
   public static final String SERIALIZED_NAME_ENABLED = "enabled";
   @SerializedName(SERIALIZED_NAME_ENABLED)
+  @javax.annotation.Nullable
   private Boolean enabled;
 
   public WatchlistMonitorMatch() {
   }
 
-  public WatchlistMonitorMatch id(UUID id) {
+  public WatchlistMonitorMatch id(@javax.annotation.Nullable UUID id) {
     this.id = id;
     return this;
   }
@@ -76,12 +78,12 @@ public class WatchlistMonitorMatch {
     return id;
   }
 
-  public void setId(UUID id) {
+  public void setId(@javax.annotation.Nullable UUID id) {
     this.id = id;
   }
 
 
-  public WatchlistMonitorMatch enabled(Boolean enabled) {
+  public WatchlistMonitorMatch enabled(@javax.annotation.Nullable Boolean enabled) {
     this.enabled = enabled;
     return this;
   }
@@ -95,7 +97,7 @@ public class WatchlistMonitorMatch {
     return enabled;
   }
 
-  public void setEnabled(Boolean enabled) {
+  public void setEnabled(@javax.annotation.Nullable Boolean enabled) {
     this.enabled = enabled;
   }
 

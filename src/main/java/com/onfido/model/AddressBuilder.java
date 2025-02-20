@@ -50,60 +50,72 @@ import com.onfido.JSON;
 /**
  * AddressBuilder
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class AddressBuilder {
   public static final String SERIALIZED_NAME_FLAT_NUMBER = "flat_number";
   @SerializedName(SERIALIZED_NAME_FLAT_NUMBER)
+  @javax.annotation.Nullable
   private String flatNumber;
 
   public static final String SERIALIZED_NAME_BUILDING_NUMBER = "building_number";
   @SerializedName(SERIALIZED_NAME_BUILDING_NUMBER)
+  @javax.annotation.Nullable
   private String buildingNumber;
 
   public static final String SERIALIZED_NAME_BUILDING_NAME = "building_name";
   @SerializedName(SERIALIZED_NAME_BUILDING_NAME)
+  @javax.annotation.Nullable
   private String buildingName;
 
   public static final String SERIALIZED_NAME_STREET = "street";
   @SerializedName(SERIALIZED_NAME_STREET)
+  @javax.annotation.Nullable
   private String street;
 
   public static final String SERIALIZED_NAME_SUB_STREET = "sub_street";
   @SerializedName(SERIALIZED_NAME_SUB_STREET)
+  @javax.annotation.Nullable
   private String subStreet;
 
   public static final String SERIALIZED_NAME_TOWN = "town";
   @SerializedName(SERIALIZED_NAME_TOWN)
+  @javax.annotation.Nullable
   private String town;
 
   public static final String SERIALIZED_NAME_POSTCODE = "postcode";
   @SerializedName(SERIALIZED_NAME_POSTCODE)
+  @javax.annotation.Nonnull
   private String postcode;
 
   public static final String SERIALIZED_NAME_COUNTRY = "country";
   @SerializedName(SERIALIZED_NAME_COUNTRY)
+  @javax.annotation.Nonnull
   private CountryCodes country;
 
   public static final String SERIALIZED_NAME_STATE = "state";
   @SerializedName(SERIALIZED_NAME_STATE)
+  @javax.annotation.Nullable
   private String state;
 
   public static final String SERIALIZED_NAME_LINE1 = "line1";
   @SerializedName(SERIALIZED_NAME_LINE1)
+  @javax.annotation.Nullable
   private String line1;
 
   public static final String SERIALIZED_NAME_LINE2 = "line2";
   @SerializedName(SERIALIZED_NAME_LINE2)
+  @javax.annotation.Nullable
   private String line2;
 
   public static final String SERIALIZED_NAME_LINE3 = "line3";
   @SerializedName(SERIALIZED_NAME_LINE3)
+  @javax.annotation.Nullable
   private String line3;
 
   public AddressBuilder() {
   }
 
-  public AddressBuilder flatNumber(String flatNumber) {
+  public AddressBuilder flatNumber(@javax.annotation.Nullable String flatNumber) {
     this.flatNumber = flatNumber;
     return this;
   }
@@ -117,12 +129,12 @@ public class AddressBuilder {
     return flatNumber;
   }
 
-  public void setFlatNumber(String flatNumber) {
+  public void setFlatNumber(@javax.annotation.Nullable String flatNumber) {
     this.flatNumber = flatNumber;
   }
 
 
-  public AddressBuilder buildingNumber(String buildingNumber) {
+  public AddressBuilder buildingNumber(@javax.annotation.Nullable String buildingNumber) {
     this.buildingNumber = buildingNumber;
     return this;
   }
@@ -136,12 +148,12 @@ public class AddressBuilder {
     return buildingNumber;
   }
 
-  public void setBuildingNumber(String buildingNumber) {
+  public void setBuildingNumber(@javax.annotation.Nullable String buildingNumber) {
     this.buildingNumber = buildingNumber;
   }
 
 
-  public AddressBuilder buildingName(String buildingName) {
+  public AddressBuilder buildingName(@javax.annotation.Nullable String buildingName) {
     this.buildingName = buildingName;
     return this;
   }
@@ -155,12 +167,12 @@ public class AddressBuilder {
     return buildingName;
   }
 
-  public void setBuildingName(String buildingName) {
+  public void setBuildingName(@javax.annotation.Nullable String buildingName) {
     this.buildingName = buildingName;
   }
 
 
-  public AddressBuilder street(String street) {
+  public AddressBuilder street(@javax.annotation.Nullable String street) {
     this.street = street;
     return this;
   }
@@ -174,12 +186,12 @@ public class AddressBuilder {
     return street;
   }
 
-  public void setStreet(String street) {
+  public void setStreet(@javax.annotation.Nullable String street) {
     this.street = street;
   }
 
 
-  public AddressBuilder subStreet(String subStreet) {
+  public AddressBuilder subStreet(@javax.annotation.Nullable String subStreet) {
     this.subStreet = subStreet;
     return this;
   }
@@ -193,12 +205,12 @@ public class AddressBuilder {
     return subStreet;
   }
 
-  public void setSubStreet(String subStreet) {
+  public void setSubStreet(@javax.annotation.Nullable String subStreet) {
     this.subStreet = subStreet;
   }
 
 
-  public AddressBuilder town(String town) {
+  public AddressBuilder town(@javax.annotation.Nullable String town) {
     this.town = town;
     return this;
   }
@@ -212,12 +224,12 @@ public class AddressBuilder {
     return town;
   }
 
-  public void setTown(String town) {
+  public void setTown(@javax.annotation.Nullable String town) {
     this.town = town;
   }
 
 
-  public AddressBuilder postcode(String postcode) {
+  public AddressBuilder postcode(@javax.annotation.Nonnull String postcode) {
     this.postcode = postcode;
     return this;
   }
@@ -231,12 +243,12 @@ public class AddressBuilder {
     return postcode;
   }
 
-  public void setPostcode(String postcode) {
+  public void setPostcode(@javax.annotation.Nonnull String postcode) {
     this.postcode = postcode;
   }
 
 
-  public AddressBuilder country(CountryCodes country) {
+  public AddressBuilder country(@javax.annotation.Nonnull CountryCodes country) {
     this.country = country;
     return this;
   }
@@ -250,12 +262,12 @@ public class AddressBuilder {
     return country;
   }
 
-  public void setCountry(CountryCodes country) {
+  public void setCountry(@javax.annotation.Nonnull CountryCodes country) {
     this.country = country;
   }
 
 
-  public AddressBuilder state(String state) {
+  public AddressBuilder state(@javax.annotation.Nullable String state) {
     this.state = state;
     return this;
   }
@@ -269,12 +281,12 @@ public class AddressBuilder {
     return state;
   }
 
-  public void setState(String state) {
+  public void setState(@javax.annotation.Nullable String state) {
     this.state = state;
   }
 
 
-  public AddressBuilder line1(String line1) {
+  public AddressBuilder line1(@javax.annotation.Nullable String line1) {
     this.line1 = line1;
     return this;
   }
@@ -288,12 +300,12 @@ public class AddressBuilder {
     return line1;
   }
 
-  public void setLine1(String line1) {
+  public void setLine1(@javax.annotation.Nullable String line1) {
     this.line1 = line1;
   }
 
 
-  public AddressBuilder line2(String line2) {
+  public AddressBuilder line2(@javax.annotation.Nullable String line2) {
     this.line2 = line2;
     return this;
   }
@@ -307,12 +319,12 @@ public class AddressBuilder {
     return line2;
   }
 
-  public void setLine2(String line2) {
+  public void setLine2(@javax.annotation.Nullable String line2) {
     this.line2 = line2;
   }
 
 
-  public AddressBuilder line3(String line3) {
+  public AddressBuilder line3(@javax.annotation.Nullable String line3) {
     this.line3 = line3;
     return this;
   }
@@ -326,7 +338,7 @@ public class AddressBuilder {
     return line3;
   }
 
-  public void setLine3(String line3) {
+  public void setLine3(@javax.annotation.Nullable String line3) {
     this.line3 = line3;
   }
 

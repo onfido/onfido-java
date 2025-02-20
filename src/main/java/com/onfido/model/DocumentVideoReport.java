@@ -59,56 +59,67 @@ import com.onfido.JSON;
 /**
  * DocumentVideoReport
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class DocumentVideoReport {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nonnull
   private UUID id;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
+  @javax.annotation.Nullable
   private OffsetDateTime createdAt;
 
   public static final String SERIALIZED_NAME_HREF = "href";
   @SerializedName(SERIALIZED_NAME_HREF)
+  @javax.annotation.Nullable
   private String href;
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
+  @javax.annotation.Nullable
   private ReportStatus status;
 
   public static final String SERIALIZED_NAME_RESULT = "result";
   @SerializedName(SERIALIZED_NAME_RESULT)
+  @javax.annotation.Nullable
   private ReportResult result;
 
   public static final String SERIALIZED_NAME_SUB_RESULT = "sub_result";
   @SerializedName(SERIALIZED_NAME_SUB_RESULT)
+  @javax.annotation.Nullable
   private ReportSubResult subResult;
 
   public static final String SERIALIZED_NAME_CHECK_ID = "check_id";
   @SerializedName(SERIALIZED_NAME_CHECK_ID)
+  @javax.annotation.Nullable
   private UUID checkId;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nonnull
   private ReportName name;
 
   public static final String SERIALIZED_NAME_DOCUMENTS = "documents";
   @SerializedName(SERIALIZED_NAME_DOCUMENTS)
+  @javax.annotation.Nullable
   private List<ReportDocument> documents = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_BREAKDOWN = "breakdown";
   @SerializedName(SERIALIZED_NAME_BREAKDOWN)
+  @javax.annotation.Nullable
   private DocumentBreakdown breakdown;
 
   public static final String SERIALIZED_NAME_PROPERTIES = "properties";
   @SerializedName(SERIALIZED_NAME_PROPERTIES)
+  @javax.annotation.Nullable
   private DocumentProperties properties;
 
   public DocumentVideoReport() {
   }
 
-  public DocumentVideoReport id(UUID id) {
+  public DocumentVideoReport id(@javax.annotation.Nonnull UUID id) {
     this.id = id;
     return this;
   }
@@ -122,12 +133,12 @@ public class DocumentVideoReport {
     return id;
   }
 
-  public void setId(UUID id) {
+  public void setId(@javax.annotation.Nonnull UUID id) {
     this.id = id;
   }
 
 
-  public DocumentVideoReport createdAt(OffsetDateTime createdAt) {
+  public DocumentVideoReport createdAt(@javax.annotation.Nullable OffsetDateTime createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -141,12 +152,12 @@ public class DocumentVideoReport {
     return createdAt;
   }
 
-  public void setCreatedAt(OffsetDateTime createdAt) {
+  public void setCreatedAt(@javax.annotation.Nullable OffsetDateTime createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public DocumentVideoReport href(String href) {
+  public DocumentVideoReport href(@javax.annotation.Nullable String href) {
     this.href = href;
     return this;
   }
@@ -160,12 +171,12 @@ public class DocumentVideoReport {
     return href;
   }
 
-  public void setHref(String href) {
+  public void setHref(@javax.annotation.Nullable String href) {
     this.href = href;
   }
 
 
-  public DocumentVideoReport status(ReportStatus status) {
+  public DocumentVideoReport status(@javax.annotation.Nullable ReportStatus status) {
     this.status = status;
     return this;
   }
@@ -179,12 +190,12 @@ public class DocumentVideoReport {
     return status;
   }
 
-  public void setStatus(ReportStatus status) {
+  public void setStatus(@javax.annotation.Nullable ReportStatus status) {
     this.status = status;
   }
 
 
-  public DocumentVideoReport result(ReportResult result) {
+  public DocumentVideoReport result(@javax.annotation.Nullable ReportResult result) {
     this.result = result;
     return this;
   }
@@ -198,12 +209,12 @@ public class DocumentVideoReport {
     return result;
   }
 
-  public void setResult(ReportResult result) {
+  public void setResult(@javax.annotation.Nullable ReportResult result) {
     this.result = result;
   }
 
 
-  public DocumentVideoReport subResult(ReportSubResult subResult) {
+  public DocumentVideoReport subResult(@javax.annotation.Nullable ReportSubResult subResult) {
     this.subResult = subResult;
     return this;
   }
@@ -217,12 +228,12 @@ public class DocumentVideoReport {
     return subResult;
   }
 
-  public void setSubResult(ReportSubResult subResult) {
+  public void setSubResult(@javax.annotation.Nullable ReportSubResult subResult) {
     this.subResult = subResult;
   }
 
 
-  public DocumentVideoReport checkId(UUID checkId) {
+  public DocumentVideoReport checkId(@javax.annotation.Nullable UUID checkId) {
     this.checkId = checkId;
     return this;
   }
@@ -236,12 +247,12 @@ public class DocumentVideoReport {
     return checkId;
   }
 
-  public void setCheckId(UUID checkId) {
+  public void setCheckId(@javax.annotation.Nullable UUID checkId) {
     this.checkId = checkId;
   }
 
 
-  public DocumentVideoReport name(ReportName name) {
+  public DocumentVideoReport name(@javax.annotation.Nonnull ReportName name) {
     this.name = name;
     return this;
   }
@@ -255,12 +266,12 @@ public class DocumentVideoReport {
     return name;
   }
 
-  public void setName(ReportName name) {
+  public void setName(@javax.annotation.Nonnull ReportName name) {
     this.name = name;
   }
 
 
-  public DocumentVideoReport documents(List<ReportDocument> documents) {
+  public DocumentVideoReport documents(@javax.annotation.Nullable List<ReportDocument> documents) {
     this.documents = documents;
     return this;
   }
@@ -282,12 +293,12 @@ public class DocumentVideoReport {
     return documents;
   }
 
-  public void setDocuments(List<ReportDocument> documents) {
+  public void setDocuments(@javax.annotation.Nullable List<ReportDocument> documents) {
     this.documents = documents;
   }
 
 
-  public DocumentVideoReport breakdown(DocumentBreakdown breakdown) {
+  public DocumentVideoReport breakdown(@javax.annotation.Nullable DocumentBreakdown breakdown) {
     this.breakdown = breakdown;
     return this;
   }
@@ -301,12 +312,12 @@ public class DocumentVideoReport {
     return breakdown;
   }
 
-  public void setBreakdown(DocumentBreakdown breakdown) {
+  public void setBreakdown(@javax.annotation.Nullable DocumentBreakdown breakdown) {
     this.breakdown = breakdown;
   }
 
 
-  public DocumentVideoReport properties(DocumentProperties properties) {
+  public DocumentVideoReport properties(@javax.annotation.Nullable DocumentProperties properties) {
     this.properties = properties;
     return this;
   }
@@ -320,7 +331,7 @@ public class DocumentVideoReport {
     return properties;
   }
 
-  public void setProperties(DocumentProperties properties) {
+  public void setProperties(@javax.annotation.Nullable DocumentProperties properties) {
     this.properties = properties;
   }
 

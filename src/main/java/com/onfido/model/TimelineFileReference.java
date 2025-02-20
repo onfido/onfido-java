@@ -49,20 +49,22 @@ import com.onfido.JSON;
 /**
  * TimelineFileReference
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class TimelineFileReference {
   public static final String SERIALIZED_NAME_WORKFLOW_TIMELINE_FILE_ID = "workflow_timeline_file_id";
   @SerializedName(SERIALIZED_NAME_WORKFLOW_TIMELINE_FILE_ID)
+  @javax.annotation.Nonnull
   private UUID workflowTimelineFileId;
 
   public static final String SERIALIZED_NAME_HREF = "href";
   @SerializedName(SERIALIZED_NAME_HREF)
+  @javax.annotation.Nonnull
   private String href;
 
   public TimelineFileReference() {
   }
 
-  public TimelineFileReference workflowTimelineFileId(UUID workflowTimelineFileId) {
+  public TimelineFileReference workflowTimelineFileId(@javax.annotation.Nonnull UUID workflowTimelineFileId) {
     this.workflowTimelineFileId = workflowTimelineFileId;
     return this;
   }
@@ -76,12 +78,12 @@ public class TimelineFileReference {
     return workflowTimelineFileId;
   }
 
-  public void setWorkflowTimelineFileId(UUID workflowTimelineFileId) {
+  public void setWorkflowTimelineFileId(@javax.annotation.Nonnull UUID workflowTimelineFileId) {
     this.workflowTimelineFileId = workflowTimelineFileId;
   }
 
 
-  public TimelineFileReference href(String href) {
+  public TimelineFileReference href(@javax.annotation.Nonnull String href) {
     this.href = href;
     return this;
   }
@@ -95,7 +97,7 @@ public class TimelineFileReference {
     return href;
   }
 
-  public void setHref(String href) {
+  public void setHref(@javax.annotation.Nonnull String href) {
     this.href = href;
   }
 

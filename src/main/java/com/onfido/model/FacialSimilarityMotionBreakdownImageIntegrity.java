@@ -49,20 +49,22 @@ import com.onfido.JSON;
 /**
  * Asserts whether the quality and integrity of the uploaded files were sufficient to perform a face comparison.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class FacialSimilarityMotionBreakdownImageIntegrity {
   public static final String SERIALIZED_NAME_RESULT = "result";
   @SerializedName(SERIALIZED_NAME_RESULT)
+  @javax.annotation.Nullable
   private String result;
 
   public static final String SERIALIZED_NAME_BREAKDOWN = "breakdown";
   @SerializedName(SERIALIZED_NAME_BREAKDOWN)
+  @javax.annotation.Nullable
   private FacialSimilarityMotionBreakdownImageIntegrityBreakdown breakdown;
 
   public FacialSimilarityMotionBreakdownImageIntegrity() {
   }
 
-  public FacialSimilarityMotionBreakdownImageIntegrity result(String result) {
+  public FacialSimilarityMotionBreakdownImageIntegrity result(@javax.annotation.Nullable String result) {
     this.result = result;
     return this;
   }
@@ -76,12 +78,12 @@ public class FacialSimilarityMotionBreakdownImageIntegrity {
     return result;
   }
 
-  public void setResult(String result) {
+  public void setResult(@javax.annotation.Nullable String result) {
     this.result = result;
   }
 
 
-  public FacialSimilarityMotionBreakdownImageIntegrity breakdown(FacialSimilarityMotionBreakdownImageIntegrityBreakdown breakdown) {
+  public FacialSimilarityMotionBreakdownImageIntegrity breakdown(@javax.annotation.Nullable FacialSimilarityMotionBreakdownImageIntegrityBreakdown breakdown) {
     this.breakdown = breakdown;
     return this;
   }
@@ -95,7 +97,7 @@ public class FacialSimilarityMotionBreakdownImageIntegrity {
     return breakdown;
   }
 
-  public void setBreakdown(FacialSimilarityMotionBreakdownImageIntegrityBreakdown breakdown) {
+  public void setBreakdown(@javax.annotation.Nullable FacialSimilarityMotionBreakdownImageIntegrityBreakdown breakdown) {
     this.breakdown = breakdown;
   }
 

@@ -49,28 +49,32 @@ import com.onfido.JSON;
 /**
  * DocumentWithDriverVerificationReportAllOfPropertiesAllOfVehicleClassDetailsInner
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class DocumentWithDriverVerificationReportAllOfPropertiesAllOfVehicleClassDetailsInner {
   public static final String SERIALIZED_NAME_CATEGORY = "category";
   @SerializedName(SERIALIZED_NAME_CATEGORY)
+  @javax.annotation.Nullable
   private String category;
 
   public static final String SERIALIZED_NAME_CODES = "codes";
   @SerializedName(SERIALIZED_NAME_CODES)
+  @javax.annotation.Nullable
   private String codes;
 
   public static final String SERIALIZED_NAME_OBTAINMENT_DATE = "obtainment_date";
   @SerializedName(SERIALIZED_NAME_OBTAINMENT_DATE)
+  @javax.annotation.Nullable
   private LocalDate obtainmentDate;
 
   public static final String SERIALIZED_NAME_EXPIRY_DATE = "expiry_date";
   @SerializedName(SERIALIZED_NAME_EXPIRY_DATE)
+  @javax.annotation.Nullable
   private LocalDate expiryDate;
 
   public DocumentWithDriverVerificationReportAllOfPropertiesAllOfVehicleClassDetailsInner() {
   }
 
-  public DocumentWithDriverVerificationReportAllOfPropertiesAllOfVehicleClassDetailsInner category(String category) {
+  public DocumentWithDriverVerificationReportAllOfPropertiesAllOfVehicleClassDetailsInner category(@javax.annotation.Nullable String category) {
     this.category = category;
     return this;
   }
@@ -84,12 +88,12 @@ public class DocumentWithDriverVerificationReportAllOfPropertiesAllOfVehicleClas
     return category;
   }
 
-  public void setCategory(String category) {
+  public void setCategory(@javax.annotation.Nullable String category) {
     this.category = category;
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfPropertiesAllOfVehicleClassDetailsInner codes(String codes) {
+  public DocumentWithDriverVerificationReportAllOfPropertiesAllOfVehicleClassDetailsInner codes(@javax.annotation.Nullable String codes) {
     this.codes = codes;
     return this;
   }
@@ -103,12 +107,12 @@ public class DocumentWithDriverVerificationReportAllOfPropertiesAllOfVehicleClas
     return codes;
   }
 
-  public void setCodes(String codes) {
+  public void setCodes(@javax.annotation.Nullable String codes) {
     this.codes = codes;
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfPropertiesAllOfVehicleClassDetailsInner obtainmentDate(LocalDate obtainmentDate) {
+  public DocumentWithDriverVerificationReportAllOfPropertiesAllOfVehicleClassDetailsInner obtainmentDate(@javax.annotation.Nullable LocalDate obtainmentDate) {
     this.obtainmentDate = obtainmentDate;
     return this;
   }
@@ -122,12 +126,12 @@ public class DocumentWithDriverVerificationReportAllOfPropertiesAllOfVehicleClas
     return obtainmentDate;
   }
 
-  public void setObtainmentDate(LocalDate obtainmentDate) {
+  public void setObtainmentDate(@javax.annotation.Nullable LocalDate obtainmentDate) {
     this.obtainmentDate = obtainmentDate;
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfPropertiesAllOfVehicleClassDetailsInner expiryDate(LocalDate expiryDate) {
+  public DocumentWithDriverVerificationReportAllOfPropertiesAllOfVehicleClassDetailsInner expiryDate(@javax.annotation.Nullable LocalDate expiryDate) {
     this.expiryDate = expiryDate;
     return this;
   }
@@ -141,7 +145,7 @@ public class DocumentWithDriverVerificationReportAllOfPropertiesAllOfVehicleClas
     return expiryDate;
   }
 
-  public void setExpiryDate(LocalDate expiryDate) {
+  public void setExpiryDate(@javax.annotation.Nullable LocalDate expiryDate) {
     this.expiryDate = expiryDate;
   }
 

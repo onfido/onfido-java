@@ -56,72 +56,87 @@ import com.onfido.JSON;
 /**
  * WorkflowRun
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class WorkflowRun {
   public static final String SERIALIZED_NAME_APPLICANT_ID = "applicant_id";
   @SerializedName(SERIALIZED_NAME_APPLICANT_ID)
+  @javax.annotation.Nonnull
   private UUID applicantId;
 
   public static final String SERIALIZED_NAME_WORKFLOW_ID = "workflow_id";
   @SerializedName(SERIALIZED_NAME_WORKFLOW_ID)
+  @javax.annotation.Nonnull
   private UUID workflowId;
 
   public static final String SERIALIZED_NAME_TAGS = "tags";
   @SerializedName(SERIALIZED_NAME_TAGS)
+  @javax.annotation.Nullable
   private List<String> tags;
 
   public static final String SERIALIZED_NAME_CUSTOMER_USER_ID = "customer_user_id";
   @SerializedName(SERIALIZED_NAME_CUSTOMER_USER_ID)
+  @javax.annotation.Nullable
   private String customerUserId;
 
   public static final String SERIALIZED_NAME_LINK = "link";
   @SerializedName(SERIALIZED_NAME_LINK)
+  @javax.annotation.Nullable
   private WorkflowRunLink link;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
+  @javax.annotation.Nullable
   private OffsetDateTime createdAt;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
+  @javax.annotation.Nullable
   private OffsetDateTime updatedAt;
 
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nonnull
   private UUID id;
 
   public static final String SERIALIZED_NAME_WORKFLOW_VERSION_ID = "workflow_version_id";
   @SerializedName(SERIALIZED_NAME_WORKFLOW_VERSION_ID)
+  @javax.annotation.Nullable
   private Integer workflowVersionId;
 
   public static final String SERIALIZED_NAME_DASHBOARD_URL = "dashboard_url";
   @SerializedName(SERIALIZED_NAME_DASHBOARD_URL)
+  @javax.annotation.Nullable
   private String dashboardUrl;
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
+  @javax.annotation.Nullable
   private WorkflowRunStatus status;
 
   public static final String SERIALIZED_NAME_OUTPUT = "output";
   @SerializedName(SERIALIZED_NAME_OUTPUT)
+  @javax.annotation.Nullable
   private Object output;
 
   public static final String SERIALIZED_NAME_REASONS = "reasons";
   @SerializedName(SERIALIZED_NAME_REASONS)
+  @javax.annotation.Nullable
   private List<String> reasons = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_ERROR = "error";
   @SerializedName(SERIALIZED_NAME_ERROR)
+  @javax.annotation.Nullable
   private WorkflowRunError error;
 
   public static final String SERIALIZED_NAME_SDK_TOKEN = "sdk_token";
   @SerializedName(SERIALIZED_NAME_SDK_TOKEN)
+  @javax.annotation.Nullable
   private String sdkToken;
 
   public WorkflowRun() {
   }
 
-  public WorkflowRun applicantId(UUID applicantId) {
+  public WorkflowRun applicantId(@javax.annotation.Nonnull UUID applicantId) {
     this.applicantId = applicantId;
     return this;
   }
@@ -135,12 +150,12 @@ public class WorkflowRun {
     return applicantId;
   }
 
-  public void setApplicantId(UUID applicantId) {
+  public void setApplicantId(@javax.annotation.Nonnull UUID applicantId) {
     this.applicantId = applicantId;
   }
 
 
-  public WorkflowRun workflowId(UUID workflowId) {
+  public WorkflowRun workflowId(@javax.annotation.Nonnull UUID workflowId) {
     this.workflowId = workflowId;
     return this;
   }
@@ -154,12 +169,12 @@ public class WorkflowRun {
     return workflowId;
   }
 
-  public void setWorkflowId(UUID workflowId) {
+  public void setWorkflowId(@javax.annotation.Nonnull UUID workflowId) {
     this.workflowId = workflowId;
   }
 
 
-  public WorkflowRun tags(List<String> tags) {
+  public WorkflowRun tags(@javax.annotation.Nullable List<String> tags) {
     this.tags = tags;
     return this;
   }
@@ -181,12 +196,12 @@ public class WorkflowRun {
     return tags;
   }
 
-  public void setTags(List<String> tags) {
+  public void setTags(@javax.annotation.Nullable List<String> tags) {
     this.tags = tags;
   }
 
 
-  public WorkflowRun customerUserId(String customerUserId) {
+  public WorkflowRun customerUserId(@javax.annotation.Nullable String customerUserId) {
     this.customerUserId = customerUserId;
     return this;
   }
@@ -200,12 +215,12 @@ public class WorkflowRun {
     return customerUserId;
   }
 
-  public void setCustomerUserId(String customerUserId) {
+  public void setCustomerUserId(@javax.annotation.Nullable String customerUserId) {
     this.customerUserId = customerUserId;
   }
 
 
-  public WorkflowRun link(WorkflowRunLink link) {
+  public WorkflowRun link(@javax.annotation.Nullable WorkflowRunLink link) {
     this.link = link;
     return this;
   }
@@ -219,12 +234,12 @@ public class WorkflowRun {
     return link;
   }
 
-  public void setLink(WorkflowRunLink link) {
+  public void setLink(@javax.annotation.Nullable WorkflowRunLink link) {
     this.link = link;
   }
 
 
-  public WorkflowRun createdAt(OffsetDateTime createdAt) {
+  public WorkflowRun createdAt(@javax.annotation.Nullable OffsetDateTime createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -238,12 +253,12 @@ public class WorkflowRun {
     return createdAt;
   }
 
-  public void setCreatedAt(OffsetDateTime createdAt) {
+  public void setCreatedAt(@javax.annotation.Nullable OffsetDateTime createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public WorkflowRun updatedAt(OffsetDateTime updatedAt) {
+  public WorkflowRun updatedAt(@javax.annotation.Nullable OffsetDateTime updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -257,12 +272,12 @@ public class WorkflowRun {
     return updatedAt;
   }
 
-  public void setUpdatedAt(OffsetDateTime updatedAt) {
+  public void setUpdatedAt(@javax.annotation.Nullable OffsetDateTime updatedAt) {
     this.updatedAt = updatedAt;
   }
 
 
-  public WorkflowRun id(UUID id) {
+  public WorkflowRun id(@javax.annotation.Nonnull UUID id) {
     this.id = id;
     return this;
   }
@@ -276,12 +291,12 @@ public class WorkflowRun {
     return id;
   }
 
-  public void setId(UUID id) {
+  public void setId(@javax.annotation.Nonnull UUID id) {
     this.id = id;
   }
 
 
-  public WorkflowRun workflowVersionId(Integer workflowVersionId) {
+  public WorkflowRun workflowVersionId(@javax.annotation.Nullable Integer workflowVersionId) {
     this.workflowVersionId = workflowVersionId;
     return this;
   }
@@ -295,12 +310,12 @@ public class WorkflowRun {
     return workflowVersionId;
   }
 
-  public void setWorkflowVersionId(Integer workflowVersionId) {
+  public void setWorkflowVersionId(@javax.annotation.Nullable Integer workflowVersionId) {
     this.workflowVersionId = workflowVersionId;
   }
 
 
-  public WorkflowRun dashboardUrl(String dashboardUrl) {
+  public WorkflowRun dashboardUrl(@javax.annotation.Nullable String dashboardUrl) {
     this.dashboardUrl = dashboardUrl;
     return this;
   }
@@ -314,12 +329,12 @@ public class WorkflowRun {
     return dashboardUrl;
   }
 
-  public void setDashboardUrl(String dashboardUrl) {
+  public void setDashboardUrl(@javax.annotation.Nullable String dashboardUrl) {
     this.dashboardUrl = dashboardUrl;
   }
 
 
-  public WorkflowRun status(WorkflowRunStatus status) {
+  public WorkflowRun status(@javax.annotation.Nullable WorkflowRunStatus status) {
     this.status = status;
     return this;
   }
@@ -333,12 +348,12 @@ public class WorkflowRun {
     return status;
   }
 
-  public void setStatus(WorkflowRunStatus status) {
+  public void setStatus(@javax.annotation.Nullable WorkflowRunStatus status) {
     this.status = status;
   }
 
 
-  public WorkflowRun output(Object output) {
+  public WorkflowRun output(@javax.annotation.Nullable Object output) {
     this.output = output;
     return this;
   }
@@ -352,12 +367,12 @@ public class WorkflowRun {
     return output;
   }
 
-  public void setOutput(Object output) {
+  public void setOutput(@javax.annotation.Nullable Object output) {
     this.output = output;
   }
 
 
-  public WorkflowRun reasons(List<String> reasons) {
+  public WorkflowRun reasons(@javax.annotation.Nullable List<String> reasons) {
     this.reasons = reasons;
     return this;
   }
@@ -379,12 +394,12 @@ public class WorkflowRun {
     return reasons;
   }
 
-  public void setReasons(List<String> reasons) {
+  public void setReasons(@javax.annotation.Nullable List<String> reasons) {
     this.reasons = reasons;
   }
 
 
-  public WorkflowRun error(WorkflowRunError error) {
+  public WorkflowRun error(@javax.annotation.Nullable WorkflowRunError error) {
     this.error = error;
     return this;
   }
@@ -398,12 +413,12 @@ public class WorkflowRun {
     return error;
   }
 
-  public void setError(WorkflowRunError error) {
+  public void setError(@javax.annotation.Nullable WorkflowRunError error) {
     this.error = error;
   }
 
 
-  public WorkflowRun sdkToken(String sdkToken) {
+  public WorkflowRun sdkToken(@javax.annotation.Nullable String sdkToken) {
     this.sdkToken = sdkToken;
     return this;
   }
@@ -417,7 +432,7 @@ public class WorkflowRun {
     return sdkToken;
   }
 
-  public void setSdkToken(String sdkToken) {
+  public void setSdkToken(@javax.annotation.Nullable String sdkToken) {
     this.sdkToken = sdkToken;
   }
 

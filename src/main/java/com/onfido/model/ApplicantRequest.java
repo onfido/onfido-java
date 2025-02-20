@@ -53,24 +53,27 @@ import com.onfido.JSON;
 /**
  * ApplicantRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class ApplicantRequest {
   public static final String SERIALIZED_NAME_CONSENTS = "consents";
   @SerializedName(SERIALIZED_NAME_CONSENTS)
+  @javax.annotation.Nullable
   private List<ApplicantConsentBuilder> consents = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_ADDRESS = "address";
   @SerializedName(SERIALIZED_NAME_ADDRESS)
+  @javax.annotation.Nullable
   private AddressBuilder address;
 
   public static final String SERIALIZED_NAME_LOCATION = "location";
   @SerializedName(SERIALIZED_NAME_LOCATION)
+  @javax.annotation.Nullable
   private LocationBuilder location;
 
   public ApplicantRequest() {
   }
 
-  public ApplicantRequest consents(List<ApplicantConsentBuilder> consents) {
+  public ApplicantRequest consents(@javax.annotation.Nullable List<ApplicantConsentBuilder> consents) {
     this.consents = consents;
     return this;
   }
@@ -92,12 +95,12 @@ public class ApplicantRequest {
     return consents;
   }
 
-  public void setConsents(List<ApplicantConsentBuilder> consents) {
+  public void setConsents(@javax.annotation.Nullable List<ApplicantConsentBuilder> consents) {
     this.consents = consents;
   }
 
 
-  public ApplicantRequest address(AddressBuilder address) {
+  public ApplicantRequest address(@javax.annotation.Nullable AddressBuilder address) {
     this.address = address;
     return this;
   }
@@ -111,12 +114,12 @@ public class ApplicantRequest {
     return address;
   }
 
-  public void setAddress(AddressBuilder address) {
+  public void setAddress(@javax.annotation.Nullable AddressBuilder address) {
     this.address = address;
   }
 
 
-  public ApplicantRequest location(LocationBuilder location) {
+  public ApplicantRequest location(@javax.annotation.Nullable LocationBuilder location) {
     this.location = location;
     return this;
   }
@@ -130,7 +133,7 @@ public class ApplicantRequest {
     return location;
   }
 
-  public void setLocation(LocationBuilder location) {
+  public void setLocation(@javax.annotation.Nullable LocationBuilder location) {
     this.location = location;
   }
 

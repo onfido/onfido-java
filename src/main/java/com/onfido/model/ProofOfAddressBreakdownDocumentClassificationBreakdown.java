@@ -49,16 +49,17 @@ import com.onfido.JSON;
 /**
  * ProofOfAddressBreakdownDocumentClassificationBreakdown
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class ProofOfAddressBreakdownDocumentClassificationBreakdown {
   public static final String SERIALIZED_NAME_SUPPORTED_DOCUMENT = "supported_document";
   @SerializedName(SERIALIZED_NAME_SUPPORTED_DOCUMENT)
+  @javax.annotation.Nullable
   private DocumentBreakdownDataComparisonBreakdownIssuingCountry supportedDocument;
 
   public ProofOfAddressBreakdownDocumentClassificationBreakdown() {
   }
 
-  public ProofOfAddressBreakdownDocumentClassificationBreakdown supportedDocument(DocumentBreakdownDataComparisonBreakdownIssuingCountry supportedDocument) {
+  public ProofOfAddressBreakdownDocumentClassificationBreakdown supportedDocument(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry supportedDocument) {
     this.supportedDocument = supportedDocument;
     return this;
   }
@@ -72,7 +73,7 @@ public class ProofOfAddressBreakdownDocumentClassificationBreakdown {
     return supportedDocument;
   }
 
-  public void setSupportedDocument(DocumentBreakdownDataComparisonBreakdownIssuingCountry supportedDocument) {
+  public void setSupportedDocument(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry supportedDocument) {
     this.supportedDocument = supportedDocument;
   }
 

@@ -48,20 +48,22 @@ import com.onfido.JSON;
 /**
  * DocumentPropertiesDocumentNumbersInner
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class DocumentPropertiesDocumentNumbersInner {
   public static final String SERIALIZED_NAME_VALUE = "value";
   @SerializedName(SERIALIZED_NAME_VALUE)
+  @javax.annotation.Nullable
   private String value;
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
+  @javax.annotation.Nullable
   private String type;
 
   public DocumentPropertiesDocumentNumbersInner() {
   }
 
-  public DocumentPropertiesDocumentNumbersInner value(String value) {
+  public DocumentPropertiesDocumentNumbersInner value(@javax.annotation.Nullable String value) {
     this.value = value;
     return this;
   }
@@ -75,12 +77,12 @@ public class DocumentPropertiesDocumentNumbersInner {
     return value;
   }
 
-  public void setValue(String value) {
+  public void setValue(@javax.annotation.Nullable String value) {
     this.value = value;
   }
 
 
-  public DocumentPropertiesDocumentNumbersInner type(String type) {
+  public DocumentPropertiesDocumentNumbersInner type(@javax.annotation.Nullable String type) {
     this.type = type;
     return this;
   }
@@ -94,7 +96,7 @@ public class DocumentPropertiesDocumentNumbersInner {
     return type;
   }
 
-  public void setType(String type) {
+  public void setType(@javax.annotation.Nullable String type) {
     this.type = type;
   }
 

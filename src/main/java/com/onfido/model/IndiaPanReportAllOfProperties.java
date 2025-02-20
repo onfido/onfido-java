@@ -49,16 +49,17 @@ import com.onfido.JSON;
 /**
  * IndiaPanReportAllOfProperties
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class IndiaPanReportAllOfProperties {
   public static final String SERIALIZED_NAME_DEVICE = "device";
   @SerializedName(SERIALIZED_NAME_DEVICE)
+  @javax.annotation.Nullable
   private IndiaPanReportAllOfPropertiesDevice device;
 
   public IndiaPanReportAllOfProperties() {
   }
 
-  public IndiaPanReportAllOfProperties device(IndiaPanReportAllOfPropertiesDevice device) {
+  public IndiaPanReportAllOfProperties device(@javax.annotation.Nullable IndiaPanReportAllOfPropertiesDevice device) {
     this.device = device;
     return this;
   }
@@ -72,7 +73,7 @@ public class IndiaPanReportAllOfProperties {
     return device;
   }
 
-  public void setDevice(IndiaPanReportAllOfPropertiesDevice device) {
+  public void setDevice(@javax.annotation.Nullable IndiaPanReportAllOfPropertiesDevice device) {
     this.device = device;
   }
 

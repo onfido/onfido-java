@@ -50,16 +50,17 @@ import com.onfido.JSON;
 /**
  * WorkflowRunRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class WorkflowRunRequest {
   public static final String SERIALIZED_NAME_CUSTOM_DATA = "custom_data";
   @SerializedName(SERIALIZED_NAME_CUSTOM_DATA)
+  @javax.annotation.Nullable
   private Map<String, Object> customData = new HashMap<>();
 
   public WorkflowRunRequest() {
   }
 
-  public WorkflowRunRequest customData(Map<String, Object> customData) {
+  public WorkflowRunRequest customData(@javax.annotation.Nullable Map<String, Object> customData) {
     this.customData = customData;
     return this;
   }
@@ -81,7 +82,7 @@ public class WorkflowRunRequest {
     return customData;
   }
 
-  public void setCustomData(Map<String, Object> customData) {
+  public void setCustomData(@javax.annotation.Nullable Map<String, Object> customData) {
     this.customData = customData;
   }
 

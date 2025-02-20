@@ -49,36 +49,42 @@ import com.onfido.JSON;
 /**
  * UsDrivingLicenceBreakdownAddressBreakdown
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class UsDrivingLicenceBreakdownAddressBreakdown {
   public static final String SERIALIZED_NAME_CITY = "city";
   @SerializedName(SERIALIZED_NAME_CITY)
+  @javax.annotation.Nullable
   private DocumentBreakdownDataComparisonBreakdownIssuingCountry city;
 
   public static final String SERIALIZED_NAME_LINE1 = "line_1";
   @SerializedName(SERIALIZED_NAME_LINE1)
+  @javax.annotation.Nullable
   private DocumentBreakdownDataComparisonBreakdownIssuingCountry line1;
 
   public static final String SERIALIZED_NAME_LINE2 = "line_2";
   @SerializedName(SERIALIZED_NAME_LINE2)
+  @javax.annotation.Nullable
   private DocumentBreakdownDataComparisonBreakdownIssuingCountry line2;
 
   public static final String SERIALIZED_NAME_STATE_CODE = "state_code";
   @SerializedName(SERIALIZED_NAME_STATE_CODE)
+  @javax.annotation.Nullable
   private DocumentBreakdownDataComparisonBreakdownIssuingCountry stateCode;
 
   public static final String SERIALIZED_NAME_ZIP4 = "zip4";
   @SerializedName(SERIALIZED_NAME_ZIP4)
+  @javax.annotation.Nullable
   private DocumentBreakdownDataComparisonBreakdownIssuingCountry zip4;
 
   public static final String SERIALIZED_NAME_ZIP5 = "zip5";
   @SerializedName(SERIALIZED_NAME_ZIP5)
+  @javax.annotation.Nullable
   private DocumentBreakdownDataComparisonBreakdownIssuingCountry zip5;
 
   public UsDrivingLicenceBreakdownAddressBreakdown() {
   }
 
-  public UsDrivingLicenceBreakdownAddressBreakdown city(DocumentBreakdownDataComparisonBreakdownIssuingCountry city) {
+  public UsDrivingLicenceBreakdownAddressBreakdown city(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry city) {
     this.city = city;
     return this;
   }
@@ -92,12 +98,12 @@ public class UsDrivingLicenceBreakdownAddressBreakdown {
     return city;
   }
 
-  public void setCity(DocumentBreakdownDataComparisonBreakdownIssuingCountry city) {
+  public void setCity(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry city) {
     this.city = city;
   }
 
 
-  public UsDrivingLicenceBreakdownAddressBreakdown line1(DocumentBreakdownDataComparisonBreakdownIssuingCountry line1) {
+  public UsDrivingLicenceBreakdownAddressBreakdown line1(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry line1) {
     this.line1 = line1;
     return this;
   }
@@ -111,12 +117,12 @@ public class UsDrivingLicenceBreakdownAddressBreakdown {
     return line1;
   }
 
-  public void setLine1(DocumentBreakdownDataComparisonBreakdownIssuingCountry line1) {
+  public void setLine1(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry line1) {
     this.line1 = line1;
   }
 
 
-  public UsDrivingLicenceBreakdownAddressBreakdown line2(DocumentBreakdownDataComparisonBreakdownIssuingCountry line2) {
+  public UsDrivingLicenceBreakdownAddressBreakdown line2(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry line2) {
     this.line2 = line2;
     return this;
   }
@@ -130,12 +136,12 @@ public class UsDrivingLicenceBreakdownAddressBreakdown {
     return line2;
   }
 
-  public void setLine2(DocumentBreakdownDataComparisonBreakdownIssuingCountry line2) {
+  public void setLine2(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry line2) {
     this.line2 = line2;
   }
 
 
-  public UsDrivingLicenceBreakdownAddressBreakdown stateCode(DocumentBreakdownDataComparisonBreakdownIssuingCountry stateCode) {
+  public UsDrivingLicenceBreakdownAddressBreakdown stateCode(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry stateCode) {
     this.stateCode = stateCode;
     return this;
   }
@@ -149,12 +155,12 @@ public class UsDrivingLicenceBreakdownAddressBreakdown {
     return stateCode;
   }
 
-  public void setStateCode(DocumentBreakdownDataComparisonBreakdownIssuingCountry stateCode) {
+  public void setStateCode(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry stateCode) {
     this.stateCode = stateCode;
   }
 
 
-  public UsDrivingLicenceBreakdownAddressBreakdown zip4(DocumentBreakdownDataComparisonBreakdownIssuingCountry zip4) {
+  public UsDrivingLicenceBreakdownAddressBreakdown zip4(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry zip4) {
     this.zip4 = zip4;
     return this;
   }
@@ -168,12 +174,12 @@ public class UsDrivingLicenceBreakdownAddressBreakdown {
     return zip4;
   }
 
-  public void setZip4(DocumentBreakdownDataComparisonBreakdownIssuingCountry zip4) {
+  public void setZip4(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry zip4) {
     this.zip4 = zip4;
   }
 
 
-  public UsDrivingLicenceBreakdownAddressBreakdown zip5(DocumentBreakdownDataComparisonBreakdownIssuingCountry zip5) {
+  public UsDrivingLicenceBreakdownAddressBreakdown zip5(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry zip5) {
     this.zip5 = zip5;
     return this;
   }
@@ -187,7 +193,7 @@ public class UsDrivingLicenceBreakdownAddressBreakdown {
     return zip5;
   }
 
-  public void setZip5(DocumentBreakdownDataComparisonBreakdownIssuingCountry zip5) {
+  public void setZip5(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry zip5) {
     this.zip5 = zip5;
   }
 

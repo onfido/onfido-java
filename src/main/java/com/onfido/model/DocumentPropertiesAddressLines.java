@@ -48,36 +48,42 @@ import com.onfido.JSON;
 /**
  * DocumentPropertiesAddressLines
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class DocumentPropertiesAddressLines {
   public static final String SERIALIZED_NAME_STREET_ADDRESS = "street_address";
   @SerializedName(SERIALIZED_NAME_STREET_ADDRESS)
+  @javax.annotation.Nullable
   private String streetAddress;
 
   public static final String SERIALIZED_NAME_STATE = "state";
   @SerializedName(SERIALIZED_NAME_STATE)
+  @javax.annotation.Nullable
   private String state;
 
   public static final String SERIALIZED_NAME_POSTAL_CODE = "postal_code";
   @SerializedName(SERIALIZED_NAME_POSTAL_CODE)
+  @javax.annotation.Nullable
   private String postalCode;
 
   public static final String SERIALIZED_NAME_COUNTRY = "country";
   @SerializedName(SERIALIZED_NAME_COUNTRY)
+  @javax.annotation.Nullable
   private String country;
 
   public static final String SERIALIZED_NAME_CITY = "city";
   @SerializedName(SERIALIZED_NAME_CITY)
+  @javax.annotation.Nullable
   private String city;
 
   public static final String SERIALIZED_NAME_COUNTRY_CODE = "country_code";
   @SerializedName(SERIALIZED_NAME_COUNTRY_CODE)
+  @javax.annotation.Nullable
   private String countryCode;
 
   public DocumentPropertiesAddressLines() {
   }
 
-  public DocumentPropertiesAddressLines streetAddress(String streetAddress) {
+  public DocumentPropertiesAddressLines streetAddress(@javax.annotation.Nullable String streetAddress) {
     this.streetAddress = streetAddress;
     return this;
   }
@@ -91,12 +97,12 @@ public class DocumentPropertiesAddressLines {
     return streetAddress;
   }
 
-  public void setStreetAddress(String streetAddress) {
+  public void setStreetAddress(@javax.annotation.Nullable String streetAddress) {
     this.streetAddress = streetAddress;
   }
 
 
-  public DocumentPropertiesAddressLines state(String state) {
+  public DocumentPropertiesAddressLines state(@javax.annotation.Nullable String state) {
     this.state = state;
     return this;
   }
@@ -110,12 +116,12 @@ public class DocumentPropertiesAddressLines {
     return state;
   }
 
-  public void setState(String state) {
+  public void setState(@javax.annotation.Nullable String state) {
     this.state = state;
   }
 
 
-  public DocumentPropertiesAddressLines postalCode(String postalCode) {
+  public DocumentPropertiesAddressLines postalCode(@javax.annotation.Nullable String postalCode) {
     this.postalCode = postalCode;
     return this;
   }
@@ -129,12 +135,12 @@ public class DocumentPropertiesAddressLines {
     return postalCode;
   }
 
-  public void setPostalCode(String postalCode) {
+  public void setPostalCode(@javax.annotation.Nullable String postalCode) {
     this.postalCode = postalCode;
   }
 
 
-  public DocumentPropertiesAddressLines country(String country) {
+  public DocumentPropertiesAddressLines country(@javax.annotation.Nullable String country) {
     this.country = country;
     return this;
   }
@@ -148,12 +154,12 @@ public class DocumentPropertiesAddressLines {
     return country;
   }
 
-  public void setCountry(String country) {
+  public void setCountry(@javax.annotation.Nullable String country) {
     this.country = country;
   }
 
 
-  public DocumentPropertiesAddressLines city(String city) {
+  public DocumentPropertiesAddressLines city(@javax.annotation.Nullable String city) {
     this.city = city;
     return this;
   }
@@ -167,12 +173,12 @@ public class DocumentPropertiesAddressLines {
     return city;
   }
 
-  public void setCity(String city) {
+  public void setCity(@javax.annotation.Nullable String city) {
     this.city = city;
   }
 
 
-  public DocumentPropertiesAddressLines countryCode(String countryCode) {
+  public DocumentPropertiesAddressLines countryCode(@javax.annotation.Nullable String countryCode) {
     this.countryCode = countryCode;
     return this;
   }
@@ -186,7 +192,7 @@ public class DocumentPropertiesAddressLines {
     return countryCode;
   }
 
-  public void setCountryCode(String countryCode) {
+  public void setCountryCode(@javax.annotation.Nullable String countryCode) {
     this.countryCode = countryCode;
   }
 

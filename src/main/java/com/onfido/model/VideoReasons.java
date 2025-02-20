@@ -48,28 +48,32 @@ import com.onfido.JSON;
 /**
  * VideoReasons
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class VideoReasons {
   public static final String SERIALIZED_NAME_FAKE_WEBCAM = "fake_webcam";
   @SerializedName(SERIALIZED_NAME_FAKE_WEBCAM)
+  @javax.annotation.Nullable
   private String fakeWebcam;
 
   public static final String SERIALIZED_NAME_CHALLENGE_REUSE = "challenge_reuse";
   @SerializedName(SERIALIZED_NAME_CHALLENGE_REUSE)
+  @javax.annotation.Nullable
   private String challengeReuse;
 
   public static final String SERIALIZED_NAME_EMULATOR = "emulator";
   @SerializedName(SERIALIZED_NAME_EMULATOR)
+  @javax.annotation.Nullable
   private String emulator;
 
   public static final String SERIALIZED_NAME_REASONS = "reasons";
   @SerializedName(SERIALIZED_NAME_REASONS)
+  @javax.annotation.Nullable
   private String reasons;
 
   public VideoReasons() {
   }
 
-  public VideoReasons fakeWebcam(String fakeWebcam) {
+  public VideoReasons fakeWebcam(@javax.annotation.Nullable String fakeWebcam) {
     this.fakeWebcam = fakeWebcam;
     return this;
   }
@@ -83,12 +87,12 @@ public class VideoReasons {
     return fakeWebcam;
   }
 
-  public void setFakeWebcam(String fakeWebcam) {
+  public void setFakeWebcam(@javax.annotation.Nullable String fakeWebcam) {
     this.fakeWebcam = fakeWebcam;
   }
 
 
-  public VideoReasons challengeReuse(String challengeReuse) {
+  public VideoReasons challengeReuse(@javax.annotation.Nullable String challengeReuse) {
     this.challengeReuse = challengeReuse;
     return this;
   }
@@ -102,12 +106,12 @@ public class VideoReasons {
     return challengeReuse;
   }
 
-  public void setChallengeReuse(String challengeReuse) {
+  public void setChallengeReuse(@javax.annotation.Nullable String challengeReuse) {
     this.challengeReuse = challengeReuse;
   }
 
 
-  public VideoReasons emulator(String emulator) {
+  public VideoReasons emulator(@javax.annotation.Nullable String emulator) {
     this.emulator = emulator;
     return this;
   }
@@ -121,12 +125,12 @@ public class VideoReasons {
     return emulator;
   }
 
-  public void setEmulator(String emulator) {
+  public void setEmulator(@javax.annotation.Nullable String emulator) {
     this.emulator = emulator;
   }
 
 
-  public VideoReasons reasons(String reasons) {
+  public VideoReasons reasons(@javax.annotation.Nullable String reasons) {
     this.reasons = reasons;
     return this;
   }
@@ -140,7 +144,7 @@ public class VideoReasons {
     return reasons;
   }
 
-  public void setReasons(String reasons) {
+  public void setReasons(@javax.annotation.Nullable String reasons) {
     this.reasons = reasons;
   }
 

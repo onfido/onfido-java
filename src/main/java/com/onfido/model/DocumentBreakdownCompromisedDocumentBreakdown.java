@@ -49,20 +49,22 @@ import com.onfido.JSON;
 /**
  * DocumentBreakdownCompromisedDocumentBreakdown
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class DocumentBreakdownCompromisedDocumentBreakdown {
   public static final String SERIALIZED_NAME_DOCUMENT_DATABASE = "document_database";
   @SerializedName(SERIALIZED_NAME_DOCUMENT_DATABASE)
+  @javax.annotation.Nullable
   private DocumentBreakdownDataComparisonBreakdownIssuingCountry documentDatabase;
 
   public static final String SERIALIZED_NAME_REPEAT_ATTEMPTS = "repeat_attempts";
   @SerializedName(SERIALIZED_NAME_REPEAT_ATTEMPTS)
+  @javax.annotation.Nullable
   private DocumentBreakdownDataComparisonBreakdownIssuingCountry repeatAttempts;
 
   public DocumentBreakdownCompromisedDocumentBreakdown() {
   }
 
-  public DocumentBreakdownCompromisedDocumentBreakdown documentDatabase(DocumentBreakdownDataComparisonBreakdownIssuingCountry documentDatabase) {
+  public DocumentBreakdownCompromisedDocumentBreakdown documentDatabase(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry documentDatabase) {
     this.documentDatabase = documentDatabase;
     return this;
   }
@@ -76,12 +78,12 @@ public class DocumentBreakdownCompromisedDocumentBreakdown {
     return documentDatabase;
   }
 
-  public void setDocumentDatabase(DocumentBreakdownDataComparisonBreakdownIssuingCountry documentDatabase) {
+  public void setDocumentDatabase(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry documentDatabase) {
     this.documentDatabase = documentDatabase;
   }
 
 
-  public DocumentBreakdownCompromisedDocumentBreakdown repeatAttempts(DocumentBreakdownDataComparisonBreakdownIssuingCountry repeatAttempts) {
+  public DocumentBreakdownCompromisedDocumentBreakdown repeatAttempts(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry repeatAttempts) {
     this.repeatAttempts = repeatAttempts;
     return this;
   }
@@ -95,7 +97,7 @@ public class DocumentBreakdownCompromisedDocumentBreakdown {
     return repeatAttempts;
   }
 
-  public void setRepeatAttempts(DocumentBreakdownDataComparisonBreakdownIssuingCountry repeatAttempts) {
+  public void setRepeatAttempts(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry repeatAttempts) {
     this.repeatAttempts = repeatAttempts;
   }
 

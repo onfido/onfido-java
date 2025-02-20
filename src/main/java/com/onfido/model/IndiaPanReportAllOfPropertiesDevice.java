@@ -48,20 +48,22 @@ import com.onfido.JSON;
 /**
  * IndiaPanReportAllOfPropertiesDevice
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class IndiaPanReportAllOfPropertiesDevice {
   public static final String SERIALIZED_NAME_PAN = "pan";
   @SerializedName(SERIALIZED_NAME_PAN)
+  @javax.annotation.Nullable
   private String pan;
 
   public static final String SERIALIZED_NAME_FULL_NAME = "full_name";
   @SerializedName(SERIALIZED_NAME_FULL_NAME)
+  @javax.annotation.Nullable
   private String fullName;
 
   public IndiaPanReportAllOfPropertiesDevice() {
   }
 
-  public IndiaPanReportAllOfPropertiesDevice pan(String pan) {
+  public IndiaPanReportAllOfPropertiesDevice pan(@javax.annotation.Nullable String pan) {
     this.pan = pan;
     return this;
   }
@@ -75,12 +77,12 @@ public class IndiaPanReportAllOfPropertiesDevice {
     return pan;
   }
 
-  public void setPan(String pan) {
+  public void setPan(@javax.annotation.Nullable String pan) {
     this.pan = pan;
   }
 
 
-  public IndiaPanReportAllOfPropertiesDevice fullName(String fullName) {
+  public IndiaPanReportAllOfPropertiesDevice fullName(@javax.annotation.Nullable String fullName) {
     this.fullName = fullName;
     return this;
   }
@@ -94,7 +96,7 @@ public class IndiaPanReportAllOfPropertiesDevice {
     return fullName;
   }
 
-  public void setFullName(String fullName) {
+  public void setFullName(@javax.annotation.Nullable String fullName) {
     this.fullName = fullName;
   }
 

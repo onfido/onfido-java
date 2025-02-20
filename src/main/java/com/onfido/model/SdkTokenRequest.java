@@ -49,28 +49,32 @@ import com.onfido.JSON;
 /**
  * SdkTokenRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class SdkTokenRequest {
   public static final String SERIALIZED_NAME_APPLICANT_ID = "applicant_id";
   @SerializedName(SERIALIZED_NAME_APPLICANT_ID)
+  @javax.annotation.Nonnull
   private UUID applicantId;
 
   public static final String SERIALIZED_NAME_REFERRER = "referrer";
   @SerializedName(SERIALIZED_NAME_REFERRER)
+  @javax.annotation.Nullable
   private String referrer;
 
   public static final String SERIALIZED_NAME_APPLICATION_ID = "application_id";
   @SerializedName(SERIALIZED_NAME_APPLICATION_ID)
+  @javax.annotation.Nullable
   private String applicationId;
 
   public static final String SERIALIZED_NAME_CROSS_DEVICE_URL = "cross_device_url";
   @SerializedName(SERIALIZED_NAME_CROSS_DEVICE_URL)
+  @javax.annotation.Nullable
   private String crossDeviceUrl;
 
   public SdkTokenRequest() {
   }
 
-  public SdkTokenRequest applicantId(UUID applicantId) {
+  public SdkTokenRequest applicantId(@javax.annotation.Nonnull UUID applicantId) {
     this.applicantId = applicantId;
     return this;
   }
@@ -84,12 +88,12 @@ public class SdkTokenRequest {
     return applicantId;
   }
 
-  public void setApplicantId(UUID applicantId) {
+  public void setApplicantId(@javax.annotation.Nonnull UUID applicantId) {
     this.applicantId = applicantId;
   }
 
 
-  public SdkTokenRequest referrer(String referrer) {
+  public SdkTokenRequest referrer(@javax.annotation.Nullable String referrer) {
     this.referrer = referrer;
     return this;
   }
@@ -103,12 +107,12 @@ public class SdkTokenRequest {
     return referrer;
   }
 
-  public void setReferrer(String referrer) {
+  public void setReferrer(@javax.annotation.Nullable String referrer) {
     this.referrer = referrer;
   }
 
 
-  public SdkTokenRequest applicationId(String applicationId) {
+  public SdkTokenRequest applicationId(@javax.annotation.Nullable String applicationId) {
     this.applicationId = applicationId;
     return this;
   }
@@ -122,12 +126,12 @@ public class SdkTokenRequest {
     return applicationId;
   }
 
-  public void setApplicationId(String applicationId) {
+  public void setApplicationId(@javax.annotation.Nullable String applicationId) {
     this.applicationId = applicationId;
   }
 
 
-  public SdkTokenRequest crossDeviceUrl(String crossDeviceUrl) {
+  public SdkTokenRequest crossDeviceUrl(@javax.annotation.Nullable String crossDeviceUrl) {
     this.crossDeviceUrl = crossDeviceUrl;
     return this;
   }
@@ -141,7 +145,7 @@ public class SdkTokenRequest {
     return crossDeviceUrl;
   }
 
-  public void setCrossDeviceUrl(String crossDeviceUrl) {
+  public void setCrossDeviceUrl(@javax.annotation.Nullable String crossDeviceUrl) {
     this.crossDeviceUrl = crossDeviceUrl;
   }
 

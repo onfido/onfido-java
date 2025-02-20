@@ -51,16 +51,17 @@ import com.onfido.JSON;
 /**
  * DocumentReportShared
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class DocumentReportShared {
   public static final String SERIALIZED_NAME_DOCUMENTS = "documents";
   @SerializedName(SERIALIZED_NAME_DOCUMENTS)
+  @javax.annotation.Nullable
   private List<ReportDocument> documents = new ArrayList<>();
 
   public DocumentReportShared() {
   }
 
-  public DocumentReportShared documents(List<ReportDocument> documents) {
+  public DocumentReportShared documents(@javax.annotation.Nullable List<ReportDocument> documents) {
     this.documents = documents;
     return this;
   }
@@ -82,7 +83,7 @@ public class DocumentReportShared {
     return documents;
   }
 
-  public void setDocuments(List<ReportDocument> documents) {
+  public void setDocuments(@javax.annotation.Nullable List<ReportDocument> documents) {
     this.documents = documents;
   }
 

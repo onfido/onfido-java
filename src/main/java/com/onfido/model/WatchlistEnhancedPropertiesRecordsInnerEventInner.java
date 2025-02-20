@@ -50,32 +50,37 @@ import com.onfido.JSON;
 /**
  * WatchlistEnhancedPropertiesRecordsInnerEventInner
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class WatchlistEnhancedPropertiesRecordsInnerEventInner {
   public static final String SERIALIZED_NAME_CATEGORY = "category";
   @SerializedName(SERIALIZED_NAME_CATEGORY)
+  @javax.annotation.Nullable
   private String category;
 
   public static final String SERIALIZED_NAME_EVENT_DATE = "event_date";
   @SerializedName(SERIALIZED_NAME_EVENT_DATE)
+  @javax.annotation.Nullable
   private LocalDate eventDate;
 
   public static final String SERIALIZED_NAME_EVENT_DESCRIPTION = "event_description";
   @SerializedName(SERIALIZED_NAME_EVENT_DESCRIPTION)
+  @javax.annotation.Nullable
   private String eventDescription;
 
   public static final String SERIALIZED_NAME_SOURCE = "source";
   @SerializedName(SERIALIZED_NAME_SOURCE)
+  @javax.annotation.Nullable
   private WatchlistEnhancedPropertiesRecordsInnerEventInnerSource source;
 
   public static final String SERIALIZED_NAME_SUB_CATEGORY = "sub_category";
   @SerializedName(SERIALIZED_NAME_SUB_CATEGORY)
+  @javax.annotation.Nullable
   private String subCategory;
 
   public WatchlistEnhancedPropertiesRecordsInnerEventInner() {
   }
 
-  public WatchlistEnhancedPropertiesRecordsInnerEventInner category(String category) {
+  public WatchlistEnhancedPropertiesRecordsInnerEventInner category(@javax.annotation.Nullable String category) {
     this.category = category;
     return this;
   }
@@ -89,12 +94,12 @@ public class WatchlistEnhancedPropertiesRecordsInnerEventInner {
     return category;
   }
 
-  public void setCategory(String category) {
+  public void setCategory(@javax.annotation.Nullable String category) {
     this.category = category;
   }
 
 
-  public WatchlistEnhancedPropertiesRecordsInnerEventInner eventDate(LocalDate eventDate) {
+  public WatchlistEnhancedPropertiesRecordsInnerEventInner eventDate(@javax.annotation.Nullable LocalDate eventDate) {
     this.eventDate = eventDate;
     return this;
   }
@@ -108,12 +113,12 @@ public class WatchlistEnhancedPropertiesRecordsInnerEventInner {
     return eventDate;
   }
 
-  public void setEventDate(LocalDate eventDate) {
+  public void setEventDate(@javax.annotation.Nullable LocalDate eventDate) {
     this.eventDate = eventDate;
   }
 
 
-  public WatchlistEnhancedPropertiesRecordsInnerEventInner eventDescription(String eventDescription) {
+  public WatchlistEnhancedPropertiesRecordsInnerEventInner eventDescription(@javax.annotation.Nullable String eventDescription) {
     this.eventDescription = eventDescription;
     return this;
   }
@@ -127,12 +132,12 @@ public class WatchlistEnhancedPropertiesRecordsInnerEventInner {
     return eventDescription;
   }
 
-  public void setEventDescription(String eventDescription) {
+  public void setEventDescription(@javax.annotation.Nullable String eventDescription) {
     this.eventDescription = eventDescription;
   }
 
 
-  public WatchlistEnhancedPropertiesRecordsInnerEventInner source(WatchlistEnhancedPropertiesRecordsInnerEventInnerSource source) {
+  public WatchlistEnhancedPropertiesRecordsInnerEventInner source(@javax.annotation.Nullable WatchlistEnhancedPropertiesRecordsInnerEventInnerSource source) {
     this.source = source;
     return this;
   }
@@ -146,12 +151,12 @@ public class WatchlistEnhancedPropertiesRecordsInnerEventInner {
     return source;
   }
 
-  public void setSource(WatchlistEnhancedPropertiesRecordsInnerEventInnerSource source) {
+  public void setSource(@javax.annotation.Nullable WatchlistEnhancedPropertiesRecordsInnerEventInnerSource source) {
     this.source = source;
   }
 
 
-  public WatchlistEnhancedPropertiesRecordsInnerEventInner subCategory(String subCategory) {
+  public WatchlistEnhancedPropertiesRecordsInnerEventInner subCategory(@javax.annotation.Nullable String subCategory) {
     this.subCategory = subCategory;
     return this;
   }
@@ -165,7 +170,7 @@ public class WatchlistEnhancedPropertiesRecordsInnerEventInner {
     return subCategory;
   }
 
-  public void setSubCategory(String subCategory) {
+  public void setSubCategory(@javax.annotation.Nullable String subCategory) {
     this.subCategory = subCategory;
   }
 

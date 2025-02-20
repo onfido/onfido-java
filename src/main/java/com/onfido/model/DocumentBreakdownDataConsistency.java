@@ -49,20 +49,22 @@ import com.onfido.JSON;
 /**
  * Asserts whether data represented in multiple places on the document is consistent.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class DocumentBreakdownDataConsistency {
   public static final String SERIALIZED_NAME_RESULT = "result";
   @SerializedName(SERIALIZED_NAME_RESULT)
+  @javax.annotation.Nullable
   private String result;
 
   public static final String SERIALIZED_NAME_BREAKDOWN = "breakdown";
   @SerializedName(SERIALIZED_NAME_BREAKDOWN)
+  @javax.annotation.Nullable
   private DocumentBreakdownDataConsistencyBreakdown breakdown;
 
   public DocumentBreakdownDataConsistency() {
   }
 
-  public DocumentBreakdownDataConsistency result(String result) {
+  public DocumentBreakdownDataConsistency result(@javax.annotation.Nullable String result) {
     this.result = result;
     return this;
   }
@@ -76,12 +78,12 @@ public class DocumentBreakdownDataConsistency {
     return result;
   }
 
-  public void setResult(String result) {
+  public void setResult(@javax.annotation.Nullable String result) {
     this.result = result;
   }
 
 
-  public DocumentBreakdownDataConsistency breakdown(DocumentBreakdownDataConsistencyBreakdown breakdown) {
+  public DocumentBreakdownDataConsistency breakdown(@javax.annotation.Nullable DocumentBreakdownDataConsistencyBreakdown breakdown) {
     this.breakdown = breakdown;
     return this;
   }
@@ -95,7 +97,7 @@ public class DocumentBreakdownDataConsistency {
     return breakdown;
   }
 
-  public void setBreakdown(DocumentBreakdownDataConsistencyBreakdown breakdown) {
+  public void setBreakdown(@javax.annotation.Nullable DocumentBreakdownDataConsistencyBreakdown breakdown) {
     this.breakdown = breakdown;
   }
 

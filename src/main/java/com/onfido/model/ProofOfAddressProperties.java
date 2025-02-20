@@ -49,10 +49,11 @@ import com.onfido.JSON;
 /**
  * ProofOfAddressProperties
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class ProofOfAddressProperties {
   public static final String SERIALIZED_NAME_ADDRESS = "address";
   @SerializedName(SERIALIZED_NAME_ADDRESS)
+  @javax.annotation.Nullable
   private String address;
 
   /**
@@ -129,36 +130,43 @@ public class ProofOfAddressProperties {
 
   public static final String SERIALIZED_NAME_DOCUMENT_TYPE = "document_type";
   @SerializedName(SERIALIZED_NAME_DOCUMENT_TYPE)
+  @javax.annotation.Nullable
   private DocumentTypeEnum documentType;
 
   public static final String SERIALIZED_NAME_FIRST_NAMES = "first_names";
   @SerializedName(SERIALIZED_NAME_FIRST_NAMES)
+  @javax.annotation.Nullable
   private String firstNames;
 
   public static final String SERIALIZED_NAME_LAST_NAMES = "last_names";
   @SerializedName(SERIALIZED_NAME_LAST_NAMES)
+  @javax.annotation.Nullable
   private String lastNames;
 
   public static final String SERIALIZED_NAME_ISSUE_DATE = "issue_date";
   @SerializedName(SERIALIZED_NAME_ISSUE_DATE)
+  @javax.annotation.Nullable
   private LocalDate issueDate;
 
   public static final String SERIALIZED_NAME_ISSUER = "issuer";
   @SerializedName(SERIALIZED_NAME_ISSUER)
+  @javax.annotation.Nullable
   private String issuer;
 
   public static final String SERIALIZED_NAME_SUMMARY_PERIOD_START = "summary_period_start";
   @SerializedName(SERIALIZED_NAME_SUMMARY_PERIOD_START)
+  @javax.annotation.Nullable
   private LocalDate summaryPeriodStart;
 
   public static final String SERIALIZED_NAME_SUMMARY_PERIOD_END = "summary_period_end";
   @SerializedName(SERIALIZED_NAME_SUMMARY_PERIOD_END)
+  @javax.annotation.Nullable
   private LocalDate summaryPeriodEnd;
 
   public ProofOfAddressProperties() {
   }
 
-  public ProofOfAddressProperties address(String address) {
+  public ProofOfAddressProperties address(@javax.annotation.Nullable String address) {
     this.address = address;
     return this;
   }
@@ -172,12 +180,12 @@ public class ProofOfAddressProperties {
     return address;
   }
 
-  public void setAddress(String address) {
+  public void setAddress(@javax.annotation.Nullable String address) {
     this.address = address;
   }
 
 
-  public ProofOfAddressProperties documentType(DocumentTypeEnum documentType) {
+  public ProofOfAddressProperties documentType(@javax.annotation.Nullable DocumentTypeEnum documentType) {
     this.documentType = documentType;
     return this;
   }
@@ -191,12 +199,12 @@ public class ProofOfAddressProperties {
     return documentType;
   }
 
-  public void setDocumentType(DocumentTypeEnum documentType) {
+  public void setDocumentType(@javax.annotation.Nullable DocumentTypeEnum documentType) {
     this.documentType = documentType;
   }
 
 
-  public ProofOfAddressProperties firstNames(String firstNames) {
+  public ProofOfAddressProperties firstNames(@javax.annotation.Nullable String firstNames) {
     this.firstNames = firstNames;
     return this;
   }
@@ -210,12 +218,12 @@ public class ProofOfAddressProperties {
     return firstNames;
   }
 
-  public void setFirstNames(String firstNames) {
+  public void setFirstNames(@javax.annotation.Nullable String firstNames) {
     this.firstNames = firstNames;
   }
 
 
-  public ProofOfAddressProperties lastNames(String lastNames) {
+  public ProofOfAddressProperties lastNames(@javax.annotation.Nullable String lastNames) {
     this.lastNames = lastNames;
     return this;
   }
@@ -229,12 +237,12 @@ public class ProofOfAddressProperties {
     return lastNames;
   }
 
-  public void setLastNames(String lastNames) {
+  public void setLastNames(@javax.annotation.Nullable String lastNames) {
     this.lastNames = lastNames;
   }
 
 
-  public ProofOfAddressProperties issueDate(LocalDate issueDate) {
+  public ProofOfAddressProperties issueDate(@javax.annotation.Nullable LocalDate issueDate) {
     this.issueDate = issueDate;
     return this;
   }
@@ -248,12 +256,12 @@ public class ProofOfAddressProperties {
     return issueDate;
   }
 
-  public void setIssueDate(LocalDate issueDate) {
+  public void setIssueDate(@javax.annotation.Nullable LocalDate issueDate) {
     this.issueDate = issueDate;
   }
 
 
-  public ProofOfAddressProperties issuer(String issuer) {
+  public ProofOfAddressProperties issuer(@javax.annotation.Nullable String issuer) {
     this.issuer = issuer;
     return this;
   }
@@ -267,12 +275,12 @@ public class ProofOfAddressProperties {
     return issuer;
   }
 
-  public void setIssuer(String issuer) {
+  public void setIssuer(@javax.annotation.Nullable String issuer) {
     this.issuer = issuer;
   }
 
 
-  public ProofOfAddressProperties summaryPeriodStart(LocalDate summaryPeriodStart) {
+  public ProofOfAddressProperties summaryPeriodStart(@javax.annotation.Nullable LocalDate summaryPeriodStart) {
     this.summaryPeriodStart = summaryPeriodStart;
     return this;
   }
@@ -286,12 +294,12 @@ public class ProofOfAddressProperties {
     return summaryPeriodStart;
   }
 
-  public void setSummaryPeriodStart(LocalDate summaryPeriodStart) {
+  public void setSummaryPeriodStart(@javax.annotation.Nullable LocalDate summaryPeriodStart) {
     this.summaryPeriodStart = summaryPeriodStart;
   }
 
 
-  public ProofOfAddressProperties summaryPeriodEnd(LocalDate summaryPeriodEnd) {
+  public ProofOfAddressProperties summaryPeriodEnd(@javax.annotation.Nullable LocalDate summaryPeriodEnd) {
     this.summaryPeriodEnd = summaryPeriodEnd;
     return this;
   }
@@ -305,7 +313,7 @@ public class ProofOfAddressProperties {
     return summaryPeriodEnd;
   }
 
-  public void setSummaryPeriodEnd(LocalDate summaryPeriodEnd) {
+  public void setSummaryPeriodEnd(@javax.annotation.Nullable LocalDate summaryPeriodEnd) {
     this.summaryPeriodEnd = summaryPeriodEnd;
   }
 

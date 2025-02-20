@@ -52,28 +52,32 @@ import com.onfido.JSON;
 /**
  * WebhookEventPayload
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class WebhookEventPayload {
   public static final String SERIALIZED_NAME_RESOURCE_TYPE = "resource_type";
   @SerializedName(SERIALIZED_NAME_RESOURCE_TYPE)
+  @javax.annotation.Nonnull
   private WebhookEventResourceType resourceType;
 
   public static final String SERIALIZED_NAME_ACTION = "action";
   @SerializedName(SERIALIZED_NAME_ACTION)
+  @javax.annotation.Nullable
   private WebhookEventType action;
 
   public static final String SERIALIZED_NAME_OBJECT = "object";
   @SerializedName(SERIALIZED_NAME_OBJECT)
+  @javax.annotation.Nullable
   private WebhookEventPayloadObject _object;
 
   public static final String SERIALIZED_NAME_RESOURCE = "resource";
   @SerializedName(SERIALIZED_NAME_RESOURCE)
+  @javax.annotation.Nullable
   private WebhookEventPayloadResource resource;
 
   public WebhookEventPayload() {
   }
 
-  public WebhookEventPayload resourceType(WebhookEventResourceType resourceType) {
+  public WebhookEventPayload resourceType(@javax.annotation.Nonnull WebhookEventResourceType resourceType) {
     this.resourceType = resourceType;
     return this;
   }
@@ -87,12 +91,12 @@ public class WebhookEventPayload {
     return resourceType;
   }
 
-  public void setResourceType(WebhookEventResourceType resourceType) {
+  public void setResourceType(@javax.annotation.Nonnull WebhookEventResourceType resourceType) {
     this.resourceType = resourceType;
   }
 
 
-  public WebhookEventPayload action(WebhookEventType action) {
+  public WebhookEventPayload action(@javax.annotation.Nullable WebhookEventType action) {
     this.action = action;
     return this;
   }
@@ -106,12 +110,12 @@ public class WebhookEventPayload {
     return action;
   }
 
-  public void setAction(WebhookEventType action) {
+  public void setAction(@javax.annotation.Nullable WebhookEventType action) {
     this.action = action;
   }
 
 
-  public WebhookEventPayload _object(WebhookEventPayloadObject _object) {
+  public WebhookEventPayload _object(@javax.annotation.Nullable WebhookEventPayloadObject _object) {
     this._object = _object;
     return this;
   }
@@ -125,12 +129,12 @@ public class WebhookEventPayload {
     return _object;
   }
 
-  public void setObject(WebhookEventPayloadObject _object) {
+  public void setObject(@javax.annotation.Nullable WebhookEventPayloadObject _object) {
     this._object = _object;
   }
 
 
-  public WebhookEventPayload resource(WebhookEventPayloadResource resource) {
+  public WebhookEventPayload resource(@javax.annotation.Nullable WebhookEventPayloadResource resource) {
     this.resource = resource;
     return this;
   }
@@ -144,7 +148,7 @@ public class WebhookEventPayload {
     return resource;
   }
 
-  public void setResource(WebhookEventPayloadResource resource) {
+  public void setResource(@javax.annotation.Nullable WebhookEventPayloadResource resource) {
     this.resource = resource;
   }
 

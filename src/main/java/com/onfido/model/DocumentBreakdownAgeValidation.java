@@ -49,20 +49,22 @@ import com.onfido.JSON;
 /**
  * Asserts whether the age calculated from the document&#39;s date of birth data point is greater than or equal to the minimum accepted age.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class DocumentBreakdownAgeValidation {
   public static final String SERIALIZED_NAME_RESULT = "result";
   @SerializedName(SERIALIZED_NAME_RESULT)
+  @javax.annotation.Nullable
   private String result;
 
   public static final String SERIALIZED_NAME_BREAKDOWN = "breakdown";
   @SerializedName(SERIALIZED_NAME_BREAKDOWN)
+  @javax.annotation.Nullable
   private DocumentBreakdownAgeValidationBreakdown breakdown;
 
   public DocumentBreakdownAgeValidation() {
   }
 
-  public DocumentBreakdownAgeValidation result(String result) {
+  public DocumentBreakdownAgeValidation result(@javax.annotation.Nullable String result) {
     this.result = result;
     return this;
   }
@@ -76,12 +78,12 @@ public class DocumentBreakdownAgeValidation {
     return result;
   }
 
-  public void setResult(String result) {
+  public void setResult(@javax.annotation.Nullable String result) {
     this.result = result;
   }
 
 
-  public DocumentBreakdownAgeValidation breakdown(DocumentBreakdownAgeValidationBreakdown breakdown) {
+  public DocumentBreakdownAgeValidation breakdown(@javax.annotation.Nullable DocumentBreakdownAgeValidationBreakdown breakdown) {
     this.breakdown = breakdown;
     return this;
   }
@@ -95,7 +97,7 @@ public class DocumentBreakdownAgeValidation {
     return breakdown;
   }
 
-  public void setBreakdown(DocumentBreakdownAgeValidationBreakdown breakdown) {
+  public void setBreakdown(@javax.annotation.Nullable DocumentBreakdownAgeValidationBreakdown breakdown) {
     this.breakdown = breakdown;
   }
 

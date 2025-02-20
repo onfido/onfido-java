@@ -51,16 +51,17 @@ import com.onfido.JSON;
 /**
  * LivePhotosList
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class LivePhotosList {
   public static final String SERIALIZED_NAME_LIVE_PHOTOS = "live_photos";
   @SerializedName(SERIALIZED_NAME_LIVE_PHOTOS)
+  @javax.annotation.Nonnull
   private List<LivePhoto> livePhotos = new ArrayList<>();
 
   public LivePhotosList() {
   }
 
-  public LivePhotosList livePhotos(List<LivePhoto> livePhotos) {
+  public LivePhotosList livePhotos(@javax.annotation.Nonnull List<LivePhoto> livePhotos) {
     this.livePhotos = livePhotos;
     return this;
   }
@@ -82,7 +83,7 @@ public class LivePhotosList {
     return livePhotos;
   }
 
-  public void setLivePhotos(List<LivePhoto> livePhotos) {
+  public void setLivePhotos(@javax.annotation.Nonnull List<LivePhoto> livePhotos) {
     this.livePhotos = livePhotos;
   }
 

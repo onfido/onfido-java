@@ -51,24 +51,27 @@ import com.onfido.JSON;
 /**
  * DeviceIntelligenceBreakdownProperties
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class DeviceIntelligenceBreakdownProperties {
   public static final String SERIALIZED_NAME_DEVICE = "device";
   @SerializedName(SERIALIZED_NAME_DEVICE)
+  @javax.annotation.Nullable
   private DeviceIntelligenceBreakdownPropertiesDevice device;
 
   public static final String SERIALIZED_NAME_IP = "ip";
   @SerializedName(SERIALIZED_NAME_IP)
+  @javax.annotation.Nullable
   private DeviceIntelligenceBreakdownPropertiesIp ip;
 
   public static final String SERIALIZED_NAME_GEOLOCATION = "geolocation";
   @SerializedName(SERIALIZED_NAME_GEOLOCATION)
+  @javax.annotation.Nullable
   private DeviceIntelligenceBreakdownPropertiesGeolocation geolocation;
 
   public DeviceIntelligenceBreakdownProperties() {
   }
 
-  public DeviceIntelligenceBreakdownProperties device(DeviceIntelligenceBreakdownPropertiesDevice device) {
+  public DeviceIntelligenceBreakdownProperties device(@javax.annotation.Nullable DeviceIntelligenceBreakdownPropertiesDevice device) {
     this.device = device;
     return this;
   }
@@ -82,12 +85,12 @@ public class DeviceIntelligenceBreakdownProperties {
     return device;
   }
 
-  public void setDevice(DeviceIntelligenceBreakdownPropertiesDevice device) {
+  public void setDevice(@javax.annotation.Nullable DeviceIntelligenceBreakdownPropertiesDevice device) {
     this.device = device;
   }
 
 
-  public DeviceIntelligenceBreakdownProperties ip(DeviceIntelligenceBreakdownPropertiesIp ip) {
+  public DeviceIntelligenceBreakdownProperties ip(@javax.annotation.Nullable DeviceIntelligenceBreakdownPropertiesIp ip) {
     this.ip = ip;
     return this;
   }
@@ -101,12 +104,12 @@ public class DeviceIntelligenceBreakdownProperties {
     return ip;
   }
 
-  public void setIp(DeviceIntelligenceBreakdownPropertiesIp ip) {
+  public void setIp(@javax.annotation.Nullable DeviceIntelligenceBreakdownPropertiesIp ip) {
     this.ip = ip;
   }
 
 
-  public DeviceIntelligenceBreakdownProperties geolocation(DeviceIntelligenceBreakdownPropertiesGeolocation geolocation) {
+  public DeviceIntelligenceBreakdownProperties geolocation(@javax.annotation.Nullable DeviceIntelligenceBreakdownPropertiesGeolocation geolocation) {
     this.geolocation = geolocation;
     return this;
   }
@@ -120,7 +123,7 @@ public class DeviceIntelligenceBreakdownProperties {
     return geolocation;
   }
 
-  public void setGeolocation(DeviceIntelligenceBreakdownPropertiesGeolocation geolocation) {
+  public void setGeolocation(@javax.annotation.Nullable DeviceIntelligenceBreakdownPropertiesGeolocation geolocation) {
     this.geolocation = geolocation;
   }
 

@@ -49,20 +49,22 @@ import com.onfido.JSON;
 /**
  * IndiaPanReportAllOfBreakdownDeviceBreakdown
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class IndiaPanReportAllOfBreakdownDeviceBreakdown {
   public static final String SERIALIZED_NAME_PAN_VALID = "pan_valid";
   @SerializedName(SERIALIZED_NAME_PAN_VALID)
+  @javax.annotation.Nullable
   private IndiaPanReportAllOfBreakdownDeviceBreakdownPanValid panValid;
 
   public static final String SERIALIZED_NAME_NAME_MATCH = "name_match";
   @SerializedName(SERIALIZED_NAME_NAME_MATCH)
+  @javax.annotation.Nullable
   private IndiaPanReportAllOfBreakdownDeviceBreakdownPanValid nameMatch;
 
   public IndiaPanReportAllOfBreakdownDeviceBreakdown() {
   }
 
-  public IndiaPanReportAllOfBreakdownDeviceBreakdown panValid(IndiaPanReportAllOfBreakdownDeviceBreakdownPanValid panValid) {
+  public IndiaPanReportAllOfBreakdownDeviceBreakdown panValid(@javax.annotation.Nullable IndiaPanReportAllOfBreakdownDeviceBreakdownPanValid panValid) {
     this.panValid = panValid;
     return this;
   }
@@ -76,12 +78,12 @@ public class IndiaPanReportAllOfBreakdownDeviceBreakdown {
     return panValid;
   }
 
-  public void setPanValid(IndiaPanReportAllOfBreakdownDeviceBreakdownPanValid panValid) {
+  public void setPanValid(@javax.annotation.Nullable IndiaPanReportAllOfBreakdownDeviceBreakdownPanValid panValid) {
     this.panValid = panValid;
   }
 
 
-  public IndiaPanReportAllOfBreakdownDeviceBreakdown nameMatch(IndiaPanReportAllOfBreakdownDeviceBreakdownPanValid nameMatch) {
+  public IndiaPanReportAllOfBreakdownDeviceBreakdown nameMatch(@javax.annotation.Nullable IndiaPanReportAllOfBreakdownDeviceBreakdownPanValid nameMatch) {
     this.nameMatch = nameMatch;
     return this;
   }
@@ -95,7 +97,7 @@ public class IndiaPanReportAllOfBreakdownDeviceBreakdown {
     return nameMatch;
   }
 
-  public void setNameMatch(IndiaPanReportAllOfBreakdownDeviceBreakdownPanValid nameMatch) {
+  public void setNameMatch(@javax.annotation.Nullable IndiaPanReportAllOfBreakdownDeviceBreakdownPanValid nameMatch) {
     this.nameMatch = nameMatch;
   }
 

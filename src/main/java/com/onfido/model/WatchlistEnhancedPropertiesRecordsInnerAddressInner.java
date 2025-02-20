@@ -49,36 +49,42 @@ import com.onfido.JSON;
 /**
  * WatchlistEnhancedPropertiesRecordsInnerAddressInner
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class WatchlistEnhancedPropertiesRecordsInnerAddressInner {
   public static final String SERIALIZED_NAME_ADDRESS_LINE1 = "address_line1";
   @SerializedName(SERIALIZED_NAME_ADDRESS_LINE1)
+  @javax.annotation.Nullable
   private String addressLine1;
 
   public static final String SERIALIZED_NAME_COUNTRY = "country";
   @SerializedName(SERIALIZED_NAME_COUNTRY)
+  @javax.annotation.Nullable
   private CountryCodes country;
 
   public static final String SERIALIZED_NAME_POSTAL_CODE = "postal_code";
   @SerializedName(SERIALIZED_NAME_POSTAL_CODE)
+  @javax.annotation.Nullable
   private String postalCode;
 
   public static final String SERIALIZED_NAME_STATE_PROVINCE = "state_province";
   @SerializedName(SERIALIZED_NAME_STATE_PROVINCE)
+  @javax.annotation.Nullable
   private String stateProvince;
 
   public static final String SERIALIZED_NAME_TOWN = "town";
   @SerializedName(SERIALIZED_NAME_TOWN)
+  @javax.annotation.Nullable
   private String town;
 
   public static final String SERIALIZED_NAME_LOCATOR_TYPE = "locator_type";
   @SerializedName(SERIALIZED_NAME_LOCATOR_TYPE)
+  @javax.annotation.Nullable
   private String locatorType;
 
   public WatchlistEnhancedPropertiesRecordsInnerAddressInner() {
   }
 
-  public WatchlistEnhancedPropertiesRecordsInnerAddressInner addressLine1(String addressLine1) {
+  public WatchlistEnhancedPropertiesRecordsInnerAddressInner addressLine1(@javax.annotation.Nullable String addressLine1) {
     this.addressLine1 = addressLine1;
     return this;
   }
@@ -92,12 +98,12 @@ public class WatchlistEnhancedPropertiesRecordsInnerAddressInner {
     return addressLine1;
   }
 
-  public void setAddressLine1(String addressLine1) {
+  public void setAddressLine1(@javax.annotation.Nullable String addressLine1) {
     this.addressLine1 = addressLine1;
   }
 
 
-  public WatchlistEnhancedPropertiesRecordsInnerAddressInner country(CountryCodes country) {
+  public WatchlistEnhancedPropertiesRecordsInnerAddressInner country(@javax.annotation.Nullable CountryCodes country) {
     this.country = country;
     return this;
   }
@@ -111,12 +117,12 @@ public class WatchlistEnhancedPropertiesRecordsInnerAddressInner {
     return country;
   }
 
-  public void setCountry(CountryCodes country) {
+  public void setCountry(@javax.annotation.Nullable CountryCodes country) {
     this.country = country;
   }
 
 
-  public WatchlistEnhancedPropertiesRecordsInnerAddressInner postalCode(String postalCode) {
+  public WatchlistEnhancedPropertiesRecordsInnerAddressInner postalCode(@javax.annotation.Nullable String postalCode) {
     this.postalCode = postalCode;
     return this;
   }
@@ -130,12 +136,12 @@ public class WatchlistEnhancedPropertiesRecordsInnerAddressInner {
     return postalCode;
   }
 
-  public void setPostalCode(String postalCode) {
+  public void setPostalCode(@javax.annotation.Nullable String postalCode) {
     this.postalCode = postalCode;
   }
 
 
-  public WatchlistEnhancedPropertiesRecordsInnerAddressInner stateProvince(String stateProvince) {
+  public WatchlistEnhancedPropertiesRecordsInnerAddressInner stateProvince(@javax.annotation.Nullable String stateProvince) {
     this.stateProvince = stateProvince;
     return this;
   }
@@ -149,12 +155,12 @@ public class WatchlistEnhancedPropertiesRecordsInnerAddressInner {
     return stateProvince;
   }
 
-  public void setStateProvince(String stateProvince) {
+  public void setStateProvince(@javax.annotation.Nullable String stateProvince) {
     this.stateProvince = stateProvince;
   }
 
 
-  public WatchlistEnhancedPropertiesRecordsInnerAddressInner town(String town) {
+  public WatchlistEnhancedPropertiesRecordsInnerAddressInner town(@javax.annotation.Nullable String town) {
     this.town = town;
     return this;
   }
@@ -168,12 +174,12 @@ public class WatchlistEnhancedPropertiesRecordsInnerAddressInner {
     return town;
   }
 
-  public void setTown(String town) {
+  public void setTown(@javax.annotation.Nullable String town) {
     this.town = town;
   }
 
 
-  public WatchlistEnhancedPropertiesRecordsInnerAddressInner locatorType(String locatorType) {
+  public WatchlistEnhancedPropertiesRecordsInnerAddressInner locatorType(@javax.annotation.Nullable String locatorType) {
     this.locatorType = locatorType;
     return this;
   }
@@ -187,7 +193,7 @@ public class WatchlistEnhancedPropertiesRecordsInnerAddressInner {
     return locatorType;
   }
 
-  public void setLocatorType(String locatorType) {
+  public void setLocatorType(@javax.annotation.Nullable String locatorType) {
     this.locatorType = locatorType;
   }
 

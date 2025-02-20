@@ -50,28 +50,32 @@ import com.onfido.JSON;
 /**
  * WatchlistMonitorResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class WatchlistMonitorResponse {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nonnull
   private UUID id;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
+  @javax.annotation.Nullable
   private OffsetDateTime createdAt;
 
   public static final String SERIALIZED_NAME_DELETED_AT = "deleted_at";
   @SerializedName(SERIALIZED_NAME_DELETED_AT)
+  @javax.annotation.Nullable
   private OffsetDateTime deletedAt;
 
   public static final String SERIALIZED_NAME_IS_SANDBOX = "is_sandbox";
   @SerializedName(SERIALIZED_NAME_IS_SANDBOX)
+  @javax.annotation.Nullable
   private Boolean isSandbox = false;
 
   public WatchlistMonitorResponse() {
   }
 
-  public WatchlistMonitorResponse id(UUID id) {
+  public WatchlistMonitorResponse id(@javax.annotation.Nonnull UUID id) {
     this.id = id;
     return this;
   }
@@ -85,12 +89,12 @@ public class WatchlistMonitorResponse {
     return id;
   }
 
-  public void setId(UUID id) {
+  public void setId(@javax.annotation.Nonnull UUID id) {
     this.id = id;
   }
 
 
-  public WatchlistMonitorResponse createdAt(OffsetDateTime createdAt) {
+  public WatchlistMonitorResponse createdAt(@javax.annotation.Nullable OffsetDateTime createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -104,12 +108,12 @@ public class WatchlistMonitorResponse {
     return createdAt;
   }
 
-  public void setCreatedAt(OffsetDateTime createdAt) {
+  public void setCreatedAt(@javax.annotation.Nullable OffsetDateTime createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public WatchlistMonitorResponse deletedAt(OffsetDateTime deletedAt) {
+  public WatchlistMonitorResponse deletedAt(@javax.annotation.Nullable OffsetDateTime deletedAt) {
     this.deletedAt = deletedAt;
     return this;
   }
@@ -123,12 +127,12 @@ public class WatchlistMonitorResponse {
     return deletedAt;
   }
 
-  public void setDeletedAt(OffsetDateTime deletedAt) {
+  public void setDeletedAt(@javax.annotation.Nullable OffsetDateTime deletedAt) {
     this.deletedAt = deletedAt;
   }
 
 
-  public WatchlistMonitorResponse isSandbox(Boolean isSandbox) {
+  public WatchlistMonitorResponse isSandbox(@javax.annotation.Nullable Boolean isSandbox) {
     this.isSandbox = isSandbox;
     return this;
   }
@@ -142,7 +146,7 @@ public class WatchlistMonitorResponse {
     return isSandbox;
   }
 
-  public void setIsSandbox(Boolean isSandbox) {
+  public void setIsSandbox(@javax.annotation.Nullable Boolean isSandbox) {
     this.isSandbox = isSandbox;
   }
 

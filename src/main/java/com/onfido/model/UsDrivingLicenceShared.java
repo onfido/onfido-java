@@ -49,30 +49,36 @@ import com.onfido.JSON;
 /**
  * An object that contains all accepted fields for the Driver&#39;s License Data Verification report.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class UsDrivingLicenceShared {
   public static final String SERIALIZED_NAME_ID_NUMBER = "id_number";
   @SerializedName(SERIALIZED_NAME_ID_NUMBER)
+  @javax.annotation.Nonnull
   private String idNumber;
 
   public static final String SERIALIZED_NAME_ISSUE_STATE = "issue_state";
   @SerializedName(SERIALIZED_NAME_ISSUE_STATE)
+  @javax.annotation.Nonnull
   private String issueState;
 
   public static final String SERIALIZED_NAME_ADDRESS_LINE1 = "address_line_1";
   @SerializedName(SERIALIZED_NAME_ADDRESS_LINE1)
+  @javax.annotation.Nullable
   private String addressLine1;
 
   public static final String SERIALIZED_NAME_ADDRESS_LINE2 = "address_line_2";
   @SerializedName(SERIALIZED_NAME_ADDRESS_LINE2)
+  @javax.annotation.Nullable
   private String addressLine2;
 
   public static final String SERIALIZED_NAME_CITY = "city";
   @SerializedName(SERIALIZED_NAME_CITY)
+  @javax.annotation.Nullable
   private String city;
 
   public static final String SERIALIZED_NAME_DATE_OF_BIRTH = "date_of_birth";
   @SerializedName(SERIALIZED_NAME_DATE_OF_BIRTH)
+  @javax.annotation.Nullable
   private LocalDate dateOfBirth;
 
   /**
@@ -133,10 +139,12 @@ public class UsDrivingLicenceShared {
 
   public static final String SERIALIZED_NAME_DOCUMENT_CATEGORY = "document_category";
   @SerializedName(SERIALIZED_NAME_DOCUMENT_CATEGORY)
+  @javax.annotation.Nullable
   private DocumentCategoryEnum documentCategory;
 
   public static final String SERIALIZED_NAME_EXPIRATION_DATE = "expiration_date";
   @SerializedName(SERIALIZED_NAME_EXPIRATION_DATE)
+  @javax.annotation.Nullable
   private LocalDate expirationDate;
 
   /**
@@ -209,10 +217,12 @@ public class UsDrivingLicenceShared {
 
   public static final String SERIALIZED_NAME_EYE_COLOR_CODE = "eye_color_code";
   @SerializedName(SERIALIZED_NAME_EYE_COLOR_CODE)
+  @javax.annotation.Nullable
   private EyeColorCodeEnum eyeColorCode;
 
   public static final String SERIALIZED_NAME_FIRST_NAME = "first_name";
   @SerializedName(SERIALIZED_NAME_FIRST_NAME)
+  @javax.annotation.Nullable
   private String firstName;
 
   /**
@@ -271,34 +281,42 @@ public class UsDrivingLicenceShared {
 
   public static final String SERIALIZED_NAME_GENDER = "gender";
   @SerializedName(SERIALIZED_NAME_GENDER)
+  @javax.annotation.Nullable
   private GenderEnum gender;
 
   public static final String SERIALIZED_NAME_ISSUE_DATE = "issue_date";
   @SerializedName(SERIALIZED_NAME_ISSUE_DATE)
+  @javax.annotation.Nullable
   private LocalDate issueDate;
 
   public static final String SERIALIZED_NAME_LAST_NAME = "last_name";
   @SerializedName(SERIALIZED_NAME_LAST_NAME)
+  @javax.annotation.Nullable
   private String lastName;
 
   public static final String SERIALIZED_NAME_MIDDLE_NAME = "middle_name";
   @SerializedName(SERIALIZED_NAME_MIDDLE_NAME)
+  @javax.annotation.Nullable
   private String middleName;
 
   public static final String SERIALIZED_NAME_NAME_SUFFIX = "name_suffix";
   @SerializedName(SERIALIZED_NAME_NAME_SUFFIX)
+  @javax.annotation.Nullable
   private String nameSuffix;
 
   public static final String SERIALIZED_NAME_POSTAL_CODE = "postal_code";
   @SerializedName(SERIALIZED_NAME_POSTAL_CODE)
+  @javax.annotation.Nullable
   private String postalCode;
 
   public static final String SERIALIZED_NAME_STATE = "state";
   @SerializedName(SERIALIZED_NAME_STATE)
+  @javax.annotation.Nullable
   private String state;
 
   public static final String SERIALIZED_NAME_WEIGHT_MEASURE = "weight_measure";
   @SerializedName(SERIALIZED_NAME_WEIGHT_MEASURE)
+  @javax.annotation.Nullable
   private Integer weightMeasure;
 
   public UsDrivingLicenceShared() {
@@ -311,7 +329,7 @@ public class UsDrivingLicenceShared {
     this.gender = gender;
   }
 
-  public UsDrivingLicenceShared idNumber(String idNumber) {
+  public UsDrivingLicenceShared idNumber(@javax.annotation.Nonnull String idNumber) {
     this.idNumber = idNumber;
     return this;
   }
@@ -325,12 +343,12 @@ public class UsDrivingLicenceShared {
     return idNumber;
   }
 
-  public void setIdNumber(String idNumber) {
+  public void setIdNumber(@javax.annotation.Nonnull String idNumber) {
     this.idNumber = idNumber;
   }
 
 
-  public UsDrivingLicenceShared issueState(String issueState) {
+  public UsDrivingLicenceShared issueState(@javax.annotation.Nonnull String issueState) {
     this.issueState = issueState;
     return this;
   }
@@ -344,12 +362,12 @@ public class UsDrivingLicenceShared {
     return issueState;
   }
 
-  public void setIssueState(String issueState) {
+  public void setIssueState(@javax.annotation.Nonnull String issueState) {
     this.issueState = issueState;
   }
 
 
-  public UsDrivingLicenceShared addressLine1(String addressLine1) {
+  public UsDrivingLicenceShared addressLine1(@javax.annotation.Nullable String addressLine1) {
     this.addressLine1 = addressLine1;
     return this;
   }
@@ -363,12 +381,12 @@ public class UsDrivingLicenceShared {
     return addressLine1;
   }
 
-  public void setAddressLine1(String addressLine1) {
+  public void setAddressLine1(@javax.annotation.Nullable String addressLine1) {
     this.addressLine1 = addressLine1;
   }
 
 
-  public UsDrivingLicenceShared addressLine2(String addressLine2) {
+  public UsDrivingLicenceShared addressLine2(@javax.annotation.Nullable String addressLine2) {
     this.addressLine2 = addressLine2;
     return this;
   }
@@ -382,12 +400,12 @@ public class UsDrivingLicenceShared {
     return addressLine2;
   }
 
-  public void setAddressLine2(String addressLine2) {
+  public void setAddressLine2(@javax.annotation.Nullable String addressLine2) {
     this.addressLine2 = addressLine2;
   }
 
 
-  public UsDrivingLicenceShared city(String city) {
+  public UsDrivingLicenceShared city(@javax.annotation.Nullable String city) {
     this.city = city;
     return this;
   }
@@ -401,12 +419,12 @@ public class UsDrivingLicenceShared {
     return city;
   }
 
-  public void setCity(String city) {
+  public void setCity(@javax.annotation.Nullable String city) {
     this.city = city;
   }
 
 
-  public UsDrivingLicenceShared dateOfBirth(LocalDate dateOfBirth) {
+  public UsDrivingLicenceShared dateOfBirth(@javax.annotation.Nullable LocalDate dateOfBirth) {
     this.dateOfBirth = dateOfBirth;
     return this;
   }
@@ -420,12 +438,12 @@ public class UsDrivingLicenceShared {
     return dateOfBirth;
   }
 
-  public void setDateOfBirth(LocalDate dateOfBirth) {
+  public void setDateOfBirth(@javax.annotation.Nullable LocalDate dateOfBirth) {
     this.dateOfBirth = dateOfBirth;
   }
 
 
-  public UsDrivingLicenceShared documentCategory(DocumentCategoryEnum documentCategory) {
+  public UsDrivingLicenceShared documentCategory(@javax.annotation.Nullable DocumentCategoryEnum documentCategory) {
     this.documentCategory = documentCategory;
     return this;
   }
@@ -439,12 +457,12 @@ public class UsDrivingLicenceShared {
     return documentCategory;
   }
 
-  public void setDocumentCategory(DocumentCategoryEnum documentCategory) {
+  public void setDocumentCategory(@javax.annotation.Nullable DocumentCategoryEnum documentCategory) {
     this.documentCategory = documentCategory;
   }
 
 
-  public UsDrivingLicenceShared expirationDate(LocalDate expirationDate) {
+  public UsDrivingLicenceShared expirationDate(@javax.annotation.Nullable LocalDate expirationDate) {
     this.expirationDate = expirationDate;
     return this;
   }
@@ -458,12 +476,12 @@ public class UsDrivingLicenceShared {
     return expirationDate;
   }
 
-  public void setExpirationDate(LocalDate expirationDate) {
+  public void setExpirationDate(@javax.annotation.Nullable LocalDate expirationDate) {
     this.expirationDate = expirationDate;
   }
 
 
-  public UsDrivingLicenceShared eyeColorCode(EyeColorCodeEnum eyeColorCode) {
+  public UsDrivingLicenceShared eyeColorCode(@javax.annotation.Nullable EyeColorCodeEnum eyeColorCode) {
     this.eyeColorCode = eyeColorCode;
     return this;
   }
@@ -477,12 +495,12 @@ public class UsDrivingLicenceShared {
     return eyeColorCode;
   }
 
-  public void setEyeColorCode(EyeColorCodeEnum eyeColorCode) {
+  public void setEyeColorCode(@javax.annotation.Nullable EyeColorCodeEnum eyeColorCode) {
     this.eyeColorCode = eyeColorCode;
   }
 
 
-  public UsDrivingLicenceShared firstName(String firstName) {
+  public UsDrivingLicenceShared firstName(@javax.annotation.Nullable String firstName) {
     this.firstName = firstName;
     return this;
   }
@@ -496,7 +514,7 @@ public class UsDrivingLicenceShared {
     return firstName;
   }
 
-  public void setFirstName(String firstName) {
+  public void setFirstName(@javax.annotation.Nullable String firstName) {
     this.firstName = firstName;
   }
 
@@ -512,7 +530,7 @@ public class UsDrivingLicenceShared {
 
 
 
-  public UsDrivingLicenceShared issueDate(LocalDate issueDate) {
+  public UsDrivingLicenceShared issueDate(@javax.annotation.Nullable LocalDate issueDate) {
     this.issueDate = issueDate;
     return this;
   }
@@ -526,12 +544,12 @@ public class UsDrivingLicenceShared {
     return issueDate;
   }
 
-  public void setIssueDate(LocalDate issueDate) {
+  public void setIssueDate(@javax.annotation.Nullable LocalDate issueDate) {
     this.issueDate = issueDate;
   }
 
 
-  public UsDrivingLicenceShared lastName(String lastName) {
+  public UsDrivingLicenceShared lastName(@javax.annotation.Nullable String lastName) {
     this.lastName = lastName;
     return this;
   }
@@ -545,12 +563,12 @@ public class UsDrivingLicenceShared {
     return lastName;
   }
 
-  public void setLastName(String lastName) {
+  public void setLastName(@javax.annotation.Nullable String lastName) {
     this.lastName = lastName;
   }
 
 
-  public UsDrivingLicenceShared middleName(String middleName) {
+  public UsDrivingLicenceShared middleName(@javax.annotation.Nullable String middleName) {
     this.middleName = middleName;
     return this;
   }
@@ -564,12 +582,12 @@ public class UsDrivingLicenceShared {
     return middleName;
   }
 
-  public void setMiddleName(String middleName) {
+  public void setMiddleName(@javax.annotation.Nullable String middleName) {
     this.middleName = middleName;
   }
 
 
-  public UsDrivingLicenceShared nameSuffix(String nameSuffix) {
+  public UsDrivingLicenceShared nameSuffix(@javax.annotation.Nullable String nameSuffix) {
     this.nameSuffix = nameSuffix;
     return this;
   }
@@ -583,12 +601,12 @@ public class UsDrivingLicenceShared {
     return nameSuffix;
   }
 
-  public void setNameSuffix(String nameSuffix) {
+  public void setNameSuffix(@javax.annotation.Nullable String nameSuffix) {
     this.nameSuffix = nameSuffix;
   }
 
 
-  public UsDrivingLicenceShared postalCode(String postalCode) {
+  public UsDrivingLicenceShared postalCode(@javax.annotation.Nullable String postalCode) {
     this.postalCode = postalCode;
     return this;
   }
@@ -602,12 +620,12 @@ public class UsDrivingLicenceShared {
     return postalCode;
   }
 
-  public void setPostalCode(String postalCode) {
+  public void setPostalCode(@javax.annotation.Nullable String postalCode) {
     this.postalCode = postalCode;
   }
 
 
-  public UsDrivingLicenceShared state(String state) {
+  public UsDrivingLicenceShared state(@javax.annotation.Nullable String state) {
     this.state = state;
     return this;
   }
@@ -621,12 +639,12 @@ public class UsDrivingLicenceShared {
     return state;
   }
 
-  public void setState(String state) {
+  public void setState(@javax.annotation.Nullable String state) {
     this.state = state;
   }
 
 
-  public UsDrivingLicenceShared weightMeasure(Integer weightMeasure) {
+  public UsDrivingLicenceShared weightMeasure(@javax.annotation.Nullable Integer weightMeasure) {
     this.weightMeasure = weightMeasure;
     return this;
   }
@@ -640,7 +658,7 @@ public class UsDrivingLicenceShared {
     return weightMeasure;
   }
 
-  public void setWeightMeasure(Integer weightMeasure) {
+  public void setWeightMeasure(@javax.annotation.Nullable Integer weightMeasure) {
     this.weightMeasure = weightMeasure;
   }
 

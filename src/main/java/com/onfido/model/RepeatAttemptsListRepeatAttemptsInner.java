@@ -50,14 +50,16 @@ import com.onfido.JSON;
 /**
  * RepeatAttemptsListRepeatAttemptsInner
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class RepeatAttemptsListRepeatAttemptsInner {
   public static final String SERIALIZED_NAME_REPORT_ID = "report_id";
   @SerializedName(SERIALIZED_NAME_REPORT_ID)
+  @javax.annotation.Nullable
   private UUID reportId;
 
   public static final String SERIALIZED_NAME_APPLICANT_ID = "applicant_id";
   @SerializedName(SERIALIZED_NAME_APPLICANT_ID)
+  @javax.annotation.Nullable
   private UUID applicantId;
 
   /**
@@ -116,6 +118,7 @@ public class RepeatAttemptsListRepeatAttemptsInner {
 
   public static final String SERIALIZED_NAME_DATE_OF_BIRTH = "date_of_birth";
   @SerializedName(SERIALIZED_NAME_DATE_OF_BIRTH)
+  @javax.annotation.Nullable
   private DateOfBirthEnum dateOfBirth;
 
   /**
@@ -174,6 +177,7 @@ public class RepeatAttemptsListRepeatAttemptsInner {
 
   public static final String SERIALIZED_NAME_NAMES = "names";
   @SerializedName(SERIALIZED_NAME_NAMES)
+  @javax.annotation.Nullable
   private NamesEnum names;
 
   /**
@@ -232,20 +236,23 @@ public class RepeatAttemptsListRepeatAttemptsInner {
 
   public static final String SERIALIZED_NAME_RESULT = "result";
   @SerializedName(SERIALIZED_NAME_RESULT)
+  @javax.annotation.Nullable
   private ResultEnum result;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
+  @javax.annotation.Nullable
   private OffsetDateTime createdAt;
 
   public static final String SERIALIZED_NAME_COMPLETED_AT = "completed_at";
   @SerializedName(SERIALIZED_NAME_COMPLETED_AT)
+  @javax.annotation.Nullable
   private OffsetDateTime completedAt;
 
   public RepeatAttemptsListRepeatAttemptsInner() {
   }
 
-  public RepeatAttemptsListRepeatAttemptsInner reportId(UUID reportId) {
+  public RepeatAttemptsListRepeatAttemptsInner reportId(@javax.annotation.Nullable UUID reportId) {
     this.reportId = reportId;
     return this;
   }
@@ -259,12 +266,12 @@ public class RepeatAttemptsListRepeatAttemptsInner {
     return reportId;
   }
 
-  public void setReportId(UUID reportId) {
+  public void setReportId(@javax.annotation.Nullable UUID reportId) {
     this.reportId = reportId;
   }
 
 
-  public RepeatAttemptsListRepeatAttemptsInner applicantId(UUID applicantId) {
+  public RepeatAttemptsListRepeatAttemptsInner applicantId(@javax.annotation.Nullable UUID applicantId) {
     this.applicantId = applicantId;
     return this;
   }
@@ -278,12 +285,12 @@ public class RepeatAttemptsListRepeatAttemptsInner {
     return applicantId;
   }
 
-  public void setApplicantId(UUID applicantId) {
+  public void setApplicantId(@javax.annotation.Nullable UUID applicantId) {
     this.applicantId = applicantId;
   }
 
 
-  public RepeatAttemptsListRepeatAttemptsInner dateOfBirth(DateOfBirthEnum dateOfBirth) {
+  public RepeatAttemptsListRepeatAttemptsInner dateOfBirth(@javax.annotation.Nullable DateOfBirthEnum dateOfBirth) {
     this.dateOfBirth = dateOfBirth;
     return this;
   }
@@ -297,12 +304,12 @@ public class RepeatAttemptsListRepeatAttemptsInner {
     return dateOfBirth;
   }
 
-  public void setDateOfBirth(DateOfBirthEnum dateOfBirth) {
+  public void setDateOfBirth(@javax.annotation.Nullable DateOfBirthEnum dateOfBirth) {
     this.dateOfBirth = dateOfBirth;
   }
 
 
-  public RepeatAttemptsListRepeatAttemptsInner names(NamesEnum names) {
+  public RepeatAttemptsListRepeatAttemptsInner names(@javax.annotation.Nullable NamesEnum names) {
     this.names = names;
     return this;
   }
@@ -316,12 +323,12 @@ public class RepeatAttemptsListRepeatAttemptsInner {
     return names;
   }
 
-  public void setNames(NamesEnum names) {
+  public void setNames(@javax.annotation.Nullable NamesEnum names) {
     this.names = names;
   }
 
 
-  public RepeatAttemptsListRepeatAttemptsInner result(ResultEnum result) {
+  public RepeatAttemptsListRepeatAttemptsInner result(@javax.annotation.Nullable ResultEnum result) {
     this.result = result;
     return this;
   }
@@ -335,12 +342,12 @@ public class RepeatAttemptsListRepeatAttemptsInner {
     return result;
   }
 
-  public void setResult(ResultEnum result) {
+  public void setResult(@javax.annotation.Nullable ResultEnum result) {
     this.result = result;
   }
 
 
-  public RepeatAttemptsListRepeatAttemptsInner createdAt(OffsetDateTime createdAt) {
+  public RepeatAttemptsListRepeatAttemptsInner createdAt(@javax.annotation.Nullable OffsetDateTime createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -354,12 +361,12 @@ public class RepeatAttemptsListRepeatAttemptsInner {
     return createdAt;
   }
 
-  public void setCreatedAt(OffsetDateTime createdAt) {
+  public void setCreatedAt(@javax.annotation.Nullable OffsetDateTime createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public RepeatAttemptsListRepeatAttemptsInner completedAt(OffsetDateTime completedAt) {
+  public RepeatAttemptsListRepeatAttemptsInner completedAt(@javax.annotation.Nullable OffsetDateTime completedAt) {
     this.completedAt = completedAt;
     return this;
   }
@@ -373,7 +380,7 @@ public class RepeatAttemptsListRepeatAttemptsInner {
     return completedAt;
   }
 
-  public void setCompletedAt(OffsetDateTime completedAt) {
+  public void setCompletedAt(@javax.annotation.Nullable OffsetDateTime completedAt) {
     this.completedAt = completedAt;
   }
 

@@ -50,40 +50,47 @@ import com.onfido.JSON;
 /**
  * LivePhoto
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class LivePhoto {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nonnull
   private UUID id;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
+  @javax.annotation.Nullable
   private OffsetDateTime createdAt;
 
   public static final String SERIALIZED_NAME_HREF = "href";
   @SerializedName(SERIALIZED_NAME_HREF)
+  @javax.annotation.Nullable
   private String href;
 
   public static final String SERIALIZED_NAME_DOWNLOAD_HREF = "download_href";
   @SerializedName(SERIALIZED_NAME_DOWNLOAD_HREF)
+  @javax.annotation.Nullable
   private String downloadHref;
 
   public static final String SERIALIZED_NAME_FILE_NAME = "file_name";
   @SerializedName(SERIALIZED_NAME_FILE_NAME)
+  @javax.annotation.Nullable
   private String fileName;
 
   public static final String SERIALIZED_NAME_FILE_TYPE = "file_type";
   @SerializedName(SERIALIZED_NAME_FILE_TYPE)
+  @javax.annotation.Nullable
   private String fileType;
 
   public static final String SERIALIZED_NAME_FILE_SIZE = "file_size";
   @SerializedName(SERIALIZED_NAME_FILE_SIZE)
+  @javax.annotation.Nullable
   private Integer fileSize;
 
   public LivePhoto() {
   }
 
-  public LivePhoto id(UUID id) {
+  public LivePhoto id(@javax.annotation.Nonnull UUID id) {
     this.id = id;
     return this;
   }
@@ -97,12 +104,12 @@ public class LivePhoto {
     return id;
   }
 
-  public void setId(UUID id) {
+  public void setId(@javax.annotation.Nonnull UUID id) {
     this.id = id;
   }
 
 
-  public LivePhoto createdAt(OffsetDateTime createdAt) {
+  public LivePhoto createdAt(@javax.annotation.Nullable OffsetDateTime createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -116,12 +123,12 @@ public class LivePhoto {
     return createdAt;
   }
 
-  public void setCreatedAt(OffsetDateTime createdAt) {
+  public void setCreatedAt(@javax.annotation.Nullable OffsetDateTime createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public LivePhoto href(String href) {
+  public LivePhoto href(@javax.annotation.Nullable String href) {
     this.href = href;
     return this;
   }
@@ -135,12 +142,12 @@ public class LivePhoto {
     return href;
   }
 
-  public void setHref(String href) {
+  public void setHref(@javax.annotation.Nullable String href) {
     this.href = href;
   }
 
 
-  public LivePhoto downloadHref(String downloadHref) {
+  public LivePhoto downloadHref(@javax.annotation.Nullable String downloadHref) {
     this.downloadHref = downloadHref;
     return this;
   }
@@ -154,12 +161,12 @@ public class LivePhoto {
     return downloadHref;
   }
 
-  public void setDownloadHref(String downloadHref) {
+  public void setDownloadHref(@javax.annotation.Nullable String downloadHref) {
     this.downloadHref = downloadHref;
   }
 
 
-  public LivePhoto fileName(String fileName) {
+  public LivePhoto fileName(@javax.annotation.Nullable String fileName) {
     this.fileName = fileName;
     return this;
   }
@@ -173,12 +180,12 @@ public class LivePhoto {
     return fileName;
   }
 
-  public void setFileName(String fileName) {
+  public void setFileName(@javax.annotation.Nullable String fileName) {
     this.fileName = fileName;
   }
 
 
-  public LivePhoto fileType(String fileType) {
+  public LivePhoto fileType(@javax.annotation.Nullable String fileType) {
     this.fileType = fileType;
     return this;
   }
@@ -192,12 +199,12 @@ public class LivePhoto {
     return fileType;
   }
 
-  public void setFileType(String fileType) {
+  public void setFileType(@javax.annotation.Nullable String fileType) {
     this.fileType = fileType;
   }
 
 
-  public LivePhoto fileSize(Integer fileSize) {
+  public LivePhoto fileSize(@javax.annotation.Nullable Integer fileSize) {
     this.fileSize = fileSize;
     return this;
   }
@@ -211,7 +218,7 @@ public class LivePhoto {
     return fileSize;
   }
 
-  public void setFileSize(Integer fileSize) {
+  public void setFileSize(@javax.annotation.Nullable Integer fileSize) {
     this.fileSize = fileSize;
   }
 

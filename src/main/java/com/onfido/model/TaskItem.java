@@ -51,36 +51,42 @@ import com.onfido.JSON;
 /**
  * TaskItem
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class TaskItem {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nullable
   private String id;
 
   public static final String SERIALIZED_NAME_WORKFLOW_RUN_ID = "workflow_run_id";
   @SerializedName(SERIALIZED_NAME_WORKFLOW_RUN_ID)
+  @javax.annotation.Nullable
   private UUID workflowRunId;
 
   public static final String SERIALIZED_NAME_TASK_DEF_ID = "task_def_id";
   @SerializedName(SERIALIZED_NAME_TASK_DEF_ID)
+  @javax.annotation.Nullable
   private String taskDefId;
 
   public static final String SERIALIZED_NAME_TASK_DEF_VERSION = "task_def_version";
   @SerializedName(SERIALIZED_NAME_TASK_DEF_VERSION)
+  @javax.annotation.Nullable
   private String taskDefVersion;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
+  @javax.annotation.Nullable
   private OffsetDateTime createdAt;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
+  @javax.annotation.Nullable
   private OffsetDateTime updatedAt;
 
   public TaskItem() {
   }
 
-  public TaskItem id(String id) {
+  public TaskItem id(@javax.annotation.Nullable String id) {
     this.id = id;
     return this;
   }
@@ -94,12 +100,12 @@ public class TaskItem {
     return id;
   }
 
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nullable String id) {
     this.id = id;
   }
 
 
-  public TaskItem workflowRunId(UUID workflowRunId) {
+  public TaskItem workflowRunId(@javax.annotation.Nullable UUID workflowRunId) {
     this.workflowRunId = workflowRunId;
     return this;
   }
@@ -113,12 +119,12 @@ public class TaskItem {
     return workflowRunId;
   }
 
-  public void setWorkflowRunId(UUID workflowRunId) {
+  public void setWorkflowRunId(@javax.annotation.Nullable UUID workflowRunId) {
     this.workflowRunId = workflowRunId;
   }
 
 
-  public TaskItem taskDefId(String taskDefId) {
+  public TaskItem taskDefId(@javax.annotation.Nullable String taskDefId) {
     this.taskDefId = taskDefId;
     return this;
   }
@@ -132,12 +138,12 @@ public class TaskItem {
     return taskDefId;
   }
 
-  public void setTaskDefId(String taskDefId) {
+  public void setTaskDefId(@javax.annotation.Nullable String taskDefId) {
     this.taskDefId = taskDefId;
   }
 
 
-  public TaskItem taskDefVersion(String taskDefVersion) {
+  public TaskItem taskDefVersion(@javax.annotation.Nullable String taskDefVersion) {
     this.taskDefVersion = taskDefVersion;
     return this;
   }
@@ -151,12 +157,12 @@ public class TaskItem {
     return taskDefVersion;
   }
 
-  public void setTaskDefVersion(String taskDefVersion) {
+  public void setTaskDefVersion(@javax.annotation.Nullable String taskDefVersion) {
     this.taskDefVersion = taskDefVersion;
   }
 
 
-  public TaskItem createdAt(OffsetDateTime createdAt) {
+  public TaskItem createdAt(@javax.annotation.Nullable OffsetDateTime createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -170,12 +176,12 @@ public class TaskItem {
     return createdAt;
   }
 
-  public void setCreatedAt(OffsetDateTime createdAt) {
+  public void setCreatedAt(@javax.annotation.Nullable OffsetDateTime createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public TaskItem updatedAt(OffsetDateTime updatedAt) {
+  public TaskItem updatedAt(@javax.annotation.Nullable OffsetDateTime updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -189,7 +195,7 @@ public class TaskItem {
     return updatedAt;
   }
 
-  public void setUpdatedAt(OffsetDateTime updatedAt) {
+  public void setUpdatedAt(@javax.annotation.Nullable OffsetDateTime updatedAt) {
     this.updatedAt = updatedAt;
   }
 

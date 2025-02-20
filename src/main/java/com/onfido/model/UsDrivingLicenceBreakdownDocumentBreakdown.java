@@ -49,28 +49,32 @@ import com.onfido.JSON;
 /**
  * UsDrivingLicenceBreakdownDocumentBreakdown
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class UsDrivingLicenceBreakdownDocumentBreakdown {
   public static final String SERIALIZED_NAME_CATEGORY = "category";
   @SerializedName(SERIALIZED_NAME_CATEGORY)
+  @javax.annotation.Nullable
   private DocumentBreakdownDataComparisonBreakdownIssuingCountry category;
 
   public static final String SERIALIZED_NAME_EXPIRATION_DATE = "expiration_date";
   @SerializedName(SERIALIZED_NAME_EXPIRATION_DATE)
+  @javax.annotation.Nullable
   private DocumentBreakdownDataComparisonBreakdownIssuingCountry expirationDate;
 
   public static final String SERIALIZED_NAME_ISSUE_DATE = "issue_date";
   @SerializedName(SERIALIZED_NAME_ISSUE_DATE)
+  @javax.annotation.Nullable
   private DocumentBreakdownDataComparisonBreakdownIssuingCountry issueDate;
 
   public static final String SERIALIZED_NAME_DOCUMENT_NUMBER = "document_number";
   @SerializedName(SERIALIZED_NAME_DOCUMENT_NUMBER)
+  @javax.annotation.Nullable
   private DocumentBreakdownDataComparisonBreakdownIssuingCountry documentNumber;
 
   public UsDrivingLicenceBreakdownDocumentBreakdown() {
   }
 
-  public UsDrivingLicenceBreakdownDocumentBreakdown category(DocumentBreakdownDataComparisonBreakdownIssuingCountry category) {
+  public UsDrivingLicenceBreakdownDocumentBreakdown category(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry category) {
     this.category = category;
     return this;
   }
@@ -84,12 +88,12 @@ public class UsDrivingLicenceBreakdownDocumentBreakdown {
     return category;
   }
 
-  public void setCategory(DocumentBreakdownDataComparisonBreakdownIssuingCountry category) {
+  public void setCategory(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry category) {
     this.category = category;
   }
 
 
-  public UsDrivingLicenceBreakdownDocumentBreakdown expirationDate(DocumentBreakdownDataComparisonBreakdownIssuingCountry expirationDate) {
+  public UsDrivingLicenceBreakdownDocumentBreakdown expirationDate(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry expirationDate) {
     this.expirationDate = expirationDate;
     return this;
   }
@@ -103,12 +107,12 @@ public class UsDrivingLicenceBreakdownDocumentBreakdown {
     return expirationDate;
   }
 
-  public void setExpirationDate(DocumentBreakdownDataComparisonBreakdownIssuingCountry expirationDate) {
+  public void setExpirationDate(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry expirationDate) {
     this.expirationDate = expirationDate;
   }
 
 
-  public UsDrivingLicenceBreakdownDocumentBreakdown issueDate(DocumentBreakdownDataComparisonBreakdownIssuingCountry issueDate) {
+  public UsDrivingLicenceBreakdownDocumentBreakdown issueDate(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry issueDate) {
     this.issueDate = issueDate;
     return this;
   }
@@ -122,12 +126,12 @@ public class UsDrivingLicenceBreakdownDocumentBreakdown {
     return issueDate;
   }
 
-  public void setIssueDate(DocumentBreakdownDataComparisonBreakdownIssuingCountry issueDate) {
+  public void setIssueDate(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry issueDate) {
     this.issueDate = issueDate;
   }
 
 
-  public UsDrivingLicenceBreakdownDocumentBreakdown documentNumber(DocumentBreakdownDataComparisonBreakdownIssuingCountry documentNumber) {
+  public UsDrivingLicenceBreakdownDocumentBreakdown documentNumber(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry documentNumber) {
     this.documentNumber = documentNumber;
     return this;
   }
@@ -141,7 +145,7 @@ public class UsDrivingLicenceBreakdownDocumentBreakdown {
     return documentNumber;
   }
 
-  public void setDocumentNumber(DocumentBreakdownDataComparisonBreakdownIssuingCountry documentNumber) {
+  public void setDocumentNumber(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry documentNumber) {
     this.documentNumber = documentNumber;
   }
 

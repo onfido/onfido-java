@@ -51,24 +51,27 @@ import com.onfido.JSON;
 /**
  * ProofOfAddressBreakdown
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class ProofOfAddressBreakdown {
   public static final String SERIALIZED_NAME_DATA_COMPARISON = "data_comparison";
   @SerializedName(SERIALIZED_NAME_DATA_COMPARISON)
+  @javax.annotation.Nullable
   private ProofOfAddressBreakdownDataComparison dataComparison;
 
   public static final String SERIALIZED_NAME_DOCUMENT_CLASSIFICATION = "document_classification";
   @SerializedName(SERIALIZED_NAME_DOCUMENT_CLASSIFICATION)
+  @javax.annotation.Nullable
   private ProofOfAddressBreakdownDocumentClassification documentClassification;
 
   public static final String SERIALIZED_NAME_IMAGE_INTEGRITY = "image_integrity";
   @SerializedName(SERIALIZED_NAME_IMAGE_INTEGRITY)
+  @javax.annotation.Nullable
   private ProofOfAddressBreakdownImageIntegrity imageIntegrity;
 
   public ProofOfAddressBreakdown() {
   }
 
-  public ProofOfAddressBreakdown dataComparison(ProofOfAddressBreakdownDataComparison dataComparison) {
+  public ProofOfAddressBreakdown dataComparison(@javax.annotation.Nullable ProofOfAddressBreakdownDataComparison dataComparison) {
     this.dataComparison = dataComparison;
     return this;
   }
@@ -82,12 +85,12 @@ public class ProofOfAddressBreakdown {
     return dataComparison;
   }
 
-  public void setDataComparison(ProofOfAddressBreakdownDataComparison dataComparison) {
+  public void setDataComparison(@javax.annotation.Nullable ProofOfAddressBreakdownDataComparison dataComparison) {
     this.dataComparison = dataComparison;
   }
 
 
-  public ProofOfAddressBreakdown documentClassification(ProofOfAddressBreakdownDocumentClassification documentClassification) {
+  public ProofOfAddressBreakdown documentClassification(@javax.annotation.Nullable ProofOfAddressBreakdownDocumentClassification documentClassification) {
     this.documentClassification = documentClassification;
     return this;
   }
@@ -101,12 +104,12 @@ public class ProofOfAddressBreakdown {
     return documentClassification;
   }
 
-  public void setDocumentClassification(ProofOfAddressBreakdownDocumentClassification documentClassification) {
+  public void setDocumentClassification(@javax.annotation.Nullable ProofOfAddressBreakdownDocumentClassification documentClassification) {
     this.documentClassification = documentClassification;
   }
 
 
-  public ProofOfAddressBreakdown imageIntegrity(ProofOfAddressBreakdownImageIntegrity imageIntegrity) {
+  public ProofOfAddressBreakdown imageIntegrity(@javax.annotation.Nullable ProofOfAddressBreakdownImageIntegrity imageIntegrity) {
     this.imageIntegrity = imageIntegrity;
     return this;
   }
@@ -120,7 +123,7 @@ public class ProofOfAddressBreakdown {
     return imageIntegrity;
   }
 
-  public void setImageIntegrity(ProofOfAddressBreakdownImageIntegrity imageIntegrity) {
+  public void setImageIntegrity(@javax.annotation.Nullable ProofOfAddressBreakdownImageIntegrity imageIntegrity) {
     this.imageIntegrity = imageIntegrity;
   }
 

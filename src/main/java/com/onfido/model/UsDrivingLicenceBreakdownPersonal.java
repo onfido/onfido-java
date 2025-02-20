@@ -49,20 +49,22 @@ import com.onfido.JSON;
 /**
  * Asserts whether the personal data provided matches a real driving license in the DMV driver&#39;s license database.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class UsDrivingLicenceBreakdownPersonal {
   public static final String SERIALIZED_NAME_RESULT = "result";
   @SerializedName(SERIALIZED_NAME_RESULT)
+  @javax.annotation.Nullable
   private String result;
 
   public static final String SERIALIZED_NAME_BREAKDOWN = "breakdown";
   @SerializedName(SERIALIZED_NAME_BREAKDOWN)
+  @javax.annotation.Nullable
   private UsDrivingLicenceBreakdownPersonalBreakdown breakdown;
 
   public UsDrivingLicenceBreakdownPersonal() {
   }
 
-  public UsDrivingLicenceBreakdownPersonal result(String result) {
+  public UsDrivingLicenceBreakdownPersonal result(@javax.annotation.Nullable String result) {
     this.result = result;
     return this;
   }
@@ -76,12 +78,12 @@ public class UsDrivingLicenceBreakdownPersonal {
     return result;
   }
 
-  public void setResult(String result) {
+  public void setResult(@javax.annotation.Nullable String result) {
     this.result = result;
   }
 
 
-  public UsDrivingLicenceBreakdownPersonal breakdown(UsDrivingLicenceBreakdownPersonalBreakdown breakdown) {
+  public UsDrivingLicenceBreakdownPersonal breakdown(@javax.annotation.Nullable UsDrivingLicenceBreakdownPersonalBreakdown breakdown) {
     this.breakdown = breakdown;
     return this;
   }
@@ -95,7 +97,7 @@ public class UsDrivingLicenceBreakdownPersonal {
     return breakdown;
   }
 
-  public void setBreakdown(UsDrivingLicenceBreakdownPersonalBreakdown breakdown) {
+  public void setBreakdown(@javax.annotation.Nullable UsDrivingLicenceBreakdownPersonalBreakdown breakdown) {
     this.breakdown = breakdown;
   }
 

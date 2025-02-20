@@ -56,52 +56,62 @@ import com.onfido.JSON;
 /**
  * ProofOfAddressReport
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class ProofOfAddressReport {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nonnull
   private UUID id;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
+  @javax.annotation.Nullable
   private OffsetDateTime createdAt;
 
   public static final String SERIALIZED_NAME_HREF = "href";
   @SerializedName(SERIALIZED_NAME_HREF)
+  @javax.annotation.Nullable
   private String href;
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
+  @javax.annotation.Nullable
   private ReportStatus status;
 
   public static final String SERIALIZED_NAME_RESULT = "result";
   @SerializedName(SERIALIZED_NAME_RESULT)
+  @javax.annotation.Nullable
   private ReportResult result;
 
   public static final String SERIALIZED_NAME_SUB_RESULT = "sub_result";
   @SerializedName(SERIALIZED_NAME_SUB_RESULT)
+  @javax.annotation.Nullable
   private ReportSubResult subResult;
 
   public static final String SERIALIZED_NAME_CHECK_ID = "check_id";
   @SerializedName(SERIALIZED_NAME_CHECK_ID)
+  @javax.annotation.Nullable
   private UUID checkId;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nonnull
   private ReportName name;
 
   public static final String SERIALIZED_NAME_BREAKDOWN = "breakdown";
   @SerializedName(SERIALIZED_NAME_BREAKDOWN)
+  @javax.annotation.Nullable
   private ProofOfAddressBreakdown breakdown;
 
   public static final String SERIALIZED_NAME_PROPERTIES = "properties";
   @SerializedName(SERIALIZED_NAME_PROPERTIES)
+  @javax.annotation.Nullable
   private ProofOfAddressProperties properties;
 
   public ProofOfAddressReport() {
   }
 
-  public ProofOfAddressReport id(UUID id) {
+  public ProofOfAddressReport id(@javax.annotation.Nonnull UUID id) {
     this.id = id;
     return this;
   }
@@ -115,12 +125,12 @@ public class ProofOfAddressReport {
     return id;
   }
 
-  public void setId(UUID id) {
+  public void setId(@javax.annotation.Nonnull UUID id) {
     this.id = id;
   }
 
 
-  public ProofOfAddressReport createdAt(OffsetDateTime createdAt) {
+  public ProofOfAddressReport createdAt(@javax.annotation.Nullable OffsetDateTime createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -134,12 +144,12 @@ public class ProofOfAddressReport {
     return createdAt;
   }
 
-  public void setCreatedAt(OffsetDateTime createdAt) {
+  public void setCreatedAt(@javax.annotation.Nullable OffsetDateTime createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public ProofOfAddressReport href(String href) {
+  public ProofOfAddressReport href(@javax.annotation.Nullable String href) {
     this.href = href;
     return this;
   }
@@ -153,12 +163,12 @@ public class ProofOfAddressReport {
     return href;
   }
 
-  public void setHref(String href) {
+  public void setHref(@javax.annotation.Nullable String href) {
     this.href = href;
   }
 
 
-  public ProofOfAddressReport status(ReportStatus status) {
+  public ProofOfAddressReport status(@javax.annotation.Nullable ReportStatus status) {
     this.status = status;
     return this;
   }
@@ -172,12 +182,12 @@ public class ProofOfAddressReport {
     return status;
   }
 
-  public void setStatus(ReportStatus status) {
+  public void setStatus(@javax.annotation.Nullable ReportStatus status) {
     this.status = status;
   }
 
 
-  public ProofOfAddressReport result(ReportResult result) {
+  public ProofOfAddressReport result(@javax.annotation.Nullable ReportResult result) {
     this.result = result;
     return this;
   }
@@ -191,12 +201,12 @@ public class ProofOfAddressReport {
     return result;
   }
 
-  public void setResult(ReportResult result) {
+  public void setResult(@javax.annotation.Nullable ReportResult result) {
     this.result = result;
   }
 
 
-  public ProofOfAddressReport subResult(ReportSubResult subResult) {
+  public ProofOfAddressReport subResult(@javax.annotation.Nullable ReportSubResult subResult) {
     this.subResult = subResult;
     return this;
   }
@@ -210,12 +220,12 @@ public class ProofOfAddressReport {
     return subResult;
   }
 
-  public void setSubResult(ReportSubResult subResult) {
+  public void setSubResult(@javax.annotation.Nullable ReportSubResult subResult) {
     this.subResult = subResult;
   }
 
 
-  public ProofOfAddressReport checkId(UUID checkId) {
+  public ProofOfAddressReport checkId(@javax.annotation.Nullable UUID checkId) {
     this.checkId = checkId;
     return this;
   }
@@ -229,12 +239,12 @@ public class ProofOfAddressReport {
     return checkId;
   }
 
-  public void setCheckId(UUID checkId) {
+  public void setCheckId(@javax.annotation.Nullable UUID checkId) {
     this.checkId = checkId;
   }
 
 
-  public ProofOfAddressReport name(ReportName name) {
+  public ProofOfAddressReport name(@javax.annotation.Nonnull ReportName name) {
     this.name = name;
     return this;
   }
@@ -248,12 +258,12 @@ public class ProofOfAddressReport {
     return name;
   }
 
-  public void setName(ReportName name) {
+  public void setName(@javax.annotation.Nonnull ReportName name) {
     this.name = name;
   }
 
 
-  public ProofOfAddressReport breakdown(ProofOfAddressBreakdown breakdown) {
+  public ProofOfAddressReport breakdown(@javax.annotation.Nullable ProofOfAddressBreakdown breakdown) {
     this.breakdown = breakdown;
     return this;
   }
@@ -267,12 +277,12 @@ public class ProofOfAddressReport {
     return breakdown;
   }
 
-  public void setBreakdown(ProofOfAddressBreakdown breakdown) {
+  public void setBreakdown(@javax.annotation.Nullable ProofOfAddressBreakdown breakdown) {
     this.breakdown = breakdown;
   }
 
 
-  public ProofOfAddressReport properties(ProofOfAddressProperties properties) {
+  public ProofOfAddressReport properties(@javax.annotation.Nullable ProofOfAddressProperties properties) {
     this.properties = properties;
     return this;
   }
@@ -286,7 +296,7 @@ public class ProofOfAddressReport {
     return properties;
   }
 
-  public void setProperties(ProofOfAddressProperties properties) {
+  public void setProperties(@javax.annotation.Nullable ProofOfAddressProperties properties) {
     this.properties = properties;
   }
 

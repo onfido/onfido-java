@@ -51,24 +51,27 @@ import com.onfido.JSON;
 /**
  * FacialSimilarityPhotoBreakdown
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class FacialSimilarityPhotoBreakdown {
   public static final String SERIALIZED_NAME_FACE_COMPARISON = "face_comparison";
   @SerializedName(SERIALIZED_NAME_FACE_COMPARISON)
+  @javax.annotation.Nullable
   private FacialSimilarityPhotoBreakdownFaceComparison faceComparison;
 
   public static final String SERIALIZED_NAME_IMAGE_INTEGRITY = "image_integrity";
   @SerializedName(SERIALIZED_NAME_IMAGE_INTEGRITY)
+  @javax.annotation.Nullable
   private FacialSimilarityPhotoBreakdownImageIntegrity imageIntegrity;
 
   public static final String SERIALIZED_NAME_VISUAL_AUTHENTICITY = "visual_authenticity";
   @SerializedName(SERIALIZED_NAME_VISUAL_AUTHENTICITY)
+  @javax.annotation.Nullable
   private FacialSimilarityPhotoBreakdownVisualAuthenticity visualAuthenticity;
 
   public FacialSimilarityPhotoBreakdown() {
   }
 
-  public FacialSimilarityPhotoBreakdown faceComparison(FacialSimilarityPhotoBreakdownFaceComparison faceComparison) {
+  public FacialSimilarityPhotoBreakdown faceComparison(@javax.annotation.Nullable FacialSimilarityPhotoBreakdownFaceComparison faceComparison) {
     this.faceComparison = faceComparison;
     return this;
   }
@@ -82,12 +85,12 @@ public class FacialSimilarityPhotoBreakdown {
     return faceComparison;
   }
 
-  public void setFaceComparison(FacialSimilarityPhotoBreakdownFaceComparison faceComparison) {
+  public void setFaceComparison(@javax.annotation.Nullable FacialSimilarityPhotoBreakdownFaceComparison faceComparison) {
     this.faceComparison = faceComparison;
   }
 
 
-  public FacialSimilarityPhotoBreakdown imageIntegrity(FacialSimilarityPhotoBreakdownImageIntegrity imageIntegrity) {
+  public FacialSimilarityPhotoBreakdown imageIntegrity(@javax.annotation.Nullable FacialSimilarityPhotoBreakdownImageIntegrity imageIntegrity) {
     this.imageIntegrity = imageIntegrity;
     return this;
   }
@@ -101,12 +104,12 @@ public class FacialSimilarityPhotoBreakdown {
     return imageIntegrity;
   }
 
-  public void setImageIntegrity(FacialSimilarityPhotoBreakdownImageIntegrity imageIntegrity) {
+  public void setImageIntegrity(@javax.annotation.Nullable FacialSimilarityPhotoBreakdownImageIntegrity imageIntegrity) {
     this.imageIntegrity = imageIntegrity;
   }
 
 
-  public FacialSimilarityPhotoBreakdown visualAuthenticity(FacialSimilarityPhotoBreakdownVisualAuthenticity visualAuthenticity) {
+  public FacialSimilarityPhotoBreakdown visualAuthenticity(@javax.annotation.Nullable FacialSimilarityPhotoBreakdownVisualAuthenticity visualAuthenticity) {
     this.visualAuthenticity = visualAuthenticity;
     return this;
   }
@@ -120,7 +123,7 @@ public class FacialSimilarityPhotoBreakdown {
     return visualAuthenticity;
   }
 
-  public void setVisualAuthenticity(FacialSimilarityPhotoBreakdownVisualAuthenticity visualAuthenticity) {
+  public void setVisualAuthenticity(@javax.annotation.Nullable FacialSimilarityPhotoBreakdownVisualAuthenticity visualAuthenticity) {
     this.visualAuthenticity = visualAuthenticity;
   }
 

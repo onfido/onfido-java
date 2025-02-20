@@ -48,24 +48,27 @@ import com.onfido.JSON;
 /**
  * WatchlistEnhancedPropertiesRecordsInnerAssociateInner
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class WatchlistEnhancedPropertiesRecordsInnerAssociateInner {
   public static final String SERIALIZED_NAME_ENTITY_NAME = "entity_name";
   @SerializedName(SERIALIZED_NAME_ENTITY_NAME)
+  @javax.annotation.Nullable
   private String entityName;
 
   public static final String SERIALIZED_NAME_RELATIONSHIP_DIRECTION = "relationship_direction";
   @SerializedName(SERIALIZED_NAME_RELATIONSHIP_DIRECTION)
+  @javax.annotation.Nullable
   private String relationshipDirection;
 
   public static final String SERIALIZED_NAME_RELATIONSHIP_TYPE = "relationship_type";
   @SerializedName(SERIALIZED_NAME_RELATIONSHIP_TYPE)
+  @javax.annotation.Nullable
   private String relationshipType;
 
   public WatchlistEnhancedPropertiesRecordsInnerAssociateInner() {
   }
 
-  public WatchlistEnhancedPropertiesRecordsInnerAssociateInner entityName(String entityName) {
+  public WatchlistEnhancedPropertiesRecordsInnerAssociateInner entityName(@javax.annotation.Nullable String entityName) {
     this.entityName = entityName;
     return this;
   }
@@ -79,12 +82,12 @@ public class WatchlistEnhancedPropertiesRecordsInnerAssociateInner {
     return entityName;
   }
 
-  public void setEntityName(String entityName) {
+  public void setEntityName(@javax.annotation.Nullable String entityName) {
     this.entityName = entityName;
   }
 
 
-  public WatchlistEnhancedPropertiesRecordsInnerAssociateInner relationshipDirection(String relationshipDirection) {
+  public WatchlistEnhancedPropertiesRecordsInnerAssociateInner relationshipDirection(@javax.annotation.Nullable String relationshipDirection) {
     this.relationshipDirection = relationshipDirection;
     return this;
   }
@@ -98,12 +101,12 @@ public class WatchlistEnhancedPropertiesRecordsInnerAssociateInner {
     return relationshipDirection;
   }
 
-  public void setRelationshipDirection(String relationshipDirection) {
+  public void setRelationshipDirection(@javax.annotation.Nullable String relationshipDirection) {
     this.relationshipDirection = relationshipDirection;
   }
 
 
-  public WatchlistEnhancedPropertiesRecordsInnerAssociateInner relationshipType(String relationshipType) {
+  public WatchlistEnhancedPropertiesRecordsInnerAssociateInner relationshipType(@javax.annotation.Nullable String relationshipType) {
     this.relationshipType = relationshipType;
     return this;
   }
@@ -117,7 +120,7 @@ public class WatchlistEnhancedPropertiesRecordsInnerAssociateInner {
     return relationshipType;
   }
 
-  public void setRelationshipType(String relationshipType) {
+  public void setRelationshipType(@javax.annotation.Nullable String relationshipType) {
     this.relationshipType = relationshipType;
   }
 

@@ -49,28 +49,32 @@ import com.onfido.JSON;
 /**
  * WatchlistEnhancedPropertiesRecordsInnerEventInnerSource
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class WatchlistEnhancedPropertiesRecordsInnerEventInnerSource {
   public static final String SERIALIZED_NAME_SOURCE_DATE = "source_date";
   @SerializedName(SERIALIZED_NAME_SOURCE_DATE)
+  @javax.annotation.Nullable
   private LocalDate sourceDate;
 
   public static final String SERIALIZED_NAME_SOURCE_FORMAT = "source_format";
   @SerializedName(SERIALIZED_NAME_SOURCE_FORMAT)
+  @javax.annotation.Nullable
   private String sourceFormat;
 
   public static final String SERIALIZED_NAME_SOURCE_NAME = "source_name";
   @SerializedName(SERIALIZED_NAME_SOURCE_NAME)
+  @javax.annotation.Nullable
   private String sourceName;
 
   public static final String SERIALIZED_NAME_SOURCE_URL = "source_url";
   @SerializedName(SERIALIZED_NAME_SOURCE_URL)
+  @javax.annotation.Nullable
   private String sourceUrl;
 
   public WatchlistEnhancedPropertiesRecordsInnerEventInnerSource() {
   }
 
-  public WatchlistEnhancedPropertiesRecordsInnerEventInnerSource sourceDate(LocalDate sourceDate) {
+  public WatchlistEnhancedPropertiesRecordsInnerEventInnerSource sourceDate(@javax.annotation.Nullable LocalDate sourceDate) {
     this.sourceDate = sourceDate;
     return this;
   }
@@ -84,12 +88,12 @@ public class WatchlistEnhancedPropertiesRecordsInnerEventInnerSource {
     return sourceDate;
   }
 
-  public void setSourceDate(LocalDate sourceDate) {
+  public void setSourceDate(@javax.annotation.Nullable LocalDate sourceDate) {
     this.sourceDate = sourceDate;
   }
 
 
-  public WatchlistEnhancedPropertiesRecordsInnerEventInnerSource sourceFormat(String sourceFormat) {
+  public WatchlistEnhancedPropertiesRecordsInnerEventInnerSource sourceFormat(@javax.annotation.Nullable String sourceFormat) {
     this.sourceFormat = sourceFormat;
     return this;
   }
@@ -103,12 +107,12 @@ public class WatchlistEnhancedPropertiesRecordsInnerEventInnerSource {
     return sourceFormat;
   }
 
-  public void setSourceFormat(String sourceFormat) {
+  public void setSourceFormat(@javax.annotation.Nullable String sourceFormat) {
     this.sourceFormat = sourceFormat;
   }
 
 
-  public WatchlistEnhancedPropertiesRecordsInnerEventInnerSource sourceName(String sourceName) {
+  public WatchlistEnhancedPropertiesRecordsInnerEventInnerSource sourceName(@javax.annotation.Nullable String sourceName) {
     this.sourceName = sourceName;
     return this;
   }
@@ -122,12 +126,12 @@ public class WatchlistEnhancedPropertiesRecordsInnerEventInnerSource {
     return sourceName;
   }
 
-  public void setSourceName(String sourceName) {
+  public void setSourceName(@javax.annotation.Nullable String sourceName) {
     this.sourceName = sourceName;
   }
 
 
-  public WatchlistEnhancedPropertiesRecordsInnerEventInnerSource sourceUrl(String sourceUrl) {
+  public WatchlistEnhancedPropertiesRecordsInnerEventInnerSource sourceUrl(@javax.annotation.Nullable String sourceUrl) {
     this.sourceUrl = sourceUrl;
     return this;
   }
@@ -141,7 +145,7 @@ public class WatchlistEnhancedPropertiesRecordsInnerEventInnerSource {
     return sourceUrl;
   }
 
-  public void setSourceUrl(String sourceUrl) {
+  public void setSourceUrl(@javax.annotation.Nullable String sourceUrl) {
     this.sourceUrl = sourceUrl;
   }
 

@@ -60,72 +60,87 @@ import com.onfido.JSON;
 /**
  * FacialSimilarityMotionReport
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class FacialSimilarityMotionReport {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nonnull
   private UUID id;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
+  @javax.annotation.Nullable
   private OffsetDateTime createdAt;
 
   public static final String SERIALIZED_NAME_HREF = "href";
   @SerializedName(SERIALIZED_NAME_HREF)
+  @javax.annotation.Nullable
   private String href;
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
+  @javax.annotation.Nullable
   private ReportStatus status;
 
   public static final String SERIALIZED_NAME_RESULT = "result";
   @SerializedName(SERIALIZED_NAME_RESULT)
+  @javax.annotation.Nullable
   private ReportResult result;
 
   public static final String SERIALIZED_NAME_SUB_RESULT = "sub_result";
   @SerializedName(SERIALIZED_NAME_SUB_RESULT)
+  @javax.annotation.Nullable
   private ReportSubResult subResult;
 
   public static final String SERIALIZED_NAME_CHECK_ID = "check_id";
   @SerializedName(SERIALIZED_NAME_CHECK_ID)
+  @javax.annotation.Nullable
   private UUID checkId;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nonnull
   private ReportName name;
 
   public static final String SERIALIZED_NAME_DOCUMENTS = "documents";
   @SerializedName(SERIALIZED_NAME_DOCUMENTS)
+  @javax.annotation.Nullable
   private List<ReportDocument> documents = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_LIVE_PHOTOS = "live_photos";
   @SerializedName(SERIALIZED_NAME_LIVE_PHOTOS)
+  @javax.annotation.Nullable
   private List<FacialSimilarityReportMedia> livePhotos = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_LIVE_VIDEOS = "live_videos";
   @SerializedName(SERIALIZED_NAME_LIVE_VIDEOS)
+  @javax.annotation.Nullable
   private List<FacialSimilarityReportMedia> liveVideos = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_MOTION_CAPTURES = "motion_captures";
   @SerializedName(SERIALIZED_NAME_MOTION_CAPTURES)
+  @javax.annotation.Nullable
   private List<FacialSimilarityReportMedia> motionCaptures = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_ID_PHOTOS = "id_photos";
   @SerializedName(SERIALIZED_NAME_ID_PHOTOS)
+  @javax.annotation.Nullable
   private List<FacialSimilarityReportMedia> idPhotos = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_BREAKDOWN = "breakdown";
   @SerializedName(SERIALIZED_NAME_BREAKDOWN)
+  @javax.annotation.Nullable
   private FacialSimilarityMotionBreakdown breakdown;
 
   public static final String SERIALIZED_NAME_PROPERTIES = "properties";
   @SerializedName(SERIALIZED_NAME_PROPERTIES)
+  @javax.annotation.Nullable
   private FacialSimilarityMotionProperties properties;
 
   public FacialSimilarityMotionReport() {
   }
 
-  public FacialSimilarityMotionReport id(UUID id) {
+  public FacialSimilarityMotionReport id(@javax.annotation.Nonnull UUID id) {
     this.id = id;
     return this;
   }
@@ -139,12 +154,12 @@ public class FacialSimilarityMotionReport {
     return id;
   }
 
-  public void setId(UUID id) {
+  public void setId(@javax.annotation.Nonnull UUID id) {
     this.id = id;
   }
 
 
-  public FacialSimilarityMotionReport createdAt(OffsetDateTime createdAt) {
+  public FacialSimilarityMotionReport createdAt(@javax.annotation.Nullable OffsetDateTime createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -158,12 +173,12 @@ public class FacialSimilarityMotionReport {
     return createdAt;
   }
 
-  public void setCreatedAt(OffsetDateTime createdAt) {
+  public void setCreatedAt(@javax.annotation.Nullable OffsetDateTime createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public FacialSimilarityMotionReport href(String href) {
+  public FacialSimilarityMotionReport href(@javax.annotation.Nullable String href) {
     this.href = href;
     return this;
   }
@@ -177,12 +192,12 @@ public class FacialSimilarityMotionReport {
     return href;
   }
 
-  public void setHref(String href) {
+  public void setHref(@javax.annotation.Nullable String href) {
     this.href = href;
   }
 
 
-  public FacialSimilarityMotionReport status(ReportStatus status) {
+  public FacialSimilarityMotionReport status(@javax.annotation.Nullable ReportStatus status) {
     this.status = status;
     return this;
   }
@@ -196,12 +211,12 @@ public class FacialSimilarityMotionReport {
     return status;
   }
 
-  public void setStatus(ReportStatus status) {
+  public void setStatus(@javax.annotation.Nullable ReportStatus status) {
     this.status = status;
   }
 
 
-  public FacialSimilarityMotionReport result(ReportResult result) {
+  public FacialSimilarityMotionReport result(@javax.annotation.Nullable ReportResult result) {
     this.result = result;
     return this;
   }
@@ -215,12 +230,12 @@ public class FacialSimilarityMotionReport {
     return result;
   }
 
-  public void setResult(ReportResult result) {
+  public void setResult(@javax.annotation.Nullable ReportResult result) {
     this.result = result;
   }
 
 
-  public FacialSimilarityMotionReport subResult(ReportSubResult subResult) {
+  public FacialSimilarityMotionReport subResult(@javax.annotation.Nullable ReportSubResult subResult) {
     this.subResult = subResult;
     return this;
   }
@@ -234,12 +249,12 @@ public class FacialSimilarityMotionReport {
     return subResult;
   }
 
-  public void setSubResult(ReportSubResult subResult) {
+  public void setSubResult(@javax.annotation.Nullable ReportSubResult subResult) {
     this.subResult = subResult;
   }
 
 
-  public FacialSimilarityMotionReport checkId(UUID checkId) {
+  public FacialSimilarityMotionReport checkId(@javax.annotation.Nullable UUID checkId) {
     this.checkId = checkId;
     return this;
   }
@@ -253,12 +268,12 @@ public class FacialSimilarityMotionReport {
     return checkId;
   }
 
-  public void setCheckId(UUID checkId) {
+  public void setCheckId(@javax.annotation.Nullable UUID checkId) {
     this.checkId = checkId;
   }
 
 
-  public FacialSimilarityMotionReport name(ReportName name) {
+  public FacialSimilarityMotionReport name(@javax.annotation.Nonnull ReportName name) {
     this.name = name;
     return this;
   }
@@ -272,12 +287,12 @@ public class FacialSimilarityMotionReport {
     return name;
   }
 
-  public void setName(ReportName name) {
+  public void setName(@javax.annotation.Nonnull ReportName name) {
     this.name = name;
   }
 
 
-  public FacialSimilarityMotionReport documents(List<ReportDocument> documents) {
+  public FacialSimilarityMotionReport documents(@javax.annotation.Nullable List<ReportDocument> documents) {
     this.documents = documents;
     return this;
   }
@@ -299,12 +314,12 @@ public class FacialSimilarityMotionReport {
     return documents;
   }
 
-  public void setDocuments(List<ReportDocument> documents) {
+  public void setDocuments(@javax.annotation.Nullable List<ReportDocument> documents) {
     this.documents = documents;
   }
 
 
-  public FacialSimilarityMotionReport livePhotos(List<FacialSimilarityReportMedia> livePhotos) {
+  public FacialSimilarityMotionReport livePhotos(@javax.annotation.Nullable List<FacialSimilarityReportMedia> livePhotos) {
     this.livePhotos = livePhotos;
     return this;
   }
@@ -326,12 +341,12 @@ public class FacialSimilarityMotionReport {
     return livePhotos;
   }
 
-  public void setLivePhotos(List<FacialSimilarityReportMedia> livePhotos) {
+  public void setLivePhotos(@javax.annotation.Nullable List<FacialSimilarityReportMedia> livePhotos) {
     this.livePhotos = livePhotos;
   }
 
 
-  public FacialSimilarityMotionReport liveVideos(List<FacialSimilarityReportMedia> liveVideos) {
+  public FacialSimilarityMotionReport liveVideos(@javax.annotation.Nullable List<FacialSimilarityReportMedia> liveVideos) {
     this.liveVideos = liveVideos;
     return this;
   }
@@ -353,12 +368,12 @@ public class FacialSimilarityMotionReport {
     return liveVideos;
   }
 
-  public void setLiveVideos(List<FacialSimilarityReportMedia> liveVideos) {
+  public void setLiveVideos(@javax.annotation.Nullable List<FacialSimilarityReportMedia> liveVideos) {
     this.liveVideos = liveVideos;
   }
 
 
-  public FacialSimilarityMotionReport motionCaptures(List<FacialSimilarityReportMedia> motionCaptures) {
+  public FacialSimilarityMotionReport motionCaptures(@javax.annotation.Nullable List<FacialSimilarityReportMedia> motionCaptures) {
     this.motionCaptures = motionCaptures;
     return this;
   }
@@ -380,12 +395,12 @@ public class FacialSimilarityMotionReport {
     return motionCaptures;
   }
 
-  public void setMotionCaptures(List<FacialSimilarityReportMedia> motionCaptures) {
+  public void setMotionCaptures(@javax.annotation.Nullable List<FacialSimilarityReportMedia> motionCaptures) {
     this.motionCaptures = motionCaptures;
   }
 
 
-  public FacialSimilarityMotionReport idPhotos(List<FacialSimilarityReportMedia> idPhotos) {
+  public FacialSimilarityMotionReport idPhotos(@javax.annotation.Nullable List<FacialSimilarityReportMedia> idPhotos) {
     this.idPhotos = idPhotos;
     return this;
   }
@@ -407,12 +422,12 @@ public class FacialSimilarityMotionReport {
     return idPhotos;
   }
 
-  public void setIdPhotos(List<FacialSimilarityReportMedia> idPhotos) {
+  public void setIdPhotos(@javax.annotation.Nullable List<FacialSimilarityReportMedia> idPhotos) {
     this.idPhotos = idPhotos;
   }
 
 
-  public FacialSimilarityMotionReport breakdown(FacialSimilarityMotionBreakdown breakdown) {
+  public FacialSimilarityMotionReport breakdown(@javax.annotation.Nullable FacialSimilarityMotionBreakdown breakdown) {
     this.breakdown = breakdown;
     return this;
   }
@@ -426,12 +441,12 @@ public class FacialSimilarityMotionReport {
     return breakdown;
   }
 
-  public void setBreakdown(FacialSimilarityMotionBreakdown breakdown) {
+  public void setBreakdown(@javax.annotation.Nullable FacialSimilarityMotionBreakdown breakdown) {
     this.breakdown = breakdown;
   }
 
 
-  public FacialSimilarityMotionReport properties(FacialSimilarityMotionProperties properties) {
+  public FacialSimilarityMotionReport properties(@javax.annotation.Nullable FacialSimilarityMotionProperties properties) {
     this.properties = properties;
     return this;
   }
@@ -445,7 +460,7 @@ public class FacialSimilarityMotionReport {
     return properties;
   }
 
-  public void setProperties(FacialSimilarityMotionProperties properties) {
+  public void setProperties(@javax.annotation.Nullable FacialSimilarityMotionProperties properties) {
     this.properties = properties;
   }
 

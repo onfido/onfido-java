@@ -55,48 +55,57 @@ import com.onfido.JSON;
 /**
  * ApplicantBuilder
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class ApplicantBuilder {
   public static final String SERIALIZED_NAME_EMAIL = "email";
   @SerializedName(SERIALIZED_NAME_EMAIL)
+  @javax.annotation.Nullable
   private String email;
 
   public static final String SERIALIZED_NAME_DOB = "dob";
   @SerializedName(SERIALIZED_NAME_DOB)
+  @javax.annotation.Nullable
   private LocalDate dob;
 
   public static final String SERIALIZED_NAME_ID_NUMBERS = "id_numbers";
   @SerializedName(SERIALIZED_NAME_ID_NUMBERS)
+  @javax.annotation.Nullable
   private List<IdNumber> idNumbers = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_PHONE_NUMBER = "phone_number";
   @SerializedName(SERIALIZED_NAME_PHONE_NUMBER)
+  @javax.annotation.Nullable
   private String phoneNumber;
 
   public static final String SERIALIZED_NAME_CONSENTS = "consents";
   @SerializedName(SERIALIZED_NAME_CONSENTS)
+  @javax.annotation.Nullable
   private List<ApplicantConsentBuilder> consents = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_ADDRESS = "address";
   @SerializedName(SERIALIZED_NAME_ADDRESS)
+  @javax.annotation.Nullable
   private AddressBuilder address;
 
   public static final String SERIALIZED_NAME_LOCATION = "location";
   @SerializedName(SERIALIZED_NAME_LOCATION)
+  @javax.annotation.Nullable
   private LocationBuilder location;
 
   public static final String SERIALIZED_NAME_FIRST_NAME = "first_name";
   @SerializedName(SERIALIZED_NAME_FIRST_NAME)
+  @javax.annotation.Nonnull
   private String firstName;
 
   public static final String SERIALIZED_NAME_LAST_NAME = "last_name";
   @SerializedName(SERIALIZED_NAME_LAST_NAME)
+  @javax.annotation.Nonnull
   private String lastName;
 
   public ApplicantBuilder() {
   }
 
-  public ApplicantBuilder email(String email) {
+  public ApplicantBuilder email(@javax.annotation.Nullable String email) {
     this.email = email;
     return this;
   }
@@ -110,12 +119,12 @@ public class ApplicantBuilder {
     return email;
   }
 
-  public void setEmail(String email) {
+  public void setEmail(@javax.annotation.Nullable String email) {
     this.email = email;
   }
 
 
-  public ApplicantBuilder dob(LocalDate dob) {
+  public ApplicantBuilder dob(@javax.annotation.Nullable LocalDate dob) {
     this.dob = dob;
     return this;
   }
@@ -129,12 +138,12 @@ public class ApplicantBuilder {
     return dob;
   }
 
-  public void setDob(LocalDate dob) {
+  public void setDob(@javax.annotation.Nullable LocalDate dob) {
     this.dob = dob;
   }
 
 
-  public ApplicantBuilder idNumbers(List<IdNumber> idNumbers) {
+  public ApplicantBuilder idNumbers(@javax.annotation.Nullable List<IdNumber> idNumbers) {
     this.idNumbers = idNumbers;
     return this;
   }
@@ -156,12 +165,12 @@ public class ApplicantBuilder {
     return idNumbers;
   }
 
-  public void setIdNumbers(List<IdNumber> idNumbers) {
+  public void setIdNumbers(@javax.annotation.Nullable List<IdNumber> idNumbers) {
     this.idNumbers = idNumbers;
   }
 
 
-  public ApplicantBuilder phoneNumber(String phoneNumber) {
+  public ApplicantBuilder phoneNumber(@javax.annotation.Nullable String phoneNumber) {
     this.phoneNumber = phoneNumber;
     return this;
   }
@@ -175,12 +184,12 @@ public class ApplicantBuilder {
     return phoneNumber;
   }
 
-  public void setPhoneNumber(String phoneNumber) {
+  public void setPhoneNumber(@javax.annotation.Nullable String phoneNumber) {
     this.phoneNumber = phoneNumber;
   }
 
 
-  public ApplicantBuilder consents(List<ApplicantConsentBuilder> consents) {
+  public ApplicantBuilder consents(@javax.annotation.Nullable List<ApplicantConsentBuilder> consents) {
     this.consents = consents;
     return this;
   }
@@ -202,12 +211,12 @@ public class ApplicantBuilder {
     return consents;
   }
 
-  public void setConsents(List<ApplicantConsentBuilder> consents) {
+  public void setConsents(@javax.annotation.Nullable List<ApplicantConsentBuilder> consents) {
     this.consents = consents;
   }
 
 
-  public ApplicantBuilder address(AddressBuilder address) {
+  public ApplicantBuilder address(@javax.annotation.Nullable AddressBuilder address) {
     this.address = address;
     return this;
   }
@@ -221,12 +230,12 @@ public class ApplicantBuilder {
     return address;
   }
 
-  public void setAddress(AddressBuilder address) {
+  public void setAddress(@javax.annotation.Nullable AddressBuilder address) {
     this.address = address;
   }
 
 
-  public ApplicantBuilder location(LocationBuilder location) {
+  public ApplicantBuilder location(@javax.annotation.Nullable LocationBuilder location) {
     this.location = location;
     return this;
   }
@@ -240,12 +249,12 @@ public class ApplicantBuilder {
     return location;
   }
 
-  public void setLocation(LocationBuilder location) {
+  public void setLocation(@javax.annotation.Nullable LocationBuilder location) {
     this.location = location;
   }
 
 
-  public ApplicantBuilder firstName(String firstName) {
+  public ApplicantBuilder firstName(@javax.annotation.Nonnull String firstName) {
     this.firstName = firstName;
     return this;
   }
@@ -259,12 +268,12 @@ public class ApplicantBuilder {
     return firstName;
   }
 
-  public void setFirstName(String firstName) {
+  public void setFirstName(@javax.annotation.Nonnull String firstName) {
     this.firstName = firstName;
   }
 
 
-  public ApplicantBuilder lastName(String lastName) {
+  public ApplicantBuilder lastName(@javax.annotation.Nonnull String lastName) {
     this.lastName = lastName;
     return this;
   }
@@ -278,7 +287,7 @@ public class ApplicantBuilder {
     return lastName;
   }
 
-  public void setLastName(String lastName) {
+  public void setLastName(@javax.annotation.Nonnull String lastName) {
     this.lastName = lastName;
   }
 

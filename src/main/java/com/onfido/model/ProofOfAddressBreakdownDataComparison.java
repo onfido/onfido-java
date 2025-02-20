@@ -49,20 +49,22 @@ import com.onfido.JSON;
 /**
  * Asserts whether the first name, last name and address provided by the applicant match those on the PoA document.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class ProofOfAddressBreakdownDataComparison {
   public static final String SERIALIZED_NAME_RESULT = "result";
   @SerializedName(SERIALIZED_NAME_RESULT)
+  @javax.annotation.Nullable
   private String result;
 
   public static final String SERIALIZED_NAME_BREAKDOWN = "breakdown";
   @SerializedName(SERIALIZED_NAME_BREAKDOWN)
+  @javax.annotation.Nullable
   private ProofOfAddressBreakdownDataComparisonBreakdown breakdown;
 
   public ProofOfAddressBreakdownDataComparison() {
   }
 
-  public ProofOfAddressBreakdownDataComparison result(String result) {
+  public ProofOfAddressBreakdownDataComparison result(@javax.annotation.Nullable String result) {
     this.result = result;
     return this;
   }
@@ -76,12 +78,12 @@ public class ProofOfAddressBreakdownDataComparison {
     return result;
   }
 
-  public void setResult(String result) {
+  public void setResult(@javax.annotation.Nullable String result) {
     this.result = result;
   }
 
 
-  public ProofOfAddressBreakdownDataComparison breakdown(ProofOfAddressBreakdownDataComparisonBreakdown breakdown) {
+  public ProofOfAddressBreakdownDataComparison breakdown(@javax.annotation.Nullable ProofOfAddressBreakdownDataComparisonBreakdown breakdown) {
     this.breakdown = breakdown;
     return this;
   }
@@ -95,7 +97,7 @@ public class ProofOfAddressBreakdownDataComparison {
     return breakdown;
   }
 
-  public void setBreakdown(ProofOfAddressBreakdownDataComparisonBreakdown breakdown) {
+  public void setBreakdown(@javax.annotation.Nullable ProofOfAddressBreakdownDataComparisonBreakdown breakdown) {
     this.breakdown = breakdown;
   }
 

@@ -49,20 +49,22 @@ import com.onfido.JSON;
 /**
  * Contains a score value under the properties bag.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class FacialSimilarityPhotoBreakdownVisualAuthenticityBreakdownSpoofingDetection {
   public static final String SERIALIZED_NAME_RESULT = "result";
   @SerializedName(SERIALIZED_NAME_RESULT)
+  @javax.annotation.Nullable
   private String result;
 
   public static final String SERIALIZED_NAME_PROPERTIES = "properties";
   @SerializedName(SERIALIZED_NAME_PROPERTIES)
+  @javax.annotation.Nullable
   private FacialSimilarityPhotoBreakdownVisualAuthenticityBreakdownSpoofingDetectionProperties properties;
 
   public FacialSimilarityPhotoBreakdownVisualAuthenticityBreakdownSpoofingDetection() {
   }
 
-  public FacialSimilarityPhotoBreakdownVisualAuthenticityBreakdownSpoofingDetection result(String result) {
+  public FacialSimilarityPhotoBreakdownVisualAuthenticityBreakdownSpoofingDetection result(@javax.annotation.Nullable String result) {
     this.result = result;
     return this;
   }
@@ -76,12 +78,12 @@ public class FacialSimilarityPhotoBreakdownVisualAuthenticityBreakdownSpoofingDe
     return result;
   }
 
-  public void setResult(String result) {
+  public void setResult(@javax.annotation.Nullable String result) {
     this.result = result;
   }
 
 
-  public FacialSimilarityPhotoBreakdownVisualAuthenticityBreakdownSpoofingDetection properties(FacialSimilarityPhotoBreakdownVisualAuthenticityBreakdownSpoofingDetectionProperties properties) {
+  public FacialSimilarityPhotoBreakdownVisualAuthenticityBreakdownSpoofingDetection properties(@javax.annotation.Nullable FacialSimilarityPhotoBreakdownVisualAuthenticityBreakdownSpoofingDetectionProperties properties) {
     this.properties = properties;
     return this;
   }
@@ -95,7 +97,7 @@ public class FacialSimilarityPhotoBreakdownVisualAuthenticityBreakdownSpoofingDe
     return properties;
   }
 
-  public void setProperties(FacialSimilarityPhotoBreakdownVisualAuthenticityBreakdownSpoofingDetectionProperties properties) {
+  public void setProperties(@javax.annotation.Nullable FacialSimilarityPhotoBreakdownVisualAuthenticityBreakdownSpoofingDetectionProperties properties) {
     this.properties = properties;
   }
 

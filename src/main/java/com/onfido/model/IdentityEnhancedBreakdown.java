@@ -52,28 +52,32 @@ import com.onfido.JSON;
 /**
  * IdentityEnhancedBreakdown
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class IdentityEnhancedBreakdown {
   public static final String SERIALIZED_NAME_SOURCES = "sources";
   @SerializedName(SERIALIZED_NAME_SOURCES)
+  @javax.annotation.Nullable
   private IdentityEnhancedBreakdownSources sources;
 
   public static final String SERIALIZED_NAME_ADDRESS = "address";
   @SerializedName(SERIALIZED_NAME_ADDRESS)
+  @javax.annotation.Nullable
   private IdentityEnhancedBreakdownAddress address;
 
   public static final String SERIALIZED_NAME_DATE_OF_BIRTH = "date_of_birth";
   @SerializedName(SERIALIZED_NAME_DATE_OF_BIRTH)
+  @javax.annotation.Nullable
   private IdentityEnhancedBreakdownDateOfBirth dateOfBirth;
 
   public static final String SERIALIZED_NAME_MORTALITY = "mortality";
   @SerializedName(SERIALIZED_NAME_MORTALITY)
+  @javax.annotation.Nullable
   private IdentityEnhancedBreakdownMortality mortality;
 
   public IdentityEnhancedBreakdown() {
   }
 
-  public IdentityEnhancedBreakdown sources(IdentityEnhancedBreakdownSources sources) {
+  public IdentityEnhancedBreakdown sources(@javax.annotation.Nullable IdentityEnhancedBreakdownSources sources) {
     this.sources = sources;
     return this;
   }
@@ -87,12 +91,12 @@ public class IdentityEnhancedBreakdown {
     return sources;
   }
 
-  public void setSources(IdentityEnhancedBreakdownSources sources) {
+  public void setSources(@javax.annotation.Nullable IdentityEnhancedBreakdownSources sources) {
     this.sources = sources;
   }
 
 
-  public IdentityEnhancedBreakdown address(IdentityEnhancedBreakdownAddress address) {
+  public IdentityEnhancedBreakdown address(@javax.annotation.Nullable IdentityEnhancedBreakdownAddress address) {
     this.address = address;
     return this;
   }
@@ -106,12 +110,12 @@ public class IdentityEnhancedBreakdown {
     return address;
   }
 
-  public void setAddress(IdentityEnhancedBreakdownAddress address) {
+  public void setAddress(@javax.annotation.Nullable IdentityEnhancedBreakdownAddress address) {
     this.address = address;
   }
 
 
-  public IdentityEnhancedBreakdown dateOfBirth(IdentityEnhancedBreakdownDateOfBirth dateOfBirth) {
+  public IdentityEnhancedBreakdown dateOfBirth(@javax.annotation.Nullable IdentityEnhancedBreakdownDateOfBirth dateOfBirth) {
     this.dateOfBirth = dateOfBirth;
     return this;
   }
@@ -125,12 +129,12 @@ public class IdentityEnhancedBreakdown {
     return dateOfBirth;
   }
 
-  public void setDateOfBirth(IdentityEnhancedBreakdownDateOfBirth dateOfBirth) {
+  public void setDateOfBirth(@javax.annotation.Nullable IdentityEnhancedBreakdownDateOfBirth dateOfBirth) {
     this.dateOfBirth = dateOfBirth;
   }
 
 
-  public IdentityEnhancedBreakdown mortality(IdentityEnhancedBreakdownMortality mortality) {
+  public IdentityEnhancedBreakdown mortality(@javax.annotation.Nullable IdentityEnhancedBreakdownMortality mortality) {
     this.mortality = mortality;
     return this;
   }
@@ -144,7 +148,7 @@ public class IdentityEnhancedBreakdown {
     return mortality;
   }
 
-  public void setMortality(IdentityEnhancedBreakdownMortality mortality) {
+  public void setMortality(@javax.annotation.Nullable IdentityEnhancedBreakdownMortality mortality) {
     this.mortality = mortality;
   }
 

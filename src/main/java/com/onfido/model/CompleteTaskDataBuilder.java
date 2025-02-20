@@ -52,7 +52,7 @@ import com.google.gson.JsonParseException;
 
 import com.onfido.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class CompleteTaskDataBuilder extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(CompleteTaskDataBuilder.class.getName());
 
@@ -224,6 +224,7 @@ public class CompleteTaskDataBuilder extends AbstractOpenApiSchema {
     public List<Object> getListObject() throws ClassCastException {
         return (List<Object>)super.getActualInstance();
     }
+
     /**
      * Get the actual instance of `Object`. If the actual instance is not `Object`,
      * the ClassCastException will be thrown.

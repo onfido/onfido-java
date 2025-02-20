@@ -49,24 +49,27 @@ import com.onfido.JSON;
 /**
  * ProofOfAddressBreakdownDataComparisonBreakdown
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class ProofOfAddressBreakdownDataComparisonBreakdown {
   public static final String SERIALIZED_NAME_ADDRESS = "address";
   @SerializedName(SERIALIZED_NAME_ADDRESS)
+  @javax.annotation.Nullable
   private DocumentBreakdownDataComparisonBreakdownIssuingCountry address;
 
   public static final String SERIALIZED_NAME_FIRST_NAME = "first_name";
   @SerializedName(SERIALIZED_NAME_FIRST_NAME)
+  @javax.annotation.Nullable
   private DocumentBreakdownDataComparisonBreakdownIssuingCountry firstName;
 
   public static final String SERIALIZED_NAME_LAST_NAME = "last_name";
   @SerializedName(SERIALIZED_NAME_LAST_NAME)
+  @javax.annotation.Nullable
   private DocumentBreakdownDataComparisonBreakdownIssuingCountry lastName;
 
   public ProofOfAddressBreakdownDataComparisonBreakdown() {
   }
 
-  public ProofOfAddressBreakdownDataComparisonBreakdown address(DocumentBreakdownDataComparisonBreakdownIssuingCountry address) {
+  public ProofOfAddressBreakdownDataComparisonBreakdown address(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry address) {
     this.address = address;
     return this;
   }
@@ -80,12 +83,12 @@ public class ProofOfAddressBreakdownDataComparisonBreakdown {
     return address;
   }
 
-  public void setAddress(DocumentBreakdownDataComparisonBreakdownIssuingCountry address) {
+  public void setAddress(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry address) {
     this.address = address;
   }
 
 
-  public ProofOfAddressBreakdownDataComparisonBreakdown firstName(DocumentBreakdownDataComparisonBreakdownIssuingCountry firstName) {
+  public ProofOfAddressBreakdownDataComparisonBreakdown firstName(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry firstName) {
     this.firstName = firstName;
     return this;
   }
@@ -99,12 +102,12 @@ public class ProofOfAddressBreakdownDataComparisonBreakdown {
     return firstName;
   }
 
-  public void setFirstName(DocumentBreakdownDataComparisonBreakdownIssuingCountry firstName) {
+  public void setFirstName(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry firstName) {
     this.firstName = firstName;
   }
 
 
-  public ProofOfAddressBreakdownDataComparisonBreakdown lastName(DocumentBreakdownDataComparisonBreakdownIssuingCountry lastName) {
+  public ProofOfAddressBreakdownDataComparisonBreakdown lastName(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry lastName) {
     this.lastName = lastName;
     return this;
   }
@@ -118,7 +121,7 @@ public class ProofOfAddressBreakdownDataComparisonBreakdown {
     return lastName;
   }
 
-  public void setLastName(DocumentBreakdownDataComparisonBreakdownIssuingCountry lastName) {
+  public void setLastName(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry lastName) {
     this.lastName = lastName;
   }
 

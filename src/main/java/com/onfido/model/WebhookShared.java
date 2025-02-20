@@ -51,28 +51,32 @@ import com.onfido.JSON;
 /**
  * WebhookShared
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class WebhookShared {
   public static final String SERIALIZED_NAME_ENABLED = "enabled";
   @SerializedName(SERIALIZED_NAME_ENABLED)
+  @javax.annotation.Nullable
   private Boolean enabled;
 
   public static final String SERIALIZED_NAME_EVENTS = "events";
   @SerializedName(SERIALIZED_NAME_EVENTS)
+  @javax.annotation.Nullable
   private List<WebhookEventType> events = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_ENVIRONMENTS = "environments";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENTS)
+  @javax.annotation.Nullable
   private List<String> environments = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_PAYLOAD_VERSION = "payload_version";
   @SerializedName(SERIALIZED_NAME_PAYLOAD_VERSION)
+  @javax.annotation.Nullable
   private Integer payloadVersion;
 
   public WebhookShared() {
   }
 
-  public WebhookShared enabled(Boolean enabled) {
+  public WebhookShared enabled(@javax.annotation.Nullable Boolean enabled) {
     this.enabled = enabled;
     return this;
   }
@@ -86,12 +90,12 @@ public class WebhookShared {
     return enabled;
   }
 
-  public void setEnabled(Boolean enabled) {
+  public void setEnabled(@javax.annotation.Nullable Boolean enabled) {
     this.enabled = enabled;
   }
 
 
-  public WebhookShared events(List<WebhookEventType> events) {
+  public WebhookShared events(@javax.annotation.Nullable List<WebhookEventType> events) {
     this.events = events;
     return this;
   }
@@ -113,12 +117,12 @@ public class WebhookShared {
     return events;
   }
 
-  public void setEvents(List<WebhookEventType> events) {
+  public void setEvents(@javax.annotation.Nullable List<WebhookEventType> events) {
     this.events = events;
   }
 
 
-  public WebhookShared environments(List<String> environments) {
+  public WebhookShared environments(@javax.annotation.Nullable List<String> environments) {
     this.environments = environments;
     return this;
   }
@@ -140,12 +144,12 @@ public class WebhookShared {
     return environments;
   }
 
-  public void setEnvironments(List<String> environments) {
+  public void setEnvironments(@javax.annotation.Nullable List<String> environments) {
     this.environments = environments;
   }
 
 
-  public WebhookShared payloadVersion(Integer payloadVersion) {
+  public WebhookShared payloadVersion(@javax.annotation.Nullable Integer payloadVersion) {
     this.payloadVersion = payloadVersion;
     return this;
   }
@@ -159,7 +163,7 @@ public class WebhookShared {
     return payloadVersion;
   }
 
-  public void setPayloadVersion(Integer payloadVersion) {
+  public void setPayloadVersion(@javax.annotation.Nullable Integer payloadVersion) {
     this.payloadVersion = payloadVersion;
   }
 

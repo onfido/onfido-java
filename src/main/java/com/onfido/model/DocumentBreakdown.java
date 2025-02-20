@@ -57,48 +57,57 @@ import com.onfido.JSON;
 /**
  * DocumentBreakdown
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class DocumentBreakdown {
   public static final String SERIALIZED_NAME_DATA_COMPARISON = "data_comparison";
   @SerializedName(SERIALIZED_NAME_DATA_COMPARISON)
+  @javax.annotation.Nullable
   private DocumentBreakdownDataComparison dataComparison;
 
   public static final String SERIALIZED_NAME_DATA_VALIDATION = "data_validation";
   @SerializedName(SERIALIZED_NAME_DATA_VALIDATION)
+  @javax.annotation.Nullable
   private DocumentBreakdownDataValidation dataValidation;
 
   public static final String SERIALIZED_NAME_IMAGE_INTEGRITY = "image_integrity";
   @SerializedName(SERIALIZED_NAME_IMAGE_INTEGRITY)
+  @javax.annotation.Nullable
   private DocumentBreakdownImageIntegrity imageIntegrity;
 
   public static final String SERIALIZED_NAME_VISUAL_AUTHENTICITY = "visual_authenticity";
   @SerializedName(SERIALIZED_NAME_VISUAL_AUTHENTICITY)
+  @javax.annotation.Nullable
   private DocumentBreakdownVisualAuthenticity visualAuthenticity;
 
   public static final String SERIALIZED_NAME_DATA_CONSISTENCY = "data_consistency";
   @SerializedName(SERIALIZED_NAME_DATA_CONSISTENCY)
+  @javax.annotation.Nullable
   private DocumentBreakdownDataConsistency dataConsistency;
 
   public static final String SERIALIZED_NAME_POLICE_RECORD = "police_record";
   @SerializedName(SERIALIZED_NAME_POLICE_RECORD)
+  @javax.annotation.Nullable
   private DocumentBreakdownPoliceRecord policeRecord;
 
   public static final String SERIALIZED_NAME_COMPROMISED_DOCUMENT = "compromised_document";
   @SerializedName(SERIALIZED_NAME_COMPROMISED_DOCUMENT)
+  @javax.annotation.Nullable
   private DocumentBreakdownCompromisedDocument compromisedDocument;
 
   public static final String SERIALIZED_NAME_AGE_VALIDATION = "age_validation";
   @SerializedName(SERIALIZED_NAME_AGE_VALIDATION)
+  @javax.annotation.Nullable
   private DocumentBreakdownAgeValidation ageValidation;
 
   public static final String SERIALIZED_NAME_ISSUING_AUTHORITY = "issuing_authority";
   @SerializedName(SERIALIZED_NAME_ISSUING_AUTHORITY)
+  @javax.annotation.Nullable
   private DocumentBreakdownIssuingAuthority issuingAuthority;
 
   public DocumentBreakdown() {
   }
 
-  public DocumentBreakdown dataComparison(DocumentBreakdownDataComparison dataComparison) {
+  public DocumentBreakdown dataComparison(@javax.annotation.Nullable DocumentBreakdownDataComparison dataComparison) {
     this.dataComparison = dataComparison;
     return this;
   }
@@ -112,12 +121,12 @@ public class DocumentBreakdown {
     return dataComparison;
   }
 
-  public void setDataComparison(DocumentBreakdownDataComparison dataComparison) {
+  public void setDataComparison(@javax.annotation.Nullable DocumentBreakdownDataComparison dataComparison) {
     this.dataComparison = dataComparison;
   }
 
 
-  public DocumentBreakdown dataValidation(DocumentBreakdownDataValidation dataValidation) {
+  public DocumentBreakdown dataValidation(@javax.annotation.Nullable DocumentBreakdownDataValidation dataValidation) {
     this.dataValidation = dataValidation;
     return this;
   }
@@ -131,12 +140,12 @@ public class DocumentBreakdown {
     return dataValidation;
   }
 
-  public void setDataValidation(DocumentBreakdownDataValidation dataValidation) {
+  public void setDataValidation(@javax.annotation.Nullable DocumentBreakdownDataValidation dataValidation) {
     this.dataValidation = dataValidation;
   }
 
 
-  public DocumentBreakdown imageIntegrity(DocumentBreakdownImageIntegrity imageIntegrity) {
+  public DocumentBreakdown imageIntegrity(@javax.annotation.Nullable DocumentBreakdownImageIntegrity imageIntegrity) {
     this.imageIntegrity = imageIntegrity;
     return this;
   }
@@ -150,12 +159,12 @@ public class DocumentBreakdown {
     return imageIntegrity;
   }
 
-  public void setImageIntegrity(DocumentBreakdownImageIntegrity imageIntegrity) {
+  public void setImageIntegrity(@javax.annotation.Nullable DocumentBreakdownImageIntegrity imageIntegrity) {
     this.imageIntegrity = imageIntegrity;
   }
 
 
-  public DocumentBreakdown visualAuthenticity(DocumentBreakdownVisualAuthenticity visualAuthenticity) {
+  public DocumentBreakdown visualAuthenticity(@javax.annotation.Nullable DocumentBreakdownVisualAuthenticity visualAuthenticity) {
     this.visualAuthenticity = visualAuthenticity;
     return this;
   }
@@ -169,12 +178,12 @@ public class DocumentBreakdown {
     return visualAuthenticity;
   }
 
-  public void setVisualAuthenticity(DocumentBreakdownVisualAuthenticity visualAuthenticity) {
+  public void setVisualAuthenticity(@javax.annotation.Nullable DocumentBreakdownVisualAuthenticity visualAuthenticity) {
     this.visualAuthenticity = visualAuthenticity;
   }
 
 
-  public DocumentBreakdown dataConsistency(DocumentBreakdownDataConsistency dataConsistency) {
+  public DocumentBreakdown dataConsistency(@javax.annotation.Nullable DocumentBreakdownDataConsistency dataConsistency) {
     this.dataConsistency = dataConsistency;
     return this;
   }
@@ -188,12 +197,12 @@ public class DocumentBreakdown {
     return dataConsistency;
   }
 
-  public void setDataConsistency(DocumentBreakdownDataConsistency dataConsistency) {
+  public void setDataConsistency(@javax.annotation.Nullable DocumentBreakdownDataConsistency dataConsistency) {
     this.dataConsistency = dataConsistency;
   }
 
 
-  public DocumentBreakdown policeRecord(DocumentBreakdownPoliceRecord policeRecord) {
+  public DocumentBreakdown policeRecord(@javax.annotation.Nullable DocumentBreakdownPoliceRecord policeRecord) {
     this.policeRecord = policeRecord;
     return this;
   }
@@ -207,12 +216,12 @@ public class DocumentBreakdown {
     return policeRecord;
   }
 
-  public void setPoliceRecord(DocumentBreakdownPoliceRecord policeRecord) {
+  public void setPoliceRecord(@javax.annotation.Nullable DocumentBreakdownPoliceRecord policeRecord) {
     this.policeRecord = policeRecord;
   }
 
 
-  public DocumentBreakdown compromisedDocument(DocumentBreakdownCompromisedDocument compromisedDocument) {
+  public DocumentBreakdown compromisedDocument(@javax.annotation.Nullable DocumentBreakdownCompromisedDocument compromisedDocument) {
     this.compromisedDocument = compromisedDocument;
     return this;
   }
@@ -226,12 +235,12 @@ public class DocumentBreakdown {
     return compromisedDocument;
   }
 
-  public void setCompromisedDocument(DocumentBreakdownCompromisedDocument compromisedDocument) {
+  public void setCompromisedDocument(@javax.annotation.Nullable DocumentBreakdownCompromisedDocument compromisedDocument) {
     this.compromisedDocument = compromisedDocument;
   }
 
 
-  public DocumentBreakdown ageValidation(DocumentBreakdownAgeValidation ageValidation) {
+  public DocumentBreakdown ageValidation(@javax.annotation.Nullable DocumentBreakdownAgeValidation ageValidation) {
     this.ageValidation = ageValidation;
     return this;
   }
@@ -245,12 +254,12 @@ public class DocumentBreakdown {
     return ageValidation;
   }
 
-  public void setAgeValidation(DocumentBreakdownAgeValidation ageValidation) {
+  public void setAgeValidation(@javax.annotation.Nullable DocumentBreakdownAgeValidation ageValidation) {
     this.ageValidation = ageValidation;
   }
 
 
-  public DocumentBreakdown issuingAuthority(DocumentBreakdownIssuingAuthority issuingAuthority) {
+  public DocumentBreakdown issuingAuthority(@javax.annotation.Nullable DocumentBreakdownIssuingAuthority issuingAuthority) {
     this.issuingAuthority = issuingAuthority;
     return this;
   }
@@ -264,7 +273,7 @@ public class DocumentBreakdown {
     return issuingAuthority;
   }
 
-  public void setIssuingAuthority(DocumentBreakdownIssuingAuthority issuingAuthority) {
+  public void setIssuingAuthority(@javax.annotation.Nullable DocumentBreakdownIssuingAuthority issuingAuthority) {
     this.issuingAuthority = issuingAuthority;
   }
 

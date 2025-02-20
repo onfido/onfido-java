@@ -48,16 +48,17 @@ import com.onfido.JSON;
 /**
  * Asserts if there are any records found in Law-Enforcement and Regulatory bodies Monitored Lists (including Terrorism, Money Laundering and Most Wanted lists).
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class WatchlistAmlBreakdownLegalAndRegulatoryWarnings {
   public static final String SERIALIZED_NAME_RESULT = "result";
   @SerializedName(SERIALIZED_NAME_RESULT)
+  @javax.annotation.Nullable
   private String result;
 
   public WatchlistAmlBreakdownLegalAndRegulatoryWarnings() {
   }
 
-  public WatchlistAmlBreakdownLegalAndRegulatoryWarnings result(String result) {
+  public WatchlistAmlBreakdownLegalAndRegulatoryWarnings result(@javax.annotation.Nullable String result) {
     this.result = result;
     return this;
   }
@@ -71,7 +72,7 @@ public class WatchlistAmlBreakdownLegalAndRegulatoryWarnings {
     return result;
   }
 
-  public void setResult(String result) {
+  public void setResult(@javax.annotation.Nullable String result) {
     this.result = result;
   }
 

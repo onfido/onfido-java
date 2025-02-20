@@ -53,22 +53,26 @@ import com.onfido.JSON;
 /**
  * CheckResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class CheckResponse {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nonnull
   private UUID id;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
+  @javax.annotation.Nullable
   private OffsetDateTime createdAt;
 
   public static final String SERIALIZED_NAME_HREF = "href";
   @SerializedName(SERIALIZED_NAME_HREF)
+  @javax.annotation.Nullable
   private String href;
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
+  @javax.annotation.Nullable
   private CheckStatus status;
 
   /**
@@ -127,36 +131,43 @@ public class CheckResponse {
 
   public static final String SERIALIZED_NAME_RESULT = "result";
   @SerializedName(SERIALIZED_NAME_RESULT)
+  @javax.annotation.Nullable
   private ResultEnum result;
 
   public static final String SERIALIZED_NAME_FORM_URI = "form_uri";
   @SerializedName(SERIALIZED_NAME_FORM_URI)
+  @javax.annotation.Nullable
   private String formUri;
 
   public static final String SERIALIZED_NAME_RESULTS_URI = "results_uri";
   @SerializedName(SERIALIZED_NAME_RESULTS_URI)
+  @javax.annotation.Nullable
   private String resultsUri;
 
   public static final String SERIALIZED_NAME_REPORT_IDS = "report_ids";
   @SerializedName(SERIALIZED_NAME_REPORT_IDS)
+  @javax.annotation.Nullable
   private List<UUID> reportIds = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SANDBOX = "sandbox";
   @SerializedName(SERIALIZED_NAME_SANDBOX)
+  @javax.annotation.Nullable
   private Boolean sandbox;
 
   public static final String SERIALIZED_NAME_PAUSED = "paused";
   @SerializedName(SERIALIZED_NAME_PAUSED)
+  @javax.annotation.Nullable
   private Boolean paused;
 
   public static final String SERIALIZED_NAME_VERSION = "version";
   @SerializedName(SERIALIZED_NAME_VERSION)
+  @javax.annotation.Nullable
   private String version;
 
   public CheckResponse() {
   }
 
-  public CheckResponse id(UUID id) {
+  public CheckResponse id(@javax.annotation.Nonnull UUID id) {
     this.id = id;
     return this;
   }
@@ -170,12 +181,12 @@ public class CheckResponse {
     return id;
   }
 
-  public void setId(UUID id) {
+  public void setId(@javax.annotation.Nonnull UUID id) {
     this.id = id;
   }
 
 
-  public CheckResponse createdAt(OffsetDateTime createdAt) {
+  public CheckResponse createdAt(@javax.annotation.Nullable OffsetDateTime createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -189,12 +200,12 @@ public class CheckResponse {
     return createdAt;
   }
 
-  public void setCreatedAt(OffsetDateTime createdAt) {
+  public void setCreatedAt(@javax.annotation.Nullable OffsetDateTime createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public CheckResponse href(String href) {
+  public CheckResponse href(@javax.annotation.Nullable String href) {
     this.href = href;
     return this;
   }
@@ -208,12 +219,12 @@ public class CheckResponse {
     return href;
   }
 
-  public void setHref(String href) {
+  public void setHref(@javax.annotation.Nullable String href) {
     this.href = href;
   }
 
 
-  public CheckResponse status(CheckStatus status) {
+  public CheckResponse status(@javax.annotation.Nullable CheckStatus status) {
     this.status = status;
     return this;
   }
@@ -227,12 +238,12 @@ public class CheckResponse {
     return status;
   }
 
-  public void setStatus(CheckStatus status) {
+  public void setStatus(@javax.annotation.Nullable CheckStatus status) {
     this.status = status;
   }
 
 
-  public CheckResponse result(ResultEnum result) {
+  public CheckResponse result(@javax.annotation.Nullable ResultEnum result) {
     this.result = result;
     return this;
   }
@@ -246,12 +257,12 @@ public class CheckResponse {
     return result;
   }
 
-  public void setResult(ResultEnum result) {
+  public void setResult(@javax.annotation.Nullable ResultEnum result) {
     this.result = result;
   }
 
 
-  public CheckResponse formUri(String formUri) {
+  public CheckResponse formUri(@javax.annotation.Nullable String formUri) {
     this.formUri = formUri;
     return this;
   }
@@ -265,12 +276,12 @@ public class CheckResponse {
     return formUri;
   }
 
-  public void setFormUri(String formUri) {
+  public void setFormUri(@javax.annotation.Nullable String formUri) {
     this.formUri = formUri;
   }
 
 
-  public CheckResponse resultsUri(String resultsUri) {
+  public CheckResponse resultsUri(@javax.annotation.Nullable String resultsUri) {
     this.resultsUri = resultsUri;
     return this;
   }
@@ -284,12 +295,12 @@ public class CheckResponse {
     return resultsUri;
   }
 
-  public void setResultsUri(String resultsUri) {
+  public void setResultsUri(@javax.annotation.Nullable String resultsUri) {
     this.resultsUri = resultsUri;
   }
 
 
-  public CheckResponse reportIds(List<UUID> reportIds) {
+  public CheckResponse reportIds(@javax.annotation.Nullable List<UUID> reportIds) {
     this.reportIds = reportIds;
     return this;
   }
@@ -311,12 +322,12 @@ public class CheckResponse {
     return reportIds;
   }
 
-  public void setReportIds(List<UUID> reportIds) {
+  public void setReportIds(@javax.annotation.Nullable List<UUID> reportIds) {
     this.reportIds = reportIds;
   }
 
 
-  public CheckResponse sandbox(Boolean sandbox) {
+  public CheckResponse sandbox(@javax.annotation.Nullable Boolean sandbox) {
     this.sandbox = sandbox;
     return this;
   }
@@ -330,12 +341,12 @@ public class CheckResponse {
     return sandbox;
   }
 
-  public void setSandbox(Boolean sandbox) {
+  public void setSandbox(@javax.annotation.Nullable Boolean sandbox) {
     this.sandbox = sandbox;
   }
 
 
-  public CheckResponse paused(Boolean paused) {
+  public CheckResponse paused(@javax.annotation.Nullable Boolean paused) {
     this.paused = paused;
     return this;
   }
@@ -349,12 +360,12 @@ public class CheckResponse {
     return paused;
   }
 
-  public void setPaused(Boolean paused) {
+  public void setPaused(@javax.annotation.Nullable Boolean paused) {
     this.paused = paused;
   }
 
 
-  public CheckResponse version(String version) {
+  public CheckResponse version(@javax.annotation.Nullable String version) {
     this.version = version;
     return this;
   }
@@ -368,7 +379,7 @@ public class CheckResponse {
     return version;
   }
 
-  public void setVersion(String version) {
+  public void setVersion(@javax.annotation.Nullable String version) {
     this.version = version;
   }
 

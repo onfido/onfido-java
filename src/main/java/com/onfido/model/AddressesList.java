@@ -51,16 +51,17 @@ import com.onfido.JSON;
 /**
  * AddressesList
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class AddressesList {
   public static final String SERIALIZED_NAME_ADDRESSES = "addresses";
   @SerializedName(SERIALIZED_NAME_ADDRESSES)
+  @javax.annotation.Nullable
   private List<Address> addresses = new ArrayList<>();
 
   public AddressesList() {
   }
 
-  public AddressesList addresses(List<Address> addresses) {
+  public AddressesList addresses(@javax.annotation.Nullable List<Address> addresses) {
     this.addresses = addresses;
     return this;
   }
@@ -82,7 +83,7 @@ public class AddressesList {
     return addresses;
   }
 
-  public void setAddresses(List<Address> addresses) {
+  public void setAddresses(@javax.annotation.Nullable List<Address> addresses) {
     this.addresses = addresses;
   }
 

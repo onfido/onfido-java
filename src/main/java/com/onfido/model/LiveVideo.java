@@ -53,44 +53,52 @@ import com.onfido.JSON;
 /**
  * LiveVideo
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class LiveVideo {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nullable
   private UUID id;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
+  @javax.annotation.Nullable
   private OffsetDateTime createdAt;
 
   public static final String SERIALIZED_NAME_HREF = "href";
   @SerializedName(SERIALIZED_NAME_HREF)
+  @javax.annotation.Nullable
   private String href;
 
   public static final String SERIALIZED_NAME_DOWNLOAD_HREF = "download_href";
   @SerializedName(SERIALIZED_NAME_DOWNLOAD_HREF)
+  @javax.annotation.Nullable
   private String downloadHref;
 
   public static final String SERIALIZED_NAME_FILE_NAME = "file_name";
   @SerializedName(SERIALIZED_NAME_FILE_NAME)
+  @javax.annotation.Nullable
   private String fileName;
 
   public static final String SERIALIZED_NAME_FILE_SIZE = "file_size";
   @SerializedName(SERIALIZED_NAME_FILE_SIZE)
+  @javax.annotation.Nullable
   private Integer fileSize;
 
   public static final String SERIALIZED_NAME_FILE_TYPE = "file_type";
   @SerializedName(SERIALIZED_NAME_FILE_TYPE)
+  @javax.annotation.Nullable
   private String fileType;
 
   public static final String SERIALIZED_NAME_CHALLENGE = "challenge";
   @SerializedName(SERIALIZED_NAME_CHALLENGE)
+  @javax.annotation.Nullable
   private List<Map<String, Object>> challenge = new ArrayList<>();
 
   public LiveVideo() {
   }
 
-  public LiveVideo id(UUID id) {
+  public LiveVideo id(@javax.annotation.Nullable UUID id) {
     this.id = id;
     return this;
   }
@@ -104,12 +112,12 @@ public class LiveVideo {
     return id;
   }
 
-  public void setId(UUID id) {
+  public void setId(@javax.annotation.Nullable UUID id) {
     this.id = id;
   }
 
 
-  public LiveVideo createdAt(OffsetDateTime createdAt) {
+  public LiveVideo createdAt(@javax.annotation.Nullable OffsetDateTime createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -123,12 +131,12 @@ public class LiveVideo {
     return createdAt;
   }
 
-  public void setCreatedAt(OffsetDateTime createdAt) {
+  public void setCreatedAt(@javax.annotation.Nullable OffsetDateTime createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public LiveVideo href(String href) {
+  public LiveVideo href(@javax.annotation.Nullable String href) {
     this.href = href;
     return this;
   }
@@ -142,12 +150,12 @@ public class LiveVideo {
     return href;
   }
 
-  public void setHref(String href) {
+  public void setHref(@javax.annotation.Nullable String href) {
     this.href = href;
   }
 
 
-  public LiveVideo downloadHref(String downloadHref) {
+  public LiveVideo downloadHref(@javax.annotation.Nullable String downloadHref) {
     this.downloadHref = downloadHref;
     return this;
   }
@@ -161,12 +169,12 @@ public class LiveVideo {
     return downloadHref;
   }
 
-  public void setDownloadHref(String downloadHref) {
+  public void setDownloadHref(@javax.annotation.Nullable String downloadHref) {
     this.downloadHref = downloadHref;
   }
 
 
-  public LiveVideo fileName(String fileName) {
+  public LiveVideo fileName(@javax.annotation.Nullable String fileName) {
     this.fileName = fileName;
     return this;
   }
@@ -180,12 +188,12 @@ public class LiveVideo {
     return fileName;
   }
 
-  public void setFileName(String fileName) {
+  public void setFileName(@javax.annotation.Nullable String fileName) {
     this.fileName = fileName;
   }
 
 
-  public LiveVideo fileSize(Integer fileSize) {
+  public LiveVideo fileSize(@javax.annotation.Nullable Integer fileSize) {
     this.fileSize = fileSize;
     return this;
   }
@@ -199,12 +207,12 @@ public class LiveVideo {
     return fileSize;
   }
 
-  public void setFileSize(Integer fileSize) {
+  public void setFileSize(@javax.annotation.Nullable Integer fileSize) {
     this.fileSize = fileSize;
   }
 
 
-  public LiveVideo fileType(String fileType) {
+  public LiveVideo fileType(@javax.annotation.Nullable String fileType) {
     this.fileType = fileType;
     return this;
   }
@@ -218,12 +226,12 @@ public class LiveVideo {
     return fileType;
   }
 
-  public void setFileType(String fileType) {
+  public void setFileType(@javax.annotation.Nullable String fileType) {
     this.fileType = fileType;
   }
 
 
-  public LiveVideo challenge(List<Map<String, Object>> challenge) {
+  public LiveVideo challenge(@javax.annotation.Nullable List<Map<String, Object>> challenge) {
     this.challenge = challenge;
     return this;
   }
@@ -245,7 +253,7 @@ public class LiveVideo {
     return challenge;
   }
 
-  public void setChallenge(List<Map<String, Object>> challenge) {
+  public void setChallenge(@javax.annotation.Nullable List<Map<String, Object>> challenge) {
     this.challenge = challenge;
   }
 

@@ -48,24 +48,27 @@ import com.onfido.JSON;
 /**
  * DocumentPropertiesDocumentClassification
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class DocumentPropertiesDocumentClassification {
   public static final String SERIALIZED_NAME_ISSUING_COUNTRY = "issuing_country";
   @SerializedName(SERIALIZED_NAME_ISSUING_COUNTRY)
+  @javax.annotation.Nullable
   private String issuingCountry;
 
   public static final String SERIALIZED_NAME_DOCUMENT_TYPE = "document_type";
   @SerializedName(SERIALIZED_NAME_DOCUMENT_TYPE)
+  @javax.annotation.Nullable
   private String documentType;
 
   public static final String SERIALIZED_NAME_ISSUING_STATE = "issuing_state";
   @SerializedName(SERIALIZED_NAME_ISSUING_STATE)
+  @javax.annotation.Nullable
   private String issuingState;
 
   public DocumentPropertiesDocumentClassification() {
   }
 
-  public DocumentPropertiesDocumentClassification issuingCountry(String issuingCountry) {
+  public DocumentPropertiesDocumentClassification issuingCountry(@javax.annotation.Nullable String issuingCountry) {
     this.issuingCountry = issuingCountry;
     return this;
   }
@@ -79,12 +82,12 @@ public class DocumentPropertiesDocumentClassification {
     return issuingCountry;
   }
 
-  public void setIssuingCountry(String issuingCountry) {
+  public void setIssuingCountry(@javax.annotation.Nullable String issuingCountry) {
     this.issuingCountry = issuingCountry;
   }
 
 
-  public DocumentPropertiesDocumentClassification documentType(String documentType) {
+  public DocumentPropertiesDocumentClassification documentType(@javax.annotation.Nullable String documentType) {
     this.documentType = documentType;
     return this;
   }
@@ -98,12 +101,12 @@ public class DocumentPropertiesDocumentClassification {
     return documentType;
   }
 
-  public void setDocumentType(String documentType) {
+  public void setDocumentType(@javax.annotation.Nullable String documentType) {
     this.documentType = documentType;
   }
 
 
-  public DocumentPropertiesDocumentClassification issuingState(String issuingState) {
+  public DocumentPropertiesDocumentClassification issuingState(@javax.annotation.Nullable String issuingState) {
     this.issuingState = issuingState;
     return this;
   }
@@ -117,7 +120,7 @@ public class DocumentPropertiesDocumentClassification {
     return issuingState;
   }
 
-  public void setIssuingState(String issuingState) {
+  public void setIssuingState(@javax.annotation.Nullable String issuingState) {
     this.issuingState = issuingState;
   }
 

@@ -48,16 +48,17 @@ import com.onfido.JSON;
 /**
  * Asserts if there are any records found in the proprietary database of Politically Exposed Persons sourced from government lists, websites and other media sources.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class WatchlistAmlBreakdownPoliticallyExposedPerson {
   public static final String SERIALIZED_NAME_RESULT = "result";
   @SerializedName(SERIALIZED_NAME_RESULT)
+  @javax.annotation.Nullable
   private String result;
 
   public WatchlistAmlBreakdownPoliticallyExposedPerson() {
   }
 
-  public WatchlistAmlBreakdownPoliticallyExposedPerson result(String result) {
+  public WatchlistAmlBreakdownPoliticallyExposedPerson result(@javax.annotation.Nullable String result) {
     this.result = result;
     return this;
   }
@@ -71,7 +72,7 @@ public class WatchlistAmlBreakdownPoliticallyExposedPerson {
     return result;
   }
 
-  public void setResult(String result) {
+  public void setResult(@javax.annotation.Nullable String result) {
     this.result = result;
   }
 

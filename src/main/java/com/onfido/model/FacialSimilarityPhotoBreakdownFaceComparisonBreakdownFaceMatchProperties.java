@@ -49,20 +49,22 @@ import com.onfido.JSON;
 /**
  * FacialSimilarityPhotoBreakdownFaceComparisonBreakdownFaceMatchProperties
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class FacialSimilarityPhotoBreakdownFaceComparisonBreakdownFaceMatchProperties {
   public static final String SERIALIZED_NAME_SCORE = "score";
   @SerializedName(SERIALIZED_NAME_SCORE)
+  @javax.annotation.Nullable
   private Float score;
 
   public static final String SERIALIZED_NAME_DOCUMENT_ID = "document_id";
   @SerializedName(SERIALIZED_NAME_DOCUMENT_ID)
+  @javax.annotation.Nullable
   private UUID documentId;
 
   public FacialSimilarityPhotoBreakdownFaceComparisonBreakdownFaceMatchProperties() {
   }
 
-  public FacialSimilarityPhotoBreakdownFaceComparisonBreakdownFaceMatchProperties score(Float score) {
+  public FacialSimilarityPhotoBreakdownFaceComparisonBreakdownFaceMatchProperties score(@javax.annotation.Nullable Float score) {
     this.score = score;
     return this;
   }
@@ -76,12 +78,12 @@ public class FacialSimilarityPhotoBreakdownFaceComparisonBreakdownFaceMatchPrope
     return score;
   }
 
-  public void setScore(Float score) {
+  public void setScore(@javax.annotation.Nullable Float score) {
     this.score = score;
   }
 
 
-  public FacialSimilarityPhotoBreakdownFaceComparisonBreakdownFaceMatchProperties documentId(UUID documentId) {
+  public FacialSimilarityPhotoBreakdownFaceComparisonBreakdownFaceMatchProperties documentId(@javax.annotation.Nullable UUID documentId) {
     this.documentId = documentId;
     return this;
   }
@@ -95,7 +97,7 @@ public class FacialSimilarityPhotoBreakdownFaceComparisonBreakdownFaceMatchPrope
     return documentId;
   }
 
-  public void setDocumentId(UUID documentId) {
+  public void setDocumentId(@javax.annotation.Nullable UUID documentId) {
     this.documentId = documentId;
   }
 

@@ -91,7 +91,7 @@ import com.google.gson.JsonParseException;
 
 import com.onfido.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class Report extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(Report.class.getName());
 
@@ -905,6 +905,7 @@ public class Report extends AbstractOpenApiSchema {
     public DocumentReport getDocumentReport() throws ClassCastException {
         return (DocumentReport)super.getActualInstance();
     }
+
     /**
      * Get the actual instance of `DocumentVideoReport`. If the actual instance is not `DocumentVideoReport`,
      * the ClassCastException will be thrown.
@@ -916,6 +917,7 @@ public class Report extends AbstractOpenApiSchema {
     public DocumentVideoReport getDocumentVideoReport() throws ClassCastException {
         return (DocumentVideoReport)super.getActualInstance();
     }
+
     /**
      * Get the actual instance of `DocumentVideoWithAddressInformationReport`. If the actual instance is not `DocumentVideoWithAddressInformationReport`,
      * the ClassCastException will be thrown.
@@ -927,6 +929,7 @@ public class Report extends AbstractOpenApiSchema {
     public DocumentVideoWithAddressInformationReport getDocumentVideoWithAddressInformationReport() throws ClassCastException {
         return (DocumentVideoWithAddressInformationReport)super.getActualInstance();
     }
+
     /**
      * Get the actual instance of `DocumentWithAddressInformationReport`. If the actual instance is not `DocumentWithAddressInformationReport`,
      * the ClassCastException will be thrown.
@@ -938,6 +941,7 @@ public class Report extends AbstractOpenApiSchema {
     public DocumentWithAddressInformationReport getDocumentWithAddressInformationReport() throws ClassCastException {
         return (DocumentWithAddressInformationReport)super.getActualInstance();
     }
+
     /**
      * Get the actual instance of `DocumentWithDrivingLicenceInformationReport`. If the actual instance is not `DocumentWithDrivingLicenceInformationReport`,
      * the ClassCastException will be thrown.
@@ -949,6 +953,7 @@ public class Report extends AbstractOpenApiSchema {
     public DocumentWithDrivingLicenceInformationReport getDocumentWithDrivingLicenceInformationReport() throws ClassCastException {
         return (DocumentWithDrivingLicenceInformationReport)super.getActualInstance();
     }
+
     /**
      * Get the actual instance of `DocumentWithDriverVerificationReport`. If the actual instance is not `DocumentWithDriverVerificationReport`,
      * the ClassCastException will be thrown.
@@ -960,6 +965,7 @@ public class Report extends AbstractOpenApiSchema {
     public DocumentWithDriverVerificationReport getDocumentWithDriverVerificationReport() throws ClassCastException {
         return (DocumentWithDriverVerificationReport)super.getActualInstance();
     }
+
     /**
      * Get the actual instance of `FacialSimilarityPhotoReport`. If the actual instance is not `FacialSimilarityPhotoReport`,
      * the ClassCastException will be thrown.
@@ -971,6 +977,7 @@ public class Report extends AbstractOpenApiSchema {
     public FacialSimilarityPhotoReport getFacialSimilarityPhotoReport() throws ClassCastException {
         return (FacialSimilarityPhotoReport)super.getActualInstance();
     }
+
     /**
      * Get the actual instance of `FacialSimilarityPhotoFullyAutoReport`. If the actual instance is not `FacialSimilarityPhotoFullyAutoReport`,
      * the ClassCastException will be thrown.
@@ -982,6 +989,7 @@ public class Report extends AbstractOpenApiSchema {
     public FacialSimilarityPhotoFullyAutoReport getFacialSimilarityPhotoFullyAutoReport() throws ClassCastException {
         return (FacialSimilarityPhotoFullyAutoReport)super.getActualInstance();
     }
+
     /**
      * Get the actual instance of `FacialSimilarityVideoReport`. If the actual instance is not `FacialSimilarityVideoReport`,
      * the ClassCastException will be thrown.
@@ -993,6 +1001,7 @@ public class Report extends AbstractOpenApiSchema {
     public FacialSimilarityVideoReport getFacialSimilarityVideoReport() throws ClassCastException {
         return (FacialSimilarityVideoReport)super.getActualInstance();
     }
+
     /**
      * Get the actual instance of `FacialSimilarityMotionReport`. If the actual instance is not `FacialSimilarityMotionReport`,
      * the ClassCastException will be thrown.
@@ -1004,6 +1013,7 @@ public class Report extends AbstractOpenApiSchema {
     public FacialSimilarityMotionReport getFacialSimilarityMotionReport() throws ClassCastException {
         return (FacialSimilarityMotionReport)super.getActualInstance();
     }
+
     /**
      * Get the actual instance of `KnownFacesReport`. If the actual instance is not `KnownFacesReport`,
      * the ClassCastException will be thrown.
@@ -1015,6 +1025,7 @@ public class Report extends AbstractOpenApiSchema {
     public KnownFacesReport getKnownFacesReport() throws ClassCastException {
         return (KnownFacesReport)super.getActualInstance();
     }
+
     /**
      * Get the actual instance of `IdentityEnhancedReport`. If the actual instance is not `IdentityEnhancedReport`,
      * the ClassCastException will be thrown.
@@ -1026,6 +1037,7 @@ public class Report extends AbstractOpenApiSchema {
     public IdentityEnhancedReport getIdentityEnhancedReport() throws ClassCastException {
         return (IdentityEnhancedReport)super.getActualInstance();
     }
+
     /**
      * Get the actual instance of `WatchlistAmlReport`. If the actual instance is not `WatchlistAmlReport`,
      * the ClassCastException will be thrown.
@@ -1037,6 +1049,7 @@ public class Report extends AbstractOpenApiSchema {
     public WatchlistAmlReport getWatchlistAmlReport() throws ClassCastException {
         return (WatchlistAmlReport)super.getActualInstance();
     }
+
     /**
      * Get the actual instance of `WatchlistEnhancedReport`. If the actual instance is not `WatchlistEnhancedReport`,
      * the ClassCastException will be thrown.
@@ -1048,6 +1061,7 @@ public class Report extends AbstractOpenApiSchema {
     public WatchlistEnhancedReport getWatchlistEnhancedReport() throws ClassCastException {
         return (WatchlistEnhancedReport)super.getActualInstance();
     }
+
     /**
      * Get the actual instance of `WatchlistStandardReport`. If the actual instance is not `WatchlistStandardReport`,
      * the ClassCastException will be thrown.
@@ -1059,6 +1073,7 @@ public class Report extends AbstractOpenApiSchema {
     public WatchlistStandardReport getWatchlistStandardReport() throws ClassCastException {
         return (WatchlistStandardReport)super.getActualInstance();
     }
+
     /**
      * Get the actual instance of `WatchlistPepsOnlyReport`. If the actual instance is not `WatchlistPepsOnlyReport`,
      * the ClassCastException will be thrown.
@@ -1070,6 +1085,7 @@ public class Report extends AbstractOpenApiSchema {
     public WatchlistPepsOnlyReport getWatchlistPepsOnlyReport() throws ClassCastException {
         return (WatchlistPepsOnlyReport)super.getActualInstance();
     }
+
     /**
      * Get the actual instance of `WatchlistSanctionsOnlyReport`. If the actual instance is not `WatchlistSanctionsOnlyReport`,
      * the ClassCastException will be thrown.
@@ -1081,6 +1097,7 @@ public class Report extends AbstractOpenApiSchema {
     public WatchlistSanctionsOnlyReport getWatchlistSanctionsOnlyReport() throws ClassCastException {
         return (WatchlistSanctionsOnlyReport)super.getActualInstance();
     }
+
     /**
      * Get the actual instance of `ProofOfAddressReport`. If the actual instance is not `ProofOfAddressReport`,
      * the ClassCastException will be thrown.
@@ -1092,6 +1109,7 @@ public class Report extends AbstractOpenApiSchema {
     public ProofOfAddressReport getProofOfAddressReport() throws ClassCastException {
         return (ProofOfAddressReport)super.getActualInstance();
     }
+
     /**
      * Get the actual instance of `UsDrivingLicenceReport`. If the actual instance is not `UsDrivingLicenceReport`,
      * the ClassCastException will be thrown.
@@ -1103,6 +1121,7 @@ public class Report extends AbstractOpenApiSchema {
     public UsDrivingLicenceReport getUsDrivingLicenceReport() throws ClassCastException {
         return (UsDrivingLicenceReport)super.getActualInstance();
     }
+
     /**
      * Get the actual instance of `DeviceIntelligenceReport`. If the actual instance is not `DeviceIntelligenceReport`,
      * the ClassCastException will be thrown.
@@ -1114,6 +1133,7 @@ public class Report extends AbstractOpenApiSchema {
     public DeviceIntelligenceReport getDeviceIntelligenceReport() throws ClassCastException {
         return (DeviceIntelligenceReport)super.getActualInstance();
     }
+
     /**
      * Get the actual instance of `IndiaPanReport`. If the actual instance is not `IndiaPanReport`,
      * the ClassCastException will be thrown.

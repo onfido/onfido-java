@@ -49,20 +49,22 @@ import com.onfido.JSON;
 /**
  * The number of sources which produced a match to applicant details.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class IdentityEnhancedBreakdownSourcesBreakdownTotalSources {
   public static final String SERIALIZED_NAME_RESULT = "result";
   @SerializedName(SERIALIZED_NAME_RESULT)
+  @javax.annotation.Nullable
   private String result;
 
   public static final String SERIALIZED_NAME_PROPERTIES = "properties";
   @SerializedName(SERIALIZED_NAME_PROPERTIES)
+  @javax.annotation.Nullable
   private IdentityEnhancedBreakdownSourcesBreakdownTotalSourcesProperties properties;
 
   public IdentityEnhancedBreakdownSourcesBreakdownTotalSources() {
   }
 
-  public IdentityEnhancedBreakdownSourcesBreakdownTotalSources result(String result) {
+  public IdentityEnhancedBreakdownSourcesBreakdownTotalSources result(@javax.annotation.Nullable String result) {
     this.result = result;
     return this;
   }
@@ -76,12 +78,12 @@ public class IdentityEnhancedBreakdownSourcesBreakdownTotalSources {
     return result;
   }
 
-  public void setResult(String result) {
+  public void setResult(@javax.annotation.Nullable String result) {
     this.result = result;
   }
 
 
-  public IdentityEnhancedBreakdownSourcesBreakdownTotalSources properties(IdentityEnhancedBreakdownSourcesBreakdownTotalSourcesProperties properties) {
+  public IdentityEnhancedBreakdownSourcesBreakdownTotalSources properties(@javax.annotation.Nullable IdentityEnhancedBreakdownSourcesBreakdownTotalSourcesProperties properties) {
     this.properties = properties;
     return this;
   }
@@ -95,7 +97,7 @@ public class IdentityEnhancedBreakdownSourcesBreakdownTotalSources {
     return properties;
   }
 
-  public void setProperties(IdentityEnhancedBreakdownSourcesBreakdownTotalSourcesProperties properties) {
+  public void setProperties(@javax.annotation.Nullable IdentityEnhancedBreakdownSourcesBreakdownTotalSourcesProperties properties) {
     this.properties = properties;
   }
 

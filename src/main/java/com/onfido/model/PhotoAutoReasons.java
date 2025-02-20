@@ -48,32 +48,37 @@ import com.onfido.JSON;
 /**
  * PhotoAutoReasons
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class PhotoAutoReasons {
   public static final String SERIALIZED_NAME_DIGITAL_TAMPERING = "digital_tampering";
   @SerializedName(SERIALIZED_NAME_DIGITAL_TAMPERING)
+  @javax.annotation.Nullable
   private String digitalTampering;
 
   public static final String SERIALIZED_NAME_FAKE_WEBCAM = "fake_webcam";
   @SerializedName(SERIALIZED_NAME_FAKE_WEBCAM)
+  @javax.annotation.Nullable
   private String fakeWebcam;
 
   public static final String SERIALIZED_NAME_TIME_OF_CAPTURE = "time_of_capture";
   @SerializedName(SERIALIZED_NAME_TIME_OF_CAPTURE)
+  @javax.annotation.Nullable
   private String timeOfCapture;
 
   public static final String SERIALIZED_NAME_EMULATOR = "emulator";
   @SerializedName(SERIALIZED_NAME_EMULATOR)
+  @javax.annotation.Nullable
   private String emulator;
 
   public static final String SERIALIZED_NAME_REASONS = "reasons";
   @SerializedName(SERIALIZED_NAME_REASONS)
+  @javax.annotation.Nullable
   private String reasons;
 
   public PhotoAutoReasons() {
   }
 
-  public PhotoAutoReasons digitalTampering(String digitalTampering) {
+  public PhotoAutoReasons digitalTampering(@javax.annotation.Nullable String digitalTampering) {
     this.digitalTampering = digitalTampering;
     return this;
   }
@@ -87,12 +92,12 @@ public class PhotoAutoReasons {
     return digitalTampering;
   }
 
-  public void setDigitalTampering(String digitalTampering) {
+  public void setDigitalTampering(@javax.annotation.Nullable String digitalTampering) {
     this.digitalTampering = digitalTampering;
   }
 
 
-  public PhotoAutoReasons fakeWebcam(String fakeWebcam) {
+  public PhotoAutoReasons fakeWebcam(@javax.annotation.Nullable String fakeWebcam) {
     this.fakeWebcam = fakeWebcam;
     return this;
   }
@@ -106,12 +111,12 @@ public class PhotoAutoReasons {
     return fakeWebcam;
   }
 
-  public void setFakeWebcam(String fakeWebcam) {
+  public void setFakeWebcam(@javax.annotation.Nullable String fakeWebcam) {
     this.fakeWebcam = fakeWebcam;
   }
 
 
-  public PhotoAutoReasons timeOfCapture(String timeOfCapture) {
+  public PhotoAutoReasons timeOfCapture(@javax.annotation.Nullable String timeOfCapture) {
     this.timeOfCapture = timeOfCapture;
     return this;
   }
@@ -125,12 +130,12 @@ public class PhotoAutoReasons {
     return timeOfCapture;
   }
 
-  public void setTimeOfCapture(String timeOfCapture) {
+  public void setTimeOfCapture(@javax.annotation.Nullable String timeOfCapture) {
     this.timeOfCapture = timeOfCapture;
   }
 
 
-  public PhotoAutoReasons emulator(String emulator) {
+  public PhotoAutoReasons emulator(@javax.annotation.Nullable String emulator) {
     this.emulator = emulator;
     return this;
   }
@@ -144,12 +149,12 @@ public class PhotoAutoReasons {
     return emulator;
   }
 
-  public void setEmulator(String emulator) {
+  public void setEmulator(@javax.annotation.Nullable String emulator) {
     this.emulator = emulator;
   }
 
 
-  public PhotoAutoReasons reasons(String reasons) {
+  public PhotoAutoReasons reasons(@javax.annotation.Nullable String reasons) {
     this.reasons = reasons;
     return this;
   }
@@ -163,7 +168,7 @@ public class PhotoAutoReasons {
     return reasons;
   }
 
-  public void setReasons(String reasons) {
+  public void setReasons(@javax.annotation.Nullable String reasons) {
     this.reasons = reasons;
   }
 

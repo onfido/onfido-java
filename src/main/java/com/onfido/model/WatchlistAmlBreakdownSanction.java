@@ -48,16 +48,17 @@ import com.onfido.JSON;
 /**
  * Asserts if there are any records found in Government and International Organisations Sanctions Lists.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class WatchlistAmlBreakdownSanction {
   public static final String SERIALIZED_NAME_RESULT = "result";
   @SerializedName(SERIALIZED_NAME_RESULT)
+  @javax.annotation.Nullable
   private String result;
 
   public WatchlistAmlBreakdownSanction() {
   }
 
-  public WatchlistAmlBreakdownSanction result(String result) {
+  public WatchlistAmlBreakdownSanction result(@javax.annotation.Nullable String result) {
     this.result = result;
     return this;
   }
@@ -71,7 +72,7 @@ public class WatchlistAmlBreakdownSanction {
     return result;
   }
 
-  public void setResult(String result) {
+  public void setResult(@javax.annotation.Nullable String result) {
     this.result = result;
   }
 

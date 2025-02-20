@@ -51,10 +51,11 @@ import com.onfido.JSON;
 /**
  * WatchlistMonitorShared
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class WatchlistMonitorShared {
   public static final String SERIALIZED_NAME_APPLICANT_ID = "applicant_id";
   @SerializedName(SERIALIZED_NAME_APPLICANT_ID)
+  @javax.annotation.Nonnull
   private UUID applicantId;
 
   /**
@@ -113,16 +114,18 @@ public class WatchlistMonitorShared {
 
   public static final String SERIALIZED_NAME_REPORT_NAME = "report_name";
   @SerializedName(SERIALIZED_NAME_REPORT_NAME)
+  @javax.annotation.Nonnull
   private ReportNameEnum reportName;
 
   public static final String SERIALIZED_NAME_TAGS = "tags";
   @SerializedName(SERIALIZED_NAME_TAGS)
+  @javax.annotation.Nullable
   private List<String> tags = new ArrayList<>();
 
   public WatchlistMonitorShared() {
   }
 
-  public WatchlistMonitorShared applicantId(UUID applicantId) {
+  public WatchlistMonitorShared applicantId(@javax.annotation.Nonnull UUID applicantId) {
     this.applicantId = applicantId;
     return this;
   }
@@ -136,12 +139,12 @@ public class WatchlistMonitorShared {
     return applicantId;
   }
 
-  public void setApplicantId(UUID applicantId) {
+  public void setApplicantId(@javax.annotation.Nonnull UUID applicantId) {
     this.applicantId = applicantId;
   }
 
 
-  public WatchlistMonitorShared reportName(ReportNameEnum reportName) {
+  public WatchlistMonitorShared reportName(@javax.annotation.Nonnull ReportNameEnum reportName) {
     this.reportName = reportName;
     return this;
   }
@@ -155,12 +158,12 @@ public class WatchlistMonitorShared {
     return reportName;
   }
 
-  public void setReportName(ReportNameEnum reportName) {
+  public void setReportName(@javax.annotation.Nonnull ReportNameEnum reportName) {
     this.reportName = reportName;
   }
 
 
-  public WatchlistMonitorShared tags(List<String> tags) {
+  public WatchlistMonitorShared tags(@javax.annotation.Nullable List<String> tags) {
     this.tags = tags;
     return this;
   }
@@ -182,7 +185,7 @@ public class WatchlistMonitorShared {
     return tags;
   }
 
-  public void setTags(List<String> tags) {
+  public void setTags(@javax.annotation.Nullable List<String> tags) {
     this.tags = tags;
   }
 

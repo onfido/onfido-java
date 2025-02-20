@@ -51,16 +51,17 @@ import com.onfido.JSON;
 /**
  * WatchlistEnhancedProperties
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class WatchlistEnhancedProperties {
   public static final String SERIALIZED_NAME_RECORDS = "records";
   @SerializedName(SERIALIZED_NAME_RECORDS)
+  @javax.annotation.Nullable
   private List<WatchlistEnhancedPropertiesRecordsInner> records = new ArrayList<>();
 
   public WatchlistEnhancedProperties() {
   }
 
-  public WatchlistEnhancedProperties records(List<WatchlistEnhancedPropertiesRecordsInner> records) {
+  public WatchlistEnhancedProperties records(@javax.annotation.Nullable List<WatchlistEnhancedPropertiesRecordsInner> records) {
     this.records = records;
     return this;
   }
@@ -82,7 +83,7 @@ public class WatchlistEnhancedProperties {
     return records;
   }
 
-  public void setRecords(List<WatchlistEnhancedPropertiesRecordsInner> records) {
+  public void setRecords(@javax.annotation.Nullable List<WatchlistEnhancedPropertiesRecordsInner> records) {
     this.records = records;
   }
 

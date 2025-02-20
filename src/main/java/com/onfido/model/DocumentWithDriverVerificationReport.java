@@ -59,56 +59,67 @@ import com.onfido.JSON;
 /**
  * DocumentWithDriverVerificationReport
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class DocumentWithDriverVerificationReport {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nonnull
   private UUID id;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
+  @javax.annotation.Nullable
   private OffsetDateTime createdAt;
 
   public static final String SERIALIZED_NAME_HREF = "href";
   @SerializedName(SERIALIZED_NAME_HREF)
+  @javax.annotation.Nullable
   private String href;
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
+  @javax.annotation.Nullable
   private ReportStatus status;
 
   public static final String SERIALIZED_NAME_RESULT = "result";
   @SerializedName(SERIALIZED_NAME_RESULT)
+  @javax.annotation.Nullable
   private ReportResult result;
 
   public static final String SERIALIZED_NAME_SUB_RESULT = "sub_result";
   @SerializedName(SERIALIZED_NAME_SUB_RESULT)
+  @javax.annotation.Nullable
   private ReportSubResult subResult;
 
   public static final String SERIALIZED_NAME_CHECK_ID = "check_id";
   @SerializedName(SERIALIZED_NAME_CHECK_ID)
+  @javax.annotation.Nullable
   private UUID checkId;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nonnull
   private ReportName name;
 
   public static final String SERIALIZED_NAME_DOCUMENTS = "documents";
   @SerializedName(SERIALIZED_NAME_DOCUMENTS)
+  @javax.annotation.Nullable
   private List<ReportDocument> documents = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_BREAKDOWN = "breakdown";
   @SerializedName(SERIALIZED_NAME_BREAKDOWN)
+  @javax.annotation.Nullable
   private DocumentBreakdown breakdown;
 
   public static final String SERIALIZED_NAME_PROPERTIES = "properties";
   @SerializedName(SERIALIZED_NAME_PROPERTIES)
+  @javax.annotation.Nullable
   private DocumentWithDriverVerificationReportAllOfProperties properties;
 
   public DocumentWithDriverVerificationReport() {
   }
 
-  public DocumentWithDriverVerificationReport id(UUID id) {
+  public DocumentWithDriverVerificationReport id(@javax.annotation.Nonnull UUID id) {
     this.id = id;
     return this;
   }
@@ -122,12 +133,12 @@ public class DocumentWithDriverVerificationReport {
     return id;
   }
 
-  public void setId(UUID id) {
+  public void setId(@javax.annotation.Nonnull UUID id) {
     this.id = id;
   }
 
 
-  public DocumentWithDriverVerificationReport createdAt(OffsetDateTime createdAt) {
+  public DocumentWithDriverVerificationReport createdAt(@javax.annotation.Nullable OffsetDateTime createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -141,12 +152,12 @@ public class DocumentWithDriverVerificationReport {
     return createdAt;
   }
 
-  public void setCreatedAt(OffsetDateTime createdAt) {
+  public void setCreatedAt(@javax.annotation.Nullable OffsetDateTime createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public DocumentWithDriverVerificationReport href(String href) {
+  public DocumentWithDriverVerificationReport href(@javax.annotation.Nullable String href) {
     this.href = href;
     return this;
   }
@@ -160,12 +171,12 @@ public class DocumentWithDriverVerificationReport {
     return href;
   }
 
-  public void setHref(String href) {
+  public void setHref(@javax.annotation.Nullable String href) {
     this.href = href;
   }
 
 
-  public DocumentWithDriverVerificationReport status(ReportStatus status) {
+  public DocumentWithDriverVerificationReport status(@javax.annotation.Nullable ReportStatus status) {
     this.status = status;
     return this;
   }
@@ -179,12 +190,12 @@ public class DocumentWithDriverVerificationReport {
     return status;
   }
 
-  public void setStatus(ReportStatus status) {
+  public void setStatus(@javax.annotation.Nullable ReportStatus status) {
     this.status = status;
   }
 
 
-  public DocumentWithDriverVerificationReport result(ReportResult result) {
+  public DocumentWithDriverVerificationReport result(@javax.annotation.Nullable ReportResult result) {
     this.result = result;
     return this;
   }
@@ -198,12 +209,12 @@ public class DocumentWithDriverVerificationReport {
     return result;
   }
 
-  public void setResult(ReportResult result) {
+  public void setResult(@javax.annotation.Nullable ReportResult result) {
     this.result = result;
   }
 
 
-  public DocumentWithDriverVerificationReport subResult(ReportSubResult subResult) {
+  public DocumentWithDriverVerificationReport subResult(@javax.annotation.Nullable ReportSubResult subResult) {
     this.subResult = subResult;
     return this;
   }
@@ -217,12 +228,12 @@ public class DocumentWithDriverVerificationReport {
     return subResult;
   }
 
-  public void setSubResult(ReportSubResult subResult) {
+  public void setSubResult(@javax.annotation.Nullable ReportSubResult subResult) {
     this.subResult = subResult;
   }
 
 
-  public DocumentWithDriverVerificationReport checkId(UUID checkId) {
+  public DocumentWithDriverVerificationReport checkId(@javax.annotation.Nullable UUID checkId) {
     this.checkId = checkId;
     return this;
   }
@@ -236,12 +247,12 @@ public class DocumentWithDriverVerificationReport {
     return checkId;
   }
 
-  public void setCheckId(UUID checkId) {
+  public void setCheckId(@javax.annotation.Nullable UUID checkId) {
     this.checkId = checkId;
   }
 
 
-  public DocumentWithDriverVerificationReport name(ReportName name) {
+  public DocumentWithDriverVerificationReport name(@javax.annotation.Nonnull ReportName name) {
     this.name = name;
     return this;
   }
@@ -255,12 +266,12 @@ public class DocumentWithDriverVerificationReport {
     return name;
   }
 
-  public void setName(ReportName name) {
+  public void setName(@javax.annotation.Nonnull ReportName name) {
     this.name = name;
   }
 
 
-  public DocumentWithDriverVerificationReport documents(List<ReportDocument> documents) {
+  public DocumentWithDriverVerificationReport documents(@javax.annotation.Nullable List<ReportDocument> documents) {
     this.documents = documents;
     return this;
   }
@@ -282,12 +293,12 @@ public class DocumentWithDriverVerificationReport {
     return documents;
   }
 
-  public void setDocuments(List<ReportDocument> documents) {
+  public void setDocuments(@javax.annotation.Nullable List<ReportDocument> documents) {
     this.documents = documents;
   }
 
 
-  public DocumentWithDriverVerificationReport breakdown(DocumentBreakdown breakdown) {
+  public DocumentWithDriverVerificationReport breakdown(@javax.annotation.Nullable DocumentBreakdown breakdown) {
     this.breakdown = breakdown;
     return this;
   }
@@ -301,12 +312,12 @@ public class DocumentWithDriverVerificationReport {
     return breakdown;
   }
 
-  public void setBreakdown(DocumentBreakdown breakdown) {
+  public void setBreakdown(@javax.annotation.Nullable DocumentBreakdown breakdown) {
     this.breakdown = breakdown;
   }
 
 
-  public DocumentWithDriverVerificationReport properties(DocumentWithDriverVerificationReportAllOfProperties properties) {
+  public DocumentWithDriverVerificationReport properties(@javax.annotation.Nullable DocumentWithDriverVerificationReportAllOfProperties properties) {
     this.properties = properties;
     return this;
   }
@@ -320,7 +331,7 @@ public class DocumentWithDriverVerificationReport {
     return properties;
   }
 
-  public void setProperties(DocumentWithDriverVerificationReportAllOfProperties properties) {
+  public void setProperties(@javax.annotation.Nullable DocumentWithDriverVerificationReportAllOfProperties properties) {
     this.properties = properties;
   }
 

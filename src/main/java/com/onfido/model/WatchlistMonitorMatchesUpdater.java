@@ -51,20 +51,22 @@ import com.onfido.JSON;
 /**
  * WatchlistMonitorMatchesUpdater
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class WatchlistMonitorMatchesUpdater {
   public static final String SERIALIZED_NAME_ENABLE = "enable";
   @SerializedName(SERIALIZED_NAME_ENABLE)
+  @javax.annotation.Nullable
   private List<UUID> enable = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_DISABLE = "disable";
   @SerializedName(SERIALIZED_NAME_DISABLE)
+  @javax.annotation.Nullable
   private List<UUID> disable = new ArrayList<>();
 
   public WatchlistMonitorMatchesUpdater() {
   }
 
-  public WatchlistMonitorMatchesUpdater enable(List<UUID> enable) {
+  public WatchlistMonitorMatchesUpdater enable(@javax.annotation.Nullable List<UUID> enable) {
     this.enable = enable;
     return this;
   }
@@ -86,12 +88,12 @@ public class WatchlistMonitorMatchesUpdater {
     return enable;
   }
 
-  public void setEnable(List<UUID> enable) {
+  public void setEnable(@javax.annotation.Nullable List<UUID> enable) {
     this.enable = enable;
   }
 
 
-  public WatchlistMonitorMatchesUpdater disable(List<UUID> disable) {
+  public WatchlistMonitorMatchesUpdater disable(@javax.annotation.Nullable List<UUID> disable) {
     this.disable = disable;
     return this;
   }
@@ -113,7 +115,7 @@ public class WatchlistMonitorMatchesUpdater {
     return disable;
   }
 
-  public void setDisable(List<UUID> disable) {
+  public void setDisable(@javax.annotation.Nullable List<UUID> disable) {
     this.disable = disable;
   }
 

@@ -49,20 +49,22 @@ import com.onfido.JSON;
 /**
  * The number of address matches against credit agencies.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class IdentityEnhancedBreakdownAddressBreakdownCreditAgencies {
   public static final String SERIALIZED_NAME_RESULT = "result";
   @SerializedName(SERIALIZED_NAME_RESULT)
+  @javax.annotation.Nullable
   private String result;
 
   public static final String SERIALIZED_NAME_PROPERTIES = "properties";
   @SerializedName(SERIALIZED_NAME_PROPERTIES)
+  @javax.annotation.Nullable
   private IdentityEnhancedBreakdownAddressBreakdownCreditAgenciesProperties properties;
 
   public IdentityEnhancedBreakdownAddressBreakdownCreditAgencies() {
   }
 
-  public IdentityEnhancedBreakdownAddressBreakdownCreditAgencies result(String result) {
+  public IdentityEnhancedBreakdownAddressBreakdownCreditAgencies result(@javax.annotation.Nullable String result) {
     this.result = result;
     return this;
   }
@@ -76,12 +78,12 @@ public class IdentityEnhancedBreakdownAddressBreakdownCreditAgencies {
     return result;
   }
 
-  public void setResult(String result) {
+  public void setResult(@javax.annotation.Nullable String result) {
     this.result = result;
   }
 
 
-  public IdentityEnhancedBreakdownAddressBreakdownCreditAgencies properties(IdentityEnhancedBreakdownAddressBreakdownCreditAgenciesProperties properties) {
+  public IdentityEnhancedBreakdownAddressBreakdownCreditAgencies properties(@javax.annotation.Nullable IdentityEnhancedBreakdownAddressBreakdownCreditAgenciesProperties properties) {
     this.properties = properties;
     return this;
   }
@@ -95,7 +97,7 @@ public class IdentityEnhancedBreakdownAddressBreakdownCreditAgencies {
     return properties;
   }
 
-  public void setProperties(IdentityEnhancedBreakdownAddressBreakdownCreditAgenciesProperties properties) {
+  public void setProperties(@javax.annotation.Nullable IdentityEnhancedBreakdownAddressBreakdownCreditAgenciesProperties properties) {
     this.properties = properties;
   }
 

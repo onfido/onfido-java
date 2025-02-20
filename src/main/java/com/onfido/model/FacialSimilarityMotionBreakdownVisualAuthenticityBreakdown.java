@@ -50,20 +50,22 @@ import com.onfido.JSON;
 /**
  * FacialSimilarityMotionBreakdownVisualAuthenticityBreakdown
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class FacialSimilarityMotionBreakdownVisualAuthenticityBreakdown {
   public static final String SERIALIZED_NAME_LIVENESS_DETECTED = "liveness_detected";
   @SerializedName(SERIALIZED_NAME_LIVENESS_DETECTED)
+  @javax.annotation.Nullable
   private FacialSimilarityVideoBreakdownVisualAuthenticityBreakdownLivenessDetected livenessDetected;
 
   public static final String SERIALIZED_NAME_SPOOFING_DETECTION = "spoofing_detection";
   @SerializedName(SERIALIZED_NAME_SPOOFING_DETECTION)
+  @javax.annotation.Nullable
   private FacialSimilarityMotionBreakdownVisualAuthenticityBreakdownSpoofingDetection spoofingDetection;
 
   public FacialSimilarityMotionBreakdownVisualAuthenticityBreakdown() {
   }
 
-  public FacialSimilarityMotionBreakdownVisualAuthenticityBreakdown livenessDetected(FacialSimilarityVideoBreakdownVisualAuthenticityBreakdownLivenessDetected livenessDetected) {
+  public FacialSimilarityMotionBreakdownVisualAuthenticityBreakdown livenessDetected(@javax.annotation.Nullable FacialSimilarityVideoBreakdownVisualAuthenticityBreakdownLivenessDetected livenessDetected) {
     this.livenessDetected = livenessDetected;
     return this;
   }
@@ -77,12 +79,12 @@ public class FacialSimilarityMotionBreakdownVisualAuthenticityBreakdown {
     return livenessDetected;
   }
 
-  public void setLivenessDetected(FacialSimilarityVideoBreakdownVisualAuthenticityBreakdownLivenessDetected livenessDetected) {
+  public void setLivenessDetected(@javax.annotation.Nullable FacialSimilarityVideoBreakdownVisualAuthenticityBreakdownLivenessDetected livenessDetected) {
     this.livenessDetected = livenessDetected;
   }
 
 
-  public FacialSimilarityMotionBreakdownVisualAuthenticityBreakdown spoofingDetection(FacialSimilarityMotionBreakdownVisualAuthenticityBreakdownSpoofingDetection spoofingDetection) {
+  public FacialSimilarityMotionBreakdownVisualAuthenticityBreakdown spoofingDetection(@javax.annotation.Nullable FacialSimilarityMotionBreakdownVisualAuthenticityBreakdownSpoofingDetection spoofingDetection) {
     this.spoofingDetection = spoofingDetection;
     return this;
   }
@@ -96,7 +98,7 @@ public class FacialSimilarityMotionBreakdownVisualAuthenticityBreakdown {
     return spoofingDetection;
   }
 
-  public void setSpoofingDetection(FacialSimilarityMotionBreakdownVisualAuthenticityBreakdownSpoofingDetection spoofingDetection) {
+  public void setSpoofingDetection(@javax.annotation.Nullable FacialSimilarityMotionBreakdownVisualAuthenticityBreakdownSpoofingDetection spoofingDetection) {
     this.spoofingDetection = spoofingDetection;
   }
 

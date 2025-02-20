@@ -48,20 +48,22 @@ import com.onfido.JSON;
 /**
  * Security features expected on the document are missing or wrong.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class DocumentBreakdownVisualAuthenticityBreakdownSecurityFeatures {
   public static final String SERIALIZED_NAME_RESULT = "result";
   @SerializedName(SERIALIZED_NAME_RESULT)
+  @javax.annotation.Nullable
   private String result;
 
   public static final String SERIALIZED_NAME_PROPERTIES = "properties";
   @SerializedName(SERIALIZED_NAME_PROPERTIES)
+  @javax.annotation.Nullable
   private Object properties;
 
   public DocumentBreakdownVisualAuthenticityBreakdownSecurityFeatures() {
   }
 
-  public DocumentBreakdownVisualAuthenticityBreakdownSecurityFeatures result(String result) {
+  public DocumentBreakdownVisualAuthenticityBreakdownSecurityFeatures result(@javax.annotation.Nullable String result) {
     this.result = result;
     return this;
   }
@@ -75,12 +77,12 @@ public class DocumentBreakdownVisualAuthenticityBreakdownSecurityFeatures {
     return result;
   }
 
-  public void setResult(String result) {
+  public void setResult(@javax.annotation.Nullable String result) {
     this.result = result;
   }
 
 
-  public DocumentBreakdownVisualAuthenticityBreakdownSecurityFeatures properties(Object properties) {
+  public DocumentBreakdownVisualAuthenticityBreakdownSecurityFeatures properties(@javax.annotation.Nullable Object properties) {
     this.properties = properties;
     return this;
   }
@@ -94,7 +96,7 @@ public class DocumentBreakdownVisualAuthenticityBreakdownSecurityFeatures {
     return properties;
   }
 
-  public void setProperties(Object properties) {
+  public void setProperties(@javax.annotation.Nullable Object properties) {
     this.properties = properties;
   }
 

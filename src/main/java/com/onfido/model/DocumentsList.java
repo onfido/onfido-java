@@ -51,16 +51,17 @@ import com.onfido.JSON;
 /**
  * DocumentsList
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class DocumentsList {
   public static final String SERIALIZED_NAME_DOCUMENTS = "documents";
   @SerializedName(SERIALIZED_NAME_DOCUMENTS)
+  @javax.annotation.Nonnull
   private List<Document> documents = new ArrayList<>();
 
   public DocumentsList() {
   }
 
-  public DocumentsList documents(List<Document> documents) {
+  public DocumentsList documents(@javax.annotation.Nonnull List<Document> documents) {
     this.documents = documents;
     return this;
   }
@@ -82,7 +83,7 @@ public class DocumentsList {
     return documents;
   }
 
-  public void setDocuments(List<Document> documents) {
+  public void setDocuments(@javax.annotation.Nonnull List<Document> documents) {
     this.documents = documents;
   }
 

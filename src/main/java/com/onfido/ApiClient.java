@@ -749,7 +749,7 @@ public class ApiClient {
         return params;
     }
 
-    /**
+   /**
     * Formats the specified free-form query parameters to a list of {@code Pair} objects.
     *
     * @param value The free-form query parameters.

@@ -48,16 +48,17 @@ import com.onfido.JSON;
 /**
  * Asserts whether the applicant&#39;s most recent facial media (live photo or live video) matches any other live photos or live videos already in your Onfido account database.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class KnownFacesBreakdownPreviouslySeenFaces {
   public static final String SERIALIZED_NAME_RESULT = "result";
   @SerializedName(SERIALIZED_NAME_RESULT)
+  @javax.annotation.Nullable
   private String result;
 
   public KnownFacesBreakdownPreviouslySeenFaces() {
   }
 
-  public KnownFacesBreakdownPreviouslySeenFaces result(String result) {
+  public KnownFacesBreakdownPreviouslySeenFaces result(@javax.annotation.Nullable String result) {
     this.result = result;
     return this;
   }
@@ -71,7 +72,7 @@ public class KnownFacesBreakdownPreviouslySeenFaces {
     return result;
   }
 
-  public void setResult(String result) {
+  public void setResult(@javax.annotation.Nullable String result) {
     this.result = result;
   }
 

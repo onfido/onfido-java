@@ -48,16 +48,17 @@ import com.onfido.JSON;
 /**
  * Asserts if the applicant&#39;s details match any death records.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class IdentityEnhancedBreakdownMortality {
   public static final String SERIALIZED_NAME_RESULT = "result";
   @SerializedName(SERIALIZED_NAME_RESULT)
+  @javax.annotation.Nullable
   private String result;
 
   public IdentityEnhancedBreakdownMortality() {
   }
 
-  public IdentityEnhancedBreakdownMortality result(String result) {
+  public IdentityEnhancedBreakdownMortality result(@javax.annotation.Nullable String result) {
     this.result = result;
     return this;
   }
@@ -71,7 +72,7 @@ public class IdentityEnhancedBreakdownMortality {
     return result;
   }
 
-  public void setResult(String result) {
+  public void setResult(@javax.annotation.Nullable String result) {
     this.result = result;
   }
 

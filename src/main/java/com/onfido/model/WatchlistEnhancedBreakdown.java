@@ -52,28 +52,32 @@ import com.onfido.JSON;
 /**
  * WatchlistEnhancedBreakdown
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class WatchlistEnhancedBreakdown {
   public static final String SERIALIZED_NAME_POLITICALLY_EXPOSED_PERSON = "politically_exposed_person";
   @SerializedName(SERIALIZED_NAME_POLITICALLY_EXPOSED_PERSON)
+  @javax.annotation.Nullable
   private WatchlistAmlBreakdownPoliticallyExposedPerson politicallyExposedPerson;
 
   public static final String SERIALIZED_NAME_SANCTION = "sanction";
   @SerializedName(SERIALIZED_NAME_SANCTION)
+  @javax.annotation.Nullable
   private WatchlistAmlBreakdownSanction sanction;
 
   public static final String SERIALIZED_NAME_ADVERSE_MEDIA = "adverse_media";
   @SerializedName(SERIALIZED_NAME_ADVERSE_MEDIA)
+  @javax.annotation.Nullable
   private WatchlistAmlBreakdownAdverseMedia adverseMedia;
 
   public static final String SERIALIZED_NAME_MONITORED_LISTS = "monitored_lists";
   @SerializedName(SERIALIZED_NAME_MONITORED_LISTS)
+  @javax.annotation.Nullable
   private WatchlistAmlBreakdownLegalAndRegulatoryWarnings monitoredLists;
 
   public WatchlistEnhancedBreakdown() {
   }
 
-  public WatchlistEnhancedBreakdown politicallyExposedPerson(WatchlistAmlBreakdownPoliticallyExposedPerson politicallyExposedPerson) {
+  public WatchlistEnhancedBreakdown politicallyExposedPerson(@javax.annotation.Nullable WatchlistAmlBreakdownPoliticallyExposedPerson politicallyExposedPerson) {
     this.politicallyExposedPerson = politicallyExposedPerson;
     return this;
   }
@@ -87,12 +91,12 @@ public class WatchlistEnhancedBreakdown {
     return politicallyExposedPerson;
   }
 
-  public void setPoliticallyExposedPerson(WatchlistAmlBreakdownPoliticallyExposedPerson politicallyExposedPerson) {
+  public void setPoliticallyExposedPerson(@javax.annotation.Nullable WatchlistAmlBreakdownPoliticallyExposedPerson politicallyExposedPerson) {
     this.politicallyExposedPerson = politicallyExposedPerson;
   }
 
 
-  public WatchlistEnhancedBreakdown sanction(WatchlistAmlBreakdownSanction sanction) {
+  public WatchlistEnhancedBreakdown sanction(@javax.annotation.Nullable WatchlistAmlBreakdownSanction sanction) {
     this.sanction = sanction;
     return this;
   }
@@ -106,12 +110,12 @@ public class WatchlistEnhancedBreakdown {
     return sanction;
   }
 
-  public void setSanction(WatchlistAmlBreakdownSanction sanction) {
+  public void setSanction(@javax.annotation.Nullable WatchlistAmlBreakdownSanction sanction) {
     this.sanction = sanction;
   }
 
 
-  public WatchlistEnhancedBreakdown adverseMedia(WatchlistAmlBreakdownAdverseMedia adverseMedia) {
+  public WatchlistEnhancedBreakdown adverseMedia(@javax.annotation.Nullable WatchlistAmlBreakdownAdverseMedia adverseMedia) {
     this.adverseMedia = adverseMedia;
     return this;
   }
@@ -125,12 +129,12 @@ public class WatchlistEnhancedBreakdown {
     return adverseMedia;
   }
 
-  public void setAdverseMedia(WatchlistAmlBreakdownAdverseMedia adverseMedia) {
+  public void setAdverseMedia(@javax.annotation.Nullable WatchlistAmlBreakdownAdverseMedia adverseMedia) {
     this.adverseMedia = adverseMedia;
   }
 
 
-  public WatchlistEnhancedBreakdown monitoredLists(WatchlistAmlBreakdownLegalAndRegulatoryWarnings monitoredLists) {
+  public WatchlistEnhancedBreakdown monitoredLists(@javax.annotation.Nullable WatchlistAmlBreakdownLegalAndRegulatoryWarnings monitoredLists) {
     this.monitoredLists = monitoredLists;
     return this;
   }
@@ -144,7 +148,7 @@ public class WatchlistEnhancedBreakdown {
     return monitoredLists;
   }
 
-  public void setMonitoredLists(WatchlistAmlBreakdownLegalAndRegulatoryWarnings monitoredLists) {
+  public void setMonitoredLists(@javax.annotation.Nullable WatchlistAmlBreakdownLegalAndRegulatoryWarnings monitoredLists) {
     this.monitoredLists = monitoredLists;
   }
 

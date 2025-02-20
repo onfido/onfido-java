@@ -52,32 +52,37 @@ import com.onfido.JSON;
 /**
  * RepeatAttemptsList
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class RepeatAttemptsList {
   public static final String SERIALIZED_NAME_REPORT_ID = "report_id";
   @SerializedName(SERIALIZED_NAME_REPORT_ID)
+  @javax.annotation.Nullable
   private UUID reportId;
 
   public static final String SERIALIZED_NAME_REPEAT_ATTEMPTS = "repeat_attempts";
   @SerializedName(SERIALIZED_NAME_REPEAT_ATTEMPTS)
+  @javax.annotation.Nonnull
   private List<RepeatAttemptsListRepeatAttemptsInner> repeatAttempts = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_ATTEMPTS_COUNT = "attempts_count";
   @SerializedName(SERIALIZED_NAME_ATTEMPTS_COUNT)
+  @javax.annotation.Nullable
   private Integer attemptsCount;
 
   public static final String SERIALIZED_NAME_ATTEMPTS_CLEAR_RATE = "attempts_clear_rate";
   @SerializedName(SERIALIZED_NAME_ATTEMPTS_CLEAR_RATE)
+  @javax.annotation.Nullable
   private Float attemptsClearRate;
 
   public static final String SERIALIZED_NAME_UNIQUE_MISMATCHES_COUNT = "unique_mismatches_count";
   @SerializedName(SERIALIZED_NAME_UNIQUE_MISMATCHES_COUNT)
+  @javax.annotation.Nullable
   private Integer uniqueMismatchesCount;
 
   public RepeatAttemptsList() {
   }
 
-  public RepeatAttemptsList reportId(UUID reportId) {
+  public RepeatAttemptsList reportId(@javax.annotation.Nullable UUID reportId) {
     this.reportId = reportId;
     return this;
   }
@@ -91,12 +96,12 @@ public class RepeatAttemptsList {
     return reportId;
   }
 
-  public void setReportId(UUID reportId) {
+  public void setReportId(@javax.annotation.Nullable UUID reportId) {
     this.reportId = reportId;
   }
 
 
-  public RepeatAttemptsList repeatAttempts(List<RepeatAttemptsListRepeatAttemptsInner> repeatAttempts) {
+  public RepeatAttemptsList repeatAttempts(@javax.annotation.Nonnull List<RepeatAttemptsListRepeatAttemptsInner> repeatAttempts) {
     this.repeatAttempts = repeatAttempts;
     return this;
   }
@@ -118,12 +123,12 @@ public class RepeatAttemptsList {
     return repeatAttempts;
   }
 
-  public void setRepeatAttempts(List<RepeatAttemptsListRepeatAttemptsInner> repeatAttempts) {
+  public void setRepeatAttempts(@javax.annotation.Nonnull List<RepeatAttemptsListRepeatAttemptsInner> repeatAttempts) {
     this.repeatAttempts = repeatAttempts;
   }
 
 
-  public RepeatAttemptsList attemptsCount(Integer attemptsCount) {
+  public RepeatAttemptsList attemptsCount(@javax.annotation.Nullable Integer attemptsCount) {
     this.attemptsCount = attemptsCount;
     return this;
   }
@@ -137,12 +142,12 @@ public class RepeatAttemptsList {
     return attemptsCount;
   }
 
-  public void setAttemptsCount(Integer attemptsCount) {
+  public void setAttemptsCount(@javax.annotation.Nullable Integer attemptsCount) {
     this.attemptsCount = attemptsCount;
   }
 
 
-  public RepeatAttemptsList attemptsClearRate(Float attemptsClearRate) {
+  public RepeatAttemptsList attemptsClearRate(@javax.annotation.Nullable Float attemptsClearRate) {
     this.attemptsClearRate = attemptsClearRate;
     return this;
   }
@@ -158,12 +163,12 @@ public class RepeatAttemptsList {
     return attemptsClearRate;
   }
 
-  public void setAttemptsClearRate(Float attemptsClearRate) {
+  public void setAttemptsClearRate(@javax.annotation.Nullable Float attemptsClearRate) {
     this.attemptsClearRate = attemptsClearRate;
   }
 
 
-  public RepeatAttemptsList uniqueMismatchesCount(Integer uniqueMismatchesCount) {
+  public RepeatAttemptsList uniqueMismatchesCount(@javax.annotation.Nullable Integer uniqueMismatchesCount) {
     this.uniqueMismatchesCount = uniqueMismatchesCount;
     return this;
   }
@@ -177,7 +182,7 @@ public class RepeatAttemptsList {
     return uniqueMismatchesCount;
   }
 
-  public void setUniqueMismatchesCount(Integer uniqueMismatchesCount) {
+  public void setUniqueMismatchesCount(@javax.annotation.Nullable Integer uniqueMismatchesCount) {
     this.uniqueMismatchesCount = uniqueMismatchesCount;
   }
 

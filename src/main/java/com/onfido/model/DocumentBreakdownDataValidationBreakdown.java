@@ -51,40 +51,47 @@ import com.onfido.JSON;
 /**
  * DocumentBreakdownDataValidationBreakdown
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class DocumentBreakdownDataValidationBreakdown {
   public static final String SERIALIZED_NAME_GENDER = "gender";
   @SerializedName(SERIALIZED_NAME_GENDER)
+  @javax.annotation.Nullable
   private DocumentBreakdownDataComparisonBreakdownIssuingCountry gender;
 
   public static final String SERIALIZED_NAME_DATE_OF_BIRTH = "date_of_birth";
   @SerializedName(SERIALIZED_NAME_DATE_OF_BIRTH)
+  @javax.annotation.Nullable
   private DocumentBreakdownDataComparisonBreakdownIssuingCountry dateOfBirth;
 
   public static final String SERIALIZED_NAME_DOCUMENT_NUMBERS = "document_numbers";
   @SerializedName(SERIALIZED_NAME_DOCUMENT_NUMBERS)
+  @javax.annotation.Nullable
   private DocumentBreakdownDataComparisonBreakdownIssuingCountry documentNumbers;
 
   public static final String SERIALIZED_NAME_DOCUMENT_EXPIRATION = "document_expiration";
   @SerializedName(SERIALIZED_NAME_DOCUMENT_EXPIRATION)
+  @javax.annotation.Nullable
   private DocumentBreakdownDataValidationBreakdownDocumentExpiration documentExpiration;
 
   public static final String SERIALIZED_NAME_EXPIRY_DATE = "expiry_date";
   @SerializedName(SERIALIZED_NAME_EXPIRY_DATE)
+  @javax.annotation.Nullable
   private DocumentBreakdownDataValidationBreakdownExpiryDate expiryDate;
 
   public static final String SERIALIZED_NAME_MRZ = "mrz";
   @SerializedName(SERIALIZED_NAME_MRZ)
+  @javax.annotation.Nullable
   private DocumentBreakdownDataComparisonBreakdownIssuingCountry mrz;
 
   public static final String SERIALIZED_NAME_BARCODE = "barcode";
   @SerializedName(SERIALIZED_NAME_BARCODE)
+  @javax.annotation.Nullable
   private DocumentBreakdownDataComparisonBreakdownIssuingCountry barcode;
 
   public DocumentBreakdownDataValidationBreakdown() {
   }
 
-  public DocumentBreakdownDataValidationBreakdown gender(DocumentBreakdownDataComparisonBreakdownIssuingCountry gender) {
+  public DocumentBreakdownDataValidationBreakdown gender(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry gender) {
     this.gender = gender;
     return this;
   }
@@ -98,12 +105,12 @@ public class DocumentBreakdownDataValidationBreakdown {
     return gender;
   }
 
-  public void setGender(DocumentBreakdownDataComparisonBreakdownIssuingCountry gender) {
+  public void setGender(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry gender) {
     this.gender = gender;
   }
 
 
-  public DocumentBreakdownDataValidationBreakdown dateOfBirth(DocumentBreakdownDataComparisonBreakdownIssuingCountry dateOfBirth) {
+  public DocumentBreakdownDataValidationBreakdown dateOfBirth(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry dateOfBirth) {
     this.dateOfBirth = dateOfBirth;
     return this;
   }
@@ -117,12 +124,12 @@ public class DocumentBreakdownDataValidationBreakdown {
     return dateOfBirth;
   }
 
-  public void setDateOfBirth(DocumentBreakdownDataComparisonBreakdownIssuingCountry dateOfBirth) {
+  public void setDateOfBirth(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry dateOfBirth) {
     this.dateOfBirth = dateOfBirth;
   }
 
 
-  public DocumentBreakdownDataValidationBreakdown documentNumbers(DocumentBreakdownDataComparisonBreakdownIssuingCountry documentNumbers) {
+  public DocumentBreakdownDataValidationBreakdown documentNumbers(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry documentNumbers) {
     this.documentNumbers = documentNumbers;
     return this;
   }
@@ -136,12 +143,12 @@ public class DocumentBreakdownDataValidationBreakdown {
     return documentNumbers;
   }
 
-  public void setDocumentNumbers(DocumentBreakdownDataComparisonBreakdownIssuingCountry documentNumbers) {
+  public void setDocumentNumbers(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry documentNumbers) {
     this.documentNumbers = documentNumbers;
   }
 
 
-  public DocumentBreakdownDataValidationBreakdown documentExpiration(DocumentBreakdownDataValidationBreakdownDocumentExpiration documentExpiration) {
+  public DocumentBreakdownDataValidationBreakdown documentExpiration(@javax.annotation.Nullable DocumentBreakdownDataValidationBreakdownDocumentExpiration documentExpiration) {
     this.documentExpiration = documentExpiration;
     return this;
   }
@@ -155,12 +162,12 @@ public class DocumentBreakdownDataValidationBreakdown {
     return documentExpiration;
   }
 
-  public void setDocumentExpiration(DocumentBreakdownDataValidationBreakdownDocumentExpiration documentExpiration) {
+  public void setDocumentExpiration(@javax.annotation.Nullable DocumentBreakdownDataValidationBreakdownDocumentExpiration documentExpiration) {
     this.documentExpiration = documentExpiration;
   }
 
 
-  public DocumentBreakdownDataValidationBreakdown expiryDate(DocumentBreakdownDataValidationBreakdownExpiryDate expiryDate) {
+  public DocumentBreakdownDataValidationBreakdown expiryDate(@javax.annotation.Nullable DocumentBreakdownDataValidationBreakdownExpiryDate expiryDate) {
     this.expiryDate = expiryDate;
     return this;
   }
@@ -174,12 +181,12 @@ public class DocumentBreakdownDataValidationBreakdown {
     return expiryDate;
   }
 
-  public void setExpiryDate(DocumentBreakdownDataValidationBreakdownExpiryDate expiryDate) {
+  public void setExpiryDate(@javax.annotation.Nullable DocumentBreakdownDataValidationBreakdownExpiryDate expiryDate) {
     this.expiryDate = expiryDate;
   }
 
 
-  public DocumentBreakdownDataValidationBreakdown mrz(DocumentBreakdownDataComparisonBreakdownIssuingCountry mrz) {
+  public DocumentBreakdownDataValidationBreakdown mrz(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry mrz) {
     this.mrz = mrz;
     return this;
   }
@@ -193,12 +200,12 @@ public class DocumentBreakdownDataValidationBreakdown {
     return mrz;
   }
 
-  public void setMrz(DocumentBreakdownDataComparisonBreakdownIssuingCountry mrz) {
+  public void setMrz(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry mrz) {
     this.mrz = mrz;
   }
 
 
-  public DocumentBreakdownDataValidationBreakdown barcode(DocumentBreakdownDataComparisonBreakdownIssuingCountry barcode) {
+  public DocumentBreakdownDataValidationBreakdown barcode(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry barcode) {
     this.barcode = barcode;
     return this;
   }
@@ -212,7 +219,7 @@ public class DocumentBreakdownDataValidationBreakdown {
     return barcode;
   }
 
-  public void setBarcode(DocumentBreakdownDataComparisonBreakdownIssuingCountry barcode) {
+  public void setBarcode(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry barcode) {
     this.barcode = barcode;
   }
 

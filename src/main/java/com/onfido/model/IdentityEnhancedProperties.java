@@ -52,20 +52,22 @@ import com.onfido.JSON;
 /**
  * IdentityEnhancedProperties
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class IdentityEnhancedProperties {
   public static final String SERIALIZED_NAME_MATCHED_ADDRESS = "matched_address";
   @SerializedName(SERIALIZED_NAME_MATCHED_ADDRESS)
+  @javax.annotation.Nullable
   private BigDecimal matchedAddress;
 
   public static final String SERIALIZED_NAME_MATCHED_ADDRESSES = "matched_addresses";
   @SerializedName(SERIALIZED_NAME_MATCHED_ADDRESSES)
+  @javax.annotation.Nullable
   private List<IdentityEnhancedPropertiesMatchedAddressesInner> matchedAddresses = new ArrayList<>();
 
   public IdentityEnhancedProperties() {
   }
 
-  public IdentityEnhancedProperties matchedAddress(BigDecimal matchedAddress) {
+  public IdentityEnhancedProperties matchedAddress(@javax.annotation.Nullable BigDecimal matchedAddress) {
     this.matchedAddress = matchedAddress;
     return this;
   }
@@ -79,12 +81,12 @@ public class IdentityEnhancedProperties {
     return matchedAddress;
   }
 
-  public void setMatchedAddress(BigDecimal matchedAddress) {
+  public void setMatchedAddress(@javax.annotation.Nullable BigDecimal matchedAddress) {
     this.matchedAddress = matchedAddress;
   }
 
 
-  public IdentityEnhancedProperties matchedAddresses(List<IdentityEnhancedPropertiesMatchedAddressesInner> matchedAddresses) {
+  public IdentityEnhancedProperties matchedAddresses(@javax.annotation.Nullable List<IdentityEnhancedPropertiesMatchedAddressesInner> matchedAddresses) {
     this.matchedAddresses = matchedAddresses;
     return this;
   }
@@ -106,7 +108,7 @@ public class IdentityEnhancedProperties {
     return matchedAddresses;
   }
 
-  public void setMatchedAddresses(List<IdentityEnhancedPropertiesMatchedAddressesInner> matchedAddresses) {
+  public void setMatchedAddresses(@javax.annotation.Nullable List<IdentityEnhancedPropertiesMatchedAddressesInner> matchedAddresses) {
     this.matchedAddresses = matchedAddresses;
   }
 

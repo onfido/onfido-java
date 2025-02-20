@@ -49,16 +49,17 @@ import com.onfido.JSON;
 /**
  * DocumentBreakdownAgeValidationBreakdown
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class DocumentBreakdownAgeValidationBreakdown {
   public static final String SERIALIZED_NAME_MINIMUM_ACCEPTED_AGE = "minimum_accepted_age";
   @SerializedName(SERIALIZED_NAME_MINIMUM_ACCEPTED_AGE)
+  @javax.annotation.Nullable
   private DocumentBreakdownDataComparisonBreakdownIssuingCountry minimumAcceptedAge;
 
   public DocumentBreakdownAgeValidationBreakdown() {
   }
 
-  public DocumentBreakdownAgeValidationBreakdown minimumAcceptedAge(DocumentBreakdownDataComparisonBreakdownIssuingCountry minimumAcceptedAge) {
+  public DocumentBreakdownAgeValidationBreakdown minimumAcceptedAge(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry minimumAcceptedAge) {
     this.minimumAcceptedAge = minimumAcceptedAge;
     return this;
   }
@@ -72,7 +73,7 @@ public class DocumentBreakdownAgeValidationBreakdown {
     return minimumAcceptedAge;
   }
 
-  public void setMinimumAcceptedAge(DocumentBreakdownDataComparisonBreakdownIssuingCountry minimumAcceptedAge) {
+  public void setMinimumAcceptedAge(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry minimumAcceptedAge) {
     this.minimumAcceptedAge = minimumAcceptedAge;
   }
 

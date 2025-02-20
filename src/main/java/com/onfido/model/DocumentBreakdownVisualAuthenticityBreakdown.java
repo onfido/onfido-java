@@ -56,44 +56,52 @@ import com.onfido.JSON;
 /**
  * DocumentBreakdownVisualAuthenticityBreakdown
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class DocumentBreakdownVisualAuthenticityBreakdown {
   public static final String SERIALIZED_NAME_FONTS = "fonts";
   @SerializedName(SERIALIZED_NAME_FONTS)
+  @javax.annotation.Nullable
   private DocumentBreakdownVisualAuthenticityBreakdownFonts fonts;
 
   public static final String SERIALIZED_NAME_PICTURE_FACE_INTEGRITY = "picture_face_integrity";
   @SerializedName(SERIALIZED_NAME_PICTURE_FACE_INTEGRITY)
+  @javax.annotation.Nullable
   private DocumentBreakdownVisualAuthenticityBreakdownPictureFaceIntegrity pictureFaceIntegrity;
 
   public static final String SERIALIZED_NAME_TEMPLATE = "template";
   @SerializedName(SERIALIZED_NAME_TEMPLATE)
+  @javax.annotation.Nullable
   private DocumentBreakdownVisualAuthenticityBreakdownTemplate template;
 
   public static final String SERIALIZED_NAME_SECURITY_FEATURES = "security_features";
   @SerializedName(SERIALIZED_NAME_SECURITY_FEATURES)
+  @javax.annotation.Nullable
   private DocumentBreakdownVisualAuthenticityBreakdownSecurityFeatures securityFeatures;
 
   public static final String SERIALIZED_NAME_ORIGINAL_DOCUMENT_PRESENT = "original_document_present";
   @SerializedName(SERIALIZED_NAME_ORIGINAL_DOCUMENT_PRESENT)
+  @javax.annotation.Nullable
   private DocumentBreakdownVisualAuthenticityBreakdownOriginalDocumentPresent originalDocumentPresent;
 
   public static final String SERIALIZED_NAME_DIGITAL_TAMPERING = "digital_tampering";
   @SerializedName(SERIALIZED_NAME_DIGITAL_TAMPERING)
+  @javax.annotation.Nullable
   private DocumentBreakdownVisualAuthenticityBreakdownDigitalTampering digitalTampering;
 
   public static final String SERIALIZED_NAME_OTHER = "other";
   @SerializedName(SERIALIZED_NAME_OTHER)
+  @javax.annotation.Nullable
   private DocumentBreakdownVisualAuthenticityBreakdownOther other;
 
   public static final String SERIALIZED_NAME_FACE_DETECTION = "face_detection";
   @SerializedName(SERIALIZED_NAME_FACE_DETECTION)
+  @javax.annotation.Nullable
   private DocumentBreakdownVisualAuthenticityBreakdownFaceDetection faceDetection;
 
   public DocumentBreakdownVisualAuthenticityBreakdown() {
   }
 
-  public DocumentBreakdownVisualAuthenticityBreakdown fonts(DocumentBreakdownVisualAuthenticityBreakdownFonts fonts) {
+  public DocumentBreakdownVisualAuthenticityBreakdown fonts(@javax.annotation.Nullable DocumentBreakdownVisualAuthenticityBreakdownFonts fonts) {
     this.fonts = fonts;
     return this;
   }
@@ -107,12 +115,12 @@ public class DocumentBreakdownVisualAuthenticityBreakdown {
     return fonts;
   }
 
-  public void setFonts(DocumentBreakdownVisualAuthenticityBreakdownFonts fonts) {
+  public void setFonts(@javax.annotation.Nullable DocumentBreakdownVisualAuthenticityBreakdownFonts fonts) {
     this.fonts = fonts;
   }
 
 
-  public DocumentBreakdownVisualAuthenticityBreakdown pictureFaceIntegrity(DocumentBreakdownVisualAuthenticityBreakdownPictureFaceIntegrity pictureFaceIntegrity) {
+  public DocumentBreakdownVisualAuthenticityBreakdown pictureFaceIntegrity(@javax.annotation.Nullable DocumentBreakdownVisualAuthenticityBreakdownPictureFaceIntegrity pictureFaceIntegrity) {
     this.pictureFaceIntegrity = pictureFaceIntegrity;
     return this;
   }
@@ -126,12 +134,12 @@ public class DocumentBreakdownVisualAuthenticityBreakdown {
     return pictureFaceIntegrity;
   }
 
-  public void setPictureFaceIntegrity(DocumentBreakdownVisualAuthenticityBreakdownPictureFaceIntegrity pictureFaceIntegrity) {
+  public void setPictureFaceIntegrity(@javax.annotation.Nullable DocumentBreakdownVisualAuthenticityBreakdownPictureFaceIntegrity pictureFaceIntegrity) {
     this.pictureFaceIntegrity = pictureFaceIntegrity;
   }
 
 
-  public DocumentBreakdownVisualAuthenticityBreakdown template(DocumentBreakdownVisualAuthenticityBreakdownTemplate template) {
+  public DocumentBreakdownVisualAuthenticityBreakdown template(@javax.annotation.Nullable DocumentBreakdownVisualAuthenticityBreakdownTemplate template) {
     this.template = template;
     return this;
   }
@@ -145,12 +153,12 @@ public class DocumentBreakdownVisualAuthenticityBreakdown {
     return template;
   }
 
-  public void setTemplate(DocumentBreakdownVisualAuthenticityBreakdownTemplate template) {
+  public void setTemplate(@javax.annotation.Nullable DocumentBreakdownVisualAuthenticityBreakdownTemplate template) {
     this.template = template;
   }
 
 
-  public DocumentBreakdownVisualAuthenticityBreakdown securityFeatures(DocumentBreakdownVisualAuthenticityBreakdownSecurityFeatures securityFeatures) {
+  public DocumentBreakdownVisualAuthenticityBreakdown securityFeatures(@javax.annotation.Nullable DocumentBreakdownVisualAuthenticityBreakdownSecurityFeatures securityFeatures) {
     this.securityFeatures = securityFeatures;
     return this;
   }
@@ -164,12 +172,12 @@ public class DocumentBreakdownVisualAuthenticityBreakdown {
     return securityFeatures;
   }
 
-  public void setSecurityFeatures(DocumentBreakdownVisualAuthenticityBreakdownSecurityFeatures securityFeatures) {
+  public void setSecurityFeatures(@javax.annotation.Nullable DocumentBreakdownVisualAuthenticityBreakdownSecurityFeatures securityFeatures) {
     this.securityFeatures = securityFeatures;
   }
 
 
-  public DocumentBreakdownVisualAuthenticityBreakdown originalDocumentPresent(DocumentBreakdownVisualAuthenticityBreakdownOriginalDocumentPresent originalDocumentPresent) {
+  public DocumentBreakdownVisualAuthenticityBreakdown originalDocumentPresent(@javax.annotation.Nullable DocumentBreakdownVisualAuthenticityBreakdownOriginalDocumentPresent originalDocumentPresent) {
     this.originalDocumentPresent = originalDocumentPresent;
     return this;
   }
@@ -183,12 +191,12 @@ public class DocumentBreakdownVisualAuthenticityBreakdown {
     return originalDocumentPresent;
   }
 
-  public void setOriginalDocumentPresent(DocumentBreakdownVisualAuthenticityBreakdownOriginalDocumentPresent originalDocumentPresent) {
+  public void setOriginalDocumentPresent(@javax.annotation.Nullable DocumentBreakdownVisualAuthenticityBreakdownOriginalDocumentPresent originalDocumentPresent) {
     this.originalDocumentPresent = originalDocumentPresent;
   }
 
 
-  public DocumentBreakdownVisualAuthenticityBreakdown digitalTampering(DocumentBreakdownVisualAuthenticityBreakdownDigitalTampering digitalTampering) {
+  public DocumentBreakdownVisualAuthenticityBreakdown digitalTampering(@javax.annotation.Nullable DocumentBreakdownVisualAuthenticityBreakdownDigitalTampering digitalTampering) {
     this.digitalTampering = digitalTampering;
     return this;
   }
@@ -202,12 +210,12 @@ public class DocumentBreakdownVisualAuthenticityBreakdown {
     return digitalTampering;
   }
 
-  public void setDigitalTampering(DocumentBreakdownVisualAuthenticityBreakdownDigitalTampering digitalTampering) {
+  public void setDigitalTampering(@javax.annotation.Nullable DocumentBreakdownVisualAuthenticityBreakdownDigitalTampering digitalTampering) {
     this.digitalTampering = digitalTampering;
   }
 
 
-  public DocumentBreakdownVisualAuthenticityBreakdown other(DocumentBreakdownVisualAuthenticityBreakdownOther other) {
+  public DocumentBreakdownVisualAuthenticityBreakdown other(@javax.annotation.Nullable DocumentBreakdownVisualAuthenticityBreakdownOther other) {
     this.other = other;
     return this;
   }
@@ -221,12 +229,12 @@ public class DocumentBreakdownVisualAuthenticityBreakdown {
     return other;
   }
 
-  public void setOther(DocumentBreakdownVisualAuthenticityBreakdownOther other) {
+  public void setOther(@javax.annotation.Nullable DocumentBreakdownVisualAuthenticityBreakdownOther other) {
     this.other = other;
   }
 
 
-  public DocumentBreakdownVisualAuthenticityBreakdown faceDetection(DocumentBreakdownVisualAuthenticityBreakdownFaceDetection faceDetection) {
+  public DocumentBreakdownVisualAuthenticityBreakdown faceDetection(@javax.annotation.Nullable DocumentBreakdownVisualAuthenticityBreakdownFaceDetection faceDetection) {
     this.faceDetection = faceDetection;
     return this;
   }
@@ -240,7 +248,7 @@ public class DocumentBreakdownVisualAuthenticityBreakdown {
     return faceDetection;
   }
 
-  public void setFaceDetection(DocumentBreakdownVisualAuthenticityBreakdownFaceDetection faceDetection) {
+  public void setFaceDetection(@javax.annotation.Nullable DocumentBreakdownVisualAuthenticityBreakdownFaceDetection faceDetection) {
     this.faceDetection = faceDetection;
   }
 

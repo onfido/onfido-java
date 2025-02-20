@@ -48,16 +48,17 @@ import com.onfido.JSON;
 /**
  * FacialSimilarityMotionProperties
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class FacialSimilarityMotionProperties {
   public static final String SERIALIZED_NAME_SCORE = "score";
   @SerializedName(SERIALIZED_NAME_SCORE)
+  @javax.annotation.Nullable
   private Float score;
 
   public FacialSimilarityMotionProperties() {
   }
 
-  public FacialSimilarityMotionProperties score(Float score) {
+  public FacialSimilarityMotionProperties score(@javax.annotation.Nullable Float score) {
     this.score = score;
     return this;
   }
@@ -71,7 +72,7 @@ public class FacialSimilarityMotionProperties {
     return score;
   }
 
-  public void setScore(Float score) {
+  public void setScore(@javax.annotation.Nullable Float score) {
     this.score = score;
   }
 

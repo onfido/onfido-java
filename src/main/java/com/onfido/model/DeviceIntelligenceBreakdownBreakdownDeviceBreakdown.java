@@ -49,24 +49,27 @@ import com.onfido.JSON;
 /**
  * DeviceIntelligenceBreakdownBreakdownDeviceBreakdown
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class DeviceIntelligenceBreakdownBreakdownDeviceBreakdown {
   public static final String SERIALIZED_NAME_APPLICATION_AUTHENTICITY = "application_authenticity";
   @SerializedName(SERIALIZED_NAME_APPLICATION_AUTHENTICITY)
+  @javax.annotation.Nullable
   private DocumentBreakdownDataComparisonBreakdownIssuingCountry applicationAuthenticity;
 
   public static final String SERIALIZED_NAME_DEVICE_INTEGRITY = "device_integrity";
   @SerializedName(SERIALIZED_NAME_DEVICE_INTEGRITY)
+  @javax.annotation.Nullable
   private DocumentBreakdownDataComparisonBreakdownIssuingCountry deviceIntegrity;
 
   public static final String SERIALIZED_NAME_DEVICE_REPUTATION = "device_reputation";
   @SerializedName(SERIALIZED_NAME_DEVICE_REPUTATION)
+  @javax.annotation.Nullable
   private DocumentBreakdownDataComparisonBreakdownIssuingCountry deviceReputation;
 
   public DeviceIntelligenceBreakdownBreakdownDeviceBreakdown() {
   }
 
-  public DeviceIntelligenceBreakdownBreakdownDeviceBreakdown applicationAuthenticity(DocumentBreakdownDataComparisonBreakdownIssuingCountry applicationAuthenticity) {
+  public DeviceIntelligenceBreakdownBreakdownDeviceBreakdown applicationAuthenticity(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry applicationAuthenticity) {
     this.applicationAuthenticity = applicationAuthenticity;
     return this;
   }
@@ -80,12 +83,12 @@ public class DeviceIntelligenceBreakdownBreakdownDeviceBreakdown {
     return applicationAuthenticity;
   }
 
-  public void setApplicationAuthenticity(DocumentBreakdownDataComparisonBreakdownIssuingCountry applicationAuthenticity) {
+  public void setApplicationAuthenticity(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry applicationAuthenticity) {
     this.applicationAuthenticity = applicationAuthenticity;
   }
 
 
-  public DeviceIntelligenceBreakdownBreakdownDeviceBreakdown deviceIntegrity(DocumentBreakdownDataComparisonBreakdownIssuingCountry deviceIntegrity) {
+  public DeviceIntelligenceBreakdownBreakdownDeviceBreakdown deviceIntegrity(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry deviceIntegrity) {
     this.deviceIntegrity = deviceIntegrity;
     return this;
   }
@@ -99,12 +102,12 @@ public class DeviceIntelligenceBreakdownBreakdownDeviceBreakdown {
     return deviceIntegrity;
   }
 
-  public void setDeviceIntegrity(DocumentBreakdownDataComparisonBreakdownIssuingCountry deviceIntegrity) {
+  public void setDeviceIntegrity(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry deviceIntegrity) {
     this.deviceIntegrity = deviceIntegrity;
   }
 
 
-  public DeviceIntelligenceBreakdownBreakdownDeviceBreakdown deviceReputation(DocumentBreakdownDataComparisonBreakdownIssuingCountry deviceReputation) {
+  public DeviceIntelligenceBreakdownBreakdownDeviceBreakdown deviceReputation(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry deviceReputation) {
     this.deviceReputation = deviceReputation;
     return this;
   }
@@ -118,7 +121,7 @@ public class DeviceIntelligenceBreakdownBreakdownDeviceBreakdown {
     return deviceReputation;
   }
 
-  public void setDeviceReputation(DocumentBreakdownDataComparisonBreakdownIssuingCountry deviceReputation) {
+  public void setDeviceReputation(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry deviceReputation) {
     this.deviceReputation = deviceReputation;
   }
 

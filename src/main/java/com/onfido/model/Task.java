@@ -51,44 +51,52 @@ import com.onfido.JSON;
 /**
  * Task
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class Task {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nullable
   private String id;
 
   public static final String SERIALIZED_NAME_WORKFLOW_RUN_ID = "workflow_run_id";
   @SerializedName(SERIALIZED_NAME_WORKFLOW_RUN_ID)
+  @javax.annotation.Nullable
   private UUID workflowRunId;
 
   public static final String SERIALIZED_NAME_TASK_DEF_ID = "task_def_id";
   @SerializedName(SERIALIZED_NAME_TASK_DEF_ID)
+  @javax.annotation.Nullable
   private String taskDefId;
 
   public static final String SERIALIZED_NAME_TASK_DEF_VERSION = "task_def_version";
   @SerializedName(SERIALIZED_NAME_TASK_DEF_VERSION)
+  @javax.annotation.Nullable
   private String taskDefVersion;
 
   public static final String SERIALIZED_NAME_INPUT = "input";
   @SerializedName(SERIALIZED_NAME_INPUT)
+  @javax.annotation.Nullable
   private Object input;
 
   public static final String SERIALIZED_NAME_OUTPUT = "output";
   @SerializedName(SERIALIZED_NAME_OUTPUT)
+  @javax.annotation.Nullable
   private Object output;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
+  @javax.annotation.Nullable
   private OffsetDateTime createdAt;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
+  @javax.annotation.Nullable
   private OffsetDateTime updatedAt;
 
   public Task() {
   }
 
-  public Task id(String id) {
+  public Task id(@javax.annotation.Nullable String id) {
     this.id = id;
     return this;
   }
@@ -102,12 +110,12 @@ public class Task {
     return id;
   }
 
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nullable String id) {
     this.id = id;
   }
 
 
-  public Task workflowRunId(UUID workflowRunId) {
+  public Task workflowRunId(@javax.annotation.Nullable UUID workflowRunId) {
     this.workflowRunId = workflowRunId;
     return this;
   }
@@ -121,12 +129,12 @@ public class Task {
     return workflowRunId;
   }
 
-  public void setWorkflowRunId(UUID workflowRunId) {
+  public void setWorkflowRunId(@javax.annotation.Nullable UUID workflowRunId) {
     this.workflowRunId = workflowRunId;
   }
 
 
-  public Task taskDefId(String taskDefId) {
+  public Task taskDefId(@javax.annotation.Nullable String taskDefId) {
     this.taskDefId = taskDefId;
     return this;
   }
@@ -140,12 +148,12 @@ public class Task {
     return taskDefId;
   }
 
-  public void setTaskDefId(String taskDefId) {
+  public void setTaskDefId(@javax.annotation.Nullable String taskDefId) {
     this.taskDefId = taskDefId;
   }
 
 
-  public Task taskDefVersion(String taskDefVersion) {
+  public Task taskDefVersion(@javax.annotation.Nullable String taskDefVersion) {
     this.taskDefVersion = taskDefVersion;
     return this;
   }
@@ -159,12 +167,12 @@ public class Task {
     return taskDefVersion;
   }
 
-  public void setTaskDefVersion(String taskDefVersion) {
+  public void setTaskDefVersion(@javax.annotation.Nullable String taskDefVersion) {
     this.taskDefVersion = taskDefVersion;
   }
 
 
-  public Task input(Object input) {
+  public Task input(@javax.annotation.Nullable Object input) {
     this.input = input;
     return this;
   }
@@ -178,12 +186,12 @@ public class Task {
     return input;
   }
 
-  public void setInput(Object input) {
+  public void setInput(@javax.annotation.Nullable Object input) {
     this.input = input;
   }
 
 
-  public Task output(Object output) {
+  public Task output(@javax.annotation.Nullable Object output) {
     this.output = output;
     return this;
   }
@@ -197,12 +205,12 @@ public class Task {
     return output;
   }
 
-  public void setOutput(Object output) {
+  public void setOutput(@javax.annotation.Nullable Object output) {
     this.output = output;
   }
 
 
-  public Task createdAt(OffsetDateTime createdAt) {
+  public Task createdAt(@javax.annotation.Nullable OffsetDateTime createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -216,12 +224,12 @@ public class Task {
     return createdAt;
   }
 
-  public void setCreatedAt(OffsetDateTime createdAt) {
+  public void setCreatedAt(@javax.annotation.Nullable OffsetDateTime createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public Task updatedAt(OffsetDateTime updatedAt) {
+  public Task updatedAt(@javax.annotation.Nullable OffsetDateTime updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -235,7 +243,7 @@ public class Task {
     return updatedAt;
   }
 
-  public void setUpdatedAt(OffsetDateTime updatedAt) {
+  public void setUpdatedAt(@javax.annotation.Nullable OffsetDateTime updatedAt) {
     this.updatedAt = updatedAt;
   }
 

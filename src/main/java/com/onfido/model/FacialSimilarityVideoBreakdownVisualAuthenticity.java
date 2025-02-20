@@ -49,20 +49,22 @@ import com.onfido.JSON;
 /**
  * Asserts whether the person in the live video is real (not a spoof) and live.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class FacialSimilarityVideoBreakdownVisualAuthenticity {
   public static final String SERIALIZED_NAME_RESULT = "result";
   @SerializedName(SERIALIZED_NAME_RESULT)
+  @javax.annotation.Nullable
   private String result;
 
   public static final String SERIALIZED_NAME_BREAKDOWN = "breakdown";
   @SerializedName(SERIALIZED_NAME_BREAKDOWN)
+  @javax.annotation.Nullable
   private FacialSimilarityVideoBreakdownVisualAuthenticityBreakdown breakdown;
 
   public FacialSimilarityVideoBreakdownVisualAuthenticity() {
   }
 
-  public FacialSimilarityVideoBreakdownVisualAuthenticity result(String result) {
+  public FacialSimilarityVideoBreakdownVisualAuthenticity result(@javax.annotation.Nullable String result) {
     this.result = result;
     return this;
   }
@@ -76,12 +78,12 @@ public class FacialSimilarityVideoBreakdownVisualAuthenticity {
     return result;
   }
 
-  public void setResult(String result) {
+  public void setResult(@javax.annotation.Nullable String result) {
     this.result = result;
   }
 
 
-  public FacialSimilarityVideoBreakdownVisualAuthenticity breakdown(FacialSimilarityVideoBreakdownVisualAuthenticityBreakdown breakdown) {
+  public FacialSimilarityVideoBreakdownVisualAuthenticity breakdown(@javax.annotation.Nullable FacialSimilarityVideoBreakdownVisualAuthenticityBreakdown breakdown) {
     this.breakdown = breakdown;
     return this;
   }
@@ -95,7 +97,7 @@ public class FacialSimilarityVideoBreakdownVisualAuthenticity {
     return breakdown;
   }
 
-  public void setBreakdown(FacialSimilarityVideoBreakdownVisualAuthenticityBreakdown breakdown) {
+  public void setBreakdown(@javax.annotation.Nullable FacialSimilarityVideoBreakdownVisualAuthenticityBreakdown breakdown) {
     this.breakdown = breakdown;
   }
 

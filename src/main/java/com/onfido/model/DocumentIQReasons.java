@@ -48,52 +48,62 @@ import com.onfido.JSON;
 /**
  * DocumentIQReasons
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class DocumentIQReasons {
   public static final String SERIALIZED_NAME_DARK_PHOTO = "dark_photo";
   @SerializedName(SERIALIZED_NAME_DARK_PHOTO)
+  @javax.annotation.Nullable
   private String darkPhoto;
 
   public static final String SERIALIZED_NAME_GLARE_ON_PHOTO = "glare_on_photo";
   @SerializedName(SERIALIZED_NAME_GLARE_ON_PHOTO)
+  @javax.annotation.Nullable
   private String glareOnPhoto;
 
   public static final String SERIALIZED_NAME_BLURRED_PHOTO = "blurred_photo";
   @SerializedName(SERIALIZED_NAME_BLURRED_PHOTO)
+  @javax.annotation.Nullable
   private String blurredPhoto;
 
   public static final String SERIALIZED_NAME_COVERED_PHOTO = "covered_photo";
   @SerializedName(SERIALIZED_NAME_COVERED_PHOTO)
+  @javax.annotation.Nullable
   private String coveredPhoto;
 
   public static final String SERIALIZED_NAME_OTHER_PHOTO_ISSUE = "other_photo_issue";
   @SerializedName(SERIALIZED_NAME_OTHER_PHOTO_ISSUE)
+  @javax.annotation.Nullable
   private String otherPhotoIssue;
 
   public static final String SERIALIZED_NAME_DAMAGED_DOCUMENT = "damaged_document";
   @SerializedName(SERIALIZED_NAME_DAMAGED_DOCUMENT)
+  @javax.annotation.Nullable
   private String damagedDocument;
 
   public static final String SERIALIZED_NAME_INCORRECT_SIDE = "incorrect_side";
   @SerializedName(SERIALIZED_NAME_INCORRECT_SIDE)
+  @javax.annotation.Nullable
   private String incorrectSide;
 
   public static final String SERIALIZED_NAME_CUT_OFF_DOCUMENT = "cut_off_document";
   @SerializedName(SERIALIZED_NAME_CUT_OFF_DOCUMENT)
+  @javax.annotation.Nullable
   private String cutOffDocument;
 
   public static final String SERIALIZED_NAME_NO_DOCUMENT_IN_IMAGE = "no_document_in_image";
   @SerializedName(SERIALIZED_NAME_NO_DOCUMENT_IN_IMAGE)
+  @javax.annotation.Nullable
   private String noDocumentInImage;
 
   public static final String SERIALIZED_NAME_TWO_DOCUMENTS_UPLOADED = "two_documents_uploaded";
   @SerializedName(SERIALIZED_NAME_TWO_DOCUMENTS_UPLOADED)
+  @javax.annotation.Nullable
   private String twoDocumentsUploaded;
 
   public DocumentIQReasons() {
   }
 
-  public DocumentIQReasons darkPhoto(String darkPhoto) {
+  public DocumentIQReasons darkPhoto(@javax.annotation.Nullable String darkPhoto) {
     this.darkPhoto = darkPhoto;
     return this;
   }
@@ -107,12 +117,12 @@ public class DocumentIQReasons {
     return darkPhoto;
   }
 
-  public void setDarkPhoto(String darkPhoto) {
+  public void setDarkPhoto(@javax.annotation.Nullable String darkPhoto) {
     this.darkPhoto = darkPhoto;
   }
 
 
-  public DocumentIQReasons glareOnPhoto(String glareOnPhoto) {
+  public DocumentIQReasons glareOnPhoto(@javax.annotation.Nullable String glareOnPhoto) {
     this.glareOnPhoto = glareOnPhoto;
     return this;
   }
@@ -126,12 +136,12 @@ public class DocumentIQReasons {
     return glareOnPhoto;
   }
 
-  public void setGlareOnPhoto(String glareOnPhoto) {
+  public void setGlareOnPhoto(@javax.annotation.Nullable String glareOnPhoto) {
     this.glareOnPhoto = glareOnPhoto;
   }
 
 
-  public DocumentIQReasons blurredPhoto(String blurredPhoto) {
+  public DocumentIQReasons blurredPhoto(@javax.annotation.Nullable String blurredPhoto) {
     this.blurredPhoto = blurredPhoto;
     return this;
   }
@@ -145,12 +155,12 @@ public class DocumentIQReasons {
     return blurredPhoto;
   }
 
-  public void setBlurredPhoto(String blurredPhoto) {
+  public void setBlurredPhoto(@javax.annotation.Nullable String blurredPhoto) {
     this.blurredPhoto = blurredPhoto;
   }
 
 
-  public DocumentIQReasons coveredPhoto(String coveredPhoto) {
+  public DocumentIQReasons coveredPhoto(@javax.annotation.Nullable String coveredPhoto) {
     this.coveredPhoto = coveredPhoto;
     return this;
   }
@@ -164,12 +174,12 @@ public class DocumentIQReasons {
     return coveredPhoto;
   }
 
-  public void setCoveredPhoto(String coveredPhoto) {
+  public void setCoveredPhoto(@javax.annotation.Nullable String coveredPhoto) {
     this.coveredPhoto = coveredPhoto;
   }
 
 
-  public DocumentIQReasons otherPhotoIssue(String otherPhotoIssue) {
+  public DocumentIQReasons otherPhotoIssue(@javax.annotation.Nullable String otherPhotoIssue) {
     this.otherPhotoIssue = otherPhotoIssue;
     return this;
   }
@@ -183,12 +193,12 @@ public class DocumentIQReasons {
     return otherPhotoIssue;
   }
 
-  public void setOtherPhotoIssue(String otherPhotoIssue) {
+  public void setOtherPhotoIssue(@javax.annotation.Nullable String otherPhotoIssue) {
     this.otherPhotoIssue = otherPhotoIssue;
   }
 
 
-  public DocumentIQReasons damagedDocument(String damagedDocument) {
+  public DocumentIQReasons damagedDocument(@javax.annotation.Nullable String damagedDocument) {
     this.damagedDocument = damagedDocument;
     return this;
   }
@@ -202,12 +212,12 @@ public class DocumentIQReasons {
     return damagedDocument;
   }
 
-  public void setDamagedDocument(String damagedDocument) {
+  public void setDamagedDocument(@javax.annotation.Nullable String damagedDocument) {
     this.damagedDocument = damagedDocument;
   }
 
 
-  public DocumentIQReasons incorrectSide(String incorrectSide) {
+  public DocumentIQReasons incorrectSide(@javax.annotation.Nullable String incorrectSide) {
     this.incorrectSide = incorrectSide;
     return this;
   }
@@ -221,12 +231,12 @@ public class DocumentIQReasons {
     return incorrectSide;
   }
 
-  public void setIncorrectSide(String incorrectSide) {
+  public void setIncorrectSide(@javax.annotation.Nullable String incorrectSide) {
     this.incorrectSide = incorrectSide;
   }
 
 
-  public DocumentIQReasons cutOffDocument(String cutOffDocument) {
+  public DocumentIQReasons cutOffDocument(@javax.annotation.Nullable String cutOffDocument) {
     this.cutOffDocument = cutOffDocument;
     return this;
   }
@@ -240,12 +250,12 @@ public class DocumentIQReasons {
     return cutOffDocument;
   }
 
-  public void setCutOffDocument(String cutOffDocument) {
+  public void setCutOffDocument(@javax.annotation.Nullable String cutOffDocument) {
     this.cutOffDocument = cutOffDocument;
   }
 
 
-  public DocumentIQReasons noDocumentInImage(String noDocumentInImage) {
+  public DocumentIQReasons noDocumentInImage(@javax.annotation.Nullable String noDocumentInImage) {
     this.noDocumentInImage = noDocumentInImage;
     return this;
   }
@@ -259,12 +269,12 @@ public class DocumentIQReasons {
     return noDocumentInImage;
   }
 
-  public void setNoDocumentInImage(String noDocumentInImage) {
+  public void setNoDocumentInImage(@javax.annotation.Nullable String noDocumentInImage) {
     this.noDocumentInImage = noDocumentInImage;
   }
 
 
-  public DocumentIQReasons twoDocumentsUploaded(String twoDocumentsUploaded) {
+  public DocumentIQReasons twoDocumentsUploaded(@javax.annotation.Nullable String twoDocumentsUploaded) {
     this.twoDocumentsUploaded = twoDocumentsUploaded;
     return this;
   }
@@ -278,7 +288,7 @@ public class DocumentIQReasons {
     return twoDocumentsUploaded;
   }
 
-  public void setTwoDocumentsUploaded(String twoDocumentsUploaded) {
+  public void setTwoDocumentsUploaded(@javax.annotation.Nullable String twoDocumentsUploaded) {
     this.twoDocumentsUploaded = twoDocumentsUploaded;
   }
 

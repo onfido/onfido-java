@@ -51,24 +51,27 @@ import com.onfido.JSON;
 /**
  * IdentityEnhancedBreakdownAddressBreakdown
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class IdentityEnhancedBreakdownAddressBreakdown {
   public static final String SERIALIZED_NAME_CREDIT_AGENCIES = "credit_agencies";
   @SerializedName(SERIALIZED_NAME_CREDIT_AGENCIES)
+  @javax.annotation.Nullable
   private IdentityEnhancedBreakdownAddressBreakdownCreditAgencies creditAgencies;
 
   public static final String SERIALIZED_NAME_TELEPHONE_DATABASE = "telephone_database";
   @SerializedName(SERIALIZED_NAME_TELEPHONE_DATABASE)
+  @javax.annotation.Nullable
   private IdentityEnhancedBreakdownAddressBreakdownTelephoneDatabase telephoneDatabase;
 
   public static final String SERIALIZED_NAME_VOTING_REGISTER = "voting_register";
   @SerializedName(SERIALIZED_NAME_VOTING_REGISTER)
+  @javax.annotation.Nullable
   private IdentityEnhancedBreakdownAddressBreakdownVotingRegister votingRegister;
 
   public IdentityEnhancedBreakdownAddressBreakdown() {
   }
 
-  public IdentityEnhancedBreakdownAddressBreakdown creditAgencies(IdentityEnhancedBreakdownAddressBreakdownCreditAgencies creditAgencies) {
+  public IdentityEnhancedBreakdownAddressBreakdown creditAgencies(@javax.annotation.Nullable IdentityEnhancedBreakdownAddressBreakdownCreditAgencies creditAgencies) {
     this.creditAgencies = creditAgencies;
     return this;
   }
@@ -82,12 +85,12 @@ public class IdentityEnhancedBreakdownAddressBreakdown {
     return creditAgencies;
   }
 
-  public void setCreditAgencies(IdentityEnhancedBreakdownAddressBreakdownCreditAgencies creditAgencies) {
+  public void setCreditAgencies(@javax.annotation.Nullable IdentityEnhancedBreakdownAddressBreakdownCreditAgencies creditAgencies) {
     this.creditAgencies = creditAgencies;
   }
 
 
-  public IdentityEnhancedBreakdownAddressBreakdown telephoneDatabase(IdentityEnhancedBreakdownAddressBreakdownTelephoneDatabase telephoneDatabase) {
+  public IdentityEnhancedBreakdownAddressBreakdown telephoneDatabase(@javax.annotation.Nullable IdentityEnhancedBreakdownAddressBreakdownTelephoneDatabase telephoneDatabase) {
     this.telephoneDatabase = telephoneDatabase;
     return this;
   }
@@ -101,12 +104,12 @@ public class IdentityEnhancedBreakdownAddressBreakdown {
     return telephoneDatabase;
   }
 
-  public void setTelephoneDatabase(IdentityEnhancedBreakdownAddressBreakdownTelephoneDatabase telephoneDatabase) {
+  public void setTelephoneDatabase(@javax.annotation.Nullable IdentityEnhancedBreakdownAddressBreakdownTelephoneDatabase telephoneDatabase) {
     this.telephoneDatabase = telephoneDatabase;
   }
 
 
-  public IdentityEnhancedBreakdownAddressBreakdown votingRegister(IdentityEnhancedBreakdownAddressBreakdownVotingRegister votingRegister) {
+  public IdentityEnhancedBreakdownAddressBreakdown votingRegister(@javax.annotation.Nullable IdentityEnhancedBreakdownAddressBreakdownVotingRegister votingRegister) {
     this.votingRegister = votingRegister;
     return this;
   }
@@ -120,7 +123,7 @@ public class IdentityEnhancedBreakdownAddressBreakdown {
     return votingRegister;
   }
 
-  public void setVotingRegister(IdentityEnhancedBreakdownAddressBreakdownVotingRegister votingRegister) {
+  public void setVotingRegister(@javax.annotation.Nullable IdentityEnhancedBreakdownAddressBreakdownVotingRegister votingRegister) {
     this.votingRegister = votingRegister;
   }
 

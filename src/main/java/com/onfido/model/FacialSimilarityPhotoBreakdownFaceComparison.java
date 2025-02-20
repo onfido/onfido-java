@@ -49,20 +49,22 @@ import com.onfido.JSON;
 /**
  * Asserts whether the face in the document matches the face in the live photo.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class FacialSimilarityPhotoBreakdownFaceComparison {
   public static final String SERIALIZED_NAME_RESULT = "result";
   @SerializedName(SERIALIZED_NAME_RESULT)
+  @javax.annotation.Nullable
   private String result;
 
   public static final String SERIALIZED_NAME_BREAKDOWN = "breakdown";
   @SerializedName(SERIALIZED_NAME_BREAKDOWN)
+  @javax.annotation.Nullable
   private FacialSimilarityPhotoBreakdownFaceComparisonBreakdown breakdown;
 
   public FacialSimilarityPhotoBreakdownFaceComparison() {
   }
 
-  public FacialSimilarityPhotoBreakdownFaceComparison result(String result) {
+  public FacialSimilarityPhotoBreakdownFaceComparison result(@javax.annotation.Nullable String result) {
     this.result = result;
     return this;
   }
@@ -76,12 +78,12 @@ public class FacialSimilarityPhotoBreakdownFaceComparison {
     return result;
   }
 
-  public void setResult(String result) {
+  public void setResult(@javax.annotation.Nullable String result) {
     this.result = result;
   }
 
 
-  public FacialSimilarityPhotoBreakdownFaceComparison breakdown(FacialSimilarityPhotoBreakdownFaceComparisonBreakdown breakdown) {
+  public FacialSimilarityPhotoBreakdownFaceComparison breakdown(@javax.annotation.Nullable FacialSimilarityPhotoBreakdownFaceComparisonBreakdown breakdown) {
     this.breakdown = breakdown;
     return this;
   }
@@ -95,7 +97,7 @@ public class FacialSimilarityPhotoBreakdownFaceComparison {
     return breakdown;
   }
 
-  public void setBreakdown(FacialSimilarityPhotoBreakdownFaceComparisonBreakdown breakdown) {
+  public void setBreakdown(@javax.annotation.Nullable FacialSimilarityPhotoBreakdownFaceComparisonBreakdown breakdown) {
     this.breakdown = breakdown;
   }
 

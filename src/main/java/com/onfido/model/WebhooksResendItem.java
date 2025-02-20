@@ -50,20 +50,22 @@ import com.onfido.JSON;
 /**
  * WebhooksResendItem
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class WebhooksResendItem {
   public static final String SERIALIZED_NAME_RESOURCE_ID = "resource_id";
   @SerializedName(SERIALIZED_NAME_RESOURCE_ID)
+  @javax.annotation.Nonnull
   private UUID resourceId;
 
   public static final String SERIALIZED_NAME_EVENT = "event";
   @SerializedName(SERIALIZED_NAME_EVENT)
+  @javax.annotation.Nonnull
   private WebhookEventType event;
 
   public WebhooksResendItem() {
   }
 
-  public WebhooksResendItem resourceId(UUID resourceId) {
+  public WebhooksResendItem resourceId(@javax.annotation.Nonnull UUID resourceId) {
     this.resourceId = resourceId;
     return this;
   }
@@ -77,12 +79,12 @@ public class WebhooksResendItem {
     return resourceId;
   }
 
-  public void setResourceId(UUID resourceId) {
+  public void setResourceId(@javax.annotation.Nonnull UUID resourceId) {
     this.resourceId = resourceId;
   }
 
 
-  public WebhooksResendItem event(WebhookEventType event) {
+  public WebhooksResendItem event(@javax.annotation.Nonnull WebhookEventType event) {
     this.event = event;
     return this;
   }
@@ -96,7 +98,7 @@ public class WebhooksResendItem {
     return event;
   }
 
-  public void setEvent(WebhookEventType event) {
+  public void setEvent(@javax.annotation.Nonnull WebhookEventType event) {
     this.event = event;
   }
 

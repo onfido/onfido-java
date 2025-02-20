@@ -49,84 +49,102 @@ import com.onfido.JSON;
 /**
  * DocumentPropertiesBarcodeInner
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class DocumentPropertiesBarcodeInner {
   public static final String SERIALIZED_NAME_FIRST_NAME = "first_name";
   @SerializedName(SERIALIZED_NAME_FIRST_NAME)
+  @javax.annotation.Nullable
   private String firstName;
 
   public static final String SERIALIZED_NAME_MIDDLE_NAME = "middle_name";
   @SerializedName(SERIALIZED_NAME_MIDDLE_NAME)
+  @javax.annotation.Nullable
   private String middleName;
 
   public static final String SERIALIZED_NAME_LAST_NAME = "last_name";
   @SerializedName(SERIALIZED_NAME_LAST_NAME)
+  @javax.annotation.Nullable
   private String lastName;
 
   public static final String SERIALIZED_NAME_DOCUMENT_TYPE = "document_type";
   @SerializedName(SERIALIZED_NAME_DOCUMENT_TYPE)
+  @javax.annotation.Nullable
   private String documentType;
 
   public static final String SERIALIZED_NAME_DATE_OF_EXPIRY = "date_of_expiry";
   @SerializedName(SERIALIZED_NAME_DATE_OF_EXPIRY)
+  @javax.annotation.Nullable
   private LocalDate dateOfExpiry;
 
   public static final String SERIALIZED_NAME_DATE_OF_BIRTH = "date_of_birth";
   @SerializedName(SERIALIZED_NAME_DATE_OF_BIRTH)
+  @javax.annotation.Nullable
   private LocalDate dateOfBirth;
 
   public static final String SERIALIZED_NAME_ISSUING_DATE = "issuing_date";
   @SerializedName(SERIALIZED_NAME_ISSUING_DATE)
+  @javax.annotation.Nullable
   private LocalDate issuingDate;
 
   public static final String SERIALIZED_NAME_ADDRESS_LINE1 = "address_line_1";
   @SerializedName(SERIALIZED_NAME_ADDRESS_LINE1)
+  @javax.annotation.Nullable
   private String addressLine1;
 
   public static final String SERIALIZED_NAME_ADDRESS_LINE2 = "address_line_2";
   @SerializedName(SERIALIZED_NAME_ADDRESS_LINE2)
+  @javax.annotation.Nullable
   private String addressLine2;
 
   public static final String SERIALIZED_NAME_ADDRESS_LINE3 = "address_line_3";
   @SerializedName(SERIALIZED_NAME_ADDRESS_LINE3)
+  @javax.annotation.Nullable
   private String addressLine3;
 
   public static final String SERIALIZED_NAME_ADDRESS_LINE4 = "address_line_4";
   @SerializedName(SERIALIZED_NAME_ADDRESS_LINE4)
+  @javax.annotation.Nullable
   private String addressLine4;
 
   public static final String SERIALIZED_NAME_ADDRESS_LINE5 = "address_line_5";
   @SerializedName(SERIALIZED_NAME_ADDRESS_LINE5)
+  @javax.annotation.Nullable
   private String addressLine5;
 
   public static final String SERIALIZED_NAME_ISSUING_STATE = "issuing_state";
   @SerializedName(SERIALIZED_NAME_ISSUING_STATE)
+  @javax.annotation.Nullable
   private String issuingState;
 
   public static final String SERIALIZED_NAME_PROPERTY_CLASS = "class";
   @SerializedName(SERIALIZED_NAME_PROPERTY_CLASS)
+  @javax.annotation.Nullable
   private String propertyClass;
 
   public static final String SERIALIZED_NAME_GENDER = "gender";
   @SerializedName(SERIALIZED_NAME_GENDER)
+  @javax.annotation.Nullable
   private String gender;
 
   public static final String SERIALIZED_NAME_ISSUING_COUNTRY = "issuing_country";
   @SerializedName(SERIALIZED_NAME_ISSUING_COUNTRY)
+  @javax.annotation.Nullable
   private String issuingCountry;
 
   public static final String SERIALIZED_NAME_DOCUMENT_NUMBER = "document_number";
   @SerializedName(SERIALIZED_NAME_DOCUMENT_NUMBER)
+  @javax.annotation.Nullable
   private String documentNumber;
 
   public static final String SERIALIZED_NAME_REAL_ID_CLASSIFICATION = "real_id_classification";
   @SerializedName(SERIALIZED_NAME_REAL_ID_CLASSIFICATION)
+  @javax.annotation.Nullable
   private String realIdClassification;
 
   public DocumentPropertiesBarcodeInner() {
   }
 
-  public DocumentPropertiesBarcodeInner firstName(String firstName) {
+  public DocumentPropertiesBarcodeInner firstName(@javax.annotation.Nullable String firstName) {
     this.firstName = firstName;
     return this;
   }
@@ -140,12 +158,12 @@ public class DocumentPropertiesBarcodeInner {
     return firstName;
   }
 
-  public void setFirstName(String firstName) {
+  public void setFirstName(@javax.annotation.Nullable String firstName) {
     this.firstName = firstName;
   }
 
 
-  public DocumentPropertiesBarcodeInner middleName(String middleName) {
+  public DocumentPropertiesBarcodeInner middleName(@javax.annotation.Nullable String middleName) {
     this.middleName = middleName;
     return this;
   }
@@ -159,12 +177,12 @@ public class DocumentPropertiesBarcodeInner {
     return middleName;
   }
 
-  public void setMiddleName(String middleName) {
+  public void setMiddleName(@javax.annotation.Nullable String middleName) {
     this.middleName = middleName;
   }
 
 
-  public DocumentPropertiesBarcodeInner lastName(String lastName) {
+  public DocumentPropertiesBarcodeInner lastName(@javax.annotation.Nullable String lastName) {
     this.lastName = lastName;
     return this;
   }
@@ -178,12 +196,12 @@ public class DocumentPropertiesBarcodeInner {
     return lastName;
   }
 
-  public void setLastName(String lastName) {
+  public void setLastName(@javax.annotation.Nullable String lastName) {
     this.lastName = lastName;
   }
 
 
-  public DocumentPropertiesBarcodeInner documentType(String documentType) {
+  public DocumentPropertiesBarcodeInner documentType(@javax.annotation.Nullable String documentType) {
     this.documentType = documentType;
     return this;
   }
@@ -197,12 +215,12 @@ public class DocumentPropertiesBarcodeInner {
     return documentType;
   }
 
-  public void setDocumentType(String documentType) {
+  public void setDocumentType(@javax.annotation.Nullable String documentType) {
     this.documentType = documentType;
   }
 
 
-  public DocumentPropertiesBarcodeInner dateOfExpiry(LocalDate dateOfExpiry) {
+  public DocumentPropertiesBarcodeInner dateOfExpiry(@javax.annotation.Nullable LocalDate dateOfExpiry) {
     this.dateOfExpiry = dateOfExpiry;
     return this;
   }
@@ -216,12 +234,12 @@ public class DocumentPropertiesBarcodeInner {
     return dateOfExpiry;
   }
 
-  public void setDateOfExpiry(LocalDate dateOfExpiry) {
+  public void setDateOfExpiry(@javax.annotation.Nullable LocalDate dateOfExpiry) {
     this.dateOfExpiry = dateOfExpiry;
   }
 
 
-  public DocumentPropertiesBarcodeInner dateOfBirth(LocalDate dateOfBirth) {
+  public DocumentPropertiesBarcodeInner dateOfBirth(@javax.annotation.Nullable LocalDate dateOfBirth) {
     this.dateOfBirth = dateOfBirth;
     return this;
   }
@@ -235,12 +253,12 @@ public class DocumentPropertiesBarcodeInner {
     return dateOfBirth;
   }
 
-  public void setDateOfBirth(LocalDate dateOfBirth) {
+  public void setDateOfBirth(@javax.annotation.Nullable LocalDate dateOfBirth) {
     this.dateOfBirth = dateOfBirth;
   }
 
 
-  public DocumentPropertiesBarcodeInner issuingDate(LocalDate issuingDate) {
+  public DocumentPropertiesBarcodeInner issuingDate(@javax.annotation.Nullable LocalDate issuingDate) {
     this.issuingDate = issuingDate;
     return this;
   }
@@ -254,12 +272,12 @@ public class DocumentPropertiesBarcodeInner {
     return issuingDate;
   }
 
-  public void setIssuingDate(LocalDate issuingDate) {
+  public void setIssuingDate(@javax.annotation.Nullable LocalDate issuingDate) {
     this.issuingDate = issuingDate;
   }
 
 
-  public DocumentPropertiesBarcodeInner addressLine1(String addressLine1) {
+  public DocumentPropertiesBarcodeInner addressLine1(@javax.annotation.Nullable String addressLine1) {
     this.addressLine1 = addressLine1;
     return this;
   }
@@ -273,12 +291,12 @@ public class DocumentPropertiesBarcodeInner {
     return addressLine1;
   }
 
-  public void setAddressLine1(String addressLine1) {
+  public void setAddressLine1(@javax.annotation.Nullable String addressLine1) {
     this.addressLine1 = addressLine1;
   }
 
 
-  public DocumentPropertiesBarcodeInner addressLine2(String addressLine2) {
+  public DocumentPropertiesBarcodeInner addressLine2(@javax.annotation.Nullable String addressLine2) {
     this.addressLine2 = addressLine2;
     return this;
   }
@@ -292,12 +310,12 @@ public class DocumentPropertiesBarcodeInner {
     return addressLine2;
   }
 
-  public void setAddressLine2(String addressLine2) {
+  public void setAddressLine2(@javax.annotation.Nullable String addressLine2) {
     this.addressLine2 = addressLine2;
   }
 
 
-  public DocumentPropertiesBarcodeInner addressLine3(String addressLine3) {
+  public DocumentPropertiesBarcodeInner addressLine3(@javax.annotation.Nullable String addressLine3) {
     this.addressLine3 = addressLine3;
     return this;
   }
@@ -311,12 +329,12 @@ public class DocumentPropertiesBarcodeInner {
     return addressLine3;
   }
 
-  public void setAddressLine3(String addressLine3) {
+  public void setAddressLine3(@javax.annotation.Nullable String addressLine3) {
     this.addressLine3 = addressLine3;
   }
 
 
-  public DocumentPropertiesBarcodeInner addressLine4(String addressLine4) {
+  public DocumentPropertiesBarcodeInner addressLine4(@javax.annotation.Nullable String addressLine4) {
     this.addressLine4 = addressLine4;
     return this;
   }
@@ -330,12 +348,12 @@ public class DocumentPropertiesBarcodeInner {
     return addressLine4;
   }
 
-  public void setAddressLine4(String addressLine4) {
+  public void setAddressLine4(@javax.annotation.Nullable String addressLine4) {
     this.addressLine4 = addressLine4;
   }
 
 
-  public DocumentPropertiesBarcodeInner addressLine5(String addressLine5) {
+  public DocumentPropertiesBarcodeInner addressLine5(@javax.annotation.Nullable String addressLine5) {
     this.addressLine5 = addressLine5;
     return this;
   }
@@ -349,12 +367,12 @@ public class DocumentPropertiesBarcodeInner {
     return addressLine5;
   }
 
-  public void setAddressLine5(String addressLine5) {
+  public void setAddressLine5(@javax.annotation.Nullable String addressLine5) {
     this.addressLine5 = addressLine5;
   }
 
 
-  public DocumentPropertiesBarcodeInner issuingState(String issuingState) {
+  public DocumentPropertiesBarcodeInner issuingState(@javax.annotation.Nullable String issuingState) {
     this.issuingState = issuingState;
     return this;
   }
@@ -368,12 +386,12 @@ public class DocumentPropertiesBarcodeInner {
     return issuingState;
   }
 
-  public void setIssuingState(String issuingState) {
+  public void setIssuingState(@javax.annotation.Nullable String issuingState) {
     this.issuingState = issuingState;
   }
 
 
-  public DocumentPropertiesBarcodeInner propertyClass(String propertyClass) {
+  public DocumentPropertiesBarcodeInner propertyClass(@javax.annotation.Nullable String propertyClass) {
     this.propertyClass = propertyClass;
     return this;
   }
@@ -387,12 +405,12 @@ public class DocumentPropertiesBarcodeInner {
     return propertyClass;
   }
 
-  public void setPropertyClass(String propertyClass) {
+  public void setPropertyClass(@javax.annotation.Nullable String propertyClass) {
     this.propertyClass = propertyClass;
   }
 
 
-  public DocumentPropertiesBarcodeInner gender(String gender) {
+  public DocumentPropertiesBarcodeInner gender(@javax.annotation.Nullable String gender) {
     this.gender = gender;
     return this;
   }
@@ -406,12 +424,12 @@ public class DocumentPropertiesBarcodeInner {
     return gender;
   }
 
-  public void setGender(String gender) {
+  public void setGender(@javax.annotation.Nullable String gender) {
     this.gender = gender;
   }
 
 
-  public DocumentPropertiesBarcodeInner issuingCountry(String issuingCountry) {
+  public DocumentPropertiesBarcodeInner issuingCountry(@javax.annotation.Nullable String issuingCountry) {
     this.issuingCountry = issuingCountry;
     return this;
   }
@@ -425,12 +443,12 @@ public class DocumentPropertiesBarcodeInner {
     return issuingCountry;
   }
 
-  public void setIssuingCountry(String issuingCountry) {
+  public void setIssuingCountry(@javax.annotation.Nullable String issuingCountry) {
     this.issuingCountry = issuingCountry;
   }
 
 
-  public DocumentPropertiesBarcodeInner documentNumber(String documentNumber) {
+  public DocumentPropertiesBarcodeInner documentNumber(@javax.annotation.Nullable String documentNumber) {
     this.documentNumber = documentNumber;
     return this;
   }
@@ -444,12 +462,12 @@ public class DocumentPropertiesBarcodeInner {
     return documentNumber;
   }
 
-  public void setDocumentNumber(String documentNumber) {
+  public void setDocumentNumber(@javax.annotation.Nullable String documentNumber) {
     this.documentNumber = documentNumber;
   }
 
 
-  public DocumentPropertiesBarcodeInner realIdClassification(String realIdClassification) {
+  public DocumentPropertiesBarcodeInner realIdClassification(@javax.annotation.Nullable String realIdClassification) {
     this.realIdClassification = realIdClassification;
     return this;
   }
@@ -463,7 +481,7 @@ public class DocumentPropertiesBarcodeInner {
     return realIdClassification;
   }
 
-  public void setRealIdClassification(String realIdClassification) {
+  public void setRealIdClassification(@javax.annotation.Nullable String realIdClassification) {
     this.realIdClassification = realIdClassification;
   }
 

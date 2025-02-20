@@ -49,16 +49,17 @@ import com.onfido.JSON;
 /**
  * FacialSimilarityPhotoBreakdownFaceComparisonBreakdown
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class FacialSimilarityPhotoBreakdownFaceComparisonBreakdown {
   public static final String SERIALIZED_NAME_FACE_MATCH = "face_match";
   @SerializedName(SERIALIZED_NAME_FACE_MATCH)
+  @javax.annotation.Nullable
   private FacialSimilarityPhotoBreakdownFaceComparisonBreakdownFaceMatch faceMatch;
 
   public FacialSimilarityPhotoBreakdownFaceComparisonBreakdown() {
   }
 
-  public FacialSimilarityPhotoBreakdownFaceComparisonBreakdown faceMatch(FacialSimilarityPhotoBreakdownFaceComparisonBreakdownFaceMatch faceMatch) {
+  public FacialSimilarityPhotoBreakdownFaceComparisonBreakdown faceMatch(@javax.annotation.Nullable FacialSimilarityPhotoBreakdownFaceComparisonBreakdownFaceMatch faceMatch) {
     this.faceMatch = faceMatch;
     return this;
   }
@@ -72,7 +73,7 @@ public class FacialSimilarityPhotoBreakdownFaceComparisonBreakdown {
     return faceMatch;
   }
 
-  public void setFaceMatch(FacialSimilarityPhotoBreakdownFaceComparisonBreakdownFaceMatch faceMatch) {
+  public void setFaceMatch(@javax.annotation.Nullable FacialSimilarityPhotoBreakdownFaceComparisonBreakdownFaceMatch faceMatch) {
     this.faceMatch = faceMatch;
   }
 

@@ -49,20 +49,22 @@ import com.onfido.JSON;
 /**
  * The document was not present when the photo was taken.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class DocumentBreakdownVisualAuthenticityBreakdownOriginalDocumentPresent {
   public static final String SERIALIZED_NAME_RESULT = "result";
   @SerializedName(SERIALIZED_NAME_RESULT)
+  @javax.annotation.Nullable
   private String result;
 
   public static final String SERIALIZED_NAME_PROPERTIES = "properties";
   @SerializedName(SERIALIZED_NAME_PROPERTIES)
+  @javax.annotation.Nullable
   private DocumentODPReasons properties;
 
   public DocumentBreakdownVisualAuthenticityBreakdownOriginalDocumentPresent() {
   }
 
-  public DocumentBreakdownVisualAuthenticityBreakdownOriginalDocumentPresent result(String result) {
+  public DocumentBreakdownVisualAuthenticityBreakdownOriginalDocumentPresent result(@javax.annotation.Nullable String result) {
     this.result = result;
     return this;
   }
@@ -76,12 +78,12 @@ public class DocumentBreakdownVisualAuthenticityBreakdownOriginalDocumentPresent
     return result;
   }
 
-  public void setResult(String result) {
+  public void setResult(@javax.annotation.Nullable String result) {
     this.result = result;
   }
 
 
-  public DocumentBreakdownVisualAuthenticityBreakdownOriginalDocumentPresent properties(DocumentODPReasons properties) {
+  public DocumentBreakdownVisualAuthenticityBreakdownOriginalDocumentPresent properties(@javax.annotation.Nullable DocumentODPReasons properties) {
     this.properties = properties;
     return this;
   }
@@ -95,7 +97,7 @@ public class DocumentBreakdownVisualAuthenticityBreakdownOriginalDocumentPresent
     return properties;
   }
 
-  public void setProperties(DocumentODPReasons properties) {
+  public void setProperties(@javax.annotation.Nullable DocumentODPReasons properties) {
     this.properties = properties;
   }
 

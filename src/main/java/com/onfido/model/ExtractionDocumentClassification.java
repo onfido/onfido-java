@@ -50,18 +50,21 @@ import com.onfido.JSON;
 /**
  * ExtractionDocumentClassification
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class ExtractionDocumentClassification {
   public static final String SERIALIZED_NAME_ISSUING_COUNTRY = "issuing_country";
   @SerializedName(SERIALIZED_NAME_ISSUING_COUNTRY)
+  @javax.annotation.Nullable
   private CountryCodes issuingCountry;
 
   public static final String SERIALIZED_NAME_DOCUMENT_TYPE = "document_type";
   @SerializedName(SERIALIZED_NAME_DOCUMENT_TYPE)
+  @javax.annotation.Nullable
   private DocumentTypes documentType;
 
   public static final String SERIALIZED_NAME_ISSUING_STATE = "issuing_state";
   @SerializedName(SERIALIZED_NAME_ISSUING_STATE)
+  @javax.annotation.Nullable
   private String issuingState;
 
   /**
@@ -122,16 +125,18 @@ public class ExtractionDocumentClassification {
 
   public static final String SERIALIZED_NAME_SUBTYPE = "subtype";
   @SerializedName(SERIALIZED_NAME_SUBTYPE)
+  @javax.annotation.Nullable
   private SubtypeEnum subtype;
 
   public static final String SERIALIZED_NAME_VERSION = "version";
   @SerializedName(SERIALIZED_NAME_VERSION)
+  @javax.annotation.Nullable
   private String version;
 
   public ExtractionDocumentClassification() {
   }
 
-  public ExtractionDocumentClassification issuingCountry(CountryCodes issuingCountry) {
+  public ExtractionDocumentClassification issuingCountry(@javax.annotation.Nullable CountryCodes issuingCountry) {
     this.issuingCountry = issuingCountry;
     return this;
   }
@@ -145,12 +150,12 @@ public class ExtractionDocumentClassification {
     return issuingCountry;
   }
 
-  public void setIssuingCountry(CountryCodes issuingCountry) {
+  public void setIssuingCountry(@javax.annotation.Nullable CountryCodes issuingCountry) {
     this.issuingCountry = issuingCountry;
   }
 
 
-  public ExtractionDocumentClassification documentType(DocumentTypes documentType) {
+  public ExtractionDocumentClassification documentType(@javax.annotation.Nullable DocumentTypes documentType) {
     this.documentType = documentType;
     return this;
   }
@@ -164,12 +169,12 @@ public class ExtractionDocumentClassification {
     return documentType;
   }
 
-  public void setDocumentType(DocumentTypes documentType) {
+  public void setDocumentType(@javax.annotation.Nullable DocumentTypes documentType) {
     this.documentType = documentType;
   }
 
 
-  public ExtractionDocumentClassification issuingState(String issuingState) {
+  public ExtractionDocumentClassification issuingState(@javax.annotation.Nullable String issuingState) {
     this.issuingState = issuingState;
     return this;
   }
@@ -183,12 +188,12 @@ public class ExtractionDocumentClassification {
     return issuingState;
   }
 
-  public void setIssuingState(String issuingState) {
+  public void setIssuingState(@javax.annotation.Nullable String issuingState) {
     this.issuingState = issuingState;
   }
 
 
-  public ExtractionDocumentClassification subtype(SubtypeEnum subtype) {
+  public ExtractionDocumentClassification subtype(@javax.annotation.Nullable SubtypeEnum subtype) {
     this.subtype = subtype;
     return this;
   }
@@ -202,12 +207,12 @@ public class ExtractionDocumentClassification {
     return subtype;
   }
 
-  public void setSubtype(SubtypeEnum subtype) {
+  public void setSubtype(@javax.annotation.Nullable SubtypeEnum subtype) {
     this.subtype = subtype;
   }
 
 
-  public ExtractionDocumentClassification version(String version) {
+  public ExtractionDocumentClassification version(@javax.annotation.Nullable String version) {
     this.version = version;
     return this;
   }
@@ -221,7 +226,7 @@ public class ExtractionDocumentClassification {
     return version;
   }
 
-  public void setVersion(String version) {
+  public void setVersion(@javax.annotation.Nullable String version) {
     this.version = version;
   }
 

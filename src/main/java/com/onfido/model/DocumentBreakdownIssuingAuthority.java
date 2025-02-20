@@ -49,20 +49,22 @@ import com.onfido.JSON;
 /**
  * Asserts whether data on the document matches the issuing authority data.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class DocumentBreakdownIssuingAuthority {
   public static final String SERIALIZED_NAME_RESULT = "result";
   @SerializedName(SERIALIZED_NAME_RESULT)
+  @javax.annotation.Nullable
   private String result;
 
   public static final String SERIALIZED_NAME_BREAKDOWN = "breakdown";
   @SerializedName(SERIALIZED_NAME_BREAKDOWN)
+  @javax.annotation.Nullable
   private DocumentBreakdownIssuingAuthorityBreakdown breakdown;
 
   public DocumentBreakdownIssuingAuthority() {
   }
 
-  public DocumentBreakdownIssuingAuthority result(String result) {
+  public DocumentBreakdownIssuingAuthority result(@javax.annotation.Nullable String result) {
     this.result = result;
     return this;
   }
@@ -76,12 +78,12 @@ public class DocumentBreakdownIssuingAuthority {
     return result;
   }
 
-  public void setResult(String result) {
+  public void setResult(@javax.annotation.Nullable String result) {
     this.result = result;
   }
 
 
-  public DocumentBreakdownIssuingAuthority breakdown(DocumentBreakdownIssuingAuthorityBreakdown breakdown) {
+  public DocumentBreakdownIssuingAuthority breakdown(@javax.annotation.Nullable DocumentBreakdownIssuingAuthorityBreakdown breakdown) {
     this.breakdown = breakdown;
     return this;
   }
@@ -95,7 +97,7 @@ public class DocumentBreakdownIssuingAuthority {
     return breakdown;
   }
 
-  public void setBreakdown(DocumentBreakdownIssuingAuthorityBreakdown breakdown) {
+  public void setBreakdown(@javax.annotation.Nullable DocumentBreakdownIssuingAuthorityBreakdown breakdown) {
     this.breakdown = breakdown;
   }
 

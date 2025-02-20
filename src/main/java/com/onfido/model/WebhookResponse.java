@@ -49,28 +49,32 @@ import com.onfido.JSON;
 /**
  * WebhookResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class WebhookResponse {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nonnull
   private UUID id;
 
   public static final String SERIALIZED_NAME_URL = "url";
   @SerializedName(SERIALIZED_NAME_URL)
+  @javax.annotation.Nullable
   private String url;
 
   public static final String SERIALIZED_NAME_TOKEN = "token";
   @SerializedName(SERIALIZED_NAME_TOKEN)
+  @javax.annotation.Nullable
   private String token;
 
   public static final String SERIALIZED_NAME_HREF = "href";
   @SerializedName(SERIALIZED_NAME_HREF)
+  @javax.annotation.Nullable
   private String href;
 
   public WebhookResponse() {
   }
 
-  public WebhookResponse id(UUID id) {
+  public WebhookResponse id(@javax.annotation.Nonnull UUID id) {
     this.id = id;
     return this;
   }
@@ -84,12 +88,12 @@ public class WebhookResponse {
     return id;
   }
 
-  public void setId(UUID id) {
+  public void setId(@javax.annotation.Nonnull UUID id) {
     this.id = id;
   }
 
 
-  public WebhookResponse url(String url) {
+  public WebhookResponse url(@javax.annotation.Nullable String url) {
     this.url = url;
     return this;
   }
@@ -103,12 +107,12 @@ public class WebhookResponse {
     return url;
   }
 
-  public void setUrl(String url) {
+  public void setUrl(@javax.annotation.Nullable String url) {
     this.url = url;
   }
 
 
-  public WebhookResponse token(String token) {
+  public WebhookResponse token(@javax.annotation.Nullable String token) {
     this.token = token;
     return this;
   }
@@ -122,12 +126,12 @@ public class WebhookResponse {
     return token;
   }
 
-  public void setToken(String token) {
+  public void setToken(@javax.annotation.Nullable String token) {
     this.token = token;
   }
 
 
-  public WebhookResponse href(String href) {
+  public WebhookResponse href(@javax.annotation.Nullable String href) {
     this.href = href;
     return this;
   }
@@ -141,7 +145,7 @@ public class WebhookResponse {
     return href;
   }
 
-  public void setHref(String href) {
+  public void setHref(@javax.annotation.Nullable String href) {
     this.href = href;
   }
 

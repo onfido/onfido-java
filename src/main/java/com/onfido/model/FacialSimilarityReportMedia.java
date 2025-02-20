@@ -49,16 +49,17 @@ import com.onfido.JSON;
 /**
  * FacialSimilarityReportMedia
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class FacialSimilarityReportMedia {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nonnull
   private UUID id;
 
   public FacialSimilarityReportMedia() {
   }
 
-  public FacialSimilarityReportMedia id(UUID id) {
+  public FacialSimilarityReportMedia id(@javax.annotation.Nonnull UUID id) {
     this.id = id;
     return this;
   }
@@ -72,7 +73,7 @@ public class FacialSimilarityReportMedia {
     return id;
   }
 
-  public void setId(UUID id) {
+  public void setId(@javax.annotation.Nonnull UUID id) {
     this.id = id;
   }
 

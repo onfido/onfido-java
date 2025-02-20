@@ -52,44 +52,52 @@ import com.onfido.JSON;
 /**
  * Webhook
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class Webhook {
   public static final String SERIALIZED_NAME_ENABLED = "enabled";
   @SerializedName(SERIALIZED_NAME_ENABLED)
+  @javax.annotation.Nullable
   private Boolean enabled;
 
   public static final String SERIALIZED_NAME_EVENTS = "events";
   @SerializedName(SERIALIZED_NAME_EVENTS)
+  @javax.annotation.Nullable
   private List<WebhookEventType> events = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_ENVIRONMENTS = "environments";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENTS)
+  @javax.annotation.Nullable
   private List<String> environments = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_PAYLOAD_VERSION = "payload_version";
   @SerializedName(SERIALIZED_NAME_PAYLOAD_VERSION)
+  @javax.annotation.Nullable
   private Integer payloadVersion;
 
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nonnull
   private UUID id;
 
   public static final String SERIALIZED_NAME_URL = "url";
   @SerializedName(SERIALIZED_NAME_URL)
+  @javax.annotation.Nullable
   private String url;
 
   public static final String SERIALIZED_NAME_TOKEN = "token";
   @SerializedName(SERIALIZED_NAME_TOKEN)
+  @javax.annotation.Nullable
   private String token;
 
   public static final String SERIALIZED_NAME_HREF = "href";
   @SerializedName(SERIALIZED_NAME_HREF)
+  @javax.annotation.Nullable
   private String href;
 
   public Webhook() {
   }
 
-  public Webhook enabled(Boolean enabled) {
+  public Webhook enabled(@javax.annotation.Nullable Boolean enabled) {
     this.enabled = enabled;
     return this;
   }
@@ -103,12 +111,12 @@ public class Webhook {
     return enabled;
   }
 
-  public void setEnabled(Boolean enabled) {
+  public void setEnabled(@javax.annotation.Nullable Boolean enabled) {
     this.enabled = enabled;
   }
 
 
-  public Webhook events(List<WebhookEventType> events) {
+  public Webhook events(@javax.annotation.Nullable List<WebhookEventType> events) {
     this.events = events;
     return this;
   }
@@ -130,12 +138,12 @@ public class Webhook {
     return events;
   }
 
-  public void setEvents(List<WebhookEventType> events) {
+  public void setEvents(@javax.annotation.Nullable List<WebhookEventType> events) {
     this.events = events;
   }
 
 
-  public Webhook environments(List<String> environments) {
+  public Webhook environments(@javax.annotation.Nullable List<String> environments) {
     this.environments = environments;
     return this;
   }
@@ -157,12 +165,12 @@ public class Webhook {
     return environments;
   }
 
-  public void setEnvironments(List<String> environments) {
+  public void setEnvironments(@javax.annotation.Nullable List<String> environments) {
     this.environments = environments;
   }
 
 
-  public Webhook payloadVersion(Integer payloadVersion) {
+  public Webhook payloadVersion(@javax.annotation.Nullable Integer payloadVersion) {
     this.payloadVersion = payloadVersion;
     return this;
   }
@@ -176,12 +184,12 @@ public class Webhook {
     return payloadVersion;
   }
 
-  public void setPayloadVersion(Integer payloadVersion) {
+  public void setPayloadVersion(@javax.annotation.Nullable Integer payloadVersion) {
     this.payloadVersion = payloadVersion;
   }
 
 
-  public Webhook id(UUID id) {
+  public Webhook id(@javax.annotation.Nonnull UUID id) {
     this.id = id;
     return this;
   }
@@ -195,12 +203,12 @@ public class Webhook {
     return id;
   }
 
-  public void setId(UUID id) {
+  public void setId(@javax.annotation.Nonnull UUID id) {
     this.id = id;
   }
 
 
-  public Webhook url(String url) {
+  public Webhook url(@javax.annotation.Nullable String url) {
     this.url = url;
     return this;
   }
@@ -214,12 +222,12 @@ public class Webhook {
     return url;
   }
 
-  public void setUrl(String url) {
+  public void setUrl(@javax.annotation.Nullable String url) {
     this.url = url;
   }
 
 
-  public Webhook token(String token) {
+  public Webhook token(@javax.annotation.Nullable String token) {
     this.token = token;
     return this;
   }
@@ -233,12 +241,12 @@ public class Webhook {
     return token;
   }
 
-  public void setToken(String token) {
+  public void setToken(@javax.annotation.Nullable String token) {
     this.token = token;
   }
 
 
-  public Webhook href(String href) {
+  public Webhook href(@javax.annotation.Nullable String href) {
     this.href = href;
     return this;
   }
@@ -252,7 +260,7 @@ public class Webhook {
     return href;
   }
 
-  public void setHref(String href) {
+  public void setHref(@javax.annotation.Nullable String href) {
     this.href = href;
   }
 

@@ -48,28 +48,32 @@ import com.onfido.JSON;
 /**
  * DocumentODPReasons
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class DocumentODPReasons {
   public static final String SERIALIZED_NAME_PHOTO_OF_SCREEN = "photo_of_screen";
   @SerializedName(SERIALIZED_NAME_PHOTO_OF_SCREEN)
+  @javax.annotation.Nullable
   private String photoOfScreen;
 
   public static final String SERIALIZED_NAME_SCREENSHOT = "screenshot";
   @SerializedName(SERIALIZED_NAME_SCREENSHOT)
+  @javax.annotation.Nullable
   private String screenshot;
 
   public static final String SERIALIZED_NAME_DOCUMENT_ON_PRINTED_PAPER = "document_on_printed_paper";
   @SerializedName(SERIALIZED_NAME_DOCUMENT_ON_PRINTED_PAPER)
+  @javax.annotation.Nullable
   private String documentOnPrintedPaper;
 
   public static final String SERIALIZED_NAME_SCAN = "scan";
   @SerializedName(SERIALIZED_NAME_SCAN)
+  @javax.annotation.Nullable
   private String scan;
 
   public DocumentODPReasons() {
   }
 
-  public DocumentODPReasons photoOfScreen(String photoOfScreen) {
+  public DocumentODPReasons photoOfScreen(@javax.annotation.Nullable String photoOfScreen) {
     this.photoOfScreen = photoOfScreen;
     return this;
   }
@@ -83,12 +87,12 @@ public class DocumentODPReasons {
     return photoOfScreen;
   }
 
-  public void setPhotoOfScreen(String photoOfScreen) {
+  public void setPhotoOfScreen(@javax.annotation.Nullable String photoOfScreen) {
     this.photoOfScreen = photoOfScreen;
   }
 
 
-  public DocumentODPReasons screenshot(String screenshot) {
+  public DocumentODPReasons screenshot(@javax.annotation.Nullable String screenshot) {
     this.screenshot = screenshot;
     return this;
   }
@@ -102,12 +106,12 @@ public class DocumentODPReasons {
     return screenshot;
   }
 
-  public void setScreenshot(String screenshot) {
+  public void setScreenshot(@javax.annotation.Nullable String screenshot) {
     this.screenshot = screenshot;
   }
 
 
-  public DocumentODPReasons documentOnPrintedPaper(String documentOnPrintedPaper) {
+  public DocumentODPReasons documentOnPrintedPaper(@javax.annotation.Nullable String documentOnPrintedPaper) {
     this.documentOnPrintedPaper = documentOnPrintedPaper;
     return this;
   }
@@ -121,12 +125,12 @@ public class DocumentODPReasons {
     return documentOnPrintedPaper;
   }
 
-  public void setDocumentOnPrintedPaper(String documentOnPrintedPaper) {
+  public void setDocumentOnPrintedPaper(@javax.annotation.Nullable String documentOnPrintedPaper) {
     this.documentOnPrintedPaper = documentOnPrintedPaper;
   }
 
 
-  public DocumentODPReasons scan(String scan) {
+  public DocumentODPReasons scan(@javax.annotation.Nullable String scan) {
     this.scan = scan;
     return this;
   }
@@ -140,7 +144,7 @@ public class DocumentODPReasons {
     return scan;
   }
 
-  public void setScan(String scan) {
+  public void setScan(@javax.annotation.Nullable String scan) {
     this.scan = scan;
   }
 

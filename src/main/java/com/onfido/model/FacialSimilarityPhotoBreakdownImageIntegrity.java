@@ -49,20 +49,22 @@ import com.onfido.JSON;
 /**
  * Asserts whether the quality and integrity of the uploaded files were sufficient to perform a face comparison.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class FacialSimilarityPhotoBreakdownImageIntegrity {
   public static final String SERIALIZED_NAME_RESULT = "result";
   @SerializedName(SERIALIZED_NAME_RESULT)
+  @javax.annotation.Nullable
   private String result;
 
   public static final String SERIALIZED_NAME_BREAKDOWN = "breakdown";
   @SerializedName(SERIALIZED_NAME_BREAKDOWN)
+  @javax.annotation.Nullable
   private FacialSimilarityPhotoBreakdownImageIntegrityBreakdown breakdown;
 
   public FacialSimilarityPhotoBreakdownImageIntegrity() {
   }
 
-  public FacialSimilarityPhotoBreakdownImageIntegrity result(String result) {
+  public FacialSimilarityPhotoBreakdownImageIntegrity result(@javax.annotation.Nullable String result) {
     this.result = result;
     return this;
   }
@@ -76,12 +78,12 @@ public class FacialSimilarityPhotoBreakdownImageIntegrity {
     return result;
   }
 
-  public void setResult(String result) {
+  public void setResult(@javax.annotation.Nullable String result) {
     this.result = result;
   }
 
 
-  public FacialSimilarityPhotoBreakdownImageIntegrity breakdown(FacialSimilarityPhotoBreakdownImageIntegrityBreakdown breakdown) {
+  public FacialSimilarityPhotoBreakdownImageIntegrity breakdown(@javax.annotation.Nullable FacialSimilarityPhotoBreakdownImageIntegrityBreakdown breakdown) {
     this.breakdown = breakdown;
     return this;
   }
@@ -95,7 +97,7 @@ public class FacialSimilarityPhotoBreakdownImageIntegrity {
     return breakdown;
   }
 
-  public void setBreakdown(FacialSimilarityPhotoBreakdownImageIntegrityBreakdown breakdown) {
+  public void setBreakdown(@javax.annotation.Nullable FacialSimilarityPhotoBreakdownImageIntegrityBreakdown breakdown) {
     this.breakdown = breakdown;
   }
 

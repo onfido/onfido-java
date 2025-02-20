@@ -51,24 +51,27 @@ import com.onfido.JSON;
 /**
  * UsDrivingLicenceBreakdown
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class UsDrivingLicenceBreakdown {
   public static final String SERIALIZED_NAME_DOCUMENT = "document";
   @SerializedName(SERIALIZED_NAME_DOCUMENT)
+  @javax.annotation.Nullable
   private UsDrivingLicenceBreakdownDocument document;
 
   public static final String SERIALIZED_NAME_ADDRESS = "address";
   @SerializedName(SERIALIZED_NAME_ADDRESS)
+  @javax.annotation.Nullable
   private UsDrivingLicenceBreakdownAddress address;
 
   public static final String SERIALIZED_NAME_PERSONAL = "personal";
   @SerializedName(SERIALIZED_NAME_PERSONAL)
+  @javax.annotation.Nullable
   private UsDrivingLicenceBreakdownPersonal personal;
 
   public UsDrivingLicenceBreakdown() {
   }
 
-  public UsDrivingLicenceBreakdown document(UsDrivingLicenceBreakdownDocument document) {
+  public UsDrivingLicenceBreakdown document(@javax.annotation.Nullable UsDrivingLicenceBreakdownDocument document) {
     this.document = document;
     return this;
   }
@@ -82,12 +85,12 @@ public class UsDrivingLicenceBreakdown {
     return document;
   }
 
-  public void setDocument(UsDrivingLicenceBreakdownDocument document) {
+  public void setDocument(@javax.annotation.Nullable UsDrivingLicenceBreakdownDocument document) {
     this.document = document;
   }
 
 
-  public UsDrivingLicenceBreakdown address(UsDrivingLicenceBreakdownAddress address) {
+  public UsDrivingLicenceBreakdown address(@javax.annotation.Nullable UsDrivingLicenceBreakdownAddress address) {
     this.address = address;
     return this;
   }
@@ -101,12 +104,12 @@ public class UsDrivingLicenceBreakdown {
     return address;
   }
 
-  public void setAddress(UsDrivingLicenceBreakdownAddress address) {
+  public void setAddress(@javax.annotation.Nullable UsDrivingLicenceBreakdownAddress address) {
     this.address = address;
   }
 
 
-  public UsDrivingLicenceBreakdown personal(UsDrivingLicenceBreakdownPersonal personal) {
+  public UsDrivingLicenceBreakdown personal(@javax.annotation.Nullable UsDrivingLicenceBreakdownPersonal personal) {
     this.personal = personal;
     return this;
   }
@@ -120,7 +123,7 @@ public class UsDrivingLicenceBreakdown {
     return personal;
   }
 
-  public void setPersonal(UsDrivingLicenceBreakdownPersonal personal) {
+  public void setPersonal(@javax.annotation.Nullable UsDrivingLicenceBreakdownPersonal personal) {
     this.personal = personal;
   }
 

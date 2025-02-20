@@ -52,28 +52,32 @@ import com.onfido.JSON;
 /**
  * DocumentBreakdownImageIntegrityBreakdown
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class DocumentBreakdownImageIntegrityBreakdown {
   public static final String SERIALIZED_NAME_IMAGE_QUALITY = "image_quality";
   @SerializedName(SERIALIZED_NAME_IMAGE_QUALITY)
+  @javax.annotation.Nullable
   private DocumentBreakdownImageIntegrityBreakdownImageQuality imageQuality;
 
   public static final String SERIALIZED_NAME_SUPPORTED_DOCUMENT = "supported_document";
   @SerializedName(SERIALIZED_NAME_SUPPORTED_DOCUMENT)
+  @javax.annotation.Nullable
   private DocumentBreakdownImageIntegrityBreakdownSupportedDocument supportedDocument;
 
   public static final String SERIALIZED_NAME_COLOUR_PICTURE = "colour_picture";
   @SerializedName(SERIALIZED_NAME_COLOUR_PICTURE)
+  @javax.annotation.Nullable
   private DocumentBreakdownImageIntegrityBreakdownColourPicture colourPicture;
 
   public static final String SERIALIZED_NAME_CONCLUSIVE_DOCUMENT_QUALITY = "conclusive_document_quality";
   @SerializedName(SERIALIZED_NAME_CONCLUSIVE_DOCUMENT_QUALITY)
+  @javax.annotation.Nullable
   private DocumentBreakdownImageIntegrityBreakdownConclusiveDocumentQuality conclusiveDocumentQuality;
 
   public DocumentBreakdownImageIntegrityBreakdown() {
   }
 
-  public DocumentBreakdownImageIntegrityBreakdown imageQuality(DocumentBreakdownImageIntegrityBreakdownImageQuality imageQuality) {
+  public DocumentBreakdownImageIntegrityBreakdown imageQuality(@javax.annotation.Nullable DocumentBreakdownImageIntegrityBreakdownImageQuality imageQuality) {
     this.imageQuality = imageQuality;
     return this;
   }
@@ -87,12 +91,12 @@ public class DocumentBreakdownImageIntegrityBreakdown {
     return imageQuality;
   }
 
-  public void setImageQuality(DocumentBreakdownImageIntegrityBreakdownImageQuality imageQuality) {
+  public void setImageQuality(@javax.annotation.Nullable DocumentBreakdownImageIntegrityBreakdownImageQuality imageQuality) {
     this.imageQuality = imageQuality;
   }
 
 
-  public DocumentBreakdownImageIntegrityBreakdown supportedDocument(DocumentBreakdownImageIntegrityBreakdownSupportedDocument supportedDocument) {
+  public DocumentBreakdownImageIntegrityBreakdown supportedDocument(@javax.annotation.Nullable DocumentBreakdownImageIntegrityBreakdownSupportedDocument supportedDocument) {
     this.supportedDocument = supportedDocument;
     return this;
   }
@@ -106,12 +110,12 @@ public class DocumentBreakdownImageIntegrityBreakdown {
     return supportedDocument;
   }
 
-  public void setSupportedDocument(DocumentBreakdownImageIntegrityBreakdownSupportedDocument supportedDocument) {
+  public void setSupportedDocument(@javax.annotation.Nullable DocumentBreakdownImageIntegrityBreakdownSupportedDocument supportedDocument) {
     this.supportedDocument = supportedDocument;
   }
 
 
-  public DocumentBreakdownImageIntegrityBreakdown colourPicture(DocumentBreakdownImageIntegrityBreakdownColourPicture colourPicture) {
+  public DocumentBreakdownImageIntegrityBreakdown colourPicture(@javax.annotation.Nullable DocumentBreakdownImageIntegrityBreakdownColourPicture colourPicture) {
     this.colourPicture = colourPicture;
     return this;
   }
@@ -125,12 +129,12 @@ public class DocumentBreakdownImageIntegrityBreakdown {
     return colourPicture;
   }
 
-  public void setColourPicture(DocumentBreakdownImageIntegrityBreakdownColourPicture colourPicture) {
+  public void setColourPicture(@javax.annotation.Nullable DocumentBreakdownImageIntegrityBreakdownColourPicture colourPicture) {
     this.colourPicture = colourPicture;
   }
 
 
-  public DocumentBreakdownImageIntegrityBreakdown conclusiveDocumentQuality(DocumentBreakdownImageIntegrityBreakdownConclusiveDocumentQuality conclusiveDocumentQuality) {
+  public DocumentBreakdownImageIntegrityBreakdown conclusiveDocumentQuality(@javax.annotation.Nullable DocumentBreakdownImageIntegrityBreakdownConclusiveDocumentQuality conclusiveDocumentQuality) {
     this.conclusiveDocumentQuality = conclusiveDocumentQuality;
     return this;
   }
@@ -144,7 +148,7 @@ public class DocumentBreakdownImageIntegrityBreakdown {
     return conclusiveDocumentQuality;
   }
 
-  public void setConclusiveDocumentQuality(DocumentBreakdownImageIntegrityBreakdownConclusiveDocumentQuality conclusiveDocumentQuality) {
+  public void setConclusiveDocumentQuality(@javax.annotation.Nullable DocumentBreakdownImageIntegrityBreakdownConclusiveDocumentQuality conclusiveDocumentQuality) {
     this.conclusiveDocumentQuality = conclusiveDocumentQuality;
   }
 

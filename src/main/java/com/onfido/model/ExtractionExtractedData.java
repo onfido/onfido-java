@@ -51,34 +51,41 @@ import com.onfido.JSON;
 /**
  * ExtractionExtractedData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class ExtractionExtractedData {
   public static final String SERIALIZED_NAME_DOCUMENT_NUMBER = "document_number";
   @SerializedName(SERIALIZED_NAME_DOCUMENT_NUMBER)
+  @javax.annotation.Nullable
   private String documentNumber;
 
   public static final String SERIALIZED_NAME_FIRST_NAME = "first_name";
   @SerializedName(SERIALIZED_NAME_FIRST_NAME)
+  @javax.annotation.Nullable
   private String firstName;
 
   public static final String SERIALIZED_NAME_LAST_NAME = "last_name";
   @SerializedName(SERIALIZED_NAME_LAST_NAME)
+  @javax.annotation.Nullable
   private String lastName;
 
   public static final String SERIALIZED_NAME_FULL_NAME = "full_name";
   @SerializedName(SERIALIZED_NAME_FULL_NAME)
+  @javax.annotation.Nullable
   private String fullName;
 
   public static final String SERIALIZED_NAME_SPOUSE_NAME = "spouse_name";
   @SerializedName(SERIALIZED_NAME_SPOUSE_NAME)
+  @javax.annotation.Nullable
   private String spouseName;
 
   public static final String SERIALIZED_NAME_WIDOW_NAME = "widow_name";
   @SerializedName(SERIALIZED_NAME_WIDOW_NAME)
+  @javax.annotation.Nullable
   private String widowName;
 
   public static final String SERIALIZED_NAME_ALIAS_NAME = "alias_name";
   @SerializedName(SERIALIZED_NAME_ALIAS_NAME)
+  @javax.annotation.Nullable
   private String aliasName;
 
   /**
@@ -137,88 +144,108 @@ public class ExtractionExtractedData {
 
   public static final String SERIALIZED_NAME_GENDER = "gender";
   @SerializedName(SERIALIZED_NAME_GENDER)
+  @javax.annotation.Nullable
   private GenderEnum gender;
 
   public static final String SERIALIZED_NAME_DATE_OF_BIRTH = "date_of_birth";
   @SerializedName(SERIALIZED_NAME_DATE_OF_BIRTH)
+  @javax.annotation.Nullable
   private LocalDate dateOfBirth;
 
   public static final String SERIALIZED_NAME_DATE_OF_EXPIRY = "date_of_expiry";
   @SerializedName(SERIALIZED_NAME_DATE_OF_EXPIRY)
+  @javax.annotation.Nullable
   private LocalDate dateOfExpiry;
 
   public static final String SERIALIZED_NAME_EXPIRY_DATE = "expiry_date";
   @SerializedName(SERIALIZED_NAME_EXPIRY_DATE)
+  @javax.annotation.Nullable
   private LocalDate expiryDate;
 
   public static final String SERIALIZED_NAME_NATIONALITY = "nationality";
   @SerializedName(SERIALIZED_NAME_NATIONALITY)
+  @javax.annotation.Nullable
   private String nationality;
 
   public static final String SERIALIZED_NAME_MRZ_LINE1 = "mrz_line_1";
   @SerializedName(SERIALIZED_NAME_MRZ_LINE1)
+  @javax.annotation.Nullable
   private String mrzLine1;
 
   public static final String SERIALIZED_NAME_MRZ_LINE2 = "mrz_line_2";
   @SerializedName(SERIALIZED_NAME_MRZ_LINE2)
+  @javax.annotation.Nullable
   private String mrzLine2;
 
   public static final String SERIALIZED_NAME_MRZ_LINE3 = "mrz_line_3";
   @SerializedName(SERIALIZED_NAME_MRZ_LINE3)
+  @javax.annotation.Nullable
   private String mrzLine3;
 
   public static final String SERIALIZED_NAME_ADDRESS1 = "address_1";
   @SerializedName(SERIALIZED_NAME_ADDRESS1)
+  @javax.annotation.Nullable
   private String address1;
 
   public static final String SERIALIZED_NAME_ADDRESS2 = "address_2";
   @SerializedName(SERIALIZED_NAME_ADDRESS2)
+  @javax.annotation.Nullable
   private String address2;
 
   public static final String SERIALIZED_NAME_ADDRESS3 = "address_3";
   @SerializedName(SERIALIZED_NAME_ADDRESS3)
+  @javax.annotation.Nullable
   private String address3;
 
   public static final String SERIALIZED_NAME_ADDRESS4 = "address_4";
   @SerializedName(SERIALIZED_NAME_ADDRESS4)
+  @javax.annotation.Nullable
   private String address4;
 
   public static final String SERIALIZED_NAME_ADDRESS5 = "address_5";
   @SerializedName(SERIALIZED_NAME_ADDRESS5)
+  @javax.annotation.Nullable
   private String address5;
 
   public static final String SERIALIZED_NAME_ISSUING_AUTHORITY = "issuing_authority";
   @SerializedName(SERIALIZED_NAME_ISSUING_AUTHORITY)
+  @javax.annotation.Nullable
   private String issuingAuthority;
 
   public static final String SERIALIZED_NAME_ISSUING_COUNTRY = "issuing_country";
   @SerializedName(SERIALIZED_NAME_ISSUING_COUNTRY)
+  @javax.annotation.Nullable
   private CountryCodes issuingCountry;
 
   public static final String SERIALIZED_NAME_DOCUMENT_TYPE = "document_type";
   @SerializedName(SERIALIZED_NAME_DOCUMENT_TYPE)
+  @javax.annotation.Nullable
   private DocumentTypes documentType;
 
   public static final String SERIALIZED_NAME_PLACE_OF_BIRTH = "place_of_birth";
   @SerializedName(SERIALIZED_NAME_PLACE_OF_BIRTH)
+  @javax.annotation.Nullable
   private String placeOfBirth;
 
   public static final String SERIALIZED_NAME_ISSUING_STATE = "issuing_state";
   @SerializedName(SERIALIZED_NAME_ISSUING_STATE)
+  @javax.annotation.Nullable
   private String issuingState;
 
   public static final String SERIALIZED_NAME_ISSUING_DATE = "issuing_date";
   @SerializedName(SERIALIZED_NAME_ISSUING_DATE)
+  @javax.annotation.Nullable
   private LocalDate issuingDate;
 
   public static final String SERIALIZED_NAME_PERSONAL_NUMBER = "personal_number";
   @SerializedName(SERIALIZED_NAME_PERSONAL_NUMBER)
+  @javax.annotation.Nullable
   private String personalNumber;
 
   public ExtractionExtractedData() {
   }
 
-  public ExtractionExtractedData documentNumber(String documentNumber) {
+  public ExtractionExtractedData documentNumber(@javax.annotation.Nullable String documentNumber) {
     this.documentNumber = documentNumber;
     return this;
   }
@@ -232,12 +259,12 @@ public class ExtractionExtractedData {
     return documentNumber;
   }
 
-  public void setDocumentNumber(String documentNumber) {
+  public void setDocumentNumber(@javax.annotation.Nullable String documentNumber) {
     this.documentNumber = documentNumber;
   }
 
 
-  public ExtractionExtractedData firstName(String firstName) {
+  public ExtractionExtractedData firstName(@javax.annotation.Nullable String firstName) {
     this.firstName = firstName;
     return this;
   }
@@ -251,12 +278,12 @@ public class ExtractionExtractedData {
     return firstName;
   }
 
-  public void setFirstName(String firstName) {
+  public void setFirstName(@javax.annotation.Nullable String firstName) {
     this.firstName = firstName;
   }
 
 
-  public ExtractionExtractedData lastName(String lastName) {
+  public ExtractionExtractedData lastName(@javax.annotation.Nullable String lastName) {
     this.lastName = lastName;
     return this;
   }
@@ -270,12 +297,12 @@ public class ExtractionExtractedData {
     return lastName;
   }
 
-  public void setLastName(String lastName) {
+  public void setLastName(@javax.annotation.Nullable String lastName) {
     this.lastName = lastName;
   }
 
 
-  public ExtractionExtractedData fullName(String fullName) {
+  public ExtractionExtractedData fullName(@javax.annotation.Nullable String fullName) {
     this.fullName = fullName;
     return this;
   }
@@ -289,12 +316,12 @@ public class ExtractionExtractedData {
     return fullName;
   }
 
-  public void setFullName(String fullName) {
+  public void setFullName(@javax.annotation.Nullable String fullName) {
     this.fullName = fullName;
   }
 
 
-  public ExtractionExtractedData spouseName(String spouseName) {
+  public ExtractionExtractedData spouseName(@javax.annotation.Nullable String spouseName) {
     this.spouseName = spouseName;
     return this;
   }
@@ -308,12 +335,12 @@ public class ExtractionExtractedData {
     return spouseName;
   }
 
-  public void setSpouseName(String spouseName) {
+  public void setSpouseName(@javax.annotation.Nullable String spouseName) {
     this.spouseName = spouseName;
   }
 
 
-  public ExtractionExtractedData widowName(String widowName) {
+  public ExtractionExtractedData widowName(@javax.annotation.Nullable String widowName) {
     this.widowName = widowName;
     return this;
   }
@@ -327,12 +354,12 @@ public class ExtractionExtractedData {
     return widowName;
   }
 
-  public void setWidowName(String widowName) {
+  public void setWidowName(@javax.annotation.Nullable String widowName) {
     this.widowName = widowName;
   }
 
 
-  public ExtractionExtractedData aliasName(String aliasName) {
+  public ExtractionExtractedData aliasName(@javax.annotation.Nullable String aliasName) {
     this.aliasName = aliasName;
     return this;
   }
@@ -346,12 +373,12 @@ public class ExtractionExtractedData {
     return aliasName;
   }
 
-  public void setAliasName(String aliasName) {
+  public void setAliasName(@javax.annotation.Nullable String aliasName) {
     this.aliasName = aliasName;
   }
 
 
-  public ExtractionExtractedData gender(GenderEnum gender) {
+  public ExtractionExtractedData gender(@javax.annotation.Nullable GenderEnum gender) {
     this.gender = gender;
     return this;
   }
@@ -365,12 +392,12 @@ public class ExtractionExtractedData {
     return gender;
   }
 
-  public void setGender(GenderEnum gender) {
+  public void setGender(@javax.annotation.Nullable GenderEnum gender) {
     this.gender = gender;
   }
 
 
-  public ExtractionExtractedData dateOfBirth(LocalDate dateOfBirth) {
+  public ExtractionExtractedData dateOfBirth(@javax.annotation.Nullable LocalDate dateOfBirth) {
     this.dateOfBirth = dateOfBirth;
     return this;
   }
@@ -384,12 +411,12 @@ public class ExtractionExtractedData {
     return dateOfBirth;
   }
 
-  public void setDateOfBirth(LocalDate dateOfBirth) {
+  public void setDateOfBirth(@javax.annotation.Nullable LocalDate dateOfBirth) {
     this.dateOfBirth = dateOfBirth;
   }
 
 
-  public ExtractionExtractedData dateOfExpiry(LocalDate dateOfExpiry) {
+  public ExtractionExtractedData dateOfExpiry(@javax.annotation.Nullable LocalDate dateOfExpiry) {
     this.dateOfExpiry = dateOfExpiry;
     return this;
   }
@@ -403,12 +430,12 @@ public class ExtractionExtractedData {
     return dateOfExpiry;
   }
 
-  public void setDateOfExpiry(LocalDate dateOfExpiry) {
+  public void setDateOfExpiry(@javax.annotation.Nullable LocalDate dateOfExpiry) {
     this.dateOfExpiry = dateOfExpiry;
   }
 
 
-  public ExtractionExtractedData expiryDate(LocalDate expiryDate) {
+  public ExtractionExtractedData expiryDate(@javax.annotation.Nullable LocalDate expiryDate) {
     this.expiryDate = expiryDate;
     return this;
   }
@@ -422,12 +449,12 @@ public class ExtractionExtractedData {
     return expiryDate;
   }
 
-  public void setExpiryDate(LocalDate expiryDate) {
+  public void setExpiryDate(@javax.annotation.Nullable LocalDate expiryDate) {
     this.expiryDate = expiryDate;
   }
 
 
-  public ExtractionExtractedData nationality(String nationality) {
+  public ExtractionExtractedData nationality(@javax.annotation.Nullable String nationality) {
     this.nationality = nationality;
     return this;
   }
@@ -441,12 +468,12 @@ public class ExtractionExtractedData {
     return nationality;
   }
 
-  public void setNationality(String nationality) {
+  public void setNationality(@javax.annotation.Nullable String nationality) {
     this.nationality = nationality;
   }
 
 
-  public ExtractionExtractedData mrzLine1(String mrzLine1) {
+  public ExtractionExtractedData mrzLine1(@javax.annotation.Nullable String mrzLine1) {
     this.mrzLine1 = mrzLine1;
     return this;
   }
@@ -460,12 +487,12 @@ public class ExtractionExtractedData {
     return mrzLine1;
   }
 
-  public void setMrzLine1(String mrzLine1) {
+  public void setMrzLine1(@javax.annotation.Nullable String mrzLine1) {
     this.mrzLine1 = mrzLine1;
   }
 
 
-  public ExtractionExtractedData mrzLine2(String mrzLine2) {
+  public ExtractionExtractedData mrzLine2(@javax.annotation.Nullable String mrzLine2) {
     this.mrzLine2 = mrzLine2;
     return this;
   }
@@ -479,12 +506,12 @@ public class ExtractionExtractedData {
     return mrzLine2;
   }
 
-  public void setMrzLine2(String mrzLine2) {
+  public void setMrzLine2(@javax.annotation.Nullable String mrzLine2) {
     this.mrzLine2 = mrzLine2;
   }
 
 
-  public ExtractionExtractedData mrzLine3(String mrzLine3) {
+  public ExtractionExtractedData mrzLine3(@javax.annotation.Nullable String mrzLine3) {
     this.mrzLine3 = mrzLine3;
     return this;
   }
@@ -498,12 +525,12 @@ public class ExtractionExtractedData {
     return mrzLine3;
   }
 
-  public void setMrzLine3(String mrzLine3) {
+  public void setMrzLine3(@javax.annotation.Nullable String mrzLine3) {
     this.mrzLine3 = mrzLine3;
   }
 
 
-  public ExtractionExtractedData address1(String address1) {
+  public ExtractionExtractedData address1(@javax.annotation.Nullable String address1) {
     this.address1 = address1;
     return this;
   }
@@ -517,12 +544,12 @@ public class ExtractionExtractedData {
     return address1;
   }
 
-  public void setAddress1(String address1) {
+  public void setAddress1(@javax.annotation.Nullable String address1) {
     this.address1 = address1;
   }
 
 
-  public ExtractionExtractedData address2(String address2) {
+  public ExtractionExtractedData address2(@javax.annotation.Nullable String address2) {
     this.address2 = address2;
     return this;
   }
@@ -536,12 +563,12 @@ public class ExtractionExtractedData {
     return address2;
   }
 
-  public void setAddress2(String address2) {
+  public void setAddress2(@javax.annotation.Nullable String address2) {
     this.address2 = address2;
   }
 
 
-  public ExtractionExtractedData address3(String address3) {
+  public ExtractionExtractedData address3(@javax.annotation.Nullable String address3) {
     this.address3 = address3;
     return this;
   }
@@ -555,12 +582,12 @@ public class ExtractionExtractedData {
     return address3;
   }
 
-  public void setAddress3(String address3) {
+  public void setAddress3(@javax.annotation.Nullable String address3) {
     this.address3 = address3;
   }
 
 
-  public ExtractionExtractedData address4(String address4) {
+  public ExtractionExtractedData address4(@javax.annotation.Nullable String address4) {
     this.address4 = address4;
     return this;
   }
@@ -574,12 +601,12 @@ public class ExtractionExtractedData {
     return address4;
   }
 
-  public void setAddress4(String address4) {
+  public void setAddress4(@javax.annotation.Nullable String address4) {
     this.address4 = address4;
   }
 
 
-  public ExtractionExtractedData address5(String address5) {
+  public ExtractionExtractedData address5(@javax.annotation.Nullable String address5) {
     this.address5 = address5;
     return this;
   }
@@ -593,12 +620,12 @@ public class ExtractionExtractedData {
     return address5;
   }
 
-  public void setAddress5(String address5) {
+  public void setAddress5(@javax.annotation.Nullable String address5) {
     this.address5 = address5;
   }
 
 
-  public ExtractionExtractedData issuingAuthority(String issuingAuthority) {
+  public ExtractionExtractedData issuingAuthority(@javax.annotation.Nullable String issuingAuthority) {
     this.issuingAuthority = issuingAuthority;
     return this;
   }
@@ -612,12 +639,12 @@ public class ExtractionExtractedData {
     return issuingAuthority;
   }
 
-  public void setIssuingAuthority(String issuingAuthority) {
+  public void setIssuingAuthority(@javax.annotation.Nullable String issuingAuthority) {
     this.issuingAuthority = issuingAuthority;
   }
 
 
-  public ExtractionExtractedData issuingCountry(CountryCodes issuingCountry) {
+  public ExtractionExtractedData issuingCountry(@javax.annotation.Nullable CountryCodes issuingCountry) {
     this.issuingCountry = issuingCountry;
     return this;
   }
@@ -631,12 +658,12 @@ public class ExtractionExtractedData {
     return issuingCountry;
   }
 
-  public void setIssuingCountry(CountryCodes issuingCountry) {
+  public void setIssuingCountry(@javax.annotation.Nullable CountryCodes issuingCountry) {
     this.issuingCountry = issuingCountry;
   }
 
 
-  public ExtractionExtractedData documentType(DocumentTypes documentType) {
+  public ExtractionExtractedData documentType(@javax.annotation.Nullable DocumentTypes documentType) {
     this.documentType = documentType;
     return this;
   }
@@ -650,12 +677,12 @@ public class ExtractionExtractedData {
     return documentType;
   }
 
-  public void setDocumentType(DocumentTypes documentType) {
+  public void setDocumentType(@javax.annotation.Nullable DocumentTypes documentType) {
     this.documentType = documentType;
   }
 
 
-  public ExtractionExtractedData placeOfBirth(String placeOfBirth) {
+  public ExtractionExtractedData placeOfBirth(@javax.annotation.Nullable String placeOfBirth) {
     this.placeOfBirth = placeOfBirth;
     return this;
   }
@@ -669,12 +696,12 @@ public class ExtractionExtractedData {
     return placeOfBirth;
   }
 
-  public void setPlaceOfBirth(String placeOfBirth) {
+  public void setPlaceOfBirth(@javax.annotation.Nullable String placeOfBirth) {
     this.placeOfBirth = placeOfBirth;
   }
 
 
-  public ExtractionExtractedData issuingState(String issuingState) {
+  public ExtractionExtractedData issuingState(@javax.annotation.Nullable String issuingState) {
     this.issuingState = issuingState;
     return this;
   }
@@ -688,12 +715,12 @@ public class ExtractionExtractedData {
     return issuingState;
   }
 
-  public void setIssuingState(String issuingState) {
+  public void setIssuingState(@javax.annotation.Nullable String issuingState) {
     this.issuingState = issuingState;
   }
 
 
-  public ExtractionExtractedData issuingDate(LocalDate issuingDate) {
+  public ExtractionExtractedData issuingDate(@javax.annotation.Nullable LocalDate issuingDate) {
     this.issuingDate = issuingDate;
     return this;
   }
@@ -707,12 +734,12 @@ public class ExtractionExtractedData {
     return issuingDate;
   }
 
-  public void setIssuingDate(LocalDate issuingDate) {
+  public void setIssuingDate(@javax.annotation.Nullable LocalDate issuingDate) {
     this.issuingDate = issuingDate;
   }
 
 
-  public ExtractionExtractedData personalNumber(String personalNumber) {
+  public ExtractionExtractedData personalNumber(@javax.annotation.Nullable String personalNumber) {
     this.personalNumber = personalNumber;
     return this;
   }
@@ -726,7 +753,7 @@ public class ExtractionExtractedData {
     return personalNumber;
   }
 
-  public void setPersonalNumber(String personalNumber) {
+  public void setPersonalNumber(@javax.annotation.Nullable String personalNumber) {
     this.personalNumber = personalNumber;
   }
 

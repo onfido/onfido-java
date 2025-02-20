@@ -52,14 +52,16 @@ import com.onfido.JSON;
 /**
  * Document
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class Document {
   public static final String SERIALIZED_NAME_FILE_TYPE = "file_type";
   @SerializedName(SERIALIZED_NAME_FILE_TYPE)
+  @javax.annotation.Nullable
   private String fileType;
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
+  @javax.annotation.Nullable
   private DocumentTypes type;
 
   /**
@@ -118,44 +120,53 @@ public class Document {
 
   public static final String SERIALIZED_NAME_SIDE = "side";
   @SerializedName(SERIALIZED_NAME_SIDE)
+  @javax.annotation.Nullable
   private SideEnum side;
 
   public static final String SERIALIZED_NAME_ISSUING_COUNTRY = "issuing_country";
   @SerializedName(SERIALIZED_NAME_ISSUING_COUNTRY)
+  @javax.annotation.Nullable
   private CountryCodes issuingCountry;
 
   public static final String SERIALIZED_NAME_APPLICANT_ID = "applicant_id";
   @SerializedName(SERIALIZED_NAME_APPLICANT_ID)
+  @javax.annotation.Nullable
   private UUID applicantId;
 
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nonnull
   private UUID id;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
+  @javax.annotation.Nullable
   private OffsetDateTime createdAt;
 
   public static final String SERIALIZED_NAME_HREF = "href";
   @SerializedName(SERIALIZED_NAME_HREF)
+  @javax.annotation.Nullable
   private String href;
 
   public static final String SERIALIZED_NAME_DOWNLOAD_HREF = "download_href";
   @SerializedName(SERIALIZED_NAME_DOWNLOAD_HREF)
+  @javax.annotation.Nullable
   private String downloadHref;
 
   public static final String SERIALIZED_NAME_FILE_NAME = "file_name";
   @SerializedName(SERIALIZED_NAME_FILE_NAME)
+  @javax.annotation.Nullable
   private String fileName;
 
   public static final String SERIALIZED_NAME_FILE_SIZE = "file_size";
   @SerializedName(SERIALIZED_NAME_FILE_SIZE)
+  @javax.annotation.Nullable
   private Integer fileSize;
 
   public Document() {
   }
 
-  public Document fileType(String fileType) {
+  public Document fileType(@javax.annotation.Nullable String fileType) {
     this.fileType = fileType;
     return this;
   }
@@ -169,12 +180,12 @@ public class Document {
     return fileType;
   }
 
-  public void setFileType(String fileType) {
+  public void setFileType(@javax.annotation.Nullable String fileType) {
     this.fileType = fileType;
   }
 
 
-  public Document type(DocumentTypes type) {
+  public Document type(@javax.annotation.Nullable DocumentTypes type) {
     this.type = type;
     return this;
   }
@@ -188,12 +199,12 @@ public class Document {
     return type;
   }
 
-  public void setType(DocumentTypes type) {
+  public void setType(@javax.annotation.Nullable DocumentTypes type) {
     this.type = type;
   }
 
 
-  public Document side(SideEnum side) {
+  public Document side(@javax.annotation.Nullable SideEnum side) {
     this.side = side;
     return this;
   }
@@ -207,12 +218,12 @@ public class Document {
     return side;
   }
 
-  public void setSide(SideEnum side) {
+  public void setSide(@javax.annotation.Nullable SideEnum side) {
     this.side = side;
   }
 
 
-  public Document issuingCountry(CountryCodes issuingCountry) {
+  public Document issuingCountry(@javax.annotation.Nullable CountryCodes issuingCountry) {
     this.issuingCountry = issuingCountry;
     return this;
   }
@@ -226,12 +237,12 @@ public class Document {
     return issuingCountry;
   }
 
-  public void setIssuingCountry(CountryCodes issuingCountry) {
+  public void setIssuingCountry(@javax.annotation.Nullable CountryCodes issuingCountry) {
     this.issuingCountry = issuingCountry;
   }
 
 
-  public Document applicantId(UUID applicantId) {
+  public Document applicantId(@javax.annotation.Nullable UUID applicantId) {
     this.applicantId = applicantId;
     return this;
   }
@@ -245,12 +256,12 @@ public class Document {
     return applicantId;
   }
 
-  public void setApplicantId(UUID applicantId) {
+  public void setApplicantId(@javax.annotation.Nullable UUID applicantId) {
     this.applicantId = applicantId;
   }
 
 
-  public Document id(UUID id) {
+  public Document id(@javax.annotation.Nonnull UUID id) {
     this.id = id;
     return this;
   }
@@ -264,12 +275,12 @@ public class Document {
     return id;
   }
 
-  public void setId(UUID id) {
+  public void setId(@javax.annotation.Nonnull UUID id) {
     this.id = id;
   }
 
 
-  public Document createdAt(OffsetDateTime createdAt) {
+  public Document createdAt(@javax.annotation.Nullable OffsetDateTime createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -283,12 +294,12 @@ public class Document {
     return createdAt;
   }
 
-  public void setCreatedAt(OffsetDateTime createdAt) {
+  public void setCreatedAt(@javax.annotation.Nullable OffsetDateTime createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public Document href(String href) {
+  public Document href(@javax.annotation.Nullable String href) {
     this.href = href;
     return this;
   }
@@ -302,12 +313,12 @@ public class Document {
     return href;
   }
 
-  public void setHref(String href) {
+  public void setHref(@javax.annotation.Nullable String href) {
     this.href = href;
   }
 
 
-  public Document downloadHref(String downloadHref) {
+  public Document downloadHref(@javax.annotation.Nullable String downloadHref) {
     this.downloadHref = downloadHref;
     return this;
   }
@@ -321,12 +332,12 @@ public class Document {
     return downloadHref;
   }
 
-  public void setDownloadHref(String downloadHref) {
+  public void setDownloadHref(@javax.annotation.Nullable String downloadHref) {
     this.downloadHref = downloadHref;
   }
 
 
-  public Document fileName(String fileName) {
+  public Document fileName(@javax.annotation.Nullable String fileName) {
     this.fileName = fileName;
     return this;
   }
@@ -340,12 +351,12 @@ public class Document {
     return fileName;
   }
 
-  public void setFileName(String fileName) {
+  public void setFileName(@javax.annotation.Nullable String fileName) {
     this.fileName = fileName;
   }
 
 
-  public Document fileSize(Integer fileSize) {
+  public Document fileSize(@javax.annotation.Nullable Integer fileSize) {
     this.fileSize = fileSize;
     return this;
   }
@@ -359,7 +370,7 @@ public class Document {
     return fileSize;
   }
 
-  public void setFileSize(Integer fileSize) {
+  public void setFileSize(@javax.annotation.Nullable Integer fileSize) {
     this.fileSize = fileSize;
   }
 

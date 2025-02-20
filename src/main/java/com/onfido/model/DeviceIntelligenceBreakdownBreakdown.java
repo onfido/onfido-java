@@ -49,16 +49,17 @@ import com.onfido.JSON;
 /**
  * DeviceIntelligenceBreakdownBreakdown
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class DeviceIntelligenceBreakdownBreakdown {
   public static final String SERIALIZED_NAME_DEVICE = "device";
   @SerializedName(SERIALIZED_NAME_DEVICE)
+  @javax.annotation.Nullable
   private DeviceIntelligenceBreakdownBreakdownDevice device;
 
   public DeviceIntelligenceBreakdownBreakdown() {
   }
 
-  public DeviceIntelligenceBreakdownBreakdown device(DeviceIntelligenceBreakdownBreakdownDevice device) {
+  public DeviceIntelligenceBreakdownBreakdown device(@javax.annotation.Nullable DeviceIntelligenceBreakdownBreakdownDevice device) {
     this.device = device;
     return this;
   }
@@ -72,7 +73,7 @@ public class DeviceIntelligenceBreakdownBreakdown {
     return device;
   }
 
-  public void setDevice(DeviceIntelligenceBreakdownBreakdownDevice device) {
+  public void setDevice(@javax.annotation.Nullable DeviceIntelligenceBreakdownBreakdownDevice device) {
     this.device = device;
   }
 

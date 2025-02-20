@@ -50,20 +50,22 @@ import com.onfido.JSON;
 /**
  * FacialSimilarityMotionBreakdownImageIntegrityBreakdown
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class FacialSimilarityMotionBreakdownImageIntegrityBreakdown {
   public static final String SERIALIZED_NAME_FACE_DETECTED = "face_detected";
   @SerializedName(SERIALIZED_NAME_FACE_DETECTED)
+  @javax.annotation.Nullable
   private FacialSimilarityMotionBreakdownImageIntegrityBreakdownFaceDetected faceDetected;
 
   public static final String SERIALIZED_NAME_SOURCE_INTEGRITY = "source_integrity";
   @SerializedName(SERIALIZED_NAME_SOURCE_INTEGRITY)
+  @javax.annotation.Nullable
   private FacialSimilarityMotionBreakdownImageIntegrityBreakdownSourceIntegrity sourceIntegrity;
 
   public FacialSimilarityMotionBreakdownImageIntegrityBreakdown() {
   }
 
-  public FacialSimilarityMotionBreakdownImageIntegrityBreakdown faceDetected(FacialSimilarityMotionBreakdownImageIntegrityBreakdownFaceDetected faceDetected) {
+  public FacialSimilarityMotionBreakdownImageIntegrityBreakdown faceDetected(@javax.annotation.Nullable FacialSimilarityMotionBreakdownImageIntegrityBreakdownFaceDetected faceDetected) {
     this.faceDetected = faceDetected;
     return this;
   }
@@ -77,12 +79,12 @@ public class FacialSimilarityMotionBreakdownImageIntegrityBreakdown {
     return faceDetected;
   }
 
-  public void setFaceDetected(FacialSimilarityMotionBreakdownImageIntegrityBreakdownFaceDetected faceDetected) {
+  public void setFaceDetected(@javax.annotation.Nullable FacialSimilarityMotionBreakdownImageIntegrityBreakdownFaceDetected faceDetected) {
     this.faceDetected = faceDetected;
   }
 
 
-  public FacialSimilarityMotionBreakdownImageIntegrityBreakdown sourceIntegrity(FacialSimilarityMotionBreakdownImageIntegrityBreakdownSourceIntegrity sourceIntegrity) {
+  public FacialSimilarityMotionBreakdownImageIntegrityBreakdown sourceIntegrity(@javax.annotation.Nullable FacialSimilarityMotionBreakdownImageIntegrityBreakdownSourceIntegrity sourceIntegrity) {
     this.sourceIntegrity = sourceIntegrity;
     return this;
   }
@@ -96,7 +98,7 @@ public class FacialSimilarityMotionBreakdownImageIntegrityBreakdown {
     return sourceIntegrity;
   }
 
-  public void setSourceIntegrity(FacialSimilarityMotionBreakdownImageIntegrityBreakdownSourceIntegrity sourceIntegrity) {
+  public void setSourceIntegrity(@javax.annotation.Nullable FacialSimilarityMotionBreakdownImageIntegrityBreakdownSourceIntegrity sourceIntegrity) {
     this.sourceIntegrity = sourceIntegrity;
   }
 

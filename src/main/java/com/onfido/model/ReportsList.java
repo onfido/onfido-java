@@ -51,16 +51,17 @@ import com.onfido.JSON;
 /**
  * ReportsList
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class ReportsList {
   public static final String SERIALIZED_NAME_REPORTS = "reports";
   @SerializedName(SERIALIZED_NAME_REPORTS)
+  @javax.annotation.Nonnull
   private List<Report> reports = new ArrayList<>();
 
   public ReportsList() {
   }
 
-  public ReportsList reports(List<Report> reports) {
+  public ReportsList reports(@javax.annotation.Nonnull List<Report> reports) {
     this.reports = reports;
     return this;
   }
@@ -82,7 +83,7 @@ public class ReportsList {
     return reports;
   }
 
-  public void setReports(List<Report> reports) {
+  public void setReports(@javax.annotation.Nonnull List<Report> reports) {
     this.reports = reports;
   }
 

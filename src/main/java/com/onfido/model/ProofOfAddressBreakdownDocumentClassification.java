@@ -49,20 +49,22 @@ import com.onfido.JSON;
 /**
  * Asserts whether the document is of a valid type as PoA.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class ProofOfAddressBreakdownDocumentClassification {
   public static final String SERIALIZED_NAME_RESULT = "result";
   @SerializedName(SERIALIZED_NAME_RESULT)
+  @javax.annotation.Nullable
   private String result;
 
   public static final String SERIALIZED_NAME_BREAKDOWN = "breakdown";
   @SerializedName(SERIALIZED_NAME_BREAKDOWN)
+  @javax.annotation.Nullable
   private ProofOfAddressBreakdownDocumentClassificationBreakdown breakdown;
 
   public ProofOfAddressBreakdownDocumentClassification() {
   }
 
-  public ProofOfAddressBreakdownDocumentClassification result(String result) {
+  public ProofOfAddressBreakdownDocumentClassification result(@javax.annotation.Nullable String result) {
     this.result = result;
     return this;
   }
@@ -76,12 +78,12 @@ public class ProofOfAddressBreakdownDocumentClassification {
     return result;
   }
 
-  public void setResult(String result) {
+  public void setResult(@javax.annotation.Nullable String result) {
     this.result = result;
   }
 
 
-  public ProofOfAddressBreakdownDocumentClassification breakdown(ProofOfAddressBreakdownDocumentClassificationBreakdown breakdown) {
+  public ProofOfAddressBreakdownDocumentClassification breakdown(@javax.annotation.Nullable ProofOfAddressBreakdownDocumentClassificationBreakdown breakdown) {
     this.breakdown = breakdown;
     return this;
   }
@@ -95,7 +97,7 @@ public class ProofOfAddressBreakdownDocumentClassification {
     return breakdown;
   }
 
-  public void setBreakdown(ProofOfAddressBreakdownDocumentClassificationBreakdown breakdown) {
+  public void setBreakdown(@javax.annotation.Nullable ProofOfAddressBreakdownDocumentClassificationBreakdown breakdown) {
     this.breakdown = breakdown;
   }
 

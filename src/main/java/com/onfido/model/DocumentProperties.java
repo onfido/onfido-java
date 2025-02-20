@@ -58,146 +58,181 @@ import com.onfido.JSON;
 /**
  * DocumentProperties
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class DocumentProperties {
   public static final String SERIALIZED_NAME_DATE_OF_BIRTH = "date_of_birth";
   @SerializedName(SERIALIZED_NAME_DATE_OF_BIRTH)
+  @javax.annotation.Nullable
   private LocalDate dateOfBirth;
 
   public static final String SERIALIZED_NAME_DATE_OF_EXPIRY = "date_of_expiry";
   @SerializedName(SERIALIZED_NAME_DATE_OF_EXPIRY)
+  @javax.annotation.Nullable
   private LocalDate dateOfExpiry;
 
   public static final String SERIALIZED_NAME_PERSONAL_NUMBER = "personal_number";
   @SerializedName(SERIALIZED_NAME_PERSONAL_NUMBER)
+  @javax.annotation.Nullable
   private String personalNumber;
 
   public static final String SERIALIZED_NAME_DOCUMENT_NUMBERS = "document_numbers";
   @SerializedName(SERIALIZED_NAME_DOCUMENT_NUMBERS)
+  @javax.annotation.Nullable
   private List<DocumentPropertiesDocumentNumbersInner> documentNumbers = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_DOCUMENT_TYPE = "document_type";
   @SerializedName(SERIALIZED_NAME_DOCUMENT_TYPE)
+  @javax.annotation.Nullable
   private String documentType;
 
   public static final String SERIALIZED_NAME_FIRST_NAME = "first_name";
   @SerializedName(SERIALIZED_NAME_FIRST_NAME)
+  @javax.annotation.Nullable
   private String firstName;
 
   public static final String SERIALIZED_NAME_MIDDLE_NAME = "middle_name";
   @SerializedName(SERIALIZED_NAME_MIDDLE_NAME)
+  @javax.annotation.Nullable
   private String middleName;
 
   public static final String SERIALIZED_NAME_LAST_NAME = "last_name";
   @SerializedName(SERIALIZED_NAME_LAST_NAME)
+  @javax.annotation.Nullable
   private String lastName;
 
   public static final String SERIALIZED_NAME_GENDER = "gender";
   @SerializedName(SERIALIZED_NAME_GENDER)
+  @javax.annotation.Nullable
   private String gender;
 
   public static final String SERIALIZED_NAME_ISSUING_COUNTRY = "issuing_country";
   @SerializedName(SERIALIZED_NAME_ISSUING_COUNTRY)
+  @javax.annotation.Nullable
   private String issuingCountry;
 
   public static final String SERIALIZED_NAME_NATIONALITY = "nationality";
   @SerializedName(SERIALIZED_NAME_NATIONALITY)
+  @javax.annotation.Nullable
   private String nationality;
 
   public static final String SERIALIZED_NAME_ISSUING_STATE = "issuing_state";
   @SerializedName(SERIALIZED_NAME_ISSUING_STATE)
+  @javax.annotation.Nullable
   private String issuingState;
 
   public static final String SERIALIZED_NAME_ISSUING_DATE = "issuing_date";
   @SerializedName(SERIALIZED_NAME_ISSUING_DATE)
+  @javax.annotation.Nullable
   private LocalDate issuingDate;
 
   public static final String SERIALIZED_NAME_CATEGORISATION = "categorisation";
   @SerializedName(SERIALIZED_NAME_CATEGORISATION)
+  @javax.annotation.Nullable
   private String categorisation;
 
   public static final String SERIALIZED_NAME_MRZ_LINE1 = "mrz_line1";
   @SerializedName(SERIALIZED_NAME_MRZ_LINE1)
+  @javax.annotation.Nullable
   private String mrzLine1;
 
   public static final String SERIALIZED_NAME_MRZ_LINE2 = "mrz_line2";
   @SerializedName(SERIALIZED_NAME_MRZ_LINE2)
+  @javax.annotation.Nullable
   private String mrzLine2;
 
   public static final String SERIALIZED_NAME_MRZ_LINE3 = "mrz_line3";
   @SerializedName(SERIALIZED_NAME_MRZ_LINE3)
+  @javax.annotation.Nullable
   private String mrzLine3;
 
   public static final String SERIALIZED_NAME_ADDRESS = "address";
   @SerializedName(SERIALIZED_NAME_ADDRESS)
+  @javax.annotation.Nullable
   private String address;
 
   public static final String SERIALIZED_NAME_PLACE_OF_BIRTH = "place_of_birth";
   @SerializedName(SERIALIZED_NAME_PLACE_OF_BIRTH)
+  @javax.annotation.Nullable
   private String placeOfBirth;
 
   public static final String SERIALIZED_NAME_SPOUSE_NAME = "spouse_name";
   @SerializedName(SERIALIZED_NAME_SPOUSE_NAME)
+  @javax.annotation.Nullable
   private String spouseName;
 
   public static final String SERIALIZED_NAME_WIDOW_NAME = "widow_name";
   @SerializedName(SERIALIZED_NAME_WIDOW_NAME)
+  @javax.annotation.Nullable
   private String widowName;
 
   public static final String SERIALIZED_NAME_ALIAS_NAME = "alias_name";
   @SerializedName(SERIALIZED_NAME_ALIAS_NAME)
+  @javax.annotation.Nullable
   private String aliasName;
 
   public static final String SERIALIZED_NAME_ISSUING_AUTHORITY = "issuing_authority";
   @SerializedName(SERIALIZED_NAME_ISSUING_AUTHORITY)
+  @javax.annotation.Nullable
   private String issuingAuthority;
 
   public static final String SERIALIZED_NAME_REMARKS = "remarks";
   @SerializedName(SERIALIZED_NAME_REMARKS)
+  @javax.annotation.Nullable
   private String remarks;
 
   public static final String SERIALIZED_NAME_CIVIL_STATE = "civil_state";
   @SerializedName(SERIALIZED_NAME_CIVIL_STATE)
+  @javax.annotation.Nullable
   private String civilState;
 
   public static final String SERIALIZED_NAME_EXPATRIATION = "expatriation";
   @SerializedName(SERIALIZED_NAME_EXPATRIATION)
+  @javax.annotation.Nullable
   private String expatriation;
 
   public static final String SERIALIZED_NAME_FATHER_NAME = "father_name";
   @SerializedName(SERIALIZED_NAME_FATHER_NAME)
+  @javax.annotation.Nullable
   private String fatherName;
 
   public static final String SERIALIZED_NAME_MOTHER_NAME = "mother_name";
   @SerializedName(SERIALIZED_NAME_MOTHER_NAME)
+  @javax.annotation.Nullable
   private String motherName;
 
   public static final String SERIALIZED_NAME_RELIGION = "religion";
   @SerializedName(SERIALIZED_NAME_RELIGION)
+  @javax.annotation.Nullable
   private String religion;
 
   public static final String SERIALIZED_NAME_TYPE_OF_PERMIT = "type_of_permit";
   @SerializedName(SERIALIZED_NAME_TYPE_OF_PERMIT)
+  @javax.annotation.Nullable
   private String typeOfPermit;
 
   public static final String SERIALIZED_NAME_VERSION_NUMBER = "version_number";
   @SerializedName(SERIALIZED_NAME_VERSION_NUMBER)
+  @javax.annotation.Nullable
   private String versionNumber;
 
   public static final String SERIALIZED_NAME_DOCUMENT_SUBTYPE = "document_subtype";
   @SerializedName(SERIALIZED_NAME_DOCUMENT_SUBTYPE)
+  @javax.annotation.Nullable
   private String documentSubtype;
 
   public static final String SERIALIZED_NAME_PROFESSION = "profession";
   @SerializedName(SERIALIZED_NAME_PROFESSION)
+  @javax.annotation.Nullable
   private String profession;
 
   public static final String SERIALIZED_NAME_SECURITY_DOCUMENT_NUMBER = "security_document_number";
   @SerializedName(SERIALIZED_NAME_SECURITY_DOCUMENT_NUMBER)
+  @javax.annotation.Nullable
   private String securityDocumentNumber;
 
   public static final String SERIALIZED_NAME_TAX_NUMBER = "tax_number";
   @SerializedName(SERIALIZED_NAME_TAX_NUMBER)
+  @javax.annotation.Nullable
   private String taxNumber;
 
   /**
@@ -264,6 +299,7 @@ public class DocumentProperties {
 
   public static final String SERIALIZED_NAME_NIST_IDENTITY_EVIDENCE_STRENGTH = "nist_identity_evidence_strength";
   @SerializedName(SERIALIZED_NAME_NIST_IDENTITY_EVIDENCE_STRENGTH)
+  @javax.annotation.Nullable
   private NistIdentityEvidenceStrengthEnum nistIdentityEvidenceStrength;
 
   /**
@@ -324,10 +360,12 @@ public class DocumentProperties {
 
   public static final String SERIALIZED_NAME_HAS_ISSUANCE_CONFIRMATION = "has_issuance_confirmation";
   @SerializedName(SERIALIZED_NAME_HAS_ISSUANCE_CONFIRMATION)
+  @javax.annotation.Nullable
   private HasIssuanceConfirmationEnum hasIssuanceConfirmation;
 
   public static final String SERIALIZED_NAME_REAL_ID_COMPLIANCE = "real_id_compliance";
   @SerializedName(SERIALIZED_NAME_REAL_ID_COMPLIANCE)
+  @javax.annotation.Nullable
   private Boolean realIdCompliance;
 
   /**
@@ -394,36 +432,43 @@ public class DocumentProperties {
 
   public static final String SERIALIZED_NAME_SECURITY_TIER = "security_tier";
   @SerializedName(SERIALIZED_NAME_SECURITY_TIER)
+  @javax.annotation.Nullable
   private SecurityTierEnum securityTier;
 
   public static final String SERIALIZED_NAME_ADDRESS_LINES = "address_lines";
   @SerializedName(SERIALIZED_NAME_ADDRESS_LINES)
+  @javax.annotation.Nullable
   private DocumentPropertiesAddressLines addressLines;
 
   public static final String SERIALIZED_NAME_BARCODE = "barcode";
   @SerializedName(SERIALIZED_NAME_BARCODE)
+  @javax.annotation.Nullable
   private List<DocumentPropertiesBarcodeInner> barcode = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_NFC = "nfc";
   @SerializedName(SERIALIZED_NAME_NFC)
+  @javax.annotation.Nullable
   private DocumentPropertiesNfc nfc;
 
   public static final String SERIALIZED_NAME_DRIVING_LICENCE_INFORMATION = "driving_licence_information";
   @SerializedName(SERIALIZED_NAME_DRIVING_LICENCE_INFORMATION)
+  @javax.annotation.Nullable
   private DocumentPropertiesDrivingLicenceInformation drivingLicenceInformation;
 
   public static final String SERIALIZED_NAME_DOCUMENT_CLASSIFICATION = "document_classification";
   @SerializedName(SERIALIZED_NAME_DOCUMENT_CLASSIFICATION)
+  @javax.annotation.Nullable
   private DocumentPropertiesDocumentClassification documentClassification;
 
   public static final String SERIALIZED_NAME_EXTRACTED_DATA = "extracted_data";
   @SerializedName(SERIALIZED_NAME_EXTRACTED_DATA)
+  @javax.annotation.Nullable
   private DocumentPropertiesExtractedData extractedData;
 
   public DocumentProperties() {
   }
 
-  public DocumentProperties dateOfBirth(LocalDate dateOfBirth) {
+  public DocumentProperties dateOfBirth(@javax.annotation.Nullable LocalDate dateOfBirth) {
     this.dateOfBirth = dateOfBirth;
     return this;
   }
@@ -437,12 +482,12 @@ public class DocumentProperties {
     return dateOfBirth;
   }
 
-  public void setDateOfBirth(LocalDate dateOfBirth) {
+  public void setDateOfBirth(@javax.annotation.Nullable LocalDate dateOfBirth) {
     this.dateOfBirth = dateOfBirth;
   }
 
 
-  public DocumentProperties dateOfExpiry(LocalDate dateOfExpiry) {
+  public DocumentProperties dateOfExpiry(@javax.annotation.Nullable LocalDate dateOfExpiry) {
     this.dateOfExpiry = dateOfExpiry;
     return this;
   }
@@ -456,12 +501,12 @@ public class DocumentProperties {
     return dateOfExpiry;
   }
 
-  public void setDateOfExpiry(LocalDate dateOfExpiry) {
+  public void setDateOfExpiry(@javax.annotation.Nullable LocalDate dateOfExpiry) {
     this.dateOfExpiry = dateOfExpiry;
   }
 
 
-  public DocumentProperties personalNumber(String personalNumber) {
+  public DocumentProperties personalNumber(@javax.annotation.Nullable String personalNumber) {
     this.personalNumber = personalNumber;
     return this;
   }
@@ -475,12 +520,12 @@ public class DocumentProperties {
     return personalNumber;
   }
 
-  public void setPersonalNumber(String personalNumber) {
+  public void setPersonalNumber(@javax.annotation.Nullable String personalNumber) {
     this.personalNumber = personalNumber;
   }
 
 
-  public DocumentProperties documentNumbers(List<DocumentPropertiesDocumentNumbersInner> documentNumbers) {
+  public DocumentProperties documentNumbers(@javax.annotation.Nullable List<DocumentPropertiesDocumentNumbersInner> documentNumbers) {
     this.documentNumbers = documentNumbers;
     return this;
   }
@@ -502,12 +547,12 @@ public class DocumentProperties {
     return documentNumbers;
   }
 
-  public void setDocumentNumbers(List<DocumentPropertiesDocumentNumbersInner> documentNumbers) {
+  public void setDocumentNumbers(@javax.annotation.Nullable List<DocumentPropertiesDocumentNumbersInner> documentNumbers) {
     this.documentNumbers = documentNumbers;
   }
 
 
-  public DocumentProperties documentType(String documentType) {
+  public DocumentProperties documentType(@javax.annotation.Nullable String documentType) {
     this.documentType = documentType;
     return this;
   }
@@ -521,12 +566,12 @@ public class DocumentProperties {
     return documentType;
   }
 
-  public void setDocumentType(String documentType) {
+  public void setDocumentType(@javax.annotation.Nullable String documentType) {
     this.documentType = documentType;
   }
 
 
-  public DocumentProperties firstName(String firstName) {
+  public DocumentProperties firstName(@javax.annotation.Nullable String firstName) {
     this.firstName = firstName;
     return this;
   }
@@ -540,12 +585,12 @@ public class DocumentProperties {
     return firstName;
   }
 
-  public void setFirstName(String firstName) {
+  public void setFirstName(@javax.annotation.Nullable String firstName) {
     this.firstName = firstName;
   }
 
 
-  public DocumentProperties middleName(String middleName) {
+  public DocumentProperties middleName(@javax.annotation.Nullable String middleName) {
     this.middleName = middleName;
     return this;
   }
@@ -559,12 +604,12 @@ public class DocumentProperties {
     return middleName;
   }
 
-  public void setMiddleName(String middleName) {
+  public void setMiddleName(@javax.annotation.Nullable String middleName) {
     this.middleName = middleName;
   }
 
 
-  public DocumentProperties lastName(String lastName) {
+  public DocumentProperties lastName(@javax.annotation.Nullable String lastName) {
     this.lastName = lastName;
     return this;
   }
@@ -578,12 +623,12 @@ public class DocumentProperties {
     return lastName;
   }
 
-  public void setLastName(String lastName) {
+  public void setLastName(@javax.annotation.Nullable String lastName) {
     this.lastName = lastName;
   }
 
 
-  public DocumentProperties gender(String gender) {
+  public DocumentProperties gender(@javax.annotation.Nullable String gender) {
     this.gender = gender;
     return this;
   }
@@ -597,12 +642,12 @@ public class DocumentProperties {
     return gender;
   }
 
-  public void setGender(String gender) {
+  public void setGender(@javax.annotation.Nullable String gender) {
     this.gender = gender;
   }
 
 
-  public DocumentProperties issuingCountry(String issuingCountry) {
+  public DocumentProperties issuingCountry(@javax.annotation.Nullable String issuingCountry) {
     this.issuingCountry = issuingCountry;
     return this;
   }
@@ -616,12 +661,12 @@ public class DocumentProperties {
     return issuingCountry;
   }
 
-  public void setIssuingCountry(String issuingCountry) {
+  public void setIssuingCountry(@javax.annotation.Nullable String issuingCountry) {
     this.issuingCountry = issuingCountry;
   }
 
 
-  public DocumentProperties nationality(String nationality) {
+  public DocumentProperties nationality(@javax.annotation.Nullable String nationality) {
     this.nationality = nationality;
     return this;
   }
@@ -635,12 +680,12 @@ public class DocumentProperties {
     return nationality;
   }
 
-  public void setNationality(String nationality) {
+  public void setNationality(@javax.annotation.Nullable String nationality) {
     this.nationality = nationality;
   }
 
 
-  public DocumentProperties issuingState(String issuingState) {
+  public DocumentProperties issuingState(@javax.annotation.Nullable String issuingState) {
     this.issuingState = issuingState;
     return this;
   }
@@ -654,12 +699,12 @@ public class DocumentProperties {
     return issuingState;
   }
 
-  public void setIssuingState(String issuingState) {
+  public void setIssuingState(@javax.annotation.Nullable String issuingState) {
     this.issuingState = issuingState;
   }
 
 
-  public DocumentProperties issuingDate(LocalDate issuingDate) {
+  public DocumentProperties issuingDate(@javax.annotation.Nullable LocalDate issuingDate) {
     this.issuingDate = issuingDate;
     return this;
   }
@@ -673,12 +718,12 @@ public class DocumentProperties {
     return issuingDate;
   }
 
-  public void setIssuingDate(LocalDate issuingDate) {
+  public void setIssuingDate(@javax.annotation.Nullable LocalDate issuingDate) {
     this.issuingDate = issuingDate;
   }
 
 
-  public DocumentProperties categorisation(String categorisation) {
+  public DocumentProperties categorisation(@javax.annotation.Nullable String categorisation) {
     this.categorisation = categorisation;
     return this;
   }
@@ -692,12 +737,12 @@ public class DocumentProperties {
     return categorisation;
   }
 
-  public void setCategorisation(String categorisation) {
+  public void setCategorisation(@javax.annotation.Nullable String categorisation) {
     this.categorisation = categorisation;
   }
 
 
-  public DocumentProperties mrzLine1(String mrzLine1) {
+  public DocumentProperties mrzLine1(@javax.annotation.Nullable String mrzLine1) {
     this.mrzLine1 = mrzLine1;
     return this;
   }
@@ -711,12 +756,12 @@ public class DocumentProperties {
     return mrzLine1;
   }
 
-  public void setMrzLine1(String mrzLine1) {
+  public void setMrzLine1(@javax.annotation.Nullable String mrzLine1) {
     this.mrzLine1 = mrzLine1;
   }
 
 
-  public DocumentProperties mrzLine2(String mrzLine2) {
+  public DocumentProperties mrzLine2(@javax.annotation.Nullable String mrzLine2) {
     this.mrzLine2 = mrzLine2;
     return this;
   }
@@ -730,12 +775,12 @@ public class DocumentProperties {
     return mrzLine2;
   }
 
-  public void setMrzLine2(String mrzLine2) {
+  public void setMrzLine2(@javax.annotation.Nullable String mrzLine2) {
     this.mrzLine2 = mrzLine2;
   }
 
 
-  public DocumentProperties mrzLine3(String mrzLine3) {
+  public DocumentProperties mrzLine3(@javax.annotation.Nullable String mrzLine3) {
     this.mrzLine3 = mrzLine3;
     return this;
   }
@@ -749,12 +794,12 @@ public class DocumentProperties {
     return mrzLine3;
   }
 
-  public void setMrzLine3(String mrzLine3) {
+  public void setMrzLine3(@javax.annotation.Nullable String mrzLine3) {
     this.mrzLine3 = mrzLine3;
   }
 
 
-  public DocumentProperties address(String address) {
+  public DocumentProperties address(@javax.annotation.Nullable String address) {
     this.address = address;
     return this;
   }
@@ -768,12 +813,12 @@ public class DocumentProperties {
     return address;
   }
 
-  public void setAddress(String address) {
+  public void setAddress(@javax.annotation.Nullable String address) {
     this.address = address;
   }
 
 
-  public DocumentProperties placeOfBirth(String placeOfBirth) {
+  public DocumentProperties placeOfBirth(@javax.annotation.Nullable String placeOfBirth) {
     this.placeOfBirth = placeOfBirth;
     return this;
   }
@@ -787,12 +832,12 @@ public class DocumentProperties {
     return placeOfBirth;
   }
 
-  public void setPlaceOfBirth(String placeOfBirth) {
+  public void setPlaceOfBirth(@javax.annotation.Nullable String placeOfBirth) {
     this.placeOfBirth = placeOfBirth;
   }
 
 
-  public DocumentProperties spouseName(String spouseName) {
+  public DocumentProperties spouseName(@javax.annotation.Nullable String spouseName) {
     this.spouseName = spouseName;
     return this;
   }
@@ -806,12 +851,12 @@ public class DocumentProperties {
     return spouseName;
   }
 
-  public void setSpouseName(String spouseName) {
+  public void setSpouseName(@javax.annotation.Nullable String spouseName) {
     this.spouseName = spouseName;
   }
 
 
-  public DocumentProperties widowName(String widowName) {
+  public DocumentProperties widowName(@javax.annotation.Nullable String widowName) {
     this.widowName = widowName;
     return this;
   }
@@ -825,12 +870,12 @@ public class DocumentProperties {
     return widowName;
   }
 
-  public void setWidowName(String widowName) {
+  public void setWidowName(@javax.annotation.Nullable String widowName) {
     this.widowName = widowName;
   }
 
 
-  public DocumentProperties aliasName(String aliasName) {
+  public DocumentProperties aliasName(@javax.annotation.Nullable String aliasName) {
     this.aliasName = aliasName;
     return this;
   }
@@ -844,12 +889,12 @@ public class DocumentProperties {
     return aliasName;
   }
 
-  public void setAliasName(String aliasName) {
+  public void setAliasName(@javax.annotation.Nullable String aliasName) {
     this.aliasName = aliasName;
   }
 
 
-  public DocumentProperties issuingAuthority(String issuingAuthority) {
+  public DocumentProperties issuingAuthority(@javax.annotation.Nullable String issuingAuthority) {
     this.issuingAuthority = issuingAuthority;
     return this;
   }
@@ -863,12 +908,12 @@ public class DocumentProperties {
     return issuingAuthority;
   }
 
-  public void setIssuingAuthority(String issuingAuthority) {
+  public void setIssuingAuthority(@javax.annotation.Nullable String issuingAuthority) {
     this.issuingAuthority = issuingAuthority;
   }
 
 
-  public DocumentProperties remarks(String remarks) {
+  public DocumentProperties remarks(@javax.annotation.Nullable String remarks) {
     this.remarks = remarks;
     return this;
   }
@@ -882,12 +927,12 @@ public class DocumentProperties {
     return remarks;
   }
 
-  public void setRemarks(String remarks) {
+  public void setRemarks(@javax.annotation.Nullable String remarks) {
     this.remarks = remarks;
   }
 
 
-  public DocumentProperties civilState(String civilState) {
+  public DocumentProperties civilState(@javax.annotation.Nullable String civilState) {
     this.civilState = civilState;
     return this;
   }
@@ -901,12 +946,12 @@ public class DocumentProperties {
     return civilState;
   }
 
-  public void setCivilState(String civilState) {
+  public void setCivilState(@javax.annotation.Nullable String civilState) {
     this.civilState = civilState;
   }
 
 
-  public DocumentProperties expatriation(String expatriation) {
+  public DocumentProperties expatriation(@javax.annotation.Nullable String expatriation) {
     this.expatriation = expatriation;
     return this;
   }
@@ -920,12 +965,12 @@ public class DocumentProperties {
     return expatriation;
   }
 
-  public void setExpatriation(String expatriation) {
+  public void setExpatriation(@javax.annotation.Nullable String expatriation) {
     this.expatriation = expatriation;
   }
 
 
-  public DocumentProperties fatherName(String fatherName) {
+  public DocumentProperties fatherName(@javax.annotation.Nullable String fatherName) {
     this.fatherName = fatherName;
     return this;
   }
@@ -939,12 +984,12 @@ public class DocumentProperties {
     return fatherName;
   }
 
-  public void setFatherName(String fatherName) {
+  public void setFatherName(@javax.annotation.Nullable String fatherName) {
     this.fatherName = fatherName;
   }
 
 
-  public DocumentProperties motherName(String motherName) {
+  public DocumentProperties motherName(@javax.annotation.Nullable String motherName) {
     this.motherName = motherName;
     return this;
   }
@@ -958,12 +1003,12 @@ public class DocumentProperties {
     return motherName;
   }
 
-  public void setMotherName(String motherName) {
+  public void setMotherName(@javax.annotation.Nullable String motherName) {
     this.motherName = motherName;
   }
 
 
-  public DocumentProperties religion(String religion) {
+  public DocumentProperties religion(@javax.annotation.Nullable String religion) {
     this.religion = religion;
     return this;
   }
@@ -977,12 +1022,12 @@ public class DocumentProperties {
     return religion;
   }
 
-  public void setReligion(String religion) {
+  public void setReligion(@javax.annotation.Nullable String religion) {
     this.religion = religion;
   }
 
 
-  public DocumentProperties typeOfPermit(String typeOfPermit) {
+  public DocumentProperties typeOfPermit(@javax.annotation.Nullable String typeOfPermit) {
     this.typeOfPermit = typeOfPermit;
     return this;
   }
@@ -996,12 +1041,12 @@ public class DocumentProperties {
     return typeOfPermit;
   }
 
-  public void setTypeOfPermit(String typeOfPermit) {
+  public void setTypeOfPermit(@javax.annotation.Nullable String typeOfPermit) {
     this.typeOfPermit = typeOfPermit;
   }
 
 
-  public DocumentProperties versionNumber(String versionNumber) {
+  public DocumentProperties versionNumber(@javax.annotation.Nullable String versionNumber) {
     this.versionNumber = versionNumber;
     return this;
   }
@@ -1015,12 +1060,12 @@ public class DocumentProperties {
     return versionNumber;
   }
 
-  public void setVersionNumber(String versionNumber) {
+  public void setVersionNumber(@javax.annotation.Nullable String versionNumber) {
     this.versionNumber = versionNumber;
   }
 
 
-  public DocumentProperties documentSubtype(String documentSubtype) {
+  public DocumentProperties documentSubtype(@javax.annotation.Nullable String documentSubtype) {
     this.documentSubtype = documentSubtype;
     return this;
   }
@@ -1034,12 +1079,12 @@ public class DocumentProperties {
     return documentSubtype;
   }
 
-  public void setDocumentSubtype(String documentSubtype) {
+  public void setDocumentSubtype(@javax.annotation.Nullable String documentSubtype) {
     this.documentSubtype = documentSubtype;
   }
 
 
-  public DocumentProperties profession(String profession) {
+  public DocumentProperties profession(@javax.annotation.Nullable String profession) {
     this.profession = profession;
     return this;
   }
@@ -1053,12 +1098,12 @@ public class DocumentProperties {
     return profession;
   }
 
-  public void setProfession(String profession) {
+  public void setProfession(@javax.annotation.Nullable String profession) {
     this.profession = profession;
   }
 
 
-  public DocumentProperties securityDocumentNumber(String securityDocumentNumber) {
+  public DocumentProperties securityDocumentNumber(@javax.annotation.Nullable String securityDocumentNumber) {
     this.securityDocumentNumber = securityDocumentNumber;
     return this;
   }
@@ -1072,12 +1117,12 @@ public class DocumentProperties {
     return securityDocumentNumber;
   }
 
-  public void setSecurityDocumentNumber(String securityDocumentNumber) {
+  public void setSecurityDocumentNumber(@javax.annotation.Nullable String securityDocumentNumber) {
     this.securityDocumentNumber = securityDocumentNumber;
   }
 
 
-  public DocumentProperties taxNumber(String taxNumber) {
+  public DocumentProperties taxNumber(@javax.annotation.Nullable String taxNumber) {
     this.taxNumber = taxNumber;
     return this;
   }
@@ -1091,12 +1136,12 @@ public class DocumentProperties {
     return taxNumber;
   }
 
-  public void setTaxNumber(String taxNumber) {
+  public void setTaxNumber(@javax.annotation.Nullable String taxNumber) {
     this.taxNumber = taxNumber;
   }
 
 
-  public DocumentProperties nistIdentityEvidenceStrength(NistIdentityEvidenceStrengthEnum nistIdentityEvidenceStrength) {
+  public DocumentProperties nistIdentityEvidenceStrength(@javax.annotation.Nullable NistIdentityEvidenceStrengthEnum nistIdentityEvidenceStrength) {
     this.nistIdentityEvidenceStrength = nistIdentityEvidenceStrength;
     return this;
   }
@@ -1110,12 +1155,12 @@ public class DocumentProperties {
     return nistIdentityEvidenceStrength;
   }
 
-  public void setNistIdentityEvidenceStrength(NistIdentityEvidenceStrengthEnum nistIdentityEvidenceStrength) {
+  public void setNistIdentityEvidenceStrength(@javax.annotation.Nullable NistIdentityEvidenceStrengthEnum nistIdentityEvidenceStrength) {
     this.nistIdentityEvidenceStrength = nistIdentityEvidenceStrength;
   }
 
 
-  public DocumentProperties hasIssuanceConfirmation(HasIssuanceConfirmationEnum hasIssuanceConfirmation) {
+  public DocumentProperties hasIssuanceConfirmation(@javax.annotation.Nullable HasIssuanceConfirmationEnum hasIssuanceConfirmation) {
     this.hasIssuanceConfirmation = hasIssuanceConfirmation;
     return this;
   }
@@ -1129,12 +1174,12 @@ public class DocumentProperties {
     return hasIssuanceConfirmation;
   }
 
-  public void setHasIssuanceConfirmation(HasIssuanceConfirmationEnum hasIssuanceConfirmation) {
+  public void setHasIssuanceConfirmation(@javax.annotation.Nullable HasIssuanceConfirmationEnum hasIssuanceConfirmation) {
     this.hasIssuanceConfirmation = hasIssuanceConfirmation;
   }
 
 
-  public DocumentProperties realIdCompliance(Boolean realIdCompliance) {
+  public DocumentProperties realIdCompliance(@javax.annotation.Nullable Boolean realIdCompliance) {
     this.realIdCompliance = realIdCompliance;
     return this;
   }
@@ -1148,12 +1193,12 @@ public class DocumentProperties {
     return realIdCompliance;
   }
 
-  public void setRealIdCompliance(Boolean realIdCompliance) {
+  public void setRealIdCompliance(@javax.annotation.Nullable Boolean realIdCompliance) {
     this.realIdCompliance = realIdCompliance;
   }
 
 
-  public DocumentProperties securityTier(SecurityTierEnum securityTier) {
+  public DocumentProperties securityTier(@javax.annotation.Nullable SecurityTierEnum securityTier) {
     this.securityTier = securityTier;
     return this;
   }
@@ -1167,12 +1212,12 @@ public class DocumentProperties {
     return securityTier;
   }
 
-  public void setSecurityTier(SecurityTierEnum securityTier) {
+  public void setSecurityTier(@javax.annotation.Nullable SecurityTierEnum securityTier) {
     this.securityTier = securityTier;
   }
 
 
-  public DocumentProperties addressLines(DocumentPropertiesAddressLines addressLines) {
+  public DocumentProperties addressLines(@javax.annotation.Nullable DocumentPropertiesAddressLines addressLines) {
     this.addressLines = addressLines;
     return this;
   }
@@ -1186,12 +1231,12 @@ public class DocumentProperties {
     return addressLines;
   }
 
-  public void setAddressLines(DocumentPropertiesAddressLines addressLines) {
+  public void setAddressLines(@javax.annotation.Nullable DocumentPropertiesAddressLines addressLines) {
     this.addressLines = addressLines;
   }
 
 
-  public DocumentProperties barcode(List<DocumentPropertiesBarcodeInner> barcode) {
+  public DocumentProperties barcode(@javax.annotation.Nullable List<DocumentPropertiesBarcodeInner> barcode) {
     this.barcode = barcode;
     return this;
   }
@@ -1213,12 +1258,12 @@ public class DocumentProperties {
     return barcode;
   }
 
-  public void setBarcode(List<DocumentPropertiesBarcodeInner> barcode) {
+  public void setBarcode(@javax.annotation.Nullable List<DocumentPropertiesBarcodeInner> barcode) {
     this.barcode = barcode;
   }
 
 
-  public DocumentProperties nfc(DocumentPropertiesNfc nfc) {
+  public DocumentProperties nfc(@javax.annotation.Nullable DocumentPropertiesNfc nfc) {
     this.nfc = nfc;
     return this;
   }
@@ -1232,12 +1277,12 @@ public class DocumentProperties {
     return nfc;
   }
 
-  public void setNfc(DocumentPropertiesNfc nfc) {
+  public void setNfc(@javax.annotation.Nullable DocumentPropertiesNfc nfc) {
     this.nfc = nfc;
   }
 
 
-  public DocumentProperties drivingLicenceInformation(DocumentPropertiesDrivingLicenceInformation drivingLicenceInformation) {
+  public DocumentProperties drivingLicenceInformation(@javax.annotation.Nullable DocumentPropertiesDrivingLicenceInformation drivingLicenceInformation) {
     this.drivingLicenceInformation = drivingLicenceInformation;
     return this;
   }
@@ -1251,12 +1296,12 @@ public class DocumentProperties {
     return drivingLicenceInformation;
   }
 
-  public void setDrivingLicenceInformation(DocumentPropertiesDrivingLicenceInformation drivingLicenceInformation) {
+  public void setDrivingLicenceInformation(@javax.annotation.Nullable DocumentPropertiesDrivingLicenceInformation drivingLicenceInformation) {
     this.drivingLicenceInformation = drivingLicenceInformation;
   }
 
 
-  public DocumentProperties documentClassification(DocumentPropertiesDocumentClassification documentClassification) {
+  public DocumentProperties documentClassification(@javax.annotation.Nullable DocumentPropertiesDocumentClassification documentClassification) {
     this.documentClassification = documentClassification;
     return this;
   }
@@ -1270,12 +1315,12 @@ public class DocumentProperties {
     return documentClassification;
   }
 
-  public void setDocumentClassification(DocumentPropertiesDocumentClassification documentClassification) {
+  public void setDocumentClassification(@javax.annotation.Nullable DocumentPropertiesDocumentClassification documentClassification) {
     this.documentClassification = documentClassification;
   }
 
 
-  public DocumentProperties extractedData(DocumentPropertiesExtractedData extractedData) {
+  public DocumentProperties extractedData(@javax.annotation.Nullable DocumentPropertiesExtractedData extractedData) {
     this.extractedData = extractedData;
     return this;
   }
@@ -1289,7 +1334,7 @@ public class DocumentProperties {
     return extractedData;
   }
 
-  public void setExtractedData(DocumentPropertiesExtractedData extractedData) {
+  public void setExtractedData(@javax.annotation.Nullable DocumentPropertiesExtractedData extractedData) {
     this.extractedData = extractedData;
   }
 

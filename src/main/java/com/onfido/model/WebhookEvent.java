@@ -49,16 +49,17 @@ import com.onfido.JSON;
 /**
  * WebhookEvent
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class WebhookEvent {
   public static final String SERIALIZED_NAME_PAYLOAD = "payload";
   @SerializedName(SERIALIZED_NAME_PAYLOAD)
+  @javax.annotation.Nullable
   private WebhookEventPayload payload;
 
   public WebhookEvent() {
   }
 
-  public WebhookEvent payload(WebhookEventPayload payload) {
+  public WebhookEvent payload(@javax.annotation.Nullable WebhookEventPayload payload) {
     this.payload = payload;
     return this;
   }
@@ -72,7 +73,7 @@ public class WebhookEvent {
     return payload;
   }
 
-  public void setPayload(WebhookEventPayload payload) {
+  public void setPayload(@javax.annotation.Nullable WebhookEventPayload payload) {
     this.payload = payload;
   }
 

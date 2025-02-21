@@ -1,5 +1,23 @@
 # Changelog
 
+## v6.0.0 21st February 2025
+
+- Release based on Onfido OpenAPI spec version [v5.0.0](https://github.com/onfido/onfido-openapi-spec/releases/tag/v5.0.0):
+  - Denote webhook event payload.object.href as a not required property
+  - Show additional information on JSON decoding issue
+  - [CAT-1593] Drop invalid enum value from webhook event type
+  - Add applicant_id in GET /workflow_runs
+  - [CAT-1694] Define document file type as free text
+  - [DOCCAP-2513] Add download-nfc-face endpoint
+  - [CAT-1719] Don't impose a type on deprecated records property in watchlist reports
+  - [CAT-1728] Don't catch JSON decoding error on webhook event verification
+  - Remove documents property for reports where it's not applicable
+  - Update openapi generator version to v7.10.0 (was v7.9.0)
+  - Update openapi generator version to v7.11.0 (was v7.10.0)
+- Add tests for Download NFC Face endpoint
+- Update Sonatype Staging Maven plugin version to allow delivery
+- [Migration Guide](MIGRATION.md#upgrading-from-5x-to-6x)
+
 ## v5.6.0 28th January 2025
 
 - Release based on Onfido OpenAPI spec version [v4.6.0](https://github.com/onfido/onfido-openapi-spec/releases/tag/v4.6.0):

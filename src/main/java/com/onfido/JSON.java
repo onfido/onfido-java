@@ -150,6 +150,7 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.AddressesList.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.Applicant.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.ApplicantBuilder.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.ApplicantConsent.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.ApplicantConsentBuilder.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.ApplicantCreate.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.ApplicantRequest.CustomTypeAdapterFactory());

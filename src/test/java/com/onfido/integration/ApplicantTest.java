@@ -1,9 +1,14 @@
 package com.onfido.integration;
 
 import com.onfido.model.Applicant;
+import com.onfido.model.ApplicantConsent;
+import com.onfido.model.ApplicantConsentBuilder;
+import com.onfido.model.ApplicantConsentName;
 import com.onfido.model.ApplicantUpdater;
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
@@ -53,6 +58,35 @@ public class ApplicantTest extends TestBase {
     Assertions.assertEquals("Last", updatedApplicant.getLastName());
 
     Assertions.assertNotNull(updatedApplicant.toJson());
+  }
+
+  @Test
+  public void findApplicantConsentsTest() throws Exception {
+    List<ApplicantConsentBuilder> consents =
+        Arrays.asList(
+            new ApplicantConsentBuilder()
+                .name(ApplicantConsentName.PRIVACY_NOTICES_READ)
+                .granted(true),
+            new ApplicantConsentBuilder().name(ApplicantConsentName.SSN_VERIFICATION).granted(true),
+            new ApplicantConsentBuilder()
+                .name(ApplicantConsentName.PHONE_NUMBER_VERIFICATION)
+                .granted(true));
+
+    onfido.updateApplicant(applicant.getId(), new ApplicantUpdater().consents(consents));
+
+    List<ApplicantConsent> actualConsents = onfido.findApplicantConsents(applicant.getId());
+
+    Map<ApplicantConsentName, Boolean> expectedConsents =
+        consents.stream()
+            .collect(
+                Collectors.toMap(
+                    ApplicantConsentBuilder::getName, ApplicantConsentBuilder::getGranted));
+
+    Map<ApplicantConsentName, Boolean> actualConsentsMap =
+        actualConsents.stream()
+            .collect(Collectors.toMap(ApplicantConsent::getName, ApplicantConsent::getGranted));
+
+    Assertions.assertEquals(expectedConsents, actualConsentsMap);
   }
 
   @Test

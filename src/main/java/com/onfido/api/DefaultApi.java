@@ -31,6 +31,7 @@ import java.io.IOException;
 import com.onfido.model.AddressesList;
 import com.onfido.model.Applicant;
 import com.onfido.model.ApplicantBuilder;
+import com.onfido.model.ApplicantConsent;
 import com.onfido.model.ApplicantUpdater;
 import com.onfido.model.ApplicantsList;
 import com.onfido.model.Check;
@@ -3701,6 +3702,137 @@ public class DefaultApi {
 
         okhttp3.Call localVarCall = findApplicantValidateBeforeCall(applicantId, _callback);
         Type localVarReturnType = new TypeToken<Applicant>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for findApplicantConsents
+     * @param applicantId  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Applicant Consents object </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call findApplicantConsentsCall(UUID applicantId, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/applicants/{applicant_id}/consents"
+            .replace("{" + "applicant_id" + "}", localVarApiClient.escapeString(applicantId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "Token" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call findApplicantConsentsValidateBeforeCall(UUID applicantId, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'applicantId' is set
+        if (applicantId == null) {
+            throw new ApiException("Missing the required parameter 'applicantId' when calling findApplicantConsents(Async)");
+        }
+
+        return findApplicantConsentsCall(applicantId, _callback);
+
+    }
+
+    /**
+     * Retrieve Applicant Consents
+     * Retrieves consents for single applicant. 
+     * @param applicantId  (required)
+     * @return List&lt;ApplicantConsent&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Applicant Consents object </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+     </table>
+     */
+    public List<ApplicantConsent> findApplicantConsents(UUID applicantId) throws ApiException {
+        ApiResponse<List<ApplicantConsent>> localVarResp = findApplicantConsentsWithHttpInfo(applicantId);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Retrieve Applicant Consents
+     * Retrieves consents for single applicant. 
+     * @param applicantId  (required)
+     * @return ApiResponse&lt;List&lt;ApplicantConsent&gt;&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Applicant Consents object </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<List<ApplicantConsent>> findApplicantConsentsWithHttpInfo(UUID applicantId) throws ApiException {
+        okhttp3.Call localVarCall = findApplicantConsentsValidateBeforeCall(applicantId, null);
+        Type localVarReturnType = new TypeToken<List<ApplicantConsent>>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Retrieve Applicant Consents (asynchronously)
+     * Retrieves consents for single applicant. 
+     * @param applicantId  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Applicant Consents object </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call findApplicantConsentsAsync(UUID applicantId, final ApiCallback<List<ApplicantConsent>> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = findApplicantConsentsValidateBeforeCall(applicantId, _callback);
+        Type localVarReturnType = new TypeToken<List<ApplicantConsent>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

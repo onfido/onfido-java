@@ -180,4 +180,74 @@ public class ReportSchemasTest extends TestBase {
     Assertions.assertNotNull(facialSimilarityPhotoFullyAutoReport.getMotionCaptures());
     Assertions.assertNotNull(facialSimilarityPhotoFullyAutoReport.getIdPhotos());
   }
+
+  @Test
+  public void schemaOfDocumentWithDrivingLicenceInformationReportIsValid() throws Exception {
+    Check check =
+        createCheck(
+            applicant,
+            document,
+            new CheckBuilder()
+                .reportNames(Arrays.asList(ReportName.DOCUMENT_WITH_DRIVING_LICENCE_INFORMATION)));
+
+    Report report =
+        (Report)
+            repeatRequestUntilStatusChanges(
+                "findReport",
+                new Object[] {check.getReportIds().get(0)},
+                COMPLETE,
+                MAX_RETRIES,
+                SLEEP_TIME);
+
+    Assertions.assertEquals(COMPLETE, report.getStatus());
+    Assertions.assertEquals(ReportName.DOCUMENT_WITH_DRIVING_LICENCE_INFORMATION, report.getName());
+    Assertions.assertEquals(check.getId(), report.getReportShared().getCheckId());
+
+    DocumentWithDrivingLicenceInformationReport drivingLicenceReport =
+        report.getDocumentWithDrivingLicenceInformationReport();
+
+    List<DocumentPropertiesDrivingLicenceInformationItem> licences =
+        drivingLicenceReport.getProperties().getDrivingLicenceInformation();
+
+    licences.sort(
+        Comparator.comparing(DocumentPropertiesDrivingLicenceInformationItem::getCategory));
+
+    Assertions.assertEquals("AM", licences.get(1).getCategory());
+    Assertions.assertEquals("01", licences.get(1).getCodes());
+    Assertions.assertEquals(LocalDate.of(2013, 1, 19), licences.get(1).getObtainmentDate());
+    Assertions.assertEquals(LocalDate.of(2050, 1, 1), licences.get(1).getExpiryDate());
+  }
+
+  @Test
+  public void schemaOfDeviceIntelligenceReportIsValid() throws Exception {
+    Check check =
+        createCheck(
+            applicant,
+            document,
+            new CheckBuilder().reportNames(Arrays.asList(ReportName.DEVICE_INTELLIGENCE)));
+
+    Report report =
+        (Report)
+            repeatRequestUntilStatusChanges(
+                "findReport",
+                new Object[] {check.getReportIds().get(0)},
+                COMPLETE,
+                MAX_RETRIES,
+                SLEEP_TIME);
+
+    Assertions.assertEquals(COMPLETE, report.getStatus());
+    Assertions.assertEquals(ReportName.DEVICE_INTELLIGENCE, report.getName());
+    Assertions.assertEquals(check.getId(), report.getReportShared().getCheckId());
+
+    DeviceIntelligenceReport deviceIntelligenceReport = report.getDeviceIntelligenceReport();
+
+    DeviceIntelligenceBreakdown breakdown = deviceIntelligenceReport.getBreakdown();
+    Assertions.assertNotNull(breakdown.getDevice().getBreakdown());
+
+    DeviceIntelligenceProperties properties = deviceIntelligenceReport.getProperties();
+    Assertions.assertEquals(
+        DeviceIntelligenceBreakdownPropertiesDevice.IpReputationEnum.NOT_ENOUGH_DATA,
+        properties.getDevice().getIpReputation());
+    Assertions.assertEquals("SM-G991B", properties.getDevice().getRawModel());
+  }
 }

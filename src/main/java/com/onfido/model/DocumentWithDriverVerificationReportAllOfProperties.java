@@ -23,7 +23,7 @@ import com.onfido.model.DocumentPropertiesAddressLines;
 import com.onfido.model.DocumentPropertiesBarcodeInner;
 import com.onfido.model.DocumentPropertiesDocumentClassification;
 import com.onfido.model.DocumentPropertiesDocumentNumbersInner;
-import com.onfido.model.DocumentPropertiesDrivingLicenceInformation;
+import com.onfido.model.DocumentPropertiesDrivingLicenceInformationItem;
 import com.onfido.model.DocumentPropertiesExtractedData;
 import com.onfido.model.DocumentPropertiesNfc;
 import com.onfido.model.DocumentWithDriverVerificationReportAllOfPropertiesAllOfPassengerVehicle;
@@ -455,7 +455,7 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
   public static final String SERIALIZED_NAME_DRIVING_LICENCE_INFORMATION = "driving_licence_information";
   @SerializedName(SERIALIZED_NAME_DRIVING_LICENCE_INFORMATION)
   @javax.annotation.Nullable
-  private DocumentPropertiesDrivingLicenceInformation drivingLicenceInformation;
+  private List<DocumentPropertiesDrivingLicenceInformationItem> drivingLicenceInformation = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_DOCUMENT_CLASSIFICATION = "document_classification";
   @SerializedName(SERIALIZED_NAME_DOCUMENT_CLASSIFICATION)
@@ -1314,8 +1314,16 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties drivingLicenceInformation(@javax.annotation.Nullable DocumentPropertiesDrivingLicenceInformation drivingLicenceInformation) {
+  public DocumentWithDriverVerificationReportAllOfProperties drivingLicenceInformation(@javax.annotation.Nullable List<DocumentPropertiesDrivingLicenceInformationItem> drivingLicenceInformation) {
     this.drivingLicenceInformation = drivingLicenceInformation;
+    return this;
+  }
+
+  public DocumentWithDriverVerificationReportAllOfProperties addDrivingLicenceInformationItem(DocumentPropertiesDrivingLicenceInformationItem drivingLicenceInformationItem) {
+    if (this.drivingLicenceInformation == null) {
+      this.drivingLicenceInformation = new ArrayList<>();
+    }
+    this.drivingLicenceInformation.add(drivingLicenceInformationItem);
     return this;
   }
 
@@ -1324,11 +1332,11 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
    * @return drivingLicenceInformation
    */
   @javax.annotation.Nullable
-  public DocumentPropertiesDrivingLicenceInformation getDrivingLicenceInformation() {
+  public List<DocumentPropertiesDrivingLicenceInformationItem> getDrivingLicenceInformation() {
     return drivingLicenceInformation;
   }
 
-  public void setDrivingLicenceInformation(@javax.annotation.Nullable DocumentPropertiesDrivingLicenceInformation drivingLicenceInformation) {
+  public void setDrivingLicenceInformation(@javax.annotation.Nullable List<DocumentPropertiesDrivingLicenceInformationItem> drivingLicenceInformation) {
     this.drivingLicenceInformation = drivingLicenceInformation;
   }
 
@@ -1903,9 +1911,19 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
       if (jsonObj.get("nfc") != null && !jsonObj.get("nfc").isJsonNull()) {
         DocumentPropertiesNfc.validateJsonElement(jsonObj.get("nfc"));
       }
-      // validate the optional field `driving_licence_information`
       if (jsonObj.get("driving_licence_information") != null && !jsonObj.get("driving_licence_information").isJsonNull()) {
-        DocumentPropertiesDrivingLicenceInformation.validateJsonElement(jsonObj.get("driving_licence_information"));
+        JsonArray jsonArraydrivingLicenceInformation = jsonObj.getAsJsonArray("driving_licence_information");
+        if (jsonArraydrivingLicenceInformation != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("driving_licence_information").isJsonArray()) {
+            throw new IllegalArgumentException(String.format("Expected the field `driving_licence_information` to be an array in the JSON string but got `%s`", jsonObj.get("driving_licence_information").toString()));
+          }
+
+          // validate the optional field `driving_licence_information` (array)
+          for (int i = 0; i < jsonArraydrivingLicenceInformation.size(); i++) {
+            DocumentPropertiesDrivingLicenceInformationItem.validateJsonElement(jsonArraydrivingLicenceInformation.get(i));
+          };
+        }
       }
       // validate the optional field `document_classification`
       if (jsonObj.get("document_classification") != null && !jsonObj.get("document_classification").isJsonNull()) {

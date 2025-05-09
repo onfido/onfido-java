@@ -20,6 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.Arrays;
 import org.openapitools.jackson.nullable.JsonNullable;
 
@@ -272,7 +273,7 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
   public static final String SERIALIZED_NAME_DEVICE_FINGERPRINT_REUSE = "device_fingerprint_reuse";
   @SerializedName(SERIALIZED_NAME_DEVICE_FINGERPRINT_REUSE)
   @javax.annotation.Nullable
-  private Integer deviceFingerprintReuse;
+  private BigDecimal deviceFingerprintReuse;
 
   public static final String SERIALIZED_NAME_SINGLE_DEVICE_USED = "single_device_used";
   @SerializedName(SERIALIZED_NAME_SINGLE_DEVICE_USED)
@@ -590,7 +591,7 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
   }
 
 
-  public DeviceIntelligenceBreakdownPropertiesDevice deviceFingerprintReuse(@javax.annotation.Nullable Integer deviceFingerprintReuse) {
+  public DeviceIntelligenceBreakdownPropertiesDevice deviceFingerprintReuse(@javax.annotation.Nullable BigDecimal deviceFingerprintReuse) {
     this.deviceFingerprintReuse = deviceFingerprintReuse;
     return this;
   }
@@ -600,11 +601,11 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
    * @return deviceFingerprintReuse
    */
   @javax.annotation.Nullable
-  public Integer getDeviceFingerprintReuse() {
+  public BigDecimal getDeviceFingerprintReuse() {
     return deviceFingerprintReuse;
   }
 
-  public void setDeviceFingerprintReuse(@javax.annotation.Nullable Integer deviceFingerprintReuse) {
+  public void setDeviceFingerprintReuse(@javax.annotation.Nullable BigDecimal deviceFingerprintReuse) {
     this.deviceFingerprintReuse = deviceFingerprintReuse;
   }
 

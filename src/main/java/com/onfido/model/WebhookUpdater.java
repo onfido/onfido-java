@@ -73,6 +73,31 @@ public class WebhookUpdater {
   @javax.annotation.Nullable
   private Integer payloadVersion;
 
+  public static final String SERIALIZED_NAME_OAUTH_ENABLED = "oauth_enabled";
+  @SerializedName(SERIALIZED_NAME_OAUTH_ENABLED)
+  @javax.annotation.Nullable
+  private Boolean oauthEnabled;
+
+  public static final String SERIALIZED_NAME_OAUTH_SERVER_URL = "oauth_server_url";
+  @SerializedName(SERIALIZED_NAME_OAUTH_SERVER_URL)
+  @javax.annotation.Nullable
+  private String oauthServerUrl;
+
+  public static final String SERIALIZED_NAME_OAUTH_SERVER_CLIENT_ID = "oauth_server_client_id";
+  @SerializedName(SERIALIZED_NAME_OAUTH_SERVER_CLIENT_ID)
+  @javax.annotation.Nullable
+  private String oauthServerClientId;
+
+  public static final String SERIALIZED_NAME_OAUTH_SERVER_CLIENT_SECRET = "oauth_server_client_secret";
+  @SerializedName(SERIALIZED_NAME_OAUTH_SERVER_CLIENT_SECRET)
+  @javax.annotation.Nullable
+  private String oauthServerClientSecret;
+
+  public static final String SERIALIZED_NAME_OAUTH_SERVER_SCOPE = "oauth_server_scope";
+  @SerializedName(SERIALIZED_NAME_OAUTH_SERVER_SCOPE)
+  @javax.annotation.Nullable
+  private String oauthServerScope;
+
   public static final String SERIALIZED_NAME_URL = "url";
   @SerializedName(SERIALIZED_NAME_URL)
   @javax.annotation.Nullable
@@ -173,6 +198,101 @@ public class WebhookUpdater {
   }
 
 
+  public WebhookUpdater oauthEnabled(@javax.annotation.Nullable Boolean oauthEnabled) {
+    this.oauthEnabled = oauthEnabled;
+    return this;
+  }
+
+  /**
+   * Determines if the webhook will fetch OAuth access tokens to send in the Authorization header.
+   * @return oauthEnabled
+   */
+  @javax.annotation.Nullable
+  public Boolean getOauthEnabled() {
+    return oauthEnabled;
+  }
+
+  public void setOauthEnabled(@javax.annotation.Nullable Boolean oauthEnabled) {
+    this.oauthEnabled = oauthEnabled;
+  }
+
+
+  public WebhookUpdater oauthServerUrl(@javax.annotation.Nullable String oauthServerUrl) {
+    this.oauthServerUrl = oauthServerUrl;
+    return this;
+  }
+
+  /**
+   * The url to fetch the OAuth access token using client credentials grant.
+   * @return oauthServerUrl
+   */
+  @javax.annotation.Nullable
+  public String getOauthServerUrl() {
+    return oauthServerUrl;
+  }
+
+  public void setOauthServerUrl(@javax.annotation.Nullable String oauthServerUrl) {
+    this.oauthServerUrl = oauthServerUrl;
+  }
+
+
+  public WebhookUpdater oauthServerClientId(@javax.annotation.Nullable String oauthServerClientId) {
+    this.oauthServerClientId = oauthServerClientId;
+    return this;
+  }
+
+  /**
+   * The client id to authenticate the client credentials grant.
+   * @return oauthServerClientId
+   */
+  @javax.annotation.Nullable
+  public String getOauthServerClientId() {
+    return oauthServerClientId;
+  }
+
+  public void setOauthServerClientId(@javax.annotation.Nullable String oauthServerClientId) {
+    this.oauthServerClientId = oauthServerClientId;
+  }
+
+
+  public WebhookUpdater oauthServerClientSecret(@javax.annotation.Nullable String oauthServerClientSecret) {
+    this.oauthServerClientSecret = oauthServerClientSecret;
+    return this;
+  }
+
+  /**
+   * The client secret to authenticate the client credentials grant.
+   * @return oauthServerClientSecret
+   */
+  @javax.annotation.Nullable
+  public String getOauthServerClientSecret() {
+    return oauthServerClientSecret;
+  }
+
+  public void setOauthServerClientSecret(@javax.annotation.Nullable String oauthServerClientSecret) {
+    this.oauthServerClientSecret = oauthServerClientSecret;
+  }
+
+
+  public WebhookUpdater oauthServerScope(@javax.annotation.Nullable String oauthServerScope) {
+    this.oauthServerScope = oauthServerScope;
+    return this;
+  }
+
+  /**
+   * The scopes to be sent when requesting the access token.
+   * @return oauthServerScope
+   */
+  @javax.annotation.Nullable
+  public String getOauthServerScope() {
+    return oauthServerScope;
+  }
+
+  public void setOauthServerScope(@javax.annotation.Nullable String oauthServerScope) {
+    this.oauthServerScope = oauthServerScope;
+  }
+
+
   public WebhookUpdater url(@javax.annotation.Nullable String url) {
     this.url = url;
     return this;
@@ -250,13 +370,18 @@ public class WebhookUpdater {
         Objects.equals(this.events, webhookUpdater.events) &&
         Objects.equals(this.environments, webhookUpdater.environments) &&
         Objects.equals(this.payloadVersion, webhookUpdater.payloadVersion) &&
+        Objects.equals(this.oauthEnabled, webhookUpdater.oauthEnabled) &&
+        Objects.equals(this.oauthServerUrl, webhookUpdater.oauthServerUrl) &&
+        Objects.equals(this.oauthServerClientId, webhookUpdater.oauthServerClientId) &&
+        Objects.equals(this.oauthServerClientSecret, webhookUpdater.oauthServerClientSecret) &&
+        Objects.equals(this.oauthServerScope, webhookUpdater.oauthServerScope) &&
         Objects.equals(this.url, webhookUpdater.url)&&
         Objects.equals(this.additionalProperties, webhookUpdater.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(enabled, events, environments, payloadVersion, url, additionalProperties);
+    return Objects.hash(enabled, events, environments, payloadVersion, oauthEnabled, oauthServerUrl, oauthServerClientId, oauthServerClientSecret, oauthServerScope, url, additionalProperties);
   }
 
   @Override
@@ -267,6 +392,11 @@ public class WebhookUpdater {
     sb.append("    events: ").append(toIndentedString(events)).append("\n");
     sb.append("    environments: ").append(toIndentedString(environments)).append("\n");
     sb.append("    payloadVersion: ").append(toIndentedString(payloadVersion)).append("\n");
+    sb.append("    oauthEnabled: ").append(toIndentedString(oauthEnabled)).append("\n");
+    sb.append("    oauthServerUrl: ").append(toIndentedString(oauthServerUrl)).append("\n");
+    sb.append("    oauthServerClientId: ").append(toIndentedString(oauthServerClientId)).append("\n");
+    sb.append("    oauthServerClientSecret: ").append(toIndentedString(oauthServerClientSecret)).append("\n");
+    sb.append("    oauthServerScope: ").append(toIndentedString(oauthServerScope)).append("\n");
     sb.append("    url: ").append(toIndentedString(url)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
@@ -295,6 +425,11 @@ public class WebhookUpdater {
     openapiFields.add("events");
     openapiFields.add("environments");
     openapiFields.add("payload_version");
+    openapiFields.add("oauth_enabled");
+    openapiFields.add("oauth_server_url");
+    openapiFields.add("oauth_server_client_id");
+    openapiFields.add("oauth_server_client_secret");
+    openapiFields.add("oauth_server_scope");
     openapiFields.add("url");
 
     // a set of required properties/fields (JSON key names)
@@ -321,6 +456,18 @@ public class WebhookUpdater {
       // ensure the optional json data is an array if present
       if (jsonObj.get("environments") != null && !jsonObj.get("environments").isJsonNull() && !jsonObj.get("environments").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `environments` to be an array in the JSON string but got `%s`", jsonObj.get("environments").toString()));
+      }
+      if ((jsonObj.get("oauth_server_url") != null && !jsonObj.get("oauth_server_url").isJsonNull()) && !jsonObj.get("oauth_server_url").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `oauth_server_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("oauth_server_url").toString()));
+      }
+      if ((jsonObj.get("oauth_server_client_id") != null && !jsonObj.get("oauth_server_client_id").isJsonNull()) && !jsonObj.get("oauth_server_client_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `oauth_server_client_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("oauth_server_client_id").toString()));
+      }
+      if ((jsonObj.get("oauth_server_client_secret") != null && !jsonObj.get("oauth_server_client_secret").isJsonNull()) && !jsonObj.get("oauth_server_client_secret").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `oauth_server_client_secret` to be a primitive type in the JSON string but got `%s`", jsonObj.get("oauth_server_client_secret").toString()));
+      }
+      if ((jsonObj.get("oauth_server_scope") != null && !jsonObj.get("oauth_server_scope").isJsonNull()) && !jsonObj.get("oauth_server_scope").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `oauth_server_scope` to be a primitive type in the JSON string but got `%s`", jsonObj.get("oauth_server_scope").toString()));
       }
       if ((jsonObj.get("url") != null && !jsonObj.get("url").isJsonNull()) && !jsonObj.get("url").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("url").toString()));

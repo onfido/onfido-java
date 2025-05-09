@@ -169,12 +169,13 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.CompleteTaskDataBuilder.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.DeviceIntelligenceBreakdown.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.DeviceIntelligenceBreakdownBreakdown.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.DeviceIntelligenceBreakdownBreakdownDevice.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.DeviceIntelligenceBreakdownBreakdownDeviceBreakdown.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.DeviceIntelligenceBreakdownDevice.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.DeviceIntelligenceBreakdownDeviceBreakdown.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.DeviceIntelligenceBreakdownProperties.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.DeviceIntelligenceBreakdownPropertiesDevice.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.DeviceIntelligenceBreakdownPropertiesGeolocation.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.DeviceIntelligenceBreakdownPropertiesIp.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.DeviceIntelligenceProperties.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.DeviceIntelligenceReport.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.Document.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.DocumentBreakdown.CustomTypeAdapterFactory());
@@ -220,7 +221,7 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.DocumentPropertiesBarcodeInner.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.DocumentPropertiesDocumentClassification.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.DocumentPropertiesDocumentNumbersInner.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.DocumentPropertiesDrivingLicenceInformation.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.DocumentPropertiesDrivingLicenceInformationItem.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.DocumentPropertiesExtractedData.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.DocumentPropertiesNfc.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.DocumentReport.CustomTypeAdapterFactory());

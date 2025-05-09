@@ -19,9 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.onfido.model.DeviceIntelligenceBreakdownPropertiesDevice;
-import com.onfido.model.DeviceIntelligenceBreakdownPropertiesGeolocation;
-import com.onfido.model.DeviceIntelligenceBreakdownPropertiesIp;
+import com.onfido.model.DocumentBreakdownDataComparisonBreakdownIssuingCountry;
 import java.io.IOException;
 import java.util.Arrays;
 
@@ -49,84 +47,82 @@ import java.util.Set;
 import com.onfido.JSON;
 
 /**
- * DeviceIntelligenceBreakdownProperties
- * @deprecated
+ * DeviceIntelligenceBreakdownDeviceBreakdown
  */
-@Deprecated
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
-public class DeviceIntelligenceBreakdownProperties {
-  public static final String SERIALIZED_NAME_DEVICE = "device";
-  @SerializedName(SERIALIZED_NAME_DEVICE)
+public class DeviceIntelligenceBreakdownDeviceBreakdown {
+  public static final String SERIALIZED_NAME_APPLICATION_AUTHENTICITY = "application_authenticity";
+  @SerializedName(SERIALIZED_NAME_APPLICATION_AUTHENTICITY)
   @javax.annotation.Nullable
-  private DeviceIntelligenceBreakdownPropertiesDevice device;
+  private DocumentBreakdownDataComparisonBreakdownIssuingCountry applicationAuthenticity;
 
-  public static final String SERIALIZED_NAME_IP = "ip";
-  @SerializedName(SERIALIZED_NAME_IP)
+  public static final String SERIALIZED_NAME_DEVICE_INTEGRITY = "device_integrity";
+  @SerializedName(SERIALIZED_NAME_DEVICE_INTEGRITY)
   @javax.annotation.Nullable
-  private DeviceIntelligenceBreakdownPropertiesIp ip;
+  private DocumentBreakdownDataComparisonBreakdownIssuingCountry deviceIntegrity;
 
-  public static final String SERIALIZED_NAME_GEOLOCATION = "geolocation";
-  @SerializedName(SERIALIZED_NAME_GEOLOCATION)
+  public static final String SERIALIZED_NAME_DEVICE_REPUTATION = "device_reputation";
+  @SerializedName(SERIALIZED_NAME_DEVICE_REPUTATION)
   @javax.annotation.Nullable
-  private DeviceIntelligenceBreakdownPropertiesGeolocation geolocation;
+  private DocumentBreakdownDataComparisonBreakdownIssuingCountry deviceReputation;
 
-  public DeviceIntelligenceBreakdownProperties() {
+  public DeviceIntelligenceBreakdownDeviceBreakdown() {
   }
 
-  public DeviceIntelligenceBreakdownProperties device(@javax.annotation.Nullable DeviceIntelligenceBreakdownPropertiesDevice device) {
-    this.device = device;
+  public DeviceIntelligenceBreakdownDeviceBreakdown applicationAuthenticity(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry applicationAuthenticity) {
+    this.applicationAuthenticity = applicationAuthenticity;
     return this;
   }
 
   /**
-   * Get device
-   * @return device
+   * Get applicationAuthenticity
+   * @return applicationAuthenticity
    */
   @javax.annotation.Nullable
-  public DeviceIntelligenceBreakdownPropertiesDevice getDevice() {
-    return device;
+  public DocumentBreakdownDataComparisonBreakdownIssuingCountry getApplicationAuthenticity() {
+    return applicationAuthenticity;
   }
 
-  public void setDevice(@javax.annotation.Nullable DeviceIntelligenceBreakdownPropertiesDevice device) {
-    this.device = device;
+  public void setApplicationAuthenticity(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry applicationAuthenticity) {
+    this.applicationAuthenticity = applicationAuthenticity;
   }
 
 
-  public DeviceIntelligenceBreakdownProperties ip(@javax.annotation.Nullable DeviceIntelligenceBreakdownPropertiesIp ip) {
-    this.ip = ip;
+  public DeviceIntelligenceBreakdownDeviceBreakdown deviceIntegrity(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry deviceIntegrity) {
+    this.deviceIntegrity = deviceIntegrity;
     return this;
   }
 
   /**
-   * Get ip
-   * @return ip
+   * Get deviceIntegrity
+   * @return deviceIntegrity
    */
   @javax.annotation.Nullable
-  public DeviceIntelligenceBreakdownPropertiesIp getIp() {
-    return ip;
+  public DocumentBreakdownDataComparisonBreakdownIssuingCountry getDeviceIntegrity() {
+    return deviceIntegrity;
   }
 
-  public void setIp(@javax.annotation.Nullable DeviceIntelligenceBreakdownPropertiesIp ip) {
-    this.ip = ip;
+  public void setDeviceIntegrity(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry deviceIntegrity) {
+    this.deviceIntegrity = deviceIntegrity;
   }
 
 
-  public DeviceIntelligenceBreakdownProperties geolocation(@javax.annotation.Nullable DeviceIntelligenceBreakdownPropertiesGeolocation geolocation) {
-    this.geolocation = geolocation;
+  public DeviceIntelligenceBreakdownDeviceBreakdown deviceReputation(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry deviceReputation) {
+    this.deviceReputation = deviceReputation;
     return this;
   }
 
   /**
-   * Get geolocation
-   * @return geolocation
+   * Get deviceReputation
+   * @return deviceReputation
    */
   @javax.annotation.Nullable
-  public DeviceIntelligenceBreakdownPropertiesGeolocation getGeolocation() {
-    return geolocation;
+  public DocumentBreakdownDataComparisonBreakdownIssuingCountry getDeviceReputation() {
+    return deviceReputation;
   }
 
-  public void setGeolocation(@javax.annotation.Nullable DeviceIntelligenceBreakdownPropertiesGeolocation geolocation) {
-    this.geolocation = geolocation;
+  public void setDeviceReputation(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry deviceReputation) {
+    this.deviceReputation = deviceReputation;
   }
 
   /**
@@ -142,9 +138,9 @@ public class DeviceIntelligenceBreakdownProperties {
    *
    * @param key name of the property
    * @param value value of the property
-   * @return the DeviceIntelligenceBreakdownProperties instance itself
+   * @return the DeviceIntelligenceBreakdownDeviceBreakdown instance itself
    */
-  public DeviceIntelligenceBreakdownProperties putAdditionalProperty(String key, Object value) {
+  public DeviceIntelligenceBreakdownDeviceBreakdown putAdditionalProperty(String key, Object value) {
     if (this.additionalProperties == null) {
         this.additionalProperties = new HashMap<String, Object>();
     }
@@ -183,25 +179,25 @@ public class DeviceIntelligenceBreakdownProperties {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    DeviceIntelligenceBreakdownProperties deviceIntelligenceBreakdownProperties = (DeviceIntelligenceBreakdownProperties) o;
-    return Objects.equals(this.device, deviceIntelligenceBreakdownProperties.device) &&
-        Objects.equals(this.ip, deviceIntelligenceBreakdownProperties.ip) &&
-        Objects.equals(this.geolocation, deviceIntelligenceBreakdownProperties.geolocation)&&
-        Objects.equals(this.additionalProperties, deviceIntelligenceBreakdownProperties.additionalProperties);
+    DeviceIntelligenceBreakdownDeviceBreakdown deviceIntelligenceBreakdownDeviceBreakdown = (DeviceIntelligenceBreakdownDeviceBreakdown) o;
+    return Objects.equals(this.applicationAuthenticity, deviceIntelligenceBreakdownDeviceBreakdown.applicationAuthenticity) &&
+        Objects.equals(this.deviceIntegrity, deviceIntelligenceBreakdownDeviceBreakdown.deviceIntegrity) &&
+        Objects.equals(this.deviceReputation, deviceIntelligenceBreakdownDeviceBreakdown.deviceReputation)&&
+        Objects.equals(this.additionalProperties, deviceIntelligenceBreakdownDeviceBreakdown.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(device, ip, geolocation, additionalProperties);
+    return Objects.hash(applicationAuthenticity, deviceIntegrity, deviceReputation, additionalProperties);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class DeviceIntelligenceBreakdownProperties {\n");
-    sb.append("    device: ").append(toIndentedString(device)).append("\n");
-    sb.append("    ip: ").append(toIndentedString(ip)).append("\n");
-    sb.append("    geolocation: ").append(toIndentedString(geolocation)).append("\n");
+    sb.append("class DeviceIntelligenceBreakdownDeviceBreakdown {\n");
+    sb.append("    applicationAuthenticity: ").append(toIndentedString(applicationAuthenticity)).append("\n");
+    sb.append("    deviceIntegrity: ").append(toIndentedString(deviceIntegrity)).append("\n");
+    sb.append("    deviceReputation: ").append(toIndentedString(deviceReputation)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -225,9 +221,9 @@ public class DeviceIntelligenceBreakdownProperties {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("device");
-    openapiFields.add("ip");
-    openapiFields.add("geolocation");
+    openapiFields.add("application_authenticity");
+    openapiFields.add("device_integrity");
+    openapiFields.add("device_reputation");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -237,26 +233,26 @@ public class DeviceIntelligenceBreakdownProperties {
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to DeviceIntelligenceBreakdownProperties
+   * @throws IOException if the JSON Element is invalid with respect to DeviceIntelligenceBreakdownDeviceBreakdown
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!DeviceIntelligenceBreakdownProperties.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in DeviceIntelligenceBreakdownProperties is not found in the empty JSON string", DeviceIntelligenceBreakdownProperties.openapiRequiredFields.toString()));
+        if (!DeviceIntelligenceBreakdownDeviceBreakdown.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in DeviceIntelligenceBreakdownDeviceBreakdown is not found in the empty JSON string", DeviceIntelligenceBreakdownDeviceBreakdown.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // validate the optional field `device`
-      if (jsonObj.get("device") != null && !jsonObj.get("device").isJsonNull()) {
-        DeviceIntelligenceBreakdownPropertiesDevice.validateJsonElement(jsonObj.get("device"));
+      // validate the optional field `application_authenticity`
+      if (jsonObj.get("application_authenticity") != null && !jsonObj.get("application_authenticity").isJsonNull()) {
+        DocumentBreakdownDataComparisonBreakdownIssuingCountry.validateJsonElement(jsonObj.get("application_authenticity"));
       }
-      // validate the optional field `ip`
-      if (jsonObj.get("ip") != null && !jsonObj.get("ip").isJsonNull()) {
-        DeviceIntelligenceBreakdownPropertiesIp.validateJsonElement(jsonObj.get("ip"));
+      // validate the optional field `device_integrity`
+      if (jsonObj.get("device_integrity") != null && !jsonObj.get("device_integrity").isJsonNull()) {
+        DocumentBreakdownDataComparisonBreakdownIssuingCountry.validateJsonElement(jsonObj.get("device_integrity"));
       }
-      // validate the optional field `geolocation`
-      if (jsonObj.get("geolocation") != null && !jsonObj.get("geolocation").isJsonNull()) {
-        DeviceIntelligenceBreakdownPropertiesGeolocation.validateJsonElement(jsonObj.get("geolocation"));
+      // validate the optional field `device_reputation`
+      if (jsonObj.get("device_reputation") != null && !jsonObj.get("device_reputation").isJsonNull()) {
+        DocumentBreakdownDataComparisonBreakdownIssuingCountry.validateJsonElement(jsonObj.get("device_reputation"));
       }
   }
 
@@ -264,16 +260,16 @@ public class DeviceIntelligenceBreakdownProperties {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!DeviceIntelligenceBreakdownProperties.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'DeviceIntelligenceBreakdownProperties' and its subtypes
+       if (!DeviceIntelligenceBreakdownDeviceBreakdown.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'DeviceIntelligenceBreakdownDeviceBreakdown' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<DeviceIntelligenceBreakdownProperties> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(DeviceIntelligenceBreakdownProperties.class));
+       final TypeAdapter<DeviceIntelligenceBreakdownDeviceBreakdown> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(DeviceIntelligenceBreakdownDeviceBreakdown.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<DeviceIntelligenceBreakdownProperties>() {
+       return (TypeAdapter<T>) new TypeAdapter<DeviceIntelligenceBreakdownDeviceBreakdown>() {
            @Override
-           public void write(JsonWriter out, DeviceIntelligenceBreakdownProperties value) throws IOException {
+           public void write(JsonWriter out, DeviceIntelligenceBreakdownDeviceBreakdown value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              obj.remove("additionalProperties");
              // serialize additional properties
@@ -301,12 +297,12 @@ public class DeviceIntelligenceBreakdownProperties {
            }
 
            @Override
-           public DeviceIntelligenceBreakdownProperties read(JsonReader in) throws IOException {
+           public DeviceIntelligenceBreakdownDeviceBreakdown read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
-             DeviceIntelligenceBreakdownProperties instance = thisAdapter.fromJsonTree(jsonObj);
+             DeviceIntelligenceBreakdownDeviceBreakdown instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
                if (!openapiFields.contains(entry.getKey())) {
                  if (entry.getValue().isJsonPrimitive()) { // primitive type
@@ -333,18 +329,18 @@ public class DeviceIntelligenceBreakdownProperties {
   }
 
   /**
-   * Create an instance of DeviceIntelligenceBreakdownProperties given an JSON string
+   * Create an instance of DeviceIntelligenceBreakdownDeviceBreakdown given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of DeviceIntelligenceBreakdownProperties
-   * @throws IOException if the JSON string is invalid with respect to DeviceIntelligenceBreakdownProperties
+   * @return An instance of DeviceIntelligenceBreakdownDeviceBreakdown
+   * @throws IOException if the JSON string is invalid with respect to DeviceIntelligenceBreakdownDeviceBreakdown
    */
-  public static DeviceIntelligenceBreakdownProperties fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, DeviceIntelligenceBreakdownProperties.class);
+  public static DeviceIntelligenceBreakdownDeviceBreakdown fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, DeviceIntelligenceBreakdownDeviceBreakdown.class);
   }
 
   /**
-   * Convert an instance of DeviceIntelligenceBreakdownProperties to an JSON string
+   * Convert an instance of DeviceIntelligenceBreakdownDeviceBreakdown to an JSON string
    *
    * @return JSON string
    */

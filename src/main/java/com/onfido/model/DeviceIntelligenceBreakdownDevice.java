@@ -19,7 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.onfido.model.DeviceIntelligenceBreakdownBreakdownDeviceBreakdown;
+import com.onfido.model.DeviceIntelligenceBreakdownDeviceBreakdown;
 import java.io.IOException;
 import java.util.Arrays;
 
@@ -50,16 +50,16 @@ import com.onfido.JSON;
  * Asserts whether the device used to upload the media is trustworthy, i.e. it is a real, physical device.
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
-public class DeviceIntelligenceBreakdownBreakdownDevice {
+public class DeviceIntelligenceBreakdownDevice {
   public static final String SERIALIZED_NAME_BREAKDOWN = "breakdown";
   @SerializedName(SERIALIZED_NAME_BREAKDOWN)
   @javax.annotation.Nullable
-  private DeviceIntelligenceBreakdownBreakdownDeviceBreakdown breakdown;
+  private DeviceIntelligenceBreakdownDeviceBreakdown breakdown;
 
-  public DeviceIntelligenceBreakdownBreakdownDevice() {
+  public DeviceIntelligenceBreakdownDevice() {
   }
 
-  public DeviceIntelligenceBreakdownBreakdownDevice breakdown(@javax.annotation.Nullable DeviceIntelligenceBreakdownBreakdownDeviceBreakdown breakdown) {
+  public DeviceIntelligenceBreakdownDevice breakdown(@javax.annotation.Nullable DeviceIntelligenceBreakdownDeviceBreakdown breakdown) {
     this.breakdown = breakdown;
     return this;
   }
@@ -69,11 +69,11 @@ public class DeviceIntelligenceBreakdownBreakdownDevice {
    * @return breakdown
    */
   @javax.annotation.Nullable
-  public DeviceIntelligenceBreakdownBreakdownDeviceBreakdown getBreakdown() {
+  public DeviceIntelligenceBreakdownDeviceBreakdown getBreakdown() {
     return breakdown;
   }
 
-  public void setBreakdown(@javax.annotation.Nullable DeviceIntelligenceBreakdownBreakdownDeviceBreakdown breakdown) {
+  public void setBreakdown(@javax.annotation.Nullable DeviceIntelligenceBreakdownDeviceBreakdown breakdown) {
     this.breakdown = breakdown;
   }
 
@@ -90,9 +90,9 @@ public class DeviceIntelligenceBreakdownBreakdownDevice {
    *
    * @param key name of the property
    * @param value value of the property
-   * @return the DeviceIntelligenceBreakdownBreakdownDevice instance itself
+   * @return the DeviceIntelligenceBreakdownDevice instance itself
    */
-  public DeviceIntelligenceBreakdownBreakdownDevice putAdditionalProperty(String key, Object value) {
+  public DeviceIntelligenceBreakdownDevice putAdditionalProperty(String key, Object value) {
     if (this.additionalProperties == null) {
         this.additionalProperties = new HashMap<String, Object>();
     }
@@ -131,9 +131,9 @@ public class DeviceIntelligenceBreakdownBreakdownDevice {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    DeviceIntelligenceBreakdownBreakdownDevice deviceIntelligenceBreakdownBreakdownDevice = (DeviceIntelligenceBreakdownBreakdownDevice) o;
-    return Objects.equals(this.breakdown, deviceIntelligenceBreakdownBreakdownDevice.breakdown)&&
-        Objects.equals(this.additionalProperties, deviceIntelligenceBreakdownBreakdownDevice.additionalProperties);
+    DeviceIntelligenceBreakdownDevice deviceIntelligenceBreakdownDevice = (DeviceIntelligenceBreakdownDevice) o;
+    return Objects.equals(this.breakdown, deviceIntelligenceBreakdownDevice.breakdown)&&
+        Objects.equals(this.additionalProperties, deviceIntelligenceBreakdownDevice.additionalProperties);
   }
 
   @Override
@@ -144,7 +144,7 @@ public class DeviceIntelligenceBreakdownBreakdownDevice {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class DeviceIntelligenceBreakdownBreakdownDevice {\n");
+    sb.append("class DeviceIntelligenceBreakdownDevice {\n");
     sb.append("    breakdown: ").append(toIndentedString(breakdown)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
@@ -179,18 +179,18 @@ public class DeviceIntelligenceBreakdownBreakdownDevice {
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to DeviceIntelligenceBreakdownBreakdownDevice
+   * @throws IOException if the JSON Element is invalid with respect to DeviceIntelligenceBreakdownDevice
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!DeviceIntelligenceBreakdownBreakdownDevice.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in DeviceIntelligenceBreakdownBreakdownDevice is not found in the empty JSON string", DeviceIntelligenceBreakdownBreakdownDevice.openapiRequiredFields.toString()));
+        if (!DeviceIntelligenceBreakdownDevice.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in DeviceIntelligenceBreakdownDevice is not found in the empty JSON string", DeviceIntelligenceBreakdownDevice.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       // validate the optional field `breakdown`
       if (jsonObj.get("breakdown") != null && !jsonObj.get("breakdown").isJsonNull()) {
-        DeviceIntelligenceBreakdownBreakdownDeviceBreakdown.validateJsonElement(jsonObj.get("breakdown"));
+        DeviceIntelligenceBreakdownDeviceBreakdown.validateJsonElement(jsonObj.get("breakdown"));
       }
   }
 
@@ -198,16 +198,16 @@ public class DeviceIntelligenceBreakdownBreakdownDevice {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!DeviceIntelligenceBreakdownBreakdownDevice.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'DeviceIntelligenceBreakdownBreakdownDevice' and its subtypes
+       if (!DeviceIntelligenceBreakdownDevice.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'DeviceIntelligenceBreakdownDevice' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<DeviceIntelligenceBreakdownBreakdownDevice> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(DeviceIntelligenceBreakdownBreakdownDevice.class));
+       final TypeAdapter<DeviceIntelligenceBreakdownDevice> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(DeviceIntelligenceBreakdownDevice.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<DeviceIntelligenceBreakdownBreakdownDevice>() {
+       return (TypeAdapter<T>) new TypeAdapter<DeviceIntelligenceBreakdownDevice>() {
            @Override
-           public void write(JsonWriter out, DeviceIntelligenceBreakdownBreakdownDevice value) throws IOException {
+           public void write(JsonWriter out, DeviceIntelligenceBreakdownDevice value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              obj.remove("additionalProperties");
              // serialize additional properties
@@ -235,12 +235,12 @@ public class DeviceIntelligenceBreakdownBreakdownDevice {
            }
 
            @Override
-           public DeviceIntelligenceBreakdownBreakdownDevice read(JsonReader in) throws IOException {
+           public DeviceIntelligenceBreakdownDevice read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
-             DeviceIntelligenceBreakdownBreakdownDevice instance = thisAdapter.fromJsonTree(jsonObj);
+             DeviceIntelligenceBreakdownDevice instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
                if (!openapiFields.contains(entry.getKey())) {
                  if (entry.getValue().isJsonPrimitive()) { // primitive type
@@ -267,18 +267,18 @@ public class DeviceIntelligenceBreakdownBreakdownDevice {
   }
 
   /**
-   * Create an instance of DeviceIntelligenceBreakdownBreakdownDevice given an JSON string
+   * Create an instance of DeviceIntelligenceBreakdownDevice given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of DeviceIntelligenceBreakdownBreakdownDevice
-   * @throws IOException if the JSON string is invalid with respect to DeviceIntelligenceBreakdownBreakdownDevice
+   * @return An instance of DeviceIntelligenceBreakdownDevice
+   * @throws IOException if the JSON string is invalid with respect to DeviceIntelligenceBreakdownDevice
    */
-  public static DeviceIntelligenceBreakdownBreakdownDevice fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, DeviceIntelligenceBreakdownBreakdownDevice.class);
+  public static DeviceIntelligenceBreakdownDevice fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, DeviceIntelligenceBreakdownDevice.class);
   }
 
   /**
-   * Convert an instance of DeviceIntelligenceBreakdownBreakdownDevice to an JSON string
+   * Convert an instance of DeviceIntelligenceBreakdownDevice to an JSON string
    *
    * @return JSON string
    */

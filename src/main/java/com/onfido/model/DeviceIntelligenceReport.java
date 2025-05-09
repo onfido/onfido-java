@@ -20,6 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.onfido.model.DeviceIntelligenceBreakdown;
+import com.onfido.model.DeviceIntelligenceProperties;
 import com.onfido.model.ReportName;
 import com.onfido.model.ReportResult;
 import com.onfido.model.ReportStatus;
@@ -101,6 +102,11 @@ public class DeviceIntelligenceReport {
   @SerializedName(SERIALIZED_NAME_BREAKDOWN)
   @javax.annotation.Nullable
   private DeviceIntelligenceBreakdown breakdown;
+
+  public static final String SERIALIZED_NAME_PROPERTIES = "properties";
+  @SerializedName(SERIALIZED_NAME_PROPERTIES)
+  @javax.annotation.Nullable
+  private DeviceIntelligenceProperties properties;
 
   public DeviceIntelligenceReport() {
   }
@@ -275,6 +281,25 @@ public class DeviceIntelligenceReport {
     this.breakdown = breakdown;
   }
 
+
+  public DeviceIntelligenceReport properties(@javax.annotation.Nullable DeviceIntelligenceProperties properties) {
+    this.properties = properties;
+    return this;
+  }
+
+  /**
+   * Get properties
+   * @return properties
+   */
+  @javax.annotation.Nullable
+  public DeviceIntelligenceProperties getProperties() {
+    return properties;
+  }
+
+  public void setProperties(@javax.annotation.Nullable DeviceIntelligenceProperties properties) {
+    this.properties = properties;
+  }
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -338,13 +363,14 @@ public class DeviceIntelligenceReport {
         Objects.equals(this.subResult, deviceIntelligenceReport.subResult) &&
         Objects.equals(this.checkId, deviceIntelligenceReport.checkId) &&
         Objects.equals(this.name, deviceIntelligenceReport.name) &&
-        Objects.equals(this.breakdown, deviceIntelligenceReport.breakdown)&&
+        Objects.equals(this.breakdown, deviceIntelligenceReport.breakdown) &&
+        Objects.equals(this.properties, deviceIntelligenceReport.properties)&&
         Objects.equals(this.additionalProperties, deviceIntelligenceReport.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, createdAt, href, status, result, subResult, checkId, name, breakdown, additionalProperties);
+    return Objects.hash(id, createdAt, href, status, result, subResult, checkId, name, breakdown, properties, additionalProperties);
   }
 
   @Override
@@ -360,6 +386,7 @@ public class DeviceIntelligenceReport {
     sb.append("    checkId: ").append(toIndentedString(checkId)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    breakdown: ").append(toIndentedString(breakdown)).append("\n");
+    sb.append("    properties: ").append(toIndentedString(properties)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -392,6 +419,7 @@ public class DeviceIntelligenceReport {
     openapiFields.add("check_id");
     openapiFields.add("name");
     openapiFields.add("breakdown");
+    openapiFields.add("properties");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -445,6 +473,10 @@ public class DeviceIntelligenceReport {
       // validate the optional field `breakdown`
       if (jsonObj.get("breakdown") != null && !jsonObj.get("breakdown").isJsonNull()) {
         DeviceIntelligenceBreakdown.validateJsonElement(jsonObj.get("breakdown"));
+      }
+      // validate the optional field `properties`
+      if (jsonObj.get("properties") != null && !jsonObj.get("properties").isJsonNull()) {
+        DeviceIntelligenceProperties.validateJsonElement(jsonObj.get("properties"));
       }
   }
 

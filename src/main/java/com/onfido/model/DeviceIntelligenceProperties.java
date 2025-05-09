@@ -19,8 +19,10 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.onfido.model.DeviceIntelligenceBreakdownPropertiesDevice;
+import com.onfido.model.DeviceIntelligenceBreakdownPropertiesGeolocation;
+import com.onfido.model.DeviceIntelligenceBreakdownPropertiesIp;
 import java.io.IOException;
-import java.time.LocalDate;
 import java.util.Arrays;
 
 import com.google.gson.Gson;
@@ -47,106 +49,82 @@ import java.util.Set;
 import com.onfido.JSON;
 
 /**
- * DocumentPropertiesDrivingLicenceInformation
+ * DeviceIntelligenceProperties
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
-public class DocumentPropertiesDrivingLicenceInformation {
-  public static final String SERIALIZED_NAME_CATEGORY = "category";
-  @SerializedName(SERIALIZED_NAME_CATEGORY)
+public class DeviceIntelligenceProperties {
+  public static final String SERIALIZED_NAME_DEVICE = "device";
+  @SerializedName(SERIALIZED_NAME_DEVICE)
   @javax.annotation.Nullable
-  private String category;
+  private DeviceIntelligenceBreakdownPropertiesDevice device;
 
-  public static final String SERIALIZED_NAME_OBTAINMENT_DATE = "obtainment_date";
-  @SerializedName(SERIALIZED_NAME_OBTAINMENT_DATE)
+  public static final String SERIALIZED_NAME_IP = "ip";
+  @SerializedName(SERIALIZED_NAME_IP)
   @javax.annotation.Nullable
-  private LocalDate obtainmentDate;
+  private DeviceIntelligenceBreakdownPropertiesIp ip;
 
-  public static final String SERIALIZED_NAME_EXPIRY_DATE = "expiry_date";
-  @SerializedName(SERIALIZED_NAME_EXPIRY_DATE)
+  public static final String SERIALIZED_NAME_GEOLOCATION = "geolocation";
+  @SerializedName(SERIALIZED_NAME_GEOLOCATION)
   @javax.annotation.Nullable
-  private LocalDate expiryDate;
+  private DeviceIntelligenceBreakdownPropertiesGeolocation geolocation;
 
-  public static final String SERIALIZED_NAME_CODES = "codes";
-  @SerializedName(SERIALIZED_NAME_CODES)
-  @javax.annotation.Nullable
-  private String codes;
-
-  public DocumentPropertiesDrivingLicenceInformation() {
+  public DeviceIntelligenceProperties() {
   }
 
-  public DocumentPropertiesDrivingLicenceInformation category(@javax.annotation.Nullable String category) {
-    this.category = category;
+  public DeviceIntelligenceProperties device(@javax.annotation.Nullable DeviceIntelligenceBreakdownPropertiesDevice device) {
+    this.device = device;
     return this;
   }
 
   /**
-   * Get category
-   * @return category
+   * Get device
+   * @return device
    */
   @javax.annotation.Nullable
-  public String getCategory() {
-    return category;
+  public DeviceIntelligenceBreakdownPropertiesDevice getDevice() {
+    return device;
   }
 
-  public void setCategory(@javax.annotation.Nullable String category) {
-    this.category = category;
+  public void setDevice(@javax.annotation.Nullable DeviceIntelligenceBreakdownPropertiesDevice device) {
+    this.device = device;
   }
 
 
-  public DocumentPropertiesDrivingLicenceInformation obtainmentDate(@javax.annotation.Nullable LocalDate obtainmentDate) {
-    this.obtainmentDate = obtainmentDate;
+  public DeviceIntelligenceProperties ip(@javax.annotation.Nullable DeviceIntelligenceBreakdownPropertiesIp ip) {
+    this.ip = ip;
     return this;
   }
 
   /**
-   * Get obtainmentDate
-   * @return obtainmentDate
+   * Get ip
+   * @return ip
    */
   @javax.annotation.Nullable
-  public LocalDate getObtainmentDate() {
-    return obtainmentDate;
+  public DeviceIntelligenceBreakdownPropertiesIp getIp() {
+    return ip;
   }
 
-  public void setObtainmentDate(@javax.annotation.Nullable LocalDate obtainmentDate) {
-    this.obtainmentDate = obtainmentDate;
+  public void setIp(@javax.annotation.Nullable DeviceIntelligenceBreakdownPropertiesIp ip) {
+    this.ip = ip;
   }
 
 
-  public DocumentPropertiesDrivingLicenceInformation expiryDate(@javax.annotation.Nullable LocalDate expiryDate) {
-    this.expiryDate = expiryDate;
+  public DeviceIntelligenceProperties geolocation(@javax.annotation.Nullable DeviceIntelligenceBreakdownPropertiesGeolocation geolocation) {
+    this.geolocation = geolocation;
     return this;
   }
 
   /**
-   * Get expiryDate
-   * @return expiryDate
+   * Get geolocation
+   * @return geolocation
    */
   @javax.annotation.Nullable
-  public LocalDate getExpiryDate() {
-    return expiryDate;
+  public DeviceIntelligenceBreakdownPropertiesGeolocation getGeolocation() {
+    return geolocation;
   }
 
-  public void setExpiryDate(@javax.annotation.Nullable LocalDate expiryDate) {
-    this.expiryDate = expiryDate;
-  }
-
-
-  public DocumentPropertiesDrivingLicenceInformation codes(@javax.annotation.Nullable String codes) {
-    this.codes = codes;
-    return this;
-  }
-
-  /**
-   * Get codes
-   * @return codes
-   */
-  @javax.annotation.Nullable
-  public String getCodes() {
-    return codes;
-  }
-
-  public void setCodes(@javax.annotation.Nullable String codes) {
-    this.codes = codes;
+  public void setGeolocation(@javax.annotation.Nullable DeviceIntelligenceBreakdownPropertiesGeolocation geolocation) {
+    this.geolocation = geolocation;
   }
 
   /**
@@ -162,9 +140,9 @@ public class DocumentPropertiesDrivingLicenceInformation {
    *
    * @param key name of the property
    * @param value value of the property
-   * @return the DocumentPropertiesDrivingLicenceInformation instance itself
+   * @return the DeviceIntelligenceProperties instance itself
    */
-  public DocumentPropertiesDrivingLicenceInformation putAdditionalProperty(String key, Object value) {
+  public DeviceIntelligenceProperties putAdditionalProperty(String key, Object value) {
     if (this.additionalProperties == null) {
         this.additionalProperties = new HashMap<String, Object>();
     }
@@ -203,27 +181,25 @@ public class DocumentPropertiesDrivingLicenceInformation {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    DocumentPropertiesDrivingLicenceInformation documentPropertiesDrivingLicenceInformation = (DocumentPropertiesDrivingLicenceInformation) o;
-    return Objects.equals(this.category, documentPropertiesDrivingLicenceInformation.category) &&
-        Objects.equals(this.obtainmentDate, documentPropertiesDrivingLicenceInformation.obtainmentDate) &&
-        Objects.equals(this.expiryDate, documentPropertiesDrivingLicenceInformation.expiryDate) &&
-        Objects.equals(this.codes, documentPropertiesDrivingLicenceInformation.codes)&&
-        Objects.equals(this.additionalProperties, documentPropertiesDrivingLicenceInformation.additionalProperties);
+    DeviceIntelligenceProperties deviceIntelligenceProperties = (DeviceIntelligenceProperties) o;
+    return Objects.equals(this.device, deviceIntelligenceProperties.device) &&
+        Objects.equals(this.ip, deviceIntelligenceProperties.ip) &&
+        Objects.equals(this.geolocation, deviceIntelligenceProperties.geolocation)&&
+        Objects.equals(this.additionalProperties, deviceIntelligenceProperties.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(category, obtainmentDate, expiryDate, codes, additionalProperties);
+    return Objects.hash(device, ip, geolocation, additionalProperties);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class DocumentPropertiesDrivingLicenceInformation {\n");
-    sb.append("    category: ").append(toIndentedString(category)).append("\n");
-    sb.append("    obtainmentDate: ").append(toIndentedString(obtainmentDate)).append("\n");
-    sb.append("    expiryDate: ").append(toIndentedString(expiryDate)).append("\n");
-    sb.append("    codes: ").append(toIndentedString(codes)).append("\n");
+    sb.append("class DeviceIntelligenceProperties {\n");
+    sb.append("    device: ").append(toIndentedString(device)).append("\n");
+    sb.append("    ip: ").append(toIndentedString(ip)).append("\n");
+    sb.append("    geolocation: ").append(toIndentedString(geolocation)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -247,10 +223,9 @@ public class DocumentPropertiesDrivingLicenceInformation {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("category");
-    openapiFields.add("obtainment_date");
-    openapiFields.add("expiry_date");
-    openapiFields.add("codes");
+    openapiFields.add("device");
+    openapiFields.add("ip");
+    openapiFields.add("geolocation");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -260,20 +235,26 @@ public class DocumentPropertiesDrivingLicenceInformation {
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to DocumentPropertiesDrivingLicenceInformation
+   * @throws IOException if the JSON Element is invalid with respect to DeviceIntelligenceProperties
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!DocumentPropertiesDrivingLicenceInformation.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in DocumentPropertiesDrivingLicenceInformation is not found in the empty JSON string", DocumentPropertiesDrivingLicenceInformation.openapiRequiredFields.toString()));
+        if (!DeviceIntelligenceProperties.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in DeviceIntelligenceProperties is not found in the empty JSON string", DeviceIntelligenceProperties.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("category") != null && !jsonObj.get("category").isJsonNull()) && !jsonObj.get("category").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `category` to be a primitive type in the JSON string but got `%s`", jsonObj.get("category").toString()));
+      // validate the optional field `device`
+      if (jsonObj.get("device") != null && !jsonObj.get("device").isJsonNull()) {
+        DeviceIntelligenceBreakdownPropertiesDevice.validateJsonElement(jsonObj.get("device"));
       }
-      if ((jsonObj.get("codes") != null && !jsonObj.get("codes").isJsonNull()) && !jsonObj.get("codes").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `codes` to be a primitive type in the JSON string but got `%s`", jsonObj.get("codes").toString()));
+      // validate the optional field `ip`
+      if (jsonObj.get("ip") != null && !jsonObj.get("ip").isJsonNull()) {
+        DeviceIntelligenceBreakdownPropertiesIp.validateJsonElement(jsonObj.get("ip"));
+      }
+      // validate the optional field `geolocation`
+      if (jsonObj.get("geolocation") != null && !jsonObj.get("geolocation").isJsonNull()) {
+        DeviceIntelligenceBreakdownPropertiesGeolocation.validateJsonElement(jsonObj.get("geolocation"));
       }
   }
 
@@ -281,16 +262,16 @@ public class DocumentPropertiesDrivingLicenceInformation {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!DocumentPropertiesDrivingLicenceInformation.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'DocumentPropertiesDrivingLicenceInformation' and its subtypes
+       if (!DeviceIntelligenceProperties.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'DeviceIntelligenceProperties' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<DocumentPropertiesDrivingLicenceInformation> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(DocumentPropertiesDrivingLicenceInformation.class));
+       final TypeAdapter<DeviceIntelligenceProperties> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(DeviceIntelligenceProperties.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<DocumentPropertiesDrivingLicenceInformation>() {
+       return (TypeAdapter<T>) new TypeAdapter<DeviceIntelligenceProperties>() {
            @Override
-           public void write(JsonWriter out, DocumentPropertiesDrivingLicenceInformation value) throws IOException {
+           public void write(JsonWriter out, DeviceIntelligenceProperties value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              obj.remove("additionalProperties");
              // serialize additional properties
@@ -318,12 +299,12 @@ public class DocumentPropertiesDrivingLicenceInformation {
            }
 
            @Override
-           public DocumentPropertiesDrivingLicenceInformation read(JsonReader in) throws IOException {
+           public DeviceIntelligenceProperties read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
-             DocumentPropertiesDrivingLicenceInformation instance = thisAdapter.fromJsonTree(jsonObj);
+             DeviceIntelligenceProperties instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
                if (!openapiFields.contains(entry.getKey())) {
                  if (entry.getValue().isJsonPrimitive()) { // primitive type
@@ -350,18 +331,18 @@ public class DocumentPropertiesDrivingLicenceInformation {
   }
 
   /**
-   * Create an instance of DocumentPropertiesDrivingLicenceInformation given an JSON string
+   * Create an instance of DeviceIntelligenceProperties given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of DocumentPropertiesDrivingLicenceInformation
-   * @throws IOException if the JSON string is invalid with respect to DocumentPropertiesDrivingLicenceInformation
+   * @return An instance of DeviceIntelligenceProperties
+   * @throws IOException if the JSON string is invalid with respect to DeviceIntelligenceProperties
    */
-  public static DocumentPropertiesDrivingLicenceInformation fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, DocumentPropertiesDrivingLicenceInformation.class);
+  public static DeviceIntelligenceProperties fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, DeviceIntelligenceProperties.class);
   }
 
   /**
-   * Convert an instance of DocumentPropertiesDrivingLicenceInformation to an JSON string
+   * Convert an instance of DeviceIntelligenceProperties to an JSON string
    *
    * @return JSON string
    */

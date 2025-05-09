@@ -19,7 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.onfido.model.DeviceIntelligenceBreakdownBreakdownDevice;
+import com.onfido.model.DeviceIntelligenceBreakdownDevice;
 import java.io.IOException;
 import java.util.Arrays;
 
@@ -48,18 +48,20 @@ import com.onfido.JSON;
 
 /**
  * DeviceIntelligenceBreakdownBreakdown
+ * @deprecated
  */
+@Deprecated
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class DeviceIntelligenceBreakdownBreakdown {
   public static final String SERIALIZED_NAME_DEVICE = "device";
   @SerializedName(SERIALIZED_NAME_DEVICE)
   @javax.annotation.Nullable
-  private DeviceIntelligenceBreakdownBreakdownDevice device;
+  private DeviceIntelligenceBreakdownDevice device;
 
   public DeviceIntelligenceBreakdownBreakdown() {
   }
 
-  public DeviceIntelligenceBreakdownBreakdown device(@javax.annotation.Nullable DeviceIntelligenceBreakdownBreakdownDevice device) {
+  public DeviceIntelligenceBreakdownBreakdown device(@javax.annotation.Nullable DeviceIntelligenceBreakdownDevice device) {
     this.device = device;
     return this;
   }
@@ -69,11 +71,11 @@ public class DeviceIntelligenceBreakdownBreakdown {
    * @return device
    */
   @javax.annotation.Nullable
-  public DeviceIntelligenceBreakdownBreakdownDevice getDevice() {
+  public DeviceIntelligenceBreakdownDevice getDevice() {
     return device;
   }
 
-  public void setDevice(@javax.annotation.Nullable DeviceIntelligenceBreakdownBreakdownDevice device) {
+  public void setDevice(@javax.annotation.Nullable DeviceIntelligenceBreakdownDevice device) {
     this.device = device;
   }
 
@@ -190,7 +192,7 @@ public class DeviceIntelligenceBreakdownBreakdown {
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       // validate the optional field `device`
       if (jsonObj.get("device") != null && !jsonObj.get("device").isJsonNull()) {
-        DeviceIntelligenceBreakdownBreakdownDevice.validateJsonElement(jsonObj.get("device"));
+        DeviceIntelligenceBreakdownDevice.validateJsonElement(jsonObj.get("device"));
       }
   }
 

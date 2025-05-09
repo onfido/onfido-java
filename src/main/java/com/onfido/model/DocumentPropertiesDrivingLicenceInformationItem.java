@@ -19,8 +19,8 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.onfido.model.DocumentBreakdownDataComparisonBreakdownIssuingCountry;
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.Arrays;
 
 import com.google.gson.Gson;
@@ -47,82 +47,106 @@ import java.util.Set;
 import com.onfido.JSON;
 
 /**
- * DeviceIntelligenceBreakdownBreakdownDeviceBreakdown
+ * DocumentPropertiesDrivingLicenceInformationItem
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
-public class DeviceIntelligenceBreakdownBreakdownDeviceBreakdown {
-  public static final String SERIALIZED_NAME_APPLICATION_AUTHENTICITY = "application_authenticity";
-  @SerializedName(SERIALIZED_NAME_APPLICATION_AUTHENTICITY)
+public class DocumentPropertiesDrivingLicenceInformationItem {
+  public static final String SERIALIZED_NAME_CATEGORY = "category";
+  @SerializedName(SERIALIZED_NAME_CATEGORY)
   @javax.annotation.Nullable
-  private DocumentBreakdownDataComparisonBreakdownIssuingCountry applicationAuthenticity;
+  private String category;
 
-  public static final String SERIALIZED_NAME_DEVICE_INTEGRITY = "device_integrity";
-  @SerializedName(SERIALIZED_NAME_DEVICE_INTEGRITY)
+  public static final String SERIALIZED_NAME_OBTAINMENT_DATE = "obtainment_date";
+  @SerializedName(SERIALIZED_NAME_OBTAINMENT_DATE)
   @javax.annotation.Nullable
-  private DocumentBreakdownDataComparisonBreakdownIssuingCountry deviceIntegrity;
+  private LocalDate obtainmentDate;
 
-  public static final String SERIALIZED_NAME_DEVICE_REPUTATION = "device_reputation";
-  @SerializedName(SERIALIZED_NAME_DEVICE_REPUTATION)
+  public static final String SERIALIZED_NAME_EXPIRY_DATE = "expiry_date";
+  @SerializedName(SERIALIZED_NAME_EXPIRY_DATE)
   @javax.annotation.Nullable
-  private DocumentBreakdownDataComparisonBreakdownIssuingCountry deviceReputation;
+  private LocalDate expiryDate;
 
-  public DeviceIntelligenceBreakdownBreakdownDeviceBreakdown() {
+  public static final String SERIALIZED_NAME_CODES = "codes";
+  @SerializedName(SERIALIZED_NAME_CODES)
+  @javax.annotation.Nullable
+  private String codes;
+
+  public DocumentPropertiesDrivingLicenceInformationItem() {
   }
 
-  public DeviceIntelligenceBreakdownBreakdownDeviceBreakdown applicationAuthenticity(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry applicationAuthenticity) {
-    this.applicationAuthenticity = applicationAuthenticity;
+  public DocumentPropertiesDrivingLicenceInformationItem category(@javax.annotation.Nullable String category) {
+    this.category = category;
     return this;
   }
 
   /**
-   * Get applicationAuthenticity
-   * @return applicationAuthenticity
+   * Get category
+   * @return category
    */
   @javax.annotation.Nullable
-  public DocumentBreakdownDataComparisonBreakdownIssuingCountry getApplicationAuthenticity() {
-    return applicationAuthenticity;
+  public String getCategory() {
+    return category;
   }
 
-  public void setApplicationAuthenticity(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry applicationAuthenticity) {
-    this.applicationAuthenticity = applicationAuthenticity;
+  public void setCategory(@javax.annotation.Nullable String category) {
+    this.category = category;
   }
 
 
-  public DeviceIntelligenceBreakdownBreakdownDeviceBreakdown deviceIntegrity(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry deviceIntegrity) {
-    this.deviceIntegrity = deviceIntegrity;
+  public DocumentPropertiesDrivingLicenceInformationItem obtainmentDate(@javax.annotation.Nullable LocalDate obtainmentDate) {
+    this.obtainmentDate = obtainmentDate;
     return this;
   }
 
   /**
-   * Get deviceIntegrity
-   * @return deviceIntegrity
+   * Get obtainmentDate
+   * @return obtainmentDate
    */
   @javax.annotation.Nullable
-  public DocumentBreakdownDataComparisonBreakdownIssuingCountry getDeviceIntegrity() {
-    return deviceIntegrity;
+  public LocalDate getObtainmentDate() {
+    return obtainmentDate;
   }
 
-  public void setDeviceIntegrity(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry deviceIntegrity) {
-    this.deviceIntegrity = deviceIntegrity;
+  public void setObtainmentDate(@javax.annotation.Nullable LocalDate obtainmentDate) {
+    this.obtainmentDate = obtainmentDate;
   }
 
 
-  public DeviceIntelligenceBreakdownBreakdownDeviceBreakdown deviceReputation(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry deviceReputation) {
-    this.deviceReputation = deviceReputation;
+  public DocumentPropertiesDrivingLicenceInformationItem expiryDate(@javax.annotation.Nullable LocalDate expiryDate) {
+    this.expiryDate = expiryDate;
     return this;
   }
 
   /**
-   * Get deviceReputation
-   * @return deviceReputation
+   * Get expiryDate
+   * @return expiryDate
    */
   @javax.annotation.Nullable
-  public DocumentBreakdownDataComparisonBreakdownIssuingCountry getDeviceReputation() {
-    return deviceReputation;
+  public LocalDate getExpiryDate() {
+    return expiryDate;
   }
 
-  public void setDeviceReputation(@javax.annotation.Nullable DocumentBreakdownDataComparisonBreakdownIssuingCountry deviceReputation) {
-    this.deviceReputation = deviceReputation;
+  public void setExpiryDate(@javax.annotation.Nullable LocalDate expiryDate) {
+    this.expiryDate = expiryDate;
+  }
+
+
+  public DocumentPropertiesDrivingLicenceInformationItem codes(@javax.annotation.Nullable String codes) {
+    this.codes = codes;
+    return this;
+  }
+
+  /**
+   * Get codes
+   * @return codes
+   */
+  @javax.annotation.Nullable
+  public String getCodes() {
+    return codes;
+  }
+
+  public void setCodes(@javax.annotation.Nullable String codes) {
+    this.codes = codes;
   }
 
   /**
@@ -138,9 +162,9 @@ public class DeviceIntelligenceBreakdownBreakdownDeviceBreakdown {
    *
    * @param key name of the property
    * @param value value of the property
-   * @return the DeviceIntelligenceBreakdownBreakdownDeviceBreakdown instance itself
+   * @return the DocumentPropertiesDrivingLicenceInformationItem instance itself
    */
-  public DeviceIntelligenceBreakdownBreakdownDeviceBreakdown putAdditionalProperty(String key, Object value) {
+  public DocumentPropertiesDrivingLicenceInformationItem putAdditionalProperty(String key, Object value) {
     if (this.additionalProperties == null) {
         this.additionalProperties = new HashMap<String, Object>();
     }
@@ -179,25 +203,27 @@ public class DeviceIntelligenceBreakdownBreakdownDeviceBreakdown {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    DeviceIntelligenceBreakdownBreakdownDeviceBreakdown deviceIntelligenceBreakdownBreakdownDeviceBreakdown = (DeviceIntelligenceBreakdownBreakdownDeviceBreakdown) o;
-    return Objects.equals(this.applicationAuthenticity, deviceIntelligenceBreakdownBreakdownDeviceBreakdown.applicationAuthenticity) &&
-        Objects.equals(this.deviceIntegrity, deviceIntelligenceBreakdownBreakdownDeviceBreakdown.deviceIntegrity) &&
-        Objects.equals(this.deviceReputation, deviceIntelligenceBreakdownBreakdownDeviceBreakdown.deviceReputation)&&
-        Objects.equals(this.additionalProperties, deviceIntelligenceBreakdownBreakdownDeviceBreakdown.additionalProperties);
+    DocumentPropertiesDrivingLicenceInformationItem documentPropertiesDrivingLicenceInformationItem = (DocumentPropertiesDrivingLicenceInformationItem) o;
+    return Objects.equals(this.category, documentPropertiesDrivingLicenceInformationItem.category) &&
+        Objects.equals(this.obtainmentDate, documentPropertiesDrivingLicenceInformationItem.obtainmentDate) &&
+        Objects.equals(this.expiryDate, documentPropertiesDrivingLicenceInformationItem.expiryDate) &&
+        Objects.equals(this.codes, documentPropertiesDrivingLicenceInformationItem.codes)&&
+        Objects.equals(this.additionalProperties, documentPropertiesDrivingLicenceInformationItem.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(applicationAuthenticity, deviceIntegrity, deviceReputation, additionalProperties);
+    return Objects.hash(category, obtainmentDate, expiryDate, codes, additionalProperties);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class DeviceIntelligenceBreakdownBreakdownDeviceBreakdown {\n");
-    sb.append("    applicationAuthenticity: ").append(toIndentedString(applicationAuthenticity)).append("\n");
-    sb.append("    deviceIntegrity: ").append(toIndentedString(deviceIntegrity)).append("\n");
-    sb.append("    deviceReputation: ").append(toIndentedString(deviceReputation)).append("\n");
+    sb.append("class DocumentPropertiesDrivingLicenceInformationItem {\n");
+    sb.append("    category: ").append(toIndentedString(category)).append("\n");
+    sb.append("    obtainmentDate: ").append(toIndentedString(obtainmentDate)).append("\n");
+    sb.append("    expiryDate: ").append(toIndentedString(expiryDate)).append("\n");
+    sb.append("    codes: ").append(toIndentedString(codes)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -221,9 +247,10 @@ public class DeviceIntelligenceBreakdownBreakdownDeviceBreakdown {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("application_authenticity");
-    openapiFields.add("device_integrity");
-    openapiFields.add("device_reputation");
+    openapiFields.add("category");
+    openapiFields.add("obtainment_date");
+    openapiFields.add("expiry_date");
+    openapiFields.add("codes");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -233,26 +260,20 @@ public class DeviceIntelligenceBreakdownBreakdownDeviceBreakdown {
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to DeviceIntelligenceBreakdownBreakdownDeviceBreakdown
+   * @throws IOException if the JSON Element is invalid with respect to DocumentPropertiesDrivingLicenceInformationItem
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!DeviceIntelligenceBreakdownBreakdownDeviceBreakdown.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in DeviceIntelligenceBreakdownBreakdownDeviceBreakdown is not found in the empty JSON string", DeviceIntelligenceBreakdownBreakdownDeviceBreakdown.openapiRequiredFields.toString()));
+        if (!DocumentPropertiesDrivingLicenceInformationItem.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in DocumentPropertiesDrivingLicenceInformationItem is not found in the empty JSON string", DocumentPropertiesDrivingLicenceInformationItem.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // validate the optional field `application_authenticity`
-      if (jsonObj.get("application_authenticity") != null && !jsonObj.get("application_authenticity").isJsonNull()) {
-        DocumentBreakdownDataComparisonBreakdownIssuingCountry.validateJsonElement(jsonObj.get("application_authenticity"));
+      if ((jsonObj.get("category") != null && !jsonObj.get("category").isJsonNull()) && !jsonObj.get("category").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `category` to be a primitive type in the JSON string but got `%s`", jsonObj.get("category").toString()));
       }
-      // validate the optional field `device_integrity`
-      if (jsonObj.get("device_integrity") != null && !jsonObj.get("device_integrity").isJsonNull()) {
-        DocumentBreakdownDataComparisonBreakdownIssuingCountry.validateJsonElement(jsonObj.get("device_integrity"));
-      }
-      // validate the optional field `device_reputation`
-      if (jsonObj.get("device_reputation") != null && !jsonObj.get("device_reputation").isJsonNull()) {
-        DocumentBreakdownDataComparisonBreakdownIssuingCountry.validateJsonElement(jsonObj.get("device_reputation"));
+      if ((jsonObj.get("codes") != null && !jsonObj.get("codes").isJsonNull()) && !jsonObj.get("codes").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `codes` to be a primitive type in the JSON string but got `%s`", jsonObj.get("codes").toString()));
       }
   }
 
@@ -260,16 +281,16 @@ public class DeviceIntelligenceBreakdownBreakdownDeviceBreakdown {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!DeviceIntelligenceBreakdownBreakdownDeviceBreakdown.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'DeviceIntelligenceBreakdownBreakdownDeviceBreakdown' and its subtypes
+       if (!DocumentPropertiesDrivingLicenceInformationItem.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'DocumentPropertiesDrivingLicenceInformationItem' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<DeviceIntelligenceBreakdownBreakdownDeviceBreakdown> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(DeviceIntelligenceBreakdownBreakdownDeviceBreakdown.class));
+       final TypeAdapter<DocumentPropertiesDrivingLicenceInformationItem> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(DocumentPropertiesDrivingLicenceInformationItem.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<DeviceIntelligenceBreakdownBreakdownDeviceBreakdown>() {
+       return (TypeAdapter<T>) new TypeAdapter<DocumentPropertiesDrivingLicenceInformationItem>() {
            @Override
-           public void write(JsonWriter out, DeviceIntelligenceBreakdownBreakdownDeviceBreakdown value) throws IOException {
+           public void write(JsonWriter out, DocumentPropertiesDrivingLicenceInformationItem value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              obj.remove("additionalProperties");
              // serialize additional properties
@@ -297,12 +318,12 @@ public class DeviceIntelligenceBreakdownBreakdownDeviceBreakdown {
            }
 
            @Override
-           public DeviceIntelligenceBreakdownBreakdownDeviceBreakdown read(JsonReader in) throws IOException {
+           public DocumentPropertiesDrivingLicenceInformationItem read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
-             DeviceIntelligenceBreakdownBreakdownDeviceBreakdown instance = thisAdapter.fromJsonTree(jsonObj);
+             DocumentPropertiesDrivingLicenceInformationItem instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
                if (!openapiFields.contains(entry.getKey())) {
                  if (entry.getValue().isJsonPrimitive()) { // primitive type
@@ -329,18 +350,18 @@ public class DeviceIntelligenceBreakdownBreakdownDeviceBreakdown {
   }
 
   /**
-   * Create an instance of DeviceIntelligenceBreakdownBreakdownDeviceBreakdown given an JSON string
+   * Create an instance of DocumentPropertiesDrivingLicenceInformationItem given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of DeviceIntelligenceBreakdownBreakdownDeviceBreakdown
-   * @throws IOException if the JSON string is invalid with respect to DeviceIntelligenceBreakdownBreakdownDeviceBreakdown
+   * @return An instance of DocumentPropertiesDrivingLicenceInformationItem
+   * @throws IOException if the JSON string is invalid with respect to DocumentPropertiesDrivingLicenceInformationItem
    */
-  public static DeviceIntelligenceBreakdownBreakdownDeviceBreakdown fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, DeviceIntelligenceBreakdownBreakdownDeviceBreakdown.class);
+  public static DocumentPropertiesDrivingLicenceInformationItem fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, DocumentPropertiesDrivingLicenceInformationItem.class);
   }
 
   /**
-   * Convert an instance of DeviceIntelligenceBreakdownBreakdownDeviceBreakdown to an JSON string
+   * Convert an instance of DocumentPropertiesDrivingLicenceInformationItem to an JSON string
    *
    * @return JSON string
    */

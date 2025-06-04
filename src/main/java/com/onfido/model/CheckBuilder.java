@@ -19,6 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.onfido.model.ReportConfiguration;
 import com.onfido.model.ReportName;
 import com.onfido.model.UsDrivingLicenceBuilder;
 import java.io.IOException;
@@ -119,6 +120,12 @@ public class CheckBuilder {
   @SerializedName(SERIALIZED_NAME_US_DRIVING_LICENCE)
   @javax.annotation.Nullable
   private UsDrivingLicenceBuilder usDrivingLicence;
+
+  public static final String SERIALIZED_NAME_REPORT_CONFIGURATION = "report_configuration";
+  @Deprecated
+  @SerializedName(SERIALIZED_NAME_REPORT_CONFIGURATION)
+  @javax.annotation.Nullable
+  private ReportConfiguration reportConfiguration;
 
   public CheckBuilder() {
   }
@@ -409,6 +416,29 @@ public class CheckBuilder {
     this.usDrivingLicence = usDrivingLicence;
   }
 
+
+  @Deprecated
+  public CheckBuilder reportConfiguration(@javax.annotation.Nullable ReportConfiguration reportConfiguration) {
+    this.reportConfiguration = reportConfiguration;
+    return this;
+  }
+
+  /**
+   * Get reportConfiguration
+   * @return reportConfiguration
+   * @deprecated
+   */
+  @Deprecated
+  @javax.annotation.Nullable
+  public ReportConfiguration getReportConfiguration() {
+    return reportConfiguration;
+  }
+
+  @Deprecated
+  public void setReportConfiguration(@javax.annotation.Nullable ReportConfiguration reportConfiguration) {
+    this.reportConfiguration = reportConfiguration;
+  }
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -476,13 +506,14 @@ public class CheckBuilder {
         Objects.equals(this.suppressFormEmails, checkBuilder.suppressFormEmails) &&
         Objects.equals(this.subResult, checkBuilder.subResult) &&
         Objects.equals(this.consider, checkBuilder.consider) &&
-        Objects.equals(this.usDrivingLicence, checkBuilder.usDrivingLicence)&&
+        Objects.equals(this.usDrivingLicence, checkBuilder.usDrivingLicence) &&
+        Objects.equals(this.reportConfiguration, checkBuilder.reportConfiguration)&&
         Objects.equals(this.additionalProperties, checkBuilder.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(webhookIds, applicantId, applicantProvidesData, tags, redirectUri, privacyNoticesReadConsentGiven, reportNames, documentIds, asynchronous, suppressFormEmails, subResult, consider, usDrivingLicence, additionalProperties);
+    return Objects.hash(webhookIds, applicantId, applicantProvidesData, tags, redirectUri, privacyNoticesReadConsentGiven, reportNames, documentIds, asynchronous, suppressFormEmails, subResult, consider, usDrivingLicence, reportConfiguration, additionalProperties);
   }
 
   @Override
@@ -502,6 +533,7 @@ public class CheckBuilder {
     sb.append("    subResult: ").append(toIndentedString(subResult)).append("\n");
     sb.append("    consider: ").append(toIndentedString(consider)).append("\n");
     sb.append("    usDrivingLicence: ").append(toIndentedString(usDrivingLicence)).append("\n");
+    sb.append("    reportConfiguration: ").append(toIndentedString(reportConfiguration)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -538,6 +570,7 @@ public class CheckBuilder {
     openapiFields.add("sub_result");
     openapiFields.add("consider");
     openapiFields.add("us_driving_licence");
+    openapiFields.add("report_configuration");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -599,6 +632,10 @@ public class CheckBuilder {
       // validate the optional field `us_driving_licence`
       if (jsonObj.get("us_driving_licence") != null && !jsonObj.get("us_driving_licence").isJsonNull()) {
         UsDrivingLicenceBuilder.validateJsonElement(jsonObj.get("us_driving_licence"));
+      }
+      // validate the optional field `report_configuration`
+      if (jsonObj.get("report_configuration") != null && !jsonObj.get("report_configuration").isJsonNull()) {
+        ReportConfiguration.validateJsonElement(jsonObj.get("report_configuration"));
       }
   }
 

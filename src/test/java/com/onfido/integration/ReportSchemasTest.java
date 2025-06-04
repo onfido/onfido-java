@@ -3,6 +3,7 @@ package com.onfido.integration;
 import static com.onfido.model.ReportStatus.COMPLETE;
 
 import com.onfido.model.*;
+import com.onfido.model.ReportConfigurationFacialSimilarity.UseCaseEnum;
 import java.time.LocalDate;
 import java.util.*;
 import org.junit.jupiter.api.Assertions;
@@ -157,7 +158,12 @@ public class ReportSchemasTest extends TestBase {
             applicant,
             document,
             new CheckBuilder()
-                .reportNames(Arrays.asList(ReportName.FACIAL_SIMILARITY_PHOTO_FULLY_AUTO)));
+                .reportNames(Arrays.asList(ReportName.FACIAL_SIMILARITY_PHOTO_FULLY_AUTO))
+                .reportConfiguration(
+                    new ReportConfiguration()
+                        .facialSimilarityPhotoFullyAuto(
+                            new ReportConfigurationFacialSimilarity()
+                                .useCase(UseCaseEnum.REVERIFICATION))));
 
     Report report =
         (Report)

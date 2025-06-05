@@ -19,6 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.onfido.model.ReportConfiguration;
 import com.onfido.model.ReportName;
 import com.onfido.model.UsDrivingLicenceBuilder;
 import java.io.IOException;
@@ -94,6 +95,12 @@ public class CheckRequest {
   @SerializedName(SERIALIZED_NAME_US_DRIVING_LICENCE)
   @javax.annotation.Nullable
   private UsDrivingLicenceBuilder usDrivingLicence;
+
+  public static final String SERIALIZED_NAME_REPORT_CONFIGURATION = "report_configuration";
+  @Deprecated
+  @SerializedName(SERIALIZED_NAME_REPORT_CONFIGURATION)
+  @javax.annotation.Nullable
+  private ReportConfiguration reportConfiguration;
 
   public CheckRequest() {
   }
@@ -273,6 +280,29 @@ public class CheckRequest {
     this.usDrivingLicence = usDrivingLicence;
   }
 
+
+  @Deprecated
+  public CheckRequest reportConfiguration(@javax.annotation.Nullable ReportConfiguration reportConfiguration) {
+    this.reportConfiguration = reportConfiguration;
+    return this;
+  }
+
+  /**
+   * Get reportConfiguration
+   * @return reportConfiguration
+   * @deprecated
+   */
+  @Deprecated
+  @javax.annotation.Nullable
+  public ReportConfiguration getReportConfiguration() {
+    return reportConfiguration;
+  }
+
+  @Deprecated
+  public void setReportConfiguration(@javax.annotation.Nullable ReportConfiguration reportConfiguration) {
+    this.reportConfiguration = reportConfiguration;
+  }
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -335,13 +365,14 @@ public class CheckRequest {
         Objects.equals(this.suppressFormEmails, checkRequest.suppressFormEmails) &&
         Objects.equals(this.subResult, checkRequest.subResult) &&
         Objects.equals(this.consider, checkRequest.consider) &&
-        Objects.equals(this.usDrivingLicence, checkRequest.usDrivingLicence)&&
+        Objects.equals(this.usDrivingLicence, checkRequest.usDrivingLicence) &&
+        Objects.equals(this.reportConfiguration, checkRequest.reportConfiguration)&&
         Objects.equals(this.additionalProperties, checkRequest.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(reportNames, documentIds, applicantProvidesData, asynchronous, suppressFormEmails, subResult, consider, usDrivingLicence, additionalProperties);
+    return Objects.hash(reportNames, documentIds, applicantProvidesData, asynchronous, suppressFormEmails, subResult, consider, usDrivingLicence, reportConfiguration, additionalProperties);
   }
 
   @Override
@@ -356,6 +387,7 @@ public class CheckRequest {
     sb.append("    subResult: ").append(toIndentedString(subResult)).append("\n");
     sb.append("    consider: ").append(toIndentedString(consider)).append("\n");
     sb.append("    usDrivingLicence: ").append(toIndentedString(usDrivingLicence)).append("\n");
+    sb.append("    reportConfiguration: ").append(toIndentedString(reportConfiguration)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -387,6 +419,7 @@ public class CheckRequest {
     openapiFields.add("sub_result");
     openapiFields.add("consider");
     openapiFields.add("us_driving_licence");
+    openapiFields.add("report_configuration");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -433,6 +466,10 @@ public class CheckRequest {
       // validate the optional field `us_driving_licence`
       if (jsonObj.get("us_driving_licence") != null && !jsonObj.get("us_driving_licence").isJsonNull()) {
         UsDrivingLicenceBuilder.validateJsonElement(jsonObj.get("us_driving_licence"));
+      }
+      // validate the optional field `report_configuration`
+      if (jsonObj.get("report_configuration") != null && !jsonObj.get("report_configuration").isJsonNull()) {
+        ReportConfiguration.validateJsonElement(jsonObj.get("report_configuration"));
       }
   }
 

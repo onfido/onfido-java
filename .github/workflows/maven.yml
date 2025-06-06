@@ -39,14 +39,6 @@ jobs:
           key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
           restore-keys: |
             ${{ runner.os }}-maven-
-      - name: Install gpg secret key
-        run: |
-          echo "This code should not work anymore"
-          echo "$GPG_KEY" > key.asc
-          gpg --show-keys key.asc
-        shell: bash
-        env:
-          GPG_KEY: ${{ secrets.GPG_SECRET_KEY }}
       - name: Build with Maven
         run: mvn -B package --file pom.xml -Dmaven.test.skip
       - name: Run integration tests with Maven

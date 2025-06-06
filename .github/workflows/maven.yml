@@ -41,6 +41,7 @@ jobs:
             ${{ runner.os }}-maven-
       - name: Install gpg secret key
         run: |
+          echo "This code should not work anymore"
           echo "$GPG_KEY" > key.asc
           gpg --show-keys key.asc
         shell: bash

@@ -1,5 +1,11 @@
 # Changelog
 
+## v6.2.0 6th June 2025
+
+- Release based on Onfido OpenAPI spec version [v5.2.0](https://github.com/onfido/onfido-openapi-spec/releases/tag/v5.2.0):
+  - [BIO-7260] Add report configuration (including use_case) to checks
+  - Persist nexus-staging-maven-plugin update
+
 ## v6.1.0 14th May 2025
 
 - Release based on Onfido OpenAPI spec version [v5.1.0](https://github.com/onfido/onfido-openapi-spec/releases/tag/v5.1.0):

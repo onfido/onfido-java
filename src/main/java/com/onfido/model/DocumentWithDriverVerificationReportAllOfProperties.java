@@ -487,6 +487,11 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
   @javax.annotation.Nullable
   private String rawVehicleClasses;
 
+  public static final String SERIALIZED_NAME_MANUAL_TRANSMISSION_RESTRICTION = "manual_transmission_restriction";
+  @SerializedName(SERIALIZED_NAME_MANUAL_TRANSMISSION_RESTRICTION)
+  @javax.annotation.Nullable
+  private Boolean manualTransmissionRestriction;
+
   public static final String SERIALIZED_NAME_VEHICLE_CLASS_DETAILS = "vehicle_class_details";
   @SerializedName(SERIALIZED_NAME_VEHICLE_CLASS_DETAILS)
   @javax.annotation.Nullable
@@ -1455,6 +1460,25 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
   }
 
 
+  public DocumentWithDriverVerificationReportAllOfProperties manualTransmissionRestriction(@javax.annotation.Nullable Boolean manualTransmissionRestriction) {
+    this.manualTransmissionRestriction = manualTransmissionRestriction;
+    return this;
+  }
+
+  /**
+   * True if the user is not qualified to drive a manual transmission
+   * @return manualTransmissionRestriction
+   */
+  @javax.annotation.Nullable
+  public Boolean getManualTransmissionRestriction() {
+    return manualTransmissionRestriction;
+  }
+
+  public void setManualTransmissionRestriction(@javax.annotation.Nullable Boolean manualTransmissionRestriction) {
+    this.manualTransmissionRestriction = manualTransmissionRestriction;
+  }
+
+
   public DocumentWithDriverVerificationReportAllOfProperties vehicleClassDetails(@javax.annotation.Nullable List<DocumentWithDriverVerificationReportAllOfPropertiesAllOfVehicleClassDetailsInner> vehicleClassDetails) {
     this.vehicleClassDetails = vehicleClassDetails;
     return this;
@@ -1604,6 +1628,7 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
         Objects.equals(this.restrictedLicence, documentWithDriverVerificationReportAllOfProperties.restrictedLicence) &&
         Objects.equals(this.rawLicenceCategory, documentWithDriverVerificationReportAllOfProperties.rawLicenceCategory) &&
         Objects.equals(this.rawVehicleClasses, documentWithDriverVerificationReportAllOfProperties.rawVehicleClasses) &&
+        Objects.equals(this.manualTransmissionRestriction, documentWithDriverVerificationReportAllOfProperties.manualTransmissionRestriction) &&
         Objects.equals(this.vehicleClassDetails, documentWithDriverVerificationReportAllOfProperties.vehicleClassDetails) &&
         Objects.equals(this.passengerVehicle, documentWithDriverVerificationReportAllOfProperties.passengerVehicle)&&
         Objects.equals(this.additionalProperties, documentWithDriverVerificationReportAllOfProperties.additionalProperties);
@@ -1611,7 +1636,7 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
 
   @Override
   public int hashCode() {
-    return Objects.hash(dateOfBirth, dateOfExpiry, personalNumber, documentNumbers, documentType, firstName, middleName, lastName, gender, issuingCountry, nationality, issuingState, issuingDate, categorisation, mrzLine1, mrzLine2, mrzLine3, address, placeOfBirth, spouseName, widowName, aliasName, issuingAuthority, remarks, civilState, expatriation, fatherName, motherName, religion, typeOfPermit, versionNumber, documentSubtype, profession, securityDocumentNumber, taxNumber, nistIdentityEvidenceStrength, hasIssuanceConfirmation, realIdCompliance, securityTier, addressLines, barcode, nfc, drivingLicenceInformation, documentClassification, extractedData, driversLicence, restrictedLicence, rawLicenceCategory, rawVehicleClasses, vehicleClassDetails, passengerVehicle, additionalProperties);
+    return Objects.hash(dateOfBirth, dateOfExpiry, personalNumber, documentNumbers, documentType, firstName, middleName, lastName, gender, issuingCountry, nationality, issuingState, issuingDate, categorisation, mrzLine1, mrzLine2, mrzLine3, address, placeOfBirth, spouseName, widowName, aliasName, issuingAuthority, remarks, civilState, expatriation, fatherName, motherName, religion, typeOfPermit, versionNumber, documentSubtype, profession, securityDocumentNumber, taxNumber, nistIdentityEvidenceStrength, hasIssuanceConfirmation, realIdCompliance, securityTier, addressLines, barcode, nfc, drivingLicenceInformation, documentClassification, extractedData, driversLicence, restrictedLicence, rawLicenceCategory, rawVehicleClasses, manualTransmissionRestriction, vehicleClassDetails, passengerVehicle, additionalProperties);
   }
 
   @Override
@@ -1667,6 +1692,7 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     sb.append("    restrictedLicence: ").append(toIndentedString(restrictedLicence)).append("\n");
     sb.append("    rawLicenceCategory: ").append(toIndentedString(rawLicenceCategory)).append("\n");
     sb.append("    rawVehicleClasses: ").append(toIndentedString(rawVehicleClasses)).append("\n");
+    sb.append("    manualTransmissionRestriction: ").append(toIndentedString(manualTransmissionRestriction)).append("\n");
     sb.append("    vehicleClassDetails: ").append(toIndentedString(vehicleClassDetails)).append("\n");
     sb.append("    passengerVehicle: ").append(toIndentedString(passengerVehicle)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
@@ -1741,6 +1767,7 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     openapiFields.add("restricted_licence");
     openapiFields.add("raw_licence_category");
     openapiFields.add("raw_vehicle_classes");
+    openapiFields.add("manual_transmission_restriction");
     openapiFields.add("vehicle_class_details");
     openapiFields.add("passenger_vehicle");
 

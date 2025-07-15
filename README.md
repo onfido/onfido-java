@@ -40,7 +40,7 @@ To deploy it to a remote Maven repository instead, configure the settings of the
 mvn clean deploy
 ```
 
-Refer to the [OSSRH Guide](https://central.sonatype.org/publish/publish-guide) for more information.
+Refer to the [Maven Central Publishing Guide](https://central.sonatype.org/publish/publish-portal-guide/#introduction) for more information on publishing to Maven Central.
 
 #### Maven users
 

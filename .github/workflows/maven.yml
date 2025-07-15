@@ -65,9 +65,9 @@ jobs:
       - name: Set up Maven Central Repository
         uses: actions/setup-java@v4
         with:
-          java-version: "17"
-          distribution: "adopt"
-          server-id: ossrh
+          java-version: '20'
+          distribution: 'adopt'
+          server-id: central
           server-username: MAVEN_USERNAME
           server-password: MAVEN_PASSWORD
       - name: Validate release

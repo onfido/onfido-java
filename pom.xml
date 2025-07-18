@@ -262,7 +262,7 @@
                             <deploymentName>onfido-api-java:${project.version}</deploymentName>
                             <autoPublish>true</autoPublish>
                             <waitUntil>validated</waitUntil>
-                            <timeout>PT30M</timeout>
+                            <waitMaxTime>1800</waitMaxTime>
                         </configuration>
                     </plugin>
                 </plugins>

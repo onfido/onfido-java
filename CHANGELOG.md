@@ -1,5 +1,10 @@
 # Changelog
 
+## v6.4.0 28th July 2025
+
+- Release based on Onfido OpenAPI spec version [v5.4.0](https://github.com/onfido/onfido-openapi-spec/releases/tag/v5.4.0):
+  - [ENT-26] Add AES document download endpoint
+
 ## v6.2.0 6th June 2025
 
 - Release based on Onfido OpenAPI spec version [v5.2.0](https://github.com/onfido/onfido-openapi-spec/releases/tag/v5.2.0):

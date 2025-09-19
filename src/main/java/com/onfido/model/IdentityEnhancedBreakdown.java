@@ -1,6 +1,6 @@
 /*
- * Onfido API v3.6
- * The Onfido API (v3.6)
+ * Onfido Public API v3.6
+ * The Onfido Public API (v3.6)
  *
  * The version of the OpenAPI document: v3.6
  * 
@@ -23,6 +23,7 @@ import com.onfido.model.IdentityEnhancedBreakdownAddress;
 import com.onfido.model.IdentityEnhancedBreakdownDateOfBirth;
 import com.onfido.model.IdentityEnhancedBreakdownMortality;
 import com.onfido.model.IdentityEnhancedBreakdownSources;
+import com.onfido.model.IdrSsnBreakdown;
 import java.io.IOException;
 import java.util.Arrays;
 
@@ -73,6 +74,16 @@ public class IdentityEnhancedBreakdown {
   @SerializedName(SERIALIZED_NAME_MORTALITY)
   @javax.annotation.Nullable
   private IdentityEnhancedBreakdownMortality mortality;
+
+  public static final String SERIALIZED_NAME_SSN = "ssn";
+  @SerializedName(SERIALIZED_NAME_SSN)
+  @javax.annotation.Nullable
+  private IdrSsnBreakdown ssn;
+
+  public static final String SERIALIZED_NAME_SSN1 = "ssn1";
+  @SerializedName(SERIALIZED_NAME_SSN1)
+  @javax.annotation.Nullable
+  private IdrSsnBreakdown ssn1;
 
   public IdentityEnhancedBreakdown() {
   }
@@ -152,6 +163,44 @@ public class IdentityEnhancedBreakdown {
     this.mortality = mortality;
   }
 
+
+  public IdentityEnhancedBreakdown ssn(@javax.annotation.Nullable IdrSsnBreakdown ssn) {
+    this.ssn = ssn;
+    return this;
+  }
+
+  /**
+   * Get ssn
+   * @return ssn
+   */
+  @javax.annotation.Nullable
+  public IdrSsnBreakdown getSsn() {
+    return ssn;
+  }
+
+  public void setSsn(@javax.annotation.Nullable IdrSsnBreakdown ssn) {
+    this.ssn = ssn;
+  }
+
+
+  public IdentityEnhancedBreakdown ssn1(@javax.annotation.Nullable IdrSsnBreakdown ssn1) {
+    this.ssn1 = ssn1;
+    return this;
+  }
+
+  /**
+   * Get ssn1
+   * @return ssn1
+   */
+  @javax.annotation.Nullable
+  public IdrSsnBreakdown getSsn1() {
+    return ssn1;
+  }
+
+  public void setSsn1(@javax.annotation.Nullable IdrSsnBreakdown ssn1) {
+    this.ssn1 = ssn1;
+  }
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -210,13 +259,15 @@ public class IdentityEnhancedBreakdown {
     return Objects.equals(this.sources, identityEnhancedBreakdown.sources) &&
         Objects.equals(this.address, identityEnhancedBreakdown.address) &&
         Objects.equals(this.dateOfBirth, identityEnhancedBreakdown.dateOfBirth) &&
-        Objects.equals(this.mortality, identityEnhancedBreakdown.mortality)&&
+        Objects.equals(this.mortality, identityEnhancedBreakdown.mortality) &&
+        Objects.equals(this.ssn, identityEnhancedBreakdown.ssn) &&
+        Objects.equals(this.ssn1, identityEnhancedBreakdown.ssn1)&&
         Objects.equals(this.additionalProperties, identityEnhancedBreakdown.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(sources, address, dateOfBirth, mortality, additionalProperties);
+    return Objects.hash(sources, address, dateOfBirth, mortality, ssn, ssn1, additionalProperties);
   }
 
   @Override
@@ -227,6 +278,8 @@ public class IdentityEnhancedBreakdown {
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
     sb.append("    dateOfBirth: ").append(toIndentedString(dateOfBirth)).append("\n");
     sb.append("    mortality: ").append(toIndentedString(mortality)).append("\n");
+    sb.append("    ssn: ").append(toIndentedString(ssn)).append("\n");
+    sb.append("    ssn1: ").append(toIndentedString(ssn1)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -254,6 +307,8 @@ public class IdentityEnhancedBreakdown {
     openapiFields.add("address");
     openapiFields.add("date_of_birth");
     openapiFields.add("mortality");
+    openapiFields.add("ssn");
+    openapiFields.add("ssn1");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -287,6 +342,14 @@ public class IdentityEnhancedBreakdown {
       // validate the optional field `mortality`
       if (jsonObj.get("mortality") != null && !jsonObj.get("mortality").isJsonNull()) {
         IdentityEnhancedBreakdownMortality.validateJsonElement(jsonObj.get("mortality"));
+      }
+      // validate the optional field `ssn`
+      if (jsonObj.get("ssn") != null && !jsonObj.get("ssn").isJsonNull()) {
+        IdrSsnBreakdown.validateJsonElement(jsonObj.get("ssn"));
+      }
+      // validate the optional field `ssn1`
+      if (jsonObj.get("ssn1") != null && !jsonObj.get("ssn1").isJsonNull()) {
+        IdrSsnBreakdown.validateJsonElement(jsonObj.get("ssn1"));
       }
   }
 

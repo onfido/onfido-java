@@ -1,6 +1,6 @@
 /*
- * Onfido API v3.6
- * The Onfido API (v3.6)
+ * Onfido Public API v3.6
+ * The Onfido Public API (v3.6)
  *
  * The version of the OpenAPI document: v3.6
  * 
@@ -162,7 +162,7 @@ public class ApiClient {
         json = new JSON();
 
         // Set default User-Agent.
-        setUserAgent("onfido-java/6.4.0");
+        setUserAgent("onfido-java/6.5.0");
 
         authentications = new HashMap<String, Authentication>();
     }

@@ -50,7 +50,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.onfido</groupId>
   <artifactId>onfido-api-java</artifactId>
-  <version>6.4.0</version>
+  <version>6.5.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -66,7 +66,7 @@ Add this dependency to your project's build file:
   }
 
   dependencies {
-     implementation "com.onfido:onfido-api-java:6.4.0"
+     implementation "com.onfido:onfido-api-java:6.5.0"
   }
 ```
 
@@ -80,10 +80,10 @@ mvn clean package
 
 Then manually install the following JARs:
 
-- `target/onfido-api-java-6.4.0.jar`
+- `target/onfido-api-java-6.5.0.jar`
 - `target/lib/*.jar`
 
-The latest version can be found at <https://search.maven.org/artifact/com.onfido/onfido-api-java/6.4.0/jar>.
+The latest version can be found at <https://search.maven.org/artifact/com.onfido/onfido-api-java/6.5.0/jar>.
 
 ## Getting Started
 
@@ -162,13 +162,21 @@ try {
 
 ### Recommendations
 
-### Don't share DefaultApi among different threads
+#### Don't share DefaultApi among different threads
 
 It's recommended to create an instance of `DefaultApi` per thread in a multithreaded environment to avoid potential issues.
 
 #### Do not use additional properties
 
 Except for retrieving Task object's outputs, avoid using `getAdditionalProperty()` or `getAdditionalProperties()` methods to access undefined properties to prevent breaking changes when these fields appear.
+
+#### Use the linter when contributing
+
+When contributing to the project, run the linter to ensure code quality:
+
+```bash
+google-java-format -i $(git ls-files src/test/\*.java)
+```
 
 ## Contributing
 

@@ -1,6 +1,6 @@
 /*
- * Onfido API v3.6
- * The Onfido API (v3.6)
+ * Onfido Public API v3.6
+ * The Onfido Public API (v3.6)
  *
  * The version of the OpenAPI document: v3.6
  * 

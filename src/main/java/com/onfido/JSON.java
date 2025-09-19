@@ -1,6 +1,6 @@
 /*
- * Onfido API v3.6
- * The Onfido API (v3.6)
+ * Onfido Public API v3.6
+ * The Onfido Public API (v3.6)
  *
  * The version of the OpenAPI document: v3.6
  * 
@@ -314,6 +314,10 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.IdentityEnhancedProperties.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.IdentityEnhancedPropertiesMatchedAddressesInner.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.IdentityEnhancedReport.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.IdrSsnBreakdown.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.IdrSsnBreakdownBreakdown.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.IdrSsnBreakdownBreakdownFullMatch.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.IdrSsnBreakdownBreakdownLast4DigitsMatch.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.IndiaPanReport.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.IndiaPanReportAllOfBreakdown.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.IndiaPanReportAllOfBreakdownDevice.CustomTypeAdapterFactory());

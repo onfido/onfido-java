@@ -7,15 +7,9 @@ import com.onfido.ApiClient.Region;
 import com.onfido.api.DefaultApi;
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
-import java.math.BigInteger;
 import java.net.InetSocketAddress;
 import java.net.Proxy;
-import java.security.KeyPair;
-import java.security.KeyPairGenerator;
-import java.security.cert.X509Certificate;
-import java.util.Date;
 import java.util.UUID;
-import javax.security.auth.x500.X500Principal;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -100,7 +94,8 @@ public class OnfidoTest {
             () -> apiClient.setVerifyingSsl(false),
             "Expected IllegalStateException when disabling SSL verification");
 
-    assertTrue(thrown.getMessage().contains("SSL verification cannot be disabled for security reasons"));
+    assertTrue(
+        thrown.getMessage().contains("SSL verification cannot be disabled for security reasons"));
     assertTrue(thrown.getMessage().contains("man-in-the-middle attacks"));
     assertTrue(thrown.getMessage().contains("setSslCaCert"));
   }
@@ -119,25 +114,26 @@ public class OnfidoTest {
     Assertions.assertNull(apiClient.getSslCaCert());
 
     // Use a real valid self-signed certificate generated with OpenSSL
-    String validSelfSignedCert = "-----BEGIN CERTIFICATE-----\n" +
-        "MIIDFzCCAf+gAwIBAgIURIF4y3TLRDiHV1hMeGbUsr1/VUgwDQYJKoZIhvcNAQEL\n" +
-        "BQAwGzEZMBcGA1UEAwwQdGVzdC5leGFtcGxlLmNvbTAeFw0yNTA4MjExMjI5NTFa\n" +
-        "Fw0yNjA4MjExMjI5NTFaMBsxGTAXBgNVBAMMEHRlc3QuZXhhbXBsZS5jb20wggEi\n" +
-        "MA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC67oWn1WnTjWL9QUekOU/qu1O3\n" +
-        "Zop0pmJiCW5JnA1RpwULyQlEyFIrlGfZvL3Jiysla2rjkQrLfz+zIg79mK9gaszq\n" +
-        "8rdt7toLwGxAevYkZBPO0kAo1TSVNNbQsAGJedtcAQunsbWib1ARXp5yEKhjll0t\n" +
-        "pIOeGcbC9OfuCfx8FMEx92qKEhdDvjiUBVb4hIFqbpPIPHA8tdBiWIYtRrahdcyO\n" +
-        "ZNIGL2fzqUQQDVmIfaQP7i3g4FV0xljqcH9TehwrrQJNBnr52d2Rz3RYfgkEF1uY\n" +
-        "22Vizi98c7/0Tm8mFZY+adH6QObwd7YMoLmDFSGJ7g3caMpUgj98rTvsLWU3AgMB\n" +
-        "AAGjUzBRMB0GA1UdDgQWBBQYNjWfqrH6+mTK0BLMzs9hg0AUrTAfBgNVHSMEGDAW\n" +
-        "gBQYNjWfqrH6+mTK0BLMzs9hg0AUrTAPBgNVHRMBAf8EBTADAQH/MA0GCSqGSIb3\n" +
-        "DQEBCwUAA4IBAQBzJePL3aXomAy09RlQUIpKLPl0/NbB8QKPGYgGVNA6ARFLUoFF\n" +
-        "wptxWqnnwspBec2Va4bIxBuv3D+hI2PFyGsnTvzDGKdBPOqHfuOUBCjfqe46Ylkm\n" +
-        "KvO6BJMrX5CNREh5E9S8kz7k6NG5IzBI8TJFUrLi7akr2RqsYPYVmSFnQzQ9lAHo\n" +
-        "BuEN5hUzqIRAk9iBMTM017jqRDATvxON4txBfn6kW8jT0QRURQ6L0k1d2ys6btjx\n" +
-        "tRIWBC/t8VoGoD6ToruBqx2v2mnrOtGqaDg5DYUqnG43feKgnk0Vtm/IrR2/sTkE\n" +
-        "Tnd76Tj7k8hP6sbcRKBSzlcysF+zsokYXVlU\n" +
-        "-----END CERTIFICATE-----";
+    String validSelfSignedCert =
+        "-----BEGIN CERTIFICATE-----\n"
+            + "MIIDFzCCAf+gAwIBAgIURIF4y3TLRDiHV1hMeGbUsr1/VUgwDQYJKoZIhvcNAQEL\n"
+            + "BQAwGzEZMBcGA1UEAwwQdGVzdC5leGFtcGxlLmNvbTAeFw0yNTA4MjExMjI5NTFa\n"
+            + "Fw0yNjA4MjExMjI5NTFaMBsxGTAXBgNVBAMMEHRlc3QuZXhhbXBsZS5jb20wggEi\n"
+            + "MA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC67oWn1WnTjWL9QUekOU/qu1O3\n"
+            + "Zop0pmJiCW5JnA1RpwULyQlEyFIrlGfZvL3Jiysla2rjkQrLfz+zIg79mK9gaszq\n"
+            + "8rdt7toLwGxAevYkZBPO0kAo1TSVNNbQsAGJedtcAQunsbWib1ARXp5yEKhjll0t\n"
+            + "pIOeGcbC9OfuCfx8FMEx92qKEhdDvjiUBVb4hIFqbpPIPHA8tdBiWIYtRrahdcyO\n"
+            + "ZNIGL2fzqUQQDVmIfaQP7i3g4FV0xljqcH9TehwrrQJNBnr52d2Rz3RYfgkEF1uY\n"
+            + "22Vizi98c7/0Tm8mFZY+adH6QObwd7YMoLmDFSGJ7g3caMpUgj98rTvsLWU3AgMB\n"
+            + "AAGjUzBRMB0GA1UdDgQWBBQYNjWfqrH6+mTK0BLMzs9hg0AUrTAfBgNVHSMEGDAW\n"
+            + "gBQYNjWfqrH6+mTK0BLMzs9hg0AUrTAPBgNVHRMBAf8EBTADAQH/MA0GCSqGSIb3\n"
+            + "DQEBCwUAA4IBAQBzJePL3aXomAy09RlQUIpKLPl0/NbB8QKPGYgGVNA6ARFLUoFF\n"
+            + "wptxWqnnwspBec2Va4bIxBuv3D+hI2PFyGsnTvzDGKdBPOqHfuOUBCjfqe46Ylkm\n"
+            + "KvO6BJMrX5CNREh5E9S8kz7k6NG5IzBI8TJFUrLi7akr2RqsYPYVmSFnQzQ9lAHo\n"
+            + "BuEN5hUzqIRAk9iBMTM017jqRDATvxON4txBfn6kW8jT0QRURQ6L0k1d2ys6btjx\n"
+            + "tRIWBC/t8VoGoD6ToruBqx2v2mnrOtGqaDg5DYUqnG43feKgnk0Vtm/IrR2/sTkE\n"
+            + "Tnd76Tj7k8hP6sbcRKBSzlcysF+zsokYXVlU\n"
+            + "-----END CERTIFICATE-----";
 
     InputStream testCertStream = new ByteArrayInputStream(validSelfSignedCert.getBytes());
 

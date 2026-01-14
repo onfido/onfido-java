@@ -72,11 +72,51 @@ public class ExtractionDocumentClassification {
    */
   @JsonAdapter(SubtypeEnum.Adapter.class)
   public enum SubtypeEnum {
+    SPE("SPE"),
+    
+    ALI("ali"),
+    
+    ALIEN("alien"),
+    
+    COM("com"),
+    
+    COMMERCIAL("commercial"),
+    
+    DOM("dom"),
+    
+    DOMESTIC("domestic"),
+    
     FULL("full"),
     
     NOT_FULL("not_full"),
     
+    FULL_DRIVING_LICENCE("full driving licence"),
+    
+    HEAVY_VEHICLE("heavy_vehicle"),
+    
+    LEARNER("learner"),
+    
+    MINOR_U21_OR_U18_("minor (u21 or u18)"),
+    
+    MOT("mot"),
+    
+    MUL("mul"),
+    
     PROVISIONAL("provisional"),
+    
+    PROVISIONAL_DRIVING_LICENCE("provisional driving licence"),
+    
+    SER("ser"),
+    
+    SPE2("spe"),
+    
+    SPECIAL("special"),
+    
+    STANDARD("standard"),
+    
+    TEM("tem"),
+    
+    U21("u21"),
     
     UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 

@@ -137,6 +137,11 @@ public class WebhookEventPayloadResource {
   @javax.annotation.Nullable
   private String customerUserId;
 
+  public static final String SERIALIZED_NAME_TIMELINE_FILE_DOWNLOAD_URL = "timeline_file_download_url";
+  @SerializedName(SERIALIZED_NAME_TIMELINE_FILE_DOWNLOAD_URL)
+  @javax.annotation.Nullable
+  private String timelineFileDownloadUrl;
+
   public WebhookEventPayloadResource() {
   }
 
@@ -451,6 +456,25 @@ public class WebhookEventPayloadResource {
     this.customerUserId = customerUserId;
   }
 
+
+  public WebhookEventPayloadResource timelineFileDownloadUrl(@javax.annotation.Nullable String timelineFileDownloadUrl) {
+    this.timelineFileDownloadUrl = timelineFileDownloadUrl;
+    return this;
+  }
+
+  /**
+   * Pre-signed URL to download the timeline file for the Workflow Run.
+   * @return timelineFileDownloadUrl
+   */
+  @javax.annotation.Nullable
+  public String getTimelineFileDownloadUrl() {
+    return timelineFileDownloadUrl;
+  }
+
+  public void setTimelineFileDownloadUrl(@javax.annotation.Nullable String timelineFileDownloadUrl) {
+    this.timelineFileDownloadUrl = timelineFileDownloadUrl;
+  }
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -521,7 +545,8 @@ public class WebhookEventPayloadResource {
         Objects.equals(this.reasons, webhookEventPayloadResource.reasons) &&
         Objects.equals(this.link, webhookEventPayloadResource.link) &&
         Objects.equals(this.error, webhookEventPayloadResource.error) &&
-        Objects.equals(this.customerUserId, webhookEventPayloadResource.customerUserId)&&
+        Objects.equals(this.customerUserId, webhookEventPayloadResource.customerUserId) &&
+        Objects.equals(this.timelineFileDownloadUrl, webhookEventPayloadResource.timelineFileDownloadUrl)&&
         Objects.equals(this.additionalProperties, webhookEventPayloadResource.additionalProperties);
   }
 
@@ -531,7 +556,7 @@ public class WebhookEventPayloadResource {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, applicantId, createdAt, updatedAt, dashboardUrl, workflowId, workflowRunId, workflowVersionId, taskDefId, taskDefVersion, input, output, reasons, link, error, customerUserId, additionalProperties);
+    return Objects.hash(id, applicantId, createdAt, updatedAt, dashboardUrl, workflowId, workflowRunId, workflowVersionId, taskDefId, taskDefVersion, input, output, reasons, link, error, customerUserId, timelineFileDownloadUrl, additionalProperties);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -561,6 +586,7 @@ public class WebhookEventPayloadResource {
     sb.append("    link: ").append(toIndentedString(link)).append("\n");
     sb.append("    error: ").append(toIndentedString(error)).append("\n");
     sb.append("    customerUserId: ").append(toIndentedString(customerUserId)).append("\n");
+    sb.append("    timelineFileDownloadUrl: ").append(toIndentedString(timelineFileDownloadUrl)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -600,6 +626,7 @@ public class WebhookEventPayloadResource {
     openapiFields.add("link");
     openapiFields.add("error");
     openapiFields.add("customer_user_id");
+    openapiFields.add("timeline_file_download_url");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -653,6 +680,9 @@ public class WebhookEventPayloadResource {
       }
       if ((jsonObj.get("customer_user_id") != null && !jsonObj.get("customer_user_id").isJsonNull()) && !jsonObj.get("customer_user_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `customer_user_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("customer_user_id").toString()));
+      }
+      if ((jsonObj.get("timeline_file_download_url") != null && !jsonObj.get("timeline_file_download_url").isJsonNull()) && !jsonObj.get("timeline_file_download_url").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `timeline_file_download_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("timeline_file_download_url").toString()));
       }
   }
 

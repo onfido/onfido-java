@@ -83,6 +83,20 @@ public class ProofOfAddressProperties {
     
     EXCHANGE_HOUSE_STATEMENT("exchange_house_statement"),
     
+    ACCOMMODATION_TENANCY_CERTIFICATE("accommodation_tenancy_certificate"),
+    
+    ADDRESS_CERTIFICATE("address_certificate"),
+    
+    ELECTRICITY_BILL("electricity_bill"),
+    
+    GAS_BILL("gas_bill"),
+    
+    INTERNET_BILL("internet_bill"),
+    
+    PHONE_BILL("phone_bill"),
+    
+    WATER_BILL("water_bill"),
+    
     UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
     private String value;

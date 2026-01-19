@@ -57,12 +57,17 @@ import com.onfido.model.LocationBuilder;
 import com.onfido.model.MotionCapture;
 import com.onfido.model.MotionCapturesList;
 import java.time.OffsetDateTime;
+import com.onfido.model.Passkey;
+import com.onfido.model.PasskeyUpdater;
+import com.onfido.model.PasskeysList;
 import com.onfido.model.RepeatAttemptsList;
 import com.onfido.model.Report;
 import com.onfido.model.ReportsList;
 import com.onfido.model.ResultsFeedback;
 import com.onfido.model.SdkToken;
 import com.onfido.model.SdkTokenBuilder;
+import com.onfido.model.SigningDocument;
+import com.onfido.model.SigningDocumentsList;
 import com.onfido.model.Task;
 import com.onfido.model.TaskItem;
 import com.onfido.model.TimelineFileReference;
@@ -1308,6 +1313,278 @@ public class DefaultApi {
     public okhttp3.Call deleteApplicantAsync(UUID applicantId, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteApplicantValidateBeforeCall(applicantId, _callback);
+        localVarApiClient.executeAsync(localVarCall, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for deletePasskey
+     * @param username Username that owns the passkey. (required)
+     * @param passkeyId Passkey ID. (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> Passkey deleted </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Passkey not found </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call deletePasskeyCall(String username, String passkeyId, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/passkeys/{username}/{passkey_id}"
+            .replace("{" + "username" + "}", localVarApiClient.escapeString(username.toString()))
+            .replace("{" + "passkey_id" + "}", localVarApiClient.escapeString(passkeyId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "Token" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call deletePasskeyValidateBeforeCall(String username, String passkeyId, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'username' is set
+        if (username == null) {
+            throw new ApiException("Missing the required parameter 'username' when calling deletePasskey(Async)");
+        }
+
+        // verify the required parameter 'passkeyId' is set
+        if (passkeyId == null) {
+            throw new ApiException("Missing the required parameter 'passkeyId' when calling deletePasskey(Async)");
+        }
+
+        return deletePasskeyCall(username, passkeyId, _callback);
+
+    }
+
+    /**
+     * Delete passkey
+     * Deletes a passkey. 
+     * @param username Username that owns the passkey. (required)
+     * @param passkeyId Passkey ID. (required)
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> Passkey deleted </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Passkey not found </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+     </table>
+     */
+    public void deletePasskey(String username, String passkeyId) throws ApiException {
+        deletePasskeyWithHttpInfo(username, passkeyId);
+    }
+
+    /**
+     * Delete passkey
+     * Deletes a passkey. 
+     * @param username Username that owns the passkey. (required)
+     * @param passkeyId Passkey ID. (required)
+     * @return ApiResponse&lt;Void&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> Passkey deleted </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Passkey not found </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<Void> deletePasskeyWithHttpInfo(String username, String passkeyId) throws ApiException {
+        okhttp3.Call localVarCall = deletePasskeyValidateBeforeCall(username, passkeyId, null);
+        return localVarApiClient.execute(localVarCall);
+    }
+
+    /**
+     * Delete passkey (asynchronously)
+     * Deletes a passkey. 
+     * @param username Username that owns the passkey. (required)
+     * @param passkeyId Passkey ID. (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> Passkey deleted </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Passkey not found </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call deletePasskeyAsync(String username, String passkeyId, final ApiCallback<Void> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = deletePasskeyValidateBeforeCall(username, passkeyId, _callback);
+        localVarApiClient.executeAsync(localVarCall, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for deletePasskeys
+     * @param username Username whose passkeys will be deleted. (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> All passkeys deleted </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Passkey not found </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call deletePasskeysCall(String username, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/passkeys/{username}"
+            .replace("{" + "username" + "}", localVarApiClient.escapeString(username.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "Token" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call deletePasskeysValidateBeforeCall(String username, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'username' is set
+        if (username == null) {
+            throw new ApiException("Missing the required parameter 'username' when calling deletePasskeys(Async)");
+        }
+
+        return deletePasskeysCall(username, _callback);
+
+    }
+
+    /**
+     * Delete passkeys
+     * Removes every passkey for the username. 
+     * @param username Username whose passkeys will be deleted. (required)
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> All passkeys deleted </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Passkey not found </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+     </table>
+     */
+    public void deletePasskeys(String username) throws ApiException {
+        deletePasskeysWithHttpInfo(username);
+    }
+
+    /**
+     * Delete passkeys
+     * Removes every passkey for the username. 
+     * @param username Username whose passkeys will be deleted. (required)
+     * @return ApiResponse&lt;Void&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> All passkeys deleted </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Passkey not found </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<Void> deletePasskeysWithHttpInfo(String username) throws ApiException {
+        okhttp3.Call localVarCall = deletePasskeysValidateBeforeCall(username, null);
+        return localVarApiClient.execute(localVarCall);
+    }
+
+    /**
+     * Delete passkeys (asynchronously)
+     * Removes every passkey for the username. 
+     * @param username Username whose passkeys will be deleted. (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> All passkeys deleted </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Passkey not found </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call deletePasskeysAsync(String username, final ApiCallback<Void> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = deletePasskeysValidateBeforeCall(username, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
@@ -3326,6 +3603,158 @@ public class DefaultApi {
         return localVarCall;
     }
     /**
+     * Build call for downloadSesDocument
+     * @param workflowRunId The unique identifier of the Workflow Run for which you want to retrieve the signed document. (required)
+     * @param id The unique identifier of the file which you want to retrieve. (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 302 </td><td> Found </td><td>  * Location - Link to the Timeline File. <br>  </td></tr>
+        <tr><td> 200 </td><td> The signed document PDF binary data. </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call downloadSesDocumentCall(UUID workflowRunId, UUID id, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/simple_electronic_signature/documents";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (workflowRunId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("workflow_run_id", workflowRunId));
+        }
+
+        if (id != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("id", id));
+        }
+
+        final String[] localVarAccepts = {
+            "application/pdf",
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "Token" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call downloadSesDocumentValidateBeforeCall(UUID workflowRunId, UUID id, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'workflowRunId' is set
+        if (workflowRunId == null) {
+            throw new ApiException("Missing the required parameter 'workflowRunId' when calling downloadSesDocument(Async)");
+        }
+
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            throw new ApiException("Missing the required parameter 'id' when calling downloadSesDocument(Async)");
+        }
+
+        return downloadSesDocumentCall(workflowRunId, id, _callback);
+
+    }
+
+    /**
+     * Retrieves the signed document or signing transaction receipt
+     * Retrieves the signed document or signing transaction receipt depending on the id provided. 
+     * @param workflowRunId The unique identifier of the Workflow Run for which you want to retrieve the signed document. (required)
+     * @param id The unique identifier of the file which you want to retrieve. (required)
+     * @return FileTransfer
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 302 </td><td> Found </td><td>  * Location - Link to the Timeline File. <br>  </td></tr>
+        <tr><td> 200 </td><td> The signed document PDF binary data. </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+     </table>
+     */
+    public FileTransfer downloadSesDocument(UUID workflowRunId, UUID id) throws ApiException {
+        ApiResponse<FileTransfer> localVarResp = downloadSesDocumentWithHttpInfo(workflowRunId, id);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Retrieves the signed document or signing transaction receipt
+     * Retrieves the signed document or signing transaction receipt depending on the id provided. 
+     * @param workflowRunId The unique identifier of the Workflow Run for which you want to retrieve the signed document. (required)
+     * @param id The unique identifier of the file which you want to retrieve. (required)
+     * @return ApiResponse&lt;FileTransfer&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 302 </td><td> Found </td><td>  * Location - Link to the Timeline File. <br>  </td></tr>
+        <tr><td> 200 </td><td> The signed document PDF binary data. </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<FileTransfer> downloadSesDocumentWithHttpInfo(UUID workflowRunId, UUID id) throws ApiException {
+        okhttp3.Call localVarCall = downloadSesDocumentValidateBeforeCall(workflowRunId, id, null);
+        Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Retrieves the signed document or signing transaction receipt (asynchronously)
+     * Retrieves the signed document or signing transaction receipt depending on the id provided. 
+     * @param workflowRunId The unique identifier of the Workflow Run for which you want to retrieve the signed document. (required)
+     * @param id The unique identifier of the file which you want to retrieve. (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 302 </td><td> Found </td><td>  * Location - Link to the Timeline File. <br>  </td></tr>
+        <tr><td> 200 </td><td> The signed document PDF binary data. </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call downloadSesDocumentAsync(UUID workflowRunId, UUID id, final ApiCallback<FileTransfer> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = downloadSesDocumentValidateBeforeCall(workflowRunId, id, _callback);
+        Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
      * Build call for downloadSignedEvidenceFile
      * @param workflowRunId Workflow Run ID (required)
      * @param _callback Callback for upload/download progress
@@ -3457,6 +3886,138 @@ public class DefaultApi {
     public okhttp3.Call downloadSignedEvidenceFileAsync(UUID workflowRunId, final ApiCallback<FileTransfer> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = downloadSignedEvidenceFileValidateBeforeCall(workflowRunId, _callback);
+        Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for downloadSigningDocument
+     * @param signingDocumentId  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The signing document binary data </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call downloadSigningDocumentCall(UUID signingDocumentId, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/signing_documents/{signing_document_id}/download"
+            .replace("{" + "signing_document_id" + "}", localVarApiClient.escapeString(signingDocumentId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "*/*",
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "Token" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call downloadSigningDocumentValidateBeforeCall(UUID signingDocumentId, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'signingDocumentId' is set
+        if (signingDocumentId == null) {
+            throw new ApiException("Missing the required parameter 'signingDocumentId' when calling downloadSigningDocument(Async)");
+        }
+
+        return downloadSigningDocumentCall(signingDocumentId, _callback);
+
+    }
+
+    /**
+     * Download signing document
+     * Downloads specific signing documents belonging to an applicant. If successful, the response will be the binary data representing the pdf. 
+     * @param signingDocumentId  (required)
+     * @return FileTransfer
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The signing document binary data </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+     </table>
+     */
+    public FileTransfer downloadSigningDocument(UUID signingDocumentId) throws ApiException {
+        ApiResponse<FileTransfer> localVarResp = downloadSigningDocumentWithHttpInfo(signingDocumentId);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Download signing document
+     * Downloads specific signing documents belonging to an applicant. If successful, the response will be the binary data representing the pdf. 
+     * @param signingDocumentId  (required)
+     * @return ApiResponse&lt;FileTransfer&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The signing document binary data </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<FileTransfer> downloadSigningDocumentWithHttpInfo(UUID signingDocumentId) throws ApiException {
+        okhttp3.Call localVarCall = downloadSigningDocumentValidateBeforeCall(signingDocumentId, null);
+        Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Download signing document (asynchronously)
+     * Downloads specific signing documents belonging to an applicant. If successful, the response will be the binary data representing the pdf. 
+     * @param signingDocumentId  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The signing document binary data </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call downloadSigningDocumentAsync(UUID signingDocumentId, final ApiCallback<FileTransfer> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = downloadSigningDocumentValidateBeforeCall(signingDocumentId, _callback);
         Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -4775,6 +5336,151 @@ public class DefaultApi {
         return localVarCall;
     }
     /**
+     * Build call for findPasskey
+     * @param username Username that owns the passkey. (required)
+     * @param passkeyId Passkey ID. (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The requested passkey </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Passkey not found </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call findPasskeyCall(String username, String passkeyId, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/passkeys/{username}/{passkey_id}"
+            .replace("{" + "username" + "}", localVarApiClient.escapeString(username.toString()))
+            .replace("{" + "passkey_id" + "}", localVarApiClient.escapeString(passkeyId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "Token" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call findPasskeyValidateBeforeCall(String username, String passkeyId, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'username' is set
+        if (username == null) {
+            throw new ApiException("Missing the required parameter 'username' when calling findPasskey(Async)");
+        }
+
+        // verify the required parameter 'passkeyId' is set
+        if (passkeyId == null) {
+            throw new ApiException("Missing the required parameter 'passkeyId' when calling findPasskey(Async)");
+        }
+
+        return findPasskeyCall(username, passkeyId, _callback);
+
+    }
+
+    /**
+     * Retrieve passkey
+     * Returns a passkey&#39;s details. 
+     * @param username Username that owns the passkey. (required)
+     * @param passkeyId Passkey ID. (required)
+     * @return Passkey
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The requested passkey </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Passkey not found </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+     </table>
+     */
+    public Passkey findPasskey(String username, String passkeyId) throws ApiException {
+        ApiResponse<Passkey> localVarResp = findPasskeyWithHttpInfo(username, passkeyId);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Retrieve passkey
+     * Returns a passkey&#39;s details. 
+     * @param username Username that owns the passkey. (required)
+     * @param passkeyId Passkey ID. (required)
+     * @return ApiResponse&lt;Passkey&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The requested passkey </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Passkey not found </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<Passkey> findPasskeyWithHttpInfo(String username, String passkeyId) throws ApiException {
+        okhttp3.Call localVarCall = findPasskeyValidateBeforeCall(username, passkeyId, null);
+        Type localVarReturnType = new TypeToken<Passkey>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Retrieve passkey (asynchronously)
+     * Returns a passkey&#39;s details. 
+     * @param username Username that owns the passkey. (required)
+     * @param passkeyId Passkey ID. (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The requested passkey </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Passkey not found </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call findPasskeyAsync(String username, String passkeyId, final ApiCallback<Passkey> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = findPasskeyValidateBeforeCall(username, passkeyId, _callback);
+        Type localVarReturnType = new TypeToken<Passkey>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
      * Build call for findReport
      * @param reportId  (required)
      * @param _callback Callback for upload/download progress
@@ -4902,6 +5608,137 @@ public class DefaultApi {
 
         okhttp3.Call localVarCall = findReportValidateBeforeCall(reportId, _callback);
         Type localVarReturnType = new TypeToken<Report>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for findSigningDocument
+     * @param signingDocumentId  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> A signing document </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call findSigningDocumentCall(UUID signingDocumentId, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/signing_documents/{signing_document_id}"
+            .replace("{" + "signing_document_id" + "}", localVarApiClient.escapeString(signingDocumentId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "Token" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call findSigningDocumentValidateBeforeCall(UUID signingDocumentId, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'signingDocumentId' is set
+        if (signingDocumentId == null) {
+            throw new ApiException("Missing the required parameter 'signingDocumentId' when calling findSigningDocument(Async)");
+        }
+
+        return findSigningDocumentCall(signingDocumentId, _callback);
+
+    }
+
+    /**
+     * Retrieve signing document
+     * A single signing document can be retrieved by calling this endpoint with the signing document&#39;s unique identifier. 
+     * @param signingDocumentId  (required)
+     * @return SigningDocument
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> A signing document </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+     </table>
+     */
+    public SigningDocument findSigningDocument(UUID signingDocumentId) throws ApiException {
+        ApiResponse<SigningDocument> localVarResp = findSigningDocumentWithHttpInfo(signingDocumentId);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Retrieve signing document
+     * A single signing document can be retrieved by calling this endpoint with the signing document&#39;s unique identifier. 
+     * @param signingDocumentId  (required)
+     * @return ApiResponse&lt;SigningDocument&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> A signing document </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<SigningDocument> findSigningDocumentWithHttpInfo(UUID signingDocumentId) throws ApiException {
+        okhttp3.Call localVarCall = findSigningDocumentValidateBeforeCall(signingDocumentId, null);
+        Type localVarReturnType = new TypeToken<SigningDocument>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Retrieve signing document (asynchronously)
+     * A single signing document can be retrieved by calling this endpoint with the signing document&#39;s unique identifier. 
+     * @param signingDocumentId  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> A signing document </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call findSigningDocumentAsync(UUID signingDocumentId, final ApiCallback<SigningDocument> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = findSigningDocumentValidateBeforeCall(signingDocumentId, _callback);
+        Type localVarReturnType = new TypeToken<SigningDocument>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -6793,6 +7630,141 @@ public class DefaultApi {
         return localVarCall;
     }
     /**
+     * Build call for listPasskeys
+     * @param username Username that owns the passkeys. (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Passkeys belonging to the username </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Passkey not found </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call listPasskeysCall(String username, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/passkeys/{username}"
+            .replace("{" + "username" + "}", localVarApiClient.escapeString(username.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "Token" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call listPasskeysValidateBeforeCall(String username, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'username' is set
+        if (username == null) {
+            throw new ApiException("Missing the required parameter 'username' when calling listPasskeys(Async)");
+        }
+
+        return listPasskeysCall(username, _callback);
+
+    }
+
+    /**
+     * List passkeys
+     * Returns every passkey registered under the supplied username. 
+     * @param username Username that owns the passkeys. (required)
+     * @return PasskeysList
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Passkeys belonging to the username </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Passkey not found </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+     </table>
+     */
+    public PasskeysList listPasskeys(String username) throws ApiException {
+        ApiResponse<PasskeysList> localVarResp = listPasskeysWithHttpInfo(username);
+        return localVarResp.getData();
+    }
+
+    /**
+     * List passkeys
+     * Returns every passkey registered under the supplied username. 
+     * @param username Username that owns the passkeys. (required)
+     * @return ApiResponse&lt;PasskeysList&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Passkeys belonging to the username </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Passkey not found </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<PasskeysList> listPasskeysWithHttpInfo(String username) throws ApiException {
+        okhttp3.Call localVarCall = listPasskeysValidateBeforeCall(username, null);
+        Type localVarReturnType = new TypeToken<PasskeysList>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * List passkeys (asynchronously)
+     * Returns every passkey registered under the supplied username. 
+     * @param username Username that owns the passkeys. (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Passkeys belonging to the username </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Passkey not found </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call listPasskeysAsync(String username, final ApiCallback<PasskeysList> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = listPasskeysValidateBeforeCall(username, _callback);
+        Type localVarReturnType = new TypeToken<PasskeysList>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
      * Build call for listRepeatAttempts
      * @param reportId  (required)
      * @param _callback Callback for upload/download progress
@@ -7054,6 +8026,140 @@ public class DefaultApi {
 
         okhttp3.Call localVarCall = listReportsValidateBeforeCall(checkId, _callback);
         Type localVarReturnType = new TypeToken<ReportsList>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for listSigningDocuments
+     * @param applicantId  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> List of Signing Documents </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call listSigningDocumentsCall(UUID applicantId, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/signing_documents";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (applicantId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("applicant_id", applicantId));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "Token" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call listSigningDocumentsValidateBeforeCall(UUID applicantId, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'applicantId' is set
+        if (applicantId == null) {
+            throw new ApiException("Missing the required parameter 'applicantId' when calling listSigningDocuments(Async)");
+        }
+
+        return listSigningDocumentsCall(applicantId, _callback);
+
+    }
+
+    /**
+     * List signing documents
+     * All signing documents belonging to an applicant can be listed from this endpoint
+     * @param applicantId  (required)
+     * @return SigningDocumentsList
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> List of Signing Documents </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+     </table>
+     */
+    public SigningDocumentsList listSigningDocuments(UUID applicantId) throws ApiException {
+        ApiResponse<SigningDocumentsList> localVarResp = listSigningDocumentsWithHttpInfo(applicantId);
+        return localVarResp.getData();
+    }
+
+    /**
+     * List signing documents
+     * All signing documents belonging to an applicant can be listed from this endpoint
+     * @param applicantId  (required)
+     * @return ApiResponse&lt;SigningDocumentsList&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> List of Signing Documents </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<SigningDocumentsList> listSigningDocumentsWithHttpInfo(UUID applicantId) throws ApiException {
+        okhttp3.Call localVarCall = listSigningDocumentsValidateBeforeCall(applicantId, null);
+        Type localVarReturnType = new TypeToken<SigningDocumentsList>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * List signing documents (asynchronously)
+     * All signing documents belonging to an applicant can be listed from this endpoint
+     * @param applicantId  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> List of Signing Documents </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call listSigningDocumentsAsync(UUID applicantId, final ApiCallback<SigningDocumentsList> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = listSigningDocumentsValidateBeforeCall(applicantId, _callback);
+        Type localVarReturnType = new TypeToken<SigningDocumentsList>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -8654,6 +9760,165 @@ public class DefaultApi {
         return localVarCall;
     }
     /**
+     * Build call for updatePasskey
+     * @param username Username that owns the passkey. (required)
+     * @param passkeyId Passkey ID. (required)
+     * @param passkeyUpdater Passkey update payload. (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Passkey updated </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Passkey not found </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call updatePasskeyCall(String username, String passkeyId, PasskeyUpdater passkeyUpdater, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = passkeyUpdater;
+
+        // create path and map variables
+        String localVarPath = "/passkeys/{username}/{passkey_id}"
+            .replace("{" + "username" + "}", localVarApiClient.escapeString(username.toString()))
+            .replace("{" + "passkey_id" + "}", localVarApiClient.escapeString(passkeyId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "Token" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call updatePasskeyValidateBeforeCall(String username, String passkeyId, PasskeyUpdater passkeyUpdater, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'username' is set
+        if (username == null) {
+            throw new ApiException("Missing the required parameter 'username' when calling updatePasskey(Async)");
+        }
+
+        // verify the required parameter 'passkeyId' is set
+        if (passkeyId == null) {
+            throw new ApiException("Missing the required parameter 'passkeyId' when calling updatePasskey(Async)");
+        }
+
+        // verify the required parameter 'passkeyUpdater' is set
+        if (passkeyUpdater == null) {
+            throw new ApiException("Missing the required parameter 'passkeyUpdater' when calling updatePasskey(Async)");
+        }
+
+        return updatePasskeyCall(username, passkeyId, passkeyUpdater, _callback);
+
+    }
+
+    /**
+     * Update passkey
+     * Updates a passkey&#39;s state. 
+     * @param username Username that owns the passkey. (required)
+     * @param passkeyId Passkey ID. (required)
+     * @param passkeyUpdater Passkey update payload. (required)
+     * @return Passkey
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Passkey updated </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Passkey not found </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+     </table>
+     */
+    public Passkey updatePasskey(String username, String passkeyId, PasskeyUpdater passkeyUpdater) throws ApiException {
+        ApiResponse<Passkey> localVarResp = updatePasskeyWithHttpInfo(username, passkeyId, passkeyUpdater);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Update passkey
+     * Updates a passkey&#39;s state. 
+     * @param username Username that owns the passkey. (required)
+     * @param passkeyId Passkey ID. (required)
+     * @param passkeyUpdater Passkey update payload. (required)
+     * @return ApiResponse&lt;Passkey&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Passkey updated </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Passkey not found </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<Passkey> updatePasskeyWithHttpInfo(String username, String passkeyId, PasskeyUpdater passkeyUpdater) throws ApiException {
+        okhttp3.Call localVarCall = updatePasskeyValidateBeforeCall(username, passkeyId, passkeyUpdater, null);
+        Type localVarReturnType = new TypeToken<Passkey>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Update passkey (asynchronously)
+     * Updates a passkey&#39;s state. 
+     * @param username Username that owns the passkey. (required)
+     * @param passkeyId Passkey ID. (required)
+     * @param passkeyUpdater Passkey update payload. (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Passkey updated </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Passkey not found </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call updatePasskeyAsync(String username, String passkeyId, PasskeyUpdater passkeyUpdater, final ApiCallback<Passkey> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = updatePasskeyValidateBeforeCall(username, passkeyId, passkeyUpdater, _callback);
+        Type localVarReturnType = new TypeToken<Passkey>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
      * Build call for updateWatchlistMonitorMatch
      * @param monitorId  (required)
      * @param watchlistMonitorMatchesUpdater  (required)
@@ -9417,6 +10682,154 @@ public class DefaultApi {
 
         okhttp3.Call localVarCall = uploadLivePhotoValidateBeforeCall(applicantId, _file, advancedValidation, _callback);
         Type localVarReturnType = new TypeToken<LivePhoto>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for uploadSigningDocument
+     * @param applicantId The ID of the applicant whose signing document is being uploaded. (required)
+     * @param _file The file to be uploaded. (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> A signing document </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call uploadSigningDocumentCall(UUID applicantId, FileTransfer _file, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/signing_documents";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (applicantId != null) {
+            localVarFormParams.put("applicant_id", applicantId);
+        }
+
+        if (_file != null) {
+            localVarFormParams.put("file", _file);
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "multipart/form-data"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "Token" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call uploadSigningDocumentValidateBeforeCall(UUID applicantId, FileTransfer _file, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'applicantId' is set
+        if (applicantId == null) {
+            throw new ApiException("Missing the required parameter 'applicantId' when calling uploadSigningDocument(Async)");
+        }
+
+        // verify the required parameter '_file' is set
+        if (_file == null) {
+            throw new ApiException("Missing the required parameter '_file' when calling uploadSigningDocument(Async)");
+        }
+
+        return uploadSigningDocumentCall(applicantId, _file, _callback);
+
+    }
+
+    /**
+     * Upload a signing document
+     * Signing documents are uploaded using this endpoint. Signing documents must be uploaded as a multipart form. The only valid file type is pdf. The file size must be between 2KB and 3MB. 
+     * @param applicantId The ID of the applicant whose signing document is being uploaded. (required)
+     * @param _file The file to be uploaded. (required)
+     * @return SigningDocument
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> A signing document </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+     </table>
+     */
+    public SigningDocument uploadSigningDocument(UUID applicantId, FileTransfer _file) throws ApiException {
+        ApiResponse<SigningDocument> localVarResp = uploadSigningDocumentWithHttpInfo(applicantId, _file);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Upload a signing document
+     * Signing documents are uploaded using this endpoint. Signing documents must be uploaded as a multipart form. The only valid file type is pdf. The file size must be between 2KB and 3MB. 
+     * @param applicantId The ID of the applicant whose signing document is being uploaded. (required)
+     * @param _file The file to be uploaded. (required)
+     * @return ApiResponse&lt;SigningDocument&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> A signing document </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<SigningDocument> uploadSigningDocumentWithHttpInfo(UUID applicantId, FileTransfer _file) throws ApiException {
+        okhttp3.Call localVarCall = uploadSigningDocumentValidateBeforeCall(applicantId, _file, null);
+        Type localVarReturnType = new TypeToken<SigningDocument>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Upload a signing document (asynchronously)
+     * Signing documents are uploaded using this endpoint. Signing documents must be uploaded as a multipart form. The only valid file type is pdf. The file size must be between 2KB and 3MB. 
+     * @param applicantId The ID of the applicant whose signing document is being uploaded. (required)
+     * @param _file The file to be uploaded. (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> A signing document </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call uploadSigningDocumentAsync(UUID applicantId, FileTransfer _file, final ApiCallback<SigningDocument> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = uploadSigningDocumentValidateBeforeCall(applicantId, _file, _callback);
+        Type localVarReturnType = new TypeToken<SigningDocument>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

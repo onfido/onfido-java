@@ -53,38 +53,38 @@ import com.onfido.JSON;
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class SigningDocumentsList {
-  public static final String SERIALIZED_NAME_DOCUMENTS = "documents";
-  @SerializedName(SERIALIZED_NAME_DOCUMENTS)
-  @javax.annotation.Nullable
-  private List<SigningDocument> documents = new ArrayList<>();
+  public static final String SERIALIZED_NAME_SIGNING_DOCUMENTS = "signing_documents";
+  @SerializedName(SERIALIZED_NAME_SIGNING_DOCUMENTS)
+  @javax.annotation.Nonnull
+  private List<SigningDocument> signingDocuments = new ArrayList<>();
 
   public SigningDocumentsList() {
   }
 
-  public SigningDocumentsList documents(@javax.annotation.Nullable List<SigningDocument> documents) {
-    this.documents = documents;
+  public SigningDocumentsList signingDocuments(@javax.annotation.Nonnull List<SigningDocument> signingDocuments) {
+    this.signingDocuments = signingDocuments;
     return this;
   }
 
-  public SigningDocumentsList addDocumentsItem(SigningDocument documentsItem) {
-    if (this.documents == null) {
-      this.documents = new ArrayList<>();
+  public SigningDocumentsList addSigningDocumentsItem(SigningDocument signingDocumentsItem) {
+    if (this.signingDocuments == null) {
+      this.signingDocuments = new ArrayList<>();
     }
-    this.documents.add(documentsItem);
+    this.signingDocuments.add(signingDocumentsItem);
     return this;
   }
 
   /**
-   * Get documents
-   * @return documents
+   * Get signingDocuments
+   * @return signingDocuments
    */
-  @javax.annotation.Nullable
-  public List<SigningDocument> getDocuments() {
-    return documents;
+  @javax.annotation.Nonnull
+  public List<SigningDocument> getSigningDocuments() {
+    return signingDocuments;
   }
 
-  public void setDocuments(@javax.annotation.Nullable List<SigningDocument> documents) {
-    this.documents = documents;
+  public void setSigningDocuments(@javax.annotation.Nonnull List<SigningDocument> signingDocuments) {
+    this.signingDocuments = signingDocuments;
   }
 
   /**
@@ -142,20 +142,20 @@ public class SigningDocumentsList {
       return false;
     }
     SigningDocumentsList signingDocumentsList = (SigningDocumentsList) o;
-    return Objects.equals(this.documents, signingDocumentsList.documents)&&
+    return Objects.equals(this.signingDocuments, signingDocumentsList.signingDocuments)&&
         Objects.equals(this.additionalProperties, signingDocumentsList.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(documents, additionalProperties);
+    return Objects.hash(signingDocuments, additionalProperties);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class SigningDocumentsList {\n");
-    sb.append("    documents: ").append(toIndentedString(documents)).append("\n");
+    sb.append("    signingDocuments: ").append(toIndentedString(signingDocuments)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -179,10 +179,11 @@ public class SigningDocumentsList {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("documents");
+    openapiFields.add("signing_documents");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("signing_documents");
   }
 
   /**
@@ -197,21 +198,24 @@ public class SigningDocumentsList {
           throw new IllegalArgumentException(String.format("The required field(s) %s in SigningDocumentsList is not found in the empty JSON string", SigningDocumentsList.openapiRequiredFields.toString()));
         }
       }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if (jsonObj.get("documents") != null && !jsonObj.get("documents").isJsonNull()) {
-        JsonArray jsonArraydocuments = jsonObj.getAsJsonArray("documents");
-        if (jsonArraydocuments != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("documents").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `documents` to be an array in the JSON string but got `%s`", jsonObj.get("documents").toString()));
-          }
 
-          // validate the optional field `documents` (array)
-          for (int i = 0; i < jsonArraydocuments.size(); i++) {
-            SigningDocument.validateJsonElement(jsonArraydocuments.get(i));
-          };
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : SigningDocumentsList.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // ensure the json data is an array
+      if (!jsonObj.get("signing_documents").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `signing_documents` to be an array in the JSON string but got `%s`", jsonObj.get("signing_documents").toString()));
+      }
+
+      JsonArray jsonArraysigningDocuments = jsonObj.getAsJsonArray("signing_documents");
+      // validate the required field `signing_documents` (array)
+      for (int i = 0; i < jsonArraysigningDocuments.size(); i++) {
+        SigningDocument.validateJsonElement(jsonArraysigningDocuments.get(i));
+      };
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

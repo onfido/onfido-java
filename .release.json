@@ -1,8 +1,8 @@
 {
   "source": {
     "repo_url": "https://github.com/onfido/onfido-openapi-spec",
-    "short_sha": "e065d82",
-    "long_sha": "e065d8212494e0a91ad5053d612a7ab9f134a8af",
+    "short_sha": "3e893ef",
+    "long_sha": "3e893efe638faef78662beb4eb2ad2e14f1d2506",
     "version": "v5.7.0"
   },
   "release": "v6.7.0"

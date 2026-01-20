@@ -125,7 +125,7 @@ public class Passkey {
   @javax.annotation.Nonnull
   private OffsetDateTime createdAt;
 
-  public static final String SERIALIZED_NAME_LAST_USED_AT = "lastUsedAt";
+  public static final String SERIALIZED_NAME_LAST_USED_AT = "last_used_at";
   @SerializedName(SERIALIZED_NAME_LAST_USED_AT)
   @javax.annotation.Nullable
   private OffsetDateTime lastUsedAt;
@@ -331,7 +331,7 @@ public class Passkey {
     openapiFields.add("application_domain");
     openapiFields.add("state");
     openapiFields.add("created_at");
-    openapiFields.add("lastUsedAt");
+    openapiFields.add("last_used_at");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();

@@ -55,7 +55,7 @@ public class SigningDocumentTest extends TestBase {
   @Test
   public void listSigningDocumentsTest() throws Exception {
     List<SigningDocument> documents =
-      onfido.listSigningDocuments(applicant.getId()).getSigningDocuments();
+        onfido.listSigningDocuments(applicant.getId()).getSigningDocuments();
 
     Assertions.assertNotNull(documents);
     Assertions.assertTrue(

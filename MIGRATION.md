@@ -6,6 +6,33 @@ major versions of the client library.
 It covers changes in core resources, other endpoints, and the OpenAPI generator,
 ensuring a smooth transition between versions.
 
+## Upgrading from 6.x to 7.x
+
+### API Method Invocation
+
+- All API methods now return request builder objects requiring `.execute()` call
+- Optional parameters are set via fluent setter methods instead of method parameters
+- This change prevents breaking changes when new optional parameters are added
+
+Example migration:
+```java
+// Before (6.x)
+Applicant applicant = onfido.findApplicant(applicantId);
+List<WorkflowRun> runs = onfido.listWorkflowRuns(applicantId, status, page, perPage);
+
+// After (7.x)
+Applicant applicant = onfido.findApplicant(applicantId).execute();
+List<WorkflowRun> runs = onfido.listWorkflowRuns()
+    .applicantId(applicantId)
+    .status(status)
+    .page(page)
+    .perPage(perPage)
+    .execute();
+```
+
+Note: Some list methods return wrapper objects (e.g., `ChecksList`) with
+accessor methods like `getChecks()` to retrieve the actual list.
+
 ## Upgrading from 5.x to 6.x
 
 ### Core Resources

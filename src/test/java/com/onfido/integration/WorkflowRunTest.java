@@ -51,7 +51,7 @@ public class WorkflowRunTest extends TestBase {
             new WorkflowRunBuilder()
                 .workflowId(workflowId)
                 .applicantId(applicantId)
-                .customData(customData));
+                .customData(customData)).execute();
 
     Assertions.assertEquals(workflowId, workflowRunWithCustomInputs.getWorkflowId());
     Assertions.assertEquals(applicantId, workflowRunWithCustomInputs.getApplicantId());
@@ -62,7 +62,7 @@ public class WorkflowRunTest extends TestBase {
 
   @Test
   public void findWorkflowRunTest() throws Exception {
-    WorkflowRun lookupWorkflowRun = onfido.findWorkflowRun(workflowRunId);
+    WorkflowRun lookupWorkflowRun = onfido.findWorkflowRun(workflowRunId).execute();
 
     Assertions.assertEquals(WORKFLOW_ID, lookupWorkflowRun.getWorkflowId());
     Assertions.assertEquals(applicantId, lookupWorkflowRun.getApplicantId());
@@ -72,7 +72,7 @@ public class WorkflowRunTest extends TestBase {
 
   @Test
   public void evidenceWorkflowRunTest() throws Exception {
-    byte[] byteArray = onfido.downloadSignedEvidenceFile(workflowRunId).getByteArray();
+    byte[] byteArray = onfido.downloadSignedEvidenceFile(workflowRunId).execute().getByteArray();
 
     Assertions.assertEquals("%PDF", new String(byteArray, 0, 4));
     Assertions.assertTrue(byteArray.length > 0);
@@ -88,7 +88,7 @@ public class WorkflowRunTest extends TestBase {
         WorkflowRunStatus.APPROVED,
         MAX_RETRIES,
         SLEEP_TIME);
-    TimelineFileReference workflowTimelineFileData = onfido.createTimelineFile(workflowRunId);
+    TimelineFileReference workflowTimelineFileData = onfido.createTimelineFile(workflowRunId).execute();
 
     Assertions.assertNotNull(workflowTimelineFileData.getWorkflowTimelineFileId());
     Assertions.assertNotNull(workflowTimelineFileData.getHref());
@@ -106,7 +106,7 @@ public class WorkflowRunTest extends TestBase {
         WorkflowRunStatus.APPROVED,
         MAX_RETRIES,
         SLEEP_TIME);
-    UUID timelineFileId = onfido.createTimelineFile(workflowRunId).getWorkflowTimelineFileId();
+    UUID timelineFileId = onfido.createTimelineFile(workflowRunId).execute().getWorkflowTimelineFileId();
 
     FileTransfer download =
         (FileTransfer)

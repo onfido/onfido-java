@@ -34,10 +34,10 @@ public class QualifiedElectronicSignatureTest extends TestBase {
             new WorkflowRunBuilder()
                 .workflowId(workflowId)
                 .applicantId(applicantId)
-                .customData(customData));
+                .customData(customData)).execute();
     UUID workflowRunId = workflowRun.getId();
 
-    TaskItem task = onfido.listTasks(workflowRunId).get(1);
+    TaskItem task = onfido.listTasks(workflowRunId).execute().get(1);
 
     LinkedTreeMap output =
         (LinkedTreeMap)
@@ -50,7 +50,7 @@ public class QualifiedElectronicSignatureTest extends TestBase {
     LinkedTreeMap signedDocument = (LinkedTreeMap) signedDocuments.get(0);
     UUID fileId = UUID.fromString((String) signedDocument.get("id"));
 
-    byte[] byteArray = onfido.downloadQesDocument(workflowRunId, fileId).getByteArray();
+    byte[] byteArray = onfido.downloadQesDocument(workflowRunId, fileId).execute().getByteArray();
 
     Assertions.assertEquals("%PDF", new String(byteArray, 0, 4));
     Assertions.assertTrue(byteArray.length > 0);

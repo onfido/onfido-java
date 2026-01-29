@@ -29,7 +29,7 @@ public class ExtractionTest extends TestBase {
 
     Document document =
         uploadDocument(applicant, "sample_driving_licence.png", DocumentTypes.DRIVING_LICENCE);
-    Extraction extraction = onfido.extract(new ExtractRequest().documentId(document.getId()));
+    Extraction extraction = onfido.extract(new ExtractRequest().documentId(document.getId())).execute();
 
     Assertions.assertEquals(document.getId(), extraction.getDocumentId());
 

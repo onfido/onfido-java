@@ -9,7 +9,7 @@ public class AddressTest extends TestBase {
 
   @Test
   public void pickTest() throws Exception {
-    List<Address> addresses = onfido.findAddresses("S2 2DF").getAddresses();
+    List<Address> addresses = onfido.findAddresses("S2 2DF").execute().getAddresses();
 
     Assertions.assertNotNull(addresses);
     Assertions.assertEquals("S2 2DF", addresses.get(0).getPostcode());

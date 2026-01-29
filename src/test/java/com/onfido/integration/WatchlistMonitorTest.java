@@ -36,7 +36,7 @@ public class WatchlistMonitorTest extends TestBase {
   public void listWatchlistMonitors() throws Exception {
     createWatchlistMonitor(applicantId, WatchlistMonitorBuilder.ReportNameEnum.STANDARD);
 
-    WatchlistMonitorsList listOfMonitors = onfido.listWatchlistMonitors(applicantId, false);
+    WatchlistMonitorsList listOfMonitors = onfido.listWatchlistMonitors(applicantId).includeDeleted(false).execute();
     Assertions.assertFalse(listOfMonitors.getMonitors().isEmpty());
   }
 
@@ -46,7 +46,7 @@ public class WatchlistMonitorTest extends TestBase {
         createWatchlistMonitor(applicantId, WatchlistMonitorBuilder.ReportNameEnum.STANDARD)
             .getId();
 
-    WatchlistMonitor monitor = onfido.findWatchlistMonitor(monitorId);
+    WatchlistMonitor monitor = onfido.findWatchlistMonitor(monitorId).execute();
     Assertions.assertEquals(monitorId, monitor.getId());
   }
 
@@ -56,7 +56,7 @@ public class WatchlistMonitorTest extends TestBase {
         createWatchlistMonitor(applicantId, WatchlistMonitorBuilder.ReportNameEnum.STANDARD)
             .getId();
 
-    onfido.deleteWatchlistMonitor(monitorId);
+    onfido.deleteWatchlistMonitor(monitorId).execute();
   }
 
   @Test
@@ -65,7 +65,7 @@ public class WatchlistMonitorTest extends TestBase {
         createWatchlistMonitor(applicantId, WatchlistMonitorBuilder.ReportNameEnum.STANDARD)
             .getId();
 
-    WatchlistMonitorMatchesList matches = onfido.listWatchlistMonitorMatches(monitorId);
+    WatchlistMonitorMatchesList matches = onfido.listWatchlistMonitorMatches(monitorId).execute();
     Assertions.assertTrue(matches.getMatches().isEmpty());
   }
 
@@ -75,6 +75,6 @@ public class WatchlistMonitorTest extends TestBase {
         createWatchlistMonitor(applicantId, WatchlistMonitorBuilder.ReportNameEnum.STANDARD)
             .getId();
 
-    onfido.forceReportCreationFromWatchlistMonitor(monitorId);
+    onfido.forceReportCreationFromWatchlistMonitor(monitorId).execute();
   }
 }

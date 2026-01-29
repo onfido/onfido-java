@@ -27,7 +27,8 @@ public class OnfidoTest {
             ApiException.class,
             () ->
                 new DefaultApi(apiClient)
-                    .findApplicant(UUID.fromString("839d4812-7c49-4008-8d83-bbd7610f0fec")),
+                    .findApplicant(UUID.fromString("839d4812-7c49-4008-8d83-bbd7610f0fec"))
+                    .execute(),
             "Expected to throw, but it didn't");
 
     assertTrue(thrown.getMessage().contains("authorization_error"));
@@ -40,7 +41,8 @@ public class OnfidoTest {
             ApiException.class,
             () ->
                 new DefaultApi(apiClient.setApiToken(null))
-                    .findApplicant(UUID.fromString("839d4812-7c49-4008-8d83-bbd7610f0fec")),
+                    .findApplicant(UUID.fromString("839d4812-7c49-4008-8d83-bbd7610f0fec"))
+                    .execute(),
             "Expected to throw, but it didn't");
 
     assertTrue(thrown.getMessage().contains("authorization_error"));

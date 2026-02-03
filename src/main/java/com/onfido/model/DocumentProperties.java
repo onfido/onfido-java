@@ -125,6 +125,11 @@ public class DocumentProperties {
   @javax.annotation.Nullable
   private LocalDate issuingDate;
 
+  public static final String SERIALIZED_NAME_VALID_FROM = "valid_from";
+  @SerializedName(SERIALIZED_NAME_VALID_FROM)
+  @javax.annotation.Nullable
+  private LocalDate validFrom;
+
   public static final String SERIALIZED_NAME_CATEGORISATION = "categorisation";
   @SerializedName(SERIALIZED_NAME_CATEGORISATION)
   @javax.annotation.Nullable
@@ -720,6 +725,25 @@ public class DocumentProperties {
 
   public void setIssuingDate(@javax.annotation.Nullable LocalDate issuingDate) {
     this.issuingDate = issuingDate;
+  }
+
+
+  public DocumentProperties validFrom(@javax.annotation.Nullable LocalDate validFrom) {
+    this.validFrom = validFrom;
+    return this;
+  }
+
+  /**
+   * Get validFrom
+   * @return validFrom
+   */
+  @javax.annotation.Nullable
+  public LocalDate getValidFrom() {
+    return validFrom;
+  }
+
+  public void setValidFrom(@javax.annotation.Nullable LocalDate validFrom) {
+    this.validFrom = validFrom;
   }
 
 
@@ -1414,6 +1438,7 @@ public class DocumentProperties {
         Objects.equals(this.nationality, documentProperties.nationality) &&
         Objects.equals(this.issuingState, documentProperties.issuingState) &&
         Objects.equals(this.issuingDate, documentProperties.issuingDate) &&
+        Objects.equals(this.validFrom, documentProperties.validFrom) &&
         Objects.equals(this.categorisation, documentProperties.categorisation) &&
         Objects.equals(this.mrzLine1, documentProperties.mrzLine1) &&
         Objects.equals(this.mrzLine2, documentProperties.mrzLine2) &&
@@ -1451,7 +1476,7 @@ public class DocumentProperties {
 
   @Override
   public int hashCode() {
-    return Objects.hash(dateOfBirth, dateOfExpiry, personalNumber, documentNumbers, documentType, firstName, middleName, lastName, gender, issuingCountry, nationality, issuingState, issuingDate, categorisation, mrzLine1, mrzLine2, mrzLine3, address, placeOfBirth, spouseName, widowName, aliasName, issuingAuthority, remarks, civilState, expatriation, fatherName, motherName, religion, typeOfPermit, versionNumber, documentSubtype, profession, securityDocumentNumber, taxNumber, nistIdentityEvidenceStrength, hasIssuanceConfirmation, realIdCompliance, securityTier, addressLines, barcode, nfc, drivingLicenceInformation, documentClassification, extractedData, additionalProperties);
+    return Objects.hash(dateOfBirth, dateOfExpiry, personalNumber, documentNumbers, documentType, firstName, middleName, lastName, gender, issuingCountry, nationality, issuingState, issuingDate, validFrom, categorisation, mrzLine1, mrzLine2, mrzLine3, address, placeOfBirth, spouseName, widowName, aliasName, issuingAuthority, remarks, civilState, expatriation, fatherName, motherName, religion, typeOfPermit, versionNumber, documentSubtype, profession, securityDocumentNumber, taxNumber, nistIdentityEvidenceStrength, hasIssuanceConfirmation, realIdCompliance, securityTier, addressLines, barcode, nfc, drivingLicenceInformation, documentClassification, extractedData, additionalProperties);
   }
 
   @Override
@@ -1471,6 +1496,7 @@ public class DocumentProperties {
     sb.append("    nationality: ").append(toIndentedString(nationality)).append("\n");
     sb.append("    issuingState: ").append(toIndentedString(issuingState)).append("\n");
     sb.append("    issuingDate: ").append(toIndentedString(issuingDate)).append("\n");
+    sb.append("    validFrom: ").append(toIndentedString(validFrom)).append("\n");
     sb.append("    categorisation: ").append(toIndentedString(categorisation)).append("\n");
     sb.append("    mrzLine1: ").append(toIndentedString(mrzLine1)).append("\n");
     sb.append("    mrzLine2: ").append(toIndentedString(mrzLine2)).append("\n");
@@ -1539,6 +1565,7 @@ public class DocumentProperties {
     openapiFields.add("nationality");
     openapiFields.add("issuing_state");
     openapiFields.add("issuing_date");
+    openapiFields.add("valid_from");
     openapiFields.add("categorisation");
     openapiFields.add("mrz_line1");
     openapiFields.add("mrz_line2");

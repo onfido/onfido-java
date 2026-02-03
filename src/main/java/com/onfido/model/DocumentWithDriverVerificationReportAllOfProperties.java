@@ -127,6 +127,11 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
   @javax.annotation.Nullable
   private LocalDate issuingDate;
 
+  public static final String SERIALIZED_NAME_VALID_FROM = "valid_from";
+  @SerializedName(SERIALIZED_NAME_VALID_FROM)
+  @javax.annotation.Nullable
+  private LocalDate validFrom;
+
   public static final String SERIALIZED_NAME_CATEGORISATION = "categorisation";
   @SerializedName(SERIALIZED_NAME_CATEGORISATION)
   @javax.annotation.Nullable
@@ -757,6 +762,25 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
 
   public void setIssuingDate(@javax.annotation.Nullable LocalDate issuingDate) {
     this.issuingDate = issuingDate;
+  }
+
+
+  public DocumentWithDriverVerificationReportAllOfProperties validFrom(@javax.annotation.Nullable LocalDate validFrom) {
+    this.validFrom = validFrom;
+    return this;
+  }
+
+  /**
+   * Get validFrom
+   * @return validFrom
+   */
+  @javax.annotation.Nullable
+  public LocalDate getValidFrom() {
+    return validFrom;
+  }
+
+  public void setValidFrom(@javax.annotation.Nullable LocalDate validFrom) {
+    this.validFrom = validFrom;
   }
 
 
@@ -1592,6 +1616,7 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
         Objects.equals(this.nationality, documentWithDriverVerificationReportAllOfProperties.nationality) &&
         Objects.equals(this.issuingState, documentWithDriverVerificationReportAllOfProperties.issuingState) &&
         Objects.equals(this.issuingDate, documentWithDriverVerificationReportAllOfProperties.issuingDate) &&
+        Objects.equals(this.validFrom, documentWithDriverVerificationReportAllOfProperties.validFrom) &&
         Objects.equals(this.categorisation, documentWithDriverVerificationReportAllOfProperties.categorisation) &&
         Objects.equals(this.mrzLine1, documentWithDriverVerificationReportAllOfProperties.mrzLine1) &&
         Objects.equals(this.mrzLine2, documentWithDriverVerificationReportAllOfProperties.mrzLine2) &&
@@ -1636,7 +1661,7 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
 
   @Override
   public int hashCode() {
-    return Objects.hash(dateOfBirth, dateOfExpiry, personalNumber, documentNumbers, documentType, firstName, middleName, lastName, gender, issuingCountry, nationality, issuingState, issuingDate, categorisation, mrzLine1, mrzLine2, mrzLine3, address, placeOfBirth, spouseName, widowName, aliasName, issuingAuthority, remarks, civilState, expatriation, fatherName, motherName, religion, typeOfPermit, versionNumber, documentSubtype, profession, securityDocumentNumber, taxNumber, nistIdentityEvidenceStrength, hasIssuanceConfirmation, realIdCompliance, securityTier, addressLines, barcode, nfc, drivingLicenceInformation, documentClassification, extractedData, driversLicence, restrictedLicence, rawLicenceCategory, rawVehicleClasses, manualTransmissionRestriction, vehicleClassDetails, passengerVehicle, additionalProperties);
+    return Objects.hash(dateOfBirth, dateOfExpiry, personalNumber, documentNumbers, documentType, firstName, middleName, lastName, gender, issuingCountry, nationality, issuingState, issuingDate, validFrom, categorisation, mrzLine1, mrzLine2, mrzLine3, address, placeOfBirth, spouseName, widowName, aliasName, issuingAuthority, remarks, civilState, expatriation, fatherName, motherName, religion, typeOfPermit, versionNumber, documentSubtype, profession, securityDocumentNumber, taxNumber, nistIdentityEvidenceStrength, hasIssuanceConfirmation, realIdCompliance, securityTier, addressLines, barcode, nfc, drivingLicenceInformation, documentClassification, extractedData, driversLicence, restrictedLicence, rawLicenceCategory, rawVehicleClasses, manualTransmissionRestriction, vehicleClassDetails, passengerVehicle, additionalProperties);
   }
 
   @Override
@@ -1656,6 +1681,7 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     sb.append("    nationality: ").append(toIndentedString(nationality)).append("\n");
     sb.append("    issuingState: ").append(toIndentedString(issuingState)).append("\n");
     sb.append("    issuingDate: ").append(toIndentedString(issuingDate)).append("\n");
+    sb.append("    validFrom: ").append(toIndentedString(validFrom)).append("\n");
     sb.append("    categorisation: ").append(toIndentedString(categorisation)).append("\n");
     sb.append("    mrzLine1: ").append(toIndentedString(mrzLine1)).append("\n");
     sb.append("    mrzLine2: ").append(toIndentedString(mrzLine2)).append("\n");
@@ -1731,6 +1757,7 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     openapiFields.add("nationality");
     openapiFields.add("issuing_state");
     openapiFields.add("issuing_date");
+    openapiFields.add("valid_from");
     openapiFields.add("categorisation");
     openapiFields.add("mrz_line1");
     openapiFields.add("mrz_line2");

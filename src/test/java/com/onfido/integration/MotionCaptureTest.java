@@ -15,7 +15,7 @@ public class MotionCaptureTest extends TestBase {
 
   @Test
   public void downloadMotionCaptureTest() throws Exception {
-    FileTransfer download = onfido.downloadMotionCapture(EXAMPLE_ID_1);
+    FileTransfer download = onfido.downloadMotionCapture(EXAMPLE_ID_1).execute();
 
     Assertions.assertEquals("video/mp4", download.getContentType());
     Assertions.assertTrue(download.getFilename() != null);
@@ -25,7 +25,7 @@ public class MotionCaptureTest extends TestBase {
   @Test
   public void downloadMotionCaptureFrameTest() throws Exception {
     try {
-      FileTransfer download = onfido.downloadMotionCaptureFrame(EXAMPLE_ID_1);
+      FileTransfer download = onfido.downloadMotionCaptureFrame(EXAMPLE_ID_1).execute();
       byte[] byteArray = download.getByteArray();
 
       Assertions.assertEquals("image/jpeg", download.getContentType());
@@ -43,7 +43,7 @@ public class MotionCaptureTest extends TestBase {
   @Test
   public void downloadErrorTest() throws Exception {
     try {
-      onfido.downloadMotionCapture(nonExistingId);
+      onfido.downloadMotionCapture(nonExistingId).execute();
       Assertions.fail();
     } catch (ApiException ex) {
       Assertions.assertEquals(404, ex.getCode());
@@ -54,7 +54,7 @@ public class MotionCaptureTest extends TestBase {
   public void findMotionCaptureTest() throws Exception {
     String expectedFilename = EXAMPLE_ID_1 + ".mp4";
 
-    MotionCapture motionCapture = onfido.findMotionCapture(EXAMPLE_ID_1);
+    MotionCapture motionCapture = onfido.findMotionCapture(EXAMPLE_ID_1).execute();
 
     Assertions.assertEquals(expectedFilename, motionCapture.getFileName());
 
@@ -64,7 +64,7 @@ public class MotionCaptureTest extends TestBase {
   @Test
   public void listMotionCapturesTest() throws Exception {
     List<MotionCapture> motionCaptures =
-        onfido.listMotionCaptures(sampleApplicantId).getMotionCaptures();
+        onfido.listMotionCaptures(sampleApplicantId).execute().getMotionCaptures();
 
     Assertions.assertEquals(2, motionCaptures.size());
 

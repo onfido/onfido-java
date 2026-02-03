@@ -91,7 +91,7 @@ public class CheckTest extends TestBase {
             document,
             new CheckBuilder().reportNames(Arrays.asList(ReportName.DOCUMENT)));
 
-    Check lookupCheck = onfido.findCheck(check.getId());
+    Check lookupCheck = onfido.findCheck(check.getId()).execute();
 
     Assertions.assertEquals(check.getApplicantId(), lookupCheck.getApplicantId());
 
@@ -103,7 +103,7 @@ public class CheckTest extends TestBase {
     createCheck(
         applicant, document, new CheckBuilder().reportNames(Arrays.asList(ReportName.DOCUMENT)));
 
-    List<Check> checks = onfido.listChecks(applicant.getId()).getChecks();
+    List<Check> checks = onfido.listChecks(applicant.getId()).execute().getChecks();
 
     Assertions.assertEquals(applicant.getId(), checks.get(0).getApplicantId());
     Assertions.assertEquals(1, checks.size());
@@ -130,7 +130,7 @@ public class CheckTest extends TestBase {
             document,
             new CheckBuilder().reportNames(Arrays.asList(ReportName.DOCUMENT)));
 
-    FileTransfer download = onfido.downloadCheck(check.getId());
+    FileTransfer download = onfido.downloadCheck(check.getId()).execute();
     byte[] byteArray = download.getByteArray();
 
     Assertions.assertEquals("application/pdf", download.getContentType());

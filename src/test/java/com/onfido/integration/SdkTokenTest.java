@@ -16,7 +16,7 @@ public class SdkTokenTest extends TestBase {
         onfido.generateSdkToken(
             new SdkTokenBuilder()
                 .applicantId(applicant.getId())
-                .referrer("https://*.example.com/example_page/*"));
+                .referrer("https://*.example.com/example_page/*")).execute();
 
     Assertions.assertTrue(token.getToken().length() > 0);
 

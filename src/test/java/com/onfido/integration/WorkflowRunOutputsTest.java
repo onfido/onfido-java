@@ -29,8 +29,8 @@ public class WorkflowRunOutputsTest extends TestBase {
     CompleteTaskBuilder completeTaskBuilder = new CompleteTaskBuilder();
     completeTaskBuilder.setData(new CompleteTaskDataBuilder(gson.fromJson(reader, Object.class)));
 
-    onfido.completeTask(workflowRunId, taskId, completeTaskBuilder);
-    WorkflowRun workflowRun = onfido.findWorkflowRun(workflowRunId);
+    onfido.completeTask(workflowRunId, taskId, completeTaskBuilder).execute();
+    WorkflowRun workflowRun = onfido.findWorkflowRun(workflowRunId).execute();
 
     Map<?, ?> output = (Map<?, ?>) workflowRun.getOutput();
     Assertions.assertEquals(
@@ -51,7 +51,7 @@ public class WorkflowRunOutputsTest extends TestBase {
     CompleteTaskBuilder completeProfileDataTaskBuilder = new CompleteTaskBuilder();
     completeProfileDataTaskBuilder.setData(
         new CompleteTaskDataBuilder(completeProfileDataTaskBody));
-    onfido.completeTask(workflowRunId, profileDataTaskId, completeProfileDataTaskBuilder);
+    onfido.completeTask(workflowRunId, profileDataTaskId, completeProfileDataTaskBuilder).execute();
 
     String documentCaptureTaskId = getTaskIdByPartialId(workflowRunId, "document_photo");
     Document document =
@@ -65,7 +65,7 @@ public class WorkflowRunOutputsTest extends TestBase {
     completeDocumentCaptureTaskBodyArray.add(completeDocumentCaptureTaskBody);
     completeDocumentCaptureTaskBuilder.setData(
         new CompleteTaskDataBuilder(completeDocumentCaptureTaskBodyArray));
-    onfido.completeTask(workflowRunId, documentCaptureTaskId, completeDocumentCaptureTaskBuilder);
+    onfido.completeTask(workflowRunId, documentCaptureTaskId, completeDocumentCaptureTaskBuilder).execute();
 
     String photoCaptureTaskId = getTaskIdByPartialId(workflowRunId, "face_photo");
     LivePhoto livePhoto = uploadLivePhoto(applicant, "sample_photo.png");
@@ -78,7 +78,7 @@ public class WorkflowRunOutputsTest extends TestBase {
     completeLivePhotoCaptureTaskBodyArray.add(completeLivePhotoCaptureTaskBody);
     completeLivePhotoCaptureTaskBuilder.setData(
         new CompleteTaskDataBuilder(completeLivePhotoCaptureTaskBodyArray));
-    onfido.completeTask(workflowRunId, photoCaptureTaskId, completeLivePhotoCaptureTaskBuilder);
+    onfido.completeTask(workflowRunId, photoCaptureTaskId, completeLivePhotoCaptureTaskBuilder).execute();
 
     // wait for workflow run to finish
     WorkflowRun workflowRun =

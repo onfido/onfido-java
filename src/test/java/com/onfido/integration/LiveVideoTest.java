@@ -15,7 +15,7 @@ public class LiveVideoTest extends TestBase {
 
   @Test
   public void downloadLiveVideoTest() throws Exception {
-    FileTransfer download = onfido.downloadLiveVideo(sampleLiveVideoId1);
+    FileTransfer download = onfido.downloadLiveVideo(sampleLiveVideoId1).execute();
 
     Assertions.assertEquals("video/quicktime", download.getContentType());
     Assertions.assertEquals("video.mov", download.getFilename());
@@ -25,7 +25,7 @@ public class LiveVideoTest extends TestBase {
   @Test
   public void downloadLiveVideoFrameTest() throws Exception {
     try {
-      FileTransfer download = onfido.downloadLiveVideoFrame(sampleLiveVideoId1);
+      FileTransfer download = onfido.downloadLiveVideoFrame(sampleLiveVideoId1).execute();
 
       Assertions.assertEquals("image/jpeg", download.getContentType());
       Assertions.assertTrue(download.getFilename() != null);
@@ -40,7 +40,7 @@ public class LiveVideoTest extends TestBase {
   @Test
   public void downloadErrorTest() throws Exception {
     try {
-      onfido.downloadLiveVideo(nonExistingId);
+      onfido.downloadLiveVideo(nonExistingId).execute();
       Assertions.fail();
     } catch (ApiException ex) {
       Assertions.assertEquals(404, ex.getCode());
@@ -49,7 +49,7 @@ public class LiveVideoTest extends TestBase {
 
   @Test
   public void findLiveVideoTest() throws Exception {
-    LiveVideo liveVideo = onfido.findLiveVideo(sampleLiveVideoId1);
+    LiveVideo liveVideo = onfido.findLiveVideo(sampleLiveVideoId1).execute();
 
     Assertions.assertEquals("video.mov", liveVideo.getFileName());
 
@@ -58,7 +58,7 @@ public class LiveVideoTest extends TestBase {
 
   @Test
   public void listLiveVideosTest() throws Exception {
-    List<LiveVideo> liveVideos = onfido.listLiveVideos(sampleApplicantId).getLiveVideos();
+    List<LiveVideo> liveVideos = onfido.listLiveVideos(sampleApplicantId).execute().getLiveVideos();
 
     Assertions.assertEquals("video.mov", liveVideos.get(0).getFileName());
     Assertions.assertEquals("video.mov", liveVideos.get(1).getFileName());

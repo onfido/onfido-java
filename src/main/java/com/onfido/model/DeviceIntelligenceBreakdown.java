@@ -19,7 +19,6 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.onfido.model.DeviceIntelligenceBreakdownBreakdown;
 import com.onfido.model.DeviceIntelligenceBreakdownDevice;
 import com.onfido.model.DeviceIntelligenceBreakdownProperties;
 import java.io.IOException;
@@ -58,12 +57,6 @@ public class DeviceIntelligenceBreakdown {
   @javax.annotation.Nullable
   private DeviceIntelligenceBreakdownDevice device;
 
-  public static final String SERIALIZED_NAME_BREAKDOWN = "breakdown";
-  @Deprecated
-  @SerializedName(SERIALIZED_NAME_BREAKDOWN)
-  @javax.annotation.Nullable
-  private DeviceIntelligenceBreakdownBreakdown breakdown;
-
   public static final String SERIALIZED_NAME_PROPERTIES = "properties";
   @Deprecated
   @SerializedName(SERIALIZED_NAME_PROPERTIES)
@@ -89,29 +82,6 @@ public class DeviceIntelligenceBreakdown {
 
   public void setDevice(@javax.annotation.Nullable DeviceIntelligenceBreakdownDevice device) {
     this.device = device;
-  }
-
-
-  @Deprecated
-  public DeviceIntelligenceBreakdown breakdown(@javax.annotation.Nullable DeviceIntelligenceBreakdownBreakdown breakdown) {
-    this.breakdown = breakdown;
-    return this;
-  }
-
-  /**
-   * Get breakdown
-   * @return breakdown
-   * @deprecated
-   */
-  @Deprecated
-  @javax.annotation.Nullable
-  public DeviceIntelligenceBreakdownBreakdown getBreakdown() {
-    return breakdown;
-  }
-
-  @Deprecated
-  public void setBreakdown(@javax.annotation.Nullable DeviceIntelligenceBreakdownBreakdown breakdown) {
-    this.breakdown = breakdown;
   }
 
 
@@ -193,14 +163,13 @@ public class DeviceIntelligenceBreakdown {
     }
     DeviceIntelligenceBreakdown deviceIntelligenceBreakdown = (DeviceIntelligenceBreakdown) o;
     return Objects.equals(this.device, deviceIntelligenceBreakdown.device) &&
-        Objects.equals(this.breakdown, deviceIntelligenceBreakdown.breakdown) &&
         Objects.equals(this.properties, deviceIntelligenceBreakdown.properties)&&
         Objects.equals(this.additionalProperties, deviceIntelligenceBreakdown.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(device, breakdown, properties, additionalProperties);
+    return Objects.hash(device, properties, additionalProperties);
   }
 
   @Override
@@ -208,7 +177,6 @@ public class DeviceIntelligenceBreakdown {
     StringBuilder sb = new StringBuilder();
     sb.append("class DeviceIntelligenceBreakdown {\n");
     sb.append("    device: ").append(toIndentedString(device)).append("\n");
-    sb.append("    breakdown: ").append(toIndentedString(breakdown)).append("\n");
     sb.append("    properties: ").append(toIndentedString(properties)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
@@ -234,7 +202,6 @@ public class DeviceIntelligenceBreakdown {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
     openapiFields.add("device");
-    openapiFields.add("breakdown");
     openapiFields.add("properties");
 
     // a set of required properties/fields (JSON key names)
@@ -257,10 +224,6 @@ public class DeviceIntelligenceBreakdown {
       // validate the optional field `device`
       if (jsonObj.get("device") != null && !jsonObj.get("device").isJsonNull()) {
         DeviceIntelligenceBreakdownDevice.validateJsonElement(jsonObj.get("device"));
-      }
-      // validate the optional field `breakdown`
-      if (jsonObj.get("breakdown") != null && !jsonObj.get("breakdown").isJsonNull()) {
-        DeviceIntelligenceBreakdownBreakdown.validateJsonElement(jsonObj.get("breakdown"));
       }
       // validate the optional field `properties`
       if (jsonObj.get("properties") != null && !jsonObj.get("properties").isJsonNull()) {

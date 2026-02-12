@@ -23,7 +23,6 @@ import com.onfido.model.DocumentPropertiesAddressLines;
 import com.onfido.model.DocumentPropertiesBarcodeInner;
 import com.onfido.model.DocumentPropertiesDocumentClassification;
 import com.onfido.model.DocumentPropertiesDocumentNumbersInner;
-import com.onfido.model.DocumentPropertiesDrivingLicenceInformationItem;
 import com.onfido.model.DocumentPropertiesExtractedData;
 import com.onfido.model.DocumentPropertiesNfc;
 import java.io.IOException;
@@ -454,11 +453,6 @@ public class DocumentProperties {
   @SerializedName(SERIALIZED_NAME_NFC)
   @javax.annotation.Nullable
   private DocumentPropertiesNfc nfc;
-
-  public static final String SERIALIZED_NAME_DRIVING_LICENCE_INFORMATION = "driving_licence_information";
-  @SerializedName(SERIALIZED_NAME_DRIVING_LICENCE_INFORMATION)
-  @javax.annotation.Nullable
-  private List<DocumentPropertiesDrivingLicenceInformationItem> drivingLicenceInformation = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_DOCUMENT_CLASSIFICATION = "document_classification";
   @SerializedName(SERIALIZED_NAME_DOCUMENT_CLASSIFICATION)
@@ -1306,33 +1300,6 @@ public class DocumentProperties {
   }
 
 
-  public DocumentProperties drivingLicenceInformation(@javax.annotation.Nullable List<DocumentPropertiesDrivingLicenceInformationItem> drivingLicenceInformation) {
-    this.drivingLicenceInformation = drivingLicenceInformation;
-    return this;
-  }
-
-  public DocumentProperties addDrivingLicenceInformationItem(DocumentPropertiesDrivingLicenceInformationItem drivingLicenceInformationItem) {
-    if (this.drivingLicenceInformation == null) {
-      this.drivingLicenceInformation = new ArrayList<>();
-    }
-    this.drivingLicenceInformation.add(drivingLicenceInformationItem);
-    return this;
-  }
-
-  /**
-   * Get drivingLicenceInformation
-   * @return drivingLicenceInformation
-   */
-  @javax.annotation.Nullable
-  public List<DocumentPropertiesDrivingLicenceInformationItem> getDrivingLicenceInformation() {
-    return drivingLicenceInformation;
-  }
-
-  public void setDrivingLicenceInformation(@javax.annotation.Nullable List<DocumentPropertiesDrivingLicenceInformationItem> drivingLicenceInformation) {
-    this.drivingLicenceInformation = drivingLicenceInformation;
-  }
-
-
   public DocumentProperties documentClassification(@javax.annotation.Nullable DocumentPropertiesDocumentClassification documentClassification) {
     this.documentClassification = documentClassification;
     return this;
@@ -1468,7 +1435,6 @@ public class DocumentProperties {
         Objects.equals(this.addressLines, documentProperties.addressLines) &&
         Objects.equals(this.barcode, documentProperties.barcode) &&
         Objects.equals(this.nfc, documentProperties.nfc) &&
-        Objects.equals(this.drivingLicenceInformation, documentProperties.drivingLicenceInformation) &&
         Objects.equals(this.documentClassification, documentProperties.documentClassification) &&
         Objects.equals(this.extractedData, documentProperties.extractedData)&&
         Objects.equals(this.additionalProperties, documentProperties.additionalProperties);
@@ -1476,7 +1442,7 @@ public class DocumentProperties {
 
   @Override
   public int hashCode() {
-    return Objects.hash(dateOfBirth, dateOfExpiry, personalNumber, documentNumbers, documentType, firstName, middleName, lastName, gender, issuingCountry, nationality, issuingState, issuingDate, validFrom, categorisation, mrzLine1, mrzLine2, mrzLine3, address, placeOfBirth, spouseName, widowName, aliasName, issuingAuthority, remarks, civilState, expatriation, fatherName, motherName, religion, typeOfPermit, versionNumber, documentSubtype, profession, securityDocumentNumber, taxNumber, nistIdentityEvidenceStrength, hasIssuanceConfirmation, realIdCompliance, securityTier, addressLines, barcode, nfc, drivingLicenceInformation, documentClassification, extractedData, additionalProperties);
+    return Objects.hash(dateOfBirth, dateOfExpiry, personalNumber, documentNumbers, documentType, firstName, middleName, lastName, gender, issuingCountry, nationality, issuingState, issuingDate, validFrom, categorisation, mrzLine1, mrzLine2, mrzLine3, address, placeOfBirth, spouseName, widowName, aliasName, issuingAuthority, remarks, civilState, expatriation, fatherName, motherName, religion, typeOfPermit, versionNumber, documentSubtype, profession, securityDocumentNumber, taxNumber, nistIdentityEvidenceStrength, hasIssuanceConfirmation, realIdCompliance, securityTier, addressLines, barcode, nfc, documentClassification, extractedData, additionalProperties);
   }
 
   @Override
@@ -1526,7 +1492,6 @@ public class DocumentProperties {
     sb.append("    addressLines: ").append(toIndentedString(addressLines)).append("\n");
     sb.append("    barcode: ").append(toIndentedString(barcode)).append("\n");
     sb.append("    nfc: ").append(toIndentedString(nfc)).append("\n");
-    sb.append("    drivingLicenceInformation: ").append(toIndentedString(drivingLicenceInformation)).append("\n");
     sb.append("    documentClassification: ").append(toIndentedString(documentClassification)).append("\n");
     sb.append("    extractedData: ").append(toIndentedString(extractedData)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
@@ -1595,7 +1560,6 @@ public class DocumentProperties {
     openapiFields.add("address_lines");
     openapiFields.add("barcode");
     openapiFields.add("nfc");
-    openapiFields.add("driving_licence_information");
     openapiFields.add("document_classification");
     openapiFields.add("extracted_data");
 
@@ -1765,20 +1729,6 @@ public class DocumentProperties {
       // validate the optional field `nfc`
       if (jsonObj.get("nfc") != null && !jsonObj.get("nfc").isJsonNull()) {
         DocumentPropertiesNfc.validateJsonElement(jsonObj.get("nfc"));
-      }
-      if (jsonObj.get("driving_licence_information") != null && !jsonObj.get("driving_licence_information").isJsonNull()) {
-        JsonArray jsonArraydrivingLicenceInformation = jsonObj.getAsJsonArray("driving_licence_information");
-        if (jsonArraydrivingLicenceInformation != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("driving_licence_information").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `driving_licence_information` to be an array in the JSON string but got `%s`", jsonObj.get("driving_licence_information").toString()));
-          }
-
-          // validate the optional field `driving_licence_information` (array)
-          for (int i = 0; i < jsonArraydrivingLicenceInformation.size(); i++) {
-            DocumentPropertiesDrivingLicenceInformationItem.validateJsonElement(jsonArraydrivingLicenceInformation.get(i));
-          };
-        }
       }
       // validate the optional field `document_classification`
       if (jsonObj.get("document_classification") != null && !jsonObj.get("document_classification").isJsonNull()) {

@@ -168,7 +168,6 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.CompleteTaskBuilder.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.CompleteTaskDataBuilder.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.DeviceIntelligenceBreakdown.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.DeviceIntelligenceBreakdownBreakdown.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.DeviceIntelligenceBreakdownDevice.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.DeviceIntelligenceBreakdownDeviceBreakdown.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.DeviceIntelligenceBreakdownProperties.CustomTypeAdapterFactory());
@@ -224,6 +223,7 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.DocumentPropertiesDrivingLicenceInformationItem.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.DocumentPropertiesExtractedData.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.DocumentPropertiesNfc.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.DocumentPropertiesWithDrivingLicenceInformation.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.DocumentReport.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.DocumentReportShared.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.DocumentResponse.CustomTypeAdapterFactory());

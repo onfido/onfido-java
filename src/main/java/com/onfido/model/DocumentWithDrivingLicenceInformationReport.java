@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.onfido.model.DocumentBreakdown;
-import com.onfido.model.DocumentProperties;
+import com.onfido.model.DocumentPropertiesWithDrivingLicenceInformation;
 import com.onfido.model.ReportDocument;
 import com.onfido.model.ReportName;
 import com.onfido.model.ReportResult;
@@ -114,7 +114,7 @@ public class DocumentWithDrivingLicenceInformationReport {
   public static final String SERIALIZED_NAME_PROPERTIES = "properties";
   @SerializedName(SERIALIZED_NAME_PROPERTIES)
   @javax.annotation.Nullable
-  private DocumentProperties properties;
+  private DocumentPropertiesWithDrivingLicenceInformation properties;
 
   public DocumentWithDrivingLicenceInformationReport() {
   }
@@ -317,7 +317,7 @@ public class DocumentWithDrivingLicenceInformationReport {
   }
 
 
-  public DocumentWithDrivingLicenceInformationReport properties(@javax.annotation.Nullable DocumentProperties properties) {
+  public DocumentWithDrivingLicenceInformationReport properties(@javax.annotation.Nullable DocumentPropertiesWithDrivingLicenceInformation properties) {
     this.properties = properties;
     return this;
   }
@@ -327,11 +327,11 @@ public class DocumentWithDrivingLicenceInformationReport {
    * @return properties
    */
   @javax.annotation.Nullable
-  public DocumentProperties getProperties() {
+  public DocumentPropertiesWithDrivingLicenceInformation getProperties() {
     return properties;
   }
 
-  public void setProperties(@javax.annotation.Nullable DocumentProperties properties) {
+  public void setProperties(@javax.annotation.Nullable DocumentPropertiesWithDrivingLicenceInformation properties) {
     this.properties = properties;
   }
 
@@ -528,7 +528,7 @@ public class DocumentWithDrivingLicenceInformationReport {
       }
       // validate the optional field `properties`
       if (jsonObj.get("properties") != null && !jsonObj.get("properties").isJsonNull()) {
-        DocumentProperties.validateJsonElement(jsonObj.get("properties"));
+        DocumentPropertiesWithDrivingLicenceInformation.validateJsonElement(jsonObj.get("properties"));
       }
   }
 

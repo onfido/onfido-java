@@ -53,12 +53,12 @@ public class IdentityEnhancedBreakdownSourcesBreakdownTotalSourcesProperties {
   public static final String SERIALIZED_NAME_TOTAL_NUMBER_OF_SOURCES = "total_number_of_sources";
   @SerializedName(SERIALIZED_NAME_TOTAL_NUMBER_OF_SOURCES)
   @javax.annotation.Nullable
-  private Integer totalNumberOfSources;
+  private String totalNumberOfSources;
 
   public IdentityEnhancedBreakdownSourcesBreakdownTotalSourcesProperties() {
   }
 
-  public IdentityEnhancedBreakdownSourcesBreakdownTotalSourcesProperties totalNumberOfSources(@javax.annotation.Nullable Integer totalNumberOfSources) {
+  public IdentityEnhancedBreakdownSourcesBreakdownTotalSourcesProperties totalNumberOfSources(@javax.annotation.Nullable String totalNumberOfSources) {
     this.totalNumberOfSources = totalNumberOfSources;
     return this;
   }
@@ -68,11 +68,11 @@ public class IdentityEnhancedBreakdownSourcesBreakdownTotalSourcesProperties {
    * @return totalNumberOfSources
    */
   @javax.annotation.Nullable
-  public Integer getTotalNumberOfSources() {
+  public String getTotalNumberOfSources() {
     return totalNumberOfSources;
   }
 
-  public void setTotalNumberOfSources(@javax.annotation.Nullable Integer totalNumberOfSources) {
+  public void setTotalNumberOfSources(@javax.annotation.Nullable String totalNumberOfSources) {
     this.totalNumberOfSources = totalNumberOfSources;
   }
 
@@ -187,6 +187,9 @@ public class IdentityEnhancedBreakdownSourcesBreakdownTotalSourcesProperties {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("total_number_of_sources") != null && !jsonObj.get("total_number_of_sources").isJsonNull()) && !jsonObj.get("total_number_of_sources").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `total_number_of_sources` to be a primitive type in the JSON string but got `%s`", jsonObj.get("total_number_of_sources").toString()));
+      }
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

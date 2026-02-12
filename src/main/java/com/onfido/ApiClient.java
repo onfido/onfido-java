@@ -162,7 +162,7 @@ public class ApiClient {
         json = new JSON();
 
         // Set default User-Agent.
-        setUserAgent("onfido-java/6.7.0");
+        setUserAgent("onfido-java/7.0.0");
 
         authentications = new HashMap<String, Authentication>();
     }
@@ -239,22 +239,25 @@ public class ApiClient {
         return this;
     }
 
-    /**
+    /** 
      * True if isVerifyingSsl flag is on
      *
-     * @return True if isVerifySsl flag is on
+     * @return True if SSL verification is enabled (always true for security)
      */
     public boolean isVerifyingSsl() {
         return verifyingSsl;
     }
 
-    /**
+    /** 
      * Configure whether to verify certificate and hostname when making https requests.
      * Default to true.
-     * NOTE: Do NOT set to false in production code, otherwise you would face multiple types of cryptographic attacks.
+     * NOTE: Setting this to false is no longer supported for security reasons.
+     * SSL verification cannot be disabled to prevent man-in-the-middle attacks.
+     * If you need to use custom certificates, use setSslCaCert() instead.
      *
-     * @param verifyingSsl True to verify TLS/SSL connection
+     * @param verifyingSsl Must be true. Setting to false will throw an IllegalStateException.
      * @return ApiClient
+     * @throws IllegalStateException if verifyingSsl is set to false
      */
     public ApiClient setVerifyingSsl(boolean verifyingSsl) {
         this.verifyingSsl = verifyingSsl;
@@ -1530,29 +1533,12 @@ public class ApiClient {
             TrustManager[] trustManagers;
             HostnameVerifier hostnameVerifier;
             if (!verifyingSsl) {
-                trustManagers = new TrustManager[]{
-                        new X509TrustManager() {
-                            @Override
-                            public void checkClientTrusted(java.security.cert.X509Certificate[] chain, String authType) throws CertificateException {
-                            }
-
-                            @Override
-                            public void checkServerTrusted(java.security.cert.X509Certificate[] chain, String authType) throws CertificateException {
-                            }
-
-                            @Override
-                            public java.security.cert.X509Certificate[] getAcceptedIssuers() {
-                                return new java.security.cert.X509Certificate[]{};
-                            }
-                        }
-                };
-                hostnameVerifier = new HostnameVerifier() {
-                    @Override
-                    public boolean verify(String hostname, SSLSession session) {
-                        return true;
-                    }
-                };
-            } else {
+                throw new IllegalStateException("SSL verification cannot be disabled for security reasons. " +
+                        "This prevents man-in-the-middle attacks. If you need to use custom certificates, " +
+                        "use setSslCaCert() instead.");
+            }
+            else
+            {
                 TrustManagerFactory trustManagerFactory = TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
 
                 if (sslCaCert == null) {

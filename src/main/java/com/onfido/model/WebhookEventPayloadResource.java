@@ -122,6 +122,11 @@ public class WebhookEventPayloadResource {
   @javax.annotation.Nullable
   private List<String> reasons = new ArrayList<>();
 
+  public static final String SERIALIZED_NAME_TAGS = "tags";
+  @SerializedName(SERIALIZED_NAME_TAGS)
+  @javax.annotation.Nullable
+  private List<String> tags = new ArrayList<>();
+
   public static final String SERIALIZED_NAME_LINK = "link";
   @SerializedName(SERIALIZED_NAME_LINK)
   @javax.annotation.Nullable
@@ -400,6 +405,33 @@ public class WebhookEventPayloadResource {
   }
 
 
+  public WebhookEventPayloadResource tags(@javax.annotation.Nullable List<String> tags) {
+    this.tags = tags;
+    return this;
+  }
+
+  public WebhookEventPayloadResource addTagsItem(String tagsItem) {
+    if (this.tags == null) {
+      this.tags = new ArrayList<>();
+    }
+    this.tags.add(tagsItem);
+    return this;
+  }
+
+  /**
+   * A list of tags associated with the Workflow Run.
+   * @return tags
+   */
+  @javax.annotation.Nullable
+  public List<String> getTags() {
+    return tags;
+  }
+
+  public void setTags(@javax.annotation.Nullable List<String> tags) {
+    this.tags = tags;
+  }
+
+
   public WebhookEventPayloadResource link(@javax.annotation.Nullable WorkflowRunLink link) {
     this.link = link;
     return this;
@@ -543,6 +575,7 @@ public class WebhookEventPayloadResource {
         Objects.equals(this.input, webhookEventPayloadResource.input) &&
         Objects.equals(this.output, webhookEventPayloadResource.output) &&
         Objects.equals(this.reasons, webhookEventPayloadResource.reasons) &&
+        Objects.equals(this.tags, webhookEventPayloadResource.tags) &&
         Objects.equals(this.link, webhookEventPayloadResource.link) &&
         Objects.equals(this.error, webhookEventPayloadResource.error) &&
         Objects.equals(this.customerUserId, webhookEventPayloadResource.customerUserId) &&
@@ -556,7 +589,7 @@ public class WebhookEventPayloadResource {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, applicantId, createdAt, updatedAt, dashboardUrl, workflowId, workflowRunId, workflowVersionId, taskDefId, taskDefVersion, input, output, reasons, link, error, customerUserId, timelineFileDownloadUrl, additionalProperties);
+    return Objects.hash(id, applicantId, createdAt, updatedAt, dashboardUrl, workflowId, workflowRunId, workflowVersionId, taskDefId, taskDefVersion, input, output, reasons, tags, link, error, customerUserId, timelineFileDownloadUrl, additionalProperties);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -583,6 +616,7 @@ public class WebhookEventPayloadResource {
     sb.append("    input: ").append(toIndentedString(input)).append("\n");
     sb.append("    output: ").append(toIndentedString(output)).append("\n");
     sb.append("    reasons: ").append(toIndentedString(reasons)).append("\n");
+    sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
     sb.append("    link: ").append(toIndentedString(link)).append("\n");
     sb.append("    error: ").append(toIndentedString(error)).append("\n");
     sb.append("    customerUserId: ").append(toIndentedString(customerUserId)).append("\n");
@@ -623,6 +657,7 @@ public class WebhookEventPayloadResource {
     openapiFields.add("input");
     openapiFields.add("output");
     openapiFields.add("reasons");
+    openapiFields.add("tags");
     openapiFields.add("link");
     openapiFields.add("error");
     openapiFields.add("customer_user_id");
@@ -669,6 +704,10 @@ public class WebhookEventPayloadResource {
       // ensure the optional json data is an array if present
       if (jsonObj.get("reasons") != null && !jsonObj.get("reasons").isJsonNull() && !jsonObj.get("reasons").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `reasons` to be an array in the JSON string but got `%s`", jsonObj.get("reasons").toString()));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("tags") != null && !jsonObj.get("tags").isJsonNull() && !jsonObj.get("tags").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
       }
       // validate the optional field `link`
       if (jsonObj.get("link") != null && !jsonObj.get("link").isJsonNull()) {

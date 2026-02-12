@@ -23,10 +23,9 @@ import com.onfido.model.DocumentPropertiesAddressLines;
 import com.onfido.model.DocumentPropertiesBarcodeInner;
 import com.onfido.model.DocumentPropertiesDocumentClassification;
 import com.onfido.model.DocumentPropertiesDocumentNumbersInner;
+import com.onfido.model.DocumentPropertiesDrivingLicenceInformationItem;
 import com.onfido.model.DocumentPropertiesExtractedData;
 import com.onfido.model.DocumentPropertiesNfc;
-import com.onfido.model.DocumentWithDriverVerificationReportAllOfPropertiesAllOfPassengerVehicle;
-import com.onfido.model.DocumentWithDriverVerificationReportAllOfPropertiesAllOfVehicleClassDetailsInner;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -57,10 +56,10 @@ import java.util.Set;
 import com.onfido.JSON;
 
 /**
- * DocumentWithDriverVerificationReportAllOfProperties
+ * DocumentPropertiesWithDrivingLicenceInformation
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
-public class DocumentWithDriverVerificationReportAllOfProperties {
+public class DocumentPropertiesWithDrivingLicenceInformation {
   public static final String SERIALIZED_NAME_DATE_OF_BIRTH = "date_of_birth";
   @SerializedName(SERIALIZED_NAME_DATE_OF_BIRTH)
   @javax.annotation.Nullable
@@ -466,45 +465,15 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
   @javax.annotation.Nullable
   private DocumentPropertiesExtractedData extractedData;
 
-  public static final String SERIALIZED_NAME_DRIVERS_LICENCE = "drivers_licence";
-  @SerializedName(SERIALIZED_NAME_DRIVERS_LICENCE)
+  public static final String SERIALIZED_NAME_DRIVING_LICENCE_INFORMATION = "driving_licence_information";
+  @SerializedName(SERIALIZED_NAME_DRIVING_LICENCE_INFORMATION)
   @javax.annotation.Nullable
-  private Boolean driversLicence;
+  private List<DocumentPropertiesDrivingLicenceInformationItem> drivingLicenceInformation = new ArrayList<>();
 
-  public static final String SERIALIZED_NAME_RESTRICTED_LICENCE = "restricted_licence";
-  @SerializedName(SERIALIZED_NAME_RESTRICTED_LICENCE)
-  @javax.annotation.Nullable
-  private Boolean restrictedLicence;
-
-  public static final String SERIALIZED_NAME_RAW_LICENCE_CATEGORY = "raw_licence_category";
-  @SerializedName(SERIALIZED_NAME_RAW_LICENCE_CATEGORY)
-  @javax.annotation.Nullable
-  private String rawLicenceCategory;
-
-  public static final String SERIALIZED_NAME_RAW_VEHICLE_CLASSES = "raw_vehicle_classes";
-  @SerializedName(SERIALIZED_NAME_RAW_VEHICLE_CLASSES)
-  @javax.annotation.Nullable
-  private String rawVehicleClasses;
-
-  public static final String SERIALIZED_NAME_MANUAL_TRANSMISSION_RESTRICTION = "manual_transmission_restriction";
-  @SerializedName(SERIALIZED_NAME_MANUAL_TRANSMISSION_RESTRICTION)
-  @javax.annotation.Nullable
-  private Boolean manualTransmissionRestriction;
-
-  public static final String SERIALIZED_NAME_VEHICLE_CLASS_DETAILS = "vehicle_class_details";
-  @SerializedName(SERIALIZED_NAME_VEHICLE_CLASS_DETAILS)
-  @javax.annotation.Nullable
-  private List<DocumentWithDriverVerificationReportAllOfPropertiesAllOfVehicleClassDetailsInner> vehicleClassDetails = new ArrayList<>();
-
-  public static final String SERIALIZED_NAME_PASSENGER_VEHICLE = "passenger_vehicle";
-  @SerializedName(SERIALIZED_NAME_PASSENGER_VEHICLE)
-  @javax.annotation.Nullable
-  private DocumentWithDriverVerificationReportAllOfPropertiesAllOfPassengerVehicle passengerVehicle;
-
-  public DocumentWithDriverVerificationReportAllOfProperties() {
+  public DocumentPropertiesWithDrivingLicenceInformation() {
   }
 
-  public DocumentWithDriverVerificationReportAllOfProperties dateOfBirth(@javax.annotation.Nullable LocalDate dateOfBirth) {
+  public DocumentPropertiesWithDrivingLicenceInformation dateOfBirth(@javax.annotation.Nullable LocalDate dateOfBirth) {
     this.dateOfBirth = dateOfBirth;
     return this;
   }
@@ -523,7 +492,7 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties dateOfExpiry(@javax.annotation.Nullable LocalDate dateOfExpiry) {
+  public DocumentPropertiesWithDrivingLicenceInformation dateOfExpiry(@javax.annotation.Nullable LocalDate dateOfExpiry) {
     this.dateOfExpiry = dateOfExpiry;
     return this;
   }
@@ -542,7 +511,7 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties personalNumber(@javax.annotation.Nullable String personalNumber) {
+  public DocumentPropertiesWithDrivingLicenceInformation personalNumber(@javax.annotation.Nullable String personalNumber) {
     this.personalNumber = personalNumber;
     return this;
   }
@@ -561,12 +530,12 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties documentNumbers(@javax.annotation.Nullable List<DocumentPropertiesDocumentNumbersInner> documentNumbers) {
+  public DocumentPropertiesWithDrivingLicenceInformation documentNumbers(@javax.annotation.Nullable List<DocumentPropertiesDocumentNumbersInner> documentNumbers) {
     this.documentNumbers = documentNumbers;
     return this;
   }
 
-  public DocumentWithDriverVerificationReportAllOfProperties addDocumentNumbersItem(DocumentPropertiesDocumentNumbersInner documentNumbersItem) {
+  public DocumentPropertiesWithDrivingLicenceInformation addDocumentNumbersItem(DocumentPropertiesDocumentNumbersInner documentNumbersItem) {
     if (this.documentNumbers == null) {
       this.documentNumbers = new ArrayList<>();
     }
@@ -588,7 +557,7 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties documentType(@javax.annotation.Nullable String documentType) {
+  public DocumentPropertiesWithDrivingLicenceInformation documentType(@javax.annotation.Nullable String documentType) {
     this.documentType = documentType;
     return this;
   }
@@ -607,7 +576,7 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties firstName(@javax.annotation.Nullable String firstName) {
+  public DocumentPropertiesWithDrivingLicenceInformation firstName(@javax.annotation.Nullable String firstName) {
     this.firstName = firstName;
     return this;
   }
@@ -626,7 +595,7 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties middleName(@javax.annotation.Nullable String middleName) {
+  public DocumentPropertiesWithDrivingLicenceInformation middleName(@javax.annotation.Nullable String middleName) {
     this.middleName = middleName;
     return this;
   }
@@ -645,7 +614,7 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties lastName(@javax.annotation.Nullable String lastName) {
+  public DocumentPropertiesWithDrivingLicenceInformation lastName(@javax.annotation.Nullable String lastName) {
     this.lastName = lastName;
     return this;
   }
@@ -664,7 +633,7 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties gender(@javax.annotation.Nullable String gender) {
+  public DocumentPropertiesWithDrivingLicenceInformation gender(@javax.annotation.Nullable String gender) {
     this.gender = gender;
     return this;
   }
@@ -683,7 +652,7 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties issuingCountry(@javax.annotation.Nullable String issuingCountry) {
+  public DocumentPropertiesWithDrivingLicenceInformation issuingCountry(@javax.annotation.Nullable String issuingCountry) {
     this.issuingCountry = issuingCountry;
     return this;
   }
@@ -702,7 +671,7 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties nationality(@javax.annotation.Nullable String nationality) {
+  public DocumentPropertiesWithDrivingLicenceInformation nationality(@javax.annotation.Nullable String nationality) {
     this.nationality = nationality;
     return this;
   }
@@ -721,7 +690,7 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties issuingState(@javax.annotation.Nullable String issuingState) {
+  public DocumentPropertiesWithDrivingLicenceInformation issuingState(@javax.annotation.Nullable String issuingState) {
     this.issuingState = issuingState;
     return this;
   }
@@ -740,7 +709,7 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties issuingDate(@javax.annotation.Nullable LocalDate issuingDate) {
+  public DocumentPropertiesWithDrivingLicenceInformation issuingDate(@javax.annotation.Nullable LocalDate issuingDate) {
     this.issuingDate = issuingDate;
     return this;
   }
@@ -759,7 +728,7 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties validFrom(@javax.annotation.Nullable LocalDate validFrom) {
+  public DocumentPropertiesWithDrivingLicenceInformation validFrom(@javax.annotation.Nullable LocalDate validFrom) {
     this.validFrom = validFrom;
     return this;
   }
@@ -778,7 +747,7 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties categorisation(@javax.annotation.Nullable String categorisation) {
+  public DocumentPropertiesWithDrivingLicenceInformation categorisation(@javax.annotation.Nullable String categorisation) {
     this.categorisation = categorisation;
     return this;
   }
@@ -797,7 +766,7 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties mrzLine1(@javax.annotation.Nullable String mrzLine1) {
+  public DocumentPropertiesWithDrivingLicenceInformation mrzLine1(@javax.annotation.Nullable String mrzLine1) {
     this.mrzLine1 = mrzLine1;
     return this;
   }
@@ -816,7 +785,7 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties mrzLine2(@javax.annotation.Nullable String mrzLine2) {
+  public DocumentPropertiesWithDrivingLicenceInformation mrzLine2(@javax.annotation.Nullable String mrzLine2) {
     this.mrzLine2 = mrzLine2;
     return this;
   }
@@ -835,7 +804,7 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties mrzLine3(@javax.annotation.Nullable String mrzLine3) {
+  public DocumentPropertiesWithDrivingLicenceInformation mrzLine3(@javax.annotation.Nullable String mrzLine3) {
     this.mrzLine3 = mrzLine3;
     return this;
   }
@@ -854,7 +823,7 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties address(@javax.annotation.Nullable String address) {
+  public DocumentPropertiesWithDrivingLicenceInformation address(@javax.annotation.Nullable String address) {
     this.address = address;
     return this;
   }
@@ -873,7 +842,7 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties placeOfBirth(@javax.annotation.Nullable String placeOfBirth) {
+  public DocumentPropertiesWithDrivingLicenceInformation placeOfBirth(@javax.annotation.Nullable String placeOfBirth) {
     this.placeOfBirth = placeOfBirth;
     return this;
   }
@@ -892,7 +861,7 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties spouseName(@javax.annotation.Nullable String spouseName) {
+  public DocumentPropertiesWithDrivingLicenceInformation spouseName(@javax.annotation.Nullable String spouseName) {
     this.spouseName = spouseName;
     return this;
   }
@@ -911,7 +880,7 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties widowName(@javax.annotation.Nullable String widowName) {
+  public DocumentPropertiesWithDrivingLicenceInformation widowName(@javax.annotation.Nullable String widowName) {
     this.widowName = widowName;
     return this;
   }
@@ -930,7 +899,7 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties aliasName(@javax.annotation.Nullable String aliasName) {
+  public DocumentPropertiesWithDrivingLicenceInformation aliasName(@javax.annotation.Nullable String aliasName) {
     this.aliasName = aliasName;
     return this;
   }
@@ -949,7 +918,7 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties issuingAuthority(@javax.annotation.Nullable String issuingAuthority) {
+  public DocumentPropertiesWithDrivingLicenceInformation issuingAuthority(@javax.annotation.Nullable String issuingAuthority) {
     this.issuingAuthority = issuingAuthority;
     return this;
   }
@@ -968,7 +937,7 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties remarks(@javax.annotation.Nullable String remarks) {
+  public DocumentPropertiesWithDrivingLicenceInformation remarks(@javax.annotation.Nullable String remarks) {
     this.remarks = remarks;
     return this;
   }
@@ -987,7 +956,7 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties civilState(@javax.annotation.Nullable String civilState) {
+  public DocumentPropertiesWithDrivingLicenceInformation civilState(@javax.annotation.Nullable String civilState) {
     this.civilState = civilState;
     return this;
   }
@@ -1006,7 +975,7 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties expatriation(@javax.annotation.Nullable String expatriation) {
+  public DocumentPropertiesWithDrivingLicenceInformation expatriation(@javax.annotation.Nullable String expatriation) {
     this.expatriation = expatriation;
     return this;
   }
@@ -1025,7 +994,7 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties fatherName(@javax.annotation.Nullable String fatherName) {
+  public DocumentPropertiesWithDrivingLicenceInformation fatherName(@javax.annotation.Nullable String fatherName) {
     this.fatherName = fatherName;
     return this;
   }
@@ -1044,7 +1013,7 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties motherName(@javax.annotation.Nullable String motherName) {
+  public DocumentPropertiesWithDrivingLicenceInformation motherName(@javax.annotation.Nullable String motherName) {
     this.motherName = motherName;
     return this;
   }
@@ -1063,7 +1032,7 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties religion(@javax.annotation.Nullable String religion) {
+  public DocumentPropertiesWithDrivingLicenceInformation religion(@javax.annotation.Nullable String religion) {
     this.religion = religion;
     return this;
   }
@@ -1082,7 +1051,7 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties typeOfPermit(@javax.annotation.Nullable String typeOfPermit) {
+  public DocumentPropertiesWithDrivingLicenceInformation typeOfPermit(@javax.annotation.Nullable String typeOfPermit) {
     this.typeOfPermit = typeOfPermit;
     return this;
   }
@@ -1101,7 +1070,7 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties versionNumber(@javax.annotation.Nullable String versionNumber) {
+  public DocumentPropertiesWithDrivingLicenceInformation versionNumber(@javax.annotation.Nullable String versionNumber) {
     this.versionNumber = versionNumber;
     return this;
   }
@@ -1120,7 +1089,7 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties documentSubtype(@javax.annotation.Nullable String documentSubtype) {
+  public DocumentPropertiesWithDrivingLicenceInformation documentSubtype(@javax.annotation.Nullable String documentSubtype) {
     this.documentSubtype = documentSubtype;
     return this;
   }
@@ -1139,7 +1108,7 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties profession(@javax.annotation.Nullable String profession) {
+  public DocumentPropertiesWithDrivingLicenceInformation profession(@javax.annotation.Nullable String profession) {
     this.profession = profession;
     return this;
   }
@@ -1158,7 +1127,7 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties securityDocumentNumber(@javax.annotation.Nullable String securityDocumentNumber) {
+  public DocumentPropertiesWithDrivingLicenceInformation securityDocumentNumber(@javax.annotation.Nullable String securityDocumentNumber) {
     this.securityDocumentNumber = securityDocumentNumber;
     return this;
   }
@@ -1177,7 +1146,7 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties taxNumber(@javax.annotation.Nullable String taxNumber) {
+  public DocumentPropertiesWithDrivingLicenceInformation taxNumber(@javax.annotation.Nullable String taxNumber) {
     this.taxNumber = taxNumber;
     return this;
   }
@@ -1196,7 +1165,7 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties nistIdentityEvidenceStrength(@javax.annotation.Nullable NistIdentityEvidenceStrengthEnum nistIdentityEvidenceStrength) {
+  public DocumentPropertiesWithDrivingLicenceInformation nistIdentityEvidenceStrength(@javax.annotation.Nullable NistIdentityEvidenceStrengthEnum nistIdentityEvidenceStrength) {
     this.nistIdentityEvidenceStrength = nistIdentityEvidenceStrength;
     return this;
   }
@@ -1215,7 +1184,7 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties hasIssuanceConfirmation(@javax.annotation.Nullable HasIssuanceConfirmationEnum hasIssuanceConfirmation) {
+  public DocumentPropertiesWithDrivingLicenceInformation hasIssuanceConfirmation(@javax.annotation.Nullable HasIssuanceConfirmationEnum hasIssuanceConfirmation) {
     this.hasIssuanceConfirmation = hasIssuanceConfirmation;
     return this;
   }
@@ -1234,7 +1203,7 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties realIdCompliance(@javax.annotation.Nullable Boolean realIdCompliance) {
+  public DocumentPropertiesWithDrivingLicenceInformation realIdCompliance(@javax.annotation.Nullable Boolean realIdCompliance) {
     this.realIdCompliance = realIdCompliance;
     return this;
   }
@@ -1253,7 +1222,7 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties securityTier(@javax.annotation.Nullable SecurityTierEnum securityTier) {
+  public DocumentPropertiesWithDrivingLicenceInformation securityTier(@javax.annotation.Nullable SecurityTierEnum securityTier) {
     this.securityTier = securityTier;
     return this;
   }
@@ -1272,7 +1241,7 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties addressLines(@javax.annotation.Nullable DocumentPropertiesAddressLines addressLines) {
+  public DocumentPropertiesWithDrivingLicenceInformation addressLines(@javax.annotation.Nullable DocumentPropertiesAddressLines addressLines) {
     this.addressLines = addressLines;
     return this;
   }
@@ -1291,12 +1260,12 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties barcode(@javax.annotation.Nullable List<DocumentPropertiesBarcodeInner> barcode) {
+  public DocumentPropertiesWithDrivingLicenceInformation barcode(@javax.annotation.Nullable List<DocumentPropertiesBarcodeInner> barcode) {
     this.barcode = barcode;
     return this;
   }
 
-  public DocumentWithDriverVerificationReportAllOfProperties addBarcodeItem(DocumentPropertiesBarcodeInner barcodeItem) {
+  public DocumentPropertiesWithDrivingLicenceInformation addBarcodeItem(DocumentPropertiesBarcodeInner barcodeItem) {
     if (this.barcode == null) {
       this.barcode = new ArrayList<>();
     }
@@ -1318,7 +1287,7 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties nfc(@javax.annotation.Nullable DocumentPropertiesNfc nfc) {
+  public DocumentPropertiesWithDrivingLicenceInformation nfc(@javax.annotation.Nullable DocumentPropertiesNfc nfc) {
     this.nfc = nfc;
     return this;
   }
@@ -1337,7 +1306,7 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties documentClassification(@javax.annotation.Nullable DocumentPropertiesDocumentClassification documentClassification) {
+  public DocumentPropertiesWithDrivingLicenceInformation documentClassification(@javax.annotation.Nullable DocumentPropertiesDocumentClassification documentClassification) {
     this.documentClassification = documentClassification;
     return this;
   }
@@ -1356,7 +1325,7 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties extractedData(@javax.annotation.Nullable DocumentPropertiesExtractedData extractedData) {
+  public DocumentPropertiesWithDrivingLicenceInformation extractedData(@javax.annotation.Nullable DocumentPropertiesExtractedData extractedData) {
     this.extractedData = extractedData;
     return this;
   }
@@ -1375,144 +1344,30 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
   }
 
 
-  public DocumentWithDriverVerificationReportAllOfProperties driversLicence(@javax.annotation.Nullable Boolean driversLicence) {
-    this.driversLicence = driversLicence;
+  public DocumentPropertiesWithDrivingLicenceInformation drivingLicenceInformation(@javax.annotation.Nullable List<DocumentPropertiesDrivingLicenceInformationItem> drivingLicenceInformation) {
+    this.drivingLicenceInformation = drivingLicenceInformation;
     return this;
   }
 
-  /**
-   * True for **non-restricted** driving licences
-   * @return driversLicence
-   */
-  @javax.annotation.Nullable
-  public Boolean getDriversLicence() {
-    return driversLicence;
-  }
-
-  public void setDriversLicence(@javax.annotation.Nullable Boolean driversLicence) {
-    this.driversLicence = driversLicence;
-  }
-
-
-  public DocumentWithDriverVerificationReportAllOfProperties restrictedLicence(@javax.annotation.Nullable Boolean restrictedLicence) {
-    this.restrictedLicence = restrictedLicence;
-    return this;
-  }
-
-  /**
-   * True for **limited/restricted** driving license, including learner&#39;s permits
-   * @return restrictedLicence
-   */
-  @javax.annotation.Nullable
-  public Boolean getRestrictedLicence() {
-    return restrictedLicence;
-  }
-
-  public void setRestrictedLicence(@javax.annotation.Nullable Boolean restrictedLicence) {
-    this.restrictedLicence = restrictedLicence;
-  }
-
-
-  public DocumentWithDriverVerificationReportAllOfProperties rawLicenceCategory(@javax.annotation.Nullable String rawLicenceCategory) {
-    this.rawLicenceCategory = rawLicenceCategory;
-    return this;
-  }
-
-  /**
-   * Underlying, non-normalised, licence category (e.g. \&quot;Junior operators license\&quot;)
-   * @return rawLicenceCategory
-   */
-  @javax.annotation.Nullable
-  public String getRawLicenceCategory() {
-    return rawLicenceCategory;
-  }
-
-  public void setRawLicenceCategory(@javax.annotation.Nullable String rawLicenceCategory) {
-    this.rawLicenceCategory = rawLicenceCategory;
-  }
-
-
-  public DocumentWithDriverVerificationReportAllOfProperties rawVehicleClasses(@javax.annotation.Nullable String rawVehicleClasses) {
-    this.rawVehicleClasses = rawVehicleClasses;
-    return this;
-  }
-
-  /**
-   * Comma-separated vehicle classes that the user is qualified for
-   * @return rawVehicleClasses
-   */
-  @javax.annotation.Nullable
-  public String getRawVehicleClasses() {
-    return rawVehicleClasses;
-  }
-
-  public void setRawVehicleClasses(@javax.annotation.Nullable String rawVehicleClasses) {
-    this.rawVehicleClasses = rawVehicleClasses;
-  }
-
-
-  public DocumentWithDriverVerificationReportAllOfProperties manualTransmissionRestriction(@javax.annotation.Nullable Boolean manualTransmissionRestriction) {
-    this.manualTransmissionRestriction = manualTransmissionRestriction;
-    return this;
-  }
-
-  /**
-   * True if the user is not qualified to drive a manual transmission
-   * @return manualTransmissionRestriction
-   */
-  @javax.annotation.Nullable
-  public Boolean getManualTransmissionRestriction() {
-    return manualTransmissionRestriction;
-  }
-
-  public void setManualTransmissionRestriction(@javax.annotation.Nullable Boolean manualTransmissionRestriction) {
-    this.manualTransmissionRestriction = manualTransmissionRestriction;
-  }
-
-
-  public DocumentWithDriverVerificationReportAllOfProperties vehicleClassDetails(@javax.annotation.Nullable List<DocumentWithDriverVerificationReportAllOfPropertiesAllOfVehicleClassDetailsInner> vehicleClassDetails) {
-    this.vehicleClassDetails = vehicleClassDetails;
-    return this;
-  }
-
-  public DocumentWithDriverVerificationReportAllOfProperties addVehicleClassDetailsItem(DocumentWithDriverVerificationReportAllOfPropertiesAllOfVehicleClassDetailsInner vehicleClassDetailsItem) {
-    if (this.vehicleClassDetails == null) {
-      this.vehicleClassDetails = new ArrayList<>();
+  public DocumentPropertiesWithDrivingLicenceInformation addDrivingLicenceInformationItem(DocumentPropertiesDrivingLicenceInformationItem drivingLicenceInformationItem) {
+    if (this.drivingLicenceInformation == null) {
+      this.drivingLicenceInformation = new ArrayList<>();
     }
-    this.vehicleClassDetails.add(vehicleClassDetailsItem);
+    this.drivingLicenceInformation.add(drivingLicenceInformationItem);
     return this;
   }
 
   /**
-   * Detailed classes/categories information
-   * @return vehicleClassDetails
+   * Get drivingLicenceInformation
+   * @return drivingLicenceInformation
    */
   @javax.annotation.Nullable
-  public List<DocumentWithDriverVerificationReportAllOfPropertiesAllOfVehicleClassDetailsInner> getVehicleClassDetails() {
-    return vehicleClassDetails;
+  public List<DocumentPropertiesDrivingLicenceInformationItem> getDrivingLicenceInformation() {
+    return drivingLicenceInformation;
   }
 
-  public void setVehicleClassDetails(@javax.annotation.Nullable List<DocumentWithDriverVerificationReportAllOfPropertiesAllOfVehicleClassDetailsInner> vehicleClassDetails) {
-    this.vehicleClassDetails = vehicleClassDetails;
-  }
-
-
-  public DocumentWithDriverVerificationReportAllOfProperties passengerVehicle(@javax.annotation.Nullable DocumentWithDriverVerificationReportAllOfPropertiesAllOfPassengerVehicle passengerVehicle) {
-    this.passengerVehicle = passengerVehicle;
-    return this;
-  }
-
-  /**
-   * Get passengerVehicle
-   * @return passengerVehicle
-   */
-  @javax.annotation.Nullable
-  public DocumentWithDriverVerificationReportAllOfPropertiesAllOfPassengerVehicle getPassengerVehicle() {
-    return passengerVehicle;
-  }
-
-  public void setPassengerVehicle(@javax.annotation.Nullable DocumentWithDriverVerificationReportAllOfPropertiesAllOfPassengerVehicle passengerVehicle) {
-    this.passengerVehicle = passengerVehicle;
+  public void setDrivingLicenceInformation(@javax.annotation.Nullable List<DocumentPropertiesDrivingLicenceInformationItem> drivingLicenceInformation) {
+    this.drivingLicenceInformation = drivingLicenceInformation;
   }
 
   /**
@@ -1528,9 +1383,9 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
    *
    * @param key name of the property
    * @param value value of the property
-   * @return the DocumentWithDriverVerificationReportAllOfProperties instance itself
+   * @return the DocumentPropertiesWithDrivingLicenceInformation instance itself
    */
-  public DocumentWithDriverVerificationReportAllOfProperties putAdditionalProperty(String key, Object value) {
+  public DocumentPropertiesWithDrivingLicenceInformation putAdditionalProperty(String key, Object value) {
     if (this.additionalProperties == null) {
         this.additionalProperties = new HashMap<String, Object>();
     }
@@ -1569,71 +1424,65 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    DocumentWithDriverVerificationReportAllOfProperties documentWithDriverVerificationReportAllOfProperties = (DocumentWithDriverVerificationReportAllOfProperties) o;
-    return Objects.equals(this.dateOfBirth, documentWithDriverVerificationReportAllOfProperties.dateOfBirth) &&
-        Objects.equals(this.dateOfExpiry, documentWithDriverVerificationReportAllOfProperties.dateOfExpiry) &&
-        Objects.equals(this.personalNumber, documentWithDriverVerificationReportAllOfProperties.personalNumber) &&
-        Objects.equals(this.documentNumbers, documentWithDriverVerificationReportAllOfProperties.documentNumbers) &&
-        Objects.equals(this.documentType, documentWithDriverVerificationReportAllOfProperties.documentType) &&
-        Objects.equals(this.firstName, documentWithDriverVerificationReportAllOfProperties.firstName) &&
-        Objects.equals(this.middleName, documentWithDriverVerificationReportAllOfProperties.middleName) &&
-        Objects.equals(this.lastName, documentWithDriverVerificationReportAllOfProperties.lastName) &&
-        Objects.equals(this.gender, documentWithDriverVerificationReportAllOfProperties.gender) &&
-        Objects.equals(this.issuingCountry, documentWithDriverVerificationReportAllOfProperties.issuingCountry) &&
-        Objects.equals(this.nationality, documentWithDriverVerificationReportAllOfProperties.nationality) &&
-        Objects.equals(this.issuingState, documentWithDriverVerificationReportAllOfProperties.issuingState) &&
-        Objects.equals(this.issuingDate, documentWithDriverVerificationReportAllOfProperties.issuingDate) &&
-        Objects.equals(this.validFrom, documentWithDriverVerificationReportAllOfProperties.validFrom) &&
-        Objects.equals(this.categorisation, documentWithDriverVerificationReportAllOfProperties.categorisation) &&
-        Objects.equals(this.mrzLine1, documentWithDriverVerificationReportAllOfProperties.mrzLine1) &&
-        Objects.equals(this.mrzLine2, documentWithDriverVerificationReportAllOfProperties.mrzLine2) &&
-        Objects.equals(this.mrzLine3, documentWithDriverVerificationReportAllOfProperties.mrzLine3) &&
-        Objects.equals(this.address, documentWithDriverVerificationReportAllOfProperties.address) &&
-        Objects.equals(this.placeOfBirth, documentWithDriverVerificationReportAllOfProperties.placeOfBirth) &&
-        Objects.equals(this.spouseName, documentWithDriverVerificationReportAllOfProperties.spouseName) &&
-        Objects.equals(this.widowName, documentWithDriverVerificationReportAllOfProperties.widowName) &&
-        Objects.equals(this.aliasName, documentWithDriverVerificationReportAllOfProperties.aliasName) &&
-        Objects.equals(this.issuingAuthority, documentWithDriverVerificationReportAllOfProperties.issuingAuthority) &&
-        Objects.equals(this.remarks, documentWithDriverVerificationReportAllOfProperties.remarks) &&
-        Objects.equals(this.civilState, documentWithDriverVerificationReportAllOfProperties.civilState) &&
-        Objects.equals(this.expatriation, documentWithDriverVerificationReportAllOfProperties.expatriation) &&
-        Objects.equals(this.fatherName, documentWithDriverVerificationReportAllOfProperties.fatherName) &&
-        Objects.equals(this.motherName, documentWithDriverVerificationReportAllOfProperties.motherName) &&
-        Objects.equals(this.religion, documentWithDriverVerificationReportAllOfProperties.religion) &&
-        Objects.equals(this.typeOfPermit, documentWithDriverVerificationReportAllOfProperties.typeOfPermit) &&
-        Objects.equals(this.versionNumber, documentWithDriverVerificationReportAllOfProperties.versionNumber) &&
-        Objects.equals(this.documentSubtype, documentWithDriverVerificationReportAllOfProperties.documentSubtype) &&
-        Objects.equals(this.profession, documentWithDriverVerificationReportAllOfProperties.profession) &&
-        Objects.equals(this.securityDocumentNumber, documentWithDriverVerificationReportAllOfProperties.securityDocumentNumber) &&
-        Objects.equals(this.taxNumber, documentWithDriverVerificationReportAllOfProperties.taxNumber) &&
-        Objects.equals(this.nistIdentityEvidenceStrength, documentWithDriverVerificationReportAllOfProperties.nistIdentityEvidenceStrength) &&
-        Objects.equals(this.hasIssuanceConfirmation, documentWithDriverVerificationReportAllOfProperties.hasIssuanceConfirmation) &&
-        Objects.equals(this.realIdCompliance, documentWithDriverVerificationReportAllOfProperties.realIdCompliance) &&
-        Objects.equals(this.securityTier, documentWithDriverVerificationReportAllOfProperties.securityTier) &&
-        Objects.equals(this.addressLines, documentWithDriverVerificationReportAllOfProperties.addressLines) &&
-        Objects.equals(this.barcode, documentWithDriverVerificationReportAllOfProperties.barcode) &&
-        Objects.equals(this.nfc, documentWithDriverVerificationReportAllOfProperties.nfc) &&
-        Objects.equals(this.documentClassification, documentWithDriverVerificationReportAllOfProperties.documentClassification) &&
-        Objects.equals(this.extractedData, documentWithDriverVerificationReportAllOfProperties.extractedData) &&
-        Objects.equals(this.driversLicence, documentWithDriverVerificationReportAllOfProperties.driversLicence) &&
-        Objects.equals(this.restrictedLicence, documentWithDriverVerificationReportAllOfProperties.restrictedLicence) &&
-        Objects.equals(this.rawLicenceCategory, documentWithDriverVerificationReportAllOfProperties.rawLicenceCategory) &&
-        Objects.equals(this.rawVehicleClasses, documentWithDriverVerificationReportAllOfProperties.rawVehicleClasses) &&
-        Objects.equals(this.manualTransmissionRestriction, documentWithDriverVerificationReportAllOfProperties.manualTransmissionRestriction) &&
-        Objects.equals(this.vehicleClassDetails, documentWithDriverVerificationReportAllOfProperties.vehicleClassDetails) &&
-        Objects.equals(this.passengerVehicle, documentWithDriverVerificationReportAllOfProperties.passengerVehicle)&&
-        Objects.equals(this.additionalProperties, documentWithDriverVerificationReportAllOfProperties.additionalProperties);
+    DocumentPropertiesWithDrivingLicenceInformation documentPropertiesWithDrivingLicenceInformation = (DocumentPropertiesWithDrivingLicenceInformation) o;
+    return Objects.equals(this.dateOfBirth, documentPropertiesWithDrivingLicenceInformation.dateOfBirth) &&
+        Objects.equals(this.dateOfExpiry, documentPropertiesWithDrivingLicenceInformation.dateOfExpiry) &&
+        Objects.equals(this.personalNumber, documentPropertiesWithDrivingLicenceInformation.personalNumber) &&
+        Objects.equals(this.documentNumbers, documentPropertiesWithDrivingLicenceInformation.documentNumbers) &&
+        Objects.equals(this.documentType, documentPropertiesWithDrivingLicenceInformation.documentType) &&
+        Objects.equals(this.firstName, documentPropertiesWithDrivingLicenceInformation.firstName) &&
+        Objects.equals(this.middleName, documentPropertiesWithDrivingLicenceInformation.middleName) &&
+        Objects.equals(this.lastName, documentPropertiesWithDrivingLicenceInformation.lastName) &&
+        Objects.equals(this.gender, documentPropertiesWithDrivingLicenceInformation.gender) &&
+        Objects.equals(this.issuingCountry, documentPropertiesWithDrivingLicenceInformation.issuingCountry) &&
+        Objects.equals(this.nationality, documentPropertiesWithDrivingLicenceInformation.nationality) &&
+        Objects.equals(this.issuingState, documentPropertiesWithDrivingLicenceInformation.issuingState) &&
+        Objects.equals(this.issuingDate, documentPropertiesWithDrivingLicenceInformation.issuingDate) &&
+        Objects.equals(this.validFrom, documentPropertiesWithDrivingLicenceInformation.validFrom) &&
+        Objects.equals(this.categorisation, documentPropertiesWithDrivingLicenceInformation.categorisation) &&
+        Objects.equals(this.mrzLine1, documentPropertiesWithDrivingLicenceInformation.mrzLine1) &&
+        Objects.equals(this.mrzLine2, documentPropertiesWithDrivingLicenceInformation.mrzLine2) &&
+        Objects.equals(this.mrzLine3, documentPropertiesWithDrivingLicenceInformation.mrzLine3) &&
+        Objects.equals(this.address, documentPropertiesWithDrivingLicenceInformation.address) &&
+        Objects.equals(this.placeOfBirth, documentPropertiesWithDrivingLicenceInformation.placeOfBirth) &&
+        Objects.equals(this.spouseName, documentPropertiesWithDrivingLicenceInformation.spouseName) &&
+        Objects.equals(this.widowName, documentPropertiesWithDrivingLicenceInformation.widowName) &&
+        Objects.equals(this.aliasName, documentPropertiesWithDrivingLicenceInformation.aliasName) &&
+        Objects.equals(this.issuingAuthority, documentPropertiesWithDrivingLicenceInformation.issuingAuthority) &&
+        Objects.equals(this.remarks, documentPropertiesWithDrivingLicenceInformation.remarks) &&
+        Objects.equals(this.civilState, documentPropertiesWithDrivingLicenceInformation.civilState) &&
+        Objects.equals(this.expatriation, documentPropertiesWithDrivingLicenceInformation.expatriation) &&
+        Objects.equals(this.fatherName, documentPropertiesWithDrivingLicenceInformation.fatherName) &&
+        Objects.equals(this.motherName, documentPropertiesWithDrivingLicenceInformation.motherName) &&
+        Objects.equals(this.religion, documentPropertiesWithDrivingLicenceInformation.religion) &&
+        Objects.equals(this.typeOfPermit, documentPropertiesWithDrivingLicenceInformation.typeOfPermit) &&
+        Objects.equals(this.versionNumber, documentPropertiesWithDrivingLicenceInformation.versionNumber) &&
+        Objects.equals(this.documentSubtype, documentPropertiesWithDrivingLicenceInformation.documentSubtype) &&
+        Objects.equals(this.profession, documentPropertiesWithDrivingLicenceInformation.profession) &&
+        Objects.equals(this.securityDocumentNumber, documentPropertiesWithDrivingLicenceInformation.securityDocumentNumber) &&
+        Objects.equals(this.taxNumber, documentPropertiesWithDrivingLicenceInformation.taxNumber) &&
+        Objects.equals(this.nistIdentityEvidenceStrength, documentPropertiesWithDrivingLicenceInformation.nistIdentityEvidenceStrength) &&
+        Objects.equals(this.hasIssuanceConfirmation, documentPropertiesWithDrivingLicenceInformation.hasIssuanceConfirmation) &&
+        Objects.equals(this.realIdCompliance, documentPropertiesWithDrivingLicenceInformation.realIdCompliance) &&
+        Objects.equals(this.securityTier, documentPropertiesWithDrivingLicenceInformation.securityTier) &&
+        Objects.equals(this.addressLines, documentPropertiesWithDrivingLicenceInformation.addressLines) &&
+        Objects.equals(this.barcode, documentPropertiesWithDrivingLicenceInformation.barcode) &&
+        Objects.equals(this.nfc, documentPropertiesWithDrivingLicenceInformation.nfc) &&
+        Objects.equals(this.documentClassification, documentPropertiesWithDrivingLicenceInformation.documentClassification) &&
+        Objects.equals(this.extractedData, documentPropertiesWithDrivingLicenceInformation.extractedData) &&
+        Objects.equals(this.drivingLicenceInformation, documentPropertiesWithDrivingLicenceInformation.drivingLicenceInformation)&&
+        Objects.equals(this.additionalProperties, documentPropertiesWithDrivingLicenceInformation.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(dateOfBirth, dateOfExpiry, personalNumber, documentNumbers, documentType, firstName, middleName, lastName, gender, issuingCountry, nationality, issuingState, issuingDate, validFrom, categorisation, mrzLine1, mrzLine2, mrzLine3, address, placeOfBirth, spouseName, widowName, aliasName, issuingAuthority, remarks, civilState, expatriation, fatherName, motherName, religion, typeOfPermit, versionNumber, documentSubtype, profession, securityDocumentNumber, taxNumber, nistIdentityEvidenceStrength, hasIssuanceConfirmation, realIdCompliance, securityTier, addressLines, barcode, nfc, documentClassification, extractedData, driversLicence, restrictedLicence, rawLicenceCategory, rawVehicleClasses, manualTransmissionRestriction, vehicleClassDetails, passengerVehicle, additionalProperties);
+    return Objects.hash(dateOfBirth, dateOfExpiry, personalNumber, documentNumbers, documentType, firstName, middleName, lastName, gender, issuingCountry, nationality, issuingState, issuingDate, validFrom, categorisation, mrzLine1, mrzLine2, mrzLine3, address, placeOfBirth, spouseName, widowName, aliasName, issuingAuthority, remarks, civilState, expatriation, fatherName, motherName, religion, typeOfPermit, versionNumber, documentSubtype, profession, securityDocumentNumber, taxNumber, nistIdentityEvidenceStrength, hasIssuanceConfirmation, realIdCompliance, securityTier, addressLines, barcode, nfc, documentClassification, extractedData, drivingLicenceInformation, additionalProperties);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class DocumentWithDriverVerificationReportAllOfProperties {\n");
+    sb.append("class DocumentPropertiesWithDrivingLicenceInformation {\n");
     sb.append("    dateOfBirth: ").append(toIndentedString(dateOfBirth)).append("\n");
     sb.append("    dateOfExpiry: ").append(toIndentedString(dateOfExpiry)).append("\n");
     sb.append("    personalNumber: ").append(toIndentedString(personalNumber)).append("\n");
@@ -1679,13 +1528,7 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     sb.append("    nfc: ").append(toIndentedString(nfc)).append("\n");
     sb.append("    documentClassification: ").append(toIndentedString(documentClassification)).append("\n");
     sb.append("    extractedData: ").append(toIndentedString(extractedData)).append("\n");
-    sb.append("    driversLicence: ").append(toIndentedString(driversLicence)).append("\n");
-    sb.append("    restrictedLicence: ").append(toIndentedString(restrictedLicence)).append("\n");
-    sb.append("    rawLicenceCategory: ").append(toIndentedString(rawLicenceCategory)).append("\n");
-    sb.append("    rawVehicleClasses: ").append(toIndentedString(rawVehicleClasses)).append("\n");
-    sb.append("    manualTransmissionRestriction: ").append(toIndentedString(manualTransmissionRestriction)).append("\n");
-    sb.append("    vehicleClassDetails: ").append(toIndentedString(vehicleClassDetails)).append("\n");
-    sb.append("    passengerVehicle: ").append(toIndentedString(passengerVehicle)).append("\n");
+    sb.append("    drivingLicenceInformation: ").append(toIndentedString(drivingLicenceInformation)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -1754,13 +1597,7 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     openapiFields.add("nfc");
     openapiFields.add("document_classification");
     openapiFields.add("extracted_data");
-    openapiFields.add("drivers_licence");
-    openapiFields.add("restricted_licence");
-    openapiFields.add("raw_licence_category");
-    openapiFields.add("raw_vehicle_classes");
-    openapiFields.add("manual_transmission_restriction");
-    openapiFields.add("vehicle_class_details");
-    openapiFields.add("passenger_vehicle");
+    openapiFields.add("driving_licence_information");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -1770,12 +1607,12 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to DocumentWithDriverVerificationReportAllOfProperties
+   * @throws IOException if the JSON Element is invalid with respect to DocumentPropertiesWithDrivingLicenceInformation
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!DocumentWithDriverVerificationReportAllOfProperties.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in DocumentWithDriverVerificationReportAllOfProperties is not found in the empty JSON string", DocumentWithDriverVerificationReportAllOfProperties.openapiRequiredFields.toString()));
+        if (!DocumentPropertiesWithDrivingLicenceInformation.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in DocumentPropertiesWithDrivingLicenceInformation is not found in the empty JSON string", DocumentPropertiesWithDrivingLicenceInformation.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -1937,29 +1774,19 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
       if (jsonObj.get("extracted_data") != null && !jsonObj.get("extracted_data").isJsonNull()) {
         DocumentPropertiesExtractedData.validateJsonElement(jsonObj.get("extracted_data"));
       }
-      if ((jsonObj.get("raw_licence_category") != null && !jsonObj.get("raw_licence_category").isJsonNull()) && !jsonObj.get("raw_licence_category").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `raw_licence_category` to be a primitive type in the JSON string but got `%s`", jsonObj.get("raw_licence_category").toString()));
-      }
-      if ((jsonObj.get("raw_vehicle_classes") != null && !jsonObj.get("raw_vehicle_classes").isJsonNull()) && !jsonObj.get("raw_vehicle_classes").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `raw_vehicle_classes` to be a primitive type in the JSON string but got `%s`", jsonObj.get("raw_vehicle_classes").toString()));
-      }
-      if (jsonObj.get("vehicle_class_details") != null && !jsonObj.get("vehicle_class_details").isJsonNull()) {
-        JsonArray jsonArrayvehicleClassDetails = jsonObj.getAsJsonArray("vehicle_class_details");
-        if (jsonArrayvehicleClassDetails != null) {
+      if (jsonObj.get("driving_licence_information") != null && !jsonObj.get("driving_licence_information").isJsonNull()) {
+        JsonArray jsonArraydrivingLicenceInformation = jsonObj.getAsJsonArray("driving_licence_information");
+        if (jsonArraydrivingLicenceInformation != null) {
           // ensure the json data is an array
-          if (!jsonObj.get("vehicle_class_details").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `vehicle_class_details` to be an array in the JSON string but got `%s`", jsonObj.get("vehicle_class_details").toString()));
+          if (!jsonObj.get("driving_licence_information").isJsonArray()) {
+            throw new IllegalArgumentException(String.format("Expected the field `driving_licence_information` to be an array in the JSON string but got `%s`", jsonObj.get("driving_licence_information").toString()));
           }
 
-          // validate the optional field `vehicle_class_details` (array)
-          for (int i = 0; i < jsonArrayvehicleClassDetails.size(); i++) {
-            DocumentWithDriverVerificationReportAllOfPropertiesAllOfVehicleClassDetailsInner.validateJsonElement(jsonArrayvehicleClassDetails.get(i));
+          // validate the optional field `driving_licence_information` (array)
+          for (int i = 0; i < jsonArraydrivingLicenceInformation.size(); i++) {
+            DocumentPropertiesDrivingLicenceInformationItem.validateJsonElement(jsonArraydrivingLicenceInformation.get(i));
           };
         }
-      }
-      // validate the optional field `passenger_vehicle`
-      if (jsonObj.get("passenger_vehicle") != null && !jsonObj.get("passenger_vehicle").isJsonNull()) {
-        DocumentWithDriverVerificationReportAllOfPropertiesAllOfPassengerVehicle.validateJsonElement(jsonObj.get("passenger_vehicle"));
       }
   }
 
@@ -1967,16 +1794,16 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!DocumentWithDriverVerificationReportAllOfProperties.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'DocumentWithDriverVerificationReportAllOfProperties' and its subtypes
+       if (!DocumentPropertiesWithDrivingLicenceInformation.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'DocumentPropertiesWithDrivingLicenceInformation' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<DocumentWithDriverVerificationReportAllOfProperties> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(DocumentWithDriverVerificationReportAllOfProperties.class));
+       final TypeAdapter<DocumentPropertiesWithDrivingLicenceInformation> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(DocumentPropertiesWithDrivingLicenceInformation.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<DocumentWithDriverVerificationReportAllOfProperties>() {
+       return (TypeAdapter<T>) new TypeAdapter<DocumentPropertiesWithDrivingLicenceInformation>() {
            @Override
-           public void write(JsonWriter out, DocumentWithDriverVerificationReportAllOfProperties value) throws IOException {
+           public void write(JsonWriter out, DocumentPropertiesWithDrivingLicenceInformation value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              obj.remove("additionalProperties");
              // serialize additional properties
@@ -2004,12 +1831,12 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
            }
 
            @Override
-           public DocumentWithDriverVerificationReportAllOfProperties read(JsonReader in) throws IOException {
+           public DocumentPropertiesWithDrivingLicenceInformation read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
-             DocumentWithDriverVerificationReportAllOfProperties instance = thisAdapter.fromJsonTree(jsonObj);
+             DocumentPropertiesWithDrivingLicenceInformation instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
                if (!openapiFields.contains(entry.getKey())) {
                  if (entry.getValue().isJsonPrimitive()) { // primitive type
@@ -2036,18 +1863,18 @@ public class DocumentWithDriverVerificationReportAllOfProperties {
   }
 
   /**
-   * Create an instance of DocumentWithDriverVerificationReportAllOfProperties given an JSON string
+   * Create an instance of DocumentPropertiesWithDrivingLicenceInformation given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of DocumentWithDriverVerificationReportAllOfProperties
-   * @throws IOException if the JSON string is invalid with respect to DocumentWithDriverVerificationReportAllOfProperties
+   * @return An instance of DocumentPropertiesWithDrivingLicenceInformation
+   * @throws IOException if the JSON string is invalid with respect to DocumentPropertiesWithDrivingLicenceInformation
    */
-  public static DocumentWithDriverVerificationReportAllOfProperties fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, DocumentWithDriverVerificationReportAllOfProperties.class);
+  public static DocumentPropertiesWithDrivingLicenceInformation fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, DocumentPropertiesWithDrivingLicenceInformation.class);
   }
 
   /**
-   * Convert an instance of DocumentWithDriverVerificationReportAllOfProperties to an JSON string
+   * Convert an instance of DocumentPropertiesWithDrivingLicenceInformation to an JSON string
    *
    * @return JSON string
    */

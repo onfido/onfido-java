@@ -53,12 +53,12 @@ public class IdentityEnhancedBreakdownAddressBreakdownCreditAgenciesProperties {
   public static final String SERIALIZED_NAME_NUMBER_OF_MATCHES = "number_of_matches";
   @SerializedName(SERIALIZED_NAME_NUMBER_OF_MATCHES)
   @javax.annotation.Nullable
-  private Integer numberOfMatches;
+  private String numberOfMatches;
 
   public IdentityEnhancedBreakdownAddressBreakdownCreditAgenciesProperties() {
   }
 
-  public IdentityEnhancedBreakdownAddressBreakdownCreditAgenciesProperties numberOfMatches(@javax.annotation.Nullable Integer numberOfMatches) {
+  public IdentityEnhancedBreakdownAddressBreakdownCreditAgenciesProperties numberOfMatches(@javax.annotation.Nullable String numberOfMatches) {
     this.numberOfMatches = numberOfMatches;
     return this;
   }
@@ -68,11 +68,11 @@ public class IdentityEnhancedBreakdownAddressBreakdownCreditAgenciesProperties {
    * @return numberOfMatches
    */
   @javax.annotation.Nullable
-  public Integer getNumberOfMatches() {
+  public String getNumberOfMatches() {
     return numberOfMatches;
   }
 
-  public void setNumberOfMatches(@javax.annotation.Nullable Integer numberOfMatches) {
+  public void setNumberOfMatches(@javax.annotation.Nullable String numberOfMatches) {
     this.numberOfMatches = numberOfMatches;
   }
 
@@ -187,6 +187,9 @@ public class IdentityEnhancedBreakdownAddressBreakdownCreditAgenciesProperties {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("number_of_matches") != null && !jsonObj.get("number_of_matches").isJsonNull()) && !jsonObj.get("number_of_matches").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `number_of_matches` to be a primitive type in the JSON string but got `%s`", jsonObj.get("number_of_matches").toString()));
+      }
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

@@ -31,7 +31,7 @@ public class LivePhotoTest extends TestBase {
 
   @Test
   public void downloadLivePhotoTest() throws Exception {
-    FileTransfer download = onfido.downloadLivePhoto(livePhoto.getId());
+    FileTransfer download = onfido.downloadLivePhoto(livePhoto.getId()).execute();
 
     Assertions.assertEquals("image/png", download.getContentType());
     Assertions.assertEquals("sample_photo.png", download.getFilename());
@@ -41,7 +41,7 @@ public class LivePhotoTest extends TestBase {
   @Test
   public void downloadErrorTest() throws Exception {
     try {
-      onfido.downloadLivePhoto(nonExistingId);
+      onfido.downloadLivePhoto(nonExistingId).execute();
       Assertions.fail();
     } catch (ApiException ex) {
       Assertions.assertEquals(404, ex.getCode());
@@ -50,7 +50,7 @@ public class LivePhotoTest extends TestBase {
 
   @Test
   public void findLivePhotoTest() throws Exception {
-    LivePhoto lookupLivePhoto = onfido.findLivePhoto(livePhoto.getId());
+    LivePhoto lookupLivePhoto = onfido.findLivePhoto(livePhoto.getId()).execute();
 
     Assertions.assertEquals("sample_photo.png", lookupLivePhoto.getFileName());
 
@@ -62,7 +62,7 @@ public class LivePhotoTest extends TestBase {
     uploadLivePhoto(applicant, "another_sample_photo.png");
 
     List<LivePhoto> livePhotos =
-        onfido.listLivePhotos(applicant.getId()).getLivePhotos().stream()
+        onfido.listLivePhotos(applicant.getId()).execute().getLivePhotos().stream()
             .sorted(Comparator.comparing(LivePhoto::getFileName))
             .collect(Collectors.toList());
 

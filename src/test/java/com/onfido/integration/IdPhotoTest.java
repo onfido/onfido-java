@@ -31,7 +31,7 @@ public class IdPhotoTest extends TestBase {
 
   @Test
   public void downloadIdPhotoTest() throws Exception {
-    FileTransfer download = onfido.downloadIdPhoto(idPhoto.getId());
+    FileTransfer download = onfido.downloadIdPhoto(idPhoto.getId()).execute();
 
     Assertions.assertEquals("image/png", download.getContentType());
     Assertions.assertTrue(download.getFilename() != null);
@@ -41,7 +41,7 @@ public class IdPhotoTest extends TestBase {
   @Test
   public void downloadErrorTest() throws Exception {
     try {
-      onfido.downloadIdPhoto(nonExistingId);
+      onfido.downloadIdPhoto(nonExistingId).execute();
       Assertions.fail();
     } catch (ApiException ex) {
       Assertions.assertEquals(404, ex.getCode());
@@ -50,7 +50,7 @@ public class IdPhotoTest extends TestBase {
 
   @Test
   public void findIdPhotoTest() throws Exception {
-    IdPhoto lookupIdPhoto = onfido.findIdPhoto(idPhoto.getId());
+    IdPhoto lookupIdPhoto = onfido.findIdPhoto(idPhoto.getId()).execute();
 
     Assertions.assertEquals(idPhoto.getId() + ".png", lookupIdPhoto.getFileName());
 
@@ -62,7 +62,7 @@ public class IdPhotoTest extends TestBase {
     uploadIdPhoto(applicant, "another_sample_photo.png");
 
     List<IdPhoto> idPhotos =
-        onfido.listIdPhotos(applicant.getId()).getIdPhotos().stream()
+        onfido.listIdPhotos(applicant.getId()).execute().getIdPhotos().stream()
             .sorted(Comparator.comparing(IdPhoto::getFileName))
             .collect(Collectors.toList());
 

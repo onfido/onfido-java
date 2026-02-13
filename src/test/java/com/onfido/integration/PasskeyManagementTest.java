@@ -14,7 +14,7 @@ public class PasskeyManagementTest extends TestBase {
 
   @Test
   public void listPasskeysTest() throws Exception {
-    PasskeysList passkeys = onfido.listPasskeys(SAMPLE_USERNAME);
+    PasskeysList passkeys = onfido.listPasskeys(SAMPLE_USERNAME).execute();
 
     Assertions.assertFalse(passkeys.getPasskeys().isEmpty());
 
@@ -33,7 +33,7 @@ public class PasskeyManagementTest extends TestBase {
 
   @Test
   public void findPasskeyTest() throws Exception {
-    Passkey passkey = onfido.findPasskey(SAMPLE_USERNAME, SAMPLE_PASSKEY_ID);
+    Passkey passkey = onfido.findPasskey(SAMPLE_USERNAME, SAMPLE_PASSKEY_ID).execute();
 
     Assertions.assertNotNull(passkey.getId());
     Assertions.assertNotNull(passkey.getApplicationDomain());
@@ -46,10 +46,12 @@ public class PasskeyManagementTest extends TestBase {
   @Test
   public void updatePasskeyStateTest() throws Exception {
     Passkey updated =
-        onfido.updatePasskey(
-            SAMPLE_USERNAME,
-            SAMPLE_PASSKEY_ID,
-            new PasskeyUpdater().state(PasskeyUpdater.StateEnum.INACTIVE));
+        onfido
+            .updatePasskey(
+                SAMPLE_USERNAME,
+                SAMPLE_PASSKEY_ID,
+                new PasskeyUpdater().state(PasskeyUpdater.StateEnum.INACTIVE))
+            .execute();
 
     // Sandbox returns canned responses; expect a stable INACTIVE state
     Assertions.assertEquals(Passkey.StateEnum.INACTIVE, updated.getState());
@@ -59,7 +61,7 @@ public class PasskeyManagementTest extends TestBase {
   public void deletePasskeySuccessTest() {
     ApiResponse<Void> response =
         Assertions.assertDoesNotThrow(
-            () -> onfido.deletePasskeyWithHttpInfo(SAMPLE_USERNAME, SAMPLE_PASSKEY_ID));
+            () -> onfido.deletePasskey(SAMPLE_USERNAME, SAMPLE_PASSKEY_ID).executeWithHttpInfo());
 
     Assertions.assertEquals(204, response.getStatusCode());
   }
@@ -67,7 +69,8 @@ public class PasskeyManagementTest extends TestBase {
   @Test
   public void deletePasskeysSuccessTest() {
     ApiResponse<Void> response =
-        Assertions.assertDoesNotThrow(() -> onfido.deletePasskeysWithHttpInfo(SAMPLE_USERNAME));
+        Assertions.assertDoesNotThrow(
+            () -> onfido.deletePasskeys(SAMPLE_USERNAME).executeWithHttpInfo());
 
     Assertions.assertEquals(204, response.getStatusCode());
   }

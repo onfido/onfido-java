@@ -40,11 +40,11 @@ public class ReportSchemasTest extends TestBase {
 
     Assertions.assertEquals(COMPLETE, documentReport.getStatus());
     Assertions.assertEquals(ReportName.DOCUMENT, documentReport.getName());
-    Assertions.assertEquals(check.getId(), documentReport.getReportShared().getCheckId());
+    Assertions.assertEquals(check.getId(), documentReport.getDocumentReport().getCheckId());
     Assertions.assertNotNull(documentReport.getDocumentReport().getBreakdown());
     Assertions.assertNotNull(documentReport.getDocumentReport().getProperties());
-    Assertions.assertNotNull(documentReport.getReportShared().getResult());
-    Assertions.assertNotNull(documentReport.getReportShared().getSubResult());
+    Assertions.assertNotNull(documentReport.getDocumentReport().getResult());
+    Assertions.assertNotNull(documentReport.getDocumentReport().getSubResult());
 
     Assertions.assertEquals(
         "clear",
@@ -58,7 +58,7 @@ public class ReportSchemasTest extends TestBase {
     Assertions.assertEquals(
         LocalDate.parse("1990-01-01"),
         documentReport.getDocumentReport().getProperties().getDateOfBirth());
-    Assertions.assertEquals(check.getId(), documentReport.getReportShared().getCheckId());
+    Assertions.assertEquals(check.getId(), documentReport.getDocumentReport().getCheckId());
     Assertions.assertNotNull(documentReport.getDocumentReport().getBreakdown());
     Assertions.assertNotNull(documentReport.getDocumentReport().getProperties());
     Assertions.assertNull(documentReport.getDocumentReport().getProperties().getDocumentSubtype());
@@ -93,12 +93,16 @@ public class ReportSchemasTest extends TestBase {
         ReportName.FACIAL_SIMILARITY_PHOTO_FULLY_AUTO,
         facialSimilarityPhotoFullyAutoReport.getName());
     Assertions.assertEquals(
-        check.getId(), facialSimilarityPhotoFullyAutoReport.getReportShared().getCheckId());
+        check.getId(),
+        facialSimilarityPhotoFullyAutoReport
+            .getFacialSimilarityPhotoFullyAutoReport()
+            .getCheckId());
     Assertions.assertNotNull(
         facialSimilarityPhotoFullyAutoReport
             .getFacialSimilarityPhotoFullyAutoReport()
             .getBreakdown());
-    Assertions.assertNotNull(facialSimilarityPhotoFullyAutoReport.getReportShared().getResult());
+    Assertions.assertNotNull(
+        facialSimilarityPhotoFullyAutoReport.getFacialSimilarityPhotoFullyAutoReport().getResult());
     Assertions.assertNotNull(
         facialSimilarityPhotoFullyAutoReport
             .getFacialSimilarityPhotoFullyAutoReport()
@@ -135,9 +139,10 @@ public class ReportSchemasTest extends TestBase {
 
     Assertions.assertEquals(COMPLETE, report.getStatus());
     Assertions.assertEquals(ReportName.DOCUMENT_WITH_ADDRESS_INFORMATION, report.getName());
-    Assertions.assertEquals(check.getId(), report.getReportShared().getCheckId());
+    Assertions.assertEquals(
+        check.getId(), report.getDocumentWithAddressInformationReport().getCheckId());
     Assertions.assertNotNull(report.getDocumentWithAddressInformationReport().getBreakdown());
-    Assertions.assertNotNull(report.getReportShared().getResult());
+    Assertions.assertNotNull(report.getDocumentWithAddressInformationReport().getResult());
 
     Assertions.assertEquals(
         "driving_licence",
@@ -176,11 +181,11 @@ public class ReportSchemasTest extends TestBase {
 
     Assertions.assertEquals(COMPLETE, report.getStatus());
     Assertions.assertEquals(ReportName.FACIAL_SIMILARITY_PHOTO_FULLY_AUTO, report.getName());
-    Assertions.assertEquals(check.getId(), report.getReportShared().getCheckId());
 
     FacialSimilarityPhotoFullyAutoReport facialSimilarityPhotoFullyAutoReport =
         report.getFacialSimilarityPhotoFullyAutoReport();
 
+    Assertions.assertEquals(check.getId(), facialSimilarityPhotoFullyAutoReport.getCheckId());
     Assertions.assertNotNull(facialSimilarityPhotoFullyAutoReport.getLivePhotos());
     Assertions.assertNotNull(facialSimilarityPhotoFullyAutoReport.getLiveVideos());
     Assertions.assertNotNull(facialSimilarityPhotoFullyAutoReport.getMotionCaptures());
@@ -207,10 +212,11 @@ public class ReportSchemasTest extends TestBase {
 
     Assertions.assertEquals(COMPLETE, report.getStatus());
     Assertions.assertEquals(ReportName.DOCUMENT_WITH_DRIVING_LICENCE_INFORMATION, report.getName());
-    Assertions.assertEquals(check.getId(), report.getReportShared().getCheckId());
 
     DocumentWithDrivingLicenceInformationReport drivingLicenceReport =
         report.getDocumentWithDrivingLicenceInformationReport();
+
+    Assertions.assertEquals(check.getId(), drivingLicenceReport.getCheckId());
 
     List<DocumentPropertiesDrivingLicenceInformationItem> licences =
         drivingLicenceReport.getProperties().getDrivingLicenceInformation();
@@ -243,10 +249,9 @@ public class ReportSchemasTest extends TestBase {
 
     Assertions.assertEquals(COMPLETE, report.getStatus());
     Assertions.assertEquals(ReportName.DEVICE_INTELLIGENCE, report.getName());
-    Assertions.assertEquals(check.getId(), report.getReportShared().getCheckId());
-
     DeviceIntelligenceReport deviceIntelligenceReport = report.getDeviceIntelligenceReport();
 
+    Assertions.assertEquals(check.getId(), deviceIntelligenceReport.getCheckId());
     DeviceIntelligenceBreakdown breakdown = deviceIntelligenceReport.getBreakdown();
     Assertions.assertNotNull(breakdown.getDevice().getBreakdown());
 

@@ -32,7 +32,7 @@ public class DocumentTest extends TestBase {
 
   @Test
   public void downloadDocumentTest() throws Exception {
-    FileTransfer download = onfido.downloadDocument(document.getId());
+    FileTransfer download = onfido.downloadDocument(document.getId()).execute();
 
     Assertions.assertEquals("image/png", download.getContentType());
     Assertions.assertNotNull(download.getFilename());
@@ -42,7 +42,7 @@ public class DocumentTest extends TestBase {
   @Test
   public void downloadErrorTest() {
     try {
-      onfido.downloadDocument(nonExistingId);
+      onfido.downloadDocument(nonExistingId).execute();
       Assertions.fail();
     } catch (ApiException ex) {
       Assertions.assertEquals(404, ex.getCode());
@@ -51,7 +51,7 @@ public class DocumentTest extends TestBase {
 
   @Test
   public void findDocumentTest() throws Exception {
-    Document lookupDocument = onfido.findDocument(document.getId());
+    Document lookupDocument = onfido.findDocument(document.getId()).execute();
 
     Assertions.assertEquals("sample_driving_licence.png", lookupDocument.getFileName());
     Assertions.assertNotNull(lookupDocument.toJson());
@@ -62,7 +62,7 @@ public class DocumentTest extends TestBase {
     uploadDocument(applicant, "another_sample_driving_licence.jpeg", DocumentTypes.UNKNOWN);
 
     List<Document> documents =
-        onfido.listDocuments(applicant.getId()).getDocuments().stream()
+        onfido.listDocuments(applicant.getId()).execute().getDocuments().stream()
             .sorted(Comparator.comparing(Document::getFileName))
             .collect(Collectors.toList());
 
@@ -81,7 +81,7 @@ public class DocumentTest extends TestBase {
   @Test
   public void nullParamRequestTest() {
     try {
-      onfido.uploadDocument(null, null, null, "file.png", null, null, null, null);
+      onfido.uploadDocument(null, null, null).execute();
       Assertions.fail();
     } catch (ApiException ex) {
       Assertions.assertEquals(0, ex.getCode());
@@ -92,7 +92,7 @@ public class DocumentTest extends TestBase {
   public void downloadNfcFaceTest() throws Exception {
     Document nfcFace = uploadDocument(applicant, "nfc_data.json", DocumentTypes.PASSPORT);
 
-    FileTransfer download = onfido.downloadNfcFace(nfcFace.getId());
+    FileTransfer download = onfido.downloadNfcFace(nfcFace.getId()).execute();
 
     Assertions.assertEquals("image/png", download.getContentType());
     Assertions.assertNotNull(download.getFilename());
@@ -102,7 +102,7 @@ public class DocumentTest extends TestBase {
   @Test
   public void downloadNfcFaceNotFoundTest() {
     try {
-      onfido.downloadNfcFace(nonExistingId);
+      onfido.downloadNfcFace(nonExistingId).execute();
       Assertions.fail();
     } catch (ApiException ex) {
       Assertions.assertEquals(404, ex.getCode());

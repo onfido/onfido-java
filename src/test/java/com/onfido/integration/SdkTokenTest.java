@@ -13,10 +13,12 @@ public class SdkTokenTest extends TestBase {
     Applicant applicant = createApplicant();
 
     SdkToken token =
-        onfido.generateSdkToken(
-            new SdkTokenBuilder()
-                .applicantId(applicant.getId())
-                .referrer("https://*.example.com/example_page/*"));
+        onfido
+            .generateSdkToken(
+                new SdkTokenBuilder()
+                    .applicantId(applicant.getId())
+                    .referrer("https://*.example.com/example_page/*"))
+            .execute();
 
     Assertions.assertTrue(token.getToken().length() > 0);
 

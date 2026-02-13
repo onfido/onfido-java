@@ -24,14 +24,16 @@ public class AdvancedElectronicSignatureTest extends TestBase {
     customData.put("transaction_id", "995bf84c-d708-4977-8b88-d4b66bebdaf6");
 
     WorkflowRun workflowRun =
-        onfido.createWorkflowRun(
-            new WorkflowRunBuilder()
-                .workflowId(workflowId)
-                .applicantId(applicantId)
-                .customData(customData));
+        onfido
+            .createWorkflowRun(
+                new WorkflowRunBuilder()
+                    .workflowId(workflowId)
+                    .applicantId(applicantId)
+                    .customData(customData))
+            .execute();
     UUID workflowRunId = workflowRun.getId();
 
-    TaskItem task = onfido.listTasks(workflowRunId).get(1);
+    TaskItem task = onfido.listTasks(workflowRunId).execute().get(1);
 
     LinkedTreeMap output =
         (LinkedTreeMap)
@@ -47,9 +49,9 @@ public class AdvancedElectronicSignatureTest extends TestBase {
     UUID receiptDocumentFileId = UUID.fromString((String) receiptDocument.get("id"));
 
     byte[] signedDocumentBytes =
-        onfido.downloadAesDocument(workflowRunId, signedDocumentFileId).getByteArray();
+        onfido.downloadAesDocument(workflowRunId, signedDocumentFileId).execute().getByteArray();
     byte[] receiptDocumentBytes =
-        onfido.downloadAesDocument(workflowRunId, receiptDocumentFileId).getByteArray();
+        onfido.downloadAesDocument(workflowRunId, receiptDocumentFileId).execute().getByteArray();
 
     Assertions.assertEquals("%PDF", new String(signedDocumentBytes, 0, 4));
     Assertions.assertTrue(signedDocumentBytes.length > 0);

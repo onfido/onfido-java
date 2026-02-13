@@ -30,7 +30,7 @@ public class WebhookTest extends TestBase {
   }
 
   private Webhook createWebhook(String url) throws Exception {
-    return onfido.createWebhook(new WebhookBuilder().url(url));
+    return onfido.createWebhook(new WebhookBuilder().url(url)).execute();
   }
 
   @Test
@@ -42,7 +42,7 @@ public class WebhookTest extends TestBase {
 
   @Test
   public void findWebhookTest() throws Exception {
-    Webhook lookupWebhook = onfido.findWebhook(webhook.getId());
+    Webhook lookupWebhook = onfido.findWebhook(webhook.getId()).execute();
 
     Assertions.assertEquals("https://example.com/webhook", lookupWebhook.getUrl());
 
@@ -52,8 +52,10 @@ public class WebhookTest extends TestBase {
   @Test
   public void updateWebhookTest() throws Exception {
     Webhook updatedWebhook =
-        onfido.updateWebhook(
-            webhook.getId(), new WebhookUpdater().url("https://example.com/webhook/updated"));
+        onfido
+            .updateWebhook(
+                webhook.getId(), new WebhookUpdater().url("https://example.com/webhook/updated"))
+            .execute();
 
     Assertions.assertEquals("https://example.com/webhook/updated", updatedWebhook.getUrl());
 
@@ -62,7 +64,7 @@ public class WebhookTest extends TestBase {
 
   @Test
   public void deleteWebhookTest() throws Exception {
-    onfido.deleteWebhook(webhook.getId());
+    onfido.deleteWebhook(webhook.getId()).execute();
   }
 
   @Test
@@ -71,7 +73,7 @@ public class WebhookTest extends TestBase {
     createWebhook("https://example.com/secondWebhook");
 
     List<Webhook> webhooks =
-        onfido.listWebhooks().getWebhooks().stream()
+        onfido.listWebhooks().execute().getWebhooks().stream()
             .sorted(Comparator.comparing(Webhook::getUrl))
             .collect(Collectors.toList());
 

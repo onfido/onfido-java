@@ -129,21 +129,7 @@ public class DefaultApi {
         this.localCustomBaseUrl = customBaseUrl;
     }
 
-    /**
-     * Build call for cancelReport
-     * @param reportId  (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call cancelReportCall(UUID reportId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call cancelReportCall(UUID reportId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -199,80 +185,109 @@ public class DefaultApi {
 
     }
 
-    /**
-     * Cancel report
-     * Cancels single paused reports. 
-     * @param reportId  (required)
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public void cancelReport(UUID reportId) throws ApiException {
-        cancelReportWithHttpInfo(reportId);
-    }
 
-    /**
-     * Cancel report
-     * Cancels single paused reports. 
-     * @param reportId  (required)
-     * @return ApiResponse&lt;Void&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<Void> cancelReportWithHttpInfo(UUID reportId) throws ApiException {
+    private ApiResponse<Void> cancelReportWithHttpInfo(UUID reportId) throws ApiException {
         okhttp3.Call localVarCall = cancelReportValidateBeforeCall(reportId, null);
         return localVarApiClient.execute(localVarCall);
     }
 
-    /**
-     * Cancel report (asynchronously)
-     * Cancels single paused reports. 
-     * @param reportId  (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call cancelReportAsync(UUID reportId, final ApiCallback<Void> _callback) throws ApiException {
+    private okhttp3.Call cancelReportAsync(UUID reportId, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = cancelReportValidateBeforeCall(reportId, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
+
+    public class APIcancelReportRequest {
+        private final UUID reportId;
+
+        private APIcancelReportRequest(UUID reportId) {
+            this.reportId = reportId;
+        }
+
+        /**
+         * Build call for cancelReport
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return cancelReportCall(reportId, _callback);
+        }
+
+        /**
+         * Execute cancelReport request
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public void execute() throws ApiException {
+            cancelReportWithHttpInfo(reportId);
+        }
+
+        /**
+         * Execute cancelReport request with HTTP info returned
+         * @return ApiResponse&lt;Void&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<Void> executeWithHttpInfo() throws ApiException {
+            return cancelReportWithHttpInfo(reportId);
+        }
+
+        /**
+         * Execute cancelReport request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<Void> _callback) throws ApiException {
+            return cancelReportAsync(reportId, _callback);
+        }
+    }
+
     /**
-     * Build call for completeTask
-     * @param workflowRunId The unique identifier of the Workflow Run to which the Task belongs. (required)
-     * @param taskId The identifier of the Task you want to complete. (required)
-     * @param completeTaskBuilder  (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * Cancel report
+     * Cancels single paused reports. 
+     * @param reportId  (required)
+     * @return APIcancelReportRequest
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> An empty response body. </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call completeTaskCall(UUID workflowRunId, String taskId, CompleteTaskBuilder completeTaskBuilder, final ApiCallback _callback) throws ApiException {
+    public APIcancelReportRequest cancelReport(UUID reportId) {
+        return new APIcancelReportRequest(reportId);
+    }
+    private okhttp3.Call completeTaskCall(UUID workflowRunId, String taskId, CompleteTaskBuilder completeTaskBuilder, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -340,84 +355,115 @@ public class DefaultApi {
 
     }
 
-    /**
-     * Complete Task
-     * Completes a Send / Receive Data Task. 
-     * @param workflowRunId The unique identifier of the Workflow Run to which the Task belongs. (required)
-     * @param taskId The identifier of the Task you want to complete. (required)
-     * @param completeTaskBuilder  (required)
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> An empty response body. </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public void completeTask(UUID workflowRunId, String taskId, CompleteTaskBuilder completeTaskBuilder) throws ApiException {
-        completeTaskWithHttpInfo(workflowRunId, taskId, completeTaskBuilder);
-    }
 
-    /**
-     * Complete Task
-     * Completes a Send / Receive Data Task. 
-     * @param workflowRunId The unique identifier of the Workflow Run to which the Task belongs. (required)
-     * @param taskId The identifier of the Task you want to complete. (required)
-     * @param completeTaskBuilder  (required)
-     * @return ApiResponse&lt;Void&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> An empty response body. </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<Void> completeTaskWithHttpInfo(UUID workflowRunId, String taskId, CompleteTaskBuilder completeTaskBuilder) throws ApiException {
+    private ApiResponse<Void> completeTaskWithHttpInfo(UUID workflowRunId, String taskId, CompleteTaskBuilder completeTaskBuilder) throws ApiException {
         okhttp3.Call localVarCall = completeTaskValidateBeforeCall(workflowRunId, taskId, completeTaskBuilder, null);
         return localVarApiClient.execute(localVarCall);
     }
 
-    /**
-     * Complete Task (asynchronously)
-     * Completes a Send / Receive Data Task. 
-     * @param workflowRunId The unique identifier of the Workflow Run to which the Task belongs. (required)
-     * @param taskId The identifier of the Task you want to complete. (required)
-     * @param completeTaskBuilder  (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> An empty response body. </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call completeTaskAsync(UUID workflowRunId, String taskId, CompleteTaskBuilder completeTaskBuilder, final ApiCallback<Void> _callback) throws ApiException {
+    private okhttp3.Call completeTaskAsync(UUID workflowRunId, String taskId, CompleteTaskBuilder completeTaskBuilder, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = completeTaskValidateBeforeCall(workflowRunId, taskId, completeTaskBuilder, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
+
+    public class APIcompleteTaskRequest {
+        private final UUID workflowRunId;
+        private final String taskId;
+        private final CompleteTaskBuilder completeTaskBuilder;
+
+        private APIcompleteTaskRequest(UUID workflowRunId, String taskId, CompleteTaskBuilder completeTaskBuilder) {
+            this.workflowRunId = workflowRunId;
+            this.taskId = taskId;
+            this.completeTaskBuilder = completeTaskBuilder;
+        }
+
+        /**
+         * Build call for completeTask
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> An empty response body. </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return completeTaskCall(workflowRunId, taskId, completeTaskBuilder, _callback);
+        }
+
+        /**
+         * Execute completeTask request
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> An empty response body. </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public void execute() throws ApiException {
+            completeTaskWithHttpInfo(workflowRunId, taskId, completeTaskBuilder);
+        }
+
+        /**
+         * Execute completeTask request with HTTP info returned
+         * @return ApiResponse&lt;Void&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> An empty response body. </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<Void> executeWithHttpInfo() throws ApiException {
+            return completeTaskWithHttpInfo(workflowRunId, taskId, completeTaskBuilder);
+        }
+
+        /**
+         * Execute completeTask request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> An empty response body. </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<Void> _callback) throws ApiException {
+            return completeTaskAsync(workflowRunId, taskId, completeTaskBuilder, _callback);
+        }
+    }
+
     /**
-     * Build call for createApplicant
-     * @param applicantBuilder  (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * Complete Task
+     * Completes a Send / Receive Data Task. 
+     * @param workflowRunId The unique identifier of the Workflow Run to which the Task belongs. (required)
+     * @param taskId The identifier of the Task you want to complete. (required)
+     * @param completeTaskBuilder  (required)
+     * @return APIcompleteTaskRequest
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> Created </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> An empty response body. </td><td>  -  </td></tr>
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createApplicantCall(ApplicantBuilder applicantBuilder, final ApiCallback _callback) throws ApiException {
+    public APIcompleteTaskRequest completeTask(UUID workflowRunId, String taskId, CompleteTaskBuilder completeTaskBuilder) {
+        return new APIcompleteTaskRequest(workflowRunId, taskId, completeTaskBuilder);
+    }
+    private okhttp3.Call createApplicantCall(ApplicantBuilder applicantBuilder, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -473,73 +519,101 @@ public class DefaultApi {
 
     }
 
-    /**
-     * Create Applicant
-     * Creates a single applicant. Returns an applicant object. 
-     * @param applicantBuilder  (required)
-     * @return Applicant
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> Created </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public Applicant createApplicant(ApplicantBuilder applicantBuilder) throws ApiException {
-        ApiResponse<Applicant> localVarResp = createApplicantWithHttpInfo(applicantBuilder);
-        return localVarResp.getData();
-    }
 
-    /**
-     * Create Applicant
-     * Creates a single applicant. Returns an applicant object. 
-     * @param applicantBuilder  (required)
-     * @return ApiResponse&lt;Applicant&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> Created </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<Applicant> createApplicantWithHttpInfo(ApplicantBuilder applicantBuilder) throws ApiException {
+    private ApiResponse<Applicant> createApplicantWithHttpInfo(ApplicantBuilder applicantBuilder) throws ApiException {
         okhttp3.Call localVarCall = createApplicantValidateBeforeCall(applicantBuilder, null);
         Type localVarReturnType = new TypeToken<Applicant>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * Create Applicant (asynchronously)
-     * Creates a single applicant. Returns an applicant object. 
-     * @param applicantBuilder  (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> Created </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call createApplicantAsync(ApplicantBuilder applicantBuilder, final ApiCallback<Applicant> _callback) throws ApiException {
+    private okhttp3.Call createApplicantAsync(ApplicantBuilder applicantBuilder, final ApiCallback<Applicant> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createApplicantValidateBeforeCall(applicantBuilder, _callback);
         Type localVarReturnType = new TypeToken<Applicant>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class APIcreateApplicantRequest {
+        private final ApplicantBuilder applicantBuilder;
+
+        private APIcreateApplicantRequest(ApplicantBuilder applicantBuilder) {
+            this.applicantBuilder = applicantBuilder;
+        }
+
+        /**
+         * Build call for createApplicant
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 201 </td><td> Created </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return createApplicantCall(applicantBuilder, _callback);
+        }
+
+        /**
+         * Execute createApplicant request
+         * @return Applicant
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 201 </td><td> Created </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public Applicant execute() throws ApiException {
+            ApiResponse<Applicant> localVarResp = createApplicantWithHttpInfo(applicantBuilder);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute createApplicant request with HTTP info returned
+         * @return ApiResponse&lt;Applicant&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 201 </td><td> Created </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<Applicant> executeWithHttpInfo() throws ApiException {
+            return createApplicantWithHttpInfo(applicantBuilder);
+        }
+
+        /**
+         * Execute createApplicant request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 201 </td><td> Created </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<Applicant> _callback) throws ApiException {
+            return createApplicantAsync(applicantBuilder, _callback);
+        }
+    }
+
     /**
-     * Build call for createCheck
-     * @param checkBuilder  (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * Create Applicant
+     * Creates a single applicant. Returns an applicant object. 
+     * @param applicantBuilder  (required)
+     * @return APIcreateApplicantRequest
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
@@ -548,7 +622,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createCheckCall(CheckBuilder checkBuilder, final ApiCallback _callback) throws ApiException {
+    public APIcreateApplicantRequest createApplicant(ApplicantBuilder applicantBuilder) {
+        return new APIcreateApplicantRequest(applicantBuilder);
+    }
+    private okhttp3.Call createCheckCall(CheckBuilder checkBuilder, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -604,82 +681,113 @@ public class DefaultApi {
 
     }
 
-    /**
-     * Create a check
-     * Initiates a check for an applicant, which can contain one or more reports. Returns a check object. 
-     * @param checkBuilder  (required)
-     * @return Check
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> Created </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public Check createCheck(CheckBuilder checkBuilder) throws ApiException {
-        ApiResponse<Check> localVarResp = createCheckWithHttpInfo(checkBuilder);
-        return localVarResp.getData();
-    }
 
-    /**
-     * Create a check
-     * Initiates a check for an applicant, which can contain one or more reports. Returns a check object. 
-     * @param checkBuilder  (required)
-     * @return ApiResponse&lt;Check&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> Created </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<Check> createCheckWithHttpInfo(CheckBuilder checkBuilder) throws ApiException {
+    private ApiResponse<Check> createCheckWithHttpInfo(CheckBuilder checkBuilder) throws ApiException {
         okhttp3.Call localVarCall = createCheckValidateBeforeCall(checkBuilder, null);
         Type localVarReturnType = new TypeToken<Check>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * Create a check (asynchronously)
-     * Initiates a check for an applicant, which can contain one or more reports. Returns a check object. 
-     * @param checkBuilder  (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> Created </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call createCheckAsync(CheckBuilder checkBuilder, final ApiCallback<Check> _callback) throws ApiException {
+    private okhttp3.Call createCheckAsync(CheckBuilder checkBuilder, final ApiCallback<Check> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createCheckValidateBeforeCall(checkBuilder, _callback);
         Type localVarReturnType = new TypeToken<Check>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class APIcreateCheckRequest {
+        private final CheckBuilder checkBuilder;
+
+        private APIcreateCheckRequest(CheckBuilder checkBuilder) {
+            this.checkBuilder = checkBuilder;
+        }
+
+        /**
+         * Build call for createCheck
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 201 </td><td> Created </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return createCheckCall(checkBuilder, _callback);
+        }
+
+        /**
+         * Execute createCheck request
+         * @return Check
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 201 </td><td> Created </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public Check execute() throws ApiException {
+            ApiResponse<Check> localVarResp = createCheckWithHttpInfo(checkBuilder);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute createCheck request with HTTP info returned
+         * @return ApiResponse&lt;Check&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 201 </td><td> Created </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<Check> executeWithHttpInfo() throws ApiException {
+            return createCheckWithHttpInfo(checkBuilder);
+        }
+
+        /**
+         * Execute createCheck request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 201 </td><td> Created </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<Check> _callback) throws ApiException {
+            return createCheckAsync(checkBuilder, _callback);
+        }
+    }
+
     /**
-     * Build call for createTimelineFile
-     * @param workflowRunId The unique identifier of the Workflow Run. (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * Create a check
+     * Initiates a check for an applicant, which can contain one or more reports. Returns a check object. 
+     * @param checkBuilder  (required)
+     * @return APIcreateCheckRequest
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 202 </td><td> A Timeline File reference. </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Created </td><td>  -  </td></tr>
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createTimelineFileCall(UUID workflowRunId, final ApiCallback _callback) throws ApiException {
+    public APIcreateCheckRequest createCheck(CheckBuilder checkBuilder) {
+        return new APIcreateCheckRequest(checkBuilder);
+    }
+    private okhttp3.Call createTimelineFileCall(UUID workflowRunId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -735,82 +843,113 @@ public class DefaultApi {
 
     }
 
-    /**
-     * Create Timeline File for Workflow Run
-     * Triggers the generation of the Timeline File for the designated Workflow Run. 
-     * @param workflowRunId The unique identifier of the Workflow Run. (required)
-     * @return TimelineFileReference
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 202 </td><td> A Timeline File reference. </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public TimelineFileReference createTimelineFile(UUID workflowRunId) throws ApiException {
-        ApiResponse<TimelineFileReference> localVarResp = createTimelineFileWithHttpInfo(workflowRunId);
-        return localVarResp.getData();
-    }
 
-    /**
-     * Create Timeline File for Workflow Run
-     * Triggers the generation of the Timeline File for the designated Workflow Run. 
-     * @param workflowRunId The unique identifier of the Workflow Run. (required)
-     * @return ApiResponse&lt;TimelineFileReference&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 202 </td><td> A Timeline File reference. </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<TimelineFileReference> createTimelineFileWithHttpInfo(UUID workflowRunId) throws ApiException {
+    private ApiResponse<TimelineFileReference> createTimelineFileWithHttpInfo(UUID workflowRunId) throws ApiException {
         okhttp3.Call localVarCall = createTimelineFileValidateBeforeCall(workflowRunId, null);
         Type localVarReturnType = new TypeToken<TimelineFileReference>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * Create Timeline File for Workflow Run (asynchronously)
-     * Triggers the generation of the Timeline File for the designated Workflow Run. 
-     * @param workflowRunId The unique identifier of the Workflow Run. (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 202 </td><td> A Timeline File reference. </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call createTimelineFileAsync(UUID workflowRunId, final ApiCallback<TimelineFileReference> _callback) throws ApiException {
+    private okhttp3.Call createTimelineFileAsync(UUID workflowRunId, final ApiCallback<TimelineFileReference> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createTimelineFileValidateBeforeCall(workflowRunId, _callback);
         Type localVarReturnType = new TypeToken<TimelineFileReference>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class APIcreateTimelineFileRequest {
+        private final UUID workflowRunId;
+
+        private APIcreateTimelineFileRequest(UUID workflowRunId) {
+            this.workflowRunId = workflowRunId;
+        }
+
+        /**
+         * Build call for createTimelineFile
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 202 </td><td> A Timeline File reference. </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return createTimelineFileCall(workflowRunId, _callback);
+        }
+
+        /**
+         * Execute createTimelineFile request
+         * @return TimelineFileReference
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 202 </td><td> A Timeline File reference. </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public TimelineFileReference execute() throws ApiException {
+            ApiResponse<TimelineFileReference> localVarResp = createTimelineFileWithHttpInfo(workflowRunId);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute createTimelineFile request with HTTP info returned
+         * @return ApiResponse&lt;TimelineFileReference&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 202 </td><td> A Timeline File reference. </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<TimelineFileReference> executeWithHttpInfo() throws ApiException {
+            return createTimelineFileWithHttpInfo(workflowRunId);
+        }
+
+        /**
+         * Execute createTimelineFile request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 202 </td><td> A Timeline File reference. </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<TimelineFileReference> _callback) throws ApiException {
+            return createTimelineFileAsync(workflowRunId, _callback);
+        }
+    }
+
     /**
-     * Build call for createWatchlistMonitor
-     * @param watchlistMonitorBuilder  (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * Create Timeline File for Workflow Run
+     * Triggers the generation of the Timeline File for the designated Workflow Run. 
+     * @param workflowRunId The unique identifier of the Workflow Run. (required)
+     * @return APIcreateTimelineFileRequest
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> Created </td><td>  -  </td></tr>
+        <tr><td> 202 </td><td> A Timeline File reference. </td><td>  -  </td></tr>
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createWatchlistMonitorCall(WatchlistMonitorBuilder watchlistMonitorBuilder, final ApiCallback _callback) throws ApiException {
+    public APIcreateTimelineFileRequest createTimelineFile(UUID workflowRunId) {
+        return new APIcreateTimelineFileRequest(workflowRunId);
+    }
+    private okhttp3.Call createWatchlistMonitorCall(WatchlistMonitorBuilder watchlistMonitorBuilder, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -866,73 +1005,101 @@ public class DefaultApi {
 
     }
 
-    /**
-     * Create monitor
-     * Creates a new monitor for the applicant 
-     * @param watchlistMonitorBuilder  (required)
-     * @return WatchlistMonitor
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> Created </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public WatchlistMonitor createWatchlistMonitor(WatchlistMonitorBuilder watchlistMonitorBuilder) throws ApiException {
-        ApiResponse<WatchlistMonitor> localVarResp = createWatchlistMonitorWithHttpInfo(watchlistMonitorBuilder);
-        return localVarResp.getData();
-    }
 
-    /**
-     * Create monitor
-     * Creates a new monitor for the applicant 
-     * @param watchlistMonitorBuilder  (required)
-     * @return ApiResponse&lt;WatchlistMonitor&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> Created </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<WatchlistMonitor> createWatchlistMonitorWithHttpInfo(WatchlistMonitorBuilder watchlistMonitorBuilder) throws ApiException {
+    private ApiResponse<WatchlistMonitor> createWatchlistMonitorWithHttpInfo(WatchlistMonitorBuilder watchlistMonitorBuilder) throws ApiException {
         okhttp3.Call localVarCall = createWatchlistMonitorValidateBeforeCall(watchlistMonitorBuilder, null);
         Type localVarReturnType = new TypeToken<WatchlistMonitor>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * Create monitor (asynchronously)
-     * Creates a new monitor for the applicant 
-     * @param watchlistMonitorBuilder  (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> Created </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call createWatchlistMonitorAsync(WatchlistMonitorBuilder watchlistMonitorBuilder, final ApiCallback<WatchlistMonitor> _callback) throws ApiException {
+    private okhttp3.Call createWatchlistMonitorAsync(WatchlistMonitorBuilder watchlistMonitorBuilder, final ApiCallback<WatchlistMonitor> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createWatchlistMonitorValidateBeforeCall(watchlistMonitorBuilder, _callback);
         Type localVarReturnType = new TypeToken<WatchlistMonitor>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class APIcreateWatchlistMonitorRequest {
+        private final WatchlistMonitorBuilder watchlistMonitorBuilder;
+
+        private APIcreateWatchlistMonitorRequest(WatchlistMonitorBuilder watchlistMonitorBuilder) {
+            this.watchlistMonitorBuilder = watchlistMonitorBuilder;
+        }
+
+        /**
+         * Build call for createWatchlistMonitor
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 201 </td><td> Created </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return createWatchlistMonitorCall(watchlistMonitorBuilder, _callback);
+        }
+
+        /**
+         * Execute createWatchlistMonitor request
+         * @return WatchlistMonitor
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 201 </td><td> Created </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public WatchlistMonitor execute() throws ApiException {
+            ApiResponse<WatchlistMonitor> localVarResp = createWatchlistMonitorWithHttpInfo(watchlistMonitorBuilder);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute createWatchlistMonitor request with HTTP info returned
+         * @return ApiResponse&lt;WatchlistMonitor&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 201 </td><td> Created </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<WatchlistMonitor> executeWithHttpInfo() throws ApiException {
+            return createWatchlistMonitorWithHttpInfo(watchlistMonitorBuilder);
+        }
+
+        /**
+         * Execute createWatchlistMonitor request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 201 </td><td> Created </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<WatchlistMonitor> _callback) throws ApiException {
+            return createWatchlistMonitorAsync(watchlistMonitorBuilder, _callback);
+        }
+    }
+
     /**
-     * Build call for createWebhook
-     * @param webhookBuilder  (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * Create monitor
+     * Creates a new monitor for the applicant 
+     * @param watchlistMonitorBuilder  (required)
+     * @return APIcreateWatchlistMonitorRequest
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
@@ -941,7 +1108,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createWebhookCall(WebhookBuilder webhookBuilder, final ApiCallback _callback) throws ApiException {
+    public APIcreateWatchlistMonitorRequest createWatchlistMonitor(WatchlistMonitorBuilder watchlistMonitorBuilder) {
+        return new APIcreateWatchlistMonitorRequest(watchlistMonitorBuilder);
+    }
+    private okhttp3.Call createWebhookCall(WebhookBuilder webhookBuilder, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -997,82 +1167,113 @@ public class DefaultApi {
 
     }
 
-    /**
-     * Register webhook
-     * Registers a webhook. Returns a webhook object. 
-     * @param webhookBuilder  (required)
-     * @return Webhook
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> Created </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public Webhook createWebhook(WebhookBuilder webhookBuilder) throws ApiException {
-        ApiResponse<Webhook> localVarResp = createWebhookWithHttpInfo(webhookBuilder);
-        return localVarResp.getData();
-    }
 
-    /**
-     * Register webhook
-     * Registers a webhook. Returns a webhook object. 
-     * @param webhookBuilder  (required)
-     * @return ApiResponse&lt;Webhook&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> Created </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<Webhook> createWebhookWithHttpInfo(WebhookBuilder webhookBuilder) throws ApiException {
+    private ApiResponse<Webhook> createWebhookWithHttpInfo(WebhookBuilder webhookBuilder) throws ApiException {
         okhttp3.Call localVarCall = createWebhookValidateBeforeCall(webhookBuilder, null);
         Type localVarReturnType = new TypeToken<Webhook>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * Register webhook (asynchronously)
-     * Registers a webhook. Returns a webhook object. 
-     * @param webhookBuilder  (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> Created </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call createWebhookAsync(WebhookBuilder webhookBuilder, final ApiCallback<Webhook> _callback) throws ApiException {
+    private okhttp3.Call createWebhookAsync(WebhookBuilder webhookBuilder, final ApiCallback<Webhook> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createWebhookValidateBeforeCall(webhookBuilder, _callback);
         Type localVarReturnType = new TypeToken<Webhook>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class APIcreateWebhookRequest {
+        private final WebhookBuilder webhookBuilder;
+
+        private APIcreateWebhookRequest(WebhookBuilder webhookBuilder) {
+            this.webhookBuilder = webhookBuilder;
+        }
+
+        /**
+         * Build call for createWebhook
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 201 </td><td> Created </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return createWebhookCall(webhookBuilder, _callback);
+        }
+
+        /**
+         * Execute createWebhook request
+         * @return Webhook
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 201 </td><td> Created </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public Webhook execute() throws ApiException {
+            ApiResponse<Webhook> localVarResp = createWebhookWithHttpInfo(webhookBuilder);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute createWebhook request with HTTP info returned
+         * @return ApiResponse&lt;Webhook&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 201 </td><td> Created </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<Webhook> executeWithHttpInfo() throws ApiException {
+            return createWebhookWithHttpInfo(webhookBuilder);
+        }
+
+        /**
+         * Execute createWebhook request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 201 </td><td> Created </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<Webhook> _callback) throws ApiException {
+            return createWebhookAsync(webhookBuilder, _callback);
+        }
+    }
+
     /**
-     * Build call for createWorkflowRun
-     * @param workflowRunBuilder  (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * Register webhook
+     * Registers a webhook. Returns a webhook object. 
+     * @param webhookBuilder  (required)
+     * @return APIcreateWebhookRequest
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> A Workflow Run object. </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Created </td><td>  -  </td></tr>
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createWorkflowRunCall(WorkflowRunBuilder workflowRunBuilder, final ApiCallback _callback) throws ApiException {
+    public APIcreateWebhookRequest createWebhook(WebhookBuilder webhookBuilder) {
+        return new APIcreateWebhookRequest(webhookBuilder);
+    }
+    private okhttp3.Call createWorkflowRunCall(WorkflowRunBuilder workflowRunBuilder, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1128,82 +1329,113 @@ public class DefaultApi {
 
     }
 
-    /**
-     * Create a Workflow Run
-     * Creates and starts a Workflow Run. Returns a Workflow Run object. 
-     * @param workflowRunBuilder  (required)
-     * @return WorkflowRun
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> A Workflow Run object. </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public WorkflowRun createWorkflowRun(WorkflowRunBuilder workflowRunBuilder) throws ApiException {
-        ApiResponse<WorkflowRun> localVarResp = createWorkflowRunWithHttpInfo(workflowRunBuilder);
-        return localVarResp.getData();
-    }
 
-    /**
-     * Create a Workflow Run
-     * Creates and starts a Workflow Run. Returns a Workflow Run object. 
-     * @param workflowRunBuilder  (required)
-     * @return ApiResponse&lt;WorkflowRun&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> A Workflow Run object. </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<WorkflowRun> createWorkflowRunWithHttpInfo(WorkflowRunBuilder workflowRunBuilder) throws ApiException {
+    private ApiResponse<WorkflowRun> createWorkflowRunWithHttpInfo(WorkflowRunBuilder workflowRunBuilder) throws ApiException {
         okhttp3.Call localVarCall = createWorkflowRunValidateBeforeCall(workflowRunBuilder, null);
         Type localVarReturnType = new TypeToken<WorkflowRun>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * Create a Workflow Run (asynchronously)
-     * Creates and starts a Workflow Run. Returns a Workflow Run object. 
-     * @param workflowRunBuilder  (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> A Workflow Run object. </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call createWorkflowRunAsync(WorkflowRunBuilder workflowRunBuilder, final ApiCallback<WorkflowRun> _callback) throws ApiException {
+    private okhttp3.Call createWorkflowRunAsync(WorkflowRunBuilder workflowRunBuilder, final ApiCallback<WorkflowRun> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createWorkflowRunValidateBeforeCall(workflowRunBuilder, _callback);
         Type localVarReturnType = new TypeToken<WorkflowRun>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class APIcreateWorkflowRunRequest {
+        private final WorkflowRunBuilder workflowRunBuilder;
+
+        private APIcreateWorkflowRunRequest(WorkflowRunBuilder workflowRunBuilder) {
+            this.workflowRunBuilder = workflowRunBuilder;
+        }
+
+        /**
+         * Build call for createWorkflowRun
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 201 </td><td> A Workflow Run object. </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return createWorkflowRunCall(workflowRunBuilder, _callback);
+        }
+
+        /**
+         * Execute createWorkflowRun request
+         * @return WorkflowRun
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 201 </td><td> A Workflow Run object. </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public WorkflowRun execute() throws ApiException {
+            ApiResponse<WorkflowRun> localVarResp = createWorkflowRunWithHttpInfo(workflowRunBuilder);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute createWorkflowRun request with HTTP info returned
+         * @return ApiResponse&lt;WorkflowRun&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 201 </td><td> A Workflow Run object. </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<WorkflowRun> executeWithHttpInfo() throws ApiException {
+            return createWorkflowRunWithHttpInfo(workflowRunBuilder);
+        }
+
+        /**
+         * Execute createWorkflowRun request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 201 </td><td> A Workflow Run object. </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<WorkflowRun> _callback) throws ApiException {
+            return createWorkflowRunAsync(workflowRunBuilder, _callback);
+        }
+    }
+
     /**
-     * Build call for deleteApplicant
-     * @param applicantId  (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * Create a Workflow Run
+     * Creates and starts a Workflow Run. Returns a Workflow Run object. 
+     * @param workflowRunBuilder  (required)
+     * @return APIcreateWorkflowRunRequest
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> A Workflow Run object. </td><td>  -  </td></tr>
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteApplicantCall(UUID applicantId, final ApiCallback _callback) throws ApiException {
+    public APIcreateWorkflowRunRequest createWorkflowRun(WorkflowRunBuilder workflowRunBuilder) {
+        return new APIcreateWorkflowRunRequest(workflowRunBuilder);
+    }
+    private okhttp3.Call deleteApplicantCall(UUID applicantId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1259,80 +1491,109 @@ public class DefaultApi {
 
     }
 
-    /**
-     * Delete Applicant
-     * Deletes a single applicant. 
-     * @param applicantId  (required)
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public void deleteApplicant(UUID applicantId) throws ApiException {
-        deleteApplicantWithHttpInfo(applicantId);
-    }
 
-    /**
-     * Delete Applicant
-     * Deletes a single applicant. 
-     * @param applicantId  (required)
-     * @return ApiResponse&lt;Void&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<Void> deleteApplicantWithHttpInfo(UUID applicantId) throws ApiException {
+    private ApiResponse<Void> deleteApplicantWithHttpInfo(UUID applicantId) throws ApiException {
         okhttp3.Call localVarCall = deleteApplicantValidateBeforeCall(applicantId, null);
         return localVarApiClient.execute(localVarCall);
     }
 
-    /**
-     * Delete Applicant (asynchronously)
-     * Deletes a single applicant. 
-     * @param applicantId  (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call deleteApplicantAsync(UUID applicantId, final ApiCallback<Void> _callback) throws ApiException {
+    private okhttp3.Call deleteApplicantAsync(UUID applicantId, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteApplicantValidateBeforeCall(applicantId, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
+
+    public class APIdeleteApplicantRequest {
+        private final UUID applicantId;
+
+        private APIdeleteApplicantRequest(UUID applicantId) {
+            this.applicantId = applicantId;
+        }
+
+        /**
+         * Build call for deleteApplicant
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return deleteApplicantCall(applicantId, _callback);
+        }
+
+        /**
+         * Execute deleteApplicant request
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public void execute() throws ApiException {
+            deleteApplicantWithHttpInfo(applicantId);
+        }
+
+        /**
+         * Execute deleteApplicant request with HTTP info returned
+         * @return ApiResponse&lt;Void&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<Void> executeWithHttpInfo() throws ApiException {
+            return deleteApplicantWithHttpInfo(applicantId);
+        }
+
+        /**
+         * Execute deleteApplicant request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<Void> _callback) throws ApiException {
+            return deleteApplicantAsync(applicantId, _callback);
+        }
+    }
+
     /**
-     * Build call for deletePasskey
-     * @param username Username that owns the passkey. (required)
-     * @param passkeyId Passkey ID. (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * Delete Applicant
+     * Deletes a single applicant. 
+     * @param applicantId  (required)
+     * @return APIdeleteApplicantRequest
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Passkey deleted </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Passkey not found </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deletePasskeyCall(String username, String passkeyId, final ApiCallback _callback) throws ApiException {
+    public APIdeleteApplicantRequest deleteApplicant(UUID applicantId) {
+        return new APIdeleteApplicantRequest(applicantId);
+    }
+    private okhttp3.Call deletePasskeyCall(String username, String passkeyId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1394,85 +1655,117 @@ public class DefaultApi {
 
     }
 
-    /**
-     * Delete passkey
-     * Deletes a passkey. 
-     * @param username Username that owns the passkey. (required)
-     * @param passkeyId Passkey ID. (required)
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Passkey deleted </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Passkey not found </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public void deletePasskey(String username, String passkeyId) throws ApiException {
-        deletePasskeyWithHttpInfo(username, passkeyId);
-    }
 
-    /**
-     * Delete passkey
-     * Deletes a passkey. 
-     * @param username Username that owns the passkey. (required)
-     * @param passkeyId Passkey ID. (required)
-     * @return ApiResponse&lt;Void&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Passkey deleted </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Passkey not found </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<Void> deletePasskeyWithHttpInfo(String username, String passkeyId) throws ApiException {
+    private ApiResponse<Void> deletePasskeyWithHttpInfo(String username, String passkeyId) throws ApiException {
         okhttp3.Call localVarCall = deletePasskeyValidateBeforeCall(username, passkeyId, null);
         return localVarApiClient.execute(localVarCall);
     }
 
-    /**
-     * Delete passkey (asynchronously)
-     * Deletes a passkey. 
-     * @param username Username that owns the passkey. (required)
-     * @param passkeyId Passkey ID. (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Passkey deleted </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Passkey not found </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call deletePasskeyAsync(String username, String passkeyId, final ApiCallback<Void> _callback) throws ApiException {
+    private okhttp3.Call deletePasskeyAsync(String username, String passkeyId, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deletePasskeyValidateBeforeCall(username, passkeyId, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
+
+    public class APIdeletePasskeyRequest {
+        private final String username;
+        private final String passkeyId;
+
+        private APIdeletePasskeyRequest(String username, String passkeyId) {
+            this.username = username;
+            this.passkeyId = passkeyId;
+        }
+
+        /**
+         * Build call for deletePasskey
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 204 </td><td> Passkey deleted </td><td>  -  </td></tr>
+            <tr><td> 404 </td><td> Passkey not found </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return deletePasskeyCall(username, passkeyId, _callback);
+        }
+
+        /**
+         * Execute deletePasskey request
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 204 </td><td> Passkey deleted </td><td>  -  </td></tr>
+            <tr><td> 404 </td><td> Passkey not found </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public void execute() throws ApiException {
+            deletePasskeyWithHttpInfo(username, passkeyId);
+        }
+
+        /**
+         * Execute deletePasskey request with HTTP info returned
+         * @return ApiResponse&lt;Void&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 204 </td><td> Passkey deleted </td><td>  -  </td></tr>
+            <tr><td> 404 </td><td> Passkey not found </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<Void> executeWithHttpInfo() throws ApiException {
+            return deletePasskeyWithHttpInfo(username, passkeyId);
+        }
+
+        /**
+         * Execute deletePasskey request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 204 </td><td> Passkey deleted </td><td>  -  </td></tr>
+            <tr><td> 404 </td><td> Passkey not found </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<Void> _callback) throws ApiException {
+            return deletePasskeyAsync(username, passkeyId, _callback);
+        }
+    }
+
     /**
-     * Build call for deletePasskeys
-     * @param username Username whose passkeys will be deleted. (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * Delete passkey
+     * Deletes a passkey. 
+     * @param username Username that owns the passkey. (required)
+     * @param passkeyId Passkey ID. (required)
+     * @return APIdeletePasskeyRequest
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> All passkeys deleted </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> Passkey deleted </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Passkey not found </td><td>  -  </td></tr>
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deletePasskeysCall(String username, final ApiCallback _callback) throws ApiException {
+    public APIdeletePasskeyRequest deletePasskey(String username, String passkeyId) {
+        return new APIdeletePasskeyRequest(username, passkeyId);
+    }
+    private okhttp3.Call deletePasskeysCall(String username, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1528,81 +1821,114 @@ public class DefaultApi {
 
     }
 
-    /**
-     * Delete passkeys
-     * Removes every passkey for the username. 
-     * @param username Username whose passkeys will be deleted. (required)
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> All passkeys deleted </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Passkey not found </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public void deletePasskeys(String username) throws ApiException {
-        deletePasskeysWithHttpInfo(username);
-    }
 
-    /**
-     * Delete passkeys
-     * Removes every passkey for the username. 
-     * @param username Username whose passkeys will be deleted. (required)
-     * @return ApiResponse&lt;Void&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> All passkeys deleted </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Passkey not found </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<Void> deletePasskeysWithHttpInfo(String username) throws ApiException {
+    private ApiResponse<Void> deletePasskeysWithHttpInfo(String username) throws ApiException {
         okhttp3.Call localVarCall = deletePasskeysValidateBeforeCall(username, null);
         return localVarApiClient.execute(localVarCall);
     }
 
-    /**
-     * Delete passkeys (asynchronously)
-     * Removes every passkey for the username. 
-     * @param username Username whose passkeys will be deleted. (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> All passkeys deleted </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Passkey not found </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call deletePasskeysAsync(String username, final ApiCallback<Void> _callback) throws ApiException {
+    private okhttp3.Call deletePasskeysAsync(String username, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deletePasskeysValidateBeforeCall(username, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
+
+    public class APIdeletePasskeysRequest {
+        private final String username;
+
+        private APIdeletePasskeysRequest(String username) {
+            this.username = username;
+        }
+
+        /**
+         * Build call for deletePasskeys
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 204 </td><td> All passkeys deleted </td><td>  -  </td></tr>
+            <tr><td> 404 </td><td> Passkey not found </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return deletePasskeysCall(username, _callback);
+        }
+
+        /**
+         * Execute deletePasskeys request
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 204 </td><td> All passkeys deleted </td><td>  -  </td></tr>
+            <tr><td> 404 </td><td> Passkey not found </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public void execute() throws ApiException {
+            deletePasskeysWithHttpInfo(username);
+        }
+
+        /**
+         * Execute deletePasskeys request with HTTP info returned
+         * @return ApiResponse&lt;Void&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 204 </td><td> All passkeys deleted </td><td>  -  </td></tr>
+            <tr><td> 404 </td><td> Passkey not found </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<Void> executeWithHttpInfo() throws ApiException {
+            return deletePasskeysWithHttpInfo(username);
+        }
+
+        /**
+         * Execute deletePasskeys request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 204 </td><td> All passkeys deleted </td><td>  -  </td></tr>
+            <tr><td> 404 </td><td> Passkey not found </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<Void> _callback) throws ApiException {
+            return deletePasskeysAsync(username, _callback);
+        }
+    }
+
     /**
-     * Build call for deleteWatchlistMonitor
-     * @param monitorId  (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * Delete passkeys
+     * Removes every passkey for the username. 
+     * @param username Username whose passkeys will be deleted. (required)
+     * @return APIdeletePasskeysRequest
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> All passkeys deleted </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Passkey not found </td><td>  -  </td></tr>
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteWatchlistMonitorCall(UUID monitorId, final ApiCallback _callback) throws ApiException {
+    public APIdeletePasskeysRequest deletePasskeys(String username) {
+        return new APIdeletePasskeysRequest(username);
+    }
+    private okhttp3.Call deleteWatchlistMonitorCall(UUID monitorId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1658,78 +1984,109 @@ public class DefaultApi {
 
     }
 
-    /**
-     * Delete monitor
-     * Deactivates the given monitor 
-     * @param monitorId  (required)
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public void deleteWatchlistMonitor(UUID monitorId) throws ApiException {
-        deleteWatchlistMonitorWithHttpInfo(monitorId);
-    }
 
-    /**
-     * Delete monitor
-     * Deactivates the given monitor 
-     * @param monitorId  (required)
-     * @return ApiResponse&lt;Void&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<Void> deleteWatchlistMonitorWithHttpInfo(UUID monitorId) throws ApiException {
+    private ApiResponse<Void> deleteWatchlistMonitorWithHttpInfo(UUID monitorId) throws ApiException {
         okhttp3.Call localVarCall = deleteWatchlistMonitorValidateBeforeCall(monitorId, null);
         return localVarApiClient.execute(localVarCall);
     }
 
-    /**
-     * Delete monitor (asynchronously)
-     * Deactivates the given monitor 
-     * @param monitorId  (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call deleteWatchlistMonitorAsync(UUID monitorId, final ApiCallback<Void> _callback) throws ApiException {
+    private okhttp3.Call deleteWatchlistMonitorAsync(UUID monitorId, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteWatchlistMonitorValidateBeforeCall(monitorId, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
+
+    public class APIdeleteWatchlistMonitorRequest {
+        private final UUID monitorId;
+
+        private APIdeleteWatchlistMonitorRequest(UUID monitorId) {
+            this.monitorId = monitorId;
+        }
+
+        /**
+         * Build call for deleteWatchlistMonitor
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return deleteWatchlistMonitorCall(monitorId, _callback);
+        }
+
+        /**
+         * Execute deleteWatchlistMonitor request
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public void execute() throws ApiException {
+            deleteWatchlistMonitorWithHttpInfo(monitorId);
+        }
+
+        /**
+         * Execute deleteWatchlistMonitor request with HTTP info returned
+         * @return ApiResponse&lt;Void&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<Void> executeWithHttpInfo() throws ApiException {
+            return deleteWatchlistMonitorWithHttpInfo(monitorId);
+        }
+
+        /**
+         * Execute deleteWatchlistMonitor request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<Void> _callback) throws ApiException {
+            return deleteWatchlistMonitorAsync(monitorId, _callback);
+        }
+    }
+
     /**
-     * Build call for deleteWebhook
-     * @param webhookId  (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * Delete monitor
+     * Deactivates the given monitor 
+     * @param monitorId  (required)
+     * @return APIdeleteWatchlistMonitorRequest
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Webhook deleted </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteWebhookCall(UUID webhookId, final ApiCallback _callback) throws ApiException {
+    public APIdeleteWatchlistMonitorRequest deleteWatchlistMonitor(UUID monitorId) {
+        return new APIdeleteWatchlistMonitorRequest(monitorId);
+    }
+    private okhttp3.Call deleteWebhookCall(UUID webhookId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1785,80 +2142,109 @@ public class DefaultApi {
 
     }
 
-    /**
-     * Delete a webhook
-     * Deletes a webhook. 
-     * @param webhookId  (required)
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Webhook deleted </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public void deleteWebhook(UUID webhookId) throws ApiException {
-        deleteWebhookWithHttpInfo(webhookId);
-    }
 
-    /**
-     * Delete a webhook
-     * Deletes a webhook. 
-     * @param webhookId  (required)
-     * @return ApiResponse&lt;Void&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Webhook deleted </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<Void> deleteWebhookWithHttpInfo(UUID webhookId) throws ApiException {
+    private ApiResponse<Void> deleteWebhookWithHttpInfo(UUID webhookId) throws ApiException {
         okhttp3.Call localVarCall = deleteWebhookValidateBeforeCall(webhookId, null);
         return localVarApiClient.execute(localVarCall);
     }
 
-    /**
-     * Delete a webhook (asynchronously)
-     * Deletes a webhook. 
-     * @param webhookId  (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Webhook deleted </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call deleteWebhookAsync(UUID webhookId, final ApiCallback<Void> _callback) throws ApiException {
+    private okhttp3.Call deleteWebhookAsync(UUID webhookId, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteWebhookValidateBeforeCall(webhookId, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
+
+    public class APIdeleteWebhookRequest {
+        private final UUID webhookId;
+
+        private APIdeleteWebhookRequest(UUID webhookId) {
+            this.webhookId = webhookId;
+        }
+
+        /**
+         * Build call for deleteWebhook
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 204 </td><td> Webhook deleted </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return deleteWebhookCall(webhookId, _callback);
+        }
+
+        /**
+         * Execute deleteWebhook request
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 204 </td><td> Webhook deleted </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public void execute() throws ApiException {
+            deleteWebhookWithHttpInfo(webhookId);
+        }
+
+        /**
+         * Execute deleteWebhook request with HTTP info returned
+         * @return ApiResponse&lt;Void&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 204 </td><td> Webhook deleted </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<Void> executeWithHttpInfo() throws ApiException {
+            return deleteWebhookWithHttpInfo(webhookId);
+        }
+
+        /**
+         * Execute deleteWebhook request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 204 </td><td> Webhook deleted </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<Void> _callback) throws ApiException {
+            return deleteWebhookAsync(webhookId, _callback);
+        }
+    }
+
     /**
-     * Build call for downloadAesDocument
-     * @param workflowRunId The unique identifier of the Workflow Run for which you want to retrieve the signed document. (required)
-     * @param id The unique identifier of the file which you want to retrieve. (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * Delete a webhook
+     * Deletes a webhook. 
+     * @param webhookId  (required)
+     * @return APIdeleteWebhookRequest
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 302 </td><td> Found </td><td>  * Location - Link to the Timeline File. <br>  </td></tr>
-        <tr><td> 200 </td><td> The signed document PDF binary data. </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> Webhook deleted </td><td>  -  </td></tr>
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call downloadAesDocumentCall(UUID workflowRunId, UUID id, final ApiCallback _callback) throws ApiException {
+    public APIdeleteWebhookRequest deleteWebhook(UUID webhookId) {
+        return new APIdeleteWebhookRequest(webhookId);
+    }
+    private okhttp3.Call downloadAesDocumentCall(UUID workflowRunId, UUID id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1927,88 +2313,121 @@ public class DefaultApi {
 
     }
 
-    /**
-     * Retrieves the signed document or signing transaction receipt
-     * Retrieves the signed document or signing transaction receipt depending on the id provided. 
-     * @param workflowRunId The unique identifier of the Workflow Run for which you want to retrieve the signed document. (required)
-     * @param id The unique identifier of the file which you want to retrieve. (required)
-     * @return FileTransfer
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 302 </td><td> Found </td><td>  * Location - Link to the Timeline File. <br>  </td></tr>
-        <tr><td> 200 </td><td> The signed document PDF binary data. </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public FileTransfer downloadAesDocument(UUID workflowRunId, UUID id) throws ApiException {
-        ApiResponse<FileTransfer> localVarResp = downloadAesDocumentWithHttpInfo(workflowRunId, id);
-        return localVarResp.getData();
-    }
 
-    /**
-     * Retrieves the signed document or signing transaction receipt
-     * Retrieves the signed document or signing transaction receipt depending on the id provided. 
-     * @param workflowRunId The unique identifier of the Workflow Run for which you want to retrieve the signed document. (required)
-     * @param id The unique identifier of the file which you want to retrieve. (required)
-     * @return ApiResponse&lt;FileTransfer&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 302 </td><td> Found </td><td>  * Location - Link to the Timeline File. <br>  </td></tr>
-        <tr><td> 200 </td><td> The signed document PDF binary data. </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<FileTransfer> downloadAesDocumentWithHttpInfo(UUID workflowRunId, UUID id) throws ApiException {
+    private ApiResponse<FileTransfer> downloadAesDocumentWithHttpInfo(UUID workflowRunId, UUID id) throws ApiException {
         okhttp3.Call localVarCall = downloadAesDocumentValidateBeforeCall(workflowRunId, id, null);
         Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * Retrieves the signed document or signing transaction receipt (asynchronously)
-     * Retrieves the signed document or signing transaction receipt depending on the id provided. 
-     * @param workflowRunId The unique identifier of the Workflow Run for which you want to retrieve the signed document. (required)
-     * @param id The unique identifier of the file which you want to retrieve. (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 302 </td><td> Found </td><td>  * Location - Link to the Timeline File. <br>  </td></tr>
-        <tr><td> 200 </td><td> The signed document PDF binary data. </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call downloadAesDocumentAsync(UUID workflowRunId, UUID id, final ApiCallback<FileTransfer> _callback) throws ApiException {
+    private okhttp3.Call downloadAesDocumentAsync(UUID workflowRunId, UUID id, final ApiCallback<FileTransfer> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = downloadAesDocumentValidateBeforeCall(workflowRunId, id, _callback);
         Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class APIdownloadAesDocumentRequest {
+        private final UUID workflowRunId;
+        private final UUID id;
+
+        private APIdownloadAesDocumentRequest(UUID workflowRunId, UUID id) {
+            this.workflowRunId = workflowRunId;
+            this.id = id;
+        }
+
+        /**
+         * Build call for downloadAesDocument
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 302 </td><td> Found </td><td>  * Location - Link to the Timeline File. <br>  </td></tr>
+            <tr><td> 200 </td><td> The signed document PDF binary data. </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return downloadAesDocumentCall(workflowRunId, id, _callback);
+        }
+
+        /**
+         * Execute downloadAesDocument request
+         * @return FileTransfer
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 302 </td><td> Found </td><td>  * Location - Link to the Timeline File. <br>  </td></tr>
+            <tr><td> 200 </td><td> The signed document PDF binary data. </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public FileTransfer execute() throws ApiException {
+            ApiResponse<FileTransfer> localVarResp = downloadAesDocumentWithHttpInfo(workflowRunId, id);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute downloadAesDocument request with HTTP info returned
+         * @return ApiResponse&lt;FileTransfer&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 302 </td><td> Found </td><td>  * Location - Link to the Timeline File. <br>  </td></tr>
+            <tr><td> 200 </td><td> The signed document PDF binary data. </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<FileTransfer> executeWithHttpInfo() throws ApiException {
+            return downloadAesDocumentWithHttpInfo(workflowRunId, id);
+        }
+
+        /**
+         * Execute downloadAesDocument request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 302 </td><td> Found </td><td>  * Location - Link to the Timeline File. <br>  </td></tr>
+            <tr><td> 200 </td><td> The signed document PDF binary data. </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<FileTransfer> _callback) throws ApiException {
+            return downloadAesDocumentAsync(workflowRunId, id, _callback);
+        }
+    }
+
     /**
-     * Build call for downloadCheck
-     * @param checkId  (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * Retrieves the signed document or signing transaction receipt
+     * Retrieves the signed document or signing transaction receipt depending on the id provided. 
+     * @param workflowRunId The unique identifier of the Workflow Run for which you want to retrieve the signed document. (required)
+     * @param id The unique identifier of the file which you want to retrieve. (required)
+     * @return APIdownloadAesDocumentRequest
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> The check PDF binary data </td><td>  -  </td></tr>
+        <tr><td> 302 </td><td> Found </td><td>  * Location - Link to the Timeline File. <br>  </td></tr>
+        <tr><td> 200 </td><td> The signed document PDF binary data. </td><td>  -  </td></tr>
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call downloadCheckCall(UUID checkId, final ApiCallback _callback) throws ApiException {
+    public APIdownloadAesDocumentRequest downloadAesDocument(UUID workflowRunId, UUID id) {
+        return new APIdownloadAesDocumentRequest(workflowRunId, id);
+    }
+    private okhttp3.Call downloadCheckCall(UUID checkId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -2065,82 +2484,113 @@ public class DefaultApi {
 
     }
 
-    /**
-     * Download check
-     * Downloads a PDF of a check with a given check ID. Returns the binary data representing the PDF. 
-     * @param checkId  (required)
-     * @return FileTransfer
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> The check PDF binary data </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public FileTransfer downloadCheck(UUID checkId) throws ApiException {
-        ApiResponse<FileTransfer> localVarResp = downloadCheckWithHttpInfo(checkId);
-        return localVarResp.getData();
-    }
 
-    /**
-     * Download check
-     * Downloads a PDF of a check with a given check ID. Returns the binary data representing the PDF. 
-     * @param checkId  (required)
-     * @return ApiResponse&lt;FileTransfer&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> The check PDF binary data </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<FileTransfer> downloadCheckWithHttpInfo(UUID checkId) throws ApiException {
+    private ApiResponse<FileTransfer> downloadCheckWithHttpInfo(UUID checkId) throws ApiException {
         okhttp3.Call localVarCall = downloadCheckValidateBeforeCall(checkId, null);
         Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * Download check (asynchronously)
-     * Downloads a PDF of a check with a given check ID. Returns the binary data representing the PDF. 
-     * @param checkId  (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> The check PDF binary data </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call downloadCheckAsync(UUID checkId, final ApiCallback<FileTransfer> _callback) throws ApiException {
+    private okhttp3.Call downloadCheckAsync(UUID checkId, final ApiCallback<FileTransfer> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = downloadCheckValidateBeforeCall(checkId, _callback);
         Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class APIdownloadCheckRequest {
+        private final UUID checkId;
+
+        private APIdownloadCheckRequest(UUID checkId) {
+            this.checkId = checkId;
+        }
+
+        /**
+         * Build call for downloadCheck
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> The check PDF binary data </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return downloadCheckCall(checkId, _callback);
+        }
+
+        /**
+         * Execute downloadCheck request
+         * @return FileTransfer
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> The check PDF binary data </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public FileTransfer execute() throws ApiException {
+            ApiResponse<FileTransfer> localVarResp = downloadCheckWithHttpInfo(checkId);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute downloadCheck request with HTTP info returned
+         * @return ApiResponse&lt;FileTransfer&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> The check PDF binary data </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<FileTransfer> executeWithHttpInfo() throws ApiException {
+            return downloadCheckWithHttpInfo(checkId);
+        }
+
+        /**
+         * Execute downloadCheck request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> The check PDF binary data </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<FileTransfer> _callback) throws ApiException {
+            return downloadCheckAsync(checkId, _callback);
+        }
+    }
+
     /**
-     * Build call for downloadDocument
-     * @param documentId  (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * Download check
+     * Downloads a PDF of a check with a given check ID. Returns the binary data representing the PDF. 
+     * @param checkId  (required)
+     * @return APIdownloadCheckRequest
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> The document binary data </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> The check PDF binary data </td><td>  -  </td></tr>
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call downloadDocumentCall(UUID documentId, final ApiCallback _callback) throws ApiException {
+    public APIdownloadCheckRequest downloadCheck(UUID checkId) {
+        return new APIdownloadCheckRequest(checkId);
+    }
+    private okhttp3.Call downloadDocumentCall(UUID documentId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -2197,82 +2647,113 @@ public class DefaultApi {
 
     }
 
-    /**
-     * Download document
-     * Downloads specific documents belonging to an applicant. If successful, the response will be the binary data representing the image. 
-     * @param documentId  (required)
-     * @return FileTransfer
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> The document binary data </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public FileTransfer downloadDocument(UUID documentId) throws ApiException {
-        ApiResponse<FileTransfer> localVarResp = downloadDocumentWithHttpInfo(documentId);
-        return localVarResp.getData();
-    }
 
-    /**
-     * Download document
-     * Downloads specific documents belonging to an applicant. If successful, the response will be the binary data representing the image. 
-     * @param documentId  (required)
-     * @return ApiResponse&lt;FileTransfer&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> The document binary data </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<FileTransfer> downloadDocumentWithHttpInfo(UUID documentId) throws ApiException {
+    private ApiResponse<FileTransfer> downloadDocumentWithHttpInfo(UUID documentId) throws ApiException {
         okhttp3.Call localVarCall = downloadDocumentValidateBeforeCall(documentId, null);
         Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * Download document (asynchronously)
-     * Downloads specific documents belonging to an applicant. If successful, the response will be the binary data representing the image. 
-     * @param documentId  (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> The document binary data </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call downloadDocumentAsync(UUID documentId, final ApiCallback<FileTransfer> _callback) throws ApiException {
+    private okhttp3.Call downloadDocumentAsync(UUID documentId, final ApiCallback<FileTransfer> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = downloadDocumentValidateBeforeCall(documentId, _callback);
         Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class APIdownloadDocumentRequest {
+        private final UUID documentId;
+
+        private APIdownloadDocumentRequest(UUID documentId) {
+            this.documentId = documentId;
+        }
+
+        /**
+         * Build call for downloadDocument
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> The document binary data </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return downloadDocumentCall(documentId, _callback);
+        }
+
+        /**
+         * Execute downloadDocument request
+         * @return FileTransfer
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> The document binary data </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public FileTransfer execute() throws ApiException {
+            ApiResponse<FileTransfer> localVarResp = downloadDocumentWithHttpInfo(documentId);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute downloadDocument request with HTTP info returned
+         * @return ApiResponse&lt;FileTransfer&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> The document binary data </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<FileTransfer> executeWithHttpInfo() throws ApiException {
+            return downloadDocumentWithHttpInfo(documentId);
+        }
+
+        /**
+         * Execute downloadDocument request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> The document binary data </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<FileTransfer> _callback) throws ApiException {
+            return downloadDocumentAsync(documentId, _callback);
+        }
+    }
+
     /**
-     * Build call for downloadDocumentVideo
+     * Download document
+     * Downloads specific documents belonging to an applicant. If successful, the response will be the binary data representing the image. 
      * @param documentId  (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * @return APIdownloadDocumentRequest
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> The document&#39;s video binary data </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> The document binary data </td><td>  -  </td></tr>
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call downloadDocumentVideoCall(String documentId, final ApiCallback _callback) throws ApiException {
+    public APIdownloadDocumentRequest downloadDocument(UUID documentId) {
+        return new APIdownloadDocumentRequest(documentId);
+    }
+    private okhttp3.Call downloadDocumentVideoCall(String documentId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -2329,83 +2810,113 @@ public class DefaultApi {
 
     }
 
-    /**
-     * Download document video
-     * Downloads a document video. If successful, the response will be the binary data representing the video. 
-     * @param documentId  (required)
-     * @return FileTransfer
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> The document&#39;s video binary data </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public FileTransfer downloadDocumentVideo(String documentId) throws ApiException {
-        ApiResponse<FileTransfer> localVarResp = downloadDocumentVideoWithHttpInfo(documentId);
-        return localVarResp.getData();
-    }
 
-    /**
-     * Download document video
-     * Downloads a document video. If successful, the response will be the binary data representing the video. 
-     * @param documentId  (required)
-     * @return ApiResponse&lt;FileTransfer&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> The document&#39;s video binary data </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<FileTransfer> downloadDocumentVideoWithHttpInfo(String documentId) throws ApiException {
+    private ApiResponse<FileTransfer> downloadDocumentVideoWithHttpInfo(String documentId) throws ApiException {
         okhttp3.Call localVarCall = downloadDocumentVideoValidateBeforeCall(documentId, null);
         Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * Download document video (asynchronously)
-     * Downloads a document video. If successful, the response will be the binary data representing the video. 
-     * @param documentId  (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> The document&#39;s video binary data </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call downloadDocumentVideoAsync(String documentId, final ApiCallback<FileTransfer> _callback) throws ApiException {
+    private okhttp3.Call downloadDocumentVideoAsync(String documentId, final ApiCallback<FileTransfer> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = downloadDocumentVideoValidateBeforeCall(documentId, _callback);
         Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class APIdownloadDocumentVideoRequest {
+        private final String documentId;
+
+        private APIdownloadDocumentVideoRequest(String documentId) {
+            this.documentId = documentId;
+        }
+
+        /**
+         * Build call for downloadDocumentVideo
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> The document&#39;s video binary data </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return downloadDocumentVideoCall(documentId, _callback);
+        }
+
+        /**
+         * Execute downloadDocumentVideo request
+         * @return FileTransfer
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> The document&#39;s video binary data </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public FileTransfer execute() throws ApiException {
+            ApiResponse<FileTransfer> localVarResp = downloadDocumentVideoWithHttpInfo(documentId);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute downloadDocumentVideo request with HTTP info returned
+         * @return ApiResponse&lt;FileTransfer&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> The document&#39;s video binary data </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<FileTransfer> executeWithHttpInfo() throws ApiException {
+            return downloadDocumentVideoWithHttpInfo(documentId);
+        }
+
+        /**
+         * Execute downloadDocumentVideo request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> The document&#39;s video binary data </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<FileTransfer> _callback) throws ApiException {
+            return downloadDocumentVideoAsync(documentId, _callback);
+        }
+    }
+
     /**
-     * Build call for downloadEvidenceFolder
-     * @param workflowRunId Workflow Run ID (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * Download document video
+     * Downloads a document video. If successful, the response will be the binary data representing the video. 
+     * @param documentId  (required)
+     * @return APIdownloadDocumentVideoRequest
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 302 </td><td> Found </td><td>  * Location - Link to the Timeline File. <br>  </td></tr>
-        <tr><td> 200 </td><td> The evidence folder binary data. </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> The document&#39;s video binary data </td><td>  -  </td></tr>
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call downloadEvidenceFolderCall(UUID workflowRunId, final ApiCallback _callback) throws ApiException {
+    public APIdownloadDocumentVideoRequest downloadDocumentVideo(String documentId) {
+        return new APIdownloadDocumentVideoRequest(documentId);
+    }
+    private okhttp3.Call downloadEvidenceFolderCall(UUID workflowRunId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -2462,85 +2973,118 @@ public class DefaultApi {
 
     }
 
-    /**
-     * Retrieve Workflow Run Evidence Folder
-     * Retrieves the evidence folder for the designated Workflow Run 
-     * @param workflowRunId Workflow Run ID (required)
-     * @return FileTransfer
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 302 </td><td> Found </td><td>  * Location - Link to the Timeline File. <br>  </td></tr>
-        <tr><td> 200 </td><td> The evidence folder binary data. </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public FileTransfer downloadEvidenceFolder(UUID workflowRunId) throws ApiException {
-        ApiResponse<FileTransfer> localVarResp = downloadEvidenceFolderWithHttpInfo(workflowRunId);
-        return localVarResp.getData();
-    }
 
-    /**
-     * Retrieve Workflow Run Evidence Folder
-     * Retrieves the evidence folder for the designated Workflow Run 
-     * @param workflowRunId Workflow Run ID (required)
-     * @return ApiResponse&lt;FileTransfer&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 302 </td><td> Found </td><td>  * Location - Link to the Timeline File. <br>  </td></tr>
-        <tr><td> 200 </td><td> The evidence folder binary data. </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<FileTransfer> downloadEvidenceFolderWithHttpInfo(UUID workflowRunId) throws ApiException {
+    private ApiResponse<FileTransfer> downloadEvidenceFolderWithHttpInfo(UUID workflowRunId) throws ApiException {
         okhttp3.Call localVarCall = downloadEvidenceFolderValidateBeforeCall(workflowRunId, null);
         Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * Retrieve Workflow Run Evidence Folder (asynchronously)
-     * Retrieves the evidence folder for the designated Workflow Run 
-     * @param workflowRunId Workflow Run ID (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 302 </td><td> Found </td><td>  * Location - Link to the Timeline File. <br>  </td></tr>
-        <tr><td> 200 </td><td> The evidence folder binary data. </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call downloadEvidenceFolderAsync(UUID workflowRunId, final ApiCallback<FileTransfer> _callback) throws ApiException {
+    private okhttp3.Call downloadEvidenceFolderAsync(UUID workflowRunId, final ApiCallback<FileTransfer> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = downloadEvidenceFolderValidateBeforeCall(workflowRunId, _callback);
         Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class APIdownloadEvidenceFolderRequest {
+        private final UUID workflowRunId;
+
+        private APIdownloadEvidenceFolderRequest(UUID workflowRunId) {
+            this.workflowRunId = workflowRunId;
+        }
+
+        /**
+         * Build call for downloadEvidenceFolder
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 302 </td><td> Found </td><td>  * Location - Link to the Timeline File. <br>  </td></tr>
+            <tr><td> 200 </td><td> The evidence folder binary data. </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return downloadEvidenceFolderCall(workflowRunId, _callback);
+        }
+
+        /**
+         * Execute downloadEvidenceFolder request
+         * @return FileTransfer
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 302 </td><td> Found </td><td>  * Location - Link to the Timeline File. <br>  </td></tr>
+            <tr><td> 200 </td><td> The evidence folder binary data. </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public FileTransfer execute() throws ApiException {
+            ApiResponse<FileTransfer> localVarResp = downloadEvidenceFolderWithHttpInfo(workflowRunId);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute downloadEvidenceFolder request with HTTP info returned
+         * @return ApiResponse&lt;FileTransfer&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 302 </td><td> Found </td><td>  * Location - Link to the Timeline File. <br>  </td></tr>
+            <tr><td> 200 </td><td> The evidence folder binary data. </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<FileTransfer> executeWithHttpInfo() throws ApiException {
+            return downloadEvidenceFolderWithHttpInfo(workflowRunId);
+        }
+
+        /**
+         * Execute downloadEvidenceFolder request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 302 </td><td> Found </td><td>  * Location - Link to the Timeline File. <br>  </td></tr>
+            <tr><td> 200 </td><td> The evidence folder binary data. </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<FileTransfer> _callback) throws ApiException {
+            return downloadEvidenceFolderAsync(workflowRunId, _callback);
+        }
+    }
+
     /**
-     * Build call for downloadIdPhoto
-     * @param idPhotoId The ID photo&#39;s unique identifier. (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * Retrieve Workflow Run Evidence Folder
+     * Retrieves the evidence folder for the designated Workflow Run 
+     * @param workflowRunId Workflow Run ID (required)
+     * @return APIdownloadEvidenceFolderRequest
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> The ID photo&#39;s binary data. </td><td>  -  </td></tr>
+        <tr><td> 302 </td><td> Found </td><td>  * Location - Link to the Timeline File. <br>  </td></tr>
+        <tr><td> 200 </td><td> The evidence folder binary data. </td><td>  -  </td></tr>
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call downloadIdPhotoCall(UUID idPhotoId, final ApiCallback _callback) throws ApiException {
+    public APIdownloadEvidenceFolderRequest downloadEvidenceFolder(UUID workflowRunId) {
+        return new APIdownloadEvidenceFolderRequest(workflowRunId);
+    }
+    private okhttp3.Call downloadIdPhotoCall(UUID idPhotoId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -2597,82 +3141,113 @@ public class DefaultApi {
 
     }
 
-    /**
-     * Download ID photo
-     * ID photos are downloaded using this endpoint.
-     * @param idPhotoId The ID photo&#39;s unique identifier. (required)
-     * @return FileTransfer
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> The ID photo&#39;s binary data. </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public FileTransfer downloadIdPhoto(UUID idPhotoId) throws ApiException {
-        ApiResponse<FileTransfer> localVarResp = downloadIdPhotoWithHttpInfo(idPhotoId);
-        return localVarResp.getData();
-    }
 
-    /**
-     * Download ID photo
-     * ID photos are downloaded using this endpoint.
-     * @param idPhotoId The ID photo&#39;s unique identifier. (required)
-     * @return ApiResponse&lt;FileTransfer&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> The ID photo&#39;s binary data. </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<FileTransfer> downloadIdPhotoWithHttpInfo(UUID idPhotoId) throws ApiException {
+    private ApiResponse<FileTransfer> downloadIdPhotoWithHttpInfo(UUID idPhotoId) throws ApiException {
         okhttp3.Call localVarCall = downloadIdPhotoValidateBeforeCall(idPhotoId, null);
         Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * Download ID photo (asynchronously)
-     * ID photos are downloaded using this endpoint.
-     * @param idPhotoId The ID photo&#39;s unique identifier. (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> The ID photo&#39;s binary data. </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call downloadIdPhotoAsync(UUID idPhotoId, final ApiCallback<FileTransfer> _callback) throws ApiException {
+    private okhttp3.Call downloadIdPhotoAsync(UUID idPhotoId, final ApiCallback<FileTransfer> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = downloadIdPhotoValidateBeforeCall(idPhotoId, _callback);
         Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class APIdownloadIdPhotoRequest {
+        private final UUID idPhotoId;
+
+        private APIdownloadIdPhotoRequest(UUID idPhotoId) {
+            this.idPhotoId = idPhotoId;
+        }
+
+        /**
+         * Build call for downloadIdPhoto
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> The ID photo&#39;s binary data. </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return downloadIdPhotoCall(idPhotoId, _callback);
+        }
+
+        /**
+         * Execute downloadIdPhoto request
+         * @return FileTransfer
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> The ID photo&#39;s binary data. </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public FileTransfer execute() throws ApiException {
+            ApiResponse<FileTransfer> localVarResp = downloadIdPhotoWithHttpInfo(idPhotoId);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute downloadIdPhoto request with HTTP info returned
+         * @return ApiResponse&lt;FileTransfer&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> The ID photo&#39;s binary data. </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<FileTransfer> executeWithHttpInfo() throws ApiException {
+            return downloadIdPhotoWithHttpInfo(idPhotoId);
+        }
+
+        /**
+         * Execute downloadIdPhoto request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> The ID photo&#39;s binary data. </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<FileTransfer> _callback) throws ApiException {
+            return downloadIdPhotoAsync(idPhotoId, _callback);
+        }
+    }
+
     /**
-     * Build call for downloadLivePhoto
-     * @param livePhotoId The live photo&#39;s unique identifier. (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * Download ID photo
+     * ID photos are downloaded using this endpoint.
+     * @param idPhotoId The ID photo&#39;s unique identifier. (required)
+     * @return APIdownloadIdPhotoRequest
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> The live photo&#39;s binary data. </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> The ID photo&#39;s binary data. </td><td>  -  </td></tr>
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call downloadLivePhotoCall(UUID livePhotoId, final ApiCallback _callback) throws ApiException {
+    public APIdownloadIdPhotoRequest downloadIdPhoto(UUID idPhotoId) {
+        return new APIdownloadIdPhotoRequest(idPhotoId);
+    }
+    private okhttp3.Call downloadLivePhotoCall(UUID livePhotoId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -2729,82 +3304,113 @@ public class DefaultApi {
 
     }
 
-    /**
-     * Download live photo
-     * Live photos are downloaded using this endpoint.
-     * @param livePhotoId The live photo&#39;s unique identifier. (required)
-     * @return FileTransfer
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> The live photo&#39;s binary data. </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public FileTransfer downloadLivePhoto(UUID livePhotoId) throws ApiException {
-        ApiResponse<FileTransfer> localVarResp = downloadLivePhotoWithHttpInfo(livePhotoId);
-        return localVarResp.getData();
-    }
 
-    /**
-     * Download live photo
-     * Live photos are downloaded using this endpoint.
-     * @param livePhotoId The live photo&#39;s unique identifier. (required)
-     * @return ApiResponse&lt;FileTransfer&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> The live photo&#39;s binary data. </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<FileTransfer> downloadLivePhotoWithHttpInfo(UUID livePhotoId) throws ApiException {
+    private ApiResponse<FileTransfer> downloadLivePhotoWithHttpInfo(UUID livePhotoId) throws ApiException {
         okhttp3.Call localVarCall = downloadLivePhotoValidateBeforeCall(livePhotoId, null);
         Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * Download live photo (asynchronously)
-     * Live photos are downloaded using this endpoint.
-     * @param livePhotoId The live photo&#39;s unique identifier. (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> The live photo&#39;s binary data. </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call downloadLivePhotoAsync(UUID livePhotoId, final ApiCallback<FileTransfer> _callback) throws ApiException {
+    private okhttp3.Call downloadLivePhotoAsync(UUID livePhotoId, final ApiCallback<FileTransfer> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = downloadLivePhotoValidateBeforeCall(livePhotoId, _callback);
         Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class APIdownloadLivePhotoRequest {
+        private final UUID livePhotoId;
+
+        private APIdownloadLivePhotoRequest(UUID livePhotoId) {
+            this.livePhotoId = livePhotoId;
+        }
+
+        /**
+         * Build call for downloadLivePhoto
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> The live photo&#39;s binary data. </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return downloadLivePhotoCall(livePhotoId, _callback);
+        }
+
+        /**
+         * Execute downloadLivePhoto request
+         * @return FileTransfer
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> The live photo&#39;s binary data. </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public FileTransfer execute() throws ApiException {
+            ApiResponse<FileTransfer> localVarResp = downloadLivePhotoWithHttpInfo(livePhotoId);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute downloadLivePhoto request with HTTP info returned
+         * @return ApiResponse&lt;FileTransfer&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> The live photo&#39;s binary data. </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<FileTransfer> executeWithHttpInfo() throws ApiException {
+            return downloadLivePhotoWithHttpInfo(livePhotoId);
+        }
+
+        /**
+         * Execute downloadLivePhoto request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> The live photo&#39;s binary data. </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<FileTransfer> _callback) throws ApiException {
+            return downloadLivePhotoAsync(livePhotoId, _callback);
+        }
+    }
+
     /**
-     * Build call for downloadLiveVideo
-     * @param liveVideoId The live video&#39;s unique identifier. (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * Download live photo
+     * Live photos are downloaded using this endpoint.
+     * @param livePhotoId The live photo&#39;s unique identifier. (required)
+     * @return APIdownloadLivePhotoRequest
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> The live video&#39;s binary data. </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> The live photo&#39;s binary data. </td><td>  -  </td></tr>
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call downloadLiveVideoCall(UUID liveVideoId, final ApiCallback _callback) throws ApiException {
+    public APIdownloadLivePhotoRequest downloadLivePhoto(UUID livePhotoId) {
+        return new APIdownloadLivePhotoRequest(livePhotoId);
+    }
+    private okhttp3.Call downloadLiveVideoCall(UUID liveVideoId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -2861,82 +3467,113 @@ public class DefaultApi {
 
     }
 
-    /**
-     * Download live video
-     * Live videos are downloaded using this endpoint.
-     * @param liveVideoId The live video&#39;s unique identifier. (required)
-     * @return FileTransfer
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> The live video&#39;s binary data. </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public FileTransfer downloadLiveVideo(UUID liveVideoId) throws ApiException {
-        ApiResponse<FileTransfer> localVarResp = downloadLiveVideoWithHttpInfo(liveVideoId);
-        return localVarResp.getData();
-    }
 
-    /**
-     * Download live video
-     * Live videos are downloaded using this endpoint.
-     * @param liveVideoId The live video&#39;s unique identifier. (required)
-     * @return ApiResponse&lt;FileTransfer&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> The live video&#39;s binary data. </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<FileTransfer> downloadLiveVideoWithHttpInfo(UUID liveVideoId) throws ApiException {
+    private ApiResponse<FileTransfer> downloadLiveVideoWithHttpInfo(UUID liveVideoId) throws ApiException {
         okhttp3.Call localVarCall = downloadLiveVideoValidateBeforeCall(liveVideoId, null);
         Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * Download live video (asynchronously)
-     * Live videos are downloaded using this endpoint.
-     * @param liveVideoId The live video&#39;s unique identifier. (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> The live video&#39;s binary data. </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call downloadLiveVideoAsync(UUID liveVideoId, final ApiCallback<FileTransfer> _callback) throws ApiException {
+    private okhttp3.Call downloadLiveVideoAsync(UUID liveVideoId, final ApiCallback<FileTransfer> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = downloadLiveVideoValidateBeforeCall(liveVideoId, _callback);
         Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class APIdownloadLiveVideoRequest {
+        private final UUID liveVideoId;
+
+        private APIdownloadLiveVideoRequest(UUID liveVideoId) {
+            this.liveVideoId = liveVideoId;
+        }
+
+        /**
+         * Build call for downloadLiveVideo
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> The live video&#39;s binary data. </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return downloadLiveVideoCall(liveVideoId, _callback);
+        }
+
+        /**
+         * Execute downloadLiveVideo request
+         * @return FileTransfer
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> The live video&#39;s binary data. </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public FileTransfer execute() throws ApiException {
+            ApiResponse<FileTransfer> localVarResp = downloadLiveVideoWithHttpInfo(liveVideoId);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute downloadLiveVideo request with HTTP info returned
+         * @return ApiResponse&lt;FileTransfer&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> The live video&#39;s binary data. </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<FileTransfer> executeWithHttpInfo() throws ApiException {
+            return downloadLiveVideoWithHttpInfo(liveVideoId);
+        }
+
+        /**
+         * Execute downloadLiveVideo request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> The live video&#39;s binary data. </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<FileTransfer> _callback) throws ApiException {
+            return downloadLiveVideoAsync(liveVideoId, _callback);
+        }
+    }
+
     /**
-     * Build call for downloadLiveVideoFrame
+     * Download live video
+     * Live videos are downloaded using this endpoint.
      * @param liveVideoId The live video&#39;s unique identifier. (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * @return APIdownloadLiveVideoRequest
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> The live video frame&#39;s binary data. </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> The live video&#39;s binary data. </td><td>  -  </td></tr>
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call downloadLiveVideoFrameCall(UUID liveVideoId, final ApiCallback _callback) throws ApiException {
+    public APIdownloadLiveVideoRequest downloadLiveVideo(UUID liveVideoId) {
+        return new APIdownloadLiveVideoRequest(liveVideoId);
+    }
+    private okhttp3.Call downloadLiveVideoFrameCall(UUID liveVideoId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -2993,82 +3630,113 @@ public class DefaultApi {
 
     }
 
-    /**
-     * Download live video frame
-     * Returns the binary data representing a single frame from a live video.
-     * @param liveVideoId The live video&#39;s unique identifier. (required)
-     * @return FileTransfer
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> The live video frame&#39;s binary data. </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public FileTransfer downloadLiveVideoFrame(UUID liveVideoId) throws ApiException {
-        ApiResponse<FileTransfer> localVarResp = downloadLiveVideoFrameWithHttpInfo(liveVideoId);
-        return localVarResp.getData();
-    }
 
-    /**
-     * Download live video frame
-     * Returns the binary data representing a single frame from a live video.
-     * @param liveVideoId The live video&#39;s unique identifier. (required)
-     * @return ApiResponse&lt;FileTransfer&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> The live video frame&#39;s binary data. </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<FileTransfer> downloadLiveVideoFrameWithHttpInfo(UUID liveVideoId) throws ApiException {
+    private ApiResponse<FileTransfer> downloadLiveVideoFrameWithHttpInfo(UUID liveVideoId) throws ApiException {
         okhttp3.Call localVarCall = downloadLiveVideoFrameValidateBeforeCall(liveVideoId, null);
         Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * Download live video frame (asynchronously)
-     * Returns the binary data representing a single frame from a live video.
-     * @param liveVideoId The live video&#39;s unique identifier. (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> The live video frame&#39;s binary data. </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call downloadLiveVideoFrameAsync(UUID liveVideoId, final ApiCallback<FileTransfer> _callback) throws ApiException {
+    private okhttp3.Call downloadLiveVideoFrameAsync(UUID liveVideoId, final ApiCallback<FileTransfer> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = downloadLiveVideoFrameValidateBeforeCall(liveVideoId, _callback);
         Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class APIdownloadLiveVideoFrameRequest {
+        private final UUID liveVideoId;
+
+        private APIdownloadLiveVideoFrameRequest(UUID liveVideoId) {
+            this.liveVideoId = liveVideoId;
+        }
+
+        /**
+         * Build call for downloadLiveVideoFrame
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> The live video frame&#39;s binary data. </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return downloadLiveVideoFrameCall(liveVideoId, _callback);
+        }
+
+        /**
+         * Execute downloadLiveVideoFrame request
+         * @return FileTransfer
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> The live video frame&#39;s binary data. </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public FileTransfer execute() throws ApiException {
+            ApiResponse<FileTransfer> localVarResp = downloadLiveVideoFrameWithHttpInfo(liveVideoId);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute downloadLiveVideoFrame request with HTTP info returned
+         * @return ApiResponse&lt;FileTransfer&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> The live video frame&#39;s binary data. </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<FileTransfer> executeWithHttpInfo() throws ApiException {
+            return downloadLiveVideoFrameWithHttpInfo(liveVideoId);
+        }
+
+        /**
+         * Execute downloadLiveVideoFrame request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> The live video frame&#39;s binary data. </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<FileTransfer> _callback) throws ApiException {
+            return downloadLiveVideoFrameAsync(liveVideoId, _callback);
+        }
+    }
+
     /**
-     * Build call for downloadMotionCapture
-     * @param motionCaptureId The motion capture&#39;s unique identifier. (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * Download live video frame
+     * Returns the binary data representing a single frame from a live video.
+     * @param liveVideoId The live video&#39;s unique identifier. (required)
+     * @return APIdownloadLiveVideoFrameRequest
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> The motion capture&#39;s binary data. </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> The live video frame&#39;s binary data. </td><td>  -  </td></tr>
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call downloadMotionCaptureCall(UUID motionCaptureId, final ApiCallback _callback) throws ApiException {
+    public APIdownloadLiveVideoFrameRequest downloadLiveVideoFrame(UUID liveVideoId) {
+        return new APIdownloadLiveVideoFrameRequest(liveVideoId);
+    }
+    private okhttp3.Call downloadMotionCaptureCall(UUID motionCaptureId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -3125,82 +3793,113 @@ public class DefaultApi {
 
     }
 
-    /**
-     * Download motion capture
-     * Motion captures are downloaded using this endpoint.
-     * @param motionCaptureId The motion capture&#39;s unique identifier. (required)
-     * @return FileTransfer
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> The motion capture&#39;s binary data. </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public FileTransfer downloadMotionCapture(UUID motionCaptureId) throws ApiException {
-        ApiResponse<FileTransfer> localVarResp = downloadMotionCaptureWithHttpInfo(motionCaptureId);
-        return localVarResp.getData();
-    }
 
-    /**
-     * Download motion capture
-     * Motion captures are downloaded using this endpoint.
-     * @param motionCaptureId The motion capture&#39;s unique identifier. (required)
-     * @return ApiResponse&lt;FileTransfer&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> The motion capture&#39;s binary data. </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<FileTransfer> downloadMotionCaptureWithHttpInfo(UUID motionCaptureId) throws ApiException {
+    private ApiResponse<FileTransfer> downloadMotionCaptureWithHttpInfo(UUID motionCaptureId) throws ApiException {
         okhttp3.Call localVarCall = downloadMotionCaptureValidateBeforeCall(motionCaptureId, null);
         Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * Download motion capture (asynchronously)
-     * Motion captures are downloaded using this endpoint.
-     * @param motionCaptureId The motion capture&#39;s unique identifier. (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> The motion capture&#39;s binary data. </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call downloadMotionCaptureAsync(UUID motionCaptureId, final ApiCallback<FileTransfer> _callback) throws ApiException {
+    private okhttp3.Call downloadMotionCaptureAsync(UUID motionCaptureId, final ApiCallback<FileTransfer> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = downloadMotionCaptureValidateBeforeCall(motionCaptureId, _callback);
         Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class APIdownloadMotionCaptureRequest {
+        private final UUID motionCaptureId;
+
+        private APIdownloadMotionCaptureRequest(UUID motionCaptureId) {
+            this.motionCaptureId = motionCaptureId;
+        }
+
+        /**
+         * Build call for downloadMotionCapture
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> The motion capture&#39;s binary data. </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return downloadMotionCaptureCall(motionCaptureId, _callback);
+        }
+
+        /**
+         * Execute downloadMotionCapture request
+         * @return FileTransfer
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> The motion capture&#39;s binary data. </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public FileTransfer execute() throws ApiException {
+            ApiResponse<FileTransfer> localVarResp = downloadMotionCaptureWithHttpInfo(motionCaptureId);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute downloadMotionCapture request with HTTP info returned
+         * @return ApiResponse&lt;FileTransfer&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> The motion capture&#39;s binary data. </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<FileTransfer> executeWithHttpInfo() throws ApiException {
+            return downloadMotionCaptureWithHttpInfo(motionCaptureId);
+        }
+
+        /**
+         * Execute downloadMotionCapture request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> The motion capture&#39;s binary data. </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<FileTransfer> _callback) throws ApiException {
+            return downloadMotionCaptureAsync(motionCaptureId, _callback);
+        }
+    }
+
     /**
-     * Build call for downloadMotionCaptureFrame
+     * Download motion capture
+     * Motion captures are downloaded using this endpoint.
      * @param motionCaptureId The motion capture&#39;s unique identifier. (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * @return APIdownloadMotionCaptureRequest
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> The motion capture frame&#39;s binary data. </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> The motion capture&#39;s binary data. </td><td>  -  </td></tr>
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call downloadMotionCaptureFrameCall(UUID motionCaptureId, final ApiCallback _callback) throws ApiException {
+    public APIdownloadMotionCaptureRequest downloadMotionCapture(UUID motionCaptureId) {
+        return new APIdownloadMotionCaptureRequest(motionCaptureId);
+    }
+    private okhttp3.Call downloadMotionCaptureFrameCall(UUID motionCaptureId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -3257,82 +3956,113 @@ public class DefaultApi {
 
     }
 
-    /**
-     * Download motion capture frame
-     * Instead of the whole capture binary, a single frame can be downloaded using this endpoint. Returns the binary data representing the frame.
-     * @param motionCaptureId The motion capture&#39;s unique identifier. (required)
-     * @return FileTransfer
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> The motion capture frame&#39;s binary data. </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public FileTransfer downloadMotionCaptureFrame(UUID motionCaptureId) throws ApiException {
-        ApiResponse<FileTransfer> localVarResp = downloadMotionCaptureFrameWithHttpInfo(motionCaptureId);
-        return localVarResp.getData();
-    }
 
-    /**
-     * Download motion capture frame
-     * Instead of the whole capture binary, a single frame can be downloaded using this endpoint. Returns the binary data representing the frame.
-     * @param motionCaptureId The motion capture&#39;s unique identifier. (required)
-     * @return ApiResponse&lt;FileTransfer&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> The motion capture frame&#39;s binary data. </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<FileTransfer> downloadMotionCaptureFrameWithHttpInfo(UUID motionCaptureId) throws ApiException {
+    private ApiResponse<FileTransfer> downloadMotionCaptureFrameWithHttpInfo(UUID motionCaptureId) throws ApiException {
         okhttp3.Call localVarCall = downloadMotionCaptureFrameValidateBeforeCall(motionCaptureId, null);
         Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * Download motion capture frame (asynchronously)
-     * Instead of the whole capture binary, a single frame can be downloaded using this endpoint. Returns the binary data representing the frame.
-     * @param motionCaptureId The motion capture&#39;s unique identifier. (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> The motion capture frame&#39;s binary data. </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call downloadMotionCaptureFrameAsync(UUID motionCaptureId, final ApiCallback<FileTransfer> _callback) throws ApiException {
+    private okhttp3.Call downloadMotionCaptureFrameAsync(UUID motionCaptureId, final ApiCallback<FileTransfer> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = downloadMotionCaptureFrameValidateBeforeCall(motionCaptureId, _callback);
         Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class APIdownloadMotionCaptureFrameRequest {
+        private final UUID motionCaptureId;
+
+        private APIdownloadMotionCaptureFrameRequest(UUID motionCaptureId) {
+            this.motionCaptureId = motionCaptureId;
+        }
+
+        /**
+         * Build call for downloadMotionCaptureFrame
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> The motion capture frame&#39;s binary data. </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return downloadMotionCaptureFrameCall(motionCaptureId, _callback);
+        }
+
+        /**
+         * Execute downloadMotionCaptureFrame request
+         * @return FileTransfer
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> The motion capture frame&#39;s binary data. </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public FileTransfer execute() throws ApiException {
+            ApiResponse<FileTransfer> localVarResp = downloadMotionCaptureFrameWithHttpInfo(motionCaptureId);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute downloadMotionCaptureFrame request with HTTP info returned
+         * @return ApiResponse&lt;FileTransfer&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> The motion capture frame&#39;s binary data. </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<FileTransfer> executeWithHttpInfo() throws ApiException {
+            return downloadMotionCaptureFrameWithHttpInfo(motionCaptureId);
+        }
+
+        /**
+         * Execute downloadMotionCaptureFrame request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> The motion capture frame&#39;s binary data. </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<FileTransfer> _callback) throws ApiException {
+            return downloadMotionCaptureFrameAsync(motionCaptureId, _callback);
+        }
+    }
+
     /**
-     * Build call for downloadNfcFace
-     * @param documentId  (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * Download motion capture frame
+     * Instead of the whole capture binary, a single frame can be downloaded using this endpoint. Returns the binary data representing the frame.
+     * @param motionCaptureId The motion capture&#39;s unique identifier. (required)
+     * @return APIdownloadMotionCaptureFrameRequest
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> The image binary data </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> The motion capture frame&#39;s binary data. </td><td>  -  </td></tr>
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call downloadNfcFaceCall(UUID documentId, final ApiCallback _callback) throws ApiException {
+    public APIdownloadMotionCaptureFrameRequest downloadMotionCaptureFrame(UUID motionCaptureId) {
+        return new APIdownloadMotionCaptureFrameRequest(motionCaptureId);
+    }
+    private okhttp3.Call downloadNfcFaceCall(UUID documentId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -3389,84 +4119,113 @@ public class DefaultApi {
 
     }
 
-    /**
-     * Download NFC face
-     * Downloads digital photos extracted from specific documents belonging to an applicant. If successful, the response will be the binary data representing the image. 
-     * @param documentId  (required)
-     * @return FileTransfer
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> The image binary data </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public FileTransfer downloadNfcFace(UUID documentId) throws ApiException {
-        ApiResponse<FileTransfer> localVarResp = downloadNfcFaceWithHttpInfo(documentId);
-        return localVarResp.getData();
-    }
 
-    /**
-     * Download NFC face
-     * Downloads digital photos extracted from specific documents belonging to an applicant. If successful, the response will be the binary data representing the image. 
-     * @param documentId  (required)
-     * @return ApiResponse&lt;FileTransfer&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> The image binary data </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<FileTransfer> downloadNfcFaceWithHttpInfo(UUID documentId) throws ApiException {
+    private ApiResponse<FileTransfer> downloadNfcFaceWithHttpInfo(UUID documentId) throws ApiException {
         okhttp3.Call localVarCall = downloadNfcFaceValidateBeforeCall(documentId, null);
         Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * Download NFC face (asynchronously)
-     * Downloads digital photos extracted from specific documents belonging to an applicant. If successful, the response will be the binary data representing the image. 
-     * @param documentId  (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> The image binary data </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call downloadNfcFaceAsync(UUID documentId, final ApiCallback<FileTransfer> _callback) throws ApiException {
+    private okhttp3.Call downloadNfcFaceAsync(UUID documentId, final ApiCallback<FileTransfer> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = downloadNfcFaceValidateBeforeCall(documentId, _callback);
         Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class APIdownloadNfcFaceRequest {
+        private final UUID documentId;
+
+        private APIdownloadNfcFaceRequest(UUID documentId) {
+            this.documentId = documentId;
+        }
+
+        /**
+         * Build call for downloadNfcFace
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> The image binary data </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return downloadNfcFaceCall(documentId, _callback);
+        }
+
+        /**
+         * Execute downloadNfcFace request
+         * @return FileTransfer
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> The image binary data </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public FileTransfer execute() throws ApiException {
+            ApiResponse<FileTransfer> localVarResp = downloadNfcFaceWithHttpInfo(documentId);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute downloadNfcFace request with HTTP info returned
+         * @return ApiResponse&lt;FileTransfer&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> The image binary data </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<FileTransfer> executeWithHttpInfo() throws ApiException {
+            return downloadNfcFaceWithHttpInfo(documentId);
+        }
+
+        /**
+         * Execute downloadNfcFace request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> The image binary data </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<FileTransfer> _callback) throws ApiException {
+            return downloadNfcFaceAsync(documentId, _callback);
+        }
+    }
+
     /**
-     * Build call for downloadQesDocument
-     * @param workflowRunId The unique identifier of the Workflow Run for which you want to retrieve the signed document. (required)
-     * @param fileId The unique identifier of the file which you want to retrieve. (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * Download NFC face
+     * Downloads digital photos extracted from specific documents belonging to an applicant. If successful, the response will be the binary data representing the image. 
+     * @param documentId  (required)
+     * @return APIdownloadNfcFaceRequest
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 302 </td><td> Found </td><td>  * Location - Link to the Timeline File. <br>  </td></tr>
-        <tr><td> 200 </td><td> The signed document PDF binary data. </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> The image binary data </td><td>  -  </td></tr>
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call downloadQesDocumentCall(UUID workflowRunId, UUID fileId, final ApiCallback _callback) throws ApiException {
+    public APIdownloadNfcFaceRequest downloadNfcFace(UUID documentId) {
+        return new APIdownloadNfcFaceRequest(documentId);
+    }
+    private okhttp3.Call downloadQesDocumentCall(UUID workflowRunId, UUID fileId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -3535,80 +4294,108 @@ public class DefaultApi {
 
     }
 
-    /**
-     * Retrieves the signed document or application form
-     * Retrieves the signed document or application form depending on the file_id provided. 
-     * @param workflowRunId The unique identifier of the Workflow Run for which you want to retrieve the signed document. (required)
-     * @param fileId The unique identifier of the file which you want to retrieve. (required)
-     * @return FileTransfer
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 302 </td><td> Found </td><td>  * Location - Link to the Timeline File. <br>  </td></tr>
-        <tr><td> 200 </td><td> The signed document PDF binary data. </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public FileTransfer downloadQesDocument(UUID workflowRunId, UUID fileId) throws ApiException {
-        ApiResponse<FileTransfer> localVarResp = downloadQesDocumentWithHttpInfo(workflowRunId, fileId);
-        return localVarResp.getData();
-    }
 
-    /**
-     * Retrieves the signed document or application form
-     * Retrieves the signed document or application form depending on the file_id provided. 
-     * @param workflowRunId The unique identifier of the Workflow Run for which you want to retrieve the signed document. (required)
-     * @param fileId The unique identifier of the file which you want to retrieve. (required)
-     * @return ApiResponse&lt;FileTransfer&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 302 </td><td> Found </td><td>  * Location - Link to the Timeline File. <br>  </td></tr>
-        <tr><td> 200 </td><td> The signed document PDF binary data. </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<FileTransfer> downloadQesDocumentWithHttpInfo(UUID workflowRunId, UUID fileId) throws ApiException {
+    private ApiResponse<FileTransfer> downloadQesDocumentWithHttpInfo(UUID workflowRunId, UUID fileId) throws ApiException {
         okhttp3.Call localVarCall = downloadQesDocumentValidateBeforeCall(workflowRunId, fileId, null);
         Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * Retrieves the signed document or application form (asynchronously)
-     * Retrieves the signed document or application form depending on the file_id provided. 
-     * @param workflowRunId The unique identifier of the Workflow Run for which you want to retrieve the signed document. (required)
-     * @param fileId The unique identifier of the file which you want to retrieve. (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 302 </td><td> Found </td><td>  * Location - Link to the Timeline File. <br>  </td></tr>
-        <tr><td> 200 </td><td> The signed document PDF binary data. </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call downloadQesDocumentAsync(UUID workflowRunId, UUID fileId, final ApiCallback<FileTransfer> _callback) throws ApiException {
+    private okhttp3.Call downloadQesDocumentAsync(UUID workflowRunId, UUID fileId, final ApiCallback<FileTransfer> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = downloadQesDocumentValidateBeforeCall(workflowRunId, fileId, _callback);
         Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class APIdownloadQesDocumentRequest {
+        private final UUID workflowRunId;
+        private final UUID fileId;
+
+        private APIdownloadQesDocumentRequest(UUID workflowRunId, UUID fileId) {
+            this.workflowRunId = workflowRunId;
+            this.fileId = fileId;
+        }
+
+        /**
+         * Build call for downloadQesDocument
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 302 </td><td> Found </td><td>  * Location - Link to the Timeline File. <br>  </td></tr>
+            <tr><td> 200 </td><td> The signed document PDF binary data. </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return downloadQesDocumentCall(workflowRunId, fileId, _callback);
+        }
+
+        /**
+         * Execute downloadQesDocument request
+         * @return FileTransfer
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 302 </td><td> Found </td><td>  * Location - Link to the Timeline File. <br>  </td></tr>
+            <tr><td> 200 </td><td> The signed document PDF binary data. </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public FileTransfer execute() throws ApiException {
+            ApiResponse<FileTransfer> localVarResp = downloadQesDocumentWithHttpInfo(workflowRunId, fileId);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute downloadQesDocument request with HTTP info returned
+         * @return ApiResponse&lt;FileTransfer&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 302 </td><td> Found </td><td>  * Location - Link to the Timeline File. <br>  </td></tr>
+            <tr><td> 200 </td><td> The signed document PDF binary data. </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<FileTransfer> executeWithHttpInfo() throws ApiException {
+            return downloadQesDocumentWithHttpInfo(workflowRunId, fileId);
+        }
+
+        /**
+         * Execute downloadQesDocument request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 302 </td><td> Found </td><td>  * Location - Link to the Timeline File. <br>  </td></tr>
+            <tr><td> 200 </td><td> The signed document PDF binary data. </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<FileTransfer> _callback) throws ApiException {
+            return downloadQesDocumentAsync(workflowRunId, fileId, _callback);
+        }
+    }
+
     /**
-     * Build call for downloadSesDocument
+     * Retrieves the signed document or application form
+     * Retrieves the signed document or application form depending on the file_id provided. 
      * @param workflowRunId The unique identifier of the Workflow Run for which you want to retrieve the signed document. (required)
-     * @param id The unique identifier of the file which you want to retrieve. (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * @param fileId The unique identifier of the file which you want to retrieve. (required)
+     * @return APIdownloadQesDocumentRequest
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
@@ -3618,7 +4405,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call downloadSesDocumentCall(UUID workflowRunId, UUID id, final ApiCallback _callback) throws ApiException {
+    public APIdownloadQesDocumentRequest downloadQesDocument(UUID workflowRunId, UUID fileId) {
+        return new APIdownloadQesDocumentRequest(workflowRunId, fileId);
+    }
+    private okhttp3.Call downloadSesDocumentCall(UUID workflowRunId, UUID id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -3687,89 +4477,121 @@ public class DefaultApi {
 
     }
 
-    /**
-     * Retrieves the signed document or signing transaction receipt
-     * Retrieves the signed document or signing transaction receipt depending on the id provided. 
-     * @param workflowRunId The unique identifier of the Workflow Run for which you want to retrieve the signed document. (required)
-     * @param id The unique identifier of the file which you want to retrieve. (required)
-     * @return FileTransfer
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 302 </td><td> Found </td><td>  * Location - Link to the Timeline File. <br>  </td></tr>
-        <tr><td> 200 </td><td> The signed document PDF binary data. </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public FileTransfer downloadSesDocument(UUID workflowRunId, UUID id) throws ApiException {
-        ApiResponse<FileTransfer> localVarResp = downloadSesDocumentWithHttpInfo(workflowRunId, id);
-        return localVarResp.getData();
-    }
 
-    /**
-     * Retrieves the signed document or signing transaction receipt
-     * Retrieves the signed document or signing transaction receipt depending on the id provided. 
-     * @param workflowRunId The unique identifier of the Workflow Run for which you want to retrieve the signed document. (required)
-     * @param id The unique identifier of the file which you want to retrieve. (required)
-     * @return ApiResponse&lt;FileTransfer&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 302 </td><td> Found </td><td>  * Location - Link to the Timeline File. <br>  </td></tr>
-        <tr><td> 200 </td><td> The signed document PDF binary data. </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<FileTransfer> downloadSesDocumentWithHttpInfo(UUID workflowRunId, UUID id) throws ApiException {
+    private ApiResponse<FileTransfer> downloadSesDocumentWithHttpInfo(UUID workflowRunId, UUID id) throws ApiException {
         okhttp3.Call localVarCall = downloadSesDocumentValidateBeforeCall(workflowRunId, id, null);
         Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * Retrieves the signed document or signing transaction receipt (asynchronously)
-     * Retrieves the signed document or signing transaction receipt depending on the id provided. 
-     * @param workflowRunId The unique identifier of the Workflow Run for which you want to retrieve the signed document. (required)
-     * @param id The unique identifier of the file which you want to retrieve. (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 302 </td><td> Found </td><td>  * Location - Link to the Timeline File. <br>  </td></tr>
-        <tr><td> 200 </td><td> The signed document PDF binary data. </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call downloadSesDocumentAsync(UUID workflowRunId, UUID id, final ApiCallback<FileTransfer> _callback) throws ApiException {
+    private okhttp3.Call downloadSesDocumentAsync(UUID workflowRunId, UUID id, final ApiCallback<FileTransfer> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = downloadSesDocumentValidateBeforeCall(workflowRunId, id, _callback);
         Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class APIdownloadSesDocumentRequest {
+        private final UUID workflowRunId;
+        private final UUID id;
+
+        private APIdownloadSesDocumentRequest(UUID workflowRunId, UUID id) {
+            this.workflowRunId = workflowRunId;
+            this.id = id;
+        }
+
+        /**
+         * Build call for downloadSesDocument
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 302 </td><td> Found </td><td>  * Location - Link to the Timeline File. <br>  </td></tr>
+            <tr><td> 200 </td><td> The signed document PDF binary data. </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return downloadSesDocumentCall(workflowRunId, id, _callback);
+        }
+
+        /**
+         * Execute downloadSesDocument request
+         * @return FileTransfer
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 302 </td><td> Found </td><td>  * Location - Link to the Timeline File. <br>  </td></tr>
+            <tr><td> 200 </td><td> The signed document PDF binary data. </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public FileTransfer execute() throws ApiException {
+            ApiResponse<FileTransfer> localVarResp = downloadSesDocumentWithHttpInfo(workflowRunId, id);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute downloadSesDocument request with HTTP info returned
+         * @return ApiResponse&lt;FileTransfer&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 302 </td><td> Found </td><td>  * Location - Link to the Timeline File. <br>  </td></tr>
+            <tr><td> 200 </td><td> The signed document PDF binary data. </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<FileTransfer> executeWithHttpInfo() throws ApiException {
+            return downloadSesDocumentWithHttpInfo(workflowRunId, id);
+        }
+
+        /**
+         * Execute downloadSesDocument request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 302 </td><td> Found </td><td>  * Location - Link to the Timeline File. <br>  </td></tr>
+            <tr><td> 200 </td><td> The signed document PDF binary data. </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<FileTransfer> _callback) throws ApiException {
+            return downloadSesDocumentAsync(workflowRunId, id, _callback);
+        }
+    }
+
     /**
-     * Build call for downloadSignedEvidenceFile
-     * @param workflowRunId Workflow Run ID (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * Retrieves the signed document or signing transaction receipt
+     * Retrieves the signed document or signing transaction receipt depending on the id provided. 
+     * @param workflowRunId The unique identifier of the Workflow Run for which you want to retrieve the signed document. (required)
+     * @param id The unique identifier of the file which you want to retrieve. (required)
+     * @return APIdownloadSesDocumentRequest
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 302 </td><td> Found </td><td>  * Location - Link to the Timeline File. <br>  </td></tr>
-        <tr><td> 200 </td><td> The signed evidence PDF binary data. </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> The signed document PDF binary data. </td><td>  -  </td></tr>
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call downloadSignedEvidenceFileCall(UUID workflowRunId, final ApiCallback _callback) throws ApiException {
+    public APIdownloadSesDocumentRequest downloadSesDocument(UUID workflowRunId, UUID id) {
+        return new APIdownloadSesDocumentRequest(workflowRunId, id);
+    }
+    private okhttp3.Call downloadSignedEvidenceFileCall(UUID workflowRunId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -3826,85 +4648,118 @@ public class DefaultApi {
 
     }
 
-    /**
-     * Retrieve Workflow Run Evidence Summary File
-     * Retrieves the signed evidence file for the designated Workflow Run 
-     * @param workflowRunId Workflow Run ID (required)
-     * @return FileTransfer
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 302 </td><td> Found </td><td>  * Location - Link to the Timeline File. <br>  </td></tr>
-        <tr><td> 200 </td><td> The signed evidence PDF binary data. </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public FileTransfer downloadSignedEvidenceFile(UUID workflowRunId) throws ApiException {
-        ApiResponse<FileTransfer> localVarResp = downloadSignedEvidenceFileWithHttpInfo(workflowRunId);
-        return localVarResp.getData();
-    }
 
-    /**
-     * Retrieve Workflow Run Evidence Summary File
-     * Retrieves the signed evidence file for the designated Workflow Run 
-     * @param workflowRunId Workflow Run ID (required)
-     * @return ApiResponse&lt;FileTransfer&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 302 </td><td> Found </td><td>  * Location - Link to the Timeline File. <br>  </td></tr>
-        <tr><td> 200 </td><td> The signed evidence PDF binary data. </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<FileTransfer> downloadSignedEvidenceFileWithHttpInfo(UUID workflowRunId) throws ApiException {
+    private ApiResponse<FileTransfer> downloadSignedEvidenceFileWithHttpInfo(UUID workflowRunId) throws ApiException {
         okhttp3.Call localVarCall = downloadSignedEvidenceFileValidateBeforeCall(workflowRunId, null);
         Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * Retrieve Workflow Run Evidence Summary File (asynchronously)
-     * Retrieves the signed evidence file for the designated Workflow Run 
-     * @param workflowRunId Workflow Run ID (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 302 </td><td> Found </td><td>  * Location - Link to the Timeline File. <br>  </td></tr>
-        <tr><td> 200 </td><td> The signed evidence PDF binary data. </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call downloadSignedEvidenceFileAsync(UUID workflowRunId, final ApiCallback<FileTransfer> _callback) throws ApiException {
+    private okhttp3.Call downloadSignedEvidenceFileAsync(UUID workflowRunId, final ApiCallback<FileTransfer> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = downloadSignedEvidenceFileValidateBeforeCall(workflowRunId, _callback);
         Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class APIdownloadSignedEvidenceFileRequest {
+        private final UUID workflowRunId;
+
+        private APIdownloadSignedEvidenceFileRequest(UUID workflowRunId) {
+            this.workflowRunId = workflowRunId;
+        }
+
+        /**
+         * Build call for downloadSignedEvidenceFile
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 302 </td><td> Found </td><td>  * Location - Link to the Timeline File. <br>  </td></tr>
+            <tr><td> 200 </td><td> The signed evidence PDF binary data. </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return downloadSignedEvidenceFileCall(workflowRunId, _callback);
+        }
+
+        /**
+         * Execute downloadSignedEvidenceFile request
+         * @return FileTransfer
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 302 </td><td> Found </td><td>  * Location - Link to the Timeline File. <br>  </td></tr>
+            <tr><td> 200 </td><td> The signed evidence PDF binary data. </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public FileTransfer execute() throws ApiException {
+            ApiResponse<FileTransfer> localVarResp = downloadSignedEvidenceFileWithHttpInfo(workflowRunId);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute downloadSignedEvidenceFile request with HTTP info returned
+         * @return ApiResponse&lt;FileTransfer&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 302 </td><td> Found </td><td>  * Location - Link to the Timeline File. <br>  </td></tr>
+            <tr><td> 200 </td><td> The signed evidence PDF binary data. </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<FileTransfer> executeWithHttpInfo() throws ApiException {
+            return downloadSignedEvidenceFileWithHttpInfo(workflowRunId);
+        }
+
+        /**
+         * Execute downloadSignedEvidenceFile request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 302 </td><td> Found </td><td>  * Location - Link to the Timeline File. <br>  </td></tr>
+            <tr><td> 200 </td><td> The signed evidence PDF binary data. </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<FileTransfer> _callback) throws ApiException {
+            return downloadSignedEvidenceFileAsync(workflowRunId, _callback);
+        }
+    }
+
     /**
-     * Build call for downloadSigningDocument
-     * @param signingDocumentId  (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * Retrieve Workflow Run Evidence Summary File
+     * Retrieves the signed evidence file for the designated Workflow Run 
+     * @param workflowRunId Workflow Run ID (required)
+     * @return APIdownloadSignedEvidenceFileRequest
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> The signing document binary data </td><td>  -  </td></tr>
+        <tr><td> 302 </td><td> Found </td><td>  * Location - Link to the Timeline File. <br>  </td></tr>
+        <tr><td> 200 </td><td> The signed evidence PDF binary data. </td><td>  -  </td></tr>
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call downloadSigningDocumentCall(UUID signingDocumentId, final ApiCallback _callback) throws ApiException {
+    public APIdownloadSignedEvidenceFileRequest downloadSignedEvidenceFile(UUID workflowRunId) {
+        return new APIdownloadSignedEvidenceFileRequest(workflowRunId);
+    }
+    private okhttp3.Call downloadSigningDocumentCall(UUID signingDocumentId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -3961,82 +4816,113 @@ public class DefaultApi {
 
     }
 
-    /**
-     * Download signing document
-     * Downloads specific signing documents belonging to an applicant. If successful, the response will be the binary data representing the pdf. 
-     * @param signingDocumentId  (required)
-     * @return FileTransfer
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> The signing document binary data </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public FileTransfer downloadSigningDocument(UUID signingDocumentId) throws ApiException {
-        ApiResponse<FileTransfer> localVarResp = downloadSigningDocumentWithHttpInfo(signingDocumentId);
-        return localVarResp.getData();
-    }
 
-    /**
-     * Download signing document
-     * Downloads specific signing documents belonging to an applicant. If successful, the response will be the binary data representing the pdf. 
-     * @param signingDocumentId  (required)
-     * @return ApiResponse&lt;FileTransfer&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> The signing document binary data </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<FileTransfer> downloadSigningDocumentWithHttpInfo(UUID signingDocumentId) throws ApiException {
+    private ApiResponse<FileTransfer> downloadSigningDocumentWithHttpInfo(UUID signingDocumentId) throws ApiException {
         okhttp3.Call localVarCall = downloadSigningDocumentValidateBeforeCall(signingDocumentId, null);
         Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * Download signing document (asynchronously)
-     * Downloads specific signing documents belonging to an applicant. If successful, the response will be the binary data representing the pdf. 
-     * @param signingDocumentId  (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> The signing document binary data </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call downloadSigningDocumentAsync(UUID signingDocumentId, final ApiCallback<FileTransfer> _callback) throws ApiException {
+    private okhttp3.Call downloadSigningDocumentAsync(UUID signingDocumentId, final ApiCallback<FileTransfer> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = downloadSigningDocumentValidateBeforeCall(signingDocumentId, _callback);
         Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class APIdownloadSigningDocumentRequest {
+        private final UUID signingDocumentId;
+
+        private APIdownloadSigningDocumentRequest(UUID signingDocumentId) {
+            this.signingDocumentId = signingDocumentId;
+        }
+
+        /**
+         * Build call for downloadSigningDocument
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> The signing document binary data </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return downloadSigningDocumentCall(signingDocumentId, _callback);
+        }
+
+        /**
+         * Execute downloadSigningDocument request
+         * @return FileTransfer
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> The signing document binary data </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public FileTransfer execute() throws ApiException {
+            ApiResponse<FileTransfer> localVarResp = downloadSigningDocumentWithHttpInfo(signingDocumentId);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute downloadSigningDocument request with HTTP info returned
+         * @return ApiResponse&lt;FileTransfer&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> The signing document binary data </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<FileTransfer> executeWithHttpInfo() throws ApiException {
+            return downloadSigningDocumentWithHttpInfo(signingDocumentId);
+        }
+
+        /**
+         * Execute downloadSigningDocument request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> The signing document binary data </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<FileTransfer> _callback) throws ApiException {
+            return downloadSigningDocumentAsync(signingDocumentId, _callback);
+        }
+    }
+
     /**
-     * Build call for extract
-     * @param extractRequest  (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * Download signing document
+     * Downloads specific signing documents belonging to an applicant. If successful, the response will be the binary data representing the pdf. 
+     * @param signingDocumentId  (required)
+     * @return APIdownloadSigningDocumentRequest
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Extraction result </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unprocessable Entity </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> The signing document binary data </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call extractCall(ExtractRequest extractRequest, final ApiCallback _callback) throws ApiException {
+    public APIdownloadSigningDocumentRequest downloadSigningDocument(UUID signingDocumentId) {
+        return new APIdownloadSigningDocumentRequest(signingDocumentId);
+    }
+    private okhttp3.Call extractCall(ExtractRequest extractRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -4092,82 +4978,113 @@ public class DefaultApi {
 
     }
 
-    /**
-     * Autofill
-     * Extract information from a document 
-     * @param extractRequest  (required)
-     * @return Extraction
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Extraction result </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unprocessable Entity </td><td>  -  </td></tr>
-     </table>
-     */
-    public Extraction extract(ExtractRequest extractRequest) throws ApiException {
-        ApiResponse<Extraction> localVarResp = extractWithHttpInfo(extractRequest);
-        return localVarResp.getData();
-    }
 
-    /**
-     * Autofill
-     * Extract information from a document 
-     * @param extractRequest  (required)
-     * @return ApiResponse&lt;Extraction&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Extraction result </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unprocessable Entity </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<Extraction> extractWithHttpInfo(ExtractRequest extractRequest) throws ApiException {
+    private ApiResponse<Extraction> extractWithHttpInfo(ExtractRequest extractRequest) throws ApiException {
         okhttp3.Call localVarCall = extractValidateBeforeCall(extractRequest, null);
         Type localVarReturnType = new TypeToken<Extraction>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * Autofill (asynchronously)
-     * Extract information from a document 
-     * @param extractRequest  (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Extraction result </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unprocessable Entity </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call extractAsync(ExtractRequest extractRequest, final ApiCallback<Extraction> _callback) throws ApiException {
+    private okhttp3.Call extractAsync(ExtractRequest extractRequest, final ApiCallback<Extraction> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = extractValidateBeforeCall(extractRequest, _callback);
         Type localVarReturnType = new TypeToken<Extraction>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class APIextractRequest {
+        private final ExtractRequest extractRequest;
+
+        private APIextractRequest(ExtractRequest extractRequest) {
+            this.extractRequest = extractRequest;
+        }
+
+        /**
+         * Build call for extract
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Extraction result </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unprocessable Entity </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return extractCall(extractRequest, _callback);
+        }
+
+        /**
+         * Execute extract request
+         * @return Extraction
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Extraction result </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unprocessable Entity </td><td>  -  </td></tr>
+         </table>
+         */
+        public Extraction execute() throws ApiException {
+            ApiResponse<Extraction> localVarResp = extractWithHttpInfo(extractRequest);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute extract request with HTTP info returned
+         * @return ApiResponse&lt;Extraction&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Extraction result </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unprocessable Entity </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<Extraction> executeWithHttpInfo() throws ApiException {
+            return extractWithHttpInfo(extractRequest);
+        }
+
+        /**
+         * Execute extract request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Extraction result </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unprocessable Entity </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<Extraction> _callback) throws ApiException {
+            return extractAsync(extractRequest, _callback);
+        }
+    }
+
     /**
-     * Build call for findAddresses
-     * @param postcode  (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * Autofill
+     * Extract information from a document 
+     * @param extractRequest  (required)
+     * @return APIextractRequest
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> A list of addresses </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Extraction result </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> Unprocessable Entity </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call findAddressesCall(String postcode, final ApiCallback _callback) throws ApiException {
+    public APIextractRequest extract(ExtractRequest extractRequest) {
+        return new APIextractRequest(extractRequest);
+    }
+    private okhttp3.Call findAddressesCall(String postcode, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -4226,82 +5143,113 @@ public class DefaultApi {
 
     }
 
-    /**
-     * Address Picker
-     * Search for addresses by postcode 
-     * @param postcode  (required)
-     * @return AddressesList
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> A list of addresses </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public AddressesList findAddresses(String postcode) throws ApiException {
-        ApiResponse<AddressesList> localVarResp = findAddressesWithHttpInfo(postcode);
-        return localVarResp.getData();
-    }
 
-    /**
-     * Address Picker
-     * Search for addresses by postcode 
-     * @param postcode  (required)
-     * @return ApiResponse&lt;AddressesList&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> A list of addresses </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<AddressesList> findAddressesWithHttpInfo(String postcode) throws ApiException {
+    private ApiResponse<AddressesList> findAddressesWithHttpInfo(String postcode) throws ApiException {
         okhttp3.Call localVarCall = findAddressesValidateBeforeCall(postcode, null);
         Type localVarReturnType = new TypeToken<AddressesList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * Address Picker (asynchronously)
-     * Search for addresses by postcode 
-     * @param postcode  (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> A list of addresses </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call findAddressesAsync(String postcode, final ApiCallback<AddressesList> _callback) throws ApiException {
+    private okhttp3.Call findAddressesAsync(String postcode, final ApiCallback<AddressesList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = findAddressesValidateBeforeCall(postcode, _callback);
         Type localVarReturnType = new TypeToken<AddressesList>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class APIfindAddressesRequest {
+        private final String postcode;
+
+        private APIfindAddressesRequest(String postcode) {
+            this.postcode = postcode;
+        }
+
+        /**
+         * Build call for findAddresses
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> A list of addresses </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return findAddressesCall(postcode, _callback);
+        }
+
+        /**
+         * Execute findAddresses request
+         * @return AddressesList
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> A list of addresses </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public AddressesList execute() throws ApiException {
+            ApiResponse<AddressesList> localVarResp = findAddressesWithHttpInfo(postcode);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute findAddresses request with HTTP info returned
+         * @return ApiResponse&lt;AddressesList&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> A list of addresses </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<AddressesList> executeWithHttpInfo() throws ApiException {
+            return findAddressesWithHttpInfo(postcode);
+        }
+
+        /**
+         * Execute findAddresses request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> A list of addresses </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<AddressesList> _callback) throws ApiException {
+            return findAddressesAsync(postcode, _callback);
+        }
+    }
+
     /**
-     * Build call for findApplicant
-     * @param applicantId  (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * Address Picker
+     * Search for addresses by postcode 
+     * @param postcode  (required)
+     * @return APIfindAddressesRequest
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Applicant object </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> A list of addresses </td><td>  -  </td></tr>
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call findApplicantCall(UUID applicantId, final ApiCallback _callback) throws ApiException {
+    public APIfindAddressesRequest findAddresses(String postcode) {
+        return new APIfindAddressesRequest(postcode);
+    }
+    private okhttp3.Call findApplicantCall(UUID applicantId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -4357,82 +5305,113 @@ public class DefaultApi {
 
     }
 
-    /**
-     * Retrieve Applicant
-     * Retrieves a single applicant. Returns an applicant object. 
-     * @param applicantId  (required)
-     * @return Applicant
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Applicant object </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public Applicant findApplicant(UUID applicantId) throws ApiException {
-        ApiResponse<Applicant> localVarResp = findApplicantWithHttpInfo(applicantId);
-        return localVarResp.getData();
-    }
 
-    /**
-     * Retrieve Applicant
-     * Retrieves a single applicant. Returns an applicant object. 
-     * @param applicantId  (required)
-     * @return ApiResponse&lt;Applicant&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Applicant object </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<Applicant> findApplicantWithHttpInfo(UUID applicantId) throws ApiException {
+    private ApiResponse<Applicant> findApplicantWithHttpInfo(UUID applicantId) throws ApiException {
         okhttp3.Call localVarCall = findApplicantValidateBeforeCall(applicantId, null);
         Type localVarReturnType = new TypeToken<Applicant>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * Retrieve Applicant (asynchronously)
-     * Retrieves a single applicant. Returns an applicant object. 
-     * @param applicantId  (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Applicant object </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call findApplicantAsync(UUID applicantId, final ApiCallback<Applicant> _callback) throws ApiException {
+    private okhttp3.Call findApplicantAsync(UUID applicantId, final ApiCallback<Applicant> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = findApplicantValidateBeforeCall(applicantId, _callback);
         Type localVarReturnType = new TypeToken<Applicant>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class APIfindApplicantRequest {
+        private final UUID applicantId;
+
+        private APIfindApplicantRequest(UUID applicantId) {
+            this.applicantId = applicantId;
+        }
+
+        /**
+         * Build call for findApplicant
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Applicant object </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return findApplicantCall(applicantId, _callback);
+        }
+
+        /**
+         * Execute findApplicant request
+         * @return Applicant
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Applicant object </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public Applicant execute() throws ApiException {
+            ApiResponse<Applicant> localVarResp = findApplicantWithHttpInfo(applicantId);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute findApplicant request with HTTP info returned
+         * @return ApiResponse&lt;Applicant&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Applicant object </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<Applicant> executeWithHttpInfo() throws ApiException {
+            return findApplicantWithHttpInfo(applicantId);
+        }
+
+        /**
+         * Execute findApplicant request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Applicant object </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<Applicant> _callback) throws ApiException {
+            return findApplicantAsync(applicantId, _callback);
+        }
+    }
+
     /**
-     * Build call for findApplicantConsents
+     * Retrieve Applicant
+     * Retrieves a single applicant. Returns an applicant object. 
      * @param applicantId  (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * @return APIfindApplicantRequest
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Applicant Consents object </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Applicant object </td><td>  -  </td></tr>
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call findApplicantConsentsCall(UUID applicantId, final ApiCallback _callback) throws ApiException {
+    public APIfindApplicantRequest findApplicant(UUID applicantId) {
+        return new APIfindApplicantRequest(applicantId);
+    }
+    private okhttp3.Call findApplicantConsentsCall(UUID applicantId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -4488,82 +5467,113 @@ public class DefaultApi {
 
     }
 
-    /**
-     * Retrieve Applicant Consents
-     * Retrieves consents for single applicant. 
-     * @param applicantId  (required)
-     * @return List&lt;ApplicantConsent&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Applicant Consents object </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public List<ApplicantConsent> findApplicantConsents(UUID applicantId) throws ApiException {
-        ApiResponse<List<ApplicantConsent>> localVarResp = findApplicantConsentsWithHttpInfo(applicantId);
-        return localVarResp.getData();
-    }
 
-    /**
-     * Retrieve Applicant Consents
-     * Retrieves consents for single applicant. 
-     * @param applicantId  (required)
-     * @return ApiResponse&lt;List&lt;ApplicantConsent&gt;&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Applicant Consents object </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<List<ApplicantConsent>> findApplicantConsentsWithHttpInfo(UUID applicantId) throws ApiException {
+    private ApiResponse<List<ApplicantConsent>> findApplicantConsentsWithHttpInfo(UUID applicantId) throws ApiException {
         okhttp3.Call localVarCall = findApplicantConsentsValidateBeforeCall(applicantId, null);
         Type localVarReturnType = new TypeToken<List<ApplicantConsent>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * Retrieve Applicant Consents (asynchronously)
-     * Retrieves consents for single applicant. 
-     * @param applicantId  (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Applicant Consents object </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call findApplicantConsentsAsync(UUID applicantId, final ApiCallback<List<ApplicantConsent>> _callback) throws ApiException {
+    private okhttp3.Call findApplicantConsentsAsync(UUID applicantId, final ApiCallback<List<ApplicantConsent>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = findApplicantConsentsValidateBeforeCall(applicantId, _callback);
         Type localVarReturnType = new TypeToken<List<ApplicantConsent>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class APIfindApplicantConsentsRequest {
+        private final UUID applicantId;
+
+        private APIfindApplicantConsentsRequest(UUID applicantId) {
+            this.applicantId = applicantId;
+        }
+
+        /**
+         * Build call for findApplicantConsents
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Applicant Consents object </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return findApplicantConsentsCall(applicantId, _callback);
+        }
+
+        /**
+         * Execute findApplicantConsents request
+         * @return List&lt;ApplicantConsent&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Applicant Consents object </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public List<ApplicantConsent> execute() throws ApiException {
+            ApiResponse<List<ApplicantConsent>> localVarResp = findApplicantConsentsWithHttpInfo(applicantId);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute findApplicantConsents request with HTTP info returned
+         * @return ApiResponse&lt;List&lt;ApplicantConsent&gt;&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Applicant Consents object </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<List<ApplicantConsent>> executeWithHttpInfo() throws ApiException {
+            return findApplicantConsentsWithHttpInfo(applicantId);
+        }
+
+        /**
+         * Execute findApplicantConsents request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Applicant Consents object </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<List<ApplicantConsent>> _callback) throws ApiException {
+            return findApplicantConsentsAsync(applicantId, _callback);
+        }
+    }
+
     /**
-     * Build call for findCheck
-     * @param checkId  (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * Retrieve Applicant Consents
+     * Retrieves consents for single applicant. 
+     * @param applicantId  (required)
+     * @return APIfindApplicantConsentsRequest
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Check object </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Applicant Consents object </td><td>  -  </td></tr>
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call findCheckCall(UUID checkId, final ApiCallback _callback) throws ApiException {
+    public APIfindApplicantConsentsRequest findApplicantConsents(UUID applicantId) {
+        return new APIfindApplicantConsentsRequest(applicantId);
+    }
+    private okhttp3.Call findCheckCall(UUID checkId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -4619,82 +5629,113 @@ public class DefaultApi {
 
     }
 
-    /**
-     * Retrieve a Check
-     * Retrieves a single check. Returns a check object. 
-     * @param checkId  (required)
-     * @return Check
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Check object </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public Check findCheck(UUID checkId) throws ApiException {
-        ApiResponse<Check> localVarResp = findCheckWithHttpInfo(checkId);
-        return localVarResp.getData();
-    }
 
-    /**
-     * Retrieve a Check
-     * Retrieves a single check. Returns a check object. 
-     * @param checkId  (required)
-     * @return ApiResponse&lt;Check&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Check object </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<Check> findCheckWithHttpInfo(UUID checkId) throws ApiException {
+    private ApiResponse<Check> findCheckWithHttpInfo(UUID checkId) throws ApiException {
         okhttp3.Call localVarCall = findCheckValidateBeforeCall(checkId, null);
         Type localVarReturnType = new TypeToken<Check>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * Retrieve a Check (asynchronously)
-     * Retrieves a single check. Returns a check object. 
-     * @param checkId  (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Check object </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call findCheckAsync(UUID checkId, final ApiCallback<Check> _callback) throws ApiException {
+    private okhttp3.Call findCheckAsync(UUID checkId, final ApiCallback<Check> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = findCheckValidateBeforeCall(checkId, _callback);
         Type localVarReturnType = new TypeToken<Check>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class APIfindCheckRequest {
+        private final UUID checkId;
+
+        private APIfindCheckRequest(UUID checkId) {
+            this.checkId = checkId;
+        }
+
+        /**
+         * Build call for findCheck
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Check object </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return findCheckCall(checkId, _callback);
+        }
+
+        /**
+         * Execute findCheck request
+         * @return Check
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Check object </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public Check execute() throws ApiException {
+            ApiResponse<Check> localVarResp = findCheckWithHttpInfo(checkId);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute findCheck request with HTTP info returned
+         * @return ApiResponse&lt;Check&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Check object </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<Check> executeWithHttpInfo() throws ApiException {
+            return findCheckWithHttpInfo(checkId);
+        }
+
+        /**
+         * Execute findCheck request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Check object </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<Check> _callback) throws ApiException {
+            return findCheckAsync(checkId, _callback);
+        }
+    }
+
     /**
-     * Build call for findDocument
-     * @param documentId  (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * Retrieve a Check
+     * Retrieves a single check. Returns a check object. 
+     * @param checkId  (required)
+     * @return APIfindCheckRequest
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> A document </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Check object </td><td>  -  </td></tr>
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call findDocumentCall(UUID documentId, final ApiCallback _callback) throws ApiException {
+    public APIfindCheckRequest findCheck(UUID checkId) {
+        return new APIfindCheckRequest(checkId);
+    }
+    private okhttp3.Call findDocumentCall(UUID documentId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -4750,82 +5791,113 @@ public class DefaultApi {
 
     }
 
-    /**
-     * Retrieve document
-     * A single document can be retrieved by calling this endpoint with the document&#39;s unique identifier. 
-     * @param documentId  (required)
-     * @return Document
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> A document </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public Document findDocument(UUID documentId) throws ApiException {
-        ApiResponse<Document> localVarResp = findDocumentWithHttpInfo(documentId);
-        return localVarResp.getData();
-    }
 
-    /**
-     * Retrieve document
-     * A single document can be retrieved by calling this endpoint with the document&#39;s unique identifier. 
-     * @param documentId  (required)
-     * @return ApiResponse&lt;Document&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> A document </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<Document> findDocumentWithHttpInfo(UUID documentId) throws ApiException {
+    private ApiResponse<Document> findDocumentWithHttpInfo(UUID documentId) throws ApiException {
         okhttp3.Call localVarCall = findDocumentValidateBeforeCall(documentId, null);
         Type localVarReturnType = new TypeToken<Document>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * Retrieve document (asynchronously)
-     * A single document can be retrieved by calling this endpoint with the document&#39;s unique identifier. 
-     * @param documentId  (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> A document </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call findDocumentAsync(UUID documentId, final ApiCallback<Document> _callback) throws ApiException {
+    private okhttp3.Call findDocumentAsync(UUID documentId, final ApiCallback<Document> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = findDocumentValidateBeforeCall(documentId, _callback);
         Type localVarReturnType = new TypeToken<Document>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class APIfindDocumentRequest {
+        private final UUID documentId;
+
+        private APIfindDocumentRequest(UUID documentId) {
+            this.documentId = documentId;
+        }
+
+        /**
+         * Build call for findDocument
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> A document </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return findDocumentCall(documentId, _callback);
+        }
+
+        /**
+         * Execute findDocument request
+         * @return Document
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> A document </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public Document execute() throws ApiException {
+            ApiResponse<Document> localVarResp = findDocumentWithHttpInfo(documentId);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute findDocument request with HTTP info returned
+         * @return ApiResponse&lt;Document&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> A document </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<Document> executeWithHttpInfo() throws ApiException {
+            return findDocumentWithHttpInfo(documentId);
+        }
+
+        /**
+         * Execute findDocument request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> A document </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<Document> _callback) throws ApiException {
+            return findDocumentAsync(documentId, _callback);
+        }
+    }
+
     /**
-     * Build call for findIdPhoto
-     * @param idPhotoId The ID photo&#39;s unique identifier. (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * Retrieve document
+     * A single document can be retrieved by calling this endpoint with the document&#39;s unique identifier. 
+     * @param documentId  (required)
+     * @return APIfindDocumentRequest
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> A ID photo </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> A document </td><td>  -  </td></tr>
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call findIdPhotoCall(UUID idPhotoId, final ApiCallback _callback) throws ApiException {
+    public APIfindDocumentRequest findDocument(UUID documentId) {
+        return new APIfindDocumentRequest(documentId);
+    }
+    private okhttp3.Call findIdPhotoCall(UUID idPhotoId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -4881,82 +5953,113 @@ public class DefaultApi {
 
     }
 
-    /**
-     * Retrieve ID photo
-     * Retrieves a single ID photo. Returns a ID photo object. 
-     * @param idPhotoId The ID photo&#39;s unique identifier. (required)
-     * @return IdPhoto
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> A ID photo </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public IdPhoto findIdPhoto(UUID idPhotoId) throws ApiException {
-        ApiResponse<IdPhoto> localVarResp = findIdPhotoWithHttpInfo(idPhotoId);
-        return localVarResp.getData();
-    }
 
-    /**
-     * Retrieve ID photo
-     * Retrieves a single ID photo. Returns a ID photo object. 
-     * @param idPhotoId The ID photo&#39;s unique identifier. (required)
-     * @return ApiResponse&lt;IdPhoto&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> A ID photo </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<IdPhoto> findIdPhotoWithHttpInfo(UUID idPhotoId) throws ApiException {
+    private ApiResponse<IdPhoto> findIdPhotoWithHttpInfo(UUID idPhotoId) throws ApiException {
         okhttp3.Call localVarCall = findIdPhotoValidateBeforeCall(idPhotoId, null);
         Type localVarReturnType = new TypeToken<IdPhoto>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * Retrieve ID photo (asynchronously)
-     * Retrieves a single ID photo. Returns a ID photo object. 
-     * @param idPhotoId The ID photo&#39;s unique identifier. (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> A ID photo </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call findIdPhotoAsync(UUID idPhotoId, final ApiCallback<IdPhoto> _callback) throws ApiException {
+    private okhttp3.Call findIdPhotoAsync(UUID idPhotoId, final ApiCallback<IdPhoto> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = findIdPhotoValidateBeforeCall(idPhotoId, _callback);
         Type localVarReturnType = new TypeToken<IdPhoto>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class APIfindIdPhotoRequest {
+        private final UUID idPhotoId;
+
+        private APIfindIdPhotoRequest(UUID idPhotoId) {
+            this.idPhotoId = idPhotoId;
+        }
+
+        /**
+         * Build call for findIdPhoto
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> A ID photo </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return findIdPhotoCall(idPhotoId, _callback);
+        }
+
+        /**
+         * Execute findIdPhoto request
+         * @return IdPhoto
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> A ID photo </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public IdPhoto execute() throws ApiException {
+            ApiResponse<IdPhoto> localVarResp = findIdPhotoWithHttpInfo(idPhotoId);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute findIdPhoto request with HTTP info returned
+         * @return ApiResponse&lt;IdPhoto&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> A ID photo </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<IdPhoto> executeWithHttpInfo() throws ApiException {
+            return findIdPhotoWithHttpInfo(idPhotoId);
+        }
+
+        /**
+         * Execute findIdPhoto request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> A ID photo </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<IdPhoto> _callback) throws ApiException {
+            return findIdPhotoAsync(idPhotoId, _callback);
+        }
+    }
+
     /**
-     * Build call for findLivePhoto
-     * @param livePhotoId The live photo&#39;s unique identifier. (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * Retrieve ID photo
+     * Retrieves a single ID photo. Returns a ID photo object. 
+     * @param idPhotoId The ID photo&#39;s unique identifier. (required)
+     * @return APIfindIdPhotoRequest
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> A live photo </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> A ID photo </td><td>  -  </td></tr>
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call findLivePhotoCall(UUID livePhotoId, final ApiCallback _callback) throws ApiException {
+    public APIfindIdPhotoRequest findIdPhoto(UUID idPhotoId) {
+        return new APIfindIdPhotoRequest(idPhotoId);
+    }
+    private okhttp3.Call findLivePhotoCall(UUID livePhotoId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -5012,82 +6115,113 @@ public class DefaultApi {
 
     }
 
-    /**
-     * Retrieve live photo
-     * Retrieves a single live photo. Returns a live photo object. 
-     * @param livePhotoId The live photo&#39;s unique identifier. (required)
-     * @return LivePhoto
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> A live photo </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public LivePhoto findLivePhoto(UUID livePhotoId) throws ApiException {
-        ApiResponse<LivePhoto> localVarResp = findLivePhotoWithHttpInfo(livePhotoId);
-        return localVarResp.getData();
-    }
 
-    /**
-     * Retrieve live photo
-     * Retrieves a single live photo. Returns a live photo object. 
-     * @param livePhotoId The live photo&#39;s unique identifier. (required)
-     * @return ApiResponse&lt;LivePhoto&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> A live photo </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<LivePhoto> findLivePhotoWithHttpInfo(UUID livePhotoId) throws ApiException {
+    private ApiResponse<LivePhoto> findLivePhotoWithHttpInfo(UUID livePhotoId) throws ApiException {
         okhttp3.Call localVarCall = findLivePhotoValidateBeforeCall(livePhotoId, null);
         Type localVarReturnType = new TypeToken<LivePhoto>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * Retrieve live photo (asynchronously)
-     * Retrieves a single live photo. Returns a live photo object. 
-     * @param livePhotoId The live photo&#39;s unique identifier. (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> A live photo </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call findLivePhotoAsync(UUID livePhotoId, final ApiCallback<LivePhoto> _callback) throws ApiException {
+    private okhttp3.Call findLivePhotoAsync(UUID livePhotoId, final ApiCallback<LivePhoto> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = findLivePhotoValidateBeforeCall(livePhotoId, _callback);
         Type localVarReturnType = new TypeToken<LivePhoto>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class APIfindLivePhotoRequest {
+        private final UUID livePhotoId;
+
+        private APIfindLivePhotoRequest(UUID livePhotoId) {
+            this.livePhotoId = livePhotoId;
+        }
+
+        /**
+         * Build call for findLivePhoto
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> A live photo </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return findLivePhotoCall(livePhotoId, _callback);
+        }
+
+        /**
+         * Execute findLivePhoto request
+         * @return LivePhoto
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> A live photo </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public LivePhoto execute() throws ApiException {
+            ApiResponse<LivePhoto> localVarResp = findLivePhotoWithHttpInfo(livePhotoId);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute findLivePhoto request with HTTP info returned
+         * @return ApiResponse&lt;LivePhoto&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> A live photo </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<LivePhoto> executeWithHttpInfo() throws ApiException {
+            return findLivePhotoWithHttpInfo(livePhotoId);
+        }
+
+        /**
+         * Execute findLivePhoto request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> A live photo </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<LivePhoto> _callback) throws ApiException {
+            return findLivePhotoAsync(livePhotoId, _callback);
+        }
+    }
+
     /**
-     * Build call for findLiveVideo
-     * @param liveVideoId The live video&#39;s unique identifier. (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * Retrieve live photo
+     * Retrieves a single live photo. Returns a live photo object. 
+     * @param livePhotoId The live photo&#39;s unique identifier. (required)
+     * @return APIfindLivePhotoRequest
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> A live video </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> A live photo </td><td>  -  </td></tr>
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call findLiveVideoCall(UUID liveVideoId, final ApiCallback _callback) throws ApiException {
+    public APIfindLivePhotoRequest findLivePhoto(UUID livePhotoId) {
+        return new APIfindLivePhotoRequest(livePhotoId);
+    }
+    private okhttp3.Call findLiveVideoCall(UUID liveVideoId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -5143,82 +6277,113 @@ public class DefaultApi {
 
     }
 
-    /**
-     * Retrieve live video
-     * Retrieves a single live video. Returns the corresponding live video object. 
-     * @param liveVideoId The live video&#39;s unique identifier. (required)
-     * @return LiveVideo
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> A live video </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public LiveVideo findLiveVideo(UUID liveVideoId) throws ApiException {
-        ApiResponse<LiveVideo> localVarResp = findLiveVideoWithHttpInfo(liveVideoId);
-        return localVarResp.getData();
-    }
 
-    /**
-     * Retrieve live video
-     * Retrieves a single live video. Returns the corresponding live video object. 
-     * @param liveVideoId The live video&#39;s unique identifier. (required)
-     * @return ApiResponse&lt;LiveVideo&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> A live video </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<LiveVideo> findLiveVideoWithHttpInfo(UUID liveVideoId) throws ApiException {
+    private ApiResponse<LiveVideo> findLiveVideoWithHttpInfo(UUID liveVideoId) throws ApiException {
         okhttp3.Call localVarCall = findLiveVideoValidateBeforeCall(liveVideoId, null);
         Type localVarReturnType = new TypeToken<LiveVideo>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * Retrieve live video (asynchronously)
-     * Retrieves a single live video. Returns the corresponding live video object. 
-     * @param liveVideoId The live video&#39;s unique identifier. (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> A live video </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call findLiveVideoAsync(UUID liveVideoId, final ApiCallback<LiveVideo> _callback) throws ApiException {
+    private okhttp3.Call findLiveVideoAsync(UUID liveVideoId, final ApiCallback<LiveVideo> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = findLiveVideoValidateBeforeCall(liveVideoId, _callback);
         Type localVarReturnType = new TypeToken<LiveVideo>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class APIfindLiveVideoRequest {
+        private final UUID liveVideoId;
+
+        private APIfindLiveVideoRequest(UUID liveVideoId) {
+            this.liveVideoId = liveVideoId;
+        }
+
+        /**
+         * Build call for findLiveVideo
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> A live video </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return findLiveVideoCall(liveVideoId, _callback);
+        }
+
+        /**
+         * Execute findLiveVideo request
+         * @return LiveVideo
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> A live video </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public LiveVideo execute() throws ApiException {
+            ApiResponse<LiveVideo> localVarResp = findLiveVideoWithHttpInfo(liveVideoId);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute findLiveVideo request with HTTP info returned
+         * @return ApiResponse&lt;LiveVideo&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> A live video </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<LiveVideo> executeWithHttpInfo() throws ApiException {
+            return findLiveVideoWithHttpInfo(liveVideoId);
+        }
+
+        /**
+         * Execute findLiveVideo request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> A live video </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<LiveVideo> _callback) throws ApiException {
+            return findLiveVideoAsync(liveVideoId, _callback);
+        }
+    }
+
     /**
-     * Build call for findMotionCapture
-     * @param motionCaptureId The motion capture&#39;s unique identifier. (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * Retrieve live video
+     * Retrieves a single live video. Returns the corresponding live video object. 
+     * @param liveVideoId The live video&#39;s unique identifier. (required)
+     * @return APIfindLiveVideoRequest
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> A motion capture </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> A live video </td><td>  -  </td></tr>
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call findMotionCaptureCall(UUID motionCaptureId, final ApiCallback _callback) throws ApiException {
+    public APIfindLiveVideoRequest findLiveVideo(UUID liveVideoId) {
+        return new APIfindLiveVideoRequest(liveVideoId);
+    }
+    private okhttp3.Call findMotionCaptureCall(UUID motionCaptureId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -5274,84 +6439,113 @@ public class DefaultApi {
 
     }
 
-    /**
-     * Retrieve motion capture
-     * Retrieves a single motion capture. Returns the corresponding motion capture object. 
-     * @param motionCaptureId The motion capture&#39;s unique identifier. (required)
-     * @return MotionCapture
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> A motion capture </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public MotionCapture findMotionCapture(UUID motionCaptureId) throws ApiException {
-        ApiResponse<MotionCapture> localVarResp = findMotionCaptureWithHttpInfo(motionCaptureId);
-        return localVarResp.getData();
-    }
 
-    /**
-     * Retrieve motion capture
-     * Retrieves a single motion capture. Returns the corresponding motion capture object. 
-     * @param motionCaptureId The motion capture&#39;s unique identifier. (required)
-     * @return ApiResponse&lt;MotionCapture&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> A motion capture </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<MotionCapture> findMotionCaptureWithHttpInfo(UUID motionCaptureId) throws ApiException {
+    private ApiResponse<MotionCapture> findMotionCaptureWithHttpInfo(UUID motionCaptureId) throws ApiException {
         okhttp3.Call localVarCall = findMotionCaptureValidateBeforeCall(motionCaptureId, null);
         Type localVarReturnType = new TypeToken<MotionCapture>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * Retrieve motion capture (asynchronously)
-     * Retrieves a single motion capture. Returns the corresponding motion capture object. 
-     * @param motionCaptureId The motion capture&#39;s unique identifier. (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> A motion capture </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call findMotionCaptureAsync(UUID motionCaptureId, final ApiCallback<MotionCapture> _callback) throws ApiException {
+    private okhttp3.Call findMotionCaptureAsync(UUID motionCaptureId, final ApiCallback<MotionCapture> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = findMotionCaptureValidateBeforeCall(motionCaptureId, _callback);
         Type localVarReturnType = new TypeToken<MotionCapture>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class APIfindMotionCaptureRequest {
+        private final UUID motionCaptureId;
+
+        private APIfindMotionCaptureRequest(UUID motionCaptureId) {
+            this.motionCaptureId = motionCaptureId;
+        }
+
+        /**
+         * Build call for findMotionCapture
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> A motion capture </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return findMotionCaptureCall(motionCaptureId, _callback);
+        }
+
+        /**
+         * Execute findMotionCapture request
+         * @return MotionCapture
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> A motion capture </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public MotionCapture execute() throws ApiException {
+            ApiResponse<MotionCapture> localVarResp = findMotionCaptureWithHttpInfo(motionCaptureId);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute findMotionCapture request with HTTP info returned
+         * @return ApiResponse&lt;MotionCapture&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> A motion capture </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<MotionCapture> executeWithHttpInfo() throws ApiException {
+            return findMotionCaptureWithHttpInfo(motionCaptureId);
+        }
+
+        /**
+         * Execute findMotionCapture request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> A motion capture </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<MotionCapture> _callback) throws ApiException {
+            return findMotionCaptureAsync(motionCaptureId, _callback);
+        }
+    }
+
     /**
-     * Build call for findPasskey
-     * @param username Username that owns the passkey. (required)
-     * @param passkeyId Passkey ID. (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * Retrieve motion capture
+     * Retrieves a single motion capture. Returns the corresponding motion capture object. 
+     * @param motionCaptureId The motion capture&#39;s unique identifier. (required)
+     * @return APIfindMotionCaptureRequest
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> The requested passkey </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Passkey not found </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> A motion capture </td><td>  -  </td></tr>
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call findPasskeyCall(String username, String passkeyId, final ApiCallback _callback) throws ApiException {
+    public APIfindMotionCaptureRequest findMotionCapture(UUID motionCaptureId) {
+        return new APIfindMotionCaptureRequest(motionCaptureId);
+    }
+    private okhttp3.Call findPasskeyCall(String username, String passkeyId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -5413,88 +6607,121 @@ public class DefaultApi {
 
     }
 
-    /**
-     * Retrieve passkey
-     * Returns a passkey&#39;s details. 
-     * @param username Username that owns the passkey. (required)
-     * @param passkeyId Passkey ID. (required)
-     * @return Passkey
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> The requested passkey </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Passkey not found </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public Passkey findPasskey(String username, String passkeyId) throws ApiException {
-        ApiResponse<Passkey> localVarResp = findPasskeyWithHttpInfo(username, passkeyId);
-        return localVarResp.getData();
-    }
 
-    /**
-     * Retrieve passkey
-     * Returns a passkey&#39;s details. 
-     * @param username Username that owns the passkey. (required)
-     * @param passkeyId Passkey ID. (required)
-     * @return ApiResponse&lt;Passkey&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> The requested passkey </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Passkey not found </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<Passkey> findPasskeyWithHttpInfo(String username, String passkeyId) throws ApiException {
+    private ApiResponse<Passkey> findPasskeyWithHttpInfo(String username, String passkeyId) throws ApiException {
         okhttp3.Call localVarCall = findPasskeyValidateBeforeCall(username, passkeyId, null);
         Type localVarReturnType = new TypeToken<Passkey>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * Retrieve passkey (asynchronously)
-     * Returns a passkey&#39;s details. 
-     * @param username Username that owns the passkey. (required)
-     * @param passkeyId Passkey ID. (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> The requested passkey </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Passkey not found </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call findPasskeyAsync(String username, String passkeyId, final ApiCallback<Passkey> _callback) throws ApiException {
+    private okhttp3.Call findPasskeyAsync(String username, String passkeyId, final ApiCallback<Passkey> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = findPasskeyValidateBeforeCall(username, passkeyId, _callback);
         Type localVarReturnType = new TypeToken<Passkey>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class APIfindPasskeyRequest {
+        private final String username;
+        private final String passkeyId;
+
+        private APIfindPasskeyRequest(String username, String passkeyId) {
+            this.username = username;
+            this.passkeyId = passkeyId;
+        }
+
+        /**
+         * Build call for findPasskey
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> The requested passkey </td><td>  -  </td></tr>
+            <tr><td> 404 </td><td> Passkey not found </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return findPasskeyCall(username, passkeyId, _callback);
+        }
+
+        /**
+         * Execute findPasskey request
+         * @return Passkey
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> The requested passkey </td><td>  -  </td></tr>
+            <tr><td> 404 </td><td> Passkey not found </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public Passkey execute() throws ApiException {
+            ApiResponse<Passkey> localVarResp = findPasskeyWithHttpInfo(username, passkeyId);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute findPasskey request with HTTP info returned
+         * @return ApiResponse&lt;Passkey&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> The requested passkey </td><td>  -  </td></tr>
+            <tr><td> 404 </td><td> Passkey not found </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<Passkey> executeWithHttpInfo() throws ApiException {
+            return findPasskeyWithHttpInfo(username, passkeyId);
+        }
+
+        /**
+         * Execute findPasskey request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> The requested passkey </td><td>  -  </td></tr>
+            <tr><td> 404 </td><td> Passkey not found </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<Passkey> _callback) throws ApiException {
+            return findPasskeyAsync(username, passkeyId, _callback);
+        }
+    }
+
     /**
-     * Build call for findReport
-     * @param reportId  (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * Retrieve passkey
+     * Returns a passkey&#39;s details. 
+     * @param username Username that owns the passkey. (required)
+     * @param passkeyId Passkey ID. (required)
+     * @return APIfindPasskeyRequest
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Report object </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> The requested passkey </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Passkey not found </td><td>  -  </td></tr>
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call findReportCall(UUID reportId, final ApiCallback _callback) throws ApiException {
+    public APIfindPasskeyRequest findPasskey(String username, String passkeyId) {
+        return new APIfindPasskeyRequest(username, passkeyId);
+    }
+    private okhttp3.Call findReportCall(UUID reportId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -5550,82 +6777,113 @@ public class DefaultApi {
 
     }
 
-    /**
-     * Retrieve report
-     * A single report can be retrieved using this endpoint with the corresponding unique identifier. 
-     * @param reportId  (required)
-     * @return Report
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Report object </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public Report findReport(UUID reportId) throws ApiException {
-        ApiResponse<Report> localVarResp = findReportWithHttpInfo(reportId);
-        return localVarResp.getData();
-    }
 
-    /**
-     * Retrieve report
-     * A single report can be retrieved using this endpoint with the corresponding unique identifier. 
-     * @param reportId  (required)
-     * @return ApiResponse&lt;Report&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Report object </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<Report> findReportWithHttpInfo(UUID reportId) throws ApiException {
+    private ApiResponse<Report> findReportWithHttpInfo(UUID reportId) throws ApiException {
         okhttp3.Call localVarCall = findReportValidateBeforeCall(reportId, null);
         Type localVarReturnType = new TypeToken<Report>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * Retrieve report (asynchronously)
-     * A single report can be retrieved using this endpoint with the corresponding unique identifier. 
-     * @param reportId  (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Report object </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call findReportAsync(UUID reportId, final ApiCallback<Report> _callback) throws ApiException {
+    private okhttp3.Call findReportAsync(UUID reportId, final ApiCallback<Report> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = findReportValidateBeforeCall(reportId, _callback);
         Type localVarReturnType = new TypeToken<Report>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class APIfindReportRequest {
+        private final UUID reportId;
+
+        private APIfindReportRequest(UUID reportId) {
+            this.reportId = reportId;
+        }
+
+        /**
+         * Build call for findReport
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Report object </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return findReportCall(reportId, _callback);
+        }
+
+        /**
+         * Execute findReport request
+         * @return Report
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Report object </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public Report execute() throws ApiException {
+            ApiResponse<Report> localVarResp = findReportWithHttpInfo(reportId);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute findReport request with HTTP info returned
+         * @return ApiResponse&lt;Report&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Report object </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<Report> executeWithHttpInfo() throws ApiException {
+            return findReportWithHttpInfo(reportId);
+        }
+
+        /**
+         * Execute findReport request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Report object </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<Report> _callback) throws ApiException {
+            return findReportAsync(reportId, _callback);
+        }
+    }
+
     /**
-     * Build call for findSigningDocument
-     * @param signingDocumentId  (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * Retrieve report
+     * A single report can be retrieved using this endpoint with the corresponding unique identifier. 
+     * @param reportId  (required)
+     * @return APIfindReportRequest
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> A signing document </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Report object </td><td>  -  </td></tr>
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call findSigningDocumentCall(UUID signingDocumentId, final ApiCallback _callback) throws ApiException {
+    public APIfindReportRequest findReport(UUID reportId) {
+        return new APIfindReportRequest(reportId);
+    }
+    private okhttp3.Call findSigningDocumentCall(UUID signingDocumentId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -5681,83 +6939,113 @@ public class DefaultApi {
 
     }
 
-    /**
-     * Retrieve signing document
-     * A single signing document can be retrieved by calling this endpoint with the signing document&#39;s unique identifier. 
-     * @param signingDocumentId  (required)
-     * @return SigningDocument
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> A signing document </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public SigningDocument findSigningDocument(UUID signingDocumentId) throws ApiException {
-        ApiResponse<SigningDocument> localVarResp = findSigningDocumentWithHttpInfo(signingDocumentId);
-        return localVarResp.getData();
-    }
 
-    /**
-     * Retrieve signing document
-     * A single signing document can be retrieved by calling this endpoint with the signing document&#39;s unique identifier. 
-     * @param signingDocumentId  (required)
-     * @return ApiResponse&lt;SigningDocument&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> A signing document </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<SigningDocument> findSigningDocumentWithHttpInfo(UUID signingDocumentId) throws ApiException {
+    private ApiResponse<SigningDocument> findSigningDocumentWithHttpInfo(UUID signingDocumentId) throws ApiException {
         okhttp3.Call localVarCall = findSigningDocumentValidateBeforeCall(signingDocumentId, null);
         Type localVarReturnType = new TypeToken<SigningDocument>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * Retrieve signing document (asynchronously)
-     * A single signing document can be retrieved by calling this endpoint with the signing document&#39;s unique identifier. 
-     * @param signingDocumentId  (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> A signing document </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call findSigningDocumentAsync(UUID signingDocumentId, final ApiCallback<SigningDocument> _callback) throws ApiException {
+    private okhttp3.Call findSigningDocumentAsync(UUID signingDocumentId, final ApiCallback<SigningDocument> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = findSigningDocumentValidateBeforeCall(signingDocumentId, _callback);
         Type localVarReturnType = new TypeToken<SigningDocument>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class APIfindSigningDocumentRequest {
+        private final UUID signingDocumentId;
+
+        private APIfindSigningDocumentRequest(UUID signingDocumentId) {
+            this.signingDocumentId = signingDocumentId;
+        }
+
+        /**
+         * Build call for findSigningDocument
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> A signing document </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return findSigningDocumentCall(signingDocumentId, _callback);
+        }
+
+        /**
+         * Execute findSigningDocument request
+         * @return SigningDocument
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> A signing document </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public SigningDocument execute() throws ApiException {
+            ApiResponse<SigningDocument> localVarResp = findSigningDocumentWithHttpInfo(signingDocumentId);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute findSigningDocument request with HTTP info returned
+         * @return ApiResponse&lt;SigningDocument&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> A signing document </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<SigningDocument> executeWithHttpInfo() throws ApiException {
+            return findSigningDocumentWithHttpInfo(signingDocumentId);
+        }
+
+        /**
+         * Execute findSigningDocument request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> A signing document </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<SigningDocument> _callback) throws ApiException {
+            return findSigningDocumentAsync(signingDocumentId, _callback);
+        }
+    }
+
     /**
-     * Build call for findTask
-     * @param workflowRunId The unique identifier of the Workflow Run to which the Task belongs. (required)
-     * @param taskId The identifier of the Task you want to retrieve. (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * Retrieve signing document
+     * A single signing document can be retrieved by calling this endpoint with the signing document&#39;s unique identifier. 
+     * @param signingDocumentId  (required)
+     * @return APIfindSigningDocumentRequest
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> A Task object. </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> A signing document </td><td>  -  </td></tr>
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call findTaskCall(UUID workflowRunId, String taskId, final ApiCallback _callback) throws ApiException {
+    public APIfindSigningDocumentRequest findSigningDocument(UUID signingDocumentId) {
+        return new APIfindSigningDocumentRequest(signingDocumentId);
+    }
+    private okhttp3.Call findTaskCall(UUID workflowRunId, String taskId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -5819,87 +7107,116 @@ public class DefaultApi {
 
     }
 
-    /**
-     * Retrieve Task
-     * A single task can be retrieved by calling this endpoint with the unique identifier of the Task and Workflow Run. 
-     * @param workflowRunId The unique identifier of the Workflow Run to which the Task belongs. (required)
-     * @param taskId The identifier of the Task you want to retrieve. (required)
-     * @return Task
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> A Task object. </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public Task findTask(UUID workflowRunId, String taskId) throws ApiException {
-        ApiResponse<Task> localVarResp = findTaskWithHttpInfo(workflowRunId, taskId);
-        return localVarResp.getData();
-    }
 
-    /**
-     * Retrieve Task
-     * A single task can be retrieved by calling this endpoint with the unique identifier of the Task and Workflow Run. 
-     * @param workflowRunId The unique identifier of the Workflow Run to which the Task belongs. (required)
-     * @param taskId The identifier of the Task you want to retrieve. (required)
-     * @return ApiResponse&lt;Task&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> A Task object. </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<Task> findTaskWithHttpInfo(UUID workflowRunId, String taskId) throws ApiException {
+    private ApiResponse<Task> findTaskWithHttpInfo(UUID workflowRunId, String taskId) throws ApiException {
         okhttp3.Call localVarCall = findTaskValidateBeforeCall(workflowRunId, taskId, null);
         Type localVarReturnType = new TypeToken<Task>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * Retrieve Task (asynchronously)
-     * A single task can be retrieved by calling this endpoint with the unique identifier of the Task and Workflow Run. 
-     * @param workflowRunId The unique identifier of the Workflow Run to which the Task belongs. (required)
-     * @param taskId The identifier of the Task you want to retrieve. (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> A Task object. </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call findTaskAsync(UUID workflowRunId, String taskId, final ApiCallback<Task> _callback) throws ApiException {
+    private okhttp3.Call findTaskAsync(UUID workflowRunId, String taskId, final ApiCallback<Task> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = findTaskValidateBeforeCall(workflowRunId, taskId, _callback);
         Type localVarReturnType = new TypeToken<Task>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class APIfindTaskRequest {
+        private final UUID workflowRunId;
+        private final String taskId;
+
+        private APIfindTaskRequest(UUID workflowRunId, String taskId) {
+            this.workflowRunId = workflowRunId;
+            this.taskId = taskId;
+        }
+
+        /**
+         * Build call for findTask
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> A Task object. </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return findTaskCall(workflowRunId, taskId, _callback);
+        }
+
+        /**
+         * Execute findTask request
+         * @return Task
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> A Task object. </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public Task execute() throws ApiException {
+            ApiResponse<Task> localVarResp = findTaskWithHttpInfo(workflowRunId, taskId);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute findTask request with HTTP info returned
+         * @return ApiResponse&lt;Task&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> A Task object. </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<Task> executeWithHttpInfo() throws ApiException {
+            return findTaskWithHttpInfo(workflowRunId, taskId);
+        }
+
+        /**
+         * Execute findTask request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> A Task object. </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<Task> _callback) throws ApiException {
+            return findTaskAsync(workflowRunId, taskId, _callback);
+        }
+    }
+
     /**
-     * Build call for findTimelineFile
-     * @param workflowRunId The unique identifier of the Workflow Run. (required)
-     * @param timelineFileId The unique identifier for the Timefile File. (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * Retrieve Task
+     * A single task can be retrieved by calling this endpoint with the unique identifier of the Task and Workflow Run. 
+     * @param workflowRunId The unique identifier of the Workflow Run to which the Task belongs. (required)
+     * @param taskId The identifier of the Task you want to retrieve. (required)
+     * @return APIfindTaskRequest
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 302 </td><td> Found </td><td>  * Location - Link to the Timeline File. <br>  </td></tr>
-        <tr><td> 200 </td><td> The Timeline File PDF binary data. </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> A Task object. </td><td>  -  </td></tr>
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call findTimelineFileCall(UUID workflowRunId, UUID timelineFileId, final ApiCallback _callback) throws ApiException {
+    public APIfindTaskRequest findTask(UUID workflowRunId, String taskId) {
+        return new APIfindTaskRequest(workflowRunId, taskId);
+    }
+    private okhttp3.Call findTimelineFileCall(UUID workflowRunId, UUID timelineFileId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -5962,88 +7279,121 @@ public class DefaultApi {
 
     }
 
-    /**
-     * Retrieve Timeline File for Workflow Run
-     * Retrieves the Timeline File for the designated Workflow Run. 
-     * @param workflowRunId The unique identifier of the Workflow Run. (required)
-     * @param timelineFileId The unique identifier for the Timefile File. (required)
-     * @return FileTransfer
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 302 </td><td> Found </td><td>  * Location - Link to the Timeline File. <br>  </td></tr>
-        <tr><td> 200 </td><td> The Timeline File PDF binary data. </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public FileTransfer findTimelineFile(UUID workflowRunId, UUID timelineFileId) throws ApiException {
-        ApiResponse<FileTransfer> localVarResp = findTimelineFileWithHttpInfo(workflowRunId, timelineFileId);
-        return localVarResp.getData();
-    }
 
-    /**
-     * Retrieve Timeline File for Workflow Run
-     * Retrieves the Timeline File for the designated Workflow Run. 
-     * @param workflowRunId The unique identifier of the Workflow Run. (required)
-     * @param timelineFileId The unique identifier for the Timefile File. (required)
-     * @return ApiResponse&lt;FileTransfer&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 302 </td><td> Found </td><td>  * Location - Link to the Timeline File. <br>  </td></tr>
-        <tr><td> 200 </td><td> The Timeline File PDF binary data. </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<FileTransfer> findTimelineFileWithHttpInfo(UUID workflowRunId, UUID timelineFileId) throws ApiException {
+    private ApiResponse<FileTransfer> findTimelineFileWithHttpInfo(UUID workflowRunId, UUID timelineFileId) throws ApiException {
         okhttp3.Call localVarCall = findTimelineFileValidateBeforeCall(workflowRunId, timelineFileId, null);
         Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * Retrieve Timeline File for Workflow Run (asynchronously)
-     * Retrieves the Timeline File for the designated Workflow Run. 
-     * @param workflowRunId The unique identifier of the Workflow Run. (required)
-     * @param timelineFileId The unique identifier for the Timefile File. (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 302 </td><td> Found </td><td>  * Location - Link to the Timeline File. <br>  </td></tr>
-        <tr><td> 200 </td><td> The Timeline File PDF binary data. </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call findTimelineFileAsync(UUID workflowRunId, UUID timelineFileId, final ApiCallback<FileTransfer> _callback) throws ApiException {
+    private okhttp3.Call findTimelineFileAsync(UUID workflowRunId, UUID timelineFileId, final ApiCallback<FileTransfer> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = findTimelineFileValidateBeforeCall(workflowRunId, timelineFileId, _callback);
         Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class APIfindTimelineFileRequest {
+        private final UUID workflowRunId;
+        private final UUID timelineFileId;
+
+        private APIfindTimelineFileRequest(UUID workflowRunId, UUID timelineFileId) {
+            this.workflowRunId = workflowRunId;
+            this.timelineFileId = timelineFileId;
+        }
+
+        /**
+         * Build call for findTimelineFile
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 302 </td><td> Found </td><td>  * Location - Link to the Timeline File. <br>  </td></tr>
+            <tr><td> 200 </td><td> The Timeline File PDF binary data. </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return findTimelineFileCall(workflowRunId, timelineFileId, _callback);
+        }
+
+        /**
+         * Execute findTimelineFile request
+         * @return FileTransfer
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 302 </td><td> Found </td><td>  * Location - Link to the Timeline File. <br>  </td></tr>
+            <tr><td> 200 </td><td> The Timeline File PDF binary data. </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public FileTransfer execute() throws ApiException {
+            ApiResponse<FileTransfer> localVarResp = findTimelineFileWithHttpInfo(workflowRunId, timelineFileId);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute findTimelineFile request with HTTP info returned
+         * @return ApiResponse&lt;FileTransfer&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 302 </td><td> Found </td><td>  * Location - Link to the Timeline File. <br>  </td></tr>
+            <tr><td> 200 </td><td> The Timeline File PDF binary data. </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<FileTransfer> executeWithHttpInfo() throws ApiException {
+            return findTimelineFileWithHttpInfo(workflowRunId, timelineFileId);
+        }
+
+        /**
+         * Execute findTimelineFile request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 302 </td><td> Found </td><td>  * Location - Link to the Timeline File. <br>  </td></tr>
+            <tr><td> 200 </td><td> The Timeline File PDF binary data. </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<FileTransfer> _callback) throws ApiException {
+            return findTimelineFileAsync(workflowRunId, timelineFileId, _callback);
+        }
+    }
+
     /**
-     * Build call for findWatchlistMonitor
-     * @param monitorId The watchlist monitor&#39;s unique identifier. (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * Retrieve Timeline File for Workflow Run
+     * Retrieves the Timeline File for the designated Workflow Run. 
+     * @param workflowRunId The unique identifier of the Workflow Run. (required)
+     * @param timelineFileId The unique identifier for the Timefile File. (required)
+     * @return APIfindTimelineFileRequest
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> A watchlist monitor </td><td>  -  </td></tr>
+        <tr><td> 302 </td><td> Found </td><td>  * Location - Link to the Timeline File. <br>  </td></tr>
+        <tr><td> 200 </td><td> The Timeline File PDF binary data. </td><td>  -  </td></tr>
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call findWatchlistMonitorCall(UUID monitorId, final ApiCallback _callback) throws ApiException {
+    public APIfindTimelineFileRequest findTimelineFile(UUID workflowRunId, UUID timelineFileId) {
+        return new APIfindTimelineFileRequest(workflowRunId, timelineFileId);
+    }
+    private okhttp3.Call findWatchlistMonitorCall(UUID monitorId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -6099,82 +7449,113 @@ public class DefaultApi {
 
     }
 
-    /**
-     * Retrieve monitor
-     * Retrieves a single monitor 
-     * @param monitorId The watchlist monitor&#39;s unique identifier. (required)
-     * @return WatchlistMonitor
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> A watchlist monitor </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public WatchlistMonitor findWatchlistMonitor(UUID monitorId) throws ApiException {
-        ApiResponse<WatchlistMonitor> localVarResp = findWatchlistMonitorWithHttpInfo(monitorId);
-        return localVarResp.getData();
-    }
 
-    /**
-     * Retrieve monitor
-     * Retrieves a single monitor 
-     * @param monitorId The watchlist monitor&#39;s unique identifier. (required)
-     * @return ApiResponse&lt;WatchlistMonitor&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> A watchlist monitor </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<WatchlistMonitor> findWatchlistMonitorWithHttpInfo(UUID monitorId) throws ApiException {
+    private ApiResponse<WatchlistMonitor> findWatchlistMonitorWithHttpInfo(UUID monitorId) throws ApiException {
         okhttp3.Call localVarCall = findWatchlistMonitorValidateBeforeCall(monitorId, null);
         Type localVarReturnType = new TypeToken<WatchlistMonitor>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * Retrieve monitor (asynchronously)
-     * Retrieves a single monitor 
-     * @param monitorId The watchlist monitor&#39;s unique identifier. (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> A watchlist monitor </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call findWatchlistMonitorAsync(UUID monitorId, final ApiCallback<WatchlistMonitor> _callback) throws ApiException {
+    private okhttp3.Call findWatchlistMonitorAsync(UUID monitorId, final ApiCallback<WatchlistMonitor> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = findWatchlistMonitorValidateBeforeCall(monitorId, _callback);
         Type localVarReturnType = new TypeToken<WatchlistMonitor>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class APIfindWatchlistMonitorRequest {
+        private final UUID monitorId;
+
+        private APIfindWatchlistMonitorRequest(UUID monitorId) {
+            this.monitorId = monitorId;
+        }
+
+        /**
+         * Build call for findWatchlistMonitor
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> A watchlist monitor </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return findWatchlistMonitorCall(monitorId, _callback);
+        }
+
+        /**
+         * Execute findWatchlistMonitor request
+         * @return WatchlistMonitor
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> A watchlist monitor </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public WatchlistMonitor execute() throws ApiException {
+            ApiResponse<WatchlistMonitor> localVarResp = findWatchlistMonitorWithHttpInfo(monitorId);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute findWatchlistMonitor request with HTTP info returned
+         * @return ApiResponse&lt;WatchlistMonitor&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> A watchlist monitor </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<WatchlistMonitor> executeWithHttpInfo() throws ApiException {
+            return findWatchlistMonitorWithHttpInfo(monitorId);
+        }
+
+        /**
+         * Execute findWatchlistMonitor request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> A watchlist monitor </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<WatchlistMonitor> _callback) throws ApiException {
+            return findWatchlistMonitorAsync(monitorId, _callback);
+        }
+    }
+
     /**
-     * Build call for findWebhook
-     * @param webhookId  (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * Retrieve monitor
+     * Retrieves a single monitor 
+     * @param monitorId The watchlist monitor&#39;s unique identifier. (required)
+     * @return APIfindWatchlistMonitorRequest
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Webhook object </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> A watchlist monitor </td><td>  -  </td></tr>
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call findWebhookCall(UUID webhookId, final ApiCallback _callback) throws ApiException {
+    public APIfindWatchlistMonitorRequest findWatchlistMonitor(UUID monitorId) {
+        return new APIfindWatchlistMonitorRequest(monitorId);
+    }
+    private okhttp3.Call findWebhookCall(UUID webhookId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -6230,82 +7611,113 @@ public class DefaultApi {
 
     }
 
-    /**
-     * Retrieve a Webhook
-     * Retrieves a single webhook. Returns a webhook object. 
-     * @param webhookId  (required)
-     * @return Webhook
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Webhook object </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public Webhook findWebhook(UUID webhookId) throws ApiException {
-        ApiResponse<Webhook> localVarResp = findWebhookWithHttpInfo(webhookId);
-        return localVarResp.getData();
-    }
 
-    /**
-     * Retrieve a Webhook
-     * Retrieves a single webhook. Returns a webhook object. 
-     * @param webhookId  (required)
-     * @return ApiResponse&lt;Webhook&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Webhook object </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<Webhook> findWebhookWithHttpInfo(UUID webhookId) throws ApiException {
+    private ApiResponse<Webhook> findWebhookWithHttpInfo(UUID webhookId) throws ApiException {
         okhttp3.Call localVarCall = findWebhookValidateBeforeCall(webhookId, null);
         Type localVarReturnType = new TypeToken<Webhook>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * Retrieve a Webhook (asynchronously)
-     * Retrieves a single webhook. Returns a webhook object. 
-     * @param webhookId  (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Webhook object </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call findWebhookAsync(UUID webhookId, final ApiCallback<Webhook> _callback) throws ApiException {
+    private okhttp3.Call findWebhookAsync(UUID webhookId, final ApiCallback<Webhook> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = findWebhookValidateBeforeCall(webhookId, _callback);
         Type localVarReturnType = new TypeToken<Webhook>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class APIfindWebhookRequest {
+        private final UUID webhookId;
+
+        private APIfindWebhookRequest(UUID webhookId) {
+            this.webhookId = webhookId;
+        }
+
+        /**
+         * Build call for findWebhook
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Webhook object </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return findWebhookCall(webhookId, _callback);
+        }
+
+        /**
+         * Execute findWebhook request
+         * @return Webhook
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Webhook object </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public Webhook execute() throws ApiException {
+            ApiResponse<Webhook> localVarResp = findWebhookWithHttpInfo(webhookId);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute findWebhook request with HTTP info returned
+         * @return ApiResponse&lt;Webhook&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Webhook object </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<Webhook> executeWithHttpInfo() throws ApiException {
+            return findWebhookWithHttpInfo(webhookId);
+        }
+
+        /**
+         * Execute findWebhook request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Webhook object </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<Webhook> _callback) throws ApiException {
+            return findWebhookAsync(webhookId, _callback);
+        }
+    }
+
     /**
-     * Build call for findWorkflowRun
-     * @param workflowRunId The unique identifier of the Workflow Run. (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * Retrieve a Webhook
+     * Retrieves a single webhook. Returns a webhook object. 
+     * @param webhookId  (required)
+     * @return APIfindWebhookRequest
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> A Workflow Run object. </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Webhook object </td><td>  -  </td></tr>
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call findWorkflowRunCall(UUID workflowRunId, final ApiCallback _callback) throws ApiException {
+    public APIfindWebhookRequest findWebhook(UUID webhookId) {
+        return new APIfindWebhookRequest(webhookId);
+    }
+    private okhttp3.Call findWorkflowRunCall(UUID workflowRunId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -6361,82 +7773,113 @@ public class DefaultApi {
 
     }
 
-    /**
-     * Retrieve Workflow Run
-     * A single workflow run can be retrieved by calling this endpoint with the unique identifier of the Workflow Run. 
-     * @param workflowRunId The unique identifier of the Workflow Run. (required)
-     * @return WorkflowRun
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> A Workflow Run object. </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public WorkflowRun findWorkflowRun(UUID workflowRunId) throws ApiException {
-        ApiResponse<WorkflowRun> localVarResp = findWorkflowRunWithHttpInfo(workflowRunId);
-        return localVarResp.getData();
-    }
 
-    /**
-     * Retrieve Workflow Run
-     * A single workflow run can be retrieved by calling this endpoint with the unique identifier of the Workflow Run. 
-     * @param workflowRunId The unique identifier of the Workflow Run. (required)
-     * @return ApiResponse&lt;WorkflowRun&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> A Workflow Run object. </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<WorkflowRun> findWorkflowRunWithHttpInfo(UUID workflowRunId) throws ApiException {
+    private ApiResponse<WorkflowRun> findWorkflowRunWithHttpInfo(UUID workflowRunId) throws ApiException {
         okhttp3.Call localVarCall = findWorkflowRunValidateBeforeCall(workflowRunId, null);
         Type localVarReturnType = new TypeToken<WorkflowRun>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * Retrieve Workflow Run (asynchronously)
-     * A single workflow run can be retrieved by calling this endpoint with the unique identifier of the Workflow Run. 
-     * @param workflowRunId The unique identifier of the Workflow Run. (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> A Workflow Run object. </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call findWorkflowRunAsync(UUID workflowRunId, final ApiCallback<WorkflowRun> _callback) throws ApiException {
+    private okhttp3.Call findWorkflowRunAsync(UUID workflowRunId, final ApiCallback<WorkflowRun> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = findWorkflowRunValidateBeforeCall(workflowRunId, _callback);
         Type localVarReturnType = new TypeToken<WorkflowRun>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class APIfindWorkflowRunRequest {
+        private final UUID workflowRunId;
+
+        private APIfindWorkflowRunRequest(UUID workflowRunId) {
+            this.workflowRunId = workflowRunId;
+        }
+
+        /**
+         * Build call for findWorkflowRun
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> A Workflow Run object. </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return findWorkflowRunCall(workflowRunId, _callback);
+        }
+
+        /**
+         * Execute findWorkflowRun request
+         * @return WorkflowRun
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> A Workflow Run object. </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public WorkflowRun execute() throws ApiException {
+            ApiResponse<WorkflowRun> localVarResp = findWorkflowRunWithHttpInfo(workflowRunId);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute findWorkflowRun request with HTTP info returned
+         * @return ApiResponse&lt;WorkflowRun&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> A Workflow Run object. </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<WorkflowRun> executeWithHttpInfo() throws ApiException {
+            return findWorkflowRunWithHttpInfo(workflowRunId);
+        }
+
+        /**
+         * Execute findWorkflowRun request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> A Workflow Run object. </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<WorkflowRun> _callback) throws ApiException {
+            return findWorkflowRunAsync(workflowRunId, _callback);
+        }
+    }
+
     /**
-     * Build call for forceReportCreationFromWatchlistMonitor
-     * @param monitorId  (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * Retrieve Workflow Run
+     * A single workflow run can be retrieved by calling this endpoint with the unique identifier of the Workflow Run. 
+     * @param workflowRunId The unique identifier of the Workflow Run. (required)
+     * @return APIfindWorkflowRunRequest
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> Created </td><td>  * Location - Link to the newly generated report. <br>  </td></tr>
+        <tr><td> 200 </td><td> A Workflow Run object. </td><td>  -  </td></tr>
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call forceReportCreationFromWatchlistMonitorCall(UUID monitorId, final ApiCallback _callback) throws ApiException {
+    public APIfindWorkflowRunRequest findWorkflowRun(UUID workflowRunId) {
+        return new APIfindWorkflowRunRequest(workflowRunId);
+    }
+    private okhttp3.Call forceReportCreationFromWatchlistMonitorCall(UUID monitorId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -6492,78 +7935,109 @@ public class DefaultApi {
 
     }
 
-    /**
-     * Force new report creation (BETA)
-     * Triggers a new check with an updated report to be generated by the monitor, as if the monitor had received an update. 
-     * @param monitorId  (required)
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> Created </td><td>  * Location - Link to the newly generated report. <br>  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public void forceReportCreationFromWatchlistMonitor(UUID monitorId) throws ApiException {
-        forceReportCreationFromWatchlistMonitorWithHttpInfo(monitorId);
-    }
 
-    /**
-     * Force new report creation (BETA)
-     * Triggers a new check with an updated report to be generated by the monitor, as if the monitor had received an update. 
-     * @param monitorId  (required)
-     * @return ApiResponse&lt;Void&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> Created </td><td>  * Location - Link to the newly generated report. <br>  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<Void> forceReportCreationFromWatchlistMonitorWithHttpInfo(UUID monitorId) throws ApiException {
+    private ApiResponse<Void> forceReportCreationFromWatchlistMonitorWithHttpInfo(UUID monitorId) throws ApiException {
         okhttp3.Call localVarCall = forceReportCreationFromWatchlistMonitorValidateBeforeCall(monitorId, null);
         return localVarApiClient.execute(localVarCall);
     }
 
-    /**
-     * Force new report creation (BETA) (asynchronously)
-     * Triggers a new check with an updated report to be generated by the monitor, as if the monitor had received an update. 
-     * @param monitorId  (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> Created </td><td>  * Location - Link to the newly generated report. <br>  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call forceReportCreationFromWatchlistMonitorAsync(UUID monitorId, final ApiCallback<Void> _callback) throws ApiException {
+    private okhttp3.Call forceReportCreationFromWatchlistMonitorAsync(UUID monitorId, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = forceReportCreationFromWatchlistMonitorValidateBeforeCall(monitorId, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
+
+    public class APIforceReportCreationFromWatchlistMonitorRequest {
+        private final UUID monitorId;
+
+        private APIforceReportCreationFromWatchlistMonitorRequest(UUID monitorId) {
+            this.monitorId = monitorId;
+        }
+
+        /**
+         * Build call for forceReportCreationFromWatchlistMonitor
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 201 </td><td> Created </td><td>  * Location - Link to the newly generated report. <br>  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return forceReportCreationFromWatchlistMonitorCall(monitorId, _callback);
+        }
+
+        /**
+         * Execute forceReportCreationFromWatchlistMonitor request
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 201 </td><td> Created </td><td>  * Location - Link to the newly generated report. <br>  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public void execute() throws ApiException {
+            forceReportCreationFromWatchlistMonitorWithHttpInfo(monitorId);
+        }
+
+        /**
+         * Execute forceReportCreationFromWatchlistMonitor request with HTTP info returned
+         * @return ApiResponse&lt;Void&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 201 </td><td> Created </td><td>  * Location - Link to the newly generated report. <br>  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<Void> executeWithHttpInfo() throws ApiException {
+            return forceReportCreationFromWatchlistMonitorWithHttpInfo(monitorId);
+        }
+
+        /**
+         * Execute forceReportCreationFromWatchlistMonitor request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 201 </td><td> Created </td><td>  * Location - Link to the newly generated report. <br>  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<Void> _callback) throws ApiException {
+            return forceReportCreationFromWatchlistMonitorAsync(monitorId, _callback);
+        }
+    }
+
     /**
-     * Build call for generateSdkToken
-     * @param sdkTokenBuilder  (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * Force new report creation (BETA)
+     * Triggers a new check with an updated report to be generated by the monitor, as if the monitor had received an update. 
+     * @param monitorId  (required)
+     * @return APIforceReportCreationFromWatchlistMonitorRequest
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Generated </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Created </td><td>  * Location - Link to the newly generated report. <br>  </td></tr>
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call generateSdkTokenCall(SdkTokenBuilder sdkTokenBuilder, final ApiCallback _callback) throws ApiException {
+    public APIforceReportCreationFromWatchlistMonitorRequest forceReportCreationFromWatchlistMonitor(UUID monitorId) {
+        return new APIforceReportCreationFromWatchlistMonitorRequest(monitorId);
+    }
+    private okhttp3.Call generateSdkTokenCall(SdkTokenBuilder sdkTokenBuilder, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -6619,84 +8093,113 @@ public class DefaultApi {
 
     }
 
-    /**
-     * Generate a SDK token
-     * Generates an SDK token. Returns a token object containing the SDK token. 
-     * @param sdkTokenBuilder  (required)
-     * @return SdkToken
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Generated </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public SdkToken generateSdkToken(SdkTokenBuilder sdkTokenBuilder) throws ApiException {
-        ApiResponse<SdkToken> localVarResp = generateSdkTokenWithHttpInfo(sdkTokenBuilder);
-        return localVarResp.getData();
-    }
 
-    /**
-     * Generate a SDK token
-     * Generates an SDK token. Returns a token object containing the SDK token. 
-     * @param sdkTokenBuilder  (required)
-     * @return ApiResponse&lt;SdkToken&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Generated </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<SdkToken> generateSdkTokenWithHttpInfo(SdkTokenBuilder sdkTokenBuilder) throws ApiException {
+    private ApiResponse<SdkToken> generateSdkTokenWithHttpInfo(SdkTokenBuilder sdkTokenBuilder) throws ApiException {
         okhttp3.Call localVarCall = generateSdkTokenValidateBeforeCall(sdkTokenBuilder, null);
         Type localVarReturnType = new TypeToken<SdkToken>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * Generate a SDK token (asynchronously)
-     * Generates an SDK token. Returns a token object containing the SDK token. 
-     * @param sdkTokenBuilder  (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Generated </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call generateSdkTokenAsync(SdkTokenBuilder sdkTokenBuilder, final ApiCallback<SdkToken> _callback) throws ApiException {
+    private okhttp3.Call generateSdkTokenAsync(SdkTokenBuilder sdkTokenBuilder, final ApiCallback<SdkToken> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = generateSdkTokenValidateBeforeCall(sdkTokenBuilder, _callback);
         Type localVarReturnType = new TypeToken<SdkToken>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class APIgenerateSdkTokenRequest {
+        private final SdkTokenBuilder sdkTokenBuilder;
+
+        private APIgenerateSdkTokenRequest(SdkTokenBuilder sdkTokenBuilder) {
+            this.sdkTokenBuilder = sdkTokenBuilder;
+        }
+
+        /**
+         * Build call for generateSdkToken
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Generated </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return generateSdkTokenCall(sdkTokenBuilder, _callback);
+        }
+
+        /**
+         * Execute generateSdkToken request
+         * @return SdkToken
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Generated </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public SdkToken execute() throws ApiException {
+            ApiResponse<SdkToken> localVarResp = generateSdkTokenWithHttpInfo(sdkTokenBuilder);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute generateSdkToken request with HTTP info returned
+         * @return ApiResponse&lt;SdkToken&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Generated </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<SdkToken> executeWithHttpInfo() throws ApiException {
+            return generateSdkTokenWithHttpInfo(sdkTokenBuilder);
+        }
+
+        /**
+         * Execute generateSdkToken request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Generated </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<SdkToken> _callback) throws ApiException {
+            return generateSdkTokenAsync(sdkTokenBuilder, _callback);
+        }
+    }
+
     /**
-     * Build call for listApplicants
-     * @param page The page to return. The first page is &#x60;page&#x3D;1&#x60; (optional, default to 1)
-     * @param perPage The number of objects per page. (optional, default to 20)
-     * @param includeDeleted Whether to also include applicants scheduled for deletion. (optional, default to false)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * Generate a SDK token
+     * Generates an SDK token. Returns a token object containing the SDK token. 
+     * @param sdkTokenBuilder  (required)
+     * @return APIgenerateSdkTokenRequest
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> A list of applicants </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Generated </td><td>  -  </td></tr>
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listApplicantsCall(Integer page, Integer perPage, Boolean includeDeleted, final ApiCallback _callback) throws ApiException {
+    public APIgenerateSdkTokenRequest generateSdkToken(SdkTokenBuilder sdkTokenBuilder) {
+        return new APIgenerateSdkTokenRequest(sdkTokenBuilder);
+    }
+    private okhttp3.Call listApplicantsCall(Integer page, Integer perPage, Boolean includeDeleted, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -6758,88 +8261,143 @@ public class DefaultApi {
 
     }
 
-    /**
-     * List Applicants
-     * Lists all applicants you&#39;ve created, sorted by creation date in descending order. 
-     * @param page The page to return. The first page is &#x60;page&#x3D;1&#x60; (optional, default to 1)
-     * @param perPage The number of objects per page. (optional, default to 20)
-     * @param includeDeleted Whether to also include applicants scheduled for deletion. (optional, default to false)
-     * @return ApplicantsList
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> A list of applicants </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApplicantsList listApplicants(Integer page, Integer perPage, Boolean includeDeleted) throws ApiException {
-        ApiResponse<ApplicantsList> localVarResp = listApplicantsWithHttpInfo(page, perPage, includeDeleted);
-        return localVarResp.getData();
-    }
 
-    /**
-     * List Applicants
-     * Lists all applicants you&#39;ve created, sorted by creation date in descending order. 
-     * @param page The page to return. The first page is &#x60;page&#x3D;1&#x60; (optional, default to 1)
-     * @param perPage The number of objects per page. (optional, default to 20)
-     * @param includeDeleted Whether to also include applicants scheduled for deletion. (optional, default to false)
-     * @return ApiResponse&lt;ApplicantsList&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> A list of applicants </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<ApplicantsList> listApplicantsWithHttpInfo(Integer page, Integer perPage, Boolean includeDeleted) throws ApiException {
+    private ApiResponse<ApplicantsList> listApplicantsWithHttpInfo(Integer page, Integer perPage, Boolean includeDeleted) throws ApiException {
         okhttp3.Call localVarCall = listApplicantsValidateBeforeCall(page, perPage, includeDeleted, null);
         Type localVarReturnType = new TypeToken<ApplicantsList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * List Applicants (asynchronously)
-     * Lists all applicants you&#39;ve created, sorted by creation date in descending order. 
-     * @param page The page to return. The first page is &#x60;page&#x3D;1&#x60; (optional, default to 1)
-     * @param perPage The number of objects per page. (optional, default to 20)
-     * @param includeDeleted Whether to also include applicants scheduled for deletion. (optional, default to false)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> A list of applicants </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call listApplicantsAsync(Integer page, Integer perPage, Boolean includeDeleted, final ApiCallback<ApplicantsList> _callback) throws ApiException {
+    private okhttp3.Call listApplicantsAsync(Integer page, Integer perPage, Boolean includeDeleted, final ApiCallback<ApplicantsList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listApplicantsValidateBeforeCall(page, perPage, includeDeleted, _callback);
         Type localVarReturnType = new TypeToken<ApplicantsList>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class APIlistApplicantsRequest {
+        private Integer page;
+        private Integer perPage;
+        private Boolean includeDeleted;
+
+        private APIlistApplicantsRequest() {
+        }
+
+        /**
+         * Set page
+         * @param page The page to return. The first page is &#x60;page&#x3D;1&#x60; (optional, default to 1)
+         * @return APIlistApplicantsRequest
+         */
+        public APIlistApplicantsRequest page(Integer page) {
+            this.page = page;
+            return this;
+        }
+
+        /**
+         * Set perPage
+         * @param perPage The number of objects per page. (optional, default to 20)
+         * @return APIlistApplicantsRequest
+         */
+        public APIlistApplicantsRequest perPage(Integer perPage) {
+            this.perPage = perPage;
+            return this;
+        }
+
+        /**
+         * Set includeDeleted
+         * @param includeDeleted Whether to also include applicants scheduled for deletion. (optional, default to false)
+         * @return APIlistApplicantsRequest
+         */
+        public APIlistApplicantsRequest includeDeleted(Boolean includeDeleted) {
+            this.includeDeleted = includeDeleted;
+            return this;
+        }
+
+        /**
+         * Build call for listApplicants
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> A list of applicants </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return listApplicantsCall(page, perPage, includeDeleted, _callback);
+        }
+
+        /**
+         * Execute listApplicants request
+         * @return ApplicantsList
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> A list of applicants </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApplicantsList execute() throws ApiException {
+            ApiResponse<ApplicantsList> localVarResp = listApplicantsWithHttpInfo(page, perPage, includeDeleted);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute listApplicants request with HTTP info returned
+         * @return ApiResponse&lt;ApplicantsList&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> A list of applicants </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<ApplicantsList> executeWithHttpInfo() throws ApiException {
+            return listApplicantsWithHttpInfo(page, perPage, includeDeleted);
+        }
+
+        /**
+         * Execute listApplicants request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> A list of applicants </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<ApplicantsList> _callback) throws ApiException {
+            return listApplicantsAsync(page, perPage, includeDeleted, _callback);
+        }
+    }
+
     /**
-     * Build call for listChecks
-     * @param applicantId  (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * List Applicants
+     * Lists all applicants you&#39;ve created, sorted by creation date in descending order. 
+     * @return APIlistApplicantsRequest
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> An array of checks </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> A list of applicants </td><td>  -  </td></tr>
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listChecksCall(UUID applicantId, final ApiCallback _callback) throws ApiException {
+    public APIlistApplicantsRequest listApplicants() {
+        return new APIlistApplicantsRequest();
+    }
+    private okhttp3.Call listChecksCall(UUID applicantId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -6898,82 +8456,113 @@ public class DefaultApi {
 
     }
 
-    /**
-     * Retrieve Checks
-     * Retrieves a single check. Returns a check object. 
-     * @param applicantId  (required)
-     * @return ChecksList
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> An array of checks </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ChecksList listChecks(UUID applicantId) throws ApiException {
-        ApiResponse<ChecksList> localVarResp = listChecksWithHttpInfo(applicantId);
-        return localVarResp.getData();
-    }
 
-    /**
-     * Retrieve Checks
-     * Retrieves a single check. Returns a check object. 
-     * @param applicantId  (required)
-     * @return ApiResponse&lt;ChecksList&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> An array of checks </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<ChecksList> listChecksWithHttpInfo(UUID applicantId) throws ApiException {
+    private ApiResponse<ChecksList> listChecksWithHttpInfo(UUID applicantId) throws ApiException {
         okhttp3.Call localVarCall = listChecksValidateBeforeCall(applicantId, null);
         Type localVarReturnType = new TypeToken<ChecksList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * Retrieve Checks (asynchronously)
-     * Retrieves a single check. Returns a check object. 
-     * @param applicantId  (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> An array of checks </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call listChecksAsync(UUID applicantId, final ApiCallback<ChecksList> _callback) throws ApiException {
+    private okhttp3.Call listChecksAsync(UUID applicantId, final ApiCallback<ChecksList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listChecksValidateBeforeCall(applicantId, _callback);
         Type localVarReturnType = new TypeToken<ChecksList>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class APIlistChecksRequest {
+        private final UUID applicantId;
+
+        private APIlistChecksRequest(UUID applicantId) {
+            this.applicantId = applicantId;
+        }
+
+        /**
+         * Build call for listChecks
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> An array of checks </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return listChecksCall(applicantId, _callback);
+        }
+
+        /**
+         * Execute listChecks request
+         * @return ChecksList
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> An array of checks </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public ChecksList execute() throws ApiException {
+            ApiResponse<ChecksList> localVarResp = listChecksWithHttpInfo(applicantId);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute listChecks request with HTTP info returned
+         * @return ApiResponse&lt;ChecksList&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> An array of checks </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<ChecksList> executeWithHttpInfo() throws ApiException {
+            return listChecksWithHttpInfo(applicantId);
+        }
+
+        /**
+         * Execute listChecks request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> An array of checks </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<ChecksList> _callback) throws ApiException {
+            return listChecksAsync(applicantId, _callback);
+        }
+    }
+
     /**
-     * Build call for listDocuments
+     * Retrieve Checks
+     * Retrieves a single check. Returns a check object. 
      * @param applicantId  (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * @return APIlistChecksRequest
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> List of Documents </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> An array of checks </td><td>  -  </td></tr>
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listDocumentsCall(UUID applicantId, final ApiCallback _callback) throws ApiException {
+    public APIlistChecksRequest listChecks(UUID applicantId) {
+        return new APIlistChecksRequest(applicantId);
+    }
+    private okhttp3.Call listDocumentsCall(UUID applicantId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -7032,82 +8621,113 @@ public class DefaultApi {
 
     }
 
-    /**
-     * List documents
-     * All documents belonging to an applicant can be listed from this endpoint
-     * @param applicantId  (required)
-     * @return DocumentsList
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> List of Documents </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public DocumentsList listDocuments(UUID applicantId) throws ApiException {
-        ApiResponse<DocumentsList> localVarResp = listDocumentsWithHttpInfo(applicantId);
-        return localVarResp.getData();
-    }
 
-    /**
-     * List documents
-     * All documents belonging to an applicant can be listed from this endpoint
-     * @param applicantId  (required)
-     * @return ApiResponse&lt;DocumentsList&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> List of Documents </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<DocumentsList> listDocumentsWithHttpInfo(UUID applicantId) throws ApiException {
+    private ApiResponse<DocumentsList> listDocumentsWithHttpInfo(UUID applicantId) throws ApiException {
         okhttp3.Call localVarCall = listDocumentsValidateBeforeCall(applicantId, null);
         Type localVarReturnType = new TypeToken<DocumentsList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * List documents (asynchronously)
-     * All documents belonging to an applicant can be listed from this endpoint
-     * @param applicantId  (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> List of Documents </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call listDocumentsAsync(UUID applicantId, final ApiCallback<DocumentsList> _callback) throws ApiException {
+    private okhttp3.Call listDocumentsAsync(UUID applicantId, final ApiCallback<DocumentsList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listDocumentsValidateBeforeCall(applicantId, _callback);
         Type localVarReturnType = new TypeToken<DocumentsList>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class APIlistDocumentsRequest {
+        private final UUID applicantId;
+
+        private APIlistDocumentsRequest(UUID applicantId) {
+            this.applicantId = applicantId;
+        }
+
+        /**
+         * Build call for listDocuments
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> List of Documents </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return listDocumentsCall(applicantId, _callback);
+        }
+
+        /**
+         * Execute listDocuments request
+         * @return DocumentsList
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> List of Documents </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public DocumentsList execute() throws ApiException {
+            ApiResponse<DocumentsList> localVarResp = listDocumentsWithHttpInfo(applicantId);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute listDocuments request with HTTP info returned
+         * @return ApiResponse&lt;DocumentsList&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> List of Documents </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<DocumentsList> executeWithHttpInfo() throws ApiException {
+            return listDocumentsWithHttpInfo(applicantId);
+        }
+
+        /**
+         * Execute listDocuments request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> List of Documents </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<DocumentsList> _callback) throws ApiException {
+            return listDocumentsAsync(applicantId, _callback);
+        }
+    }
+
     /**
-     * Build call for listIdPhotos
-     * @param applicantId The id of the applicant the ID photos belong to. (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * List documents
+     * All documents belonging to an applicant can be listed from this endpoint
+     * @param applicantId  (required)
+     * @return APIlistDocumentsRequest
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> An array of ID photos </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> List of Documents </td><td>  -  </td></tr>
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listIdPhotosCall(UUID applicantId, final ApiCallback _callback) throws ApiException {
+    public APIlistDocumentsRequest listDocuments(UUID applicantId) {
+        return new APIlistDocumentsRequest(applicantId);
+    }
+    private okhttp3.Call listIdPhotosCall(UUID applicantId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -7166,82 +8786,113 @@ public class DefaultApi {
 
     }
 
-    /**
-     * List ID photos
-     * Lists the ID photos that belong to an applicant. 
-     * @param applicantId The id of the applicant the ID photos belong to. (required)
-     * @return IdPhotosList
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> An array of ID photos </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public IdPhotosList listIdPhotos(UUID applicantId) throws ApiException {
-        ApiResponse<IdPhotosList> localVarResp = listIdPhotosWithHttpInfo(applicantId);
-        return localVarResp.getData();
-    }
 
-    /**
-     * List ID photos
-     * Lists the ID photos that belong to an applicant. 
-     * @param applicantId The id of the applicant the ID photos belong to. (required)
-     * @return ApiResponse&lt;IdPhotosList&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> An array of ID photos </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<IdPhotosList> listIdPhotosWithHttpInfo(UUID applicantId) throws ApiException {
+    private ApiResponse<IdPhotosList> listIdPhotosWithHttpInfo(UUID applicantId) throws ApiException {
         okhttp3.Call localVarCall = listIdPhotosValidateBeforeCall(applicantId, null);
         Type localVarReturnType = new TypeToken<IdPhotosList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * List ID photos (asynchronously)
-     * Lists the ID photos that belong to an applicant. 
-     * @param applicantId The id of the applicant the ID photos belong to. (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> An array of ID photos </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call listIdPhotosAsync(UUID applicantId, final ApiCallback<IdPhotosList> _callback) throws ApiException {
+    private okhttp3.Call listIdPhotosAsync(UUID applicantId, final ApiCallback<IdPhotosList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listIdPhotosValidateBeforeCall(applicantId, _callback);
         Type localVarReturnType = new TypeToken<IdPhotosList>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class APIlistIdPhotosRequest {
+        private final UUID applicantId;
+
+        private APIlistIdPhotosRequest(UUID applicantId) {
+            this.applicantId = applicantId;
+        }
+
+        /**
+         * Build call for listIdPhotos
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> An array of ID photos </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return listIdPhotosCall(applicantId, _callback);
+        }
+
+        /**
+         * Execute listIdPhotos request
+         * @return IdPhotosList
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> An array of ID photos </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public IdPhotosList execute() throws ApiException {
+            ApiResponse<IdPhotosList> localVarResp = listIdPhotosWithHttpInfo(applicantId);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute listIdPhotos request with HTTP info returned
+         * @return ApiResponse&lt;IdPhotosList&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> An array of ID photos </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<IdPhotosList> executeWithHttpInfo() throws ApiException {
+            return listIdPhotosWithHttpInfo(applicantId);
+        }
+
+        /**
+         * Execute listIdPhotos request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> An array of ID photos </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<IdPhotosList> _callback) throws ApiException {
+            return listIdPhotosAsync(applicantId, _callback);
+        }
+    }
+
     /**
-     * Build call for listLivePhotos
-     * @param applicantId The id of the applicant the live photos belong to. (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * List ID photos
+     * Lists the ID photos that belong to an applicant. 
+     * @param applicantId The id of the applicant the ID photos belong to. (required)
+     * @return APIlistIdPhotosRequest
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> An array of live photos </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> An array of ID photos </td><td>  -  </td></tr>
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listLivePhotosCall(UUID applicantId, final ApiCallback _callback) throws ApiException {
+    public APIlistIdPhotosRequest listIdPhotos(UUID applicantId) {
+        return new APIlistIdPhotosRequest(applicantId);
+    }
+    private okhttp3.Call listLivePhotosCall(UUID applicantId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -7300,82 +8951,113 @@ public class DefaultApi {
 
     }
 
-    /**
-     * List live photos
-     * Lists the live photos that belong to an applicant. 
-     * @param applicantId The id of the applicant the live photos belong to. (required)
-     * @return LivePhotosList
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> An array of live photos </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public LivePhotosList listLivePhotos(UUID applicantId) throws ApiException {
-        ApiResponse<LivePhotosList> localVarResp = listLivePhotosWithHttpInfo(applicantId);
-        return localVarResp.getData();
-    }
 
-    /**
-     * List live photos
-     * Lists the live photos that belong to an applicant. 
-     * @param applicantId The id of the applicant the live photos belong to. (required)
-     * @return ApiResponse&lt;LivePhotosList&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> An array of live photos </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<LivePhotosList> listLivePhotosWithHttpInfo(UUID applicantId) throws ApiException {
+    private ApiResponse<LivePhotosList> listLivePhotosWithHttpInfo(UUID applicantId) throws ApiException {
         okhttp3.Call localVarCall = listLivePhotosValidateBeforeCall(applicantId, null);
         Type localVarReturnType = new TypeToken<LivePhotosList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * List live photos (asynchronously)
-     * Lists the live photos that belong to an applicant. 
-     * @param applicantId The id of the applicant the live photos belong to. (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> An array of live photos </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call listLivePhotosAsync(UUID applicantId, final ApiCallback<LivePhotosList> _callback) throws ApiException {
+    private okhttp3.Call listLivePhotosAsync(UUID applicantId, final ApiCallback<LivePhotosList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listLivePhotosValidateBeforeCall(applicantId, _callback);
         Type localVarReturnType = new TypeToken<LivePhotosList>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class APIlistLivePhotosRequest {
+        private final UUID applicantId;
+
+        private APIlistLivePhotosRequest(UUID applicantId) {
+            this.applicantId = applicantId;
+        }
+
+        /**
+         * Build call for listLivePhotos
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> An array of live photos </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return listLivePhotosCall(applicantId, _callback);
+        }
+
+        /**
+         * Execute listLivePhotos request
+         * @return LivePhotosList
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> An array of live photos </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public LivePhotosList execute() throws ApiException {
+            ApiResponse<LivePhotosList> localVarResp = listLivePhotosWithHttpInfo(applicantId);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute listLivePhotos request with HTTP info returned
+         * @return ApiResponse&lt;LivePhotosList&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> An array of live photos </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<LivePhotosList> executeWithHttpInfo() throws ApiException {
+            return listLivePhotosWithHttpInfo(applicantId);
+        }
+
+        /**
+         * Execute listLivePhotos request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> An array of live photos </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<LivePhotosList> _callback) throws ApiException {
+            return listLivePhotosAsync(applicantId, _callback);
+        }
+    }
+
     /**
-     * Build call for listLiveVideos
-     * @param applicantId The id of the applicant the live videos belong to. (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * List live photos
+     * Lists the live photos that belong to an applicant. 
+     * @param applicantId The id of the applicant the live photos belong to. (required)
+     * @return APIlistLivePhotosRequest
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> An array of live videos </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> An array of live photos </td><td>  -  </td></tr>
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listLiveVideosCall(UUID applicantId, final ApiCallback _callback) throws ApiException {
+    public APIlistLivePhotosRequest listLivePhotos(UUID applicantId) {
+        return new APIlistLivePhotosRequest(applicantId);
+    }
+    private okhttp3.Call listLiveVideosCall(UUID applicantId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -7434,82 +9116,113 @@ public class DefaultApi {
 
     }
 
-    /**
-     * List live videos
-     * Lists all the live videos that belong to an applicant. 
-     * @param applicantId The id of the applicant the live videos belong to. (required)
-     * @return LiveVideosList
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> An array of live videos </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public LiveVideosList listLiveVideos(UUID applicantId) throws ApiException {
-        ApiResponse<LiveVideosList> localVarResp = listLiveVideosWithHttpInfo(applicantId);
-        return localVarResp.getData();
-    }
 
-    /**
-     * List live videos
-     * Lists all the live videos that belong to an applicant. 
-     * @param applicantId The id of the applicant the live videos belong to. (required)
-     * @return ApiResponse&lt;LiveVideosList&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> An array of live videos </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<LiveVideosList> listLiveVideosWithHttpInfo(UUID applicantId) throws ApiException {
+    private ApiResponse<LiveVideosList> listLiveVideosWithHttpInfo(UUID applicantId) throws ApiException {
         okhttp3.Call localVarCall = listLiveVideosValidateBeforeCall(applicantId, null);
         Type localVarReturnType = new TypeToken<LiveVideosList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * List live videos (asynchronously)
-     * Lists all the live videos that belong to an applicant. 
-     * @param applicantId The id of the applicant the live videos belong to. (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> An array of live videos </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call listLiveVideosAsync(UUID applicantId, final ApiCallback<LiveVideosList> _callback) throws ApiException {
+    private okhttp3.Call listLiveVideosAsync(UUID applicantId, final ApiCallback<LiveVideosList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listLiveVideosValidateBeforeCall(applicantId, _callback);
         Type localVarReturnType = new TypeToken<LiveVideosList>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class APIlistLiveVideosRequest {
+        private final UUID applicantId;
+
+        private APIlistLiveVideosRequest(UUID applicantId) {
+            this.applicantId = applicantId;
+        }
+
+        /**
+         * Build call for listLiveVideos
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> An array of live videos </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return listLiveVideosCall(applicantId, _callback);
+        }
+
+        /**
+         * Execute listLiveVideos request
+         * @return LiveVideosList
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> An array of live videos </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public LiveVideosList execute() throws ApiException {
+            ApiResponse<LiveVideosList> localVarResp = listLiveVideosWithHttpInfo(applicantId);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute listLiveVideos request with HTTP info returned
+         * @return ApiResponse&lt;LiveVideosList&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> An array of live videos </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<LiveVideosList> executeWithHttpInfo() throws ApiException {
+            return listLiveVideosWithHttpInfo(applicantId);
+        }
+
+        /**
+         * Execute listLiveVideos request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> An array of live videos </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<LiveVideosList> _callback) throws ApiException {
+            return listLiveVideosAsync(applicantId, _callback);
+        }
+    }
+
     /**
-     * Build call for listMotionCaptures
-     * @param applicantId The id of the applicant the motion captures belong to. (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * List live videos
+     * Lists all the live videos that belong to an applicant. 
+     * @param applicantId The id of the applicant the live videos belong to. (required)
+     * @return APIlistLiveVideosRequest
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> An array of motion captures </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> An array of live videos </td><td>  -  </td></tr>
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listMotionCapturesCall(UUID applicantId, final ApiCallback _callback) throws ApiException {
+    public APIlistLiveVideosRequest listLiveVideos(UUID applicantId) {
+        return new APIlistLiveVideosRequest(applicantId);
+    }
+    private okhttp3.Call listMotionCapturesCall(UUID applicantId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -7568,83 +9281,113 @@ public class DefaultApi {
 
     }
 
-    /**
-     * List motion captures
-     * Lists all the motion captures that belong to an applicant. 
-     * @param applicantId The id of the applicant the motion captures belong to. (required)
-     * @return MotionCapturesList
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> An array of motion captures </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public MotionCapturesList listMotionCaptures(UUID applicantId) throws ApiException {
-        ApiResponse<MotionCapturesList> localVarResp = listMotionCapturesWithHttpInfo(applicantId);
-        return localVarResp.getData();
-    }
 
-    /**
-     * List motion captures
-     * Lists all the motion captures that belong to an applicant. 
-     * @param applicantId The id of the applicant the motion captures belong to. (required)
-     * @return ApiResponse&lt;MotionCapturesList&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> An array of motion captures </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<MotionCapturesList> listMotionCapturesWithHttpInfo(UUID applicantId) throws ApiException {
+    private ApiResponse<MotionCapturesList> listMotionCapturesWithHttpInfo(UUID applicantId) throws ApiException {
         okhttp3.Call localVarCall = listMotionCapturesValidateBeforeCall(applicantId, null);
         Type localVarReturnType = new TypeToken<MotionCapturesList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * List motion captures (asynchronously)
-     * Lists all the motion captures that belong to an applicant. 
-     * @param applicantId The id of the applicant the motion captures belong to. (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> An array of motion captures </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call listMotionCapturesAsync(UUID applicantId, final ApiCallback<MotionCapturesList> _callback) throws ApiException {
+    private okhttp3.Call listMotionCapturesAsync(UUID applicantId, final ApiCallback<MotionCapturesList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listMotionCapturesValidateBeforeCall(applicantId, _callback);
         Type localVarReturnType = new TypeToken<MotionCapturesList>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class APIlistMotionCapturesRequest {
+        private final UUID applicantId;
+
+        private APIlistMotionCapturesRequest(UUID applicantId) {
+            this.applicantId = applicantId;
+        }
+
+        /**
+         * Build call for listMotionCaptures
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> An array of motion captures </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return listMotionCapturesCall(applicantId, _callback);
+        }
+
+        /**
+         * Execute listMotionCaptures request
+         * @return MotionCapturesList
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> An array of motion captures </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public MotionCapturesList execute() throws ApiException {
+            ApiResponse<MotionCapturesList> localVarResp = listMotionCapturesWithHttpInfo(applicantId);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute listMotionCaptures request with HTTP info returned
+         * @return ApiResponse&lt;MotionCapturesList&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> An array of motion captures </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<MotionCapturesList> executeWithHttpInfo() throws ApiException {
+            return listMotionCapturesWithHttpInfo(applicantId);
+        }
+
+        /**
+         * Execute listMotionCaptures request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> An array of motion captures </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<MotionCapturesList> _callback) throws ApiException {
+            return listMotionCapturesAsync(applicantId, _callback);
+        }
+    }
+
     /**
-     * Build call for listPasskeys
-     * @param username Username that owns the passkeys. (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * List motion captures
+     * Lists all the motion captures that belong to an applicant. 
+     * @param applicantId The id of the applicant the motion captures belong to. (required)
+     * @return APIlistMotionCapturesRequest
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Passkeys belonging to the username </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Passkey not found </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> An array of motion captures </td><td>  -  </td></tr>
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listPasskeysCall(String username, final ApiCallback _callback) throws ApiException {
+    public APIlistMotionCapturesRequest listMotionCaptures(UUID applicantId) {
+        return new APIlistMotionCapturesRequest(applicantId);
+    }
+    private okhttp3.Call listPasskeysCall(String username, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -7700,85 +9443,118 @@ public class DefaultApi {
 
     }
 
-    /**
-     * List passkeys
-     * Returns every passkey registered under the supplied username. 
-     * @param username Username that owns the passkeys. (required)
-     * @return PasskeysList
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Passkeys belonging to the username </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Passkey not found </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public PasskeysList listPasskeys(String username) throws ApiException {
-        ApiResponse<PasskeysList> localVarResp = listPasskeysWithHttpInfo(username);
-        return localVarResp.getData();
-    }
 
-    /**
-     * List passkeys
-     * Returns every passkey registered under the supplied username. 
-     * @param username Username that owns the passkeys. (required)
-     * @return ApiResponse&lt;PasskeysList&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Passkeys belonging to the username </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Passkey not found </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<PasskeysList> listPasskeysWithHttpInfo(String username) throws ApiException {
+    private ApiResponse<PasskeysList> listPasskeysWithHttpInfo(String username) throws ApiException {
         okhttp3.Call localVarCall = listPasskeysValidateBeforeCall(username, null);
         Type localVarReturnType = new TypeToken<PasskeysList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * List passkeys (asynchronously)
-     * Returns every passkey registered under the supplied username. 
-     * @param username Username that owns the passkeys. (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Passkeys belonging to the username </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Passkey not found </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call listPasskeysAsync(String username, final ApiCallback<PasskeysList> _callback) throws ApiException {
+    private okhttp3.Call listPasskeysAsync(String username, final ApiCallback<PasskeysList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listPasskeysValidateBeforeCall(username, _callback);
         Type localVarReturnType = new TypeToken<PasskeysList>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class APIlistPasskeysRequest {
+        private final String username;
+
+        private APIlistPasskeysRequest(String username) {
+            this.username = username;
+        }
+
+        /**
+         * Build call for listPasskeys
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Passkeys belonging to the username </td><td>  -  </td></tr>
+            <tr><td> 404 </td><td> Passkey not found </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return listPasskeysCall(username, _callback);
+        }
+
+        /**
+         * Execute listPasskeys request
+         * @return PasskeysList
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Passkeys belonging to the username </td><td>  -  </td></tr>
+            <tr><td> 404 </td><td> Passkey not found </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public PasskeysList execute() throws ApiException {
+            ApiResponse<PasskeysList> localVarResp = listPasskeysWithHttpInfo(username);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute listPasskeys request with HTTP info returned
+         * @return ApiResponse&lt;PasskeysList&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Passkeys belonging to the username </td><td>  -  </td></tr>
+            <tr><td> 404 </td><td> Passkey not found </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<PasskeysList> executeWithHttpInfo() throws ApiException {
+            return listPasskeysWithHttpInfo(username);
+        }
+
+        /**
+         * Execute listPasskeys request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Passkeys belonging to the username </td><td>  -  </td></tr>
+            <tr><td> 404 </td><td> Passkey not found </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<PasskeysList> _callback) throws ApiException {
+            return listPasskeysAsync(username, _callback);
+        }
+    }
+
     /**
-     * Build call for listRepeatAttempts
-     * @param reportId  (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * List passkeys
+     * Returns every passkey registered under the supplied username. 
+     * @param username Username that owns the passkeys. (required)
+     * @return APIlistPasskeysRequest
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Repeat attempts object </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Passkeys belonging to the username </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Passkey not found </td><td>  -  </td></tr>
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listRepeatAttemptsCall(UUID reportId, final ApiCallback _callback) throws ApiException {
+    public APIlistPasskeysRequest listPasskeys(String username) {
+        return new APIlistPasskeysRequest(username);
+    }
+    private okhttp3.Call listRepeatAttemptsCall(UUID reportId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -7834,82 +9610,113 @@ public class DefaultApi {
 
     }
 
-    /**
-     * Retrieve repeat attempts
-     * Returns all repeat attempts for a given Document report 
-     * @param reportId  (required)
-     * @return RepeatAttemptsList
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Repeat attempts object </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public RepeatAttemptsList listRepeatAttempts(UUID reportId) throws ApiException {
-        ApiResponse<RepeatAttemptsList> localVarResp = listRepeatAttemptsWithHttpInfo(reportId);
-        return localVarResp.getData();
-    }
 
-    /**
-     * Retrieve repeat attempts
-     * Returns all repeat attempts for a given Document report 
-     * @param reportId  (required)
-     * @return ApiResponse&lt;RepeatAttemptsList&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Repeat attempts object </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<RepeatAttemptsList> listRepeatAttemptsWithHttpInfo(UUID reportId) throws ApiException {
+    private ApiResponse<RepeatAttemptsList> listRepeatAttemptsWithHttpInfo(UUID reportId) throws ApiException {
         okhttp3.Call localVarCall = listRepeatAttemptsValidateBeforeCall(reportId, null);
         Type localVarReturnType = new TypeToken<RepeatAttemptsList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * Retrieve repeat attempts (asynchronously)
-     * Returns all repeat attempts for a given Document report 
-     * @param reportId  (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Repeat attempts object </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call listRepeatAttemptsAsync(UUID reportId, final ApiCallback<RepeatAttemptsList> _callback) throws ApiException {
+    private okhttp3.Call listRepeatAttemptsAsync(UUID reportId, final ApiCallback<RepeatAttemptsList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listRepeatAttemptsValidateBeforeCall(reportId, _callback);
         Type localVarReturnType = new TypeToken<RepeatAttemptsList>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class APIlistRepeatAttemptsRequest {
+        private final UUID reportId;
+
+        private APIlistRepeatAttemptsRequest(UUID reportId) {
+            this.reportId = reportId;
+        }
+
+        /**
+         * Build call for listRepeatAttempts
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Repeat attempts object </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return listRepeatAttemptsCall(reportId, _callback);
+        }
+
+        /**
+         * Execute listRepeatAttempts request
+         * @return RepeatAttemptsList
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Repeat attempts object </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public RepeatAttemptsList execute() throws ApiException {
+            ApiResponse<RepeatAttemptsList> localVarResp = listRepeatAttemptsWithHttpInfo(reportId);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute listRepeatAttempts request with HTTP info returned
+         * @return ApiResponse&lt;RepeatAttemptsList&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Repeat attempts object </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<RepeatAttemptsList> executeWithHttpInfo() throws ApiException {
+            return listRepeatAttemptsWithHttpInfo(reportId);
+        }
+
+        /**
+         * Execute listRepeatAttempts request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Repeat attempts object </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<RepeatAttemptsList> _callback) throws ApiException {
+            return listRepeatAttemptsAsync(reportId, _callback);
+        }
+    }
+
     /**
-     * Build call for listReports
-     * @param checkId  (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * Retrieve repeat attempts
+     * Returns all repeat attempts for a given Document report 
+     * @param reportId  (required)
+     * @return APIlistRepeatAttemptsRequest
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> List of Reports </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Repeat attempts object </td><td>  -  </td></tr>
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listReportsCall(UUID checkId, final ApiCallback _callback) throws ApiException {
+    public APIlistRepeatAttemptsRequest listRepeatAttempts(UUID reportId) {
+        return new APIlistRepeatAttemptsRequest(reportId);
+    }
+    private okhttp3.Call listReportsCall(UUID checkId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -7968,82 +9775,113 @@ public class DefaultApi {
 
     }
 
-    /**
-     * List reports
-     * All the reports belonging to a particular check can be listed from this endpoint. 
-     * @param checkId  (required)
-     * @return ReportsList
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> List of Reports </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ReportsList listReports(UUID checkId) throws ApiException {
-        ApiResponse<ReportsList> localVarResp = listReportsWithHttpInfo(checkId);
-        return localVarResp.getData();
-    }
 
-    /**
-     * List reports
-     * All the reports belonging to a particular check can be listed from this endpoint. 
-     * @param checkId  (required)
-     * @return ApiResponse&lt;ReportsList&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> List of Reports </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<ReportsList> listReportsWithHttpInfo(UUID checkId) throws ApiException {
+    private ApiResponse<ReportsList> listReportsWithHttpInfo(UUID checkId) throws ApiException {
         okhttp3.Call localVarCall = listReportsValidateBeforeCall(checkId, null);
         Type localVarReturnType = new TypeToken<ReportsList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * List reports (asynchronously)
-     * All the reports belonging to a particular check can be listed from this endpoint. 
-     * @param checkId  (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> List of Reports </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call listReportsAsync(UUID checkId, final ApiCallback<ReportsList> _callback) throws ApiException {
+    private okhttp3.Call listReportsAsync(UUID checkId, final ApiCallback<ReportsList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listReportsValidateBeforeCall(checkId, _callback);
         Type localVarReturnType = new TypeToken<ReportsList>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class APIlistReportsRequest {
+        private final UUID checkId;
+
+        private APIlistReportsRequest(UUID checkId) {
+            this.checkId = checkId;
+        }
+
+        /**
+         * Build call for listReports
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> List of Reports </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return listReportsCall(checkId, _callback);
+        }
+
+        /**
+         * Execute listReports request
+         * @return ReportsList
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> List of Reports </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public ReportsList execute() throws ApiException {
+            ApiResponse<ReportsList> localVarResp = listReportsWithHttpInfo(checkId);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute listReports request with HTTP info returned
+         * @return ApiResponse&lt;ReportsList&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> List of Reports </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<ReportsList> executeWithHttpInfo() throws ApiException {
+            return listReportsWithHttpInfo(checkId);
+        }
+
+        /**
+         * Execute listReports request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> List of Reports </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<ReportsList> _callback) throws ApiException {
+            return listReportsAsync(checkId, _callback);
+        }
+    }
+
     /**
-     * Build call for listSigningDocuments
-     * @param applicantId  (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * List reports
+     * All the reports belonging to a particular check can be listed from this endpoint. 
+     * @param checkId  (required)
+     * @return APIlistReportsRequest
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> List of Signing Documents </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> List of Reports </td><td>  -  </td></tr>
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listSigningDocumentsCall(UUID applicantId, final ApiCallback _callback) throws ApiException {
+    public APIlistReportsRequest listReports(UUID checkId) {
+        return new APIlistReportsRequest(checkId);
+    }
+    private okhttp3.Call listSigningDocumentsCall(UUID applicantId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -8102,82 +9940,113 @@ public class DefaultApi {
 
     }
 
-    /**
-     * List signing documents
-     * All signing documents belonging to an applicant can be listed from this endpoint
-     * @param applicantId  (required)
-     * @return SigningDocumentsList
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> List of Signing Documents </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public SigningDocumentsList listSigningDocuments(UUID applicantId) throws ApiException {
-        ApiResponse<SigningDocumentsList> localVarResp = listSigningDocumentsWithHttpInfo(applicantId);
-        return localVarResp.getData();
-    }
 
-    /**
-     * List signing documents
-     * All signing documents belonging to an applicant can be listed from this endpoint
-     * @param applicantId  (required)
-     * @return ApiResponse&lt;SigningDocumentsList&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> List of Signing Documents </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<SigningDocumentsList> listSigningDocumentsWithHttpInfo(UUID applicantId) throws ApiException {
+    private ApiResponse<SigningDocumentsList> listSigningDocumentsWithHttpInfo(UUID applicantId) throws ApiException {
         okhttp3.Call localVarCall = listSigningDocumentsValidateBeforeCall(applicantId, null);
         Type localVarReturnType = new TypeToken<SigningDocumentsList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * List signing documents (asynchronously)
-     * All signing documents belonging to an applicant can be listed from this endpoint
-     * @param applicantId  (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> List of Signing Documents </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call listSigningDocumentsAsync(UUID applicantId, final ApiCallback<SigningDocumentsList> _callback) throws ApiException {
+    private okhttp3.Call listSigningDocumentsAsync(UUID applicantId, final ApiCallback<SigningDocumentsList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listSigningDocumentsValidateBeforeCall(applicantId, _callback);
         Type localVarReturnType = new TypeToken<SigningDocumentsList>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class APIlistSigningDocumentsRequest {
+        private final UUID applicantId;
+
+        private APIlistSigningDocumentsRequest(UUID applicantId) {
+            this.applicantId = applicantId;
+        }
+
+        /**
+         * Build call for listSigningDocuments
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> List of Signing Documents </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return listSigningDocumentsCall(applicantId, _callback);
+        }
+
+        /**
+         * Execute listSigningDocuments request
+         * @return SigningDocumentsList
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> List of Signing Documents </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public SigningDocumentsList execute() throws ApiException {
+            ApiResponse<SigningDocumentsList> localVarResp = listSigningDocumentsWithHttpInfo(applicantId);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute listSigningDocuments request with HTTP info returned
+         * @return ApiResponse&lt;SigningDocumentsList&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> List of Signing Documents </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<SigningDocumentsList> executeWithHttpInfo() throws ApiException {
+            return listSigningDocumentsWithHttpInfo(applicantId);
+        }
+
+        /**
+         * Execute listSigningDocuments request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> List of Signing Documents </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<SigningDocumentsList> _callback) throws ApiException {
+            return listSigningDocumentsAsync(applicantId, _callback);
+        }
+    }
+
     /**
-     * Build call for listTasks
-     * @param workflowRunId The unique identifier of the Workflow Run to which the Tasks belong. (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * List signing documents
+     * All signing documents belonging to an applicant can be listed from this endpoint
+     * @param applicantId  (required)
+     * @return APIlistSigningDocumentsRequest
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> An array of subset Task objects that were already started or completed, ordered by the created_at field, in ascending order. </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> List of Signing Documents </td><td>  -  </td></tr>
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listTasksCall(UUID workflowRunId, final ApiCallback _callback) throws ApiException {
+    public APIlistSigningDocumentsRequest listSigningDocuments(UUID applicantId) {
+        return new APIlistSigningDocumentsRequest(applicantId);
+    }
+    private okhttp3.Call listTasksCall(UUID workflowRunId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -8233,81 +10102,113 @@ public class DefaultApi {
 
     }
 
-    /**
-     * List Tasks
-     * The tasks of a Workflow can be retrieved by calling this endpoint with the unique identifier of the Workflow Run. 
-     * @param workflowRunId The unique identifier of the Workflow Run to which the Tasks belong. (required)
-     * @return List&lt;TaskItem&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> An array of subset Task objects that were already started or completed, ordered by the created_at field, in ascending order. </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public List<TaskItem> listTasks(UUID workflowRunId) throws ApiException {
-        ApiResponse<List<TaskItem>> localVarResp = listTasksWithHttpInfo(workflowRunId);
-        return localVarResp.getData();
-    }
 
-    /**
-     * List Tasks
-     * The tasks of a Workflow can be retrieved by calling this endpoint with the unique identifier of the Workflow Run. 
-     * @param workflowRunId The unique identifier of the Workflow Run to which the Tasks belong. (required)
-     * @return ApiResponse&lt;List&lt;TaskItem&gt;&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> An array of subset Task objects that were already started or completed, ordered by the created_at field, in ascending order. </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<List<TaskItem>> listTasksWithHttpInfo(UUID workflowRunId) throws ApiException {
+    private ApiResponse<List<TaskItem>> listTasksWithHttpInfo(UUID workflowRunId) throws ApiException {
         okhttp3.Call localVarCall = listTasksValidateBeforeCall(workflowRunId, null);
         Type localVarReturnType = new TypeToken<List<TaskItem>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * List Tasks (asynchronously)
-     * The tasks of a Workflow can be retrieved by calling this endpoint with the unique identifier of the Workflow Run. 
-     * @param workflowRunId The unique identifier of the Workflow Run to which the Tasks belong. (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> An array of subset Task objects that were already started or completed, ordered by the created_at field, in ascending order. </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call listTasksAsync(UUID workflowRunId, final ApiCallback<List<TaskItem>> _callback) throws ApiException {
+    private okhttp3.Call listTasksAsync(UUID workflowRunId, final ApiCallback<List<TaskItem>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listTasksValidateBeforeCall(workflowRunId, _callback);
         Type localVarReturnType = new TypeToken<List<TaskItem>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class APIlistTasksRequest {
+        private final UUID workflowRunId;
+
+        private APIlistTasksRequest(UUID workflowRunId) {
+            this.workflowRunId = workflowRunId;
+        }
+
+        /**
+         * Build call for listTasks
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> An array of subset Task objects that were already started or completed, ordered by the created_at field, in ascending order. </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return listTasksCall(workflowRunId, _callback);
+        }
+
+        /**
+         * Execute listTasks request
+         * @return List&lt;TaskItem&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> An array of subset Task objects that were already started or completed, ordered by the created_at field, in ascending order. </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public List<TaskItem> execute() throws ApiException {
+            ApiResponse<List<TaskItem>> localVarResp = listTasksWithHttpInfo(workflowRunId);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute listTasks request with HTTP info returned
+         * @return ApiResponse&lt;List&lt;TaskItem&gt;&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> An array of subset Task objects that were already started or completed, ordered by the created_at field, in ascending order. </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<List<TaskItem>> executeWithHttpInfo() throws ApiException {
+            return listTasksWithHttpInfo(workflowRunId);
+        }
+
+        /**
+         * Execute listTasks request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> An array of subset Task objects that were already started or completed, ordered by the created_at field, in ascending order. </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<List<TaskItem>> _callback) throws ApiException {
+            return listTasksAsync(workflowRunId, _callback);
+        }
+    }
+
     /**
-     * Build call for listWatchlistMonitorMatches
-     * @param monitorId  (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * List Tasks
+     * The tasks of a Workflow can be retrieved by calling this endpoint with the unique identifier of the Workflow Run. 
+     * @param workflowRunId The unique identifier of the Workflow Run to which the Tasks belong. (required)
+     * @return APIlistTasksRequest
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> An array of watchlist monitors </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> An array of subset Task objects that were already started or completed, ordered by the created_at field, in ascending order. </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listWatchlistMonitorMatchesCall(UUID monitorId, final ApiCallback _callback) throws ApiException {
+    public APIlistTasksRequest listTasks(UUID workflowRunId) {
+        return new APIlistTasksRequest(workflowRunId);
+    }
+    private okhttp3.Call listWatchlistMonitorMatchesCall(UUID monitorId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -8363,80 +10264,108 @@ public class DefaultApi {
 
     }
 
-    /**
-     * List matches (BETA)
-     * List match IDs on this monitor, as well as their enabled/disabled status 
-     * @param monitorId  (required)
-     * @return WatchlistMonitorMatchesList
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> An array of watchlist monitors </td><td>  -  </td></tr>
-     </table>
-     */
-    public WatchlistMonitorMatchesList listWatchlistMonitorMatches(UUID monitorId) throws ApiException {
-        ApiResponse<WatchlistMonitorMatchesList> localVarResp = listWatchlistMonitorMatchesWithHttpInfo(monitorId);
-        return localVarResp.getData();
-    }
 
-    /**
-     * List matches (BETA)
-     * List match IDs on this monitor, as well as their enabled/disabled status 
-     * @param monitorId  (required)
-     * @return ApiResponse&lt;WatchlistMonitorMatchesList&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> An array of watchlist monitors </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<WatchlistMonitorMatchesList> listWatchlistMonitorMatchesWithHttpInfo(UUID monitorId) throws ApiException {
+    private ApiResponse<WatchlistMonitorMatchesList> listWatchlistMonitorMatchesWithHttpInfo(UUID monitorId) throws ApiException {
         okhttp3.Call localVarCall = listWatchlistMonitorMatchesValidateBeforeCall(monitorId, null);
         Type localVarReturnType = new TypeToken<WatchlistMonitorMatchesList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * List matches (BETA) (asynchronously)
-     * List match IDs on this monitor, as well as their enabled/disabled status 
-     * @param monitorId  (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> An array of watchlist monitors </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call listWatchlistMonitorMatchesAsync(UUID monitorId, final ApiCallback<WatchlistMonitorMatchesList> _callback) throws ApiException {
+    private okhttp3.Call listWatchlistMonitorMatchesAsync(UUID monitorId, final ApiCallback<WatchlistMonitorMatchesList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listWatchlistMonitorMatchesValidateBeforeCall(monitorId, _callback);
         Type localVarReturnType = new TypeToken<WatchlistMonitorMatchesList>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class APIlistWatchlistMonitorMatchesRequest {
+        private final UUID monitorId;
+
+        private APIlistWatchlistMonitorMatchesRequest(UUID monitorId) {
+            this.monitorId = monitorId;
+        }
+
+        /**
+         * Build call for listWatchlistMonitorMatches
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> An array of watchlist monitors </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return listWatchlistMonitorMatchesCall(monitorId, _callback);
+        }
+
+        /**
+         * Execute listWatchlistMonitorMatches request
+         * @return WatchlistMonitorMatchesList
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> An array of watchlist monitors </td><td>  -  </td></tr>
+         </table>
+         */
+        public WatchlistMonitorMatchesList execute() throws ApiException {
+            ApiResponse<WatchlistMonitorMatchesList> localVarResp = listWatchlistMonitorMatchesWithHttpInfo(monitorId);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute listWatchlistMonitorMatches request with HTTP info returned
+         * @return ApiResponse&lt;WatchlistMonitorMatchesList&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> An array of watchlist monitors </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<WatchlistMonitorMatchesList> executeWithHttpInfo() throws ApiException {
+            return listWatchlistMonitorMatchesWithHttpInfo(monitorId);
+        }
+
+        /**
+         * Execute listWatchlistMonitorMatches request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> An array of watchlist monitors </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<WatchlistMonitorMatchesList> _callback) throws ApiException {
+            return listWatchlistMonitorMatchesAsync(monitorId, _callback);
+        }
+    }
+
     /**
-     * Build call for listWatchlistMonitors
-     * @param applicantId The id of the applicant the watchlist monitors belong to. If omitted, all monitors for the account will be listed. (required)
-     * @param includeDeleted Whether to also include deleted (inactive) monitors. (optional, default to false)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * List matches (BETA)
+     * List match IDs on this monitor, as well as their enabled/disabled status 
+     * @param monitorId  (required)
+     * @return APIlistWatchlistMonitorMatchesRequest
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> An array of watchlist monitors </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listWatchlistMonitorsCall(UUID applicantId, Boolean includeDeleted, final ApiCallback _callback) throws ApiException {
+    public APIlistWatchlistMonitorMatchesRequest listWatchlistMonitorMatches(UUID monitorId) {
+        return new APIlistWatchlistMonitorMatchesRequest(monitorId);
+    }
+    private okhttp3.Call listWatchlistMonitorsCall(UUID applicantId, Boolean includeDeleted, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -8499,84 +10428,124 @@ public class DefaultApi {
 
     }
 
-    /**
-     * List monitors
-     * List all available monitors for an applicant 
-     * @param applicantId The id of the applicant the watchlist monitors belong to. If omitted, all monitors for the account will be listed. (required)
-     * @param includeDeleted Whether to also include deleted (inactive) monitors. (optional, default to false)
-     * @return WatchlistMonitorsList
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> An array of watchlist monitors </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public WatchlistMonitorsList listWatchlistMonitors(UUID applicantId, Boolean includeDeleted) throws ApiException {
-        ApiResponse<WatchlistMonitorsList> localVarResp = listWatchlistMonitorsWithHttpInfo(applicantId, includeDeleted);
-        return localVarResp.getData();
-    }
 
-    /**
-     * List monitors
-     * List all available monitors for an applicant 
-     * @param applicantId The id of the applicant the watchlist monitors belong to. If omitted, all monitors for the account will be listed. (required)
-     * @param includeDeleted Whether to also include deleted (inactive) monitors. (optional, default to false)
-     * @return ApiResponse&lt;WatchlistMonitorsList&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> An array of watchlist monitors </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<WatchlistMonitorsList> listWatchlistMonitorsWithHttpInfo(UUID applicantId, Boolean includeDeleted) throws ApiException {
+    private ApiResponse<WatchlistMonitorsList> listWatchlistMonitorsWithHttpInfo(UUID applicantId, Boolean includeDeleted) throws ApiException {
         okhttp3.Call localVarCall = listWatchlistMonitorsValidateBeforeCall(applicantId, includeDeleted, null);
         Type localVarReturnType = new TypeToken<WatchlistMonitorsList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * List monitors (asynchronously)
-     * List all available monitors for an applicant 
-     * @param applicantId The id of the applicant the watchlist monitors belong to. If omitted, all monitors for the account will be listed. (required)
-     * @param includeDeleted Whether to also include deleted (inactive) monitors. (optional, default to false)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> An array of watchlist monitors </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call listWatchlistMonitorsAsync(UUID applicantId, Boolean includeDeleted, final ApiCallback<WatchlistMonitorsList> _callback) throws ApiException {
+    private okhttp3.Call listWatchlistMonitorsAsync(UUID applicantId, Boolean includeDeleted, final ApiCallback<WatchlistMonitorsList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listWatchlistMonitorsValidateBeforeCall(applicantId, includeDeleted, _callback);
         Type localVarReturnType = new TypeToken<WatchlistMonitorsList>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class APIlistWatchlistMonitorsRequest {
+        private final UUID applicantId;
+        private Boolean includeDeleted;
+
+        private APIlistWatchlistMonitorsRequest(UUID applicantId) {
+            this.applicantId = applicantId;
+        }
+
+        /**
+         * Set includeDeleted
+         * @param includeDeleted Whether to also include deleted (inactive) monitors. (optional, default to false)
+         * @return APIlistWatchlistMonitorsRequest
+         */
+        public APIlistWatchlistMonitorsRequest includeDeleted(Boolean includeDeleted) {
+            this.includeDeleted = includeDeleted;
+            return this;
+        }
+
+        /**
+         * Build call for listWatchlistMonitors
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> An array of watchlist monitors </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return listWatchlistMonitorsCall(applicantId, includeDeleted, _callback);
+        }
+
+        /**
+         * Execute listWatchlistMonitors request
+         * @return WatchlistMonitorsList
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> An array of watchlist monitors </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public WatchlistMonitorsList execute() throws ApiException {
+            ApiResponse<WatchlistMonitorsList> localVarResp = listWatchlistMonitorsWithHttpInfo(applicantId, includeDeleted);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute listWatchlistMonitors request with HTTP info returned
+         * @return ApiResponse&lt;WatchlistMonitorsList&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> An array of watchlist monitors </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<WatchlistMonitorsList> executeWithHttpInfo() throws ApiException {
+            return listWatchlistMonitorsWithHttpInfo(applicantId, includeDeleted);
+        }
+
+        /**
+         * Execute listWatchlistMonitors request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> An array of watchlist monitors </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<WatchlistMonitorsList> _callback) throws ApiException {
+            return listWatchlistMonitorsAsync(applicantId, includeDeleted, _callback);
+        }
+    }
+
     /**
-     * Build call for listWebhooks
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * List monitors
+     * List all available monitors for an applicant 
+     * @param applicantId The id of the applicant the watchlist monitors belong to. If omitted, all monitors for the account will be listed. (required)
+     * @return APIlistWatchlistMonitorsRequest
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> A list of webhooks </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> An array of watchlist monitors </td><td>  -  </td></tr>
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listWebhooksCall(final ApiCallback _callback) throws ApiException {
+    public APIlistWatchlistMonitorsRequest listWatchlistMonitors(UUID applicantId) {
+        return new APIlistWatchlistMonitorsRequest(applicantId);
+    }
+    private okhttp3.Call listWebhooksCall(final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -8626,85 +10595,110 @@ public class DefaultApi {
 
     }
 
-    /**
-     * List webhooks
-     * Lists all webhooks you&#39;ve created. 
-     * @return WebhooksList
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> A list of webhooks </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public WebhooksList listWebhooks() throws ApiException {
-        ApiResponse<WebhooksList> localVarResp = listWebhooksWithHttpInfo();
-        return localVarResp.getData();
-    }
 
-    /**
-     * List webhooks
-     * Lists all webhooks you&#39;ve created. 
-     * @return ApiResponse&lt;WebhooksList&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> A list of webhooks </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<WebhooksList> listWebhooksWithHttpInfo() throws ApiException {
+    private ApiResponse<WebhooksList> listWebhooksWithHttpInfo() throws ApiException {
         okhttp3.Call localVarCall = listWebhooksValidateBeforeCall(null);
         Type localVarReturnType = new TypeToken<WebhooksList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * List webhooks (asynchronously)
-     * Lists all webhooks you&#39;ve created. 
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> A list of webhooks </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call listWebhooksAsync(final ApiCallback<WebhooksList> _callback) throws ApiException {
+    private okhttp3.Call listWebhooksAsync(final ApiCallback<WebhooksList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listWebhooksValidateBeforeCall(_callback);
         Type localVarReturnType = new TypeToken<WebhooksList>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class APIlistWebhooksRequest {
+
+        private APIlistWebhooksRequest() {
+        }
+
+        /**
+         * Build call for listWebhooks
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> A list of webhooks </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return listWebhooksCall(_callback);
+        }
+
+        /**
+         * Execute listWebhooks request
+         * @return WebhooksList
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> A list of webhooks </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public WebhooksList execute() throws ApiException {
+            ApiResponse<WebhooksList> localVarResp = listWebhooksWithHttpInfo();
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute listWebhooks request with HTTP info returned
+         * @return ApiResponse&lt;WebhooksList&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> A list of webhooks </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<WebhooksList> executeWithHttpInfo() throws ApiException {
+            return listWebhooksWithHttpInfo();
+        }
+
+        /**
+         * Execute listWebhooks request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> A list of webhooks </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<WebhooksList> _callback) throws ApiException {
+            return listWebhooksAsync(_callback);
+        }
+    }
+
     /**
-     * Build call for listWorkflowRuns
-     * @param page The number of the page to be retrieved. If not specified, defaults to 1. (optional, default to 1)
-     * @param status A list of comma separated status values to filter the results. Possible values are &#39;processing&#39;, &#39;awaiting_input&#39;, &#39;approved&#39;, &#39;declined&#39;, &#39;review&#39;, &#39;abandoned&#39; and &#39;error&#39;. (optional)
-     * @param createdAtGt A ISO-8601 date to filter results with a created date greater than (after) the one provided. (optional)
-     * @param createdAtLt A ISO-8601 date to filter results with a created date less than (before) the one provided. (optional)
-     * @param sort A string with the value &#39;desc&#39; or &#39;asc&#39; that allows to sort the returned list by the completed datetime either descending or ascending, respectively. If not specified, defaults to &#39;desc&#39;. (optional, default to desc)
-     * @param applicantId the applicant&#39;s id. (optional)
-     * @param tags A list of tags to filter the results. (optional)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * List webhooks
+     * Lists all webhooks you&#39;ve created. 
+     * @return APIlistWebhooksRequest
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> An array of Workflow Run objects matching the query parameters. </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> A list of webhooks </td><td>  -  </td></tr>
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listWorkflowRunsCall(Integer page, String status, LocalDate createdAtGt, LocalDate createdAtLt, String sort, UUID applicantId, List<String> tags, final ApiCallback _callback) throws ApiException {
+    public APIlistWebhooksRequest listWebhooks() {
+        return new APIlistWebhooksRequest();
+    }
+    private okhttp3.Call listWorkflowRunsCall(Integer page, String status, LocalDate createdAtGt, LocalDate createdAtLt, String sort, UUID applicantId, List<String> tags, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -8782,99 +10776,187 @@ public class DefaultApi {
 
     }
 
-    /**
-     * List Workflow Runs
-     * Retrieves the Workflow Runs of the client. Returns a list of Workflow Run objects. 
-     * @param page The number of the page to be retrieved. If not specified, defaults to 1. (optional, default to 1)
-     * @param status A list of comma separated status values to filter the results. Possible values are &#39;processing&#39;, &#39;awaiting_input&#39;, &#39;approved&#39;, &#39;declined&#39;, &#39;review&#39;, &#39;abandoned&#39; and &#39;error&#39;. (optional)
-     * @param createdAtGt A ISO-8601 date to filter results with a created date greater than (after) the one provided. (optional)
-     * @param createdAtLt A ISO-8601 date to filter results with a created date less than (before) the one provided. (optional)
-     * @param sort A string with the value &#39;desc&#39; or &#39;asc&#39; that allows to sort the returned list by the completed datetime either descending or ascending, respectively. If not specified, defaults to &#39;desc&#39;. (optional, default to desc)
-     * @param applicantId the applicant&#39;s id. (optional)
-     * @param tags A list of tags to filter the results. (optional)
-     * @return List&lt;WorkflowRun&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> An array of Workflow Run objects matching the query parameters. </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public List<WorkflowRun> listWorkflowRuns(Integer page, String status, LocalDate createdAtGt, LocalDate createdAtLt, String sort, UUID applicantId, List<String> tags) throws ApiException {
-        ApiResponse<List<WorkflowRun>> localVarResp = listWorkflowRunsWithHttpInfo(page, status, createdAtGt, createdAtLt, sort, applicantId, tags);
-        return localVarResp.getData();
-    }
 
-    /**
-     * List Workflow Runs
-     * Retrieves the Workflow Runs of the client. Returns a list of Workflow Run objects. 
-     * @param page The number of the page to be retrieved. If not specified, defaults to 1. (optional, default to 1)
-     * @param status A list of comma separated status values to filter the results. Possible values are &#39;processing&#39;, &#39;awaiting_input&#39;, &#39;approved&#39;, &#39;declined&#39;, &#39;review&#39;, &#39;abandoned&#39; and &#39;error&#39;. (optional)
-     * @param createdAtGt A ISO-8601 date to filter results with a created date greater than (after) the one provided. (optional)
-     * @param createdAtLt A ISO-8601 date to filter results with a created date less than (before) the one provided. (optional)
-     * @param sort A string with the value &#39;desc&#39; or &#39;asc&#39; that allows to sort the returned list by the completed datetime either descending or ascending, respectively. If not specified, defaults to &#39;desc&#39;. (optional, default to desc)
-     * @param applicantId the applicant&#39;s id. (optional)
-     * @param tags A list of tags to filter the results. (optional)
-     * @return ApiResponse&lt;List&lt;WorkflowRun&gt;&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> An array of Workflow Run objects matching the query parameters. </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<List<WorkflowRun>> listWorkflowRunsWithHttpInfo(Integer page, String status, LocalDate createdAtGt, LocalDate createdAtLt, String sort, UUID applicantId, List<String> tags) throws ApiException {
+    private ApiResponse<List<WorkflowRun>> listWorkflowRunsWithHttpInfo(Integer page, String status, LocalDate createdAtGt, LocalDate createdAtLt, String sort, UUID applicantId, List<String> tags) throws ApiException {
         okhttp3.Call localVarCall = listWorkflowRunsValidateBeforeCall(page, status, createdAtGt, createdAtLt, sort, applicantId, tags, null);
         Type localVarReturnType = new TypeToken<List<WorkflowRun>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * List Workflow Runs (asynchronously)
-     * Retrieves the Workflow Runs of the client. Returns a list of Workflow Run objects. 
-     * @param page The number of the page to be retrieved. If not specified, defaults to 1. (optional, default to 1)
-     * @param status A list of comma separated status values to filter the results. Possible values are &#39;processing&#39;, &#39;awaiting_input&#39;, &#39;approved&#39;, &#39;declined&#39;, &#39;review&#39;, &#39;abandoned&#39; and &#39;error&#39;. (optional)
-     * @param createdAtGt A ISO-8601 date to filter results with a created date greater than (after) the one provided. (optional)
-     * @param createdAtLt A ISO-8601 date to filter results with a created date less than (before) the one provided. (optional)
-     * @param sort A string with the value &#39;desc&#39; or &#39;asc&#39; that allows to sort the returned list by the completed datetime either descending or ascending, respectively. If not specified, defaults to &#39;desc&#39;. (optional, default to desc)
-     * @param applicantId the applicant&#39;s id. (optional)
-     * @param tags A list of tags to filter the results. (optional)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> An array of Workflow Run objects matching the query parameters. </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call listWorkflowRunsAsync(Integer page, String status, LocalDate createdAtGt, LocalDate createdAtLt, String sort, UUID applicantId, List<String> tags, final ApiCallback<List<WorkflowRun>> _callback) throws ApiException {
+    private okhttp3.Call listWorkflowRunsAsync(Integer page, String status, LocalDate createdAtGt, LocalDate createdAtLt, String sort, UUID applicantId, List<String> tags, final ApiCallback<List<WorkflowRun>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listWorkflowRunsValidateBeforeCall(page, status, createdAtGt, createdAtLt, sort, applicantId, tags, _callback);
         Type localVarReturnType = new TypeToken<List<WorkflowRun>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class APIlistWorkflowRunsRequest {
+        private Integer page;
+        private String status;
+        private LocalDate createdAtGt;
+        private LocalDate createdAtLt;
+        private String sort;
+        private UUID applicantId;
+        private List<String> tags;
+
+        private APIlistWorkflowRunsRequest() {
+        }
+
+        /**
+         * Set page
+         * @param page The number of the page to be retrieved. If not specified, defaults to 1. (optional, default to 1)
+         * @return APIlistWorkflowRunsRequest
+         */
+        public APIlistWorkflowRunsRequest page(Integer page) {
+            this.page = page;
+            return this;
+        }
+
+        /**
+         * Set status
+         * @param status A list of comma separated status values to filter the results. Possible values are &#39;processing&#39;, &#39;awaiting_input&#39;, &#39;approved&#39;, &#39;declined&#39;, &#39;review&#39;, &#39;abandoned&#39; and &#39;error&#39;. (optional)
+         * @return APIlistWorkflowRunsRequest
+         */
+        public APIlistWorkflowRunsRequest status(String status) {
+            this.status = status;
+            return this;
+        }
+
+        /**
+         * Set createdAtGt
+         * @param createdAtGt A ISO-8601 date to filter results with a created date greater than (after) the one provided. (optional)
+         * @return APIlistWorkflowRunsRequest
+         */
+        public APIlistWorkflowRunsRequest createdAtGt(LocalDate createdAtGt) {
+            this.createdAtGt = createdAtGt;
+            return this;
+        }
+
+        /**
+         * Set createdAtLt
+         * @param createdAtLt A ISO-8601 date to filter results with a created date less than (before) the one provided. (optional)
+         * @return APIlistWorkflowRunsRequest
+         */
+        public APIlistWorkflowRunsRequest createdAtLt(LocalDate createdAtLt) {
+            this.createdAtLt = createdAtLt;
+            return this;
+        }
+
+        /**
+         * Set sort
+         * @param sort A string with the value &#39;desc&#39; or &#39;asc&#39; that allows to sort the returned list by the completed datetime either descending or ascending, respectively. If not specified, defaults to &#39;desc&#39;. (optional, default to desc)
+         * @return APIlistWorkflowRunsRequest
+         */
+        public APIlistWorkflowRunsRequest sort(String sort) {
+            this.sort = sort;
+            return this;
+        }
+
+        /**
+         * Set applicantId
+         * @param applicantId the applicant&#39;s id. (optional)
+         * @return APIlistWorkflowRunsRequest
+         */
+        public APIlistWorkflowRunsRequest applicantId(UUID applicantId) {
+            this.applicantId = applicantId;
+            return this;
+        }
+
+        /**
+         * Set tags
+         * @param tags A list of tags to filter the results. (optional)
+         * @return APIlistWorkflowRunsRequest
+         */
+        public APIlistWorkflowRunsRequest tags(List<String> tags) {
+            this.tags = tags;
+            return this;
+        }
+
+        /**
+         * Build call for listWorkflowRuns
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> An array of Workflow Run objects matching the query parameters. </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return listWorkflowRunsCall(page, status, createdAtGt, createdAtLt, sort, applicantId, tags, _callback);
+        }
+
+        /**
+         * Execute listWorkflowRuns request
+         * @return List&lt;WorkflowRun&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> An array of Workflow Run objects matching the query parameters. </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public List<WorkflowRun> execute() throws ApiException {
+            ApiResponse<List<WorkflowRun>> localVarResp = listWorkflowRunsWithHttpInfo(page, status, createdAtGt, createdAtLt, sort, applicantId, tags);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute listWorkflowRuns request with HTTP info returned
+         * @return ApiResponse&lt;List&lt;WorkflowRun&gt;&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> An array of Workflow Run objects matching the query parameters. </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<List<WorkflowRun>> executeWithHttpInfo() throws ApiException {
+            return listWorkflowRunsWithHttpInfo(page, status, createdAtGt, createdAtLt, sort, applicantId, tags);
+        }
+
+        /**
+         * Execute listWorkflowRuns request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> An array of Workflow Run objects matching the query parameters. </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<List<WorkflowRun>> _callback) throws ApiException {
+            return listWorkflowRunsAsync(page, status, createdAtGt, createdAtLt, sort, applicantId, tags, _callback);
+        }
+    }
+
     /**
-     * Build call for ping
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * List Workflow Runs
+     * Retrieves the Workflow Runs of the client. Returns a list of Workflow Run objects. 
+     * @return APIlistWorkflowRunsRequest
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Regional base URL is operational </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> An array of Workflow Run objects matching the query parameters. </td><td>  -  </td></tr>
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call pingCall(final ApiCallback _callback) throws ApiException {
+    public APIlistWorkflowRunsRequest listWorkflowRuns() {
+        return new APIlistWorkflowRunsRequest();
+    }
+    private okhttp3.Call pingCall(final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -8925,79 +11007,110 @@ public class DefaultApi {
 
     }
 
-    /**
-     * Ping
-     * Run a health check on the Onfido API 
-     * @return String
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Regional base URL is operational </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public String ping() throws ApiException {
-        ApiResponse<String> localVarResp = pingWithHttpInfo();
-        return localVarResp.getData();
-    }
 
-    /**
-     * Ping
-     * Run a health check on the Onfido API 
-     * @return ApiResponse&lt;String&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Regional base URL is operational </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<String> pingWithHttpInfo() throws ApiException {
+    private ApiResponse<String> pingWithHttpInfo() throws ApiException {
         okhttp3.Call localVarCall = pingValidateBeforeCall(null);
         Type localVarReturnType = new TypeToken<String>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * Ping (asynchronously)
-     * Run a health check on the Onfido API 
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Regional base URL is operational </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call pingAsync(final ApiCallback<String> _callback) throws ApiException {
+    private okhttp3.Call pingAsync(final ApiCallback<String> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = pingValidateBeforeCall(_callback);
         Type localVarReturnType = new TypeToken<String>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class APIpingRequest {
+
+        private APIpingRequest() {
+        }
+
+        /**
+         * Build call for ping
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Regional base URL is operational </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return pingCall(_callback);
+        }
+
+        /**
+         * Execute ping request
+         * @return String
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Regional base URL is operational </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public String execute() throws ApiException {
+            ApiResponse<String> localVarResp = pingWithHttpInfo();
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute ping request with HTTP info returned
+         * @return ApiResponse&lt;String&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Regional base URL is operational </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<String> executeWithHttpInfo() throws ApiException {
+            return pingWithHttpInfo();
+        }
+
+        /**
+         * Execute ping request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Regional base URL is operational </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<String> _callback) throws ApiException {
+            return pingAsync(_callback);
+        }
+    }
+
     /**
-     * Build call for postResultsFeedback
-     * @param resultsFeedback  (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * Ping
+     * Run a health check on the Onfido API 
+     * @return APIpingRequest
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Created feedback </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Regional base URL is operational </td><td>  -  </td></tr>
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postResultsFeedbackCall(ResultsFeedback resultsFeedback, final ApiCallback _callback) throws ApiException {
+    public APIpingRequest ping() {
+        return new APIpingRequest();
+    }
+    private okhttp3.Call postResultsFeedbackCall(ResultsFeedback resultsFeedback, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -9053,83 +11166,113 @@ public class DefaultApi {
 
     }
 
-    /**
-     * Fraud reporting (ALPHA)
-     * Create Feedback on checks and reports 
-     * @param resultsFeedback  (required)
-     * @return ResultsFeedback
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Created feedback </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ResultsFeedback postResultsFeedback(ResultsFeedback resultsFeedback) throws ApiException {
-        ApiResponse<ResultsFeedback> localVarResp = postResultsFeedbackWithHttpInfo(resultsFeedback);
-        return localVarResp.getData();
-    }
 
-    /**
-     * Fraud reporting (ALPHA)
-     * Create Feedback on checks and reports 
-     * @param resultsFeedback  (required)
-     * @return ApiResponse&lt;ResultsFeedback&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Created feedback </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<ResultsFeedback> postResultsFeedbackWithHttpInfo(ResultsFeedback resultsFeedback) throws ApiException {
+    private ApiResponse<ResultsFeedback> postResultsFeedbackWithHttpInfo(ResultsFeedback resultsFeedback) throws ApiException {
         okhttp3.Call localVarCall = postResultsFeedbackValidateBeforeCall(resultsFeedback, null);
         Type localVarReturnType = new TypeToken<ResultsFeedback>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * Fraud reporting (ALPHA) (asynchronously)
-     * Create Feedback on checks and reports 
-     * @param resultsFeedback  (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Created feedback </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call postResultsFeedbackAsync(ResultsFeedback resultsFeedback, final ApiCallback<ResultsFeedback> _callback) throws ApiException {
+    private okhttp3.Call postResultsFeedbackAsync(ResultsFeedback resultsFeedback, final ApiCallback<ResultsFeedback> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = postResultsFeedbackValidateBeforeCall(resultsFeedback, _callback);
         Type localVarReturnType = new TypeToken<ResultsFeedback>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class APIpostResultsFeedbackRequest {
+        private final ResultsFeedback resultsFeedback;
+
+        private APIpostResultsFeedbackRequest(ResultsFeedback resultsFeedback) {
+            this.resultsFeedback = resultsFeedback;
+        }
+
+        /**
+         * Build call for postResultsFeedback
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Created feedback </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return postResultsFeedbackCall(resultsFeedback, _callback);
+        }
+
+        /**
+         * Execute postResultsFeedback request
+         * @return ResultsFeedback
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Created feedback </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public ResultsFeedback execute() throws ApiException {
+            ApiResponse<ResultsFeedback> localVarResp = postResultsFeedbackWithHttpInfo(resultsFeedback);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute postResultsFeedback request with HTTP info returned
+         * @return ApiResponse&lt;ResultsFeedback&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Created feedback </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<ResultsFeedback> executeWithHttpInfo() throws ApiException {
+            return postResultsFeedbackWithHttpInfo(resultsFeedback);
+        }
+
+        /**
+         * Execute postResultsFeedback request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Created feedback </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<ResultsFeedback> _callback) throws ApiException {
+            return postResultsFeedbackAsync(resultsFeedback, _callback);
+        }
+    }
+
     /**
-     * Build call for resendWebhooks
-     * @param webhookResend  (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * Fraud reporting (ALPHA)
+     * Create Feedback on checks and reports 
+     * @param resultsFeedback  (required)
+     * @return APIpostResultsFeedbackRequest
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Webhooks are resent for the respective checks </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> Request was received but it could not be processed </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Created feedback </td><td>  -  </td></tr>
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call resendWebhooksCall(WebhookResend webhookResend, final ApiCallback _callback) throws ApiException {
+    public APIpostResultsFeedbackRequest postResultsFeedback(ResultsFeedback resultsFeedback) {
+        return new APIpostResultsFeedbackRequest(resultsFeedback);
+    }
+    private okhttp3.Call resendWebhooksCall(WebhookResend webhookResend, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -9185,81 +11328,114 @@ public class DefaultApi {
 
     }
 
-    /**
-     * Resends webhooks
-     * Resends events to all webhooks registered with a matching environment in your account. 
-     * @param webhookResend  (required)
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Webhooks are resent for the respective checks </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> Request was received but it could not be processed </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public void resendWebhooks(WebhookResend webhookResend) throws ApiException {
-        resendWebhooksWithHttpInfo(webhookResend);
-    }
 
-    /**
-     * Resends webhooks
-     * Resends events to all webhooks registered with a matching environment in your account. 
-     * @param webhookResend  (required)
-     * @return ApiResponse&lt;Void&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Webhooks are resent for the respective checks </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> Request was received but it could not be processed </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<Void> resendWebhooksWithHttpInfo(WebhookResend webhookResend) throws ApiException {
+    private ApiResponse<Void> resendWebhooksWithHttpInfo(WebhookResend webhookResend) throws ApiException {
         okhttp3.Call localVarCall = resendWebhooksValidateBeforeCall(webhookResend, null);
         return localVarApiClient.execute(localVarCall);
     }
 
-    /**
-     * Resends webhooks (asynchronously)
-     * Resends events to all webhooks registered with a matching environment in your account. 
-     * @param webhookResend  (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Webhooks are resent for the respective checks </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> Request was received but it could not be processed </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call resendWebhooksAsync(WebhookResend webhookResend, final ApiCallback<Void> _callback) throws ApiException {
+    private okhttp3.Call resendWebhooksAsync(WebhookResend webhookResend, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = resendWebhooksValidateBeforeCall(webhookResend, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
+
+    public class APIresendWebhooksRequest {
+        private final WebhookResend webhookResend;
+
+        private APIresendWebhooksRequest(WebhookResend webhookResend) {
+            this.webhookResend = webhookResend;
+        }
+
+        /**
+         * Build call for resendWebhooks
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 204 </td><td> Webhooks are resent for the respective checks </td><td>  -  </td></tr>
+            <tr><td> 422 </td><td> Request was received but it could not be processed </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return resendWebhooksCall(webhookResend, _callback);
+        }
+
+        /**
+         * Execute resendWebhooks request
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 204 </td><td> Webhooks are resent for the respective checks </td><td>  -  </td></tr>
+            <tr><td> 422 </td><td> Request was received but it could not be processed </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public void execute() throws ApiException {
+            resendWebhooksWithHttpInfo(webhookResend);
+        }
+
+        /**
+         * Execute resendWebhooks request with HTTP info returned
+         * @return ApiResponse&lt;Void&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 204 </td><td> Webhooks are resent for the respective checks </td><td>  -  </td></tr>
+            <tr><td> 422 </td><td> Request was received but it could not be processed </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<Void> executeWithHttpInfo() throws ApiException {
+            return resendWebhooksWithHttpInfo(webhookResend);
+        }
+
+        /**
+         * Execute resendWebhooks request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 204 </td><td> Webhooks are resent for the respective checks </td><td>  -  </td></tr>
+            <tr><td> 422 </td><td> Request was received but it could not be processed </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<Void> _callback) throws ApiException {
+            return resendWebhooksAsync(webhookResend, _callback);
+        }
+    }
+
     /**
-     * Build call for restoreApplicant
-     * @param applicantId  (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * Resends webhooks
+     * Resends events to all webhooks registered with a matching environment in your account. 
+     * @param webhookResend  (required)
+     * @return APIresendWebhooksRequest
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> Webhooks are resent for the respective checks </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Request was received but it could not be processed </td><td>  -  </td></tr>
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call restoreApplicantCall(UUID applicantId, final ApiCallback _callback) throws ApiException {
+    public APIresendWebhooksRequest resendWebhooks(WebhookResend webhookResend) {
+        return new APIresendWebhooksRequest(webhookResend);
+    }
+    private okhttp3.Call restoreApplicantCall(UUID applicantId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -9315,69 +11491,97 @@ public class DefaultApi {
 
     }
 
-    /**
-     * Restore Applicant
-     * Restores a single applicant scheduled for deletion. 
-     * @param applicantId  (required)
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public void restoreApplicant(UUID applicantId) throws ApiException {
-        restoreApplicantWithHttpInfo(applicantId);
-    }
 
-    /**
-     * Restore Applicant
-     * Restores a single applicant scheduled for deletion. 
-     * @param applicantId  (required)
-     * @return ApiResponse&lt;Void&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<Void> restoreApplicantWithHttpInfo(UUID applicantId) throws ApiException {
+    private ApiResponse<Void> restoreApplicantWithHttpInfo(UUID applicantId) throws ApiException {
         okhttp3.Call localVarCall = restoreApplicantValidateBeforeCall(applicantId, null);
         return localVarApiClient.execute(localVarCall);
     }
 
-    /**
-     * Restore Applicant (asynchronously)
-     * Restores a single applicant scheduled for deletion. 
-     * @param applicantId  (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call restoreApplicantAsync(UUID applicantId, final ApiCallback<Void> _callback) throws ApiException {
+    private okhttp3.Call restoreApplicantAsync(UUID applicantId, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = restoreApplicantValidateBeforeCall(applicantId, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
+
+    public class APIrestoreApplicantRequest {
+        private final UUID applicantId;
+
+        private APIrestoreApplicantRequest(UUID applicantId) {
+            this.applicantId = applicantId;
+        }
+
+        /**
+         * Build call for restoreApplicant
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return restoreApplicantCall(applicantId, _callback);
+        }
+
+        /**
+         * Execute restoreApplicant request
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public void execute() throws ApiException {
+            restoreApplicantWithHttpInfo(applicantId);
+        }
+
+        /**
+         * Execute restoreApplicant request with HTTP info returned
+         * @return ApiResponse&lt;Void&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<Void> executeWithHttpInfo() throws ApiException {
+            return restoreApplicantWithHttpInfo(applicantId);
+        }
+
+        /**
+         * Execute restoreApplicant request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<Void> _callback) throws ApiException {
+            return restoreApplicantAsync(applicantId, _callback);
+        }
+    }
+
     /**
-     * Build call for resumeCheck
-     * @param checkId  (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * Restore Applicant
+     * Restores a single applicant scheduled for deletion. 
+     * @param applicantId  (required)
+     * @return APIrestoreApplicantRequest
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
@@ -9386,7 +11590,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call resumeCheckCall(UUID checkId, final ApiCallback _callback) throws ApiException {
+    public APIrestoreApplicantRequest restoreApplicant(UUID applicantId) {
+        return new APIrestoreApplicantRequest(applicantId);
+    }
+    private okhttp3.Call resumeCheckCall(UUID checkId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -9442,69 +11649,97 @@ public class DefaultApi {
 
     }
 
-    /**
-     * Resume a Check
-     * Resumes a paused check. 
-     * @param checkId  (required)
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public void resumeCheck(UUID checkId) throws ApiException {
-        resumeCheckWithHttpInfo(checkId);
-    }
 
-    /**
-     * Resume a Check
-     * Resumes a paused check. 
-     * @param checkId  (required)
-     * @return ApiResponse&lt;Void&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<Void> resumeCheckWithHttpInfo(UUID checkId) throws ApiException {
+    private ApiResponse<Void> resumeCheckWithHttpInfo(UUID checkId) throws ApiException {
         okhttp3.Call localVarCall = resumeCheckValidateBeforeCall(checkId, null);
         return localVarApiClient.execute(localVarCall);
     }
 
-    /**
-     * Resume a Check (asynchronously)
-     * Resumes a paused check. 
-     * @param checkId  (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call resumeCheckAsync(UUID checkId, final ApiCallback<Void> _callback) throws ApiException {
+    private okhttp3.Call resumeCheckAsync(UUID checkId, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = resumeCheckValidateBeforeCall(checkId, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
+
+    public class APIresumeCheckRequest {
+        private final UUID checkId;
+
+        private APIresumeCheckRequest(UUID checkId) {
+            this.checkId = checkId;
+        }
+
+        /**
+         * Build call for resumeCheck
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return resumeCheckCall(checkId, _callback);
+        }
+
+        /**
+         * Execute resumeCheck request
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public void execute() throws ApiException {
+            resumeCheckWithHttpInfo(checkId);
+        }
+
+        /**
+         * Execute resumeCheck request with HTTP info returned
+         * @return ApiResponse&lt;Void&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<Void> executeWithHttpInfo() throws ApiException {
+            return resumeCheckWithHttpInfo(checkId);
+        }
+
+        /**
+         * Execute resumeCheck request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<Void> _callback) throws ApiException {
+            return resumeCheckAsync(checkId, _callback);
+        }
+    }
+
     /**
-     * Build call for resumeReport
-     * @param reportId  (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * Resume a Check
+     * Resumes a paused check. 
+     * @param checkId  (required)
+     * @return APIresumeCheckRequest
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
@@ -9513,7 +11748,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call resumeReportCall(UUID reportId, final ApiCallback _callback) throws ApiException {
+    public APIresumeCheckRequest resumeCheck(UUID checkId) {
+        return new APIresumeCheckRequest(checkId);
+    }
+    private okhttp3.Call resumeReportCall(UUID reportId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -9569,79 +11807,109 @@ public class DefaultApi {
 
     }
 
-    /**
-     * Resume report
-     * Resumes a single paused report. 
-     * @param reportId  (required)
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public void resumeReport(UUID reportId) throws ApiException {
-        resumeReportWithHttpInfo(reportId);
-    }
 
-    /**
-     * Resume report
-     * Resumes a single paused report. 
-     * @param reportId  (required)
-     * @return ApiResponse&lt;Void&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<Void> resumeReportWithHttpInfo(UUID reportId) throws ApiException {
+    private ApiResponse<Void> resumeReportWithHttpInfo(UUID reportId) throws ApiException {
         okhttp3.Call localVarCall = resumeReportValidateBeforeCall(reportId, null);
         return localVarApiClient.execute(localVarCall);
     }
 
-    /**
-     * Resume report (asynchronously)
-     * Resumes a single paused report. 
-     * @param reportId  (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call resumeReportAsync(UUID reportId, final ApiCallback<Void> _callback) throws ApiException {
+    private okhttp3.Call resumeReportAsync(UUID reportId, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = resumeReportValidateBeforeCall(reportId, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
+
+    public class APIresumeReportRequest {
+        private final UUID reportId;
+
+        private APIresumeReportRequest(UUID reportId) {
+            this.reportId = reportId;
+        }
+
+        /**
+         * Build call for resumeReport
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return resumeReportCall(reportId, _callback);
+        }
+
+        /**
+         * Execute resumeReport request
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public void execute() throws ApiException {
+            resumeReportWithHttpInfo(reportId);
+        }
+
+        /**
+         * Execute resumeReport request with HTTP info returned
+         * @return ApiResponse&lt;Void&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<Void> executeWithHttpInfo() throws ApiException {
+            return resumeReportWithHttpInfo(reportId);
+        }
+
+        /**
+         * Execute resumeReport request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<Void> _callback) throws ApiException {
+            return resumeReportAsync(reportId, _callback);
+        }
+    }
+
     /**
-     * Build call for updateApplicant
-     * @param applicantId  (required)
-     * @param applicantUpdater  (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * Resume report
+     * Resumes a single paused report. 
+     * @param reportId  (required)
+     * @return APIresumeReportRequest
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Applicant Object </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> No Content </td><td>  -  </td></tr>
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateApplicantCall(UUID applicantId, ApplicantUpdater applicantUpdater, final ApiCallback _callback) throws ApiException {
+    public APIresumeReportRequest resumeReport(UUID reportId) {
+        return new APIresumeReportRequest(reportId);
+    }
+    private okhttp3.Call updateApplicantCall(UUID applicantId, ApplicantUpdater applicantUpdater, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -9703,89 +11971,116 @@ public class DefaultApi {
 
     }
 
-    /**
-     * Update Applicant
-     * Allows updating applicant&#39;s information before any checks is created. - Partial updates - Addresses and ID numbers present will replace existing ones - Same applicant validations to create applicant 
-     * @param applicantId  (required)
-     * @param applicantUpdater  (required)
-     * @return Applicant
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Applicant Object </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public Applicant updateApplicant(UUID applicantId, ApplicantUpdater applicantUpdater) throws ApiException {
-        ApiResponse<Applicant> localVarResp = updateApplicantWithHttpInfo(applicantId, applicantUpdater);
-        return localVarResp.getData();
-    }
 
-    /**
-     * Update Applicant
-     * Allows updating applicant&#39;s information before any checks is created. - Partial updates - Addresses and ID numbers present will replace existing ones - Same applicant validations to create applicant 
-     * @param applicantId  (required)
-     * @param applicantUpdater  (required)
-     * @return ApiResponse&lt;Applicant&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Applicant Object </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<Applicant> updateApplicantWithHttpInfo(UUID applicantId, ApplicantUpdater applicantUpdater) throws ApiException {
+    private ApiResponse<Applicant> updateApplicantWithHttpInfo(UUID applicantId, ApplicantUpdater applicantUpdater) throws ApiException {
         okhttp3.Call localVarCall = updateApplicantValidateBeforeCall(applicantId, applicantUpdater, null);
         Type localVarReturnType = new TypeToken<Applicant>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * Update Applicant (asynchronously)
-     * Allows updating applicant&#39;s information before any checks is created. - Partial updates - Addresses and ID numbers present will replace existing ones - Same applicant validations to create applicant 
-     * @param applicantId  (required)
-     * @param applicantUpdater  (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Applicant Object </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call updateApplicantAsync(UUID applicantId, ApplicantUpdater applicantUpdater, final ApiCallback<Applicant> _callback) throws ApiException {
+    private okhttp3.Call updateApplicantAsync(UUID applicantId, ApplicantUpdater applicantUpdater, final ApiCallback<Applicant> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateApplicantValidateBeforeCall(applicantId, applicantUpdater, _callback);
         Type localVarReturnType = new TypeToken<Applicant>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class APIupdateApplicantRequest {
+        private final UUID applicantId;
+        private final ApplicantUpdater applicantUpdater;
+
+        private APIupdateApplicantRequest(UUID applicantId, ApplicantUpdater applicantUpdater) {
+            this.applicantId = applicantId;
+            this.applicantUpdater = applicantUpdater;
+        }
+
+        /**
+         * Build call for updateApplicant
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Applicant Object </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return updateApplicantCall(applicantId, applicantUpdater, _callback);
+        }
+
+        /**
+         * Execute updateApplicant request
+         * @return Applicant
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Applicant Object </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public Applicant execute() throws ApiException {
+            ApiResponse<Applicant> localVarResp = updateApplicantWithHttpInfo(applicantId, applicantUpdater);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute updateApplicant request with HTTP info returned
+         * @return ApiResponse&lt;Applicant&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Applicant Object </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<Applicant> executeWithHttpInfo() throws ApiException {
+            return updateApplicantWithHttpInfo(applicantId, applicantUpdater);
+        }
+
+        /**
+         * Execute updateApplicant request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Applicant Object </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<Applicant> _callback) throws ApiException {
+            return updateApplicantAsync(applicantId, applicantUpdater, _callback);
+        }
+    }
+
     /**
-     * Build call for updatePasskey
-     * @param username Username that owns the passkey. (required)
-     * @param passkeyId Passkey ID. (required)
-     * @param passkeyUpdater Passkey update payload. (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * Update Applicant
+     * Allows updating applicant&#39;s information before any checks is created. - Partial updates - Addresses and ID numbers present will replace existing ones - Same applicant validations to create applicant 
+     * @param applicantId  (required)
+     * @param applicantUpdater  (required)
+     * @return APIupdateApplicantRequest
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Passkey updated </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Passkey not found </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Applicant Object </td><td>  -  </td></tr>
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updatePasskeyCall(String username, String passkeyId, PasskeyUpdater passkeyUpdater, final ApiCallback _callback) throws ApiException {
+    public APIupdateApplicantRequest updateApplicant(UUID applicantId, ApplicantUpdater applicantUpdater) {
+        return new APIupdateApplicantRequest(applicantId, applicantUpdater);
+    }
+    private okhttp3.Call updatePasskeyCall(String username, String passkeyId, PasskeyUpdater passkeyUpdater, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -9853,95 +12148,129 @@ public class DefaultApi {
 
     }
 
-    /**
-     * Update passkey
-     * Updates a passkey&#39;s state. 
-     * @param username Username that owns the passkey. (required)
-     * @param passkeyId Passkey ID. (required)
-     * @param passkeyUpdater Passkey update payload. (required)
-     * @return Passkey
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Passkey updated </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Passkey not found </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public Passkey updatePasskey(String username, String passkeyId, PasskeyUpdater passkeyUpdater) throws ApiException {
-        ApiResponse<Passkey> localVarResp = updatePasskeyWithHttpInfo(username, passkeyId, passkeyUpdater);
-        return localVarResp.getData();
-    }
 
-    /**
-     * Update passkey
-     * Updates a passkey&#39;s state. 
-     * @param username Username that owns the passkey. (required)
-     * @param passkeyId Passkey ID. (required)
-     * @param passkeyUpdater Passkey update payload. (required)
-     * @return ApiResponse&lt;Passkey&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Passkey updated </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Passkey not found </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<Passkey> updatePasskeyWithHttpInfo(String username, String passkeyId, PasskeyUpdater passkeyUpdater) throws ApiException {
+    private ApiResponse<Passkey> updatePasskeyWithHttpInfo(String username, String passkeyId, PasskeyUpdater passkeyUpdater) throws ApiException {
         okhttp3.Call localVarCall = updatePasskeyValidateBeforeCall(username, passkeyId, passkeyUpdater, null);
         Type localVarReturnType = new TypeToken<Passkey>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * Update passkey (asynchronously)
-     * Updates a passkey&#39;s state. 
-     * @param username Username that owns the passkey. (required)
-     * @param passkeyId Passkey ID. (required)
-     * @param passkeyUpdater Passkey update payload. (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Passkey updated </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Passkey not found </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call updatePasskeyAsync(String username, String passkeyId, PasskeyUpdater passkeyUpdater, final ApiCallback<Passkey> _callback) throws ApiException {
+    private okhttp3.Call updatePasskeyAsync(String username, String passkeyId, PasskeyUpdater passkeyUpdater, final ApiCallback<Passkey> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updatePasskeyValidateBeforeCall(username, passkeyId, passkeyUpdater, _callback);
         Type localVarReturnType = new TypeToken<Passkey>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class APIupdatePasskeyRequest {
+        private final String username;
+        private final String passkeyId;
+        private final PasskeyUpdater passkeyUpdater;
+
+        private APIupdatePasskeyRequest(String username, String passkeyId, PasskeyUpdater passkeyUpdater) {
+            this.username = username;
+            this.passkeyId = passkeyId;
+            this.passkeyUpdater = passkeyUpdater;
+        }
+
+        /**
+         * Build call for updatePasskey
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Passkey updated </td><td>  -  </td></tr>
+            <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+            <tr><td> 404 </td><td> Passkey not found </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return updatePasskeyCall(username, passkeyId, passkeyUpdater, _callback);
+        }
+
+        /**
+         * Execute updatePasskey request
+         * @return Passkey
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Passkey updated </td><td>  -  </td></tr>
+            <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+            <tr><td> 404 </td><td> Passkey not found </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public Passkey execute() throws ApiException {
+            ApiResponse<Passkey> localVarResp = updatePasskeyWithHttpInfo(username, passkeyId, passkeyUpdater);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute updatePasskey request with HTTP info returned
+         * @return ApiResponse&lt;Passkey&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Passkey updated </td><td>  -  </td></tr>
+            <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+            <tr><td> 404 </td><td> Passkey not found </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<Passkey> executeWithHttpInfo() throws ApiException {
+            return updatePasskeyWithHttpInfo(username, passkeyId, passkeyUpdater);
+        }
+
+        /**
+         * Execute updatePasskey request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Passkey updated </td><td>  -  </td></tr>
+            <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+            <tr><td> 404 </td><td> Passkey not found </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<Passkey> _callback) throws ApiException {
+            return updatePasskeyAsync(username, passkeyId, passkeyUpdater, _callback);
+        }
+    }
+
     /**
-     * Build call for updateWatchlistMonitorMatch
-     * @param monitorId  (required)
-     * @param watchlistMonitorMatchesUpdater  (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * Update passkey
+     * Updates a passkey&#39;s state. 
+     * @param username Username that owns the passkey. (required)
+     * @param passkeyId Passkey ID. (required)
+     * @param passkeyUpdater Passkey update payload. (required)
+     * @return APIupdatePasskeyRequest
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> An array of watchlist monitors </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Passkey updated </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Passkey not found </td><td>  -  </td></tr>
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateWatchlistMonitorMatchCall(UUID monitorId, WatchlistMonitorMatchesUpdater watchlistMonitorMatchesUpdater, final ApiCallback _callback) throws ApiException {
+    public APIupdatePasskeyRequest updatePasskey(String username, String passkeyId, PasskeyUpdater passkeyUpdater) {
+        return new APIupdatePasskeyRequest(username, passkeyId, passkeyUpdater);
+    }
+    private okhttp3.Call updateWatchlistMonitorMatchCall(UUID monitorId, WatchlistMonitorMatchesUpdater watchlistMonitorMatchesUpdater, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -10003,86 +12332,116 @@ public class DefaultApi {
 
     }
 
-    /**
-     * Set match status (BETA)
-     * Update the status of the given matches 
-     * @param monitorId  (required)
-     * @param watchlistMonitorMatchesUpdater  (required)
-     * @return WatchlistMonitorMatchesList
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> An array of watchlist monitors </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public WatchlistMonitorMatchesList updateWatchlistMonitorMatch(UUID monitorId, WatchlistMonitorMatchesUpdater watchlistMonitorMatchesUpdater) throws ApiException {
-        ApiResponse<WatchlistMonitorMatchesList> localVarResp = updateWatchlistMonitorMatchWithHttpInfo(monitorId, watchlistMonitorMatchesUpdater);
-        return localVarResp.getData();
-    }
 
-    /**
-     * Set match status (BETA)
-     * Update the status of the given matches 
-     * @param monitorId  (required)
-     * @param watchlistMonitorMatchesUpdater  (required)
-     * @return ApiResponse&lt;WatchlistMonitorMatchesList&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> An array of watchlist monitors </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<WatchlistMonitorMatchesList> updateWatchlistMonitorMatchWithHttpInfo(UUID monitorId, WatchlistMonitorMatchesUpdater watchlistMonitorMatchesUpdater) throws ApiException {
+    private ApiResponse<WatchlistMonitorMatchesList> updateWatchlistMonitorMatchWithHttpInfo(UUID monitorId, WatchlistMonitorMatchesUpdater watchlistMonitorMatchesUpdater) throws ApiException {
         okhttp3.Call localVarCall = updateWatchlistMonitorMatchValidateBeforeCall(monitorId, watchlistMonitorMatchesUpdater, null);
         Type localVarReturnType = new TypeToken<WatchlistMonitorMatchesList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * Set match status (BETA) (asynchronously)
-     * Update the status of the given matches 
-     * @param monitorId  (required)
-     * @param watchlistMonitorMatchesUpdater  (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> An array of watchlist monitors </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call updateWatchlistMonitorMatchAsync(UUID monitorId, WatchlistMonitorMatchesUpdater watchlistMonitorMatchesUpdater, final ApiCallback<WatchlistMonitorMatchesList> _callback) throws ApiException {
+    private okhttp3.Call updateWatchlistMonitorMatchAsync(UUID monitorId, WatchlistMonitorMatchesUpdater watchlistMonitorMatchesUpdater, final ApiCallback<WatchlistMonitorMatchesList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateWatchlistMonitorMatchValidateBeforeCall(monitorId, watchlistMonitorMatchesUpdater, _callback);
         Type localVarReturnType = new TypeToken<WatchlistMonitorMatchesList>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class APIupdateWatchlistMonitorMatchRequest {
+        private final UUID monitorId;
+        private final WatchlistMonitorMatchesUpdater watchlistMonitorMatchesUpdater;
+
+        private APIupdateWatchlistMonitorMatchRequest(UUID monitorId, WatchlistMonitorMatchesUpdater watchlistMonitorMatchesUpdater) {
+            this.monitorId = monitorId;
+            this.watchlistMonitorMatchesUpdater = watchlistMonitorMatchesUpdater;
+        }
+
+        /**
+         * Build call for updateWatchlistMonitorMatch
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> An array of watchlist monitors </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return updateWatchlistMonitorMatchCall(monitorId, watchlistMonitorMatchesUpdater, _callback);
+        }
+
+        /**
+         * Execute updateWatchlistMonitorMatch request
+         * @return WatchlistMonitorMatchesList
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> An array of watchlist monitors </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public WatchlistMonitorMatchesList execute() throws ApiException {
+            ApiResponse<WatchlistMonitorMatchesList> localVarResp = updateWatchlistMonitorMatchWithHttpInfo(monitorId, watchlistMonitorMatchesUpdater);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute updateWatchlistMonitorMatch request with HTTP info returned
+         * @return ApiResponse&lt;WatchlistMonitorMatchesList&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> An array of watchlist monitors </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<WatchlistMonitorMatchesList> executeWithHttpInfo() throws ApiException {
+            return updateWatchlistMonitorMatchWithHttpInfo(monitorId, watchlistMonitorMatchesUpdater);
+        }
+
+        /**
+         * Execute updateWatchlistMonitorMatch request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> An array of watchlist monitors </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<WatchlistMonitorMatchesList> _callback) throws ApiException {
+            return updateWatchlistMonitorMatchAsync(monitorId, watchlistMonitorMatchesUpdater, _callback);
+        }
+    }
+
     /**
-     * Build call for updateWebhook
-     * @param webhookId  (required)
-     * @param webhookUpdater  (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * Set match status (BETA)
+     * Update the status of the given matches 
+     * @param monitorId  (required)
+     * @param watchlistMonitorMatchesUpdater  (required)
+     * @return APIupdateWatchlistMonitorMatchRequest
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Webhook Object </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> An array of watchlist monitors </td><td>  -  </td></tr>
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateWebhookCall(UUID webhookId, WebhookUpdater webhookUpdater, final ApiCallback _callback) throws ApiException {
+    public APIupdateWatchlistMonitorMatchRequest updateWatchlistMonitorMatch(UUID monitorId, WatchlistMonitorMatchesUpdater watchlistMonitorMatchesUpdater) {
+        return new APIupdateWatchlistMonitorMatchRequest(monitorId, watchlistMonitorMatchesUpdater);
+    }
+    private okhttp3.Call updateWebhookCall(UUID webhookId, WebhookUpdater webhookUpdater, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -10144,92 +12503,116 @@ public class DefaultApi {
 
     }
 
-    /**
-     * Edit a webhook
-     * Edits a webhook. Returns the updated webhook object. 
-     * @param webhookId  (required)
-     * @param webhookUpdater  (required)
-     * @return Webhook
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Webhook Object </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public Webhook updateWebhook(UUID webhookId, WebhookUpdater webhookUpdater) throws ApiException {
-        ApiResponse<Webhook> localVarResp = updateWebhookWithHttpInfo(webhookId, webhookUpdater);
-        return localVarResp.getData();
-    }
 
-    /**
-     * Edit a webhook
-     * Edits a webhook. Returns the updated webhook object. 
-     * @param webhookId  (required)
-     * @param webhookUpdater  (required)
-     * @return ApiResponse&lt;Webhook&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Webhook Object </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<Webhook> updateWebhookWithHttpInfo(UUID webhookId, WebhookUpdater webhookUpdater) throws ApiException {
+    private ApiResponse<Webhook> updateWebhookWithHttpInfo(UUID webhookId, WebhookUpdater webhookUpdater) throws ApiException {
         okhttp3.Call localVarCall = updateWebhookValidateBeforeCall(webhookId, webhookUpdater, null);
         Type localVarReturnType = new TypeToken<Webhook>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * Edit a webhook (asynchronously)
-     * Edits a webhook. Returns the updated webhook object. 
-     * @param webhookId  (required)
-     * @param webhookUpdater  (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Webhook Object </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call updateWebhookAsync(UUID webhookId, WebhookUpdater webhookUpdater, final ApiCallback<Webhook> _callback) throws ApiException {
+    private okhttp3.Call updateWebhookAsync(UUID webhookId, WebhookUpdater webhookUpdater, final ApiCallback<Webhook> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateWebhookValidateBeforeCall(webhookId, webhookUpdater, _callback);
         Type localVarReturnType = new TypeToken<Webhook>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class APIupdateWebhookRequest {
+        private final UUID webhookId;
+        private final WebhookUpdater webhookUpdater;
+
+        private APIupdateWebhookRequest(UUID webhookId, WebhookUpdater webhookUpdater) {
+            this.webhookId = webhookId;
+            this.webhookUpdater = webhookUpdater;
+        }
+
+        /**
+         * Build call for updateWebhook
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Webhook Object </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return updateWebhookCall(webhookId, webhookUpdater, _callback);
+        }
+
+        /**
+         * Execute updateWebhook request
+         * @return Webhook
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Webhook Object </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public Webhook execute() throws ApiException {
+            ApiResponse<Webhook> localVarResp = updateWebhookWithHttpInfo(webhookId, webhookUpdater);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute updateWebhook request with HTTP info returned
+         * @return ApiResponse&lt;Webhook&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Webhook Object </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<Webhook> executeWithHttpInfo() throws ApiException {
+            return updateWebhookWithHttpInfo(webhookId, webhookUpdater);
+        }
+
+        /**
+         * Execute updateWebhook request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Webhook Object </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<Webhook> _callback) throws ApiException {
+            return updateWebhookAsync(webhookId, webhookUpdater, _callback);
+        }
+    }
+
     /**
-     * Build call for uploadDocument
-     * @param type The type of document (required)
-     * @param applicantId The ID of the applicant whose document is being uploaded. (required)
-     * @param _file The file to be uploaded. (required)
-     * @param fileType The file type of the uploaded file (optional)
-     * @param side The side of the document, if applicable. The possible values are front and back (optional)
-     * @param issuingCountry The issuing country of the document, a 3-letter ISO code. (optional)
-     * @param validateImageQuality Defaults to false. When true the submitted image will undergo an image quality validation which may take up to 5 seconds. (optional)
-     * @param location  (optional)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * Edit a webhook
+     * Edits a webhook. Returns the updated webhook object. 
+     * @param webhookId  (required)
+     * @param webhookUpdater  (required)
+     * @return APIupdateWebhookRequest
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> A document </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Webhook Object </td><td>  -  </td></tr>
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call uploadDocumentCall(DocumentTypes type, UUID applicantId, FileTransfer _file, String fileType, String side, CountryCodes issuingCountry, Boolean validateImageQuality, LocationBuilder location, final ApiCallback _callback) throws ApiException {
+    public APIupdateWebhookRequest updateWebhook(UUID webhookId, WebhookUpdater webhookUpdater) {
+        return new APIupdateWebhookRequest(webhookId, webhookUpdater);
+    }
+    private okhttp3.Call uploadDocumentCall(DocumentTypes type, UUID applicantId, FileTransfer _file, String fileType, String side, CountryCodes issuingCountry, Boolean validateImageQuality, LocationBuilder location, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -10327,104 +12710,174 @@ public class DefaultApi {
 
     }
 
-    /**
-     * Upload a document
-     * Documents are uploaded using this endpoint. Along with the file upload the relevant document type must be specified. Documents must be uploaded as a multipart form. The valid file types are: jpg, png and pdf. The file size must be between 2KB and 3MB. 
-     * @param type The type of document (required)
-     * @param applicantId The ID of the applicant whose document is being uploaded. (required)
-     * @param _file The file to be uploaded. (required)
-     * @param fileType The file type of the uploaded file (optional)
-     * @param side The side of the document, if applicable. The possible values are front and back (optional)
-     * @param issuingCountry The issuing country of the document, a 3-letter ISO code. (optional)
-     * @param validateImageQuality Defaults to false. When true the submitted image will undergo an image quality validation which may take up to 5 seconds. (optional)
-     * @param location  (optional)
-     * @return Document
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> A document </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public Document uploadDocument(DocumentTypes type, UUID applicantId, FileTransfer _file, String fileType, String side, CountryCodes issuingCountry, Boolean validateImageQuality, LocationBuilder location) throws ApiException {
-        ApiResponse<Document> localVarResp = uploadDocumentWithHttpInfo(type, applicantId, _file, fileType, side, issuingCountry, validateImageQuality, location);
-        return localVarResp.getData();
-    }
 
-    /**
-     * Upload a document
-     * Documents are uploaded using this endpoint. Along with the file upload the relevant document type must be specified. Documents must be uploaded as a multipart form. The valid file types are: jpg, png and pdf. The file size must be between 2KB and 3MB. 
-     * @param type The type of document (required)
-     * @param applicantId The ID of the applicant whose document is being uploaded. (required)
-     * @param _file The file to be uploaded. (required)
-     * @param fileType The file type of the uploaded file (optional)
-     * @param side The side of the document, if applicable. The possible values are front and back (optional)
-     * @param issuingCountry The issuing country of the document, a 3-letter ISO code. (optional)
-     * @param validateImageQuality Defaults to false. When true the submitted image will undergo an image quality validation which may take up to 5 seconds. (optional)
-     * @param location  (optional)
-     * @return ApiResponse&lt;Document&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> A document </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<Document> uploadDocumentWithHttpInfo(DocumentTypes type, UUID applicantId, FileTransfer _file, String fileType, String side, CountryCodes issuingCountry, Boolean validateImageQuality, LocationBuilder location) throws ApiException {
+    private ApiResponse<Document> uploadDocumentWithHttpInfo(DocumentTypes type, UUID applicantId, FileTransfer _file, String fileType, String side, CountryCodes issuingCountry, Boolean validateImageQuality, LocationBuilder location) throws ApiException {
         okhttp3.Call localVarCall = uploadDocumentValidateBeforeCall(type, applicantId, _file, fileType, side, issuingCountry, validateImageQuality, location, null);
         Type localVarReturnType = new TypeToken<Document>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * Upload a document (asynchronously)
-     * Documents are uploaded using this endpoint. Along with the file upload the relevant document type must be specified. Documents must be uploaded as a multipart form. The valid file types are: jpg, png and pdf. The file size must be between 2KB and 3MB. 
-     * @param type The type of document (required)
-     * @param applicantId The ID of the applicant whose document is being uploaded. (required)
-     * @param _file The file to be uploaded. (required)
-     * @param fileType The file type of the uploaded file (optional)
-     * @param side The side of the document, if applicable. The possible values are front and back (optional)
-     * @param issuingCountry The issuing country of the document, a 3-letter ISO code. (optional)
-     * @param validateImageQuality Defaults to false. When true the submitted image will undergo an image quality validation which may take up to 5 seconds. (optional)
-     * @param location  (optional)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> A document </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call uploadDocumentAsync(DocumentTypes type, UUID applicantId, FileTransfer _file, String fileType, String side, CountryCodes issuingCountry, Boolean validateImageQuality, LocationBuilder location, final ApiCallback<Document> _callback) throws ApiException {
+    private okhttp3.Call uploadDocumentAsync(DocumentTypes type, UUID applicantId, FileTransfer _file, String fileType, String side, CountryCodes issuingCountry, Boolean validateImageQuality, LocationBuilder location, final ApiCallback<Document> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = uploadDocumentValidateBeforeCall(type, applicantId, _file, fileType, side, issuingCountry, validateImageQuality, location, _callback);
         Type localVarReturnType = new TypeToken<Document>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class APIuploadDocumentRequest {
+        private final DocumentTypes type;
+        private final UUID applicantId;
+        private final FileTransfer _file;
+        private String fileType;
+        private String side;
+        private CountryCodes issuingCountry;
+        private Boolean validateImageQuality;
+        private LocationBuilder location;
+
+        private APIuploadDocumentRequest(DocumentTypes type, UUID applicantId, FileTransfer _file) {
+            this.type = type;
+            this.applicantId = applicantId;
+            this._file = _file;
+        }
+
+        /**
+         * Set fileType
+         * @param fileType The file type of the uploaded file (optional)
+         * @return APIuploadDocumentRequest
+         */
+        public APIuploadDocumentRequest fileType(String fileType) {
+            this.fileType = fileType;
+            return this;
+        }
+
+        /**
+         * Set side
+         * @param side The side of the document, if applicable. The possible values are front and back (optional)
+         * @return APIuploadDocumentRequest
+         */
+        public APIuploadDocumentRequest side(String side) {
+            this.side = side;
+            return this;
+        }
+
+        /**
+         * Set issuingCountry
+         * @param issuingCountry The issuing country of the document, a 3-letter ISO code. (optional)
+         * @return APIuploadDocumentRequest
+         */
+        public APIuploadDocumentRequest issuingCountry(CountryCodes issuingCountry) {
+            this.issuingCountry = issuingCountry;
+            return this;
+        }
+
+        /**
+         * Set validateImageQuality
+         * @param validateImageQuality Defaults to false. When true the submitted image will undergo an image quality validation which may take up to 5 seconds. (optional)
+         * @return APIuploadDocumentRequest
+         */
+        public APIuploadDocumentRequest validateImageQuality(Boolean validateImageQuality) {
+            this.validateImageQuality = validateImageQuality;
+            return this;
+        }
+
+        /**
+         * Set location
+         * @param location  (optional)
+         * @return APIuploadDocumentRequest
+         */
+        public APIuploadDocumentRequest location(LocationBuilder location) {
+            this.location = location;
+            return this;
+        }
+
+        /**
+         * Build call for uploadDocument
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 201 </td><td> A document </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return uploadDocumentCall(type, applicantId, _file, fileType, side, issuingCountry, validateImageQuality, location, _callback);
+        }
+
+        /**
+         * Execute uploadDocument request
+         * @return Document
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 201 </td><td> A document </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public Document execute() throws ApiException {
+            ApiResponse<Document> localVarResp = uploadDocumentWithHttpInfo(type, applicantId, _file, fileType, side, issuingCountry, validateImageQuality, location);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute uploadDocument request with HTTP info returned
+         * @return ApiResponse&lt;Document&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 201 </td><td> A document </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<Document> executeWithHttpInfo() throws ApiException {
+            return uploadDocumentWithHttpInfo(type, applicantId, _file, fileType, side, issuingCountry, validateImageQuality, location);
+        }
+
+        /**
+         * Execute uploadDocument request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 201 </td><td> A document </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<Document> _callback) throws ApiException {
+            return uploadDocumentAsync(type, applicantId, _file, fileType, side, issuingCountry, validateImageQuality, location, _callback);
+        }
+    }
+
     /**
-     * Build call for uploadIdPhoto
-     * @param applicantId The ID of the applicant whose ID photo is being uploaded. (optional)
-     * @param _file The file to be uploaded. (optional)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * Upload a document
+     * Documents are uploaded using this endpoint. Along with the file upload the relevant document type must be specified. Documents must be uploaded as a multipart form. The valid file types are: jpg, png and pdf. The file size must be between 2KB and 3MB. 
+     * @param type The type of document (required)
+     * @param applicantId The ID of the applicant whose document is being uploaded. (required)
+     * @param _file The file to be uploaded. (required)
+     * @return APIuploadDocumentRequest
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> The ID photo </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> A document </td><td>  -  </td></tr>
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call uploadIdPhotoCall(UUID applicantId, FileTransfer _file, final ApiCallback _callback) throws ApiException {
+    public APIuploadDocumentRequest uploadDocument(DocumentTypes type, UUID applicantId, FileTransfer _file) {
+        return new APIuploadDocumentRequest(type, applicantId, _file);
+    }
+    private okhttp3.Call uploadIdPhotoCall(UUID applicantId, FileTransfer _file, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -10483,87 +12936,132 @@ public class DefaultApi {
 
     }
 
-    /**
-     * Upload ID photo
-     * You can upload ID photos to this endpoint. Like document upload, files must be uploaded as a multipart form. Valid file types are jpg, png and pdf. The file size must be between 32KB and 10MB. 
-     * @param applicantId The ID of the applicant whose ID photo is being uploaded. (optional)
-     * @param _file The file to be uploaded. (optional)
-     * @return IdPhoto
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> The ID photo </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public IdPhoto uploadIdPhoto(UUID applicantId, FileTransfer _file) throws ApiException {
-        ApiResponse<IdPhoto> localVarResp = uploadIdPhotoWithHttpInfo(applicantId, _file);
-        return localVarResp.getData();
-    }
 
-    /**
-     * Upload ID photo
-     * You can upload ID photos to this endpoint. Like document upload, files must be uploaded as a multipart form. Valid file types are jpg, png and pdf. The file size must be between 32KB and 10MB. 
-     * @param applicantId The ID of the applicant whose ID photo is being uploaded. (optional)
-     * @param _file The file to be uploaded. (optional)
-     * @return ApiResponse&lt;IdPhoto&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> The ID photo </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<IdPhoto> uploadIdPhotoWithHttpInfo(UUID applicantId, FileTransfer _file) throws ApiException {
+    private ApiResponse<IdPhoto> uploadIdPhotoWithHttpInfo(UUID applicantId, FileTransfer _file) throws ApiException {
         okhttp3.Call localVarCall = uploadIdPhotoValidateBeforeCall(applicantId, _file, null);
         Type localVarReturnType = new TypeToken<IdPhoto>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * Upload ID photo (asynchronously)
-     * You can upload ID photos to this endpoint. Like document upload, files must be uploaded as a multipart form. Valid file types are jpg, png and pdf. The file size must be between 32KB and 10MB. 
-     * @param applicantId The ID of the applicant whose ID photo is being uploaded. (optional)
-     * @param _file The file to be uploaded. (optional)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> The ID photo </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call uploadIdPhotoAsync(UUID applicantId, FileTransfer _file, final ApiCallback<IdPhoto> _callback) throws ApiException {
+    private okhttp3.Call uploadIdPhotoAsync(UUID applicantId, FileTransfer _file, final ApiCallback<IdPhoto> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = uploadIdPhotoValidateBeforeCall(applicantId, _file, _callback);
         Type localVarReturnType = new TypeToken<IdPhoto>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class APIuploadIdPhotoRequest {
+        private UUID applicantId;
+        private FileTransfer _file;
+
+        private APIuploadIdPhotoRequest() {
+        }
+
+        /**
+         * Set applicantId
+         * @param applicantId The ID of the applicant whose ID photo is being uploaded. (optional)
+         * @return APIuploadIdPhotoRequest
+         */
+        public APIuploadIdPhotoRequest applicantId(UUID applicantId) {
+            this.applicantId = applicantId;
+            return this;
+        }
+
+        /**
+         * Set _file
+         * @param _file The file to be uploaded. (optional)
+         * @return APIuploadIdPhotoRequest
+         */
+        public APIuploadIdPhotoRequest _file(FileTransfer _file) {
+            this._file = _file;
+            return this;
+        }
+
+        /**
+         * Build call for uploadIdPhoto
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 201 </td><td> The ID photo </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return uploadIdPhotoCall(applicantId, _file, _callback);
+        }
+
+        /**
+         * Execute uploadIdPhoto request
+         * @return IdPhoto
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 201 </td><td> The ID photo </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public IdPhoto execute() throws ApiException {
+            ApiResponse<IdPhoto> localVarResp = uploadIdPhotoWithHttpInfo(applicantId, _file);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute uploadIdPhoto request with HTTP info returned
+         * @return ApiResponse&lt;IdPhoto&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 201 </td><td> The ID photo </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<IdPhoto> executeWithHttpInfo() throws ApiException {
+            return uploadIdPhotoWithHttpInfo(applicantId, _file);
+        }
+
+        /**
+         * Execute uploadIdPhoto request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 201 </td><td> The ID photo </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<IdPhoto> _callback) throws ApiException {
+            return uploadIdPhotoAsync(applicantId, _file, _callback);
+        }
+    }
+
     /**
-     * Build call for uploadLivePhoto
-     * @param applicantId The ID of the applicant whose live photo is being uploaded. (optional)
-     * @param _file The file to be uploaded. (optional)
-     * @param advancedValidation Validates that the live photo contains exactly one face. (optional, default to true)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * Upload ID photo
+     * You can upload ID photos to this endpoint. Like document upload, files must be uploaded as a multipart form. Valid file types are jpg, png and pdf. The file size must be between 32KB and 10MB. 
+     * @return APIuploadIdPhotoRequest
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> The Live Photo </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> The ID photo </td><td>  -  </td></tr>
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call uploadLivePhotoCall(UUID applicantId, FileTransfer _file, Boolean advancedValidation, final ApiCallback _callback) throws ApiException {
+    public APIuploadIdPhotoRequest uploadIdPhoto() {
+        return new APIuploadIdPhotoRequest();
+    }
+    private okhttp3.Call uploadLivePhotoCall(UUID applicantId, FileTransfer _file, Boolean advancedValidation, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -10626,89 +13124,143 @@ public class DefaultApi {
 
     }
 
-    /**
-     * Upload live photo
-     * You can upload live photos to this endpoint. Like document upload, files must be uploaded as a multipart form. Valid file types are jpg, png and pdf. The file size must be between 32KB and 10MB. Live photos are validated at the point of upload to check that they contain exactly one face. This validation can be disabled by setting the advanced_validation argument to false. 
-     * @param applicantId The ID of the applicant whose live photo is being uploaded. (optional)
-     * @param _file The file to be uploaded. (optional)
-     * @param advancedValidation Validates that the live photo contains exactly one face. (optional, default to true)
-     * @return LivePhoto
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> The Live Photo </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public LivePhoto uploadLivePhoto(UUID applicantId, FileTransfer _file, Boolean advancedValidation) throws ApiException {
-        ApiResponse<LivePhoto> localVarResp = uploadLivePhotoWithHttpInfo(applicantId, _file, advancedValidation);
-        return localVarResp.getData();
-    }
 
-    /**
-     * Upload live photo
-     * You can upload live photos to this endpoint. Like document upload, files must be uploaded as a multipart form. Valid file types are jpg, png and pdf. The file size must be between 32KB and 10MB. Live photos are validated at the point of upload to check that they contain exactly one face. This validation can be disabled by setting the advanced_validation argument to false. 
-     * @param applicantId The ID of the applicant whose live photo is being uploaded. (optional)
-     * @param _file The file to be uploaded. (optional)
-     * @param advancedValidation Validates that the live photo contains exactly one face. (optional, default to true)
-     * @return ApiResponse&lt;LivePhoto&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> The Live Photo </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<LivePhoto> uploadLivePhotoWithHttpInfo(UUID applicantId, FileTransfer _file, Boolean advancedValidation) throws ApiException {
+    private ApiResponse<LivePhoto> uploadLivePhotoWithHttpInfo(UUID applicantId, FileTransfer _file, Boolean advancedValidation) throws ApiException {
         okhttp3.Call localVarCall = uploadLivePhotoValidateBeforeCall(applicantId, _file, advancedValidation, null);
         Type localVarReturnType = new TypeToken<LivePhoto>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    /**
-     * Upload live photo (asynchronously)
-     * You can upload live photos to this endpoint. Like document upload, files must be uploaded as a multipart form. Valid file types are jpg, png and pdf. The file size must be between 32KB and 10MB. Live photos are validated at the point of upload to check that they contain exactly one face. This validation can be disabled by setting the advanced_validation argument to false. 
-     * @param applicantId The ID of the applicant whose live photo is being uploaded. (optional)
-     * @param _file The file to be uploaded. (optional)
-     * @param advancedValidation Validates that the live photo contains exactly one face. (optional, default to true)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> The Live Photo </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call uploadLivePhotoAsync(UUID applicantId, FileTransfer _file, Boolean advancedValidation, final ApiCallback<LivePhoto> _callback) throws ApiException {
+    private okhttp3.Call uploadLivePhotoAsync(UUID applicantId, FileTransfer _file, Boolean advancedValidation, final ApiCallback<LivePhoto> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = uploadLivePhotoValidateBeforeCall(applicantId, _file, advancedValidation, _callback);
         Type localVarReturnType = new TypeToken<LivePhoto>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    public class APIuploadLivePhotoRequest {
+        private UUID applicantId;
+        private FileTransfer _file;
+        private Boolean advancedValidation;
+
+        private APIuploadLivePhotoRequest() {
+        }
+
+        /**
+         * Set applicantId
+         * @param applicantId The ID of the applicant whose live photo is being uploaded. (optional)
+         * @return APIuploadLivePhotoRequest
+         */
+        public APIuploadLivePhotoRequest applicantId(UUID applicantId) {
+            this.applicantId = applicantId;
+            return this;
+        }
+
+        /**
+         * Set _file
+         * @param _file The file to be uploaded. (optional)
+         * @return APIuploadLivePhotoRequest
+         */
+        public APIuploadLivePhotoRequest _file(FileTransfer _file) {
+            this._file = _file;
+            return this;
+        }
+
+        /**
+         * Set advancedValidation
+         * @param advancedValidation Validates that the live photo contains exactly one face. (optional, default to true)
+         * @return APIuploadLivePhotoRequest
+         */
+        public APIuploadLivePhotoRequest advancedValidation(Boolean advancedValidation) {
+            this.advancedValidation = advancedValidation;
+            return this;
+        }
+
+        /**
+         * Build call for uploadLivePhoto
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 201 </td><td> The Live Photo </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return uploadLivePhotoCall(applicantId, _file, advancedValidation, _callback);
+        }
+
+        /**
+         * Execute uploadLivePhoto request
+         * @return LivePhoto
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 201 </td><td> The Live Photo </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public LivePhoto execute() throws ApiException {
+            ApiResponse<LivePhoto> localVarResp = uploadLivePhotoWithHttpInfo(applicantId, _file, advancedValidation);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute uploadLivePhoto request with HTTP info returned
+         * @return ApiResponse&lt;LivePhoto&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 201 </td><td> The Live Photo </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<LivePhoto> executeWithHttpInfo() throws ApiException {
+            return uploadLivePhotoWithHttpInfo(applicantId, _file, advancedValidation);
+        }
+
+        /**
+         * Execute uploadLivePhoto request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 201 </td><td> The Live Photo </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<LivePhoto> _callback) throws ApiException {
+            return uploadLivePhotoAsync(applicantId, _file, advancedValidation, _callback);
+        }
+    }
+
     /**
-     * Build call for uploadSigningDocument
-     * @param applicantId The ID of the applicant whose signing document is being uploaded. (required)
-     * @param _file The file to be uploaded. (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
+     * Upload live photo
+     * You can upload live photos to this endpoint. Like document upload, files must be uploaded as a multipart form. Valid file types are jpg, png and pdf. The file size must be between 32KB and 10MB. Live photos are validated at the point of upload to check that they contain exactly one face. This validation can be disabled by setting the advanced_validation argument to false. 
+     * @return APIuploadLivePhotoRequest
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> A signing document </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> The Live Photo </td><td>  -  </td></tr>
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call uploadSigningDocumentCall(UUID applicantId, FileTransfer _file, final ApiCallback _callback) throws ApiException {
+    public APIuploadLivePhotoRequest uploadLivePhoto() {
+        return new APIuploadLivePhotoRequest();
+    }
+    private okhttp3.Call uploadSigningDocumentCall(UUID applicantId, FileTransfer _file, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -10777,55 +13329,104 @@ public class DefaultApi {
 
     }
 
-    /**
-     * Upload a signing document
-     * Signing documents are uploaded using this endpoint. Signing documents must be uploaded as a multipart form. The only valid file type is pdf. The file size must be between 2KB and 3MB. 
-     * @param applicantId The ID of the applicant whose signing document is being uploaded. (required)
-     * @param _file The file to be uploaded. (required)
-     * @return SigningDocument
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> A signing document </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public SigningDocument uploadSigningDocument(UUID applicantId, FileTransfer _file) throws ApiException {
-        ApiResponse<SigningDocument> localVarResp = uploadSigningDocumentWithHttpInfo(applicantId, _file);
-        return localVarResp.getData();
-    }
 
-    /**
-     * Upload a signing document
-     * Signing documents are uploaded using this endpoint. Signing documents must be uploaded as a multipart form. The only valid file type is pdf. The file size must be between 2KB and 3MB. 
-     * @param applicantId The ID of the applicant whose signing document is being uploaded. (required)
-     * @param _file The file to be uploaded. (required)
-     * @return ApiResponse&lt;SigningDocument&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> A signing document </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<SigningDocument> uploadSigningDocumentWithHttpInfo(UUID applicantId, FileTransfer _file) throws ApiException {
+    private ApiResponse<SigningDocument> uploadSigningDocumentWithHttpInfo(UUID applicantId, FileTransfer _file) throws ApiException {
         okhttp3.Call localVarCall = uploadSigningDocumentValidateBeforeCall(applicantId, _file, null);
         Type localVarReturnType = new TypeToken<SigningDocument>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
+    private okhttp3.Call uploadSigningDocumentAsync(UUID applicantId, FileTransfer _file, final ApiCallback<SigningDocument> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = uploadSigningDocumentValidateBeforeCall(applicantId, _file, _callback);
+        Type localVarReturnType = new TypeToken<SigningDocument>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+
+    public class APIuploadSigningDocumentRequest {
+        private final UUID applicantId;
+        private final FileTransfer _file;
+
+        private APIuploadSigningDocumentRequest(UUID applicantId, FileTransfer _file) {
+            this.applicantId = applicantId;
+            this._file = _file;
+        }
+
+        /**
+         * Build call for uploadSigningDocument
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 201 </td><td> A signing document </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return uploadSigningDocumentCall(applicantId, _file, _callback);
+        }
+
+        /**
+         * Execute uploadSigningDocument request
+         * @return SigningDocument
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 201 </td><td> A signing document </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public SigningDocument execute() throws ApiException {
+            ApiResponse<SigningDocument> localVarResp = uploadSigningDocumentWithHttpInfo(applicantId, _file);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute uploadSigningDocument request with HTTP info returned
+         * @return ApiResponse&lt;SigningDocument&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 201 </td><td> A signing document </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<SigningDocument> executeWithHttpInfo() throws ApiException {
+            return uploadSigningDocumentWithHttpInfo(applicantId, _file);
+        }
+
+        /**
+         * Execute uploadSigningDocument request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 201 </td><td> A signing document </td><td>  -  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<SigningDocument> _callback) throws ApiException {
+            return uploadSigningDocumentAsync(applicantId, _file, _callback);
+        }
+    }
+
     /**
-     * Upload a signing document (asynchronously)
+     * Upload a signing document
      * Signing documents are uploaded using this endpoint. Signing documents must be uploaded as a multipart form. The only valid file type is pdf. The file size must be between 2KB and 3MB. 
      * @param applicantId The ID of the applicant whose signing document is being uploaded. (required)
      * @param _file The file to be uploaded. (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @return APIuploadSigningDocumentRequest
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
@@ -10834,11 +13435,7 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call uploadSigningDocumentAsync(UUID applicantId, FileTransfer _file, final ApiCallback<SigningDocument> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = uploadSigningDocumentValidateBeforeCall(applicantId, _file, _callback);
-        Type localVarReturnType = new TypeToken<SigningDocument>(){}.getType();
-        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
-        return localVarCall;
+    public APIuploadSigningDocumentRequest uploadSigningDocument(UUID applicantId, FileTransfer _file) {
+        return new APIuploadSigningDocumentRequest(applicantId, _file);
     }
 }

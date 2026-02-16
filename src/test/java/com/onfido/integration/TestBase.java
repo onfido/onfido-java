@@ -51,21 +51,23 @@ public class TestBase {
   public Applicant createApplicant(String first_name)
       throws IOException, InterruptedException, ApiException {
     Applicant applicant =
-        onfido.createApplicant(
-            new ApplicantBuilder()
-                .firstName(first_name)
-                .lastName("Last")
-                .email("first.last@gmail.com")
-                .phoneNumber("351911111111")
-                .location(
-                    new LocationBuilder()
-                        .ipAddress("127.0.0.1")
-                        .countryOfResidence(CountryCodes.GBR))
-                .consents(
-                    Arrays.asList(
-                        new ApplicantConsentBuilder()
-                            .name(ApplicantConsentName.PRIVACY_NOTICES_READ)
-                            .granted(true))));
+        onfido
+            .createApplicant(
+                new ApplicantBuilder()
+                    .firstName(first_name)
+                    .lastName("Last")
+                    .email("first.last@gmail.com")
+                    .phoneNumber("351911111111")
+                    .location(
+                        new LocationBuilder()
+                            .ipAddress("127.0.0.1")
+                            .countryOfResidence(CountryCodes.GBR))
+                    .consents(
+                        Arrays.asList(
+                            new ApplicantConsentBuilder()
+                                .name(ApplicantConsentName.PRIVACY_NOTICES_READ)
+                                .granted(true))))
+            .execute();
 
     return applicant;
   }
@@ -83,41 +85,52 @@ public class TestBase {
     LocationBuilder locationBuilder =
         new LocationBuilder().ipAddress("127.0.0.1").countryOfResidence(CountryCodes.GBR);
 
-    return onfido.uploadDocument(
-        document_type,
-        applicant.getId(),
-        new FileTransfer(byteArray, filename),
-        null,
-        "front",
-        CountryCodes.USA,
-        null,
-        locationBuilder);
+    return onfido
+        .uploadDocument(document_type, applicant.getId(), new FileTransfer(byteArray, filename))
+        .side("front")
+        .issuingCountry(CountryCodes.USA)
+        .location(locationBuilder)
+        .execute();
   }
 
   protected SigningDocument uploadSigningDocument(Applicant applicant, String filename)
       throws ApiException {
-    return onfido.uploadSigningDocument(
-        applicant.getId(), new FileTransfer(new File("media/" + filename)));
+    return onfido
+        .uploadSigningDocument(applicant.getId(), new FileTransfer(new File("media/" + filename)))
+        .execute();
   }
 
   protected LivePhoto uploadLivePhoto(Applicant applicant, String filename) throws Exception {
-    return onfido.uploadLivePhoto(
-        applicant.getId(), new FileTransfer(new File("media/" + filename)), true);
+    return onfido
+        .uploadLivePhoto()
+        .applicantId(applicant.getId())
+        ._file(new FileTransfer(new File("media/" + filename)))
+        .advancedValidation(true)
+        .execute();
   }
 
   protected IdPhoto uploadIdPhoto(Applicant applicant, String filename) throws Exception {
-    return onfido.uploadIdPhoto(applicant.getId(), new FileTransfer(new File("media/" + filename)));
+    return onfido
+        .uploadIdPhoto()
+        .applicantId(applicant.getId())
+        ._file(new FileTransfer(new File("media/" + filename)))
+        .execute();
   }
 
   protected Check createCheck(Applicant applicant, Document document, CheckBuilder checkBuilder)
       throws IOException, InterruptedException, ApiException {
-    return onfido.createCheck(
-        checkBuilder.applicantId(applicant.getId()).documentIds(Arrays.asList(document.getId())));
+    return onfido
+        .createCheck(
+            checkBuilder
+                .applicantId(applicant.getId())
+                .documentIds(Arrays.asList(document.getId())))
+        .execute();
   }
 
   protected WorkflowRun createWorkflowRun(UUID workflowId, UUID applicantId) throws Exception {
-    return onfido.createWorkflowRun(
-        new WorkflowRunBuilder().workflowId(workflowId).applicantId(applicantId));
+    return onfido
+        .createWorkflowRun(new WorkflowRunBuilder().workflowId(workflowId).applicantId(applicantId))
+        .execute();
   }
 
   private boolean isAValidUuid(UUID uuid) {
@@ -130,10 +143,17 @@ public class TestBase {
       return;
     }
 
-    for (Applicant applicant : onfido.listApplicants(1, 100, false).getApplicants()) {
+    for (Applicant applicant :
+        onfido
+            .listApplicants()
+            .page(1)
+            .perPage(100)
+            .includeDeleted(false)
+            .execute()
+            .getApplicants()) {
       if (!applicant.getId().equals(sampleApplicantId)) {
         try {
-          onfido.deleteApplicant(applicant.getId());
+          onfido.deleteApplicant(applicant.getId()).execute();
         } catch (ApiException e) {
           // Just ignore any failure during clean up
         }
@@ -142,13 +162,13 @@ public class TestBase {
   }
 
   public void cleanUpWebhooks() throws IOException, ApiException {
-    for (Webhook webhook : onfido.listWebhooks().getWebhooks()) {
-      onfido.deleteWebhook(webhook.getId());
+    for (Webhook webhook : onfido.listWebhooks().execute().getWebhooks()) {
+      onfido.deleteWebhook(webhook.getId()).execute();
     }
   }
 
   public String getTaskIdByPartialId(UUID workflowRunId, String partialId) throws ApiException {
-    return onfido.listTasks(workflowRunId).stream()
+    return onfido.listTasks(workflowRunId).execute().stream()
         .filter((task) -> task.getTaskDefId().contains(partialId))
         .collect(Collectors.toList())
         .get(0)
@@ -157,8 +177,10 @@ public class TestBase {
 
   public WatchlistMonitor createWatchlistMonitor(
       UUID applicantId, WatchlistMonitorBuilder.ReportNameEnum reportName) throws ApiException {
-    return onfido.createWatchlistMonitor(
-        new WatchlistMonitorBuilder().applicantId(applicantId).reportName(reportName));
+    return onfido
+        .createWatchlistMonitor(
+            new WatchlistMonitorBuilder().applicantId(applicantId).reportName(reportName))
+        .execute();
   }
 
   private Method getMethod(String methodName, Object[] params) throws NoSuchMethodException {
@@ -177,7 +199,9 @@ public class TestBase {
           InterruptedException,
           InvocationTargetException {
     Method method = getMethod(methodName, params);
-    Object instance = method.invoke(onfido, params);
+    Object request = method.invoke(onfido, params);
+    Method executeMethod = request.getClass().getMethod("execute");
+    Object instance = executeMethod.invoke(request);
 
     int iteration = 0;
     Method getStatusMethod = instance.getClass().getMethod("getStatus");
@@ -189,7 +213,8 @@ public class TestBase {
 
       iteration += 1;
       Thread.sleep(sleepTime);
-      instance = method.invoke(onfido, params);
+      request = method.invoke(onfido, params);
+      instance = executeMethod.invoke(request);
     }
     return instance;
   }
@@ -201,7 +226,9 @@ public class TestBase {
           InterruptedException,
           InvocationTargetException {
     Method method = getMethod(methodName, params);
-    Task instance = (Task) method.invoke(onfido, params);
+    Object request = method.invoke(onfido, params);
+    Method executeMethod = request.getClass().getMethod("execute");
+    Task instance = (Task) executeMethod.invoke(request);
 
     int iteration = 0;
 
@@ -212,7 +239,8 @@ public class TestBase {
 
       iteration += 1;
       Thread.sleep(sleepTime);
-      instance = (Task) method.invoke(onfido, params);
+      request = method.invoke(onfido, params);
+      instance = (Task) executeMethod.invoke(request);
     }
     return instance;
   }
@@ -226,7 +254,9 @@ public class TestBase {
 
     while (iteration <= maxRetries) {
       try {
-        instance = method.invoke(onfido, params);
+        Object request = method.invoke(onfido, params);
+        Method executeMethod = request.getClass().getMethod("execute");
+        instance = executeMethod.invoke(request);
         break;
       } catch (InvocationTargetException e) {
         Thread.sleep(sleepTime);

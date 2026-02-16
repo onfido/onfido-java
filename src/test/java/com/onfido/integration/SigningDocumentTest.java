@@ -32,7 +32,7 @@ public class SigningDocumentTest extends TestBase {
 
   @Test
   public void downloadSigningDocumentTest() throws Exception {
-    FileTransfer download = onfido.downloadSigningDocument(signingDocument.getId());
+    FileTransfer download = onfido.downloadSigningDocument(signingDocument.getId()).execute();
 
     Assertions.assertEquals("application/pdf", download.getContentType());
     Assertions.assertNotNull(download.getFilename());
@@ -42,7 +42,7 @@ public class SigningDocumentTest extends TestBase {
 
   @Test
   public void findSigningDocumentTest() throws Exception {
-    SigningDocument found = onfido.findSigningDocument(signingDocument.getId());
+    SigningDocument found = onfido.findSigningDocument(signingDocument.getId()).execute();
 
     Assertions.assertEquals(signingDocument.getId(), found.getId());
     Assertions.assertEquals("sample_signing_document.pdf", found.getFileName());
@@ -55,7 +55,7 @@ public class SigningDocumentTest extends TestBase {
   @Test
   public void listSigningDocumentsTest() throws Exception {
     List<SigningDocument> documents =
-        onfido.listSigningDocuments(applicant.getId()).getSigningDocuments();
+        onfido.listSigningDocuments(applicant.getId()).execute().getSigningDocuments();
 
     Assertions.assertNotNull(documents);
     Assertions.assertTrue(
@@ -65,7 +65,7 @@ public class SigningDocumentTest extends TestBase {
   @Test
   public void uploadSigningDocumentNullParamsTest() {
     try {
-      onfido.uploadSigningDocument(null, null);
+      onfido.uploadSigningDocument(null, null).execute();
       Assertions.fail();
     } catch (ApiException ex) {
       Assertions.assertEquals(0, ex.getCode());
@@ -75,7 +75,7 @@ public class SigningDocumentTest extends TestBase {
   @Test
   public void downloadSigningDocumentErrorTest() {
     try {
-      onfido.downloadSigningDocument(nonExistingId);
+      onfido.downloadSigningDocument(nonExistingId).execute();
       Assertions.fail();
     } catch (ApiException ex) {
       Assertions.assertEquals(404, ex.getCode());

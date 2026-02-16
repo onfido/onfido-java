@@ -25,7 +25,7 @@ public class ApplicantTest extends TestBase {
 
   @AfterEach
   public void cleanUp() throws Exception {
-    onfido.deleteApplicant(applicant.getId());
+    onfido.deleteApplicant(applicant.getId()).execute();
   }
 
   @Test
@@ -41,7 +41,7 @@ public class ApplicantTest extends TestBase {
   @Test
   public void findApplicantTest() throws Exception {
     Applicant applicant = createApplicant();
-    Applicant lookupApplicant = onfido.findApplicant(applicant.getId());
+    Applicant lookupApplicant = onfido.findApplicant(applicant.getId()).execute();
 
     Assertions.assertEquals("First", lookupApplicant.getFirstName());
     Assertions.assertEquals("Last", lookupApplicant.getLastName());
@@ -52,7 +52,9 @@ public class ApplicantTest extends TestBase {
   @Test
   public void updateApplicantTest() throws Exception {
     Applicant updatedApplicant =
-        onfido.updateApplicant(applicant.getId(), new ApplicantUpdater().firstName("Updated"));
+        onfido
+            .updateApplicant(applicant.getId(), new ApplicantUpdater().firstName("Updated"))
+            .execute();
 
     Assertions.assertEquals("Updated", updatedApplicant.getFirstName());
     Assertions.assertEquals("Last", updatedApplicant.getLastName());
@@ -72,9 +74,10 @@ public class ApplicantTest extends TestBase {
                 .name(ApplicantConsentName.PHONE_NUMBER_VERIFICATION)
                 .granted(true));
 
-    onfido.updateApplicant(applicant.getId(), new ApplicantUpdater().consents(consents));
+    onfido.updateApplicant(applicant.getId(), new ApplicantUpdater().consents(consents)).execute();
 
-    List<ApplicantConsent> actualConsents = onfido.findApplicantConsents(applicant.getId());
+    List<ApplicantConsent> actualConsents =
+        onfido.findApplicantConsents(applicant.getId()).execute();
 
     Map<ApplicantConsentName, Boolean> expectedConsents =
         consents.stream()
@@ -93,15 +96,15 @@ public class ApplicantTest extends TestBase {
   public void deleteApplicantTest() throws Exception {
     Applicant applicant = createApplicant();
 
-    onfido.deleteApplicant(applicant.getId());
+    onfido.deleteApplicant(applicant.getId()).execute();
   }
 
   @Test
   public void restoreApplicantTest() throws Exception {
     Applicant applicant = createApplicant();
 
-    onfido.deleteApplicant(applicant.getId());
-    onfido.restoreApplicant(applicant.getId());
+    onfido.deleteApplicant(applicant.getId()).execute();
+    onfido.restoreApplicant(applicant.getId()).execute();
   }
 
   @Test
@@ -110,7 +113,14 @@ public class ApplicantTest extends TestBase {
     createApplicant("Applicant2");
 
     List<Applicant> applicants =
-        onfido.listApplicants(1, 20, false).getApplicants().stream()
+        onfido
+            .listApplicants()
+            .page(1)
+            .perPage(20)
+            .includeDeleted(false)
+            .execute()
+            .getApplicants()
+            .stream()
             .sorted(Comparator.comparing(Applicant::getFirstName))
             .collect(Collectors.toList());
 

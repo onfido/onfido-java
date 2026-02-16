@@ -26,7 +26,7 @@ public class TasksTest extends TestBase {
 
   @Test
   public void listTasks() throws Exception {
-    List<TaskItem> tasks = onfido.listTasks(workflowRunId);
+    List<TaskItem> tasks = onfido.listTasks(workflowRunId).execute();
 
     Assertions.assertEquals(2, tasks.size());
 
@@ -36,9 +36,9 @@ public class TasksTest extends TestBase {
 
   @Test
   public void findTask() throws Exception {
-    TaskItem lookupTask = onfido.listTasks(workflowRunId).get(0);
+    TaskItem lookupTask = onfido.listTasks(workflowRunId).execute().get(0);
 
-    Task task = onfido.findTask(workflowRunId, lookupTask.getId());
+    Task task = onfido.findTask(workflowRunId, lookupTask.getId()).execute();
 
     Assertions.assertEquals(lookupTask.getId(), task.getId());
     Assertions.assertEquals(lookupTask.getTaskDefId(), task.getTaskDefId());
@@ -57,9 +57,9 @@ public class TasksTest extends TestBase {
     CompleteTaskBuilder completeTaskBuilder = new CompleteTaskBuilder();
     completeTaskBuilder.setData(new CompleteTaskDataBuilder(completeTaskBody));
 
-    onfido.completeTask(workflowRunId, taskId, completeTaskBuilder);
+    onfido.completeTask(workflowRunId, taskId, completeTaskBuilder).execute();
 
-    Task completedTask = onfido.findTask(workflowRunId, taskId);
+    Task completedTask = onfido.findTask(workflowRunId, taskId).execute();
     Map<?, ?> taskOutput = (Map<?, ?>) completedTask.getOutput();
 
     Assertions.assertEquals("First", taskOutput.get("first_name"));

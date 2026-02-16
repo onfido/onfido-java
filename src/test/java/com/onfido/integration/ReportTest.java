@@ -91,7 +91,7 @@ public class ReportTest extends TestBase {
 
   @Test
   public void listReportsTest() throws Exception {
-    List<Report> reports = sortReports(onfido.listReports(check.getId()).getReports());
+    List<Report> reports = sortReports(onfido.listReports(check.getId()).execute().getReports());
 
     Assertions.assertEquals(ReportName.DOCUMENT, reports.get(0).getName());
     Assertions.assertEquals(ReportName.IDENTITY_ENHANCED, reports.get(1).getName());
@@ -102,8 +102,8 @@ public class ReportTest extends TestBase {
     List<UUID> reportIds = check.getReportIds();
 
     if (reportIds != null) {
-      Report report = onfido.findReport(reportIds.get(0));
-      onfido.resumeReport(report.getId());
+      Report report = onfido.findReport(reportIds.get(0)).execute();
+      onfido.resumeReport(report.getId()).execute();
     } else {
       Assertions.fail();
     }
@@ -114,8 +114,8 @@ public class ReportTest extends TestBase {
     List<UUID> reportIds = check.getReportIds();
 
     if (reportIds != null) {
-      Report report = onfido.findReport(reportIds.get(0));
-      onfido.cancelReport(report.getId());
+      Report report = onfido.findReport(reportIds.get(0)).execute();
+      onfido.cancelReport(report.getId()).execute();
     } else {
       Assertions.fail();
     }

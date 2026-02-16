@@ -14,6 +14,7 @@
 package com.onfido.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -43,13 +44,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.onfido.JSON;
 
 /**
  * SdkTokenBuilder
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.16.0")
 public class SdkTokenBuilder {
   public static final String SERIALIZED_NAME_APPLICANT_ID = "applicant_id";
   @SerializedName(SERIALIZED_NAME_APPLICANT_ID)
@@ -246,15 +248,10 @@ public class SdkTokenBuilder {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("applicant_id");
-    openapiFields.add("referrer");
-    openapiFields.add("application_id");
-    openapiFields.add("cross_device_url");
+    openapiFields = new HashSet<String>(Arrays.asList("applicant_id", "referrer", "application_id", "cross_device_url"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("applicant_id");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("applicant_id"));
   }
 
   /**
@@ -266,28 +263,28 @@ public class SdkTokenBuilder {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!SdkTokenBuilder.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in SdkTokenBuilder is not found in the empty JSON string", SdkTokenBuilder.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in SdkTokenBuilder is not found in the empty JSON string", SdkTokenBuilder.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : SdkTokenBuilder.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("applicant_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `applicant_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("applicant_id").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `applicant_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("applicant_id").toString()));
       }
       if ((jsonObj.get("referrer") != null && !jsonObj.get("referrer").isJsonNull()) && !jsonObj.get("referrer").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `referrer` to be a primitive type in the JSON string but got `%s`", jsonObj.get("referrer").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `referrer` to be a primitive type in the JSON string but got `%s`", jsonObj.get("referrer").toString()));
       }
       if ((jsonObj.get("application_id") != null && !jsonObj.get("application_id").isJsonNull()) && !jsonObj.get("application_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `application_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("application_id").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `application_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("application_id").toString()));
       }
       if ((jsonObj.get("cross_device_url") != null && !jsonObj.get("cross_device_url").isJsonNull()) && !jsonObj.get("cross_device_url").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `cross_device_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("cross_device_url").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `cross_device_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("cross_device_url").toString()));
       }
   }
 
@@ -348,7 +345,7 @@ public class SdkTokenBuilder {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

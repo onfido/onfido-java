@@ -14,6 +14,7 @@
 package com.onfido.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -45,13 +46,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.onfido.JSON;
 
 /**
  * DocumentShared
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.16.0")
 public class DocumentShared {
   public static final String SERIALIZED_NAME_FILE_TYPE = "file_type";
   @SerializedName(SERIALIZED_NAME_FILE_TYPE)
@@ -328,15 +330,10 @@ public class DocumentShared {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("file_type");
-    openapiFields.add("type");
-    openapiFields.add("side");
-    openapiFields.add("issuing_country");
-    openapiFields.add("applicant_id");
+    openapiFields = new HashSet<String>(Arrays.asList("file_type", "type", "side", "issuing_country", "applicant_id"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -348,19 +345,19 @@ public class DocumentShared {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!DocumentShared.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in DocumentShared is not found in the empty JSON string", DocumentShared.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in DocumentShared is not found in the empty JSON string", DocumentShared.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("file_type") != null && !jsonObj.get("file_type").isJsonNull()) && !jsonObj.get("file_type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `file_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("file_type").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `file_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("file_type").toString()));
       }
       // validate the optional field `type`
       if (jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) {
         DocumentTypes.validateJsonElement(jsonObj.get("type"));
       }
       if ((jsonObj.get("side") != null && !jsonObj.get("side").isJsonNull()) && !jsonObj.get("side").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `side` to be a primitive type in the JSON string but got `%s`", jsonObj.get("side").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `side` to be a primitive type in the JSON string but got `%s`", jsonObj.get("side").toString()));
       }
       // validate the optional field `side`
       if (jsonObj.get("side") != null && !jsonObj.get("side").isJsonNull()) {
@@ -371,7 +368,7 @@ public class DocumentShared {
         CountryCodes.validateJsonElement(jsonObj.get("issuing_country"));
       }
       if ((jsonObj.get("applicant_id") != null && !jsonObj.get("applicant_id").isJsonNull()) && !jsonObj.get("applicant_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `applicant_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("applicant_id").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `applicant_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("applicant_id").toString()));
       }
   }
 
@@ -432,7 +429,7 @@ public class DocumentShared {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

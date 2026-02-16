@@ -14,6 +14,7 @@
 package com.onfido.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -44,13 +45,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.onfido.JSON;
 
 /**
  * ExtractionDocumentClassification
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.16.0")
 public class ExtractionDocumentClassification {
   public static final String SERIALIZED_NAME_ISSUING_COUNTRY = "issuing_country";
   @SerializedName(SERIALIZED_NAME_ISSUING_COUNTRY)
@@ -369,15 +371,10 @@ public class ExtractionDocumentClassification {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("issuing_country");
-    openapiFields.add("document_type");
-    openapiFields.add("issuing_state");
-    openapiFields.add("subtype");
-    openapiFields.add("version");
+    openapiFields = new HashSet<String>(Arrays.asList("issuing_country", "document_type", "issuing_state", "subtype", "version"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -389,7 +386,7 @@ public class ExtractionDocumentClassification {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ExtractionDocumentClassification.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ExtractionDocumentClassification is not found in the empty JSON string", ExtractionDocumentClassification.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in ExtractionDocumentClassification is not found in the empty JSON string", ExtractionDocumentClassification.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -402,17 +399,17 @@ public class ExtractionDocumentClassification {
         DocumentTypes.validateJsonElement(jsonObj.get("document_type"));
       }
       if ((jsonObj.get("issuing_state") != null && !jsonObj.get("issuing_state").isJsonNull()) && !jsonObj.get("issuing_state").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `issuing_state` to be a primitive type in the JSON string but got `%s`", jsonObj.get("issuing_state").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `issuing_state` to be a primitive type in the JSON string but got `%s`", jsonObj.get("issuing_state").toString()));
       }
       if ((jsonObj.get("subtype") != null && !jsonObj.get("subtype").isJsonNull()) && !jsonObj.get("subtype").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `subtype` to be a primitive type in the JSON string but got `%s`", jsonObj.get("subtype").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `subtype` to be a primitive type in the JSON string but got `%s`", jsonObj.get("subtype").toString()));
       }
       // validate the optional field `subtype`
       if (jsonObj.get("subtype") != null && !jsonObj.get("subtype").isJsonNull()) {
         SubtypeEnum.validateJsonElement(jsonObj.get("subtype"));
       }
       if ((jsonObj.get("version") != null && !jsonObj.get("version").isJsonNull()) && !jsonObj.get("version").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `version` to be a primitive type in the JSON string but got `%s`", jsonObj.get("version").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `version` to be a primitive type in the JSON string but got `%s`", jsonObj.get("version").toString()));
       }
   }
 
@@ -473,7 +470,7 @@ public class ExtractionDocumentClassification {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

@@ -129,7 +129,7 @@ public class DefaultApi {
         this.localCustomBaseUrl = customBaseUrl;
     }
 
-    private okhttp3.Call cancelReportCall(UUID reportId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call cancelReportCall(@javax.annotation.Nonnull UUID reportId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -175,7 +175,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call cancelReportValidateBeforeCall(UUID reportId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call cancelReportValidateBeforeCall(@javax.annotation.Nonnull UUID reportId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'reportId' is set
         if (reportId == null) {
             throw new ApiException("Missing the required parameter 'reportId' when calling cancelReport(Async)");
@@ -186,12 +186,12 @@ public class DefaultApi {
     }
 
 
-    private ApiResponse<Void> cancelReportWithHttpInfo(UUID reportId) throws ApiException {
+    private ApiResponse<Void> cancelReportWithHttpInfo(@javax.annotation.Nonnull UUID reportId) throws ApiException {
         okhttp3.Call localVarCall = cancelReportValidateBeforeCall(reportId, null);
         return localVarApiClient.execute(localVarCall);
     }
 
-    private okhttp3.Call cancelReportAsync(UUID reportId, final ApiCallback<Void> _callback) throws ApiException {
+    private okhttp3.Call cancelReportAsync(@javax.annotation.Nonnull UUID reportId, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = cancelReportValidateBeforeCall(reportId, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -199,9 +199,10 @@ public class DefaultApi {
     }
 
     public class APIcancelReportRequest {
+        @javax.annotation.Nonnull
         private final UUID reportId;
 
-        private APIcancelReportRequest(UUID reportId) {
+        private APIcancelReportRequest(@javax.annotation.Nonnull UUID reportId) {
             this.reportId = reportId;
         }
 
@@ -284,10 +285,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public APIcancelReportRequest cancelReport(UUID reportId) {
+    public APIcancelReportRequest cancelReport(@javax.annotation.Nonnull UUID reportId) {
         return new APIcancelReportRequest(reportId);
     }
-    private okhttp3.Call completeTaskCall(UUID workflowRunId, String taskId, CompleteTaskBuilder completeTaskBuilder, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call completeTaskCall(@javax.annotation.Nonnull UUID workflowRunId, @javax.annotation.Nonnull String taskId, @javax.annotation.Nonnull CompleteTaskBuilder completeTaskBuilder, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -335,7 +336,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call completeTaskValidateBeforeCall(UUID workflowRunId, String taskId, CompleteTaskBuilder completeTaskBuilder, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call completeTaskValidateBeforeCall(@javax.annotation.Nonnull UUID workflowRunId, @javax.annotation.Nonnull String taskId, @javax.annotation.Nonnull CompleteTaskBuilder completeTaskBuilder, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'workflowRunId' is set
         if (workflowRunId == null) {
             throw new ApiException("Missing the required parameter 'workflowRunId' when calling completeTask(Async)");
@@ -356,12 +357,12 @@ public class DefaultApi {
     }
 
 
-    private ApiResponse<Void> completeTaskWithHttpInfo(UUID workflowRunId, String taskId, CompleteTaskBuilder completeTaskBuilder) throws ApiException {
+    private ApiResponse<Void> completeTaskWithHttpInfo(@javax.annotation.Nonnull UUID workflowRunId, @javax.annotation.Nonnull String taskId, @javax.annotation.Nonnull CompleteTaskBuilder completeTaskBuilder) throws ApiException {
         okhttp3.Call localVarCall = completeTaskValidateBeforeCall(workflowRunId, taskId, completeTaskBuilder, null);
         return localVarApiClient.execute(localVarCall);
     }
 
-    private okhttp3.Call completeTaskAsync(UUID workflowRunId, String taskId, CompleteTaskBuilder completeTaskBuilder, final ApiCallback<Void> _callback) throws ApiException {
+    private okhttp3.Call completeTaskAsync(@javax.annotation.Nonnull UUID workflowRunId, @javax.annotation.Nonnull String taskId, @javax.annotation.Nonnull CompleteTaskBuilder completeTaskBuilder, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = completeTaskValidateBeforeCall(workflowRunId, taskId, completeTaskBuilder, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -369,11 +370,14 @@ public class DefaultApi {
     }
 
     public class APIcompleteTaskRequest {
+        @javax.annotation.Nonnull
         private final UUID workflowRunId;
+        @javax.annotation.Nonnull
         private final String taskId;
+        @javax.annotation.Nonnull
         private final CompleteTaskBuilder completeTaskBuilder;
 
-        private APIcompleteTaskRequest(UUID workflowRunId, String taskId, CompleteTaskBuilder completeTaskBuilder) {
+        private APIcompleteTaskRequest(@javax.annotation.Nonnull UUID workflowRunId, @javax.annotation.Nonnull String taskId, @javax.annotation.Nonnull CompleteTaskBuilder completeTaskBuilder) {
             this.workflowRunId = workflowRunId;
             this.taskId = taskId;
             this.completeTaskBuilder = completeTaskBuilder;
@@ -460,10 +464,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public APIcompleteTaskRequest completeTask(UUID workflowRunId, String taskId, CompleteTaskBuilder completeTaskBuilder) {
+    public APIcompleteTaskRequest completeTask(@javax.annotation.Nonnull UUID workflowRunId, @javax.annotation.Nonnull String taskId, @javax.annotation.Nonnull CompleteTaskBuilder completeTaskBuilder) {
         return new APIcompleteTaskRequest(workflowRunId, taskId, completeTaskBuilder);
     }
-    private okhttp3.Call createApplicantCall(ApplicantBuilder applicantBuilder, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createApplicantCall(@javax.annotation.Nonnull ApplicantBuilder applicantBuilder, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -509,7 +513,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createApplicantValidateBeforeCall(ApplicantBuilder applicantBuilder, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createApplicantValidateBeforeCall(@javax.annotation.Nonnull ApplicantBuilder applicantBuilder, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'applicantBuilder' is set
         if (applicantBuilder == null) {
             throw new ApiException("Missing the required parameter 'applicantBuilder' when calling createApplicant(Async)");
@@ -520,13 +524,13 @@ public class DefaultApi {
     }
 
 
-    private ApiResponse<Applicant> createApplicantWithHttpInfo(ApplicantBuilder applicantBuilder) throws ApiException {
+    private ApiResponse<Applicant> createApplicantWithHttpInfo(@javax.annotation.Nonnull ApplicantBuilder applicantBuilder) throws ApiException {
         okhttp3.Call localVarCall = createApplicantValidateBeforeCall(applicantBuilder, null);
         Type localVarReturnType = new TypeToken<Applicant>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call createApplicantAsync(ApplicantBuilder applicantBuilder, final ApiCallback<Applicant> _callback) throws ApiException {
+    private okhttp3.Call createApplicantAsync(@javax.annotation.Nonnull ApplicantBuilder applicantBuilder, final ApiCallback<Applicant> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createApplicantValidateBeforeCall(applicantBuilder, _callback);
         Type localVarReturnType = new TypeToken<Applicant>(){}.getType();
@@ -535,9 +539,10 @@ public class DefaultApi {
     }
 
     public class APIcreateApplicantRequest {
+        @javax.annotation.Nonnull
         private final ApplicantBuilder applicantBuilder;
 
-        private APIcreateApplicantRequest(ApplicantBuilder applicantBuilder) {
+        private APIcreateApplicantRequest(@javax.annotation.Nonnull ApplicantBuilder applicantBuilder) {
             this.applicantBuilder = applicantBuilder;
         }
 
@@ -622,10 +627,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public APIcreateApplicantRequest createApplicant(ApplicantBuilder applicantBuilder) {
+    public APIcreateApplicantRequest createApplicant(@javax.annotation.Nonnull ApplicantBuilder applicantBuilder) {
         return new APIcreateApplicantRequest(applicantBuilder);
     }
-    private okhttp3.Call createCheckCall(CheckBuilder checkBuilder, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createCheckCall(@javax.annotation.Nonnull CheckBuilder checkBuilder, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -671,7 +676,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createCheckValidateBeforeCall(CheckBuilder checkBuilder, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createCheckValidateBeforeCall(@javax.annotation.Nonnull CheckBuilder checkBuilder, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'checkBuilder' is set
         if (checkBuilder == null) {
             throw new ApiException("Missing the required parameter 'checkBuilder' when calling createCheck(Async)");
@@ -682,13 +687,13 @@ public class DefaultApi {
     }
 
 
-    private ApiResponse<Check> createCheckWithHttpInfo(CheckBuilder checkBuilder) throws ApiException {
+    private ApiResponse<Check> createCheckWithHttpInfo(@javax.annotation.Nonnull CheckBuilder checkBuilder) throws ApiException {
         okhttp3.Call localVarCall = createCheckValidateBeforeCall(checkBuilder, null);
         Type localVarReturnType = new TypeToken<Check>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call createCheckAsync(CheckBuilder checkBuilder, final ApiCallback<Check> _callback) throws ApiException {
+    private okhttp3.Call createCheckAsync(@javax.annotation.Nonnull CheckBuilder checkBuilder, final ApiCallback<Check> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createCheckValidateBeforeCall(checkBuilder, _callback);
         Type localVarReturnType = new TypeToken<Check>(){}.getType();
@@ -697,9 +702,10 @@ public class DefaultApi {
     }
 
     public class APIcreateCheckRequest {
+        @javax.annotation.Nonnull
         private final CheckBuilder checkBuilder;
 
-        private APIcreateCheckRequest(CheckBuilder checkBuilder) {
+        private APIcreateCheckRequest(@javax.annotation.Nonnull CheckBuilder checkBuilder) {
             this.checkBuilder = checkBuilder;
         }
 
@@ -784,10 +790,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public APIcreateCheckRequest createCheck(CheckBuilder checkBuilder) {
+    public APIcreateCheckRequest createCheck(@javax.annotation.Nonnull CheckBuilder checkBuilder) {
         return new APIcreateCheckRequest(checkBuilder);
     }
-    private okhttp3.Call createTimelineFileCall(UUID workflowRunId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createTimelineFileCall(@javax.annotation.Nonnull UUID workflowRunId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -833,7 +839,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createTimelineFileValidateBeforeCall(UUID workflowRunId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createTimelineFileValidateBeforeCall(@javax.annotation.Nonnull UUID workflowRunId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'workflowRunId' is set
         if (workflowRunId == null) {
             throw new ApiException("Missing the required parameter 'workflowRunId' when calling createTimelineFile(Async)");
@@ -844,13 +850,13 @@ public class DefaultApi {
     }
 
 
-    private ApiResponse<TimelineFileReference> createTimelineFileWithHttpInfo(UUID workflowRunId) throws ApiException {
+    private ApiResponse<TimelineFileReference> createTimelineFileWithHttpInfo(@javax.annotation.Nonnull UUID workflowRunId) throws ApiException {
         okhttp3.Call localVarCall = createTimelineFileValidateBeforeCall(workflowRunId, null);
         Type localVarReturnType = new TypeToken<TimelineFileReference>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call createTimelineFileAsync(UUID workflowRunId, final ApiCallback<TimelineFileReference> _callback) throws ApiException {
+    private okhttp3.Call createTimelineFileAsync(@javax.annotation.Nonnull UUID workflowRunId, final ApiCallback<TimelineFileReference> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createTimelineFileValidateBeforeCall(workflowRunId, _callback);
         Type localVarReturnType = new TypeToken<TimelineFileReference>(){}.getType();
@@ -859,9 +865,10 @@ public class DefaultApi {
     }
 
     public class APIcreateTimelineFileRequest {
+        @javax.annotation.Nonnull
         private final UUID workflowRunId;
 
-        private APIcreateTimelineFileRequest(UUID workflowRunId) {
+        private APIcreateTimelineFileRequest(@javax.annotation.Nonnull UUID workflowRunId) {
             this.workflowRunId = workflowRunId;
         }
 
@@ -946,10 +953,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public APIcreateTimelineFileRequest createTimelineFile(UUID workflowRunId) {
+    public APIcreateTimelineFileRequest createTimelineFile(@javax.annotation.Nonnull UUID workflowRunId) {
         return new APIcreateTimelineFileRequest(workflowRunId);
     }
-    private okhttp3.Call createWatchlistMonitorCall(WatchlistMonitorBuilder watchlistMonitorBuilder, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createWatchlistMonitorCall(@javax.annotation.Nonnull WatchlistMonitorBuilder watchlistMonitorBuilder, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -995,7 +1002,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createWatchlistMonitorValidateBeforeCall(WatchlistMonitorBuilder watchlistMonitorBuilder, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createWatchlistMonitorValidateBeforeCall(@javax.annotation.Nonnull WatchlistMonitorBuilder watchlistMonitorBuilder, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'watchlistMonitorBuilder' is set
         if (watchlistMonitorBuilder == null) {
             throw new ApiException("Missing the required parameter 'watchlistMonitorBuilder' when calling createWatchlistMonitor(Async)");
@@ -1006,13 +1013,13 @@ public class DefaultApi {
     }
 
 
-    private ApiResponse<WatchlistMonitor> createWatchlistMonitorWithHttpInfo(WatchlistMonitorBuilder watchlistMonitorBuilder) throws ApiException {
+    private ApiResponse<WatchlistMonitor> createWatchlistMonitorWithHttpInfo(@javax.annotation.Nonnull WatchlistMonitorBuilder watchlistMonitorBuilder) throws ApiException {
         okhttp3.Call localVarCall = createWatchlistMonitorValidateBeforeCall(watchlistMonitorBuilder, null);
         Type localVarReturnType = new TypeToken<WatchlistMonitor>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call createWatchlistMonitorAsync(WatchlistMonitorBuilder watchlistMonitorBuilder, final ApiCallback<WatchlistMonitor> _callback) throws ApiException {
+    private okhttp3.Call createWatchlistMonitorAsync(@javax.annotation.Nonnull WatchlistMonitorBuilder watchlistMonitorBuilder, final ApiCallback<WatchlistMonitor> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createWatchlistMonitorValidateBeforeCall(watchlistMonitorBuilder, _callback);
         Type localVarReturnType = new TypeToken<WatchlistMonitor>(){}.getType();
@@ -1021,9 +1028,10 @@ public class DefaultApi {
     }
 
     public class APIcreateWatchlistMonitorRequest {
+        @javax.annotation.Nonnull
         private final WatchlistMonitorBuilder watchlistMonitorBuilder;
 
-        private APIcreateWatchlistMonitorRequest(WatchlistMonitorBuilder watchlistMonitorBuilder) {
+        private APIcreateWatchlistMonitorRequest(@javax.annotation.Nonnull WatchlistMonitorBuilder watchlistMonitorBuilder) {
             this.watchlistMonitorBuilder = watchlistMonitorBuilder;
         }
 
@@ -1108,10 +1116,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public APIcreateWatchlistMonitorRequest createWatchlistMonitor(WatchlistMonitorBuilder watchlistMonitorBuilder) {
+    public APIcreateWatchlistMonitorRequest createWatchlistMonitor(@javax.annotation.Nonnull WatchlistMonitorBuilder watchlistMonitorBuilder) {
         return new APIcreateWatchlistMonitorRequest(watchlistMonitorBuilder);
     }
-    private okhttp3.Call createWebhookCall(WebhookBuilder webhookBuilder, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createWebhookCall(@javax.annotation.Nonnull WebhookBuilder webhookBuilder, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1157,7 +1165,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createWebhookValidateBeforeCall(WebhookBuilder webhookBuilder, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createWebhookValidateBeforeCall(@javax.annotation.Nonnull WebhookBuilder webhookBuilder, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'webhookBuilder' is set
         if (webhookBuilder == null) {
             throw new ApiException("Missing the required parameter 'webhookBuilder' when calling createWebhook(Async)");
@@ -1168,13 +1176,13 @@ public class DefaultApi {
     }
 
 
-    private ApiResponse<Webhook> createWebhookWithHttpInfo(WebhookBuilder webhookBuilder) throws ApiException {
+    private ApiResponse<Webhook> createWebhookWithHttpInfo(@javax.annotation.Nonnull WebhookBuilder webhookBuilder) throws ApiException {
         okhttp3.Call localVarCall = createWebhookValidateBeforeCall(webhookBuilder, null);
         Type localVarReturnType = new TypeToken<Webhook>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call createWebhookAsync(WebhookBuilder webhookBuilder, final ApiCallback<Webhook> _callback) throws ApiException {
+    private okhttp3.Call createWebhookAsync(@javax.annotation.Nonnull WebhookBuilder webhookBuilder, final ApiCallback<Webhook> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createWebhookValidateBeforeCall(webhookBuilder, _callback);
         Type localVarReturnType = new TypeToken<Webhook>(){}.getType();
@@ -1183,9 +1191,10 @@ public class DefaultApi {
     }
 
     public class APIcreateWebhookRequest {
+        @javax.annotation.Nonnull
         private final WebhookBuilder webhookBuilder;
 
-        private APIcreateWebhookRequest(WebhookBuilder webhookBuilder) {
+        private APIcreateWebhookRequest(@javax.annotation.Nonnull WebhookBuilder webhookBuilder) {
             this.webhookBuilder = webhookBuilder;
         }
 
@@ -1270,10 +1279,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public APIcreateWebhookRequest createWebhook(WebhookBuilder webhookBuilder) {
+    public APIcreateWebhookRequest createWebhook(@javax.annotation.Nonnull WebhookBuilder webhookBuilder) {
         return new APIcreateWebhookRequest(webhookBuilder);
     }
-    private okhttp3.Call createWorkflowRunCall(WorkflowRunBuilder workflowRunBuilder, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createWorkflowRunCall(@javax.annotation.Nonnull WorkflowRunBuilder workflowRunBuilder, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1319,7 +1328,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createWorkflowRunValidateBeforeCall(WorkflowRunBuilder workflowRunBuilder, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createWorkflowRunValidateBeforeCall(@javax.annotation.Nonnull WorkflowRunBuilder workflowRunBuilder, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'workflowRunBuilder' is set
         if (workflowRunBuilder == null) {
             throw new ApiException("Missing the required parameter 'workflowRunBuilder' when calling createWorkflowRun(Async)");
@@ -1330,13 +1339,13 @@ public class DefaultApi {
     }
 
 
-    private ApiResponse<WorkflowRun> createWorkflowRunWithHttpInfo(WorkflowRunBuilder workflowRunBuilder) throws ApiException {
+    private ApiResponse<WorkflowRun> createWorkflowRunWithHttpInfo(@javax.annotation.Nonnull WorkflowRunBuilder workflowRunBuilder) throws ApiException {
         okhttp3.Call localVarCall = createWorkflowRunValidateBeforeCall(workflowRunBuilder, null);
         Type localVarReturnType = new TypeToken<WorkflowRun>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call createWorkflowRunAsync(WorkflowRunBuilder workflowRunBuilder, final ApiCallback<WorkflowRun> _callback) throws ApiException {
+    private okhttp3.Call createWorkflowRunAsync(@javax.annotation.Nonnull WorkflowRunBuilder workflowRunBuilder, final ApiCallback<WorkflowRun> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createWorkflowRunValidateBeforeCall(workflowRunBuilder, _callback);
         Type localVarReturnType = new TypeToken<WorkflowRun>(){}.getType();
@@ -1345,9 +1354,10 @@ public class DefaultApi {
     }
 
     public class APIcreateWorkflowRunRequest {
+        @javax.annotation.Nonnull
         private final WorkflowRunBuilder workflowRunBuilder;
 
-        private APIcreateWorkflowRunRequest(WorkflowRunBuilder workflowRunBuilder) {
+        private APIcreateWorkflowRunRequest(@javax.annotation.Nonnull WorkflowRunBuilder workflowRunBuilder) {
             this.workflowRunBuilder = workflowRunBuilder;
         }
 
@@ -1432,10 +1442,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public APIcreateWorkflowRunRequest createWorkflowRun(WorkflowRunBuilder workflowRunBuilder) {
+    public APIcreateWorkflowRunRequest createWorkflowRun(@javax.annotation.Nonnull WorkflowRunBuilder workflowRunBuilder) {
         return new APIcreateWorkflowRunRequest(workflowRunBuilder);
     }
-    private okhttp3.Call deleteApplicantCall(UUID applicantId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteApplicantCall(@javax.annotation.Nonnull UUID applicantId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1481,7 +1491,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteApplicantValidateBeforeCall(UUID applicantId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteApplicantValidateBeforeCall(@javax.annotation.Nonnull UUID applicantId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'applicantId' is set
         if (applicantId == null) {
             throw new ApiException("Missing the required parameter 'applicantId' when calling deleteApplicant(Async)");
@@ -1492,12 +1502,12 @@ public class DefaultApi {
     }
 
 
-    private ApiResponse<Void> deleteApplicantWithHttpInfo(UUID applicantId) throws ApiException {
+    private ApiResponse<Void> deleteApplicantWithHttpInfo(@javax.annotation.Nonnull UUID applicantId) throws ApiException {
         okhttp3.Call localVarCall = deleteApplicantValidateBeforeCall(applicantId, null);
         return localVarApiClient.execute(localVarCall);
     }
 
-    private okhttp3.Call deleteApplicantAsync(UUID applicantId, final ApiCallback<Void> _callback) throws ApiException {
+    private okhttp3.Call deleteApplicantAsync(@javax.annotation.Nonnull UUID applicantId, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteApplicantValidateBeforeCall(applicantId, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -1505,9 +1515,10 @@ public class DefaultApi {
     }
 
     public class APIdeleteApplicantRequest {
+        @javax.annotation.Nonnull
         private final UUID applicantId;
 
-        private APIdeleteApplicantRequest(UUID applicantId) {
+        private APIdeleteApplicantRequest(@javax.annotation.Nonnull UUID applicantId) {
             this.applicantId = applicantId;
         }
 
@@ -1590,10 +1601,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public APIdeleteApplicantRequest deleteApplicant(UUID applicantId) {
+    public APIdeleteApplicantRequest deleteApplicant(@javax.annotation.Nonnull UUID applicantId) {
         return new APIdeleteApplicantRequest(applicantId);
     }
-    private okhttp3.Call deletePasskeyCall(String username, String passkeyId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deletePasskeyCall(@javax.annotation.Nonnull String username, @javax.annotation.Nonnull String passkeyId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1640,7 +1651,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deletePasskeyValidateBeforeCall(String username, String passkeyId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deletePasskeyValidateBeforeCall(@javax.annotation.Nonnull String username, @javax.annotation.Nonnull String passkeyId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'username' is set
         if (username == null) {
             throw new ApiException("Missing the required parameter 'username' when calling deletePasskey(Async)");
@@ -1656,12 +1667,12 @@ public class DefaultApi {
     }
 
 
-    private ApiResponse<Void> deletePasskeyWithHttpInfo(String username, String passkeyId) throws ApiException {
+    private ApiResponse<Void> deletePasskeyWithHttpInfo(@javax.annotation.Nonnull String username, @javax.annotation.Nonnull String passkeyId) throws ApiException {
         okhttp3.Call localVarCall = deletePasskeyValidateBeforeCall(username, passkeyId, null);
         return localVarApiClient.execute(localVarCall);
     }
 
-    private okhttp3.Call deletePasskeyAsync(String username, String passkeyId, final ApiCallback<Void> _callback) throws ApiException {
+    private okhttp3.Call deletePasskeyAsync(@javax.annotation.Nonnull String username, @javax.annotation.Nonnull String passkeyId, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deletePasskeyValidateBeforeCall(username, passkeyId, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -1669,10 +1680,12 @@ public class DefaultApi {
     }
 
     public class APIdeletePasskeyRequest {
+        @javax.annotation.Nonnull
         private final String username;
+        @javax.annotation.Nonnull
         private final String passkeyId;
 
-        private APIdeletePasskeyRequest(String username, String passkeyId) {
+        private APIdeletePasskeyRequest(@javax.annotation.Nonnull String username, @javax.annotation.Nonnull String passkeyId) {
             this.username = username;
             this.passkeyId = passkeyId;
         }
@@ -1762,10 +1775,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public APIdeletePasskeyRequest deletePasskey(String username, String passkeyId) {
+    public APIdeletePasskeyRequest deletePasskey(@javax.annotation.Nonnull String username, @javax.annotation.Nonnull String passkeyId) {
         return new APIdeletePasskeyRequest(username, passkeyId);
     }
-    private okhttp3.Call deletePasskeysCall(String username, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deletePasskeysCall(@javax.annotation.Nonnull String username, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1811,7 +1824,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deletePasskeysValidateBeforeCall(String username, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deletePasskeysValidateBeforeCall(@javax.annotation.Nonnull String username, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'username' is set
         if (username == null) {
             throw new ApiException("Missing the required parameter 'username' when calling deletePasskeys(Async)");
@@ -1822,12 +1835,12 @@ public class DefaultApi {
     }
 
 
-    private ApiResponse<Void> deletePasskeysWithHttpInfo(String username) throws ApiException {
+    private ApiResponse<Void> deletePasskeysWithHttpInfo(@javax.annotation.Nonnull String username) throws ApiException {
         okhttp3.Call localVarCall = deletePasskeysValidateBeforeCall(username, null);
         return localVarApiClient.execute(localVarCall);
     }
 
-    private okhttp3.Call deletePasskeysAsync(String username, final ApiCallback<Void> _callback) throws ApiException {
+    private okhttp3.Call deletePasskeysAsync(@javax.annotation.Nonnull String username, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deletePasskeysValidateBeforeCall(username, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -1835,9 +1848,10 @@ public class DefaultApi {
     }
 
     public class APIdeletePasskeysRequest {
+        @javax.annotation.Nonnull
         private final String username;
 
-        private APIdeletePasskeysRequest(String username) {
+        private APIdeletePasskeysRequest(@javax.annotation.Nonnull String username) {
             this.username = username;
         }
 
@@ -1925,10 +1939,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public APIdeletePasskeysRequest deletePasskeys(String username) {
+    public APIdeletePasskeysRequest deletePasskeys(@javax.annotation.Nonnull String username) {
         return new APIdeletePasskeysRequest(username);
     }
-    private okhttp3.Call deleteWatchlistMonitorCall(UUID monitorId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteWatchlistMonitorCall(@javax.annotation.Nonnull UUID monitorId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1974,7 +1988,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteWatchlistMonitorValidateBeforeCall(UUID monitorId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteWatchlistMonitorValidateBeforeCall(@javax.annotation.Nonnull UUID monitorId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'monitorId' is set
         if (monitorId == null) {
             throw new ApiException("Missing the required parameter 'monitorId' when calling deleteWatchlistMonitor(Async)");
@@ -1985,12 +1999,12 @@ public class DefaultApi {
     }
 
 
-    private ApiResponse<Void> deleteWatchlistMonitorWithHttpInfo(UUID monitorId) throws ApiException {
+    private ApiResponse<Void> deleteWatchlistMonitorWithHttpInfo(@javax.annotation.Nonnull UUID monitorId) throws ApiException {
         okhttp3.Call localVarCall = deleteWatchlistMonitorValidateBeforeCall(monitorId, null);
         return localVarApiClient.execute(localVarCall);
     }
 
-    private okhttp3.Call deleteWatchlistMonitorAsync(UUID monitorId, final ApiCallback<Void> _callback) throws ApiException {
+    private okhttp3.Call deleteWatchlistMonitorAsync(@javax.annotation.Nonnull UUID monitorId, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteWatchlistMonitorValidateBeforeCall(monitorId, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -1998,9 +2012,10 @@ public class DefaultApi {
     }
 
     public class APIdeleteWatchlistMonitorRequest {
+        @javax.annotation.Nonnull
         private final UUID monitorId;
 
-        private APIdeleteWatchlistMonitorRequest(UUID monitorId) {
+        private APIdeleteWatchlistMonitorRequest(@javax.annotation.Nonnull UUID monitorId) {
             this.monitorId = monitorId;
         }
 
@@ -2083,10 +2098,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public APIdeleteWatchlistMonitorRequest deleteWatchlistMonitor(UUID monitorId) {
+    public APIdeleteWatchlistMonitorRequest deleteWatchlistMonitor(@javax.annotation.Nonnull UUID monitorId) {
         return new APIdeleteWatchlistMonitorRequest(monitorId);
     }
-    private okhttp3.Call deleteWebhookCall(UUID webhookId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteWebhookCall(@javax.annotation.Nonnull UUID webhookId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -2132,7 +2147,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteWebhookValidateBeforeCall(UUID webhookId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteWebhookValidateBeforeCall(@javax.annotation.Nonnull UUID webhookId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'webhookId' is set
         if (webhookId == null) {
             throw new ApiException("Missing the required parameter 'webhookId' when calling deleteWebhook(Async)");
@@ -2143,12 +2158,12 @@ public class DefaultApi {
     }
 
 
-    private ApiResponse<Void> deleteWebhookWithHttpInfo(UUID webhookId) throws ApiException {
+    private ApiResponse<Void> deleteWebhookWithHttpInfo(@javax.annotation.Nonnull UUID webhookId) throws ApiException {
         okhttp3.Call localVarCall = deleteWebhookValidateBeforeCall(webhookId, null);
         return localVarApiClient.execute(localVarCall);
     }
 
-    private okhttp3.Call deleteWebhookAsync(UUID webhookId, final ApiCallback<Void> _callback) throws ApiException {
+    private okhttp3.Call deleteWebhookAsync(@javax.annotation.Nonnull UUID webhookId, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteWebhookValidateBeforeCall(webhookId, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -2156,9 +2171,10 @@ public class DefaultApi {
     }
 
     public class APIdeleteWebhookRequest {
+        @javax.annotation.Nonnull
         private final UUID webhookId;
 
-        private APIdeleteWebhookRequest(UUID webhookId) {
+        private APIdeleteWebhookRequest(@javax.annotation.Nonnull UUID webhookId) {
             this.webhookId = webhookId;
         }
 
@@ -2241,10 +2257,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public APIdeleteWebhookRequest deleteWebhook(UUID webhookId) {
+    public APIdeleteWebhookRequest deleteWebhook(@javax.annotation.Nonnull UUID webhookId) {
         return new APIdeleteWebhookRequest(webhookId);
     }
-    private okhttp3.Call downloadAesDocumentCall(UUID workflowRunId, UUID id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call downloadAesDocumentCall(@javax.annotation.Nonnull UUID workflowRunId, @javax.annotation.Nonnull UUID id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -2298,7 +2314,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call downloadAesDocumentValidateBeforeCall(UUID workflowRunId, UUID id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call downloadAesDocumentValidateBeforeCall(@javax.annotation.Nonnull UUID workflowRunId, @javax.annotation.Nonnull UUID id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'workflowRunId' is set
         if (workflowRunId == null) {
             throw new ApiException("Missing the required parameter 'workflowRunId' when calling downloadAesDocument(Async)");
@@ -2314,13 +2330,13 @@ public class DefaultApi {
     }
 
 
-    private ApiResponse<FileTransfer> downloadAesDocumentWithHttpInfo(UUID workflowRunId, UUID id) throws ApiException {
+    private ApiResponse<FileTransfer> downloadAesDocumentWithHttpInfo(@javax.annotation.Nonnull UUID workflowRunId, @javax.annotation.Nonnull UUID id) throws ApiException {
         okhttp3.Call localVarCall = downloadAesDocumentValidateBeforeCall(workflowRunId, id, null);
         Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call downloadAesDocumentAsync(UUID workflowRunId, UUID id, final ApiCallback<FileTransfer> _callback) throws ApiException {
+    private okhttp3.Call downloadAesDocumentAsync(@javax.annotation.Nonnull UUID workflowRunId, @javax.annotation.Nonnull UUID id, final ApiCallback<FileTransfer> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = downloadAesDocumentValidateBeforeCall(workflowRunId, id, _callback);
         Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
@@ -2329,10 +2345,12 @@ public class DefaultApi {
     }
 
     public class APIdownloadAesDocumentRequest {
+        @javax.annotation.Nonnull
         private final UUID workflowRunId;
+        @javax.annotation.Nonnull
         private final UUID id;
 
-        private APIdownloadAesDocumentRequest(UUID workflowRunId, UUID id) {
+        private APIdownloadAesDocumentRequest(@javax.annotation.Nonnull UUID workflowRunId, @javax.annotation.Nonnull UUID id) {
             this.workflowRunId = workflowRunId;
             this.id = id;
         }
@@ -2424,10 +2442,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public APIdownloadAesDocumentRequest downloadAesDocument(UUID workflowRunId, UUID id) {
+    public APIdownloadAesDocumentRequest downloadAesDocument(@javax.annotation.Nonnull UUID workflowRunId, @javax.annotation.Nonnull UUID id) {
         return new APIdownloadAesDocumentRequest(workflowRunId, id);
     }
-    private okhttp3.Call downloadCheckCall(UUID checkId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call downloadCheckCall(@javax.annotation.Nonnull UUID checkId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -2474,7 +2492,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call downloadCheckValidateBeforeCall(UUID checkId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call downloadCheckValidateBeforeCall(@javax.annotation.Nonnull UUID checkId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'checkId' is set
         if (checkId == null) {
             throw new ApiException("Missing the required parameter 'checkId' when calling downloadCheck(Async)");
@@ -2485,13 +2503,13 @@ public class DefaultApi {
     }
 
 
-    private ApiResponse<FileTransfer> downloadCheckWithHttpInfo(UUID checkId) throws ApiException {
+    private ApiResponse<FileTransfer> downloadCheckWithHttpInfo(@javax.annotation.Nonnull UUID checkId) throws ApiException {
         okhttp3.Call localVarCall = downloadCheckValidateBeforeCall(checkId, null);
         Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call downloadCheckAsync(UUID checkId, final ApiCallback<FileTransfer> _callback) throws ApiException {
+    private okhttp3.Call downloadCheckAsync(@javax.annotation.Nonnull UUID checkId, final ApiCallback<FileTransfer> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = downloadCheckValidateBeforeCall(checkId, _callback);
         Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
@@ -2500,9 +2518,10 @@ public class DefaultApi {
     }
 
     public class APIdownloadCheckRequest {
+        @javax.annotation.Nonnull
         private final UUID checkId;
 
-        private APIdownloadCheckRequest(UUID checkId) {
+        private APIdownloadCheckRequest(@javax.annotation.Nonnull UUID checkId) {
             this.checkId = checkId;
         }
 
@@ -2587,10 +2606,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public APIdownloadCheckRequest downloadCheck(UUID checkId) {
+    public APIdownloadCheckRequest downloadCheck(@javax.annotation.Nonnull UUID checkId) {
         return new APIdownloadCheckRequest(checkId);
     }
-    private okhttp3.Call downloadDocumentCall(UUID documentId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call downloadDocumentCall(@javax.annotation.Nonnull UUID documentId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -2637,7 +2656,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call downloadDocumentValidateBeforeCall(UUID documentId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call downloadDocumentValidateBeforeCall(@javax.annotation.Nonnull UUID documentId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'documentId' is set
         if (documentId == null) {
             throw new ApiException("Missing the required parameter 'documentId' when calling downloadDocument(Async)");
@@ -2648,13 +2667,13 @@ public class DefaultApi {
     }
 
 
-    private ApiResponse<FileTransfer> downloadDocumentWithHttpInfo(UUID documentId) throws ApiException {
+    private ApiResponse<FileTransfer> downloadDocumentWithHttpInfo(@javax.annotation.Nonnull UUID documentId) throws ApiException {
         okhttp3.Call localVarCall = downloadDocumentValidateBeforeCall(documentId, null);
         Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call downloadDocumentAsync(UUID documentId, final ApiCallback<FileTransfer> _callback) throws ApiException {
+    private okhttp3.Call downloadDocumentAsync(@javax.annotation.Nonnull UUID documentId, final ApiCallback<FileTransfer> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = downloadDocumentValidateBeforeCall(documentId, _callback);
         Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
@@ -2663,9 +2682,10 @@ public class DefaultApi {
     }
 
     public class APIdownloadDocumentRequest {
+        @javax.annotation.Nonnull
         private final UUID documentId;
 
-        private APIdownloadDocumentRequest(UUID documentId) {
+        private APIdownloadDocumentRequest(@javax.annotation.Nonnull UUID documentId) {
             this.documentId = documentId;
         }
 
@@ -2750,10 +2770,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public APIdownloadDocumentRequest downloadDocument(UUID documentId) {
+    public APIdownloadDocumentRequest downloadDocument(@javax.annotation.Nonnull UUID documentId) {
         return new APIdownloadDocumentRequest(documentId);
     }
-    private okhttp3.Call downloadDocumentVideoCall(String documentId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call downloadDocumentVideoCall(@javax.annotation.Nonnull String documentId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -2800,7 +2820,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call downloadDocumentVideoValidateBeforeCall(String documentId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call downloadDocumentVideoValidateBeforeCall(@javax.annotation.Nonnull String documentId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'documentId' is set
         if (documentId == null) {
             throw new ApiException("Missing the required parameter 'documentId' when calling downloadDocumentVideo(Async)");
@@ -2811,13 +2831,13 @@ public class DefaultApi {
     }
 
 
-    private ApiResponse<FileTransfer> downloadDocumentVideoWithHttpInfo(String documentId) throws ApiException {
+    private ApiResponse<FileTransfer> downloadDocumentVideoWithHttpInfo(@javax.annotation.Nonnull String documentId) throws ApiException {
         okhttp3.Call localVarCall = downloadDocumentVideoValidateBeforeCall(documentId, null);
         Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call downloadDocumentVideoAsync(String documentId, final ApiCallback<FileTransfer> _callback) throws ApiException {
+    private okhttp3.Call downloadDocumentVideoAsync(@javax.annotation.Nonnull String documentId, final ApiCallback<FileTransfer> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = downloadDocumentVideoValidateBeforeCall(documentId, _callback);
         Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
@@ -2826,9 +2846,10 @@ public class DefaultApi {
     }
 
     public class APIdownloadDocumentVideoRequest {
+        @javax.annotation.Nonnull
         private final String documentId;
 
-        private APIdownloadDocumentVideoRequest(String documentId) {
+        private APIdownloadDocumentVideoRequest(@javax.annotation.Nonnull String documentId) {
             this.documentId = documentId;
         }
 
@@ -2913,10 +2934,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public APIdownloadDocumentVideoRequest downloadDocumentVideo(String documentId) {
+    public APIdownloadDocumentVideoRequest downloadDocumentVideo(@javax.annotation.Nonnull String documentId) {
         return new APIdownloadDocumentVideoRequest(documentId);
     }
-    private okhttp3.Call downloadEvidenceFolderCall(UUID workflowRunId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call downloadEvidenceFolderCall(@javax.annotation.Nonnull UUID workflowRunId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -2963,7 +2984,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call downloadEvidenceFolderValidateBeforeCall(UUID workflowRunId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call downloadEvidenceFolderValidateBeforeCall(@javax.annotation.Nonnull UUID workflowRunId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'workflowRunId' is set
         if (workflowRunId == null) {
             throw new ApiException("Missing the required parameter 'workflowRunId' when calling downloadEvidenceFolder(Async)");
@@ -2974,13 +2995,13 @@ public class DefaultApi {
     }
 
 
-    private ApiResponse<FileTransfer> downloadEvidenceFolderWithHttpInfo(UUID workflowRunId) throws ApiException {
+    private ApiResponse<FileTransfer> downloadEvidenceFolderWithHttpInfo(@javax.annotation.Nonnull UUID workflowRunId) throws ApiException {
         okhttp3.Call localVarCall = downloadEvidenceFolderValidateBeforeCall(workflowRunId, null);
         Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call downloadEvidenceFolderAsync(UUID workflowRunId, final ApiCallback<FileTransfer> _callback) throws ApiException {
+    private okhttp3.Call downloadEvidenceFolderAsync(@javax.annotation.Nonnull UUID workflowRunId, final ApiCallback<FileTransfer> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = downloadEvidenceFolderValidateBeforeCall(workflowRunId, _callback);
         Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
@@ -2989,9 +3010,10 @@ public class DefaultApi {
     }
 
     public class APIdownloadEvidenceFolderRequest {
+        @javax.annotation.Nonnull
         private final UUID workflowRunId;
 
-        private APIdownloadEvidenceFolderRequest(UUID workflowRunId) {
+        private APIdownloadEvidenceFolderRequest(@javax.annotation.Nonnull UUID workflowRunId) {
             this.workflowRunId = workflowRunId;
         }
 
@@ -3081,10 +3103,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public APIdownloadEvidenceFolderRequest downloadEvidenceFolder(UUID workflowRunId) {
+    public APIdownloadEvidenceFolderRequest downloadEvidenceFolder(@javax.annotation.Nonnull UUID workflowRunId) {
         return new APIdownloadEvidenceFolderRequest(workflowRunId);
     }
-    private okhttp3.Call downloadIdPhotoCall(UUID idPhotoId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call downloadIdPhotoCall(@javax.annotation.Nonnull UUID idPhotoId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -3131,7 +3153,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call downloadIdPhotoValidateBeforeCall(UUID idPhotoId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call downloadIdPhotoValidateBeforeCall(@javax.annotation.Nonnull UUID idPhotoId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'idPhotoId' is set
         if (idPhotoId == null) {
             throw new ApiException("Missing the required parameter 'idPhotoId' when calling downloadIdPhoto(Async)");
@@ -3142,13 +3164,13 @@ public class DefaultApi {
     }
 
 
-    private ApiResponse<FileTransfer> downloadIdPhotoWithHttpInfo(UUID idPhotoId) throws ApiException {
+    private ApiResponse<FileTransfer> downloadIdPhotoWithHttpInfo(@javax.annotation.Nonnull UUID idPhotoId) throws ApiException {
         okhttp3.Call localVarCall = downloadIdPhotoValidateBeforeCall(idPhotoId, null);
         Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call downloadIdPhotoAsync(UUID idPhotoId, final ApiCallback<FileTransfer> _callback) throws ApiException {
+    private okhttp3.Call downloadIdPhotoAsync(@javax.annotation.Nonnull UUID idPhotoId, final ApiCallback<FileTransfer> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = downloadIdPhotoValidateBeforeCall(idPhotoId, _callback);
         Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
@@ -3157,9 +3179,10 @@ public class DefaultApi {
     }
 
     public class APIdownloadIdPhotoRequest {
+        @javax.annotation.Nonnull
         private final UUID idPhotoId;
 
-        private APIdownloadIdPhotoRequest(UUID idPhotoId) {
+        private APIdownloadIdPhotoRequest(@javax.annotation.Nonnull UUID idPhotoId) {
             this.idPhotoId = idPhotoId;
         }
 
@@ -3244,10 +3267,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public APIdownloadIdPhotoRequest downloadIdPhoto(UUID idPhotoId) {
+    public APIdownloadIdPhotoRequest downloadIdPhoto(@javax.annotation.Nonnull UUID idPhotoId) {
         return new APIdownloadIdPhotoRequest(idPhotoId);
     }
-    private okhttp3.Call downloadLivePhotoCall(UUID livePhotoId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call downloadLivePhotoCall(@javax.annotation.Nonnull UUID livePhotoId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -3294,7 +3317,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call downloadLivePhotoValidateBeforeCall(UUID livePhotoId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call downloadLivePhotoValidateBeforeCall(@javax.annotation.Nonnull UUID livePhotoId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'livePhotoId' is set
         if (livePhotoId == null) {
             throw new ApiException("Missing the required parameter 'livePhotoId' when calling downloadLivePhoto(Async)");
@@ -3305,13 +3328,13 @@ public class DefaultApi {
     }
 
 
-    private ApiResponse<FileTransfer> downloadLivePhotoWithHttpInfo(UUID livePhotoId) throws ApiException {
+    private ApiResponse<FileTransfer> downloadLivePhotoWithHttpInfo(@javax.annotation.Nonnull UUID livePhotoId) throws ApiException {
         okhttp3.Call localVarCall = downloadLivePhotoValidateBeforeCall(livePhotoId, null);
         Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call downloadLivePhotoAsync(UUID livePhotoId, final ApiCallback<FileTransfer> _callback) throws ApiException {
+    private okhttp3.Call downloadLivePhotoAsync(@javax.annotation.Nonnull UUID livePhotoId, final ApiCallback<FileTransfer> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = downloadLivePhotoValidateBeforeCall(livePhotoId, _callback);
         Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
@@ -3320,9 +3343,10 @@ public class DefaultApi {
     }
 
     public class APIdownloadLivePhotoRequest {
+        @javax.annotation.Nonnull
         private final UUID livePhotoId;
 
-        private APIdownloadLivePhotoRequest(UUID livePhotoId) {
+        private APIdownloadLivePhotoRequest(@javax.annotation.Nonnull UUID livePhotoId) {
             this.livePhotoId = livePhotoId;
         }
 
@@ -3407,10 +3431,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public APIdownloadLivePhotoRequest downloadLivePhoto(UUID livePhotoId) {
+    public APIdownloadLivePhotoRequest downloadLivePhoto(@javax.annotation.Nonnull UUID livePhotoId) {
         return new APIdownloadLivePhotoRequest(livePhotoId);
     }
-    private okhttp3.Call downloadLiveVideoCall(UUID liveVideoId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call downloadLiveVideoCall(@javax.annotation.Nonnull UUID liveVideoId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -3457,7 +3481,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call downloadLiveVideoValidateBeforeCall(UUID liveVideoId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call downloadLiveVideoValidateBeforeCall(@javax.annotation.Nonnull UUID liveVideoId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'liveVideoId' is set
         if (liveVideoId == null) {
             throw new ApiException("Missing the required parameter 'liveVideoId' when calling downloadLiveVideo(Async)");
@@ -3468,13 +3492,13 @@ public class DefaultApi {
     }
 
 
-    private ApiResponse<FileTransfer> downloadLiveVideoWithHttpInfo(UUID liveVideoId) throws ApiException {
+    private ApiResponse<FileTransfer> downloadLiveVideoWithHttpInfo(@javax.annotation.Nonnull UUID liveVideoId) throws ApiException {
         okhttp3.Call localVarCall = downloadLiveVideoValidateBeforeCall(liveVideoId, null);
         Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call downloadLiveVideoAsync(UUID liveVideoId, final ApiCallback<FileTransfer> _callback) throws ApiException {
+    private okhttp3.Call downloadLiveVideoAsync(@javax.annotation.Nonnull UUID liveVideoId, final ApiCallback<FileTransfer> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = downloadLiveVideoValidateBeforeCall(liveVideoId, _callback);
         Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
@@ -3483,9 +3507,10 @@ public class DefaultApi {
     }
 
     public class APIdownloadLiveVideoRequest {
+        @javax.annotation.Nonnull
         private final UUID liveVideoId;
 
-        private APIdownloadLiveVideoRequest(UUID liveVideoId) {
+        private APIdownloadLiveVideoRequest(@javax.annotation.Nonnull UUID liveVideoId) {
             this.liveVideoId = liveVideoId;
         }
 
@@ -3570,10 +3595,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public APIdownloadLiveVideoRequest downloadLiveVideo(UUID liveVideoId) {
+    public APIdownloadLiveVideoRequest downloadLiveVideo(@javax.annotation.Nonnull UUID liveVideoId) {
         return new APIdownloadLiveVideoRequest(liveVideoId);
     }
-    private okhttp3.Call downloadLiveVideoFrameCall(UUID liveVideoId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call downloadLiveVideoFrameCall(@javax.annotation.Nonnull UUID liveVideoId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -3620,7 +3645,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call downloadLiveVideoFrameValidateBeforeCall(UUID liveVideoId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call downloadLiveVideoFrameValidateBeforeCall(@javax.annotation.Nonnull UUID liveVideoId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'liveVideoId' is set
         if (liveVideoId == null) {
             throw new ApiException("Missing the required parameter 'liveVideoId' when calling downloadLiveVideoFrame(Async)");
@@ -3631,13 +3656,13 @@ public class DefaultApi {
     }
 
 
-    private ApiResponse<FileTransfer> downloadLiveVideoFrameWithHttpInfo(UUID liveVideoId) throws ApiException {
+    private ApiResponse<FileTransfer> downloadLiveVideoFrameWithHttpInfo(@javax.annotation.Nonnull UUID liveVideoId) throws ApiException {
         okhttp3.Call localVarCall = downloadLiveVideoFrameValidateBeforeCall(liveVideoId, null);
         Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call downloadLiveVideoFrameAsync(UUID liveVideoId, final ApiCallback<FileTransfer> _callback) throws ApiException {
+    private okhttp3.Call downloadLiveVideoFrameAsync(@javax.annotation.Nonnull UUID liveVideoId, final ApiCallback<FileTransfer> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = downloadLiveVideoFrameValidateBeforeCall(liveVideoId, _callback);
         Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
@@ -3646,9 +3671,10 @@ public class DefaultApi {
     }
 
     public class APIdownloadLiveVideoFrameRequest {
+        @javax.annotation.Nonnull
         private final UUID liveVideoId;
 
-        private APIdownloadLiveVideoFrameRequest(UUID liveVideoId) {
+        private APIdownloadLiveVideoFrameRequest(@javax.annotation.Nonnull UUID liveVideoId) {
             this.liveVideoId = liveVideoId;
         }
 
@@ -3733,10 +3759,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public APIdownloadLiveVideoFrameRequest downloadLiveVideoFrame(UUID liveVideoId) {
+    public APIdownloadLiveVideoFrameRequest downloadLiveVideoFrame(@javax.annotation.Nonnull UUID liveVideoId) {
         return new APIdownloadLiveVideoFrameRequest(liveVideoId);
     }
-    private okhttp3.Call downloadMotionCaptureCall(UUID motionCaptureId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call downloadMotionCaptureCall(@javax.annotation.Nonnull UUID motionCaptureId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -3783,7 +3809,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call downloadMotionCaptureValidateBeforeCall(UUID motionCaptureId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call downloadMotionCaptureValidateBeforeCall(@javax.annotation.Nonnull UUID motionCaptureId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'motionCaptureId' is set
         if (motionCaptureId == null) {
             throw new ApiException("Missing the required parameter 'motionCaptureId' when calling downloadMotionCapture(Async)");
@@ -3794,13 +3820,13 @@ public class DefaultApi {
     }
 
 
-    private ApiResponse<FileTransfer> downloadMotionCaptureWithHttpInfo(UUID motionCaptureId) throws ApiException {
+    private ApiResponse<FileTransfer> downloadMotionCaptureWithHttpInfo(@javax.annotation.Nonnull UUID motionCaptureId) throws ApiException {
         okhttp3.Call localVarCall = downloadMotionCaptureValidateBeforeCall(motionCaptureId, null);
         Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call downloadMotionCaptureAsync(UUID motionCaptureId, final ApiCallback<FileTransfer> _callback) throws ApiException {
+    private okhttp3.Call downloadMotionCaptureAsync(@javax.annotation.Nonnull UUID motionCaptureId, final ApiCallback<FileTransfer> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = downloadMotionCaptureValidateBeforeCall(motionCaptureId, _callback);
         Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
@@ -3809,9 +3835,10 @@ public class DefaultApi {
     }
 
     public class APIdownloadMotionCaptureRequest {
+        @javax.annotation.Nonnull
         private final UUID motionCaptureId;
 
-        private APIdownloadMotionCaptureRequest(UUID motionCaptureId) {
+        private APIdownloadMotionCaptureRequest(@javax.annotation.Nonnull UUID motionCaptureId) {
             this.motionCaptureId = motionCaptureId;
         }
 
@@ -3896,10 +3923,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public APIdownloadMotionCaptureRequest downloadMotionCapture(UUID motionCaptureId) {
+    public APIdownloadMotionCaptureRequest downloadMotionCapture(@javax.annotation.Nonnull UUID motionCaptureId) {
         return new APIdownloadMotionCaptureRequest(motionCaptureId);
     }
-    private okhttp3.Call downloadMotionCaptureFrameCall(UUID motionCaptureId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call downloadMotionCaptureFrameCall(@javax.annotation.Nonnull UUID motionCaptureId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -3946,7 +3973,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call downloadMotionCaptureFrameValidateBeforeCall(UUID motionCaptureId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call downloadMotionCaptureFrameValidateBeforeCall(@javax.annotation.Nonnull UUID motionCaptureId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'motionCaptureId' is set
         if (motionCaptureId == null) {
             throw new ApiException("Missing the required parameter 'motionCaptureId' when calling downloadMotionCaptureFrame(Async)");
@@ -3957,13 +3984,13 @@ public class DefaultApi {
     }
 
 
-    private ApiResponse<FileTransfer> downloadMotionCaptureFrameWithHttpInfo(UUID motionCaptureId) throws ApiException {
+    private ApiResponse<FileTransfer> downloadMotionCaptureFrameWithHttpInfo(@javax.annotation.Nonnull UUID motionCaptureId) throws ApiException {
         okhttp3.Call localVarCall = downloadMotionCaptureFrameValidateBeforeCall(motionCaptureId, null);
         Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call downloadMotionCaptureFrameAsync(UUID motionCaptureId, final ApiCallback<FileTransfer> _callback) throws ApiException {
+    private okhttp3.Call downloadMotionCaptureFrameAsync(@javax.annotation.Nonnull UUID motionCaptureId, final ApiCallback<FileTransfer> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = downloadMotionCaptureFrameValidateBeforeCall(motionCaptureId, _callback);
         Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
@@ -3972,9 +3999,10 @@ public class DefaultApi {
     }
 
     public class APIdownloadMotionCaptureFrameRequest {
+        @javax.annotation.Nonnull
         private final UUID motionCaptureId;
 
-        private APIdownloadMotionCaptureFrameRequest(UUID motionCaptureId) {
+        private APIdownloadMotionCaptureFrameRequest(@javax.annotation.Nonnull UUID motionCaptureId) {
             this.motionCaptureId = motionCaptureId;
         }
 
@@ -4059,10 +4087,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public APIdownloadMotionCaptureFrameRequest downloadMotionCaptureFrame(UUID motionCaptureId) {
+    public APIdownloadMotionCaptureFrameRequest downloadMotionCaptureFrame(@javax.annotation.Nonnull UUID motionCaptureId) {
         return new APIdownloadMotionCaptureFrameRequest(motionCaptureId);
     }
-    private okhttp3.Call downloadNfcFaceCall(UUID documentId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call downloadNfcFaceCall(@javax.annotation.Nonnull UUID documentId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -4109,7 +4137,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call downloadNfcFaceValidateBeforeCall(UUID documentId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call downloadNfcFaceValidateBeforeCall(@javax.annotation.Nonnull UUID documentId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'documentId' is set
         if (documentId == null) {
             throw new ApiException("Missing the required parameter 'documentId' when calling downloadNfcFace(Async)");
@@ -4120,13 +4148,13 @@ public class DefaultApi {
     }
 
 
-    private ApiResponse<FileTransfer> downloadNfcFaceWithHttpInfo(UUID documentId) throws ApiException {
+    private ApiResponse<FileTransfer> downloadNfcFaceWithHttpInfo(@javax.annotation.Nonnull UUID documentId) throws ApiException {
         okhttp3.Call localVarCall = downloadNfcFaceValidateBeforeCall(documentId, null);
         Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call downloadNfcFaceAsync(UUID documentId, final ApiCallback<FileTransfer> _callback) throws ApiException {
+    private okhttp3.Call downloadNfcFaceAsync(@javax.annotation.Nonnull UUID documentId, final ApiCallback<FileTransfer> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = downloadNfcFaceValidateBeforeCall(documentId, _callback);
         Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
@@ -4135,9 +4163,10 @@ public class DefaultApi {
     }
 
     public class APIdownloadNfcFaceRequest {
+        @javax.annotation.Nonnull
         private final UUID documentId;
 
-        private APIdownloadNfcFaceRequest(UUID documentId) {
+        private APIdownloadNfcFaceRequest(@javax.annotation.Nonnull UUID documentId) {
             this.documentId = documentId;
         }
 
@@ -4222,10 +4251,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public APIdownloadNfcFaceRequest downloadNfcFace(UUID documentId) {
+    public APIdownloadNfcFaceRequest downloadNfcFace(@javax.annotation.Nonnull UUID documentId) {
         return new APIdownloadNfcFaceRequest(documentId);
     }
-    private okhttp3.Call downloadQesDocumentCall(UUID workflowRunId, UUID fileId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call downloadQesDocumentCall(@javax.annotation.Nonnull UUID workflowRunId, @javax.annotation.Nonnull UUID fileId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -4279,7 +4308,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call downloadQesDocumentValidateBeforeCall(UUID workflowRunId, UUID fileId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call downloadQesDocumentValidateBeforeCall(@javax.annotation.Nonnull UUID workflowRunId, @javax.annotation.Nonnull UUID fileId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'workflowRunId' is set
         if (workflowRunId == null) {
             throw new ApiException("Missing the required parameter 'workflowRunId' when calling downloadQesDocument(Async)");
@@ -4295,13 +4324,13 @@ public class DefaultApi {
     }
 
 
-    private ApiResponse<FileTransfer> downloadQesDocumentWithHttpInfo(UUID workflowRunId, UUID fileId) throws ApiException {
+    private ApiResponse<FileTransfer> downloadQesDocumentWithHttpInfo(@javax.annotation.Nonnull UUID workflowRunId, @javax.annotation.Nonnull UUID fileId) throws ApiException {
         okhttp3.Call localVarCall = downloadQesDocumentValidateBeforeCall(workflowRunId, fileId, null);
         Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call downloadQesDocumentAsync(UUID workflowRunId, UUID fileId, final ApiCallback<FileTransfer> _callback) throws ApiException {
+    private okhttp3.Call downloadQesDocumentAsync(@javax.annotation.Nonnull UUID workflowRunId, @javax.annotation.Nonnull UUID fileId, final ApiCallback<FileTransfer> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = downloadQesDocumentValidateBeforeCall(workflowRunId, fileId, _callback);
         Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
@@ -4310,10 +4339,12 @@ public class DefaultApi {
     }
 
     public class APIdownloadQesDocumentRequest {
+        @javax.annotation.Nonnull
         private final UUID workflowRunId;
+        @javax.annotation.Nonnull
         private final UUID fileId;
 
-        private APIdownloadQesDocumentRequest(UUID workflowRunId, UUID fileId) {
+        private APIdownloadQesDocumentRequest(@javax.annotation.Nonnull UUID workflowRunId, @javax.annotation.Nonnull UUID fileId) {
             this.workflowRunId = workflowRunId;
             this.fileId = fileId;
         }
@@ -4405,10 +4436,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public APIdownloadQesDocumentRequest downloadQesDocument(UUID workflowRunId, UUID fileId) {
+    public APIdownloadQesDocumentRequest downloadQesDocument(@javax.annotation.Nonnull UUID workflowRunId, @javax.annotation.Nonnull UUID fileId) {
         return new APIdownloadQesDocumentRequest(workflowRunId, fileId);
     }
-    private okhttp3.Call downloadSesDocumentCall(UUID workflowRunId, UUID id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call downloadSesDocumentCall(@javax.annotation.Nonnull UUID workflowRunId, @javax.annotation.Nonnull UUID id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -4462,7 +4493,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call downloadSesDocumentValidateBeforeCall(UUID workflowRunId, UUID id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call downloadSesDocumentValidateBeforeCall(@javax.annotation.Nonnull UUID workflowRunId, @javax.annotation.Nonnull UUID id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'workflowRunId' is set
         if (workflowRunId == null) {
             throw new ApiException("Missing the required parameter 'workflowRunId' when calling downloadSesDocument(Async)");
@@ -4478,13 +4509,13 @@ public class DefaultApi {
     }
 
 
-    private ApiResponse<FileTransfer> downloadSesDocumentWithHttpInfo(UUID workflowRunId, UUID id) throws ApiException {
+    private ApiResponse<FileTransfer> downloadSesDocumentWithHttpInfo(@javax.annotation.Nonnull UUID workflowRunId, @javax.annotation.Nonnull UUID id) throws ApiException {
         okhttp3.Call localVarCall = downloadSesDocumentValidateBeforeCall(workflowRunId, id, null);
         Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call downloadSesDocumentAsync(UUID workflowRunId, UUID id, final ApiCallback<FileTransfer> _callback) throws ApiException {
+    private okhttp3.Call downloadSesDocumentAsync(@javax.annotation.Nonnull UUID workflowRunId, @javax.annotation.Nonnull UUID id, final ApiCallback<FileTransfer> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = downloadSesDocumentValidateBeforeCall(workflowRunId, id, _callback);
         Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
@@ -4493,10 +4524,12 @@ public class DefaultApi {
     }
 
     public class APIdownloadSesDocumentRequest {
+        @javax.annotation.Nonnull
         private final UUID workflowRunId;
+        @javax.annotation.Nonnull
         private final UUID id;
 
-        private APIdownloadSesDocumentRequest(UUID workflowRunId, UUID id) {
+        private APIdownloadSesDocumentRequest(@javax.annotation.Nonnull UUID workflowRunId, @javax.annotation.Nonnull UUID id) {
             this.workflowRunId = workflowRunId;
             this.id = id;
         }
@@ -4588,10 +4621,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public APIdownloadSesDocumentRequest downloadSesDocument(UUID workflowRunId, UUID id) {
+    public APIdownloadSesDocumentRequest downloadSesDocument(@javax.annotation.Nonnull UUID workflowRunId, @javax.annotation.Nonnull UUID id) {
         return new APIdownloadSesDocumentRequest(workflowRunId, id);
     }
-    private okhttp3.Call downloadSignedEvidenceFileCall(UUID workflowRunId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call downloadSignedEvidenceFileCall(@javax.annotation.Nonnull UUID workflowRunId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -4638,7 +4671,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call downloadSignedEvidenceFileValidateBeforeCall(UUID workflowRunId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call downloadSignedEvidenceFileValidateBeforeCall(@javax.annotation.Nonnull UUID workflowRunId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'workflowRunId' is set
         if (workflowRunId == null) {
             throw new ApiException("Missing the required parameter 'workflowRunId' when calling downloadSignedEvidenceFile(Async)");
@@ -4649,13 +4682,13 @@ public class DefaultApi {
     }
 
 
-    private ApiResponse<FileTransfer> downloadSignedEvidenceFileWithHttpInfo(UUID workflowRunId) throws ApiException {
+    private ApiResponse<FileTransfer> downloadSignedEvidenceFileWithHttpInfo(@javax.annotation.Nonnull UUID workflowRunId) throws ApiException {
         okhttp3.Call localVarCall = downloadSignedEvidenceFileValidateBeforeCall(workflowRunId, null);
         Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call downloadSignedEvidenceFileAsync(UUID workflowRunId, final ApiCallback<FileTransfer> _callback) throws ApiException {
+    private okhttp3.Call downloadSignedEvidenceFileAsync(@javax.annotation.Nonnull UUID workflowRunId, final ApiCallback<FileTransfer> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = downloadSignedEvidenceFileValidateBeforeCall(workflowRunId, _callback);
         Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
@@ -4664,9 +4697,10 @@ public class DefaultApi {
     }
 
     public class APIdownloadSignedEvidenceFileRequest {
+        @javax.annotation.Nonnull
         private final UUID workflowRunId;
 
-        private APIdownloadSignedEvidenceFileRequest(UUID workflowRunId) {
+        private APIdownloadSignedEvidenceFileRequest(@javax.annotation.Nonnull UUID workflowRunId) {
             this.workflowRunId = workflowRunId;
         }
 
@@ -4756,10 +4790,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public APIdownloadSignedEvidenceFileRequest downloadSignedEvidenceFile(UUID workflowRunId) {
+    public APIdownloadSignedEvidenceFileRequest downloadSignedEvidenceFile(@javax.annotation.Nonnull UUID workflowRunId) {
         return new APIdownloadSignedEvidenceFileRequest(workflowRunId);
     }
-    private okhttp3.Call downloadSigningDocumentCall(UUID signingDocumentId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call downloadSigningDocumentCall(@javax.annotation.Nonnull UUID signingDocumentId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -4806,7 +4840,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call downloadSigningDocumentValidateBeforeCall(UUID signingDocumentId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call downloadSigningDocumentValidateBeforeCall(@javax.annotation.Nonnull UUID signingDocumentId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'signingDocumentId' is set
         if (signingDocumentId == null) {
             throw new ApiException("Missing the required parameter 'signingDocumentId' when calling downloadSigningDocument(Async)");
@@ -4817,13 +4851,13 @@ public class DefaultApi {
     }
 
 
-    private ApiResponse<FileTransfer> downloadSigningDocumentWithHttpInfo(UUID signingDocumentId) throws ApiException {
+    private ApiResponse<FileTransfer> downloadSigningDocumentWithHttpInfo(@javax.annotation.Nonnull UUID signingDocumentId) throws ApiException {
         okhttp3.Call localVarCall = downloadSigningDocumentValidateBeforeCall(signingDocumentId, null);
         Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call downloadSigningDocumentAsync(UUID signingDocumentId, final ApiCallback<FileTransfer> _callback) throws ApiException {
+    private okhttp3.Call downloadSigningDocumentAsync(@javax.annotation.Nonnull UUID signingDocumentId, final ApiCallback<FileTransfer> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = downloadSigningDocumentValidateBeforeCall(signingDocumentId, _callback);
         Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
@@ -4832,9 +4866,10 @@ public class DefaultApi {
     }
 
     public class APIdownloadSigningDocumentRequest {
+        @javax.annotation.Nonnull
         private final UUID signingDocumentId;
 
-        private APIdownloadSigningDocumentRequest(UUID signingDocumentId) {
+        private APIdownloadSigningDocumentRequest(@javax.annotation.Nonnull UUID signingDocumentId) {
             this.signingDocumentId = signingDocumentId;
         }
 
@@ -4919,10 +4954,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public APIdownloadSigningDocumentRequest downloadSigningDocument(UUID signingDocumentId) {
+    public APIdownloadSigningDocumentRequest downloadSigningDocument(@javax.annotation.Nonnull UUID signingDocumentId) {
         return new APIdownloadSigningDocumentRequest(signingDocumentId);
     }
-    private okhttp3.Call extractCall(ExtractRequest extractRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call extractCall(@javax.annotation.Nonnull ExtractRequest extractRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -4968,7 +5003,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call extractValidateBeforeCall(ExtractRequest extractRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call extractValidateBeforeCall(@javax.annotation.Nonnull ExtractRequest extractRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'extractRequest' is set
         if (extractRequest == null) {
             throw new ApiException("Missing the required parameter 'extractRequest' when calling extract(Async)");
@@ -4979,13 +5014,13 @@ public class DefaultApi {
     }
 
 
-    private ApiResponse<Extraction> extractWithHttpInfo(ExtractRequest extractRequest) throws ApiException {
+    private ApiResponse<Extraction> extractWithHttpInfo(@javax.annotation.Nonnull ExtractRequest extractRequest) throws ApiException {
         okhttp3.Call localVarCall = extractValidateBeforeCall(extractRequest, null);
         Type localVarReturnType = new TypeToken<Extraction>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call extractAsync(ExtractRequest extractRequest, final ApiCallback<Extraction> _callback) throws ApiException {
+    private okhttp3.Call extractAsync(@javax.annotation.Nonnull ExtractRequest extractRequest, final ApiCallback<Extraction> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = extractValidateBeforeCall(extractRequest, _callback);
         Type localVarReturnType = new TypeToken<Extraction>(){}.getType();
@@ -4994,9 +5029,10 @@ public class DefaultApi {
     }
 
     public class APIextractRequest {
+        @javax.annotation.Nonnull
         private final ExtractRequest extractRequest;
 
-        private APIextractRequest(ExtractRequest extractRequest) {
+        private APIextractRequest(@javax.annotation.Nonnull ExtractRequest extractRequest) {
             this.extractRequest = extractRequest;
         }
 
@@ -5081,10 +5117,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unprocessable Entity </td><td>  -  </td></tr>
      </table>
      */
-    public APIextractRequest extract(ExtractRequest extractRequest) {
+    public APIextractRequest extract(@javax.annotation.Nonnull ExtractRequest extractRequest) {
         return new APIextractRequest(extractRequest);
     }
-    private okhttp3.Call findAddressesCall(String postcode, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call findAddressesCall(@javax.annotation.Nonnull String postcode, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -5133,7 +5169,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call findAddressesValidateBeforeCall(String postcode, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call findAddressesValidateBeforeCall(@javax.annotation.Nonnull String postcode, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'postcode' is set
         if (postcode == null) {
             throw new ApiException("Missing the required parameter 'postcode' when calling findAddresses(Async)");
@@ -5144,13 +5180,13 @@ public class DefaultApi {
     }
 
 
-    private ApiResponse<AddressesList> findAddressesWithHttpInfo(String postcode) throws ApiException {
+    private ApiResponse<AddressesList> findAddressesWithHttpInfo(@javax.annotation.Nonnull String postcode) throws ApiException {
         okhttp3.Call localVarCall = findAddressesValidateBeforeCall(postcode, null);
         Type localVarReturnType = new TypeToken<AddressesList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call findAddressesAsync(String postcode, final ApiCallback<AddressesList> _callback) throws ApiException {
+    private okhttp3.Call findAddressesAsync(@javax.annotation.Nonnull String postcode, final ApiCallback<AddressesList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = findAddressesValidateBeforeCall(postcode, _callback);
         Type localVarReturnType = new TypeToken<AddressesList>(){}.getType();
@@ -5159,9 +5195,10 @@ public class DefaultApi {
     }
 
     public class APIfindAddressesRequest {
+        @javax.annotation.Nonnull
         private final String postcode;
 
-        private APIfindAddressesRequest(String postcode) {
+        private APIfindAddressesRequest(@javax.annotation.Nonnull String postcode) {
             this.postcode = postcode;
         }
 
@@ -5246,10 +5283,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public APIfindAddressesRequest findAddresses(String postcode) {
+    public APIfindAddressesRequest findAddresses(@javax.annotation.Nonnull String postcode) {
         return new APIfindAddressesRequest(postcode);
     }
-    private okhttp3.Call findApplicantCall(UUID applicantId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call findApplicantCall(@javax.annotation.Nonnull UUID applicantId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -5295,7 +5332,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call findApplicantValidateBeforeCall(UUID applicantId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call findApplicantValidateBeforeCall(@javax.annotation.Nonnull UUID applicantId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'applicantId' is set
         if (applicantId == null) {
             throw new ApiException("Missing the required parameter 'applicantId' when calling findApplicant(Async)");
@@ -5306,13 +5343,13 @@ public class DefaultApi {
     }
 
 
-    private ApiResponse<Applicant> findApplicantWithHttpInfo(UUID applicantId) throws ApiException {
+    private ApiResponse<Applicant> findApplicantWithHttpInfo(@javax.annotation.Nonnull UUID applicantId) throws ApiException {
         okhttp3.Call localVarCall = findApplicantValidateBeforeCall(applicantId, null);
         Type localVarReturnType = new TypeToken<Applicant>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call findApplicantAsync(UUID applicantId, final ApiCallback<Applicant> _callback) throws ApiException {
+    private okhttp3.Call findApplicantAsync(@javax.annotation.Nonnull UUID applicantId, final ApiCallback<Applicant> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = findApplicantValidateBeforeCall(applicantId, _callback);
         Type localVarReturnType = new TypeToken<Applicant>(){}.getType();
@@ -5321,9 +5358,10 @@ public class DefaultApi {
     }
 
     public class APIfindApplicantRequest {
+        @javax.annotation.Nonnull
         private final UUID applicantId;
 
-        private APIfindApplicantRequest(UUID applicantId) {
+        private APIfindApplicantRequest(@javax.annotation.Nonnull UUID applicantId) {
             this.applicantId = applicantId;
         }
 
@@ -5408,10 +5446,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public APIfindApplicantRequest findApplicant(UUID applicantId) {
+    public APIfindApplicantRequest findApplicant(@javax.annotation.Nonnull UUID applicantId) {
         return new APIfindApplicantRequest(applicantId);
     }
-    private okhttp3.Call findApplicantConsentsCall(UUID applicantId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call findApplicantConsentsCall(@javax.annotation.Nonnull UUID applicantId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -5457,7 +5495,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call findApplicantConsentsValidateBeforeCall(UUID applicantId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call findApplicantConsentsValidateBeforeCall(@javax.annotation.Nonnull UUID applicantId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'applicantId' is set
         if (applicantId == null) {
             throw new ApiException("Missing the required parameter 'applicantId' when calling findApplicantConsents(Async)");
@@ -5468,13 +5506,13 @@ public class DefaultApi {
     }
 
 
-    private ApiResponse<List<ApplicantConsent>> findApplicantConsentsWithHttpInfo(UUID applicantId) throws ApiException {
+    private ApiResponse<List<ApplicantConsent>> findApplicantConsentsWithHttpInfo(@javax.annotation.Nonnull UUID applicantId) throws ApiException {
         okhttp3.Call localVarCall = findApplicantConsentsValidateBeforeCall(applicantId, null);
         Type localVarReturnType = new TypeToken<List<ApplicantConsent>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call findApplicantConsentsAsync(UUID applicantId, final ApiCallback<List<ApplicantConsent>> _callback) throws ApiException {
+    private okhttp3.Call findApplicantConsentsAsync(@javax.annotation.Nonnull UUID applicantId, final ApiCallback<List<ApplicantConsent>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = findApplicantConsentsValidateBeforeCall(applicantId, _callback);
         Type localVarReturnType = new TypeToken<List<ApplicantConsent>>(){}.getType();
@@ -5483,9 +5521,10 @@ public class DefaultApi {
     }
 
     public class APIfindApplicantConsentsRequest {
+        @javax.annotation.Nonnull
         private final UUID applicantId;
 
-        private APIfindApplicantConsentsRequest(UUID applicantId) {
+        private APIfindApplicantConsentsRequest(@javax.annotation.Nonnull UUID applicantId) {
             this.applicantId = applicantId;
         }
 
@@ -5570,10 +5609,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public APIfindApplicantConsentsRequest findApplicantConsents(UUID applicantId) {
+    public APIfindApplicantConsentsRequest findApplicantConsents(@javax.annotation.Nonnull UUID applicantId) {
         return new APIfindApplicantConsentsRequest(applicantId);
     }
-    private okhttp3.Call findCheckCall(UUID checkId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call findCheckCall(@javax.annotation.Nonnull UUID checkId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -5619,7 +5658,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call findCheckValidateBeforeCall(UUID checkId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call findCheckValidateBeforeCall(@javax.annotation.Nonnull UUID checkId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'checkId' is set
         if (checkId == null) {
             throw new ApiException("Missing the required parameter 'checkId' when calling findCheck(Async)");
@@ -5630,13 +5669,13 @@ public class DefaultApi {
     }
 
 
-    private ApiResponse<Check> findCheckWithHttpInfo(UUID checkId) throws ApiException {
+    private ApiResponse<Check> findCheckWithHttpInfo(@javax.annotation.Nonnull UUID checkId) throws ApiException {
         okhttp3.Call localVarCall = findCheckValidateBeforeCall(checkId, null);
         Type localVarReturnType = new TypeToken<Check>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call findCheckAsync(UUID checkId, final ApiCallback<Check> _callback) throws ApiException {
+    private okhttp3.Call findCheckAsync(@javax.annotation.Nonnull UUID checkId, final ApiCallback<Check> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = findCheckValidateBeforeCall(checkId, _callback);
         Type localVarReturnType = new TypeToken<Check>(){}.getType();
@@ -5645,9 +5684,10 @@ public class DefaultApi {
     }
 
     public class APIfindCheckRequest {
+        @javax.annotation.Nonnull
         private final UUID checkId;
 
-        private APIfindCheckRequest(UUID checkId) {
+        private APIfindCheckRequest(@javax.annotation.Nonnull UUID checkId) {
             this.checkId = checkId;
         }
 
@@ -5732,10 +5772,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public APIfindCheckRequest findCheck(UUID checkId) {
+    public APIfindCheckRequest findCheck(@javax.annotation.Nonnull UUID checkId) {
         return new APIfindCheckRequest(checkId);
     }
-    private okhttp3.Call findDocumentCall(UUID documentId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call findDocumentCall(@javax.annotation.Nonnull UUID documentId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -5781,7 +5821,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call findDocumentValidateBeforeCall(UUID documentId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call findDocumentValidateBeforeCall(@javax.annotation.Nonnull UUID documentId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'documentId' is set
         if (documentId == null) {
             throw new ApiException("Missing the required parameter 'documentId' when calling findDocument(Async)");
@@ -5792,13 +5832,13 @@ public class DefaultApi {
     }
 
 
-    private ApiResponse<Document> findDocumentWithHttpInfo(UUID documentId) throws ApiException {
+    private ApiResponse<Document> findDocumentWithHttpInfo(@javax.annotation.Nonnull UUID documentId) throws ApiException {
         okhttp3.Call localVarCall = findDocumentValidateBeforeCall(documentId, null);
         Type localVarReturnType = new TypeToken<Document>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call findDocumentAsync(UUID documentId, final ApiCallback<Document> _callback) throws ApiException {
+    private okhttp3.Call findDocumentAsync(@javax.annotation.Nonnull UUID documentId, final ApiCallback<Document> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = findDocumentValidateBeforeCall(documentId, _callback);
         Type localVarReturnType = new TypeToken<Document>(){}.getType();
@@ -5807,9 +5847,10 @@ public class DefaultApi {
     }
 
     public class APIfindDocumentRequest {
+        @javax.annotation.Nonnull
         private final UUID documentId;
 
-        private APIfindDocumentRequest(UUID documentId) {
+        private APIfindDocumentRequest(@javax.annotation.Nonnull UUID documentId) {
             this.documentId = documentId;
         }
 
@@ -5894,10 +5935,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public APIfindDocumentRequest findDocument(UUID documentId) {
+    public APIfindDocumentRequest findDocument(@javax.annotation.Nonnull UUID documentId) {
         return new APIfindDocumentRequest(documentId);
     }
-    private okhttp3.Call findIdPhotoCall(UUID idPhotoId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call findIdPhotoCall(@javax.annotation.Nonnull UUID idPhotoId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -5943,7 +5984,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call findIdPhotoValidateBeforeCall(UUID idPhotoId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call findIdPhotoValidateBeforeCall(@javax.annotation.Nonnull UUID idPhotoId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'idPhotoId' is set
         if (idPhotoId == null) {
             throw new ApiException("Missing the required parameter 'idPhotoId' when calling findIdPhoto(Async)");
@@ -5954,13 +5995,13 @@ public class DefaultApi {
     }
 
 
-    private ApiResponse<IdPhoto> findIdPhotoWithHttpInfo(UUID idPhotoId) throws ApiException {
+    private ApiResponse<IdPhoto> findIdPhotoWithHttpInfo(@javax.annotation.Nonnull UUID idPhotoId) throws ApiException {
         okhttp3.Call localVarCall = findIdPhotoValidateBeforeCall(idPhotoId, null);
         Type localVarReturnType = new TypeToken<IdPhoto>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call findIdPhotoAsync(UUID idPhotoId, final ApiCallback<IdPhoto> _callback) throws ApiException {
+    private okhttp3.Call findIdPhotoAsync(@javax.annotation.Nonnull UUID idPhotoId, final ApiCallback<IdPhoto> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = findIdPhotoValidateBeforeCall(idPhotoId, _callback);
         Type localVarReturnType = new TypeToken<IdPhoto>(){}.getType();
@@ -5969,9 +6010,10 @@ public class DefaultApi {
     }
 
     public class APIfindIdPhotoRequest {
+        @javax.annotation.Nonnull
         private final UUID idPhotoId;
 
-        private APIfindIdPhotoRequest(UUID idPhotoId) {
+        private APIfindIdPhotoRequest(@javax.annotation.Nonnull UUID idPhotoId) {
             this.idPhotoId = idPhotoId;
         }
 
@@ -6056,10 +6098,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public APIfindIdPhotoRequest findIdPhoto(UUID idPhotoId) {
+    public APIfindIdPhotoRequest findIdPhoto(@javax.annotation.Nonnull UUID idPhotoId) {
         return new APIfindIdPhotoRequest(idPhotoId);
     }
-    private okhttp3.Call findLivePhotoCall(UUID livePhotoId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call findLivePhotoCall(@javax.annotation.Nonnull UUID livePhotoId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -6105,7 +6147,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call findLivePhotoValidateBeforeCall(UUID livePhotoId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call findLivePhotoValidateBeforeCall(@javax.annotation.Nonnull UUID livePhotoId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'livePhotoId' is set
         if (livePhotoId == null) {
             throw new ApiException("Missing the required parameter 'livePhotoId' when calling findLivePhoto(Async)");
@@ -6116,13 +6158,13 @@ public class DefaultApi {
     }
 
 
-    private ApiResponse<LivePhoto> findLivePhotoWithHttpInfo(UUID livePhotoId) throws ApiException {
+    private ApiResponse<LivePhoto> findLivePhotoWithHttpInfo(@javax.annotation.Nonnull UUID livePhotoId) throws ApiException {
         okhttp3.Call localVarCall = findLivePhotoValidateBeforeCall(livePhotoId, null);
         Type localVarReturnType = new TypeToken<LivePhoto>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call findLivePhotoAsync(UUID livePhotoId, final ApiCallback<LivePhoto> _callback) throws ApiException {
+    private okhttp3.Call findLivePhotoAsync(@javax.annotation.Nonnull UUID livePhotoId, final ApiCallback<LivePhoto> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = findLivePhotoValidateBeforeCall(livePhotoId, _callback);
         Type localVarReturnType = new TypeToken<LivePhoto>(){}.getType();
@@ -6131,9 +6173,10 @@ public class DefaultApi {
     }
 
     public class APIfindLivePhotoRequest {
+        @javax.annotation.Nonnull
         private final UUID livePhotoId;
 
-        private APIfindLivePhotoRequest(UUID livePhotoId) {
+        private APIfindLivePhotoRequest(@javax.annotation.Nonnull UUID livePhotoId) {
             this.livePhotoId = livePhotoId;
         }
 
@@ -6218,10 +6261,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public APIfindLivePhotoRequest findLivePhoto(UUID livePhotoId) {
+    public APIfindLivePhotoRequest findLivePhoto(@javax.annotation.Nonnull UUID livePhotoId) {
         return new APIfindLivePhotoRequest(livePhotoId);
     }
-    private okhttp3.Call findLiveVideoCall(UUID liveVideoId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call findLiveVideoCall(@javax.annotation.Nonnull UUID liveVideoId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -6267,7 +6310,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call findLiveVideoValidateBeforeCall(UUID liveVideoId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call findLiveVideoValidateBeforeCall(@javax.annotation.Nonnull UUID liveVideoId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'liveVideoId' is set
         if (liveVideoId == null) {
             throw new ApiException("Missing the required parameter 'liveVideoId' when calling findLiveVideo(Async)");
@@ -6278,13 +6321,13 @@ public class DefaultApi {
     }
 
 
-    private ApiResponse<LiveVideo> findLiveVideoWithHttpInfo(UUID liveVideoId) throws ApiException {
+    private ApiResponse<LiveVideo> findLiveVideoWithHttpInfo(@javax.annotation.Nonnull UUID liveVideoId) throws ApiException {
         okhttp3.Call localVarCall = findLiveVideoValidateBeforeCall(liveVideoId, null);
         Type localVarReturnType = new TypeToken<LiveVideo>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call findLiveVideoAsync(UUID liveVideoId, final ApiCallback<LiveVideo> _callback) throws ApiException {
+    private okhttp3.Call findLiveVideoAsync(@javax.annotation.Nonnull UUID liveVideoId, final ApiCallback<LiveVideo> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = findLiveVideoValidateBeforeCall(liveVideoId, _callback);
         Type localVarReturnType = new TypeToken<LiveVideo>(){}.getType();
@@ -6293,9 +6336,10 @@ public class DefaultApi {
     }
 
     public class APIfindLiveVideoRequest {
+        @javax.annotation.Nonnull
         private final UUID liveVideoId;
 
-        private APIfindLiveVideoRequest(UUID liveVideoId) {
+        private APIfindLiveVideoRequest(@javax.annotation.Nonnull UUID liveVideoId) {
             this.liveVideoId = liveVideoId;
         }
 
@@ -6380,10 +6424,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public APIfindLiveVideoRequest findLiveVideo(UUID liveVideoId) {
+    public APIfindLiveVideoRequest findLiveVideo(@javax.annotation.Nonnull UUID liveVideoId) {
         return new APIfindLiveVideoRequest(liveVideoId);
     }
-    private okhttp3.Call findMotionCaptureCall(UUID motionCaptureId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call findMotionCaptureCall(@javax.annotation.Nonnull UUID motionCaptureId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -6429,7 +6473,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call findMotionCaptureValidateBeforeCall(UUID motionCaptureId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call findMotionCaptureValidateBeforeCall(@javax.annotation.Nonnull UUID motionCaptureId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'motionCaptureId' is set
         if (motionCaptureId == null) {
             throw new ApiException("Missing the required parameter 'motionCaptureId' when calling findMotionCapture(Async)");
@@ -6440,13 +6484,13 @@ public class DefaultApi {
     }
 
 
-    private ApiResponse<MotionCapture> findMotionCaptureWithHttpInfo(UUID motionCaptureId) throws ApiException {
+    private ApiResponse<MotionCapture> findMotionCaptureWithHttpInfo(@javax.annotation.Nonnull UUID motionCaptureId) throws ApiException {
         okhttp3.Call localVarCall = findMotionCaptureValidateBeforeCall(motionCaptureId, null);
         Type localVarReturnType = new TypeToken<MotionCapture>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call findMotionCaptureAsync(UUID motionCaptureId, final ApiCallback<MotionCapture> _callback) throws ApiException {
+    private okhttp3.Call findMotionCaptureAsync(@javax.annotation.Nonnull UUID motionCaptureId, final ApiCallback<MotionCapture> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = findMotionCaptureValidateBeforeCall(motionCaptureId, _callback);
         Type localVarReturnType = new TypeToken<MotionCapture>(){}.getType();
@@ -6455,9 +6499,10 @@ public class DefaultApi {
     }
 
     public class APIfindMotionCaptureRequest {
+        @javax.annotation.Nonnull
         private final UUID motionCaptureId;
 
-        private APIfindMotionCaptureRequest(UUID motionCaptureId) {
+        private APIfindMotionCaptureRequest(@javax.annotation.Nonnull UUID motionCaptureId) {
             this.motionCaptureId = motionCaptureId;
         }
 
@@ -6542,10 +6587,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public APIfindMotionCaptureRequest findMotionCapture(UUID motionCaptureId) {
+    public APIfindMotionCaptureRequest findMotionCapture(@javax.annotation.Nonnull UUID motionCaptureId) {
         return new APIfindMotionCaptureRequest(motionCaptureId);
     }
-    private okhttp3.Call findPasskeyCall(String username, String passkeyId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call findPasskeyCall(@javax.annotation.Nonnull String username, @javax.annotation.Nonnull String passkeyId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -6592,7 +6637,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call findPasskeyValidateBeforeCall(String username, String passkeyId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call findPasskeyValidateBeforeCall(@javax.annotation.Nonnull String username, @javax.annotation.Nonnull String passkeyId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'username' is set
         if (username == null) {
             throw new ApiException("Missing the required parameter 'username' when calling findPasskey(Async)");
@@ -6608,13 +6653,13 @@ public class DefaultApi {
     }
 
 
-    private ApiResponse<Passkey> findPasskeyWithHttpInfo(String username, String passkeyId) throws ApiException {
+    private ApiResponse<Passkey> findPasskeyWithHttpInfo(@javax.annotation.Nonnull String username, @javax.annotation.Nonnull String passkeyId) throws ApiException {
         okhttp3.Call localVarCall = findPasskeyValidateBeforeCall(username, passkeyId, null);
         Type localVarReturnType = new TypeToken<Passkey>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call findPasskeyAsync(String username, String passkeyId, final ApiCallback<Passkey> _callback) throws ApiException {
+    private okhttp3.Call findPasskeyAsync(@javax.annotation.Nonnull String username, @javax.annotation.Nonnull String passkeyId, final ApiCallback<Passkey> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = findPasskeyValidateBeforeCall(username, passkeyId, _callback);
         Type localVarReturnType = new TypeToken<Passkey>(){}.getType();
@@ -6623,10 +6668,12 @@ public class DefaultApi {
     }
 
     public class APIfindPasskeyRequest {
+        @javax.annotation.Nonnull
         private final String username;
+        @javax.annotation.Nonnull
         private final String passkeyId;
 
-        private APIfindPasskeyRequest(String username, String passkeyId) {
+        private APIfindPasskeyRequest(@javax.annotation.Nonnull String username, @javax.annotation.Nonnull String passkeyId) {
             this.username = username;
             this.passkeyId = passkeyId;
         }
@@ -6718,10 +6765,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public APIfindPasskeyRequest findPasskey(String username, String passkeyId) {
+    public APIfindPasskeyRequest findPasskey(@javax.annotation.Nonnull String username, @javax.annotation.Nonnull String passkeyId) {
         return new APIfindPasskeyRequest(username, passkeyId);
     }
-    private okhttp3.Call findReportCall(UUID reportId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call findReportCall(@javax.annotation.Nonnull UUID reportId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -6767,7 +6814,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call findReportValidateBeforeCall(UUID reportId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call findReportValidateBeforeCall(@javax.annotation.Nonnull UUID reportId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'reportId' is set
         if (reportId == null) {
             throw new ApiException("Missing the required parameter 'reportId' when calling findReport(Async)");
@@ -6778,13 +6825,13 @@ public class DefaultApi {
     }
 
 
-    private ApiResponse<Report> findReportWithHttpInfo(UUID reportId) throws ApiException {
+    private ApiResponse<Report> findReportWithHttpInfo(@javax.annotation.Nonnull UUID reportId) throws ApiException {
         okhttp3.Call localVarCall = findReportValidateBeforeCall(reportId, null);
         Type localVarReturnType = new TypeToken<Report>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call findReportAsync(UUID reportId, final ApiCallback<Report> _callback) throws ApiException {
+    private okhttp3.Call findReportAsync(@javax.annotation.Nonnull UUID reportId, final ApiCallback<Report> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = findReportValidateBeforeCall(reportId, _callback);
         Type localVarReturnType = new TypeToken<Report>(){}.getType();
@@ -6793,9 +6840,10 @@ public class DefaultApi {
     }
 
     public class APIfindReportRequest {
+        @javax.annotation.Nonnull
         private final UUID reportId;
 
-        private APIfindReportRequest(UUID reportId) {
+        private APIfindReportRequest(@javax.annotation.Nonnull UUID reportId) {
             this.reportId = reportId;
         }
 
@@ -6880,10 +6928,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public APIfindReportRequest findReport(UUID reportId) {
+    public APIfindReportRequest findReport(@javax.annotation.Nonnull UUID reportId) {
         return new APIfindReportRequest(reportId);
     }
-    private okhttp3.Call findSigningDocumentCall(UUID signingDocumentId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call findSigningDocumentCall(@javax.annotation.Nonnull UUID signingDocumentId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -6929,7 +6977,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call findSigningDocumentValidateBeforeCall(UUID signingDocumentId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call findSigningDocumentValidateBeforeCall(@javax.annotation.Nonnull UUID signingDocumentId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'signingDocumentId' is set
         if (signingDocumentId == null) {
             throw new ApiException("Missing the required parameter 'signingDocumentId' when calling findSigningDocument(Async)");
@@ -6940,13 +6988,13 @@ public class DefaultApi {
     }
 
 
-    private ApiResponse<SigningDocument> findSigningDocumentWithHttpInfo(UUID signingDocumentId) throws ApiException {
+    private ApiResponse<SigningDocument> findSigningDocumentWithHttpInfo(@javax.annotation.Nonnull UUID signingDocumentId) throws ApiException {
         okhttp3.Call localVarCall = findSigningDocumentValidateBeforeCall(signingDocumentId, null);
         Type localVarReturnType = new TypeToken<SigningDocument>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call findSigningDocumentAsync(UUID signingDocumentId, final ApiCallback<SigningDocument> _callback) throws ApiException {
+    private okhttp3.Call findSigningDocumentAsync(@javax.annotation.Nonnull UUID signingDocumentId, final ApiCallback<SigningDocument> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = findSigningDocumentValidateBeforeCall(signingDocumentId, _callback);
         Type localVarReturnType = new TypeToken<SigningDocument>(){}.getType();
@@ -6955,9 +7003,10 @@ public class DefaultApi {
     }
 
     public class APIfindSigningDocumentRequest {
+        @javax.annotation.Nonnull
         private final UUID signingDocumentId;
 
-        private APIfindSigningDocumentRequest(UUID signingDocumentId) {
+        private APIfindSigningDocumentRequest(@javax.annotation.Nonnull UUID signingDocumentId) {
             this.signingDocumentId = signingDocumentId;
         }
 
@@ -7042,10 +7091,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public APIfindSigningDocumentRequest findSigningDocument(UUID signingDocumentId) {
+    public APIfindSigningDocumentRequest findSigningDocument(@javax.annotation.Nonnull UUID signingDocumentId) {
         return new APIfindSigningDocumentRequest(signingDocumentId);
     }
-    private okhttp3.Call findTaskCall(UUID workflowRunId, String taskId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call findTaskCall(@javax.annotation.Nonnull UUID workflowRunId, @javax.annotation.Nonnull String taskId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -7092,7 +7141,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call findTaskValidateBeforeCall(UUID workflowRunId, String taskId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call findTaskValidateBeforeCall(@javax.annotation.Nonnull UUID workflowRunId, @javax.annotation.Nonnull String taskId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'workflowRunId' is set
         if (workflowRunId == null) {
             throw new ApiException("Missing the required parameter 'workflowRunId' when calling findTask(Async)");
@@ -7108,13 +7157,13 @@ public class DefaultApi {
     }
 
 
-    private ApiResponse<Task> findTaskWithHttpInfo(UUID workflowRunId, String taskId) throws ApiException {
+    private ApiResponse<Task> findTaskWithHttpInfo(@javax.annotation.Nonnull UUID workflowRunId, @javax.annotation.Nonnull String taskId) throws ApiException {
         okhttp3.Call localVarCall = findTaskValidateBeforeCall(workflowRunId, taskId, null);
         Type localVarReturnType = new TypeToken<Task>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call findTaskAsync(UUID workflowRunId, String taskId, final ApiCallback<Task> _callback) throws ApiException {
+    private okhttp3.Call findTaskAsync(@javax.annotation.Nonnull UUID workflowRunId, @javax.annotation.Nonnull String taskId, final ApiCallback<Task> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = findTaskValidateBeforeCall(workflowRunId, taskId, _callback);
         Type localVarReturnType = new TypeToken<Task>(){}.getType();
@@ -7123,10 +7172,12 @@ public class DefaultApi {
     }
 
     public class APIfindTaskRequest {
+        @javax.annotation.Nonnull
         private final UUID workflowRunId;
+        @javax.annotation.Nonnull
         private final String taskId;
 
-        private APIfindTaskRequest(UUID workflowRunId, String taskId) {
+        private APIfindTaskRequest(@javax.annotation.Nonnull UUID workflowRunId, @javax.annotation.Nonnull String taskId) {
             this.workflowRunId = workflowRunId;
             this.taskId = taskId;
         }
@@ -7213,10 +7264,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public APIfindTaskRequest findTask(UUID workflowRunId, String taskId) {
+    public APIfindTaskRequest findTask(@javax.annotation.Nonnull UUID workflowRunId, @javax.annotation.Nonnull String taskId) {
         return new APIfindTaskRequest(workflowRunId, taskId);
     }
-    private okhttp3.Call findTimelineFileCall(UUID workflowRunId, UUID timelineFileId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call findTimelineFileCall(@javax.annotation.Nonnull UUID workflowRunId, @javax.annotation.Nonnull UUID timelineFileId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -7264,7 +7315,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call findTimelineFileValidateBeforeCall(UUID workflowRunId, UUID timelineFileId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call findTimelineFileValidateBeforeCall(@javax.annotation.Nonnull UUID workflowRunId, @javax.annotation.Nonnull UUID timelineFileId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'workflowRunId' is set
         if (workflowRunId == null) {
             throw new ApiException("Missing the required parameter 'workflowRunId' when calling findTimelineFile(Async)");
@@ -7280,13 +7331,13 @@ public class DefaultApi {
     }
 
 
-    private ApiResponse<FileTransfer> findTimelineFileWithHttpInfo(UUID workflowRunId, UUID timelineFileId) throws ApiException {
+    private ApiResponse<FileTransfer> findTimelineFileWithHttpInfo(@javax.annotation.Nonnull UUID workflowRunId, @javax.annotation.Nonnull UUID timelineFileId) throws ApiException {
         okhttp3.Call localVarCall = findTimelineFileValidateBeforeCall(workflowRunId, timelineFileId, null);
         Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call findTimelineFileAsync(UUID workflowRunId, UUID timelineFileId, final ApiCallback<FileTransfer> _callback) throws ApiException {
+    private okhttp3.Call findTimelineFileAsync(@javax.annotation.Nonnull UUID workflowRunId, @javax.annotation.Nonnull UUID timelineFileId, final ApiCallback<FileTransfer> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = findTimelineFileValidateBeforeCall(workflowRunId, timelineFileId, _callback);
         Type localVarReturnType = new TypeToken<FileTransfer>(){}.getType();
@@ -7295,10 +7346,12 @@ public class DefaultApi {
     }
 
     public class APIfindTimelineFileRequest {
+        @javax.annotation.Nonnull
         private final UUID workflowRunId;
+        @javax.annotation.Nonnull
         private final UUID timelineFileId;
 
-        private APIfindTimelineFileRequest(UUID workflowRunId, UUID timelineFileId) {
+        private APIfindTimelineFileRequest(@javax.annotation.Nonnull UUID workflowRunId, @javax.annotation.Nonnull UUID timelineFileId) {
             this.workflowRunId = workflowRunId;
             this.timelineFileId = timelineFileId;
         }
@@ -7390,10 +7443,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public APIfindTimelineFileRequest findTimelineFile(UUID workflowRunId, UUID timelineFileId) {
+    public APIfindTimelineFileRequest findTimelineFile(@javax.annotation.Nonnull UUID workflowRunId, @javax.annotation.Nonnull UUID timelineFileId) {
         return new APIfindTimelineFileRequest(workflowRunId, timelineFileId);
     }
-    private okhttp3.Call findWatchlistMonitorCall(UUID monitorId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call findWatchlistMonitorCall(@javax.annotation.Nonnull UUID monitorId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -7439,7 +7492,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call findWatchlistMonitorValidateBeforeCall(UUID monitorId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call findWatchlistMonitorValidateBeforeCall(@javax.annotation.Nonnull UUID monitorId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'monitorId' is set
         if (monitorId == null) {
             throw new ApiException("Missing the required parameter 'monitorId' when calling findWatchlistMonitor(Async)");
@@ -7450,13 +7503,13 @@ public class DefaultApi {
     }
 
 
-    private ApiResponse<WatchlistMonitor> findWatchlistMonitorWithHttpInfo(UUID monitorId) throws ApiException {
+    private ApiResponse<WatchlistMonitor> findWatchlistMonitorWithHttpInfo(@javax.annotation.Nonnull UUID monitorId) throws ApiException {
         okhttp3.Call localVarCall = findWatchlistMonitorValidateBeforeCall(monitorId, null);
         Type localVarReturnType = new TypeToken<WatchlistMonitor>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call findWatchlistMonitorAsync(UUID monitorId, final ApiCallback<WatchlistMonitor> _callback) throws ApiException {
+    private okhttp3.Call findWatchlistMonitorAsync(@javax.annotation.Nonnull UUID monitorId, final ApiCallback<WatchlistMonitor> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = findWatchlistMonitorValidateBeforeCall(monitorId, _callback);
         Type localVarReturnType = new TypeToken<WatchlistMonitor>(){}.getType();
@@ -7465,9 +7518,10 @@ public class DefaultApi {
     }
 
     public class APIfindWatchlistMonitorRequest {
+        @javax.annotation.Nonnull
         private final UUID monitorId;
 
-        private APIfindWatchlistMonitorRequest(UUID monitorId) {
+        private APIfindWatchlistMonitorRequest(@javax.annotation.Nonnull UUID monitorId) {
             this.monitorId = monitorId;
         }
 
@@ -7552,10 +7606,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public APIfindWatchlistMonitorRequest findWatchlistMonitor(UUID monitorId) {
+    public APIfindWatchlistMonitorRequest findWatchlistMonitor(@javax.annotation.Nonnull UUID monitorId) {
         return new APIfindWatchlistMonitorRequest(monitorId);
     }
-    private okhttp3.Call findWebhookCall(UUID webhookId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call findWebhookCall(@javax.annotation.Nonnull UUID webhookId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -7601,7 +7655,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call findWebhookValidateBeforeCall(UUID webhookId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call findWebhookValidateBeforeCall(@javax.annotation.Nonnull UUID webhookId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'webhookId' is set
         if (webhookId == null) {
             throw new ApiException("Missing the required parameter 'webhookId' when calling findWebhook(Async)");
@@ -7612,13 +7666,13 @@ public class DefaultApi {
     }
 
 
-    private ApiResponse<Webhook> findWebhookWithHttpInfo(UUID webhookId) throws ApiException {
+    private ApiResponse<Webhook> findWebhookWithHttpInfo(@javax.annotation.Nonnull UUID webhookId) throws ApiException {
         okhttp3.Call localVarCall = findWebhookValidateBeforeCall(webhookId, null);
         Type localVarReturnType = new TypeToken<Webhook>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call findWebhookAsync(UUID webhookId, final ApiCallback<Webhook> _callback) throws ApiException {
+    private okhttp3.Call findWebhookAsync(@javax.annotation.Nonnull UUID webhookId, final ApiCallback<Webhook> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = findWebhookValidateBeforeCall(webhookId, _callback);
         Type localVarReturnType = new TypeToken<Webhook>(){}.getType();
@@ -7627,9 +7681,10 @@ public class DefaultApi {
     }
 
     public class APIfindWebhookRequest {
+        @javax.annotation.Nonnull
         private final UUID webhookId;
 
-        private APIfindWebhookRequest(UUID webhookId) {
+        private APIfindWebhookRequest(@javax.annotation.Nonnull UUID webhookId) {
             this.webhookId = webhookId;
         }
 
@@ -7714,10 +7769,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public APIfindWebhookRequest findWebhook(UUID webhookId) {
+    public APIfindWebhookRequest findWebhook(@javax.annotation.Nonnull UUID webhookId) {
         return new APIfindWebhookRequest(webhookId);
     }
-    private okhttp3.Call findWorkflowRunCall(UUID workflowRunId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call findWorkflowRunCall(@javax.annotation.Nonnull UUID workflowRunId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -7763,7 +7818,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call findWorkflowRunValidateBeforeCall(UUID workflowRunId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call findWorkflowRunValidateBeforeCall(@javax.annotation.Nonnull UUID workflowRunId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'workflowRunId' is set
         if (workflowRunId == null) {
             throw new ApiException("Missing the required parameter 'workflowRunId' when calling findWorkflowRun(Async)");
@@ -7774,13 +7829,13 @@ public class DefaultApi {
     }
 
 
-    private ApiResponse<WorkflowRun> findWorkflowRunWithHttpInfo(UUID workflowRunId) throws ApiException {
+    private ApiResponse<WorkflowRun> findWorkflowRunWithHttpInfo(@javax.annotation.Nonnull UUID workflowRunId) throws ApiException {
         okhttp3.Call localVarCall = findWorkflowRunValidateBeforeCall(workflowRunId, null);
         Type localVarReturnType = new TypeToken<WorkflowRun>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call findWorkflowRunAsync(UUID workflowRunId, final ApiCallback<WorkflowRun> _callback) throws ApiException {
+    private okhttp3.Call findWorkflowRunAsync(@javax.annotation.Nonnull UUID workflowRunId, final ApiCallback<WorkflowRun> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = findWorkflowRunValidateBeforeCall(workflowRunId, _callback);
         Type localVarReturnType = new TypeToken<WorkflowRun>(){}.getType();
@@ -7789,9 +7844,10 @@ public class DefaultApi {
     }
 
     public class APIfindWorkflowRunRequest {
+        @javax.annotation.Nonnull
         private final UUID workflowRunId;
 
-        private APIfindWorkflowRunRequest(UUID workflowRunId) {
+        private APIfindWorkflowRunRequest(@javax.annotation.Nonnull UUID workflowRunId) {
             this.workflowRunId = workflowRunId;
         }
 
@@ -7876,10 +7932,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public APIfindWorkflowRunRequest findWorkflowRun(UUID workflowRunId) {
+    public APIfindWorkflowRunRequest findWorkflowRun(@javax.annotation.Nonnull UUID workflowRunId) {
         return new APIfindWorkflowRunRequest(workflowRunId);
     }
-    private okhttp3.Call forceReportCreationFromWatchlistMonitorCall(UUID monitorId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call forceReportCreationFromWatchlistMonitorCall(@javax.annotation.Nonnull UUID monitorId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -7925,7 +7981,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call forceReportCreationFromWatchlistMonitorValidateBeforeCall(UUID monitorId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call forceReportCreationFromWatchlistMonitorValidateBeforeCall(@javax.annotation.Nonnull UUID monitorId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'monitorId' is set
         if (monitorId == null) {
             throw new ApiException("Missing the required parameter 'monitorId' when calling forceReportCreationFromWatchlistMonitor(Async)");
@@ -7936,12 +7992,12 @@ public class DefaultApi {
     }
 
 
-    private ApiResponse<Void> forceReportCreationFromWatchlistMonitorWithHttpInfo(UUID monitorId) throws ApiException {
+    private ApiResponse<Void> forceReportCreationFromWatchlistMonitorWithHttpInfo(@javax.annotation.Nonnull UUID monitorId) throws ApiException {
         okhttp3.Call localVarCall = forceReportCreationFromWatchlistMonitorValidateBeforeCall(monitorId, null);
         return localVarApiClient.execute(localVarCall);
     }
 
-    private okhttp3.Call forceReportCreationFromWatchlistMonitorAsync(UUID monitorId, final ApiCallback<Void> _callback) throws ApiException {
+    private okhttp3.Call forceReportCreationFromWatchlistMonitorAsync(@javax.annotation.Nonnull UUID monitorId, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = forceReportCreationFromWatchlistMonitorValidateBeforeCall(monitorId, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -7949,9 +8005,10 @@ public class DefaultApi {
     }
 
     public class APIforceReportCreationFromWatchlistMonitorRequest {
+        @javax.annotation.Nonnull
         private final UUID monitorId;
 
-        private APIforceReportCreationFromWatchlistMonitorRequest(UUID monitorId) {
+        private APIforceReportCreationFromWatchlistMonitorRequest(@javax.annotation.Nonnull UUID monitorId) {
             this.monitorId = monitorId;
         }
 
@@ -8034,10 +8091,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public APIforceReportCreationFromWatchlistMonitorRequest forceReportCreationFromWatchlistMonitor(UUID monitorId) {
+    public APIforceReportCreationFromWatchlistMonitorRequest forceReportCreationFromWatchlistMonitor(@javax.annotation.Nonnull UUID monitorId) {
         return new APIforceReportCreationFromWatchlistMonitorRequest(monitorId);
     }
-    private okhttp3.Call generateSdkTokenCall(SdkTokenBuilder sdkTokenBuilder, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call generateSdkTokenCall(@javax.annotation.Nonnull SdkTokenBuilder sdkTokenBuilder, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -8083,7 +8140,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call generateSdkTokenValidateBeforeCall(SdkTokenBuilder sdkTokenBuilder, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call generateSdkTokenValidateBeforeCall(@javax.annotation.Nonnull SdkTokenBuilder sdkTokenBuilder, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'sdkTokenBuilder' is set
         if (sdkTokenBuilder == null) {
             throw new ApiException("Missing the required parameter 'sdkTokenBuilder' when calling generateSdkToken(Async)");
@@ -8094,13 +8151,13 @@ public class DefaultApi {
     }
 
 
-    private ApiResponse<SdkToken> generateSdkTokenWithHttpInfo(SdkTokenBuilder sdkTokenBuilder) throws ApiException {
+    private ApiResponse<SdkToken> generateSdkTokenWithHttpInfo(@javax.annotation.Nonnull SdkTokenBuilder sdkTokenBuilder) throws ApiException {
         okhttp3.Call localVarCall = generateSdkTokenValidateBeforeCall(sdkTokenBuilder, null);
         Type localVarReturnType = new TypeToken<SdkToken>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call generateSdkTokenAsync(SdkTokenBuilder sdkTokenBuilder, final ApiCallback<SdkToken> _callback) throws ApiException {
+    private okhttp3.Call generateSdkTokenAsync(@javax.annotation.Nonnull SdkTokenBuilder sdkTokenBuilder, final ApiCallback<SdkToken> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = generateSdkTokenValidateBeforeCall(sdkTokenBuilder, _callback);
         Type localVarReturnType = new TypeToken<SdkToken>(){}.getType();
@@ -8109,9 +8166,10 @@ public class DefaultApi {
     }
 
     public class APIgenerateSdkTokenRequest {
+        @javax.annotation.Nonnull
         private final SdkTokenBuilder sdkTokenBuilder;
 
-        private APIgenerateSdkTokenRequest(SdkTokenBuilder sdkTokenBuilder) {
+        private APIgenerateSdkTokenRequest(@javax.annotation.Nonnull SdkTokenBuilder sdkTokenBuilder) {
             this.sdkTokenBuilder = sdkTokenBuilder;
         }
 
@@ -8196,10 +8254,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public APIgenerateSdkTokenRequest generateSdkToken(SdkTokenBuilder sdkTokenBuilder) {
+    public APIgenerateSdkTokenRequest generateSdkToken(@javax.annotation.Nonnull SdkTokenBuilder sdkTokenBuilder) {
         return new APIgenerateSdkTokenRequest(sdkTokenBuilder);
     }
-    private okhttp3.Call listApplicantsCall(Integer page, Integer perPage, Boolean includeDeleted, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listApplicantsCall(@javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable Boolean includeDeleted, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -8256,19 +8314,19 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listApplicantsValidateBeforeCall(Integer page, Integer perPage, Boolean includeDeleted, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listApplicantsValidateBeforeCall(@javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable Boolean includeDeleted, final ApiCallback _callback) throws ApiException {
         return listApplicantsCall(page, perPage, includeDeleted, _callback);
 
     }
 
 
-    private ApiResponse<ApplicantsList> listApplicantsWithHttpInfo(Integer page, Integer perPage, Boolean includeDeleted) throws ApiException {
+    private ApiResponse<ApplicantsList> listApplicantsWithHttpInfo(@javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable Boolean includeDeleted) throws ApiException {
         okhttp3.Call localVarCall = listApplicantsValidateBeforeCall(page, perPage, includeDeleted, null);
         Type localVarReturnType = new TypeToken<ApplicantsList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call listApplicantsAsync(Integer page, Integer perPage, Boolean includeDeleted, final ApiCallback<ApplicantsList> _callback) throws ApiException {
+    private okhttp3.Call listApplicantsAsync(@javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable Boolean includeDeleted, final ApiCallback<ApplicantsList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listApplicantsValidateBeforeCall(page, perPage, includeDeleted, _callback);
         Type localVarReturnType = new TypeToken<ApplicantsList>(){}.getType();
@@ -8277,8 +8335,11 @@ public class DefaultApi {
     }
 
     public class APIlistApplicantsRequest {
+        @javax.annotation.Nullable
         private Integer page;
+        @javax.annotation.Nullable
         private Integer perPage;
+        @javax.annotation.Nullable
         private Boolean includeDeleted;
 
         private APIlistApplicantsRequest() {
@@ -8289,7 +8350,7 @@ public class DefaultApi {
          * @param page The page to return. The first page is &#x60;page&#x3D;1&#x60; (optional, default to 1)
          * @return APIlistApplicantsRequest
          */
-        public APIlistApplicantsRequest page(Integer page) {
+        public APIlistApplicantsRequest page(@javax.annotation.Nullable Integer page) {
             this.page = page;
             return this;
         }
@@ -8299,7 +8360,7 @@ public class DefaultApi {
          * @param perPage The number of objects per page. (optional, default to 20)
          * @return APIlistApplicantsRequest
          */
-        public APIlistApplicantsRequest perPage(Integer perPage) {
+        public APIlistApplicantsRequest perPage(@javax.annotation.Nullable Integer perPage) {
             this.perPage = perPage;
             return this;
         }
@@ -8309,7 +8370,7 @@ public class DefaultApi {
          * @param includeDeleted Whether to also include applicants scheduled for deletion. (optional, default to false)
          * @return APIlistApplicantsRequest
          */
-        public APIlistApplicantsRequest includeDeleted(Boolean includeDeleted) {
+        public APIlistApplicantsRequest includeDeleted(@javax.annotation.Nullable Boolean includeDeleted) {
             this.includeDeleted = includeDeleted;
             return this;
         }
@@ -8397,7 +8458,7 @@ public class DefaultApi {
     public APIlistApplicantsRequest listApplicants() {
         return new APIlistApplicantsRequest();
     }
-    private okhttp3.Call listChecksCall(UUID applicantId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listChecksCall(@javax.annotation.Nonnull UUID applicantId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -8446,7 +8507,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listChecksValidateBeforeCall(UUID applicantId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listChecksValidateBeforeCall(@javax.annotation.Nonnull UUID applicantId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'applicantId' is set
         if (applicantId == null) {
             throw new ApiException("Missing the required parameter 'applicantId' when calling listChecks(Async)");
@@ -8457,13 +8518,13 @@ public class DefaultApi {
     }
 
 
-    private ApiResponse<ChecksList> listChecksWithHttpInfo(UUID applicantId) throws ApiException {
+    private ApiResponse<ChecksList> listChecksWithHttpInfo(@javax.annotation.Nonnull UUID applicantId) throws ApiException {
         okhttp3.Call localVarCall = listChecksValidateBeforeCall(applicantId, null);
         Type localVarReturnType = new TypeToken<ChecksList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call listChecksAsync(UUID applicantId, final ApiCallback<ChecksList> _callback) throws ApiException {
+    private okhttp3.Call listChecksAsync(@javax.annotation.Nonnull UUID applicantId, final ApiCallback<ChecksList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listChecksValidateBeforeCall(applicantId, _callback);
         Type localVarReturnType = new TypeToken<ChecksList>(){}.getType();
@@ -8472,9 +8533,10 @@ public class DefaultApi {
     }
 
     public class APIlistChecksRequest {
+        @javax.annotation.Nonnull
         private final UUID applicantId;
 
-        private APIlistChecksRequest(UUID applicantId) {
+        private APIlistChecksRequest(@javax.annotation.Nonnull UUID applicantId) {
             this.applicantId = applicantId;
         }
 
@@ -8559,10 +8621,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public APIlistChecksRequest listChecks(UUID applicantId) {
+    public APIlistChecksRequest listChecks(@javax.annotation.Nonnull UUID applicantId) {
         return new APIlistChecksRequest(applicantId);
     }
-    private okhttp3.Call listDocumentsCall(UUID applicantId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listDocumentsCall(@javax.annotation.Nonnull UUID applicantId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -8611,7 +8673,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listDocumentsValidateBeforeCall(UUID applicantId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listDocumentsValidateBeforeCall(@javax.annotation.Nonnull UUID applicantId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'applicantId' is set
         if (applicantId == null) {
             throw new ApiException("Missing the required parameter 'applicantId' when calling listDocuments(Async)");
@@ -8622,13 +8684,13 @@ public class DefaultApi {
     }
 
 
-    private ApiResponse<DocumentsList> listDocumentsWithHttpInfo(UUID applicantId) throws ApiException {
+    private ApiResponse<DocumentsList> listDocumentsWithHttpInfo(@javax.annotation.Nonnull UUID applicantId) throws ApiException {
         okhttp3.Call localVarCall = listDocumentsValidateBeforeCall(applicantId, null);
         Type localVarReturnType = new TypeToken<DocumentsList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call listDocumentsAsync(UUID applicantId, final ApiCallback<DocumentsList> _callback) throws ApiException {
+    private okhttp3.Call listDocumentsAsync(@javax.annotation.Nonnull UUID applicantId, final ApiCallback<DocumentsList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listDocumentsValidateBeforeCall(applicantId, _callback);
         Type localVarReturnType = new TypeToken<DocumentsList>(){}.getType();
@@ -8637,9 +8699,10 @@ public class DefaultApi {
     }
 
     public class APIlistDocumentsRequest {
+        @javax.annotation.Nonnull
         private final UUID applicantId;
 
-        private APIlistDocumentsRequest(UUID applicantId) {
+        private APIlistDocumentsRequest(@javax.annotation.Nonnull UUID applicantId) {
             this.applicantId = applicantId;
         }
 
@@ -8724,10 +8787,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public APIlistDocumentsRequest listDocuments(UUID applicantId) {
+    public APIlistDocumentsRequest listDocuments(@javax.annotation.Nonnull UUID applicantId) {
         return new APIlistDocumentsRequest(applicantId);
     }
-    private okhttp3.Call listIdPhotosCall(UUID applicantId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listIdPhotosCall(@javax.annotation.Nonnull UUID applicantId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -8776,7 +8839,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listIdPhotosValidateBeforeCall(UUID applicantId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listIdPhotosValidateBeforeCall(@javax.annotation.Nonnull UUID applicantId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'applicantId' is set
         if (applicantId == null) {
             throw new ApiException("Missing the required parameter 'applicantId' when calling listIdPhotos(Async)");
@@ -8787,13 +8850,13 @@ public class DefaultApi {
     }
 
 
-    private ApiResponse<IdPhotosList> listIdPhotosWithHttpInfo(UUID applicantId) throws ApiException {
+    private ApiResponse<IdPhotosList> listIdPhotosWithHttpInfo(@javax.annotation.Nonnull UUID applicantId) throws ApiException {
         okhttp3.Call localVarCall = listIdPhotosValidateBeforeCall(applicantId, null);
         Type localVarReturnType = new TypeToken<IdPhotosList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call listIdPhotosAsync(UUID applicantId, final ApiCallback<IdPhotosList> _callback) throws ApiException {
+    private okhttp3.Call listIdPhotosAsync(@javax.annotation.Nonnull UUID applicantId, final ApiCallback<IdPhotosList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listIdPhotosValidateBeforeCall(applicantId, _callback);
         Type localVarReturnType = new TypeToken<IdPhotosList>(){}.getType();
@@ -8802,9 +8865,10 @@ public class DefaultApi {
     }
 
     public class APIlistIdPhotosRequest {
+        @javax.annotation.Nonnull
         private final UUID applicantId;
 
-        private APIlistIdPhotosRequest(UUID applicantId) {
+        private APIlistIdPhotosRequest(@javax.annotation.Nonnull UUID applicantId) {
             this.applicantId = applicantId;
         }
 
@@ -8889,10 +8953,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public APIlistIdPhotosRequest listIdPhotos(UUID applicantId) {
+    public APIlistIdPhotosRequest listIdPhotos(@javax.annotation.Nonnull UUID applicantId) {
         return new APIlistIdPhotosRequest(applicantId);
     }
-    private okhttp3.Call listLivePhotosCall(UUID applicantId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listLivePhotosCall(@javax.annotation.Nonnull UUID applicantId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -8941,7 +9005,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listLivePhotosValidateBeforeCall(UUID applicantId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listLivePhotosValidateBeforeCall(@javax.annotation.Nonnull UUID applicantId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'applicantId' is set
         if (applicantId == null) {
             throw new ApiException("Missing the required parameter 'applicantId' when calling listLivePhotos(Async)");
@@ -8952,13 +9016,13 @@ public class DefaultApi {
     }
 
 
-    private ApiResponse<LivePhotosList> listLivePhotosWithHttpInfo(UUID applicantId) throws ApiException {
+    private ApiResponse<LivePhotosList> listLivePhotosWithHttpInfo(@javax.annotation.Nonnull UUID applicantId) throws ApiException {
         okhttp3.Call localVarCall = listLivePhotosValidateBeforeCall(applicantId, null);
         Type localVarReturnType = new TypeToken<LivePhotosList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call listLivePhotosAsync(UUID applicantId, final ApiCallback<LivePhotosList> _callback) throws ApiException {
+    private okhttp3.Call listLivePhotosAsync(@javax.annotation.Nonnull UUID applicantId, final ApiCallback<LivePhotosList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listLivePhotosValidateBeforeCall(applicantId, _callback);
         Type localVarReturnType = new TypeToken<LivePhotosList>(){}.getType();
@@ -8967,9 +9031,10 @@ public class DefaultApi {
     }
 
     public class APIlistLivePhotosRequest {
+        @javax.annotation.Nonnull
         private final UUID applicantId;
 
-        private APIlistLivePhotosRequest(UUID applicantId) {
+        private APIlistLivePhotosRequest(@javax.annotation.Nonnull UUID applicantId) {
             this.applicantId = applicantId;
         }
 
@@ -9054,10 +9119,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public APIlistLivePhotosRequest listLivePhotos(UUID applicantId) {
+    public APIlistLivePhotosRequest listLivePhotos(@javax.annotation.Nonnull UUID applicantId) {
         return new APIlistLivePhotosRequest(applicantId);
     }
-    private okhttp3.Call listLiveVideosCall(UUID applicantId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listLiveVideosCall(@javax.annotation.Nonnull UUID applicantId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -9106,7 +9171,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listLiveVideosValidateBeforeCall(UUID applicantId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listLiveVideosValidateBeforeCall(@javax.annotation.Nonnull UUID applicantId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'applicantId' is set
         if (applicantId == null) {
             throw new ApiException("Missing the required parameter 'applicantId' when calling listLiveVideos(Async)");
@@ -9117,13 +9182,13 @@ public class DefaultApi {
     }
 
 
-    private ApiResponse<LiveVideosList> listLiveVideosWithHttpInfo(UUID applicantId) throws ApiException {
+    private ApiResponse<LiveVideosList> listLiveVideosWithHttpInfo(@javax.annotation.Nonnull UUID applicantId) throws ApiException {
         okhttp3.Call localVarCall = listLiveVideosValidateBeforeCall(applicantId, null);
         Type localVarReturnType = new TypeToken<LiveVideosList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call listLiveVideosAsync(UUID applicantId, final ApiCallback<LiveVideosList> _callback) throws ApiException {
+    private okhttp3.Call listLiveVideosAsync(@javax.annotation.Nonnull UUID applicantId, final ApiCallback<LiveVideosList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listLiveVideosValidateBeforeCall(applicantId, _callback);
         Type localVarReturnType = new TypeToken<LiveVideosList>(){}.getType();
@@ -9132,9 +9197,10 @@ public class DefaultApi {
     }
 
     public class APIlistLiveVideosRequest {
+        @javax.annotation.Nonnull
         private final UUID applicantId;
 
-        private APIlistLiveVideosRequest(UUID applicantId) {
+        private APIlistLiveVideosRequest(@javax.annotation.Nonnull UUID applicantId) {
             this.applicantId = applicantId;
         }
 
@@ -9219,10 +9285,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public APIlistLiveVideosRequest listLiveVideos(UUID applicantId) {
+    public APIlistLiveVideosRequest listLiveVideos(@javax.annotation.Nonnull UUID applicantId) {
         return new APIlistLiveVideosRequest(applicantId);
     }
-    private okhttp3.Call listMotionCapturesCall(UUID applicantId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listMotionCapturesCall(@javax.annotation.Nonnull UUID applicantId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -9271,7 +9337,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listMotionCapturesValidateBeforeCall(UUID applicantId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listMotionCapturesValidateBeforeCall(@javax.annotation.Nonnull UUID applicantId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'applicantId' is set
         if (applicantId == null) {
             throw new ApiException("Missing the required parameter 'applicantId' when calling listMotionCaptures(Async)");
@@ -9282,13 +9348,13 @@ public class DefaultApi {
     }
 
 
-    private ApiResponse<MotionCapturesList> listMotionCapturesWithHttpInfo(UUID applicantId) throws ApiException {
+    private ApiResponse<MotionCapturesList> listMotionCapturesWithHttpInfo(@javax.annotation.Nonnull UUID applicantId) throws ApiException {
         okhttp3.Call localVarCall = listMotionCapturesValidateBeforeCall(applicantId, null);
         Type localVarReturnType = new TypeToken<MotionCapturesList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call listMotionCapturesAsync(UUID applicantId, final ApiCallback<MotionCapturesList> _callback) throws ApiException {
+    private okhttp3.Call listMotionCapturesAsync(@javax.annotation.Nonnull UUID applicantId, final ApiCallback<MotionCapturesList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listMotionCapturesValidateBeforeCall(applicantId, _callback);
         Type localVarReturnType = new TypeToken<MotionCapturesList>(){}.getType();
@@ -9297,9 +9363,10 @@ public class DefaultApi {
     }
 
     public class APIlistMotionCapturesRequest {
+        @javax.annotation.Nonnull
         private final UUID applicantId;
 
-        private APIlistMotionCapturesRequest(UUID applicantId) {
+        private APIlistMotionCapturesRequest(@javax.annotation.Nonnull UUID applicantId) {
             this.applicantId = applicantId;
         }
 
@@ -9384,10 +9451,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public APIlistMotionCapturesRequest listMotionCaptures(UUID applicantId) {
+    public APIlistMotionCapturesRequest listMotionCaptures(@javax.annotation.Nonnull UUID applicantId) {
         return new APIlistMotionCapturesRequest(applicantId);
     }
-    private okhttp3.Call listPasskeysCall(String username, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listPasskeysCall(@javax.annotation.Nonnull String username, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -9433,7 +9500,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listPasskeysValidateBeforeCall(String username, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listPasskeysValidateBeforeCall(@javax.annotation.Nonnull String username, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'username' is set
         if (username == null) {
             throw new ApiException("Missing the required parameter 'username' when calling listPasskeys(Async)");
@@ -9444,13 +9511,13 @@ public class DefaultApi {
     }
 
 
-    private ApiResponse<PasskeysList> listPasskeysWithHttpInfo(String username) throws ApiException {
+    private ApiResponse<PasskeysList> listPasskeysWithHttpInfo(@javax.annotation.Nonnull String username) throws ApiException {
         okhttp3.Call localVarCall = listPasskeysValidateBeforeCall(username, null);
         Type localVarReturnType = new TypeToken<PasskeysList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call listPasskeysAsync(String username, final ApiCallback<PasskeysList> _callback) throws ApiException {
+    private okhttp3.Call listPasskeysAsync(@javax.annotation.Nonnull String username, final ApiCallback<PasskeysList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listPasskeysValidateBeforeCall(username, _callback);
         Type localVarReturnType = new TypeToken<PasskeysList>(){}.getType();
@@ -9459,9 +9526,10 @@ public class DefaultApi {
     }
 
     public class APIlistPasskeysRequest {
+        @javax.annotation.Nonnull
         private final String username;
 
-        private APIlistPasskeysRequest(String username) {
+        private APIlistPasskeysRequest(@javax.annotation.Nonnull String username) {
             this.username = username;
         }
 
@@ -9551,10 +9619,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public APIlistPasskeysRequest listPasskeys(String username) {
+    public APIlistPasskeysRequest listPasskeys(@javax.annotation.Nonnull String username) {
         return new APIlistPasskeysRequest(username);
     }
-    private okhttp3.Call listRepeatAttemptsCall(UUID reportId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listRepeatAttemptsCall(@javax.annotation.Nonnull UUID reportId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -9600,7 +9668,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listRepeatAttemptsValidateBeforeCall(UUID reportId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listRepeatAttemptsValidateBeforeCall(@javax.annotation.Nonnull UUID reportId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'reportId' is set
         if (reportId == null) {
             throw new ApiException("Missing the required parameter 'reportId' when calling listRepeatAttempts(Async)");
@@ -9611,13 +9679,13 @@ public class DefaultApi {
     }
 
 
-    private ApiResponse<RepeatAttemptsList> listRepeatAttemptsWithHttpInfo(UUID reportId) throws ApiException {
+    private ApiResponse<RepeatAttemptsList> listRepeatAttemptsWithHttpInfo(@javax.annotation.Nonnull UUID reportId) throws ApiException {
         okhttp3.Call localVarCall = listRepeatAttemptsValidateBeforeCall(reportId, null);
         Type localVarReturnType = new TypeToken<RepeatAttemptsList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call listRepeatAttemptsAsync(UUID reportId, final ApiCallback<RepeatAttemptsList> _callback) throws ApiException {
+    private okhttp3.Call listRepeatAttemptsAsync(@javax.annotation.Nonnull UUID reportId, final ApiCallback<RepeatAttemptsList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listRepeatAttemptsValidateBeforeCall(reportId, _callback);
         Type localVarReturnType = new TypeToken<RepeatAttemptsList>(){}.getType();
@@ -9626,9 +9694,10 @@ public class DefaultApi {
     }
 
     public class APIlistRepeatAttemptsRequest {
+        @javax.annotation.Nonnull
         private final UUID reportId;
 
-        private APIlistRepeatAttemptsRequest(UUID reportId) {
+        private APIlistRepeatAttemptsRequest(@javax.annotation.Nonnull UUID reportId) {
             this.reportId = reportId;
         }
 
@@ -9713,10 +9782,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public APIlistRepeatAttemptsRequest listRepeatAttempts(UUID reportId) {
+    public APIlistRepeatAttemptsRequest listRepeatAttempts(@javax.annotation.Nonnull UUID reportId) {
         return new APIlistRepeatAttemptsRequest(reportId);
     }
-    private okhttp3.Call listReportsCall(UUID checkId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listReportsCall(@javax.annotation.Nonnull UUID checkId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -9765,7 +9834,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listReportsValidateBeforeCall(UUID checkId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listReportsValidateBeforeCall(@javax.annotation.Nonnull UUID checkId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'checkId' is set
         if (checkId == null) {
             throw new ApiException("Missing the required parameter 'checkId' when calling listReports(Async)");
@@ -9776,13 +9845,13 @@ public class DefaultApi {
     }
 
 
-    private ApiResponse<ReportsList> listReportsWithHttpInfo(UUID checkId) throws ApiException {
+    private ApiResponse<ReportsList> listReportsWithHttpInfo(@javax.annotation.Nonnull UUID checkId) throws ApiException {
         okhttp3.Call localVarCall = listReportsValidateBeforeCall(checkId, null);
         Type localVarReturnType = new TypeToken<ReportsList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call listReportsAsync(UUID checkId, final ApiCallback<ReportsList> _callback) throws ApiException {
+    private okhttp3.Call listReportsAsync(@javax.annotation.Nonnull UUID checkId, final ApiCallback<ReportsList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listReportsValidateBeforeCall(checkId, _callback);
         Type localVarReturnType = new TypeToken<ReportsList>(){}.getType();
@@ -9791,9 +9860,10 @@ public class DefaultApi {
     }
 
     public class APIlistReportsRequest {
+        @javax.annotation.Nonnull
         private final UUID checkId;
 
-        private APIlistReportsRequest(UUID checkId) {
+        private APIlistReportsRequest(@javax.annotation.Nonnull UUID checkId) {
             this.checkId = checkId;
         }
 
@@ -9878,10 +9948,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public APIlistReportsRequest listReports(UUID checkId) {
+    public APIlistReportsRequest listReports(@javax.annotation.Nonnull UUID checkId) {
         return new APIlistReportsRequest(checkId);
     }
-    private okhttp3.Call listSigningDocumentsCall(UUID applicantId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listSigningDocumentsCall(@javax.annotation.Nonnull UUID applicantId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -9930,7 +10000,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listSigningDocumentsValidateBeforeCall(UUID applicantId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listSigningDocumentsValidateBeforeCall(@javax.annotation.Nonnull UUID applicantId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'applicantId' is set
         if (applicantId == null) {
             throw new ApiException("Missing the required parameter 'applicantId' when calling listSigningDocuments(Async)");
@@ -9941,13 +10011,13 @@ public class DefaultApi {
     }
 
 
-    private ApiResponse<SigningDocumentsList> listSigningDocumentsWithHttpInfo(UUID applicantId) throws ApiException {
+    private ApiResponse<SigningDocumentsList> listSigningDocumentsWithHttpInfo(@javax.annotation.Nonnull UUID applicantId) throws ApiException {
         okhttp3.Call localVarCall = listSigningDocumentsValidateBeforeCall(applicantId, null);
         Type localVarReturnType = new TypeToken<SigningDocumentsList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call listSigningDocumentsAsync(UUID applicantId, final ApiCallback<SigningDocumentsList> _callback) throws ApiException {
+    private okhttp3.Call listSigningDocumentsAsync(@javax.annotation.Nonnull UUID applicantId, final ApiCallback<SigningDocumentsList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listSigningDocumentsValidateBeforeCall(applicantId, _callback);
         Type localVarReturnType = new TypeToken<SigningDocumentsList>(){}.getType();
@@ -9956,9 +10026,10 @@ public class DefaultApi {
     }
 
     public class APIlistSigningDocumentsRequest {
+        @javax.annotation.Nonnull
         private final UUID applicantId;
 
-        private APIlistSigningDocumentsRequest(UUID applicantId) {
+        private APIlistSigningDocumentsRequest(@javax.annotation.Nonnull UUID applicantId) {
             this.applicantId = applicantId;
         }
 
@@ -10043,10 +10114,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public APIlistSigningDocumentsRequest listSigningDocuments(UUID applicantId) {
+    public APIlistSigningDocumentsRequest listSigningDocuments(@javax.annotation.Nonnull UUID applicantId) {
         return new APIlistSigningDocumentsRequest(applicantId);
     }
-    private okhttp3.Call listTasksCall(UUID workflowRunId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listTasksCall(@javax.annotation.Nonnull UUID workflowRunId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -10092,7 +10163,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listTasksValidateBeforeCall(UUID workflowRunId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listTasksValidateBeforeCall(@javax.annotation.Nonnull UUID workflowRunId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'workflowRunId' is set
         if (workflowRunId == null) {
             throw new ApiException("Missing the required parameter 'workflowRunId' when calling listTasks(Async)");
@@ -10103,13 +10174,13 @@ public class DefaultApi {
     }
 
 
-    private ApiResponse<List<TaskItem>> listTasksWithHttpInfo(UUID workflowRunId) throws ApiException {
+    private ApiResponse<List<TaskItem>> listTasksWithHttpInfo(@javax.annotation.Nonnull UUID workflowRunId) throws ApiException {
         okhttp3.Call localVarCall = listTasksValidateBeforeCall(workflowRunId, null);
         Type localVarReturnType = new TypeToken<List<TaskItem>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call listTasksAsync(UUID workflowRunId, final ApiCallback<List<TaskItem>> _callback) throws ApiException {
+    private okhttp3.Call listTasksAsync(@javax.annotation.Nonnull UUID workflowRunId, final ApiCallback<List<TaskItem>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listTasksValidateBeforeCall(workflowRunId, _callback);
         Type localVarReturnType = new TypeToken<List<TaskItem>>(){}.getType();
@@ -10118,9 +10189,10 @@ public class DefaultApi {
     }
 
     public class APIlistTasksRequest {
+        @javax.annotation.Nonnull
         private final UUID workflowRunId;
 
-        private APIlistTasksRequest(UUID workflowRunId) {
+        private APIlistTasksRequest(@javax.annotation.Nonnull UUID workflowRunId) {
             this.workflowRunId = workflowRunId;
         }
 
@@ -10205,10 +10277,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public APIlistTasksRequest listTasks(UUID workflowRunId) {
+    public APIlistTasksRequest listTasks(@javax.annotation.Nonnull UUID workflowRunId) {
         return new APIlistTasksRequest(workflowRunId);
     }
-    private okhttp3.Call listWatchlistMonitorMatchesCall(UUID monitorId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listWatchlistMonitorMatchesCall(@javax.annotation.Nonnull UUID monitorId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -10254,7 +10326,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listWatchlistMonitorMatchesValidateBeforeCall(UUID monitorId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listWatchlistMonitorMatchesValidateBeforeCall(@javax.annotation.Nonnull UUID monitorId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'monitorId' is set
         if (monitorId == null) {
             throw new ApiException("Missing the required parameter 'monitorId' when calling listWatchlistMonitorMatches(Async)");
@@ -10265,13 +10337,13 @@ public class DefaultApi {
     }
 
 
-    private ApiResponse<WatchlistMonitorMatchesList> listWatchlistMonitorMatchesWithHttpInfo(UUID monitorId) throws ApiException {
+    private ApiResponse<WatchlistMonitorMatchesList> listWatchlistMonitorMatchesWithHttpInfo(@javax.annotation.Nonnull UUID monitorId) throws ApiException {
         okhttp3.Call localVarCall = listWatchlistMonitorMatchesValidateBeforeCall(monitorId, null);
         Type localVarReturnType = new TypeToken<WatchlistMonitorMatchesList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call listWatchlistMonitorMatchesAsync(UUID monitorId, final ApiCallback<WatchlistMonitorMatchesList> _callback) throws ApiException {
+    private okhttp3.Call listWatchlistMonitorMatchesAsync(@javax.annotation.Nonnull UUID monitorId, final ApiCallback<WatchlistMonitorMatchesList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listWatchlistMonitorMatchesValidateBeforeCall(monitorId, _callback);
         Type localVarReturnType = new TypeToken<WatchlistMonitorMatchesList>(){}.getType();
@@ -10280,9 +10352,10 @@ public class DefaultApi {
     }
 
     public class APIlistWatchlistMonitorMatchesRequest {
+        @javax.annotation.Nonnull
         private final UUID monitorId;
 
-        private APIlistWatchlistMonitorMatchesRequest(UUID monitorId) {
+        private APIlistWatchlistMonitorMatchesRequest(@javax.annotation.Nonnull UUID monitorId) {
             this.monitorId = monitorId;
         }
 
@@ -10362,10 +10435,10 @@ public class DefaultApi {
         <tr><td> 200 </td><td> An array of watchlist monitors </td><td>  -  </td></tr>
      </table>
      */
-    public APIlistWatchlistMonitorMatchesRequest listWatchlistMonitorMatches(UUID monitorId) {
+    public APIlistWatchlistMonitorMatchesRequest listWatchlistMonitorMatches(@javax.annotation.Nonnull UUID monitorId) {
         return new APIlistWatchlistMonitorMatchesRequest(monitorId);
     }
-    private okhttp3.Call listWatchlistMonitorsCall(UUID applicantId, Boolean includeDeleted, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listWatchlistMonitorsCall(@javax.annotation.Nonnull UUID applicantId, @javax.annotation.Nullable Boolean includeDeleted, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -10418,7 +10491,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listWatchlistMonitorsValidateBeforeCall(UUID applicantId, Boolean includeDeleted, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listWatchlistMonitorsValidateBeforeCall(@javax.annotation.Nonnull UUID applicantId, @javax.annotation.Nullable Boolean includeDeleted, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'applicantId' is set
         if (applicantId == null) {
             throw new ApiException("Missing the required parameter 'applicantId' when calling listWatchlistMonitors(Async)");
@@ -10429,13 +10502,13 @@ public class DefaultApi {
     }
 
 
-    private ApiResponse<WatchlistMonitorsList> listWatchlistMonitorsWithHttpInfo(UUID applicantId, Boolean includeDeleted) throws ApiException {
+    private ApiResponse<WatchlistMonitorsList> listWatchlistMonitorsWithHttpInfo(@javax.annotation.Nonnull UUID applicantId, @javax.annotation.Nullable Boolean includeDeleted) throws ApiException {
         okhttp3.Call localVarCall = listWatchlistMonitorsValidateBeforeCall(applicantId, includeDeleted, null);
         Type localVarReturnType = new TypeToken<WatchlistMonitorsList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call listWatchlistMonitorsAsync(UUID applicantId, Boolean includeDeleted, final ApiCallback<WatchlistMonitorsList> _callback) throws ApiException {
+    private okhttp3.Call listWatchlistMonitorsAsync(@javax.annotation.Nonnull UUID applicantId, @javax.annotation.Nullable Boolean includeDeleted, final ApiCallback<WatchlistMonitorsList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listWatchlistMonitorsValidateBeforeCall(applicantId, includeDeleted, _callback);
         Type localVarReturnType = new TypeToken<WatchlistMonitorsList>(){}.getType();
@@ -10444,10 +10517,12 @@ public class DefaultApi {
     }
 
     public class APIlistWatchlistMonitorsRequest {
+        @javax.annotation.Nonnull
         private final UUID applicantId;
+        @javax.annotation.Nullable
         private Boolean includeDeleted;
 
-        private APIlistWatchlistMonitorsRequest(UUID applicantId) {
+        private APIlistWatchlistMonitorsRequest(@javax.annotation.Nonnull UUID applicantId) {
             this.applicantId = applicantId;
         }
 
@@ -10456,7 +10531,7 @@ public class DefaultApi {
          * @param includeDeleted Whether to also include deleted (inactive) monitors. (optional, default to false)
          * @return APIlistWatchlistMonitorsRequest
          */
-        public APIlistWatchlistMonitorsRequest includeDeleted(Boolean includeDeleted) {
+        public APIlistWatchlistMonitorsRequest includeDeleted(@javax.annotation.Nullable Boolean includeDeleted) {
             this.includeDeleted = includeDeleted;
             return this;
         }
@@ -10542,7 +10617,7 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public APIlistWatchlistMonitorsRequest listWatchlistMonitors(UUID applicantId) {
+    public APIlistWatchlistMonitorsRequest listWatchlistMonitors(@javax.annotation.Nonnull UUID applicantId) {
         return new APIlistWatchlistMonitorsRequest(applicantId);
     }
     private okhttp3.Call listWebhooksCall(final ApiCallback _callback) throws ApiException {
@@ -10698,7 +10773,7 @@ public class DefaultApi {
     public APIlistWebhooksRequest listWebhooks() {
         return new APIlistWebhooksRequest();
     }
-    private okhttp3.Call listWorkflowRunsCall(Integer page, String status, LocalDate createdAtGt, LocalDate createdAtLt, String sort, UUID applicantId, List<String> tags, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listWorkflowRunsCall(@javax.annotation.Nullable Integer page, @javax.annotation.Nullable String status, @javax.annotation.Nullable LocalDate createdAtGt, @javax.annotation.Nullable LocalDate createdAtLt, @javax.annotation.Nullable String sort, @javax.annotation.Nullable UUID applicantId, @javax.annotation.Nullable List<String> tags, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -10771,19 +10846,19 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listWorkflowRunsValidateBeforeCall(Integer page, String status, LocalDate createdAtGt, LocalDate createdAtLt, String sort, UUID applicantId, List<String> tags, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listWorkflowRunsValidateBeforeCall(@javax.annotation.Nullable Integer page, @javax.annotation.Nullable String status, @javax.annotation.Nullable LocalDate createdAtGt, @javax.annotation.Nullable LocalDate createdAtLt, @javax.annotation.Nullable String sort, @javax.annotation.Nullable UUID applicantId, @javax.annotation.Nullable List<String> tags, final ApiCallback _callback) throws ApiException {
         return listWorkflowRunsCall(page, status, createdAtGt, createdAtLt, sort, applicantId, tags, _callback);
 
     }
 
 
-    private ApiResponse<List<WorkflowRun>> listWorkflowRunsWithHttpInfo(Integer page, String status, LocalDate createdAtGt, LocalDate createdAtLt, String sort, UUID applicantId, List<String> tags) throws ApiException {
+    private ApiResponse<List<WorkflowRun>> listWorkflowRunsWithHttpInfo(@javax.annotation.Nullable Integer page, @javax.annotation.Nullable String status, @javax.annotation.Nullable LocalDate createdAtGt, @javax.annotation.Nullable LocalDate createdAtLt, @javax.annotation.Nullable String sort, @javax.annotation.Nullable UUID applicantId, @javax.annotation.Nullable List<String> tags) throws ApiException {
         okhttp3.Call localVarCall = listWorkflowRunsValidateBeforeCall(page, status, createdAtGt, createdAtLt, sort, applicantId, tags, null);
         Type localVarReturnType = new TypeToken<List<WorkflowRun>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call listWorkflowRunsAsync(Integer page, String status, LocalDate createdAtGt, LocalDate createdAtLt, String sort, UUID applicantId, List<String> tags, final ApiCallback<List<WorkflowRun>> _callback) throws ApiException {
+    private okhttp3.Call listWorkflowRunsAsync(@javax.annotation.Nullable Integer page, @javax.annotation.Nullable String status, @javax.annotation.Nullable LocalDate createdAtGt, @javax.annotation.Nullable LocalDate createdAtLt, @javax.annotation.Nullable String sort, @javax.annotation.Nullable UUID applicantId, @javax.annotation.Nullable List<String> tags, final ApiCallback<List<WorkflowRun>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listWorkflowRunsValidateBeforeCall(page, status, createdAtGt, createdAtLt, sort, applicantId, tags, _callback);
         Type localVarReturnType = new TypeToken<List<WorkflowRun>>(){}.getType();
@@ -10792,12 +10867,19 @@ public class DefaultApi {
     }
 
     public class APIlistWorkflowRunsRequest {
+        @javax.annotation.Nullable
         private Integer page;
+        @javax.annotation.Nullable
         private String status;
+        @javax.annotation.Nullable
         private LocalDate createdAtGt;
+        @javax.annotation.Nullable
         private LocalDate createdAtLt;
+        @javax.annotation.Nullable
         private String sort;
+        @javax.annotation.Nullable
         private UUID applicantId;
+        @javax.annotation.Nullable
         private List<String> tags;
 
         private APIlistWorkflowRunsRequest() {
@@ -10808,7 +10890,7 @@ public class DefaultApi {
          * @param page The number of the page to be retrieved. If not specified, defaults to 1. (optional, default to 1)
          * @return APIlistWorkflowRunsRequest
          */
-        public APIlistWorkflowRunsRequest page(Integer page) {
+        public APIlistWorkflowRunsRequest page(@javax.annotation.Nullable Integer page) {
             this.page = page;
             return this;
         }
@@ -10818,7 +10900,7 @@ public class DefaultApi {
          * @param status A list of comma separated status values to filter the results. Possible values are &#39;processing&#39;, &#39;awaiting_input&#39;, &#39;approved&#39;, &#39;declined&#39;, &#39;review&#39;, &#39;abandoned&#39; and &#39;error&#39;. (optional)
          * @return APIlistWorkflowRunsRequest
          */
-        public APIlistWorkflowRunsRequest status(String status) {
+        public APIlistWorkflowRunsRequest status(@javax.annotation.Nullable String status) {
             this.status = status;
             return this;
         }
@@ -10828,7 +10910,7 @@ public class DefaultApi {
          * @param createdAtGt A ISO-8601 date to filter results with a created date greater than (after) the one provided. (optional)
          * @return APIlistWorkflowRunsRequest
          */
-        public APIlistWorkflowRunsRequest createdAtGt(LocalDate createdAtGt) {
+        public APIlistWorkflowRunsRequest createdAtGt(@javax.annotation.Nullable LocalDate createdAtGt) {
             this.createdAtGt = createdAtGt;
             return this;
         }
@@ -10838,7 +10920,7 @@ public class DefaultApi {
          * @param createdAtLt A ISO-8601 date to filter results with a created date less than (before) the one provided. (optional)
          * @return APIlistWorkflowRunsRequest
          */
-        public APIlistWorkflowRunsRequest createdAtLt(LocalDate createdAtLt) {
+        public APIlistWorkflowRunsRequest createdAtLt(@javax.annotation.Nullable LocalDate createdAtLt) {
             this.createdAtLt = createdAtLt;
             return this;
         }
@@ -10848,7 +10930,7 @@ public class DefaultApi {
          * @param sort A string with the value &#39;desc&#39; or &#39;asc&#39; that allows to sort the returned list by the completed datetime either descending or ascending, respectively. If not specified, defaults to &#39;desc&#39;. (optional, default to desc)
          * @return APIlistWorkflowRunsRequest
          */
-        public APIlistWorkflowRunsRequest sort(String sort) {
+        public APIlistWorkflowRunsRequest sort(@javax.annotation.Nullable String sort) {
             this.sort = sort;
             return this;
         }
@@ -10858,7 +10940,7 @@ public class DefaultApi {
          * @param applicantId the applicant&#39;s id. (optional)
          * @return APIlistWorkflowRunsRequest
          */
-        public APIlistWorkflowRunsRequest applicantId(UUID applicantId) {
+        public APIlistWorkflowRunsRequest applicantId(@javax.annotation.Nullable UUID applicantId) {
             this.applicantId = applicantId;
             return this;
         }
@@ -10868,7 +10950,7 @@ public class DefaultApi {
          * @param tags A list of tags to filter the results. (optional)
          * @return APIlistWorkflowRunsRequest
          */
-        public APIlistWorkflowRunsRequest tags(List<String> tags) {
+        public APIlistWorkflowRunsRequest tags(@javax.annotation.Nullable List<String> tags) {
             this.tags = tags;
             return this;
         }
@@ -11110,7 +11192,7 @@ public class DefaultApi {
     public APIpingRequest ping() {
         return new APIpingRequest();
     }
-    private okhttp3.Call postResultsFeedbackCall(ResultsFeedback resultsFeedback, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call postResultsFeedbackCall(@javax.annotation.Nonnull ResultsFeedback resultsFeedback, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -11156,7 +11238,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call postResultsFeedbackValidateBeforeCall(ResultsFeedback resultsFeedback, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call postResultsFeedbackValidateBeforeCall(@javax.annotation.Nonnull ResultsFeedback resultsFeedback, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'resultsFeedback' is set
         if (resultsFeedback == null) {
             throw new ApiException("Missing the required parameter 'resultsFeedback' when calling postResultsFeedback(Async)");
@@ -11167,13 +11249,13 @@ public class DefaultApi {
     }
 
 
-    private ApiResponse<ResultsFeedback> postResultsFeedbackWithHttpInfo(ResultsFeedback resultsFeedback) throws ApiException {
+    private ApiResponse<ResultsFeedback> postResultsFeedbackWithHttpInfo(@javax.annotation.Nonnull ResultsFeedback resultsFeedback) throws ApiException {
         okhttp3.Call localVarCall = postResultsFeedbackValidateBeforeCall(resultsFeedback, null);
         Type localVarReturnType = new TypeToken<ResultsFeedback>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call postResultsFeedbackAsync(ResultsFeedback resultsFeedback, final ApiCallback<ResultsFeedback> _callback) throws ApiException {
+    private okhttp3.Call postResultsFeedbackAsync(@javax.annotation.Nonnull ResultsFeedback resultsFeedback, final ApiCallback<ResultsFeedback> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = postResultsFeedbackValidateBeforeCall(resultsFeedback, _callback);
         Type localVarReturnType = new TypeToken<ResultsFeedback>(){}.getType();
@@ -11182,9 +11264,10 @@ public class DefaultApi {
     }
 
     public class APIpostResultsFeedbackRequest {
+        @javax.annotation.Nonnull
         private final ResultsFeedback resultsFeedback;
 
-        private APIpostResultsFeedbackRequest(ResultsFeedback resultsFeedback) {
+        private APIpostResultsFeedbackRequest(@javax.annotation.Nonnull ResultsFeedback resultsFeedback) {
             this.resultsFeedback = resultsFeedback;
         }
 
@@ -11269,10 +11352,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public APIpostResultsFeedbackRequest postResultsFeedback(ResultsFeedback resultsFeedback) {
+    public APIpostResultsFeedbackRequest postResultsFeedback(@javax.annotation.Nonnull ResultsFeedback resultsFeedback) {
         return new APIpostResultsFeedbackRequest(resultsFeedback);
     }
-    private okhttp3.Call resendWebhooksCall(WebhookResend webhookResend, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call resendWebhooksCall(@javax.annotation.Nonnull WebhookResend webhookResend, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -11318,7 +11401,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call resendWebhooksValidateBeforeCall(WebhookResend webhookResend, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call resendWebhooksValidateBeforeCall(@javax.annotation.Nonnull WebhookResend webhookResend, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'webhookResend' is set
         if (webhookResend == null) {
             throw new ApiException("Missing the required parameter 'webhookResend' when calling resendWebhooks(Async)");
@@ -11329,12 +11412,12 @@ public class DefaultApi {
     }
 
 
-    private ApiResponse<Void> resendWebhooksWithHttpInfo(WebhookResend webhookResend) throws ApiException {
+    private ApiResponse<Void> resendWebhooksWithHttpInfo(@javax.annotation.Nonnull WebhookResend webhookResend) throws ApiException {
         okhttp3.Call localVarCall = resendWebhooksValidateBeforeCall(webhookResend, null);
         return localVarApiClient.execute(localVarCall);
     }
 
-    private okhttp3.Call resendWebhooksAsync(WebhookResend webhookResend, final ApiCallback<Void> _callback) throws ApiException {
+    private okhttp3.Call resendWebhooksAsync(@javax.annotation.Nonnull WebhookResend webhookResend, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = resendWebhooksValidateBeforeCall(webhookResend, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -11342,9 +11425,10 @@ public class DefaultApi {
     }
 
     public class APIresendWebhooksRequest {
+        @javax.annotation.Nonnull
         private final WebhookResend webhookResend;
 
-        private APIresendWebhooksRequest(WebhookResend webhookResend) {
+        private APIresendWebhooksRequest(@javax.annotation.Nonnull WebhookResend webhookResend) {
             this.webhookResend = webhookResend;
         }
 
@@ -11432,10 +11516,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public APIresendWebhooksRequest resendWebhooks(WebhookResend webhookResend) {
+    public APIresendWebhooksRequest resendWebhooks(@javax.annotation.Nonnull WebhookResend webhookResend) {
         return new APIresendWebhooksRequest(webhookResend);
     }
-    private okhttp3.Call restoreApplicantCall(UUID applicantId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call restoreApplicantCall(@javax.annotation.Nonnull UUID applicantId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -11481,7 +11565,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call restoreApplicantValidateBeforeCall(UUID applicantId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call restoreApplicantValidateBeforeCall(@javax.annotation.Nonnull UUID applicantId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'applicantId' is set
         if (applicantId == null) {
             throw new ApiException("Missing the required parameter 'applicantId' when calling restoreApplicant(Async)");
@@ -11492,12 +11576,12 @@ public class DefaultApi {
     }
 
 
-    private ApiResponse<Void> restoreApplicantWithHttpInfo(UUID applicantId) throws ApiException {
+    private ApiResponse<Void> restoreApplicantWithHttpInfo(@javax.annotation.Nonnull UUID applicantId) throws ApiException {
         okhttp3.Call localVarCall = restoreApplicantValidateBeforeCall(applicantId, null);
         return localVarApiClient.execute(localVarCall);
     }
 
-    private okhttp3.Call restoreApplicantAsync(UUID applicantId, final ApiCallback<Void> _callback) throws ApiException {
+    private okhttp3.Call restoreApplicantAsync(@javax.annotation.Nonnull UUID applicantId, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = restoreApplicantValidateBeforeCall(applicantId, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -11505,9 +11589,10 @@ public class DefaultApi {
     }
 
     public class APIrestoreApplicantRequest {
+        @javax.annotation.Nonnull
         private final UUID applicantId;
 
-        private APIrestoreApplicantRequest(UUID applicantId) {
+        private APIrestoreApplicantRequest(@javax.annotation.Nonnull UUID applicantId) {
             this.applicantId = applicantId;
         }
 
@@ -11590,10 +11675,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public APIrestoreApplicantRequest restoreApplicant(UUID applicantId) {
+    public APIrestoreApplicantRequest restoreApplicant(@javax.annotation.Nonnull UUID applicantId) {
         return new APIrestoreApplicantRequest(applicantId);
     }
-    private okhttp3.Call resumeCheckCall(UUID checkId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call resumeCheckCall(@javax.annotation.Nonnull UUID checkId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -11639,7 +11724,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call resumeCheckValidateBeforeCall(UUID checkId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call resumeCheckValidateBeforeCall(@javax.annotation.Nonnull UUID checkId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'checkId' is set
         if (checkId == null) {
             throw new ApiException("Missing the required parameter 'checkId' when calling resumeCheck(Async)");
@@ -11650,12 +11735,12 @@ public class DefaultApi {
     }
 
 
-    private ApiResponse<Void> resumeCheckWithHttpInfo(UUID checkId) throws ApiException {
+    private ApiResponse<Void> resumeCheckWithHttpInfo(@javax.annotation.Nonnull UUID checkId) throws ApiException {
         okhttp3.Call localVarCall = resumeCheckValidateBeforeCall(checkId, null);
         return localVarApiClient.execute(localVarCall);
     }
 
-    private okhttp3.Call resumeCheckAsync(UUID checkId, final ApiCallback<Void> _callback) throws ApiException {
+    private okhttp3.Call resumeCheckAsync(@javax.annotation.Nonnull UUID checkId, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = resumeCheckValidateBeforeCall(checkId, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -11663,9 +11748,10 @@ public class DefaultApi {
     }
 
     public class APIresumeCheckRequest {
+        @javax.annotation.Nonnull
         private final UUID checkId;
 
-        private APIresumeCheckRequest(UUID checkId) {
+        private APIresumeCheckRequest(@javax.annotation.Nonnull UUID checkId) {
             this.checkId = checkId;
         }
 
@@ -11748,10 +11834,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public APIresumeCheckRequest resumeCheck(UUID checkId) {
+    public APIresumeCheckRequest resumeCheck(@javax.annotation.Nonnull UUID checkId) {
         return new APIresumeCheckRequest(checkId);
     }
-    private okhttp3.Call resumeReportCall(UUID reportId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call resumeReportCall(@javax.annotation.Nonnull UUID reportId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -11797,7 +11883,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call resumeReportValidateBeforeCall(UUID reportId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call resumeReportValidateBeforeCall(@javax.annotation.Nonnull UUID reportId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'reportId' is set
         if (reportId == null) {
             throw new ApiException("Missing the required parameter 'reportId' when calling resumeReport(Async)");
@@ -11808,12 +11894,12 @@ public class DefaultApi {
     }
 
 
-    private ApiResponse<Void> resumeReportWithHttpInfo(UUID reportId) throws ApiException {
+    private ApiResponse<Void> resumeReportWithHttpInfo(@javax.annotation.Nonnull UUID reportId) throws ApiException {
         okhttp3.Call localVarCall = resumeReportValidateBeforeCall(reportId, null);
         return localVarApiClient.execute(localVarCall);
     }
 
-    private okhttp3.Call resumeReportAsync(UUID reportId, final ApiCallback<Void> _callback) throws ApiException {
+    private okhttp3.Call resumeReportAsync(@javax.annotation.Nonnull UUID reportId, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = resumeReportValidateBeforeCall(reportId, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -11821,9 +11907,10 @@ public class DefaultApi {
     }
 
     public class APIresumeReportRequest {
+        @javax.annotation.Nonnull
         private final UUID reportId;
 
-        private APIresumeReportRequest(UUID reportId) {
+        private APIresumeReportRequest(@javax.annotation.Nonnull UUID reportId) {
             this.reportId = reportId;
         }
 
@@ -11906,10 +11993,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public APIresumeReportRequest resumeReport(UUID reportId) {
+    public APIresumeReportRequest resumeReport(@javax.annotation.Nonnull UUID reportId) {
         return new APIresumeReportRequest(reportId);
     }
-    private okhttp3.Call updateApplicantCall(UUID applicantId, ApplicantUpdater applicantUpdater, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateApplicantCall(@javax.annotation.Nonnull UUID applicantId, @javax.annotation.Nonnull ApplicantUpdater applicantUpdater, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -11956,7 +12043,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateApplicantValidateBeforeCall(UUID applicantId, ApplicantUpdater applicantUpdater, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateApplicantValidateBeforeCall(@javax.annotation.Nonnull UUID applicantId, @javax.annotation.Nonnull ApplicantUpdater applicantUpdater, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'applicantId' is set
         if (applicantId == null) {
             throw new ApiException("Missing the required parameter 'applicantId' when calling updateApplicant(Async)");
@@ -11972,13 +12059,13 @@ public class DefaultApi {
     }
 
 
-    private ApiResponse<Applicant> updateApplicantWithHttpInfo(UUID applicantId, ApplicantUpdater applicantUpdater) throws ApiException {
+    private ApiResponse<Applicant> updateApplicantWithHttpInfo(@javax.annotation.Nonnull UUID applicantId, @javax.annotation.Nonnull ApplicantUpdater applicantUpdater) throws ApiException {
         okhttp3.Call localVarCall = updateApplicantValidateBeforeCall(applicantId, applicantUpdater, null);
         Type localVarReturnType = new TypeToken<Applicant>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call updateApplicantAsync(UUID applicantId, ApplicantUpdater applicantUpdater, final ApiCallback<Applicant> _callback) throws ApiException {
+    private okhttp3.Call updateApplicantAsync(@javax.annotation.Nonnull UUID applicantId, @javax.annotation.Nonnull ApplicantUpdater applicantUpdater, final ApiCallback<Applicant> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateApplicantValidateBeforeCall(applicantId, applicantUpdater, _callback);
         Type localVarReturnType = new TypeToken<Applicant>(){}.getType();
@@ -11987,10 +12074,12 @@ public class DefaultApi {
     }
 
     public class APIupdateApplicantRequest {
+        @javax.annotation.Nonnull
         private final UUID applicantId;
+        @javax.annotation.Nonnull
         private final ApplicantUpdater applicantUpdater;
 
-        private APIupdateApplicantRequest(UUID applicantId, ApplicantUpdater applicantUpdater) {
+        private APIupdateApplicantRequest(@javax.annotation.Nonnull UUID applicantId, @javax.annotation.Nonnull ApplicantUpdater applicantUpdater) {
             this.applicantId = applicantId;
             this.applicantUpdater = applicantUpdater;
         }
@@ -12077,10 +12166,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public APIupdateApplicantRequest updateApplicant(UUID applicantId, ApplicantUpdater applicantUpdater) {
+    public APIupdateApplicantRequest updateApplicant(@javax.annotation.Nonnull UUID applicantId, @javax.annotation.Nonnull ApplicantUpdater applicantUpdater) {
         return new APIupdateApplicantRequest(applicantId, applicantUpdater);
     }
-    private okhttp3.Call updatePasskeyCall(String username, String passkeyId, PasskeyUpdater passkeyUpdater, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updatePasskeyCall(@javax.annotation.Nonnull String username, @javax.annotation.Nonnull String passkeyId, @javax.annotation.Nonnull PasskeyUpdater passkeyUpdater, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -12128,7 +12217,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updatePasskeyValidateBeforeCall(String username, String passkeyId, PasskeyUpdater passkeyUpdater, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updatePasskeyValidateBeforeCall(@javax.annotation.Nonnull String username, @javax.annotation.Nonnull String passkeyId, @javax.annotation.Nonnull PasskeyUpdater passkeyUpdater, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'username' is set
         if (username == null) {
             throw new ApiException("Missing the required parameter 'username' when calling updatePasskey(Async)");
@@ -12149,13 +12238,13 @@ public class DefaultApi {
     }
 
 
-    private ApiResponse<Passkey> updatePasskeyWithHttpInfo(String username, String passkeyId, PasskeyUpdater passkeyUpdater) throws ApiException {
+    private ApiResponse<Passkey> updatePasskeyWithHttpInfo(@javax.annotation.Nonnull String username, @javax.annotation.Nonnull String passkeyId, @javax.annotation.Nonnull PasskeyUpdater passkeyUpdater) throws ApiException {
         okhttp3.Call localVarCall = updatePasskeyValidateBeforeCall(username, passkeyId, passkeyUpdater, null);
         Type localVarReturnType = new TypeToken<Passkey>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call updatePasskeyAsync(String username, String passkeyId, PasskeyUpdater passkeyUpdater, final ApiCallback<Passkey> _callback) throws ApiException {
+    private okhttp3.Call updatePasskeyAsync(@javax.annotation.Nonnull String username, @javax.annotation.Nonnull String passkeyId, @javax.annotation.Nonnull PasskeyUpdater passkeyUpdater, final ApiCallback<Passkey> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updatePasskeyValidateBeforeCall(username, passkeyId, passkeyUpdater, _callback);
         Type localVarReturnType = new TypeToken<Passkey>(){}.getType();
@@ -12164,11 +12253,14 @@ public class DefaultApi {
     }
 
     public class APIupdatePasskeyRequest {
+        @javax.annotation.Nonnull
         private final String username;
+        @javax.annotation.Nonnull
         private final String passkeyId;
+        @javax.annotation.Nonnull
         private final PasskeyUpdater passkeyUpdater;
 
-        private APIupdatePasskeyRequest(String username, String passkeyId, PasskeyUpdater passkeyUpdater) {
+        private APIupdatePasskeyRequest(@javax.annotation.Nonnull String username, @javax.annotation.Nonnull String passkeyId, @javax.annotation.Nonnull PasskeyUpdater passkeyUpdater) {
             this.username = username;
             this.passkeyId = passkeyId;
             this.passkeyUpdater = passkeyUpdater;
@@ -12267,10 +12359,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public APIupdatePasskeyRequest updatePasskey(String username, String passkeyId, PasskeyUpdater passkeyUpdater) {
+    public APIupdatePasskeyRequest updatePasskey(@javax.annotation.Nonnull String username, @javax.annotation.Nonnull String passkeyId, @javax.annotation.Nonnull PasskeyUpdater passkeyUpdater) {
         return new APIupdatePasskeyRequest(username, passkeyId, passkeyUpdater);
     }
-    private okhttp3.Call updateWatchlistMonitorMatchCall(UUID monitorId, WatchlistMonitorMatchesUpdater watchlistMonitorMatchesUpdater, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateWatchlistMonitorMatchCall(@javax.annotation.Nonnull UUID monitorId, @javax.annotation.Nonnull WatchlistMonitorMatchesUpdater watchlistMonitorMatchesUpdater, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -12317,7 +12409,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateWatchlistMonitorMatchValidateBeforeCall(UUID monitorId, WatchlistMonitorMatchesUpdater watchlistMonitorMatchesUpdater, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateWatchlistMonitorMatchValidateBeforeCall(@javax.annotation.Nonnull UUID monitorId, @javax.annotation.Nonnull WatchlistMonitorMatchesUpdater watchlistMonitorMatchesUpdater, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'monitorId' is set
         if (monitorId == null) {
             throw new ApiException("Missing the required parameter 'monitorId' when calling updateWatchlistMonitorMatch(Async)");
@@ -12333,13 +12425,13 @@ public class DefaultApi {
     }
 
 
-    private ApiResponse<WatchlistMonitorMatchesList> updateWatchlistMonitorMatchWithHttpInfo(UUID monitorId, WatchlistMonitorMatchesUpdater watchlistMonitorMatchesUpdater) throws ApiException {
+    private ApiResponse<WatchlistMonitorMatchesList> updateWatchlistMonitorMatchWithHttpInfo(@javax.annotation.Nonnull UUID monitorId, @javax.annotation.Nonnull WatchlistMonitorMatchesUpdater watchlistMonitorMatchesUpdater) throws ApiException {
         okhttp3.Call localVarCall = updateWatchlistMonitorMatchValidateBeforeCall(monitorId, watchlistMonitorMatchesUpdater, null);
         Type localVarReturnType = new TypeToken<WatchlistMonitorMatchesList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call updateWatchlistMonitorMatchAsync(UUID monitorId, WatchlistMonitorMatchesUpdater watchlistMonitorMatchesUpdater, final ApiCallback<WatchlistMonitorMatchesList> _callback) throws ApiException {
+    private okhttp3.Call updateWatchlistMonitorMatchAsync(@javax.annotation.Nonnull UUID monitorId, @javax.annotation.Nonnull WatchlistMonitorMatchesUpdater watchlistMonitorMatchesUpdater, final ApiCallback<WatchlistMonitorMatchesList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateWatchlistMonitorMatchValidateBeforeCall(monitorId, watchlistMonitorMatchesUpdater, _callback);
         Type localVarReturnType = new TypeToken<WatchlistMonitorMatchesList>(){}.getType();
@@ -12348,10 +12440,12 @@ public class DefaultApi {
     }
 
     public class APIupdateWatchlistMonitorMatchRequest {
+        @javax.annotation.Nonnull
         private final UUID monitorId;
+        @javax.annotation.Nonnull
         private final WatchlistMonitorMatchesUpdater watchlistMonitorMatchesUpdater;
 
-        private APIupdateWatchlistMonitorMatchRequest(UUID monitorId, WatchlistMonitorMatchesUpdater watchlistMonitorMatchesUpdater) {
+        private APIupdateWatchlistMonitorMatchRequest(@javax.annotation.Nonnull UUID monitorId, @javax.annotation.Nonnull WatchlistMonitorMatchesUpdater watchlistMonitorMatchesUpdater) {
             this.monitorId = monitorId;
             this.watchlistMonitorMatchesUpdater = watchlistMonitorMatchesUpdater;
         }
@@ -12438,10 +12532,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public APIupdateWatchlistMonitorMatchRequest updateWatchlistMonitorMatch(UUID monitorId, WatchlistMonitorMatchesUpdater watchlistMonitorMatchesUpdater) {
+    public APIupdateWatchlistMonitorMatchRequest updateWatchlistMonitorMatch(@javax.annotation.Nonnull UUID monitorId, @javax.annotation.Nonnull WatchlistMonitorMatchesUpdater watchlistMonitorMatchesUpdater) {
         return new APIupdateWatchlistMonitorMatchRequest(monitorId, watchlistMonitorMatchesUpdater);
     }
-    private okhttp3.Call updateWebhookCall(UUID webhookId, WebhookUpdater webhookUpdater, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateWebhookCall(@javax.annotation.Nonnull UUID webhookId, @javax.annotation.Nonnull WebhookUpdater webhookUpdater, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -12488,7 +12582,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateWebhookValidateBeforeCall(UUID webhookId, WebhookUpdater webhookUpdater, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateWebhookValidateBeforeCall(@javax.annotation.Nonnull UUID webhookId, @javax.annotation.Nonnull WebhookUpdater webhookUpdater, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'webhookId' is set
         if (webhookId == null) {
             throw new ApiException("Missing the required parameter 'webhookId' when calling updateWebhook(Async)");
@@ -12504,13 +12598,13 @@ public class DefaultApi {
     }
 
 
-    private ApiResponse<Webhook> updateWebhookWithHttpInfo(UUID webhookId, WebhookUpdater webhookUpdater) throws ApiException {
+    private ApiResponse<Webhook> updateWebhookWithHttpInfo(@javax.annotation.Nonnull UUID webhookId, @javax.annotation.Nonnull WebhookUpdater webhookUpdater) throws ApiException {
         okhttp3.Call localVarCall = updateWebhookValidateBeforeCall(webhookId, webhookUpdater, null);
         Type localVarReturnType = new TypeToken<Webhook>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call updateWebhookAsync(UUID webhookId, WebhookUpdater webhookUpdater, final ApiCallback<Webhook> _callback) throws ApiException {
+    private okhttp3.Call updateWebhookAsync(@javax.annotation.Nonnull UUID webhookId, @javax.annotation.Nonnull WebhookUpdater webhookUpdater, final ApiCallback<Webhook> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateWebhookValidateBeforeCall(webhookId, webhookUpdater, _callback);
         Type localVarReturnType = new TypeToken<Webhook>(){}.getType();
@@ -12519,10 +12613,12 @@ public class DefaultApi {
     }
 
     public class APIupdateWebhookRequest {
+        @javax.annotation.Nonnull
         private final UUID webhookId;
+        @javax.annotation.Nonnull
         private final WebhookUpdater webhookUpdater;
 
-        private APIupdateWebhookRequest(UUID webhookId, WebhookUpdater webhookUpdater) {
+        private APIupdateWebhookRequest(@javax.annotation.Nonnull UUID webhookId, @javax.annotation.Nonnull WebhookUpdater webhookUpdater) {
             this.webhookId = webhookId;
             this.webhookUpdater = webhookUpdater;
         }
@@ -12609,10 +12705,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public APIupdateWebhookRequest updateWebhook(UUID webhookId, WebhookUpdater webhookUpdater) {
+    public APIupdateWebhookRequest updateWebhook(@javax.annotation.Nonnull UUID webhookId, @javax.annotation.Nonnull WebhookUpdater webhookUpdater) {
         return new APIupdateWebhookRequest(webhookId, webhookUpdater);
     }
-    private okhttp3.Call uploadDocumentCall(DocumentTypes type, UUID applicantId, FileTransfer _file, String fileType, String side, CountryCodes issuingCountry, Boolean validateImageQuality, LocationBuilder location, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call uploadDocumentCall(@javax.annotation.Nonnull DocumentTypes type, @javax.annotation.Nonnull UUID applicantId, @javax.annotation.Nonnull FileTransfer _file, @javax.annotation.Nullable String fileType, @javax.annotation.Nullable String side, @javax.annotation.Nullable CountryCodes issuingCountry, @javax.annotation.Nullable Boolean validateImageQuality, @javax.annotation.Nullable LocationBuilder location, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -12690,7 +12786,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call uploadDocumentValidateBeforeCall(DocumentTypes type, UUID applicantId, FileTransfer _file, String fileType, String side, CountryCodes issuingCountry, Boolean validateImageQuality, LocationBuilder location, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call uploadDocumentValidateBeforeCall(@javax.annotation.Nonnull DocumentTypes type, @javax.annotation.Nonnull UUID applicantId, @javax.annotation.Nonnull FileTransfer _file, @javax.annotation.Nullable String fileType, @javax.annotation.Nullable String side, @javax.annotation.Nullable CountryCodes issuingCountry, @javax.annotation.Nullable Boolean validateImageQuality, @javax.annotation.Nullable LocationBuilder location, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'type' is set
         if (type == null) {
             throw new ApiException("Missing the required parameter 'type' when calling uploadDocument(Async)");
@@ -12711,13 +12807,13 @@ public class DefaultApi {
     }
 
 
-    private ApiResponse<Document> uploadDocumentWithHttpInfo(DocumentTypes type, UUID applicantId, FileTransfer _file, String fileType, String side, CountryCodes issuingCountry, Boolean validateImageQuality, LocationBuilder location) throws ApiException {
+    private ApiResponse<Document> uploadDocumentWithHttpInfo(@javax.annotation.Nonnull DocumentTypes type, @javax.annotation.Nonnull UUID applicantId, @javax.annotation.Nonnull FileTransfer _file, @javax.annotation.Nullable String fileType, @javax.annotation.Nullable String side, @javax.annotation.Nullable CountryCodes issuingCountry, @javax.annotation.Nullable Boolean validateImageQuality, @javax.annotation.Nullable LocationBuilder location) throws ApiException {
         okhttp3.Call localVarCall = uploadDocumentValidateBeforeCall(type, applicantId, _file, fileType, side, issuingCountry, validateImageQuality, location, null);
         Type localVarReturnType = new TypeToken<Document>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call uploadDocumentAsync(DocumentTypes type, UUID applicantId, FileTransfer _file, String fileType, String side, CountryCodes issuingCountry, Boolean validateImageQuality, LocationBuilder location, final ApiCallback<Document> _callback) throws ApiException {
+    private okhttp3.Call uploadDocumentAsync(@javax.annotation.Nonnull DocumentTypes type, @javax.annotation.Nonnull UUID applicantId, @javax.annotation.Nonnull FileTransfer _file, @javax.annotation.Nullable String fileType, @javax.annotation.Nullable String side, @javax.annotation.Nullable CountryCodes issuingCountry, @javax.annotation.Nullable Boolean validateImageQuality, @javax.annotation.Nullable LocationBuilder location, final ApiCallback<Document> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = uploadDocumentValidateBeforeCall(type, applicantId, _file, fileType, side, issuingCountry, validateImageQuality, location, _callback);
         Type localVarReturnType = new TypeToken<Document>(){}.getType();
@@ -12726,16 +12822,24 @@ public class DefaultApi {
     }
 
     public class APIuploadDocumentRequest {
+        @javax.annotation.Nonnull
         private final DocumentTypes type;
+        @javax.annotation.Nonnull
         private final UUID applicantId;
+        @javax.annotation.Nonnull
         private final FileTransfer _file;
+        @javax.annotation.Nullable
         private String fileType;
+        @javax.annotation.Nullable
         private String side;
+        @javax.annotation.Nullable
         private CountryCodes issuingCountry;
+        @javax.annotation.Nullable
         private Boolean validateImageQuality;
+        @javax.annotation.Nullable
         private LocationBuilder location;
 
-        private APIuploadDocumentRequest(DocumentTypes type, UUID applicantId, FileTransfer _file) {
+        private APIuploadDocumentRequest(@javax.annotation.Nonnull DocumentTypes type, @javax.annotation.Nonnull UUID applicantId, @javax.annotation.Nonnull FileTransfer _file) {
             this.type = type;
             this.applicantId = applicantId;
             this._file = _file;
@@ -12746,7 +12850,7 @@ public class DefaultApi {
          * @param fileType The file type of the uploaded file (optional)
          * @return APIuploadDocumentRequest
          */
-        public APIuploadDocumentRequest fileType(String fileType) {
+        public APIuploadDocumentRequest fileType(@javax.annotation.Nullable String fileType) {
             this.fileType = fileType;
             return this;
         }
@@ -12756,7 +12860,7 @@ public class DefaultApi {
          * @param side The side of the document, if applicable. The possible values are front and back (optional)
          * @return APIuploadDocumentRequest
          */
-        public APIuploadDocumentRequest side(String side) {
+        public APIuploadDocumentRequest side(@javax.annotation.Nullable String side) {
             this.side = side;
             return this;
         }
@@ -12766,7 +12870,7 @@ public class DefaultApi {
          * @param issuingCountry The issuing country of the document, a 3-letter ISO code. (optional)
          * @return APIuploadDocumentRequest
          */
-        public APIuploadDocumentRequest issuingCountry(CountryCodes issuingCountry) {
+        public APIuploadDocumentRequest issuingCountry(@javax.annotation.Nullable CountryCodes issuingCountry) {
             this.issuingCountry = issuingCountry;
             return this;
         }
@@ -12776,7 +12880,7 @@ public class DefaultApi {
          * @param validateImageQuality Defaults to false. When true the submitted image will undergo an image quality validation which may take up to 5 seconds. (optional)
          * @return APIuploadDocumentRequest
          */
-        public APIuploadDocumentRequest validateImageQuality(Boolean validateImageQuality) {
+        public APIuploadDocumentRequest validateImageQuality(@javax.annotation.Nullable Boolean validateImageQuality) {
             this.validateImageQuality = validateImageQuality;
             return this;
         }
@@ -12786,7 +12890,7 @@ public class DefaultApi {
          * @param location  (optional)
          * @return APIuploadDocumentRequest
          */
-        public APIuploadDocumentRequest location(LocationBuilder location) {
+        public APIuploadDocumentRequest location(@javax.annotation.Nullable LocationBuilder location) {
             this.location = location;
             return this;
         }
@@ -12874,10 +12978,10 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public APIuploadDocumentRequest uploadDocument(DocumentTypes type, UUID applicantId, FileTransfer _file) {
+    public APIuploadDocumentRequest uploadDocument(@javax.annotation.Nonnull DocumentTypes type, @javax.annotation.Nonnull UUID applicantId, @javax.annotation.Nonnull FileTransfer _file) {
         return new APIuploadDocumentRequest(type, applicantId, _file);
     }
-    private okhttp3.Call uploadIdPhotoCall(UUID applicantId, FileTransfer _file, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call uploadIdPhotoCall(@javax.annotation.Nullable UUID applicantId, @javax.annotation.Nullable FileTransfer _file, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -12931,19 +13035,19 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call uploadIdPhotoValidateBeforeCall(UUID applicantId, FileTransfer _file, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call uploadIdPhotoValidateBeforeCall(@javax.annotation.Nullable UUID applicantId, @javax.annotation.Nullable FileTransfer _file, final ApiCallback _callback) throws ApiException {
         return uploadIdPhotoCall(applicantId, _file, _callback);
 
     }
 
 
-    private ApiResponse<IdPhoto> uploadIdPhotoWithHttpInfo(UUID applicantId, FileTransfer _file) throws ApiException {
+    private ApiResponse<IdPhoto> uploadIdPhotoWithHttpInfo(@javax.annotation.Nullable UUID applicantId, @javax.annotation.Nullable FileTransfer _file) throws ApiException {
         okhttp3.Call localVarCall = uploadIdPhotoValidateBeforeCall(applicantId, _file, null);
         Type localVarReturnType = new TypeToken<IdPhoto>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call uploadIdPhotoAsync(UUID applicantId, FileTransfer _file, final ApiCallback<IdPhoto> _callback) throws ApiException {
+    private okhttp3.Call uploadIdPhotoAsync(@javax.annotation.Nullable UUID applicantId, @javax.annotation.Nullable FileTransfer _file, final ApiCallback<IdPhoto> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = uploadIdPhotoValidateBeforeCall(applicantId, _file, _callback);
         Type localVarReturnType = new TypeToken<IdPhoto>(){}.getType();
@@ -12952,7 +13056,9 @@ public class DefaultApi {
     }
 
     public class APIuploadIdPhotoRequest {
+        @javax.annotation.Nullable
         private UUID applicantId;
+        @javax.annotation.Nullable
         private FileTransfer _file;
 
         private APIuploadIdPhotoRequest() {
@@ -12963,7 +13069,7 @@ public class DefaultApi {
          * @param applicantId The ID of the applicant whose ID photo is being uploaded. (optional)
          * @return APIuploadIdPhotoRequest
          */
-        public APIuploadIdPhotoRequest applicantId(UUID applicantId) {
+        public APIuploadIdPhotoRequest applicantId(@javax.annotation.Nullable UUID applicantId) {
             this.applicantId = applicantId;
             return this;
         }
@@ -12973,7 +13079,7 @@ public class DefaultApi {
          * @param _file The file to be uploaded. (optional)
          * @return APIuploadIdPhotoRequest
          */
-        public APIuploadIdPhotoRequest _file(FileTransfer _file) {
+        public APIuploadIdPhotoRequest _file(@javax.annotation.Nullable FileTransfer _file) {
             this._file = _file;
             return this;
         }
@@ -13061,7 +13167,7 @@ public class DefaultApi {
     public APIuploadIdPhotoRequest uploadIdPhoto() {
         return new APIuploadIdPhotoRequest();
     }
-    private okhttp3.Call uploadLivePhotoCall(UUID applicantId, FileTransfer _file, Boolean advancedValidation, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call uploadLivePhotoCall(@javax.annotation.Nullable UUID applicantId, @javax.annotation.Nullable FileTransfer _file, @javax.annotation.Nullable Boolean advancedValidation, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -13119,19 +13225,19 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call uploadLivePhotoValidateBeforeCall(UUID applicantId, FileTransfer _file, Boolean advancedValidation, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call uploadLivePhotoValidateBeforeCall(@javax.annotation.Nullable UUID applicantId, @javax.annotation.Nullable FileTransfer _file, @javax.annotation.Nullable Boolean advancedValidation, final ApiCallback _callback) throws ApiException {
         return uploadLivePhotoCall(applicantId, _file, advancedValidation, _callback);
 
     }
 
 
-    private ApiResponse<LivePhoto> uploadLivePhotoWithHttpInfo(UUID applicantId, FileTransfer _file, Boolean advancedValidation) throws ApiException {
+    private ApiResponse<LivePhoto> uploadLivePhotoWithHttpInfo(@javax.annotation.Nullable UUID applicantId, @javax.annotation.Nullable FileTransfer _file, @javax.annotation.Nullable Boolean advancedValidation) throws ApiException {
         okhttp3.Call localVarCall = uploadLivePhotoValidateBeforeCall(applicantId, _file, advancedValidation, null);
         Type localVarReturnType = new TypeToken<LivePhoto>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call uploadLivePhotoAsync(UUID applicantId, FileTransfer _file, Boolean advancedValidation, final ApiCallback<LivePhoto> _callback) throws ApiException {
+    private okhttp3.Call uploadLivePhotoAsync(@javax.annotation.Nullable UUID applicantId, @javax.annotation.Nullable FileTransfer _file, @javax.annotation.Nullable Boolean advancedValidation, final ApiCallback<LivePhoto> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = uploadLivePhotoValidateBeforeCall(applicantId, _file, advancedValidation, _callback);
         Type localVarReturnType = new TypeToken<LivePhoto>(){}.getType();
@@ -13140,8 +13246,11 @@ public class DefaultApi {
     }
 
     public class APIuploadLivePhotoRequest {
+        @javax.annotation.Nullable
         private UUID applicantId;
+        @javax.annotation.Nullable
         private FileTransfer _file;
+        @javax.annotation.Nullable
         private Boolean advancedValidation;
 
         private APIuploadLivePhotoRequest() {
@@ -13152,7 +13261,7 @@ public class DefaultApi {
          * @param applicantId The ID of the applicant whose live photo is being uploaded. (optional)
          * @return APIuploadLivePhotoRequest
          */
-        public APIuploadLivePhotoRequest applicantId(UUID applicantId) {
+        public APIuploadLivePhotoRequest applicantId(@javax.annotation.Nullable UUID applicantId) {
             this.applicantId = applicantId;
             return this;
         }
@@ -13162,7 +13271,7 @@ public class DefaultApi {
          * @param _file The file to be uploaded. (optional)
          * @return APIuploadLivePhotoRequest
          */
-        public APIuploadLivePhotoRequest _file(FileTransfer _file) {
+        public APIuploadLivePhotoRequest _file(@javax.annotation.Nullable FileTransfer _file) {
             this._file = _file;
             return this;
         }
@@ -13172,7 +13281,7 @@ public class DefaultApi {
          * @param advancedValidation Validates that the live photo contains exactly one face. (optional, default to true)
          * @return APIuploadLivePhotoRequest
          */
-        public APIuploadLivePhotoRequest advancedValidation(Boolean advancedValidation) {
+        public APIuploadLivePhotoRequest advancedValidation(@javax.annotation.Nullable Boolean advancedValidation) {
             this.advancedValidation = advancedValidation;
             return this;
         }
@@ -13260,7 +13369,7 @@ public class DefaultApi {
     public APIuploadLivePhotoRequest uploadLivePhoto() {
         return new APIuploadLivePhotoRequest();
     }
-    private okhttp3.Call uploadSigningDocumentCall(UUID applicantId, FileTransfer _file, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call uploadSigningDocumentCall(@javax.annotation.Nonnull UUID applicantId, @javax.annotation.Nonnull FileTransfer _file, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -13314,7 +13423,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call uploadSigningDocumentValidateBeforeCall(UUID applicantId, FileTransfer _file, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call uploadSigningDocumentValidateBeforeCall(@javax.annotation.Nonnull UUID applicantId, @javax.annotation.Nonnull FileTransfer _file, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'applicantId' is set
         if (applicantId == null) {
             throw new ApiException("Missing the required parameter 'applicantId' when calling uploadSigningDocument(Async)");
@@ -13330,13 +13439,13 @@ public class DefaultApi {
     }
 
 
-    private ApiResponse<SigningDocument> uploadSigningDocumentWithHttpInfo(UUID applicantId, FileTransfer _file) throws ApiException {
+    private ApiResponse<SigningDocument> uploadSigningDocumentWithHttpInfo(@javax.annotation.Nonnull UUID applicantId, @javax.annotation.Nonnull FileTransfer _file) throws ApiException {
         okhttp3.Call localVarCall = uploadSigningDocumentValidateBeforeCall(applicantId, _file, null);
         Type localVarReturnType = new TypeToken<SigningDocument>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call uploadSigningDocumentAsync(UUID applicantId, FileTransfer _file, final ApiCallback<SigningDocument> _callback) throws ApiException {
+    private okhttp3.Call uploadSigningDocumentAsync(@javax.annotation.Nonnull UUID applicantId, @javax.annotation.Nonnull FileTransfer _file, final ApiCallback<SigningDocument> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = uploadSigningDocumentValidateBeforeCall(applicantId, _file, _callback);
         Type localVarReturnType = new TypeToken<SigningDocument>(){}.getType();
@@ -13345,10 +13454,12 @@ public class DefaultApi {
     }
 
     public class APIuploadSigningDocumentRequest {
+        @javax.annotation.Nonnull
         private final UUID applicantId;
+        @javax.annotation.Nonnull
         private final FileTransfer _file;
 
-        private APIuploadSigningDocumentRequest(UUID applicantId, FileTransfer _file) {
+        private APIuploadSigningDocumentRequest(@javax.annotation.Nonnull UUID applicantId, @javax.annotation.Nonnull FileTransfer _file) {
             this.applicantId = applicantId;
             this._file = _file;
         }
@@ -13435,7 +13546,7 @@ public class DefaultApi {
         <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
      </table>
      */
-    public APIuploadSigningDocumentRequest uploadSigningDocument(UUID applicantId, FileTransfer _file) {
+    public APIuploadSigningDocumentRequest uploadSigningDocument(@javax.annotation.Nonnull UUID applicantId, @javax.annotation.Nonnull FileTransfer _file) {
         return new APIuploadSigningDocumentRequest(applicantId, _file);
     }
 }

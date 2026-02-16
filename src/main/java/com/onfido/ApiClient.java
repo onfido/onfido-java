@@ -63,7 +63,7 @@ import com.onfido.auth.ApiKeyAuth;
  */
 public class ApiClient {
 
-    private String basePath = "https://api.eu.onfido.com/v3.6";
+    protected String basePath = "https://api.eu.onfido.com/v3.6";
     protected List<ServerConfiguration> servers = new ArrayList<ServerConfiguration>(Arrays.asList(
     new ServerConfiguration(
       "https://api.{region}.onfido.com/v3.6",
@@ -85,26 +85,26 @@ public class ApiClient {
   ));
     protected Integer serverIndex = 0;
     protected Map<String, String> serverVariables = null;
-    private boolean debugging = false;
-    private Map<String, String> defaultHeaderMap = new HashMap<String, String>();
-    private Map<String, String> defaultCookieMap = new HashMap<String, String>();
-    private String tempFolderPath = null;
+    protected boolean debugging = false;
+    protected Map<String, String> defaultHeaderMap = new HashMap<String, String>();
+    protected Map<String, String> defaultCookieMap = new HashMap<String, String>();
+    protected String tempFolderPath = null;
 
-    private Map<String, Authentication> authentications;
+    protected Map<String, Authentication> authentications;
 
-    private DateFormat dateFormat;
-    private DateFormat datetimeFormat;
-    private boolean lenientDatetimeFormat;
-    private int dateLength;
+    protected DateFormat dateFormat;
+    protected DateFormat datetimeFormat;
+    protected boolean lenientDatetimeFormat;
+    protected int dateLength;
 
-    private InputStream sslCaCert;
-    private boolean verifyingSsl;
-    private KeyManager[] keyManagers;
+    protected InputStream sslCaCert;
+    protected boolean verifyingSsl;
+    protected KeyManager[] keyManagers;
 
-    private OkHttpClient httpClient;
-    private JSON json;
+    protected OkHttpClient httpClient;
+    protected JSON json;
 
-    private HttpLoggingInterceptor loggingInterceptor;
+    protected HttpLoggingInterceptor loggingInterceptor;
 
 
     public enum Region {
@@ -142,11 +142,11 @@ public class ApiClient {
         authentications = Collections.unmodifiableMap(authentications);
     }
 
-    private void initHttpClient() {
+    protected void initHttpClient() {
         initHttpClient(Collections.<Interceptor>emptyList());
     }
 
-    private void initHttpClient(List<Interceptor> interceptors) {
+    protected void initHttpClient(List<Interceptor> interceptors) {
         OkHttpClient.Builder builder = new OkHttpClient.Builder();
         builder.addNetworkInterceptor(getProgressInterceptor());
         for (Interceptor interceptor: interceptors) {
@@ -156,7 +156,7 @@ public class ApiClient {
         httpClient = builder.build();
     }
 
-    private void init() {
+    protected void init() {
         verifyingSsl = true;
 
         json = new JSON();
@@ -179,8 +179,8 @@ public class ApiClient {
     /**
      * Set base path
      *
-     * @param basePath Base path of the URL (e.g https://api.eu.onfido.com/v3.6
-     * @return An instance of OkHttpClient
+     * @param basePath Base path of the URL (e.g https://api.eu.onfido.com/v3.6)
+     * @return An instance of ApiClient
      */
     public ApiClient setBasePath(String basePath) {
         this.basePath = basePath;
@@ -211,7 +211,7 @@ public class ApiClient {
      * Set HTTP client, which must never be null.
      *
      * @param newHttpClient An instance of OkHttpClient
-     * @return Api Client
+     * @return ApiClient
      * @throws java.lang.NullPointerException when newHttpClient is null
      */
     public ApiClient setHttpClient(OkHttpClient newHttpClient) {
@@ -712,7 +712,7 @@ public class ApiClient {
      * @param value The value of the parameter.
      * @return A list of {@code Pair} objects.
      */
-    public List<Pair> parameterToPairs(String collectionFormat, String name, Collection value) {
+    public List<Pair> parameterToPairs(String collectionFormat, String name, Collection<?> value) {
         List<Pair> params = new ArrayList<Pair>();
 
         // preconditions
@@ -819,7 +819,7 @@ public class ApiClient {
      * @return The sanitized filename
      */
     public String sanitizeFilename(String filename) {
-        return filename.replaceAll(".*[/\\\\]", "");
+        return filename.replaceFirst("^.*[/\\\\]", "");
     }
 
     /**
@@ -936,17 +936,8 @@ public class ApiClient {
             }
         }
 
-        String respBody;
-        try {
-            if (response.body() != null)
-                respBody = response.body().string();
-            else
-                respBody = null;
-        } catch (IOException e) {
-            throw new ApiException(e);
-        }
-
-        if (respBody == null || "".equals(respBody)) {
+        ResponseBody respBody = response.body();
+        if (respBody == null) {
             return null;
         }
 
@@ -955,27 +946,25 @@ public class ApiClient {
             // ensuring a default content type
             contentType = "application/json";
         }
-        if (isJsonMime(contentType)) {
-            try {
-                return JSON.deserialize(respBody, returnType);
-            } catch (JsonParseException e) {
+        try {
+            if (isJsonMime(contentType)) {
+                return JSON.deserialize(respBody.byteStream(), returnType);
+            } else if (returnType.equals(String.class)) {
+                String respBodyString = respBody.string();
+                if (respBodyString.isEmpty()) {
+                    return null;
+                }
+                // Expecting string, return the raw response body.
+                return (T) respBodyString;
+            } else {
                 throw new ApiException(
-                        e.getMessage(),
-                        e,
-                        response.code(),
-                        response.headers().toMultimap(),
-                        respBody
-                );
-            }
-        } else if (returnType.equals(String.class)) {
-            // Expecting string, return the raw response body.
-            return (T) respBody;
-        } else {
-            throw new ApiException(
                     "Content type \"" + contentType + "\" is not supported for type: " + returnType,
                     response.code(),
                     response.headers().toMultimap(),
-                    respBody);
+                    response.body().string());
+            }
+        } catch (IOException e) {
+            throw new ApiException(e);
         }
     }
 
@@ -1293,7 +1282,8 @@ public class ApiClient {
             if (serverIndex != null) {
                 if (serverIndex < 0 || serverIndex >= servers.size()) {
                     throw new ArrayIndexOutOfBoundsException(String.format(
-                    "Invalid index %d when selecting the host settings. Must be less than %d", serverIndex, servers.size()
+                        Locale.ROOT,
+                        "Invalid index %d when selecting the host settings. Must be less than %d", serverIndex, servers.size()
                     ));
                 }
                 baseURL = servers.get(serverIndex).URL(serverVariables);
@@ -1365,11 +1355,11 @@ public class ApiClient {
      */
     public void processCookieParams(Map<String, String> cookieParams, Request.Builder reqBuilder) {
         for (Entry<String, String> param : cookieParams.entrySet()) {
-            reqBuilder.addHeader("Cookie", String.format("%s=%s", param.getKey(), param.getValue()));
+            reqBuilder.addHeader("Cookie", String.format(Locale.ROOT, "%s=%s", param.getKey(), param.getValue()));
         }
         for (Entry<String, String> param : defaultCookieMap.entrySet()) {
             if (!cookieParams.containsKey(param.getKey())) {
-                reqBuilder.addHeader("Cookie", String.format("%s=%s", param.getKey(), param.getValue()));
+                reqBuilder.addHeader("Cookie", String.format(Locale.ROOT, "%s=%s", param.getKey(), param.getValue()));
             }
         }
     }
@@ -1483,7 +1473,7 @@ public class ApiClient {
      * @param key The key of the Header element
      * @param obj The complex object to add to the Header
      */
-    private void addPartToMultiPartBuilder(MultipartBody.Builder mpBuilder, String key, Object obj) {
+    protected void addPartToMultiPartBuilder(MultipartBody.Builder mpBuilder, String key, Object obj) {
         RequestBody requestBody;
         if (obj instanceof String) {
             requestBody = RequestBody.create((String) obj, MediaType.parse("text/plain"));
@@ -1507,7 +1497,7 @@ public class ApiClient {
      * Get network interceptor to add it to the httpClient to track download progress for
      * async requests.
      */
-    private Interceptor getProgressInterceptor() {
+    protected Interceptor getProgressInterceptor() {
         return new Interceptor() {
             @Override
             public Response intercept(Interceptor.Chain chain) throws IOException {
@@ -1528,7 +1518,7 @@ public class ApiClient {
      * Apply SSL related settings to httpClient according to the current values of
      * verifyingSsl and sslCaCert.
      */
-    private void applySslSettings() {
+    protected void applySslSettings() {
         try {
             TrustManager[] trustManagers;
             HostnameVerifier hostnameVerifier;
@@ -1573,7 +1563,7 @@ public class ApiClient {
         }
     }
 
-    private KeyStore newEmptyKeyStore(char[] password) throws GeneralSecurityException {
+    protected KeyStore newEmptyKeyStore(char[] password) throws GeneralSecurityException {
         try {
             KeyStore keyStore = KeyStore.getInstance(KeyStore.getDefaultType());
             keyStore.load(null, password);
@@ -1590,7 +1580,7 @@ public class ApiClient {
      * @return The string representation of the HTTP request body
      * @throws com.onfido.ApiException If fail to serialize the request body object into a string
      */
-    private String requestBodyToString(RequestBody requestBody) throws ApiException {
+    protected String requestBodyToString(RequestBody requestBody) throws ApiException {
         if (requestBody != null) {
             try {
                 final Buffer buffer = new Buffer();

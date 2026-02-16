@@ -14,6 +14,7 @@
 package com.onfido.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -46,13 +47,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.onfido.JSON;
 
 /**
  * FacialSimilarityReportShared
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.16.0")
 public class FacialSimilarityReportShared {
   public static final String SERIALIZED_NAME_DOCUMENTS = "documents";
   @SerializedName(SERIALIZED_NAME_DOCUMENTS)
@@ -315,15 +317,10 @@ public class FacialSimilarityReportShared {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("documents");
-    openapiFields.add("live_photos");
-    openapiFields.add("live_videos");
-    openapiFields.add("motion_captures");
-    openapiFields.add("id_photos");
+    openapiFields = new HashSet<String>(Arrays.asList("documents", "live_photos", "live_videos", "motion_captures", "id_photos"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -335,7 +332,7 @@ public class FacialSimilarityReportShared {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!FacialSimilarityReportShared.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in FacialSimilarityReportShared is not found in the empty JSON string", FacialSimilarityReportShared.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in FacialSimilarityReportShared is not found in the empty JSON string", FacialSimilarityReportShared.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -344,7 +341,7 @@ public class FacialSimilarityReportShared {
         if (jsonArraydocuments != null) {
           // ensure the json data is an array
           if (!jsonObj.get("documents").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `documents` to be an array in the JSON string but got `%s`", jsonObj.get("documents").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `documents` to be an array in the JSON string but got `%s`", jsonObj.get("documents").toString()));
           }
 
           // validate the optional field `documents` (array)
@@ -358,7 +355,7 @@ public class FacialSimilarityReportShared {
         if (jsonArraylivePhotos != null) {
           // ensure the json data is an array
           if (!jsonObj.get("live_photos").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `live_photos` to be an array in the JSON string but got `%s`", jsonObj.get("live_photos").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `live_photos` to be an array in the JSON string but got `%s`", jsonObj.get("live_photos").toString()));
           }
 
           // validate the optional field `live_photos` (array)
@@ -372,7 +369,7 @@ public class FacialSimilarityReportShared {
         if (jsonArrayliveVideos != null) {
           // ensure the json data is an array
           if (!jsonObj.get("live_videos").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `live_videos` to be an array in the JSON string but got `%s`", jsonObj.get("live_videos").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `live_videos` to be an array in the JSON string but got `%s`", jsonObj.get("live_videos").toString()));
           }
 
           // validate the optional field `live_videos` (array)
@@ -386,7 +383,7 @@ public class FacialSimilarityReportShared {
         if (jsonArraymotionCaptures != null) {
           // ensure the json data is an array
           if (!jsonObj.get("motion_captures").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `motion_captures` to be an array in the JSON string but got `%s`", jsonObj.get("motion_captures").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `motion_captures` to be an array in the JSON string but got `%s`", jsonObj.get("motion_captures").toString()));
           }
 
           // validate the optional field `motion_captures` (array)
@@ -400,7 +397,7 @@ public class FacialSimilarityReportShared {
         if (jsonArrayidPhotos != null) {
           // ensure the json data is an array
           if (!jsonObj.get("id_photos").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `id_photos` to be an array in the JSON string but got `%s`", jsonObj.get("id_photos").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `id_photos` to be an array in the JSON string but got `%s`", jsonObj.get("id_photos").toString()));
           }
 
           // validate the optional field `id_photos` (array)
@@ -468,7 +465,7 @@ public class FacialSimilarityReportShared {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

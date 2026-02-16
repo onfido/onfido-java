@@ -14,6 +14,7 @@
 package com.onfido.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -47,13 +48,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.onfido.JSON;
 
 /**
  * LiveVideo
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.16.0")
 public class LiveVideo {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -362,18 +364,10 @@ public class LiveVideo {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("id");
-    openapiFields.add("created_at");
-    openapiFields.add("href");
-    openapiFields.add("download_href");
-    openapiFields.add("file_name");
-    openapiFields.add("file_size");
-    openapiFields.add("file_type");
-    openapiFields.add("challenge");
+    openapiFields = new HashSet<String>(Arrays.asList("id", "created_at", "href", "download_href", "file_name", "file_size", "file_type", "challenge"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -385,28 +379,28 @@ public class LiveVideo {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!LiveVideo.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in LiveVideo is not found in the empty JSON string", LiveVideo.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in LiveVideo is not found in the empty JSON string", LiveVideo.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("id") != null && !jsonObj.get("id").isJsonNull()) && !jsonObj.get("id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
       }
       if ((jsonObj.get("href") != null && !jsonObj.get("href").isJsonNull()) && !jsonObj.get("href").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `href` to be a primitive type in the JSON string but got `%s`", jsonObj.get("href").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `href` to be a primitive type in the JSON string but got `%s`", jsonObj.get("href").toString()));
       }
       if ((jsonObj.get("download_href") != null && !jsonObj.get("download_href").isJsonNull()) && !jsonObj.get("download_href").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `download_href` to be a primitive type in the JSON string but got `%s`", jsonObj.get("download_href").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `download_href` to be a primitive type in the JSON string but got `%s`", jsonObj.get("download_href").toString()));
       }
       if ((jsonObj.get("file_name") != null && !jsonObj.get("file_name").isJsonNull()) && !jsonObj.get("file_name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `file_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("file_name").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `file_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("file_name").toString()));
       }
       if ((jsonObj.get("file_type") != null && !jsonObj.get("file_type").isJsonNull()) && !jsonObj.get("file_type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `file_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("file_type").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `file_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("file_type").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("challenge") != null && !jsonObj.get("challenge").isJsonNull() && !jsonObj.get("challenge").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `challenge` to be an array in the JSON string but got `%s`", jsonObj.get("challenge").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `challenge` to be an array in the JSON string but got `%s`", jsonObj.get("challenge").toString()));
       }
   }
 
@@ -467,7 +461,7 @@ public class LiveVideo {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

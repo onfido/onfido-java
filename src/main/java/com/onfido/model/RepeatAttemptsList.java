@@ -14,6 +14,7 @@
 package com.onfido.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -46,13 +47,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.onfido.JSON;
 
 /**
  * RepeatAttemptsList
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.16.0")
 public class RepeatAttemptsList {
   public static final String SERIALIZED_NAME_REPORT_ID = "report_id";
   @SerializedName(SERIALIZED_NAME_REPORT_ID)
@@ -285,16 +287,10 @@ public class RepeatAttemptsList {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("report_id");
-    openapiFields.add("repeat_attempts");
-    openapiFields.add("attempts_count");
-    openapiFields.add("attempts_clear_rate");
-    openapiFields.add("unique_mismatches_count");
+    openapiFields = new HashSet<String>(Arrays.asList("report_id", "repeat_attempts", "attempts_count", "attempts_clear_rate", "unique_mismatches_count"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("repeat_attempts");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("repeat_attempts"));
   }
 
   /**
@@ -306,23 +302,23 @@ public class RepeatAttemptsList {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!RepeatAttemptsList.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in RepeatAttemptsList is not found in the empty JSON string", RepeatAttemptsList.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in RepeatAttemptsList is not found in the empty JSON string", RepeatAttemptsList.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : RepeatAttemptsList.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("report_id") != null && !jsonObj.get("report_id").isJsonNull()) && !jsonObj.get("report_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `report_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("report_id").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `report_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("report_id").toString()));
       }
       // ensure the json data is an array
       if (!jsonObj.get("repeat_attempts").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `repeat_attempts` to be an array in the JSON string but got `%s`", jsonObj.get("repeat_attempts").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `repeat_attempts` to be an array in the JSON string but got `%s`", jsonObj.get("repeat_attempts").toString()));
       }
 
       JsonArray jsonArrayrepeatAttempts = jsonObj.getAsJsonArray("repeat_attempts");
@@ -389,7 +385,7 @@ public class RepeatAttemptsList {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

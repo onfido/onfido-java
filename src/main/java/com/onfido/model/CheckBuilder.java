@@ -14,6 +14,7 @@
 package com.onfido.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -48,13 +49,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.onfido.JSON;
 
 /**
  * CheckBuilder
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.16.0")
 public class CheckBuilder {
   public static final String SERIALIZED_NAME_WEBHOOK_IDS = "webhook_ids";
   @SerializedName(SERIALIZED_NAME_WEBHOOK_IDS)
@@ -556,26 +558,10 @@ public class CheckBuilder {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("webhook_ids");
-    openapiFields.add("applicant_id");
-    openapiFields.add("applicant_provides_data");
-    openapiFields.add("tags");
-    openapiFields.add("redirect_uri");
-    openapiFields.add("privacy_notices_read_consent_given");
-    openapiFields.add("report_names");
-    openapiFields.add("document_ids");
-    openapiFields.add("asynchronous");
-    openapiFields.add("suppress_form_emails");
-    openapiFields.add("sub_result");
-    openapiFields.add("consider");
-    openapiFields.add("us_driving_licence");
-    openapiFields.add("report_configuration");
+    openapiFields = new HashSet<String>(Arrays.asList("webhook_ids", "applicant_id", "applicant_provides_data", "tags", "redirect_uri", "privacy_notices_read_consent_given", "report_names", "document_ids", "asynchronous", "suppress_form_emails", "sub_result", "consider", "us_driving_licence", "report_configuration"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("applicant_id");
-    openapiRequiredFields.add("report_names");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("applicant_id", "report_names"));
   }
 
   /**
@@ -587,47 +573,47 @@ public class CheckBuilder {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!CheckBuilder.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in CheckBuilder is not found in the empty JSON string", CheckBuilder.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in CheckBuilder is not found in the empty JSON string", CheckBuilder.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : CheckBuilder.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       // ensure the optional json data is an array if present
       if (jsonObj.get("webhook_ids") != null && !jsonObj.get("webhook_ids").isJsonNull() && !jsonObj.get("webhook_ids").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `webhook_ids` to be an array in the JSON string but got `%s`", jsonObj.get("webhook_ids").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `webhook_ids` to be an array in the JSON string but got `%s`", jsonObj.get("webhook_ids").toString()));
       }
       if (!jsonObj.get("applicant_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `applicant_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("applicant_id").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `applicant_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("applicant_id").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("tags") != null && !jsonObj.get("tags").isJsonNull() && !jsonObj.get("tags").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
       }
       if ((jsonObj.get("redirect_uri") != null && !jsonObj.get("redirect_uri").isJsonNull()) && !jsonObj.get("redirect_uri").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `redirect_uri` to be a primitive type in the JSON string but got `%s`", jsonObj.get("redirect_uri").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `redirect_uri` to be a primitive type in the JSON string but got `%s`", jsonObj.get("redirect_uri").toString()));
       }
       // ensure the required json array is present
       if (jsonObj.get("report_names") == null) {
         throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
       } else if (!jsonObj.get("report_names").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `report_names` to be an array in the JSON string but got `%s`", jsonObj.get("report_names").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `report_names` to be an array in the JSON string but got `%s`", jsonObj.get("report_names").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("document_ids") != null && !jsonObj.get("document_ids").isJsonNull() && !jsonObj.get("document_ids").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `document_ids` to be an array in the JSON string but got `%s`", jsonObj.get("document_ids").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `document_ids` to be an array in the JSON string but got `%s`", jsonObj.get("document_ids").toString()));
       }
       if ((jsonObj.get("sub_result") != null && !jsonObj.get("sub_result").isJsonNull()) && !jsonObj.get("sub_result").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `sub_result` to be a primitive type in the JSON string but got `%s`", jsonObj.get("sub_result").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `sub_result` to be a primitive type in the JSON string but got `%s`", jsonObj.get("sub_result").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("consider") != null && !jsonObj.get("consider").isJsonNull() && !jsonObj.get("consider").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `consider` to be an array in the JSON string but got `%s`", jsonObj.get("consider").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `consider` to be an array in the JSON string but got `%s`", jsonObj.get("consider").toString()));
       }
       // validate the optional field `us_driving_licence`
       if (jsonObj.get("us_driving_licence") != null && !jsonObj.get("us_driving_licence").isJsonNull()) {
@@ -696,7 +682,7 @@ public class CheckBuilder {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

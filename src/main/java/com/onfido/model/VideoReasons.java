@@ -14,6 +14,7 @@
 package com.onfido.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -42,13 +43,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.onfido.JSON;
 
 /**
  * VideoReasons
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.16.0")
 public class VideoReasons {
   public static final String SERIALIZED_NAME_FAKE_WEBCAM = "fake_webcam";
   @SerializedName(SERIALIZED_NAME_FAKE_WEBCAM)
@@ -245,14 +247,10 @@ public class VideoReasons {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("fake_webcam");
-    openapiFields.add("challenge_reuse");
-    openapiFields.add("emulator");
-    openapiFields.add("reasons");
+    openapiFields = new HashSet<String>(Arrays.asList("fake_webcam", "challenge_reuse", "emulator", "reasons"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -264,21 +262,21 @@ public class VideoReasons {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!VideoReasons.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in VideoReasons is not found in the empty JSON string", VideoReasons.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in VideoReasons is not found in the empty JSON string", VideoReasons.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("fake_webcam") != null && !jsonObj.get("fake_webcam").isJsonNull()) && !jsonObj.get("fake_webcam").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `fake_webcam` to be a primitive type in the JSON string but got `%s`", jsonObj.get("fake_webcam").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `fake_webcam` to be a primitive type in the JSON string but got `%s`", jsonObj.get("fake_webcam").toString()));
       }
       if ((jsonObj.get("challenge_reuse") != null && !jsonObj.get("challenge_reuse").isJsonNull()) && !jsonObj.get("challenge_reuse").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `challenge_reuse` to be a primitive type in the JSON string but got `%s`", jsonObj.get("challenge_reuse").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `challenge_reuse` to be a primitive type in the JSON string but got `%s`", jsonObj.get("challenge_reuse").toString()));
       }
       if ((jsonObj.get("emulator") != null && !jsonObj.get("emulator").isJsonNull()) && !jsonObj.get("emulator").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `emulator` to be a primitive type in the JSON string but got `%s`", jsonObj.get("emulator").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `emulator` to be a primitive type in the JSON string but got `%s`", jsonObj.get("emulator").toString()));
       }
       if ((jsonObj.get("reasons") != null && !jsonObj.get("reasons").isJsonNull()) && !jsonObj.get("reasons").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `reasons` to be a primitive type in the JSON string but got `%s`", jsonObj.get("reasons").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `reasons` to be a primitive type in the JSON string but got `%s`", jsonObj.get("reasons").toString()));
       }
   }
 
@@ -339,7 +337,7 @@ public class VideoReasons {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

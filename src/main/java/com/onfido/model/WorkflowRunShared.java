@@ -14,6 +14,7 @@
 package com.onfido.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -48,13 +49,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.onfido.JSON;
 
 /**
  * WorkflowRunShared
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.16.0")
 public class WorkflowRunShared {
   public static final String SERIALIZED_NAME_APPLICANT_ID = "applicant_id";
   @SerializedName(SERIALIZED_NAME_APPLICANT_ID)
@@ -348,19 +350,10 @@ public class WorkflowRunShared {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("applicant_id");
-    openapiFields.add("workflow_id");
-    openapiFields.add("tags");
-    openapiFields.add("customer_user_id");
-    openapiFields.add("link");
-    openapiFields.add("created_at");
-    openapiFields.add("updated_at");
+    openapiFields = new HashSet<String>(Arrays.asList("applicant_id", "workflow_id", "tags", "customer_user_id", "link", "created_at", "updated_at"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("applicant_id");
-    openapiRequiredFields.add("workflow_id");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("applicant_id", "workflow_id"));
   }
 
   /**
@@ -372,29 +365,29 @@ public class WorkflowRunShared {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!WorkflowRunShared.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in WorkflowRunShared is not found in the empty JSON string", WorkflowRunShared.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in WorkflowRunShared is not found in the empty JSON string", WorkflowRunShared.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : WorkflowRunShared.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("applicant_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `applicant_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("applicant_id").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `applicant_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("applicant_id").toString()));
       }
       if (!jsonObj.get("workflow_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `workflow_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("workflow_id").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `workflow_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("workflow_id").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("tags") != null && !jsonObj.get("tags").isJsonNull() && !jsonObj.get("tags").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
       }
       if ((jsonObj.get("customer_user_id") != null && !jsonObj.get("customer_user_id").isJsonNull()) && !jsonObj.get("customer_user_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `customer_user_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("customer_user_id").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `customer_user_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("customer_user_id").toString()));
       }
       // validate the optional field `link`
       if (jsonObj.get("link") != null && !jsonObj.get("link").isJsonNull()) {
@@ -459,7 +452,7 @@ public class WorkflowRunShared {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

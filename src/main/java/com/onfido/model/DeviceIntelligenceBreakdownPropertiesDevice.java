@@ -14,6 +14,7 @@
 package com.onfido.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -44,13 +45,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.onfido.JSON;
 
 /**
  * DeviceIntelligenceBreakdownPropertiesDevice
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.16.0")
 public class DeviceIntelligenceBreakdownPropertiesDevice {
   public static final String SERIALIZED_NAME_SDK_VERSION = "sdk_version";
   @SerializedName(SERIALIZED_NAME_SDK_VERSION)
@@ -794,24 +796,10 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("sdk_version");
-    openapiFields.add("sdk_source");
-    openapiFields.add("authentication_type");
-    openapiFields.add("raw_model");
-    openapiFields.add("os");
-    openapiFields.add("browser");
-    openapiFields.add("emulator");
-    openapiFields.add("randomized_device");
-    openapiFields.add("fake_network_request");
-    openapiFields.add("ip_reputation");
-    openapiFields.add("device_fingerprint_reuse");
-    openapiFields.add("single_device_used");
-    openapiFields.add("document_capture");
-    openapiFields.add("biometric_capture");
+    openapiFields = new HashSet<String>(Arrays.asList("sdk_version", "sdk_source", "authentication_type", "raw_model", "os", "browser", "emulator", "randomized_device", "fake_network_request", "ip_reputation", "device_fingerprint_reuse", "single_device_used", "document_capture", "biometric_capture"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -823,52 +811,52 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!DeviceIntelligenceBreakdownPropertiesDevice.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in DeviceIntelligenceBreakdownPropertiesDevice is not found in the empty JSON string", DeviceIntelligenceBreakdownPropertiesDevice.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in DeviceIntelligenceBreakdownPropertiesDevice is not found in the empty JSON string", DeviceIntelligenceBreakdownPropertiesDevice.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("sdk_version") != null && !jsonObj.get("sdk_version").isJsonNull()) && !jsonObj.get("sdk_version").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `sdk_version` to be a primitive type in the JSON string but got `%s`", jsonObj.get("sdk_version").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `sdk_version` to be a primitive type in the JSON string but got `%s`", jsonObj.get("sdk_version").toString()));
       }
       if ((jsonObj.get("sdk_source") != null && !jsonObj.get("sdk_source").isJsonNull()) && !jsonObj.get("sdk_source").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `sdk_source` to be a primitive type in the JSON string but got `%s`", jsonObj.get("sdk_source").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `sdk_source` to be a primitive type in the JSON string but got `%s`", jsonObj.get("sdk_source").toString()));
       }
       // validate the optional field `sdk_source`
       if (jsonObj.get("sdk_source") != null && !jsonObj.get("sdk_source").isJsonNull()) {
         SdkSourceEnum.validateJsonElement(jsonObj.get("sdk_source"));
       }
       if ((jsonObj.get("authentication_type") != null && !jsonObj.get("authentication_type").isJsonNull()) && !jsonObj.get("authentication_type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `authentication_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("authentication_type").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `authentication_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("authentication_type").toString()));
       }
       // validate the optional field `authentication_type`
       if (jsonObj.get("authentication_type") != null && !jsonObj.get("authentication_type").isJsonNull()) {
         AuthenticationTypeEnum.validateJsonElement(jsonObj.get("authentication_type"));
       }
       if ((jsonObj.get("raw_model") != null && !jsonObj.get("raw_model").isJsonNull()) && !jsonObj.get("raw_model").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `raw_model` to be a primitive type in the JSON string but got `%s`", jsonObj.get("raw_model").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `raw_model` to be a primitive type in the JSON string but got `%s`", jsonObj.get("raw_model").toString()));
       }
       if ((jsonObj.get("os") != null && !jsonObj.get("os").isJsonNull()) && !jsonObj.get("os").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `os` to be a primitive type in the JSON string but got `%s`", jsonObj.get("os").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `os` to be a primitive type in the JSON string but got `%s`", jsonObj.get("os").toString()));
       }
       if ((jsonObj.get("browser") != null && !jsonObj.get("browser").isJsonNull()) && !jsonObj.get("browser").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `browser` to be a primitive type in the JSON string but got `%s`", jsonObj.get("browser").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `browser` to be a primitive type in the JSON string but got `%s`", jsonObj.get("browser").toString()));
       }
       if ((jsonObj.get("ip_reputation") != null && !jsonObj.get("ip_reputation").isJsonNull()) && !jsonObj.get("ip_reputation").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `ip_reputation` to be a primitive type in the JSON string but got `%s`", jsonObj.get("ip_reputation").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `ip_reputation` to be a primitive type in the JSON string but got `%s`", jsonObj.get("ip_reputation").toString()));
       }
       // validate the optional field `ip_reputation`
       if (jsonObj.get("ip_reputation") != null && !jsonObj.get("ip_reputation").isJsonNull()) {
         IpReputationEnum.validateJsonElement(jsonObj.get("ip_reputation"));
       }
       if ((jsonObj.get("document_capture") != null && !jsonObj.get("document_capture").isJsonNull()) && !jsonObj.get("document_capture").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `document_capture` to be a primitive type in the JSON string but got `%s`", jsonObj.get("document_capture").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `document_capture` to be a primitive type in the JSON string but got `%s`", jsonObj.get("document_capture").toString()));
       }
       // validate the optional field `document_capture`
       if (jsonObj.get("document_capture") != null && !jsonObj.get("document_capture").isJsonNull()) {
         DocumentCaptureEnum.validateJsonElement(jsonObj.get("document_capture"));
       }
       if ((jsonObj.get("biometric_capture") != null && !jsonObj.get("biometric_capture").isJsonNull()) && !jsonObj.get("biometric_capture").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `biometric_capture` to be a primitive type in the JSON string but got `%s`", jsonObj.get("biometric_capture").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `biometric_capture` to be a primitive type in the JSON string but got `%s`", jsonObj.get("biometric_capture").toString()));
       }
       // validate the optional field `biometric_capture`
       if (jsonObj.get("biometric_capture") != null && !jsonObj.get("biometric_capture").isJsonNull()) {
@@ -933,7 +921,7 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

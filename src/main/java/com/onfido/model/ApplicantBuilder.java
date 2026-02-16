@@ -14,6 +14,7 @@
 package com.onfido.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -49,13 +50,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.onfido.JSON;
 
 /**
  * ApplicantBuilder
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.16.0")
 public class ApplicantBuilder {
   public static final String SERIALIZED_NAME_EMAIL = "email";
   @SerializedName(SERIALIZED_NAME_EMAIL)
@@ -398,21 +400,10 @@ public class ApplicantBuilder {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("email");
-    openapiFields.add("dob");
-    openapiFields.add("id_numbers");
-    openapiFields.add("phone_number");
-    openapiFields.add("consents");
-    openapiFields.add("address");
-    openapiFields.add("location");
-    openapiFields.add("first_name");
-    openapiFields.add("last_name");
+    openapiFields = new HashSet<String>(Arrays.asList("email", "dob", "id_numbers", "phone_number", "consents", "address", "location", "first_name", "last_name"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("first_name");
-    openapiRequiredFields.add("last_name");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("first_name", "last_name"));
   }
 
   /**
@@ -424,26 +415,26 @@ public class ApplicantBuilder {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ApplicantBuilder.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ApplicantBuilder is not found in the empty JSON string", ApplicantBuilder.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in ApplicantBuilder is not found in the empty JSON string", ApplicantBuilder.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : ApplicantBuilder.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("email") != null && !jsonObj.get("email").isJsonNull()) && !jsonObj.get("email").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `email` to be a primitive type in the JSON string but got `%s`", jsonObj.get("email").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `email` to be a primitive type in the JSON string but got `%s`", jsonObj.get("email").toString()));
       }
       if (jsonObj.get("id_numbers") != null && !jsonObj.get("id_numbers").isJsonNull()) {
         JsonArray jsonArrayidNumbers = jsonObj.getAsJsonArray("id_numbers");
         if (jsonArrayidNumbers != null) {
           // ensure the json data is an array
           if (!jsonObj.get("id_numbers").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `id_numbers` to be an array in the JSON string but got `%s`", jsonObj.get("id_numbers").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `id_numbers` to be an array in the JSON string but got `%s`", jsonObj.get("id_numbers").toString()));
           }
 
           // validate the optional field `id_numbers` (array)
@@ -453,14 +444,14 @@ public class ApplicantBuilder {
         }
       }
       if ((jsonObj.get("phone_number") != null && !jsonObj.get("phone_number").isJsonNull()) && !jsonObj.get("phone_number").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `phone_number` to be a primitive type in the JSON string but got `%s`", jsonObj.get("phone_number").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `phone_number` to be a primitive type in the JSON string but got `%s`", jsonObj.get("phone_number").toString()));
       }
       if (jsonObj.get("consents") != null && !jsonObj.get("consents").isJsonNull()) {
         JsonArray jsonArrayconsents = jsonObj.getAsJsonArray("consents");
         if (jsonArrayconsents != null) {
           // ensure the json data is an array
           if (!jsonObj.get("consents").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `consents` to be an array in the JSON string but got `%s`", jsonObj.get("consents").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `consents` to be an array in the JSON string but got `%s`", jsonObj.get("consents").toString()));
           }
 
           // validate the optional field `consents` (array)
@@ -478,10 +469,10 @@ public class ApplicantBuilder {
         LocationBuilder.validateJsonElement(jsonObj.get("location"));
       }
       if (!jsonObj.get("first_name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `first_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("first_name").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `first_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("first_name").toString()));
       }
       if (!jsonObj.get("last_name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `last_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("last_name").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `last_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("last_name").toString()));
       }
   }
 
@@ -542,7 +533,7 @@ public class ApplicantBuilder {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

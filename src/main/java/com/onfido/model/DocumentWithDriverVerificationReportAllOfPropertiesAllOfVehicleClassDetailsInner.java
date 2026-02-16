@@ -14,6 +14,7 @@
 package com.onfido.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -43,13 +44,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.onfido.JSON;
 
 /**
  * DocumentWithDriverVerificationReportAllOfPropertiesAllOfVehicleClassDetailsInner
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.16.0")
 public class DocumentWithDriverVerificationReportAllOfPropertiesAllOfVehicleClassDetailsInner {
   public static final String SERIALIZED_NAME_CATEGORY = "category";
   @SerializedName(SERIALIZED_NAME_CATEGORY)
@@ -246,14 +248,10 @@ public class DocumentWithDriverVerificationReportAllOfPropertiesAllOfVehicleClas
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("category");
-    openapiFields.add("codes");
-    openapiFields.add("obtainment_date");
-    openapiFields.add("expiry_date");
+    openapiFields = new HashSet<String>(Arrays.asList("category", "codes", "obtainment_date", "expiry_date"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -265,15 +263,15 @@ public class DocumentWithDriverVerificationReportAllOfPropertiesAllOfVehicleClas
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!DocumentWithDriverVerificationReportAllOfPropertiesAllOfVehicleClassDetailsInner.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in DocumentWithDriverVerificationReportAllOfPropertiesAllOfVehicleClassDetailsInner is not found in the empty JSON string", DocumentWithDriverVerificationReportAllOfPropertiesAllOfVehicleClassDetailsInner.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in DocumentWithDriverVerificationReportAllOfPropertiesAllOfVehicleClassDetailsInner is not found in the empty JSON string", DocumentWithDriverVerificationReportAllOfPropertiesAllOfVehicleClassDetailsInner.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("category") != null && !jsonObj.get("category").isJsonNull()) && !jsonObj.get("category").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `category` to be a primitive type in the JSON string but got `%s`", jsonObj.get("category").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `category` to be a primitive type in the JSON string but got `%s`", jsonObj.get("category").toString()));
       }
       if ((jsonObj.get("codes") != null && !jsonObj.get("codes").isJsonNull()) && !jsonObj.get("codes").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `codes` to be a primitive type in the JSON string but got `%s`", jsonObj.get("codes").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `codes` to be a primitive type in the JSON string but got `%s`", jsonObj.get("codes").toString()));
       }
   }
 
@@ -334,7 +332,7 @@ public class DocumentWithDriverVerificationReportAllOfPropertiesAllOfVehicleClas
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

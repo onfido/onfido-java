@@ -14,6 +14,7 @@
 package com.onfido.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -42,13 +43,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.onfido.JSON;
 
 /**
  * DocumentODPReasons
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.16.0")
 public class DocumentODPReasons {
   public static final String SERIALIZED_NAME_PHOTO_OF_SCREEN = "photo_of_screen";
   @SerializedName(SERIALIZED_NAME_PHOTO_OF_SCREEN)
@@ -245,14 +247,10 @@ public class DocumentODPReasons {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("photo_of_screen");
-    openapiFields.add("screenshot");
-    openapiFields.add("document_on_printed_paper");
-    openapiFields.add("scan");
+    openapiFields = new HashSet<String>(Arrays.asList("photo_of_screen", "screenshot", "document_on_printed_paper", "scan"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -264,21 +262,21 @@ public class DocumentODPReasons {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!DocumentODPReasons.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in DocumentODPReasons is not found in the empty JSON string", DocumentODPReasons.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in DocumentODPReasons is not found in the empty JSON string", DocumentODPReasons.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("photo_of_screen") != null && !jsonObj.get("photo_of_screen").isJsonNull()) && !jsonObj.get("photo_of_screen").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `photo_of_screen` to be a primitive type in the JSON string but got `%s`", jsonObj.get("photo_of_screen").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `photo_of_screen` to be a primitive type in the JSON string but got `%s`", jsonObj.get("photo_of_screen").toString()));
       }
       if ((jsonObj.get("screenshot") != null && !jsonObj.get("screenshot").isJsonNull()) && !jsonObj.get("screenshot").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `screenshot` to be a primitive type in the JSON string but got `%s`", jsonObj.get("screenshot").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `screenshot` to be a primitive type in the JSON string but got `%s`", jsonObj.get("screenshot").toString()));
       }
       if ((jsonObj.get("document_on_printed_paper") != null && !jsonObj.get("document_on_printed_paper").isJsonNull()) && !jsonObj.get("document_on_printed_paper").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `document_on_printed_paper` to be a primitive type in the JSON string but got `%s`", jsonObj.get("document_on_printed_paper").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `document_on_printed_paper` to be a primitive type in the JSON string but got `%s`", jsonObj.get("document_on_printed_paper").toString()));
       }
       if ((jsonObj.get("scan") != null && !jsonObj.get("scan").isJsonNull()) && !jsonObj.get("scan").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `scan` to be a primitive type in the JSON string but got `%s`", jsonObj.get("scan").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `scan` to be a primitive type in the JSON string but got `%s`", jsonObj.get("scan").toString()));
       }
   }
 
@@ -339,7 +337,7 @@ public class DocumentODPReasons {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

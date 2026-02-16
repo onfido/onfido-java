@@ -14,6 +14,7 @@
 package com.onfido.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -91,7 +92,7 @@ import com.google.gson.JsonParseException;
 
 import com.onfido.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.16.0")
 public class Report extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(Report.class.getName());
 
@@ -124,8 +125,6 @@ public class Report extends AbstractOpenApiSchema {
             final TypeAdapter<UsDrivingLicenceReport> adapterUsDrivingLicenceReport = gson.getDelegateAdapter(this, TypeToken.get(UsDrivingLicenceReport.class));
             final TypeAdapter<DeviceIntelligenceReport> adapterDeviceIntelligenceReport = gson.getDelegateAdapter(this, TypeToken.get(DeviceIntelligenceReport.class));
             final TypeAdapter<IndiaPanReport> adapterIndiaPanReport = gson.getDelegateAdapter(this, TypeToken.get(IndiaPanReport.class));
-
-            final TypeAdapter<ReportShared> adapterReportShared = gson.getDelegateAdapter(this, TypeToken.get(ReportShared.class));
 
             return (TypeAdapter<T>) new TypeAdapter<Report>() {
                 @Override
@@ -276,8 +275,6 @@ public class Report extends AbstractOpenApiSchema {
                     if (jsonObject.get("name") == null) {
                         log.log(Level.WARNING, "Failed to lookup discriminator value for Report as `name` was not found in the payload or the payload is empty.");
                     } else  {
-                        newReport.reportShared = adapterReportShared.fromJsonTree(jsonObject);
-
                         // look up the discriminator value in the field `name`
                         switch (jsonObject.get("name").getAsString()) {
                             case "device_intelligence":
@@ -364,92 +361,8 @@ public class Report extends AbstractOpenApiSchema {
                                 deserialized = adapterWatchlistStandardReport.fromJsonTree(jsonObject);
                                 newReport.setActualInstance(deserialized);
                                 return newReport;
-                            case "device_intelligence_report":
-                                deserialized = adapterDeviceIntelligenceReport.fromJsonTree(jsonObject);
-                                newReport.setActualInstance(deserialized);
-                                return newReport;
-                            case "document_report":
-                                deserialized = adapterDocumentReport.fromJsonTree(jsonObject);
-                                newReport.setActualInstance(deserialized);
-                                return newReport;
-                            case "document_video_report":
-                                deserialized = adapterDocumentVideoReport.fromJsonTree(jsonObject);
-                                newReport.setActualInstance(deserialized);
-                                return newReport;
-                            case "document_video_with_address_information_report":
-                                deserialized = adapterDocumentVideoWithAddressInformationReport.fromJsonTree(jsonObject);
-                                newReport.setActualInstance(deserialized);
-                                return newReport;
-                            case "document_with_address_information_report":
-                                deserialized = adapterDocumentWithAddressInformationReport.fromJsonTree(jsonObject);
-                                newReport.setActualInstance(deserialized);
-                                return newReport;
-                            case "document_with_driver_verification_report":
-                                deserialized = adapterDocumentWithDriverVerificationReport.fromJsonTree(jsonObject);
-                                newReport.setActualInstance(deserialized);
-                                return newReport;
-                            case "document_with_driving_licence_information_report":
-                                deserialized = adapterDocumentWithDrivingLicenceInformationReport.fromJsonTree(jsonObject);
-                                newReport.setActualInstance(deserialized);
-                                return newReport;
-                            case "facial_similarity_motion_report":
-                                deserialized = adapterFacialSimilarityMotionReport.fromJsonTree(jsonObject);
-                                newReport.setActualInstance(deserialized);
-                                return newReport;
-                            case "facial_similarity_photo_fully_auto_report":
-                                deserialized = adapterFacialSimilarityPhotoFullyAutoReport.fromJsonTree(jsonObject);
-                                newReport.setActualInstance(deserialized);
-                                return newReport;
-                            case "facial_similarity_photo_report":
-                                deserialized = adapterFacialSimilarityPhotoReport.fromJsonTree(jsonObject);
-                                newReport.setActualInstance(deserialized);
-                                return newReport;
-                            case "facial_similarity_video_report":
-                                deserialized = adapterFacialSimilarityVideoReport.fromJsonTree(jsonObject);
-                                newReport.setActualInstance(deserialized);
-                                return newReport;
-                            case "identity_enhanced_report":
-                                deserialized = adapterIdentityEnhancedReport.fromJsonTree(jsonObject);
-                                newReport.setActualInstance(deserialized);
-                                return newReport;
-                            case "india_pan_report":
-                                deserialized = adapterIndiaPanReport.fromJsonTree(jsonObject);
-                                newReport.setActualInstance(deserialized);
-                                return newReport;
-                            case "known_faces_report":
-                                deserialized = adapterKnownFacesReport.fromJsonTree(jsonObject);
-                                newReport.setActualInstance(deserialized);
-                                return newReport;
-                            case "proof_of_address_report":
-                                deserialized = adapterProofOfAddressReport.fromJsonTree(jsonObject);
-                                newReport.setActualInstance(deserialized);
-                                return newReport;
-                            case "us_driving_licence_report":
-                                deserialized = adapterUsDrivingLicenceReport.fromJsonTree(jsonObject);
-                                newReport.setActualInstance(deserialized);
-                                return newReport;
-                            case "watchlist_aml_report":
-                                deserialized = adapterWatchlistAmlReport.fromJsonTree(jsonObject);
-                                newReport.setActualInstance(deserialized);
-                                return newReport;
-                            case "watchlist_enhanced_report":
-                                deserialized = adapterWatchlistEnhancedReport.fromJsonTree(jsonObject);
-                                newReport.setActualInstance(deserialized);
-                                return newReport;
-                            case "watchlist_peps_only_report":
-                                deserialized = adapterWatchlistPepsOnlyReport.fromJsonTree(jsonObject);
-                                newReport.setActualInstance(deserialized);
-                                return newReport;
-                            case "watchlist_sanctions_only_report":
-                                deserialized = adapterWatchlistSanctionsOnlyReport.fromJsonTree(jsonObject);
-                                newReport.setActualInstance(deserialized);
-                                return newReport;
-                            case "watchlist_standard_report":
-                                deserialized = adapterWatchlistStandardReport.fromJsonTree(jsonObject);
-                                newReport.setActualInstance(deserialized);
-                                return newReport;
                             default:
-                                log.log(Level.WARNING, String.format("Failed to lookup discriminator value `%s` for Report. Possible values: device_intelligence document document_video document_video_with_address_information document_with_address_information document_with_driver_verification document_with_driving_licence_information facial_similarity_motion facial_similarity_photo facial_similarity_photo_fully_auto facial_similarity_video identity_enhanced india_pan known_faces proof_of_address us_driving_licence watchlist_aml watchlist_enhanced watchlist_peps_only watchlist_sanctions_only watchlist_standard device_intelligence_report document_report document_video_report document_video_with_address_information_report document_with_address_information_report document_with_driver_verification_report document_with_driving_licence_information_report facial_similarity_motion_report facial_similarity_photo_fully_auto_report facial_similarity_photo_report facial_similarity_video_report identity_enhanced_report india_pan_report known_faces_report proof_of_address_report us_driving_licence_report watchlist_aml_report watchlist_enhanced_report watchlist_peps_only_report watchlist_sanctions_only_report watchlist_standard_report", jsonObject.get("name").getAsString()));
+                                log.log(Level.WARNING, String.format(Locale.ROOT, "Failed to lookup discriminator value `%s` for Report. Possible values: device_intelligence document document_video document_video_with_address_information document_with_address_information document_with_driver_verification document_with_driving_licence_information facial_similarity_motion facial_similarity_photo facial_similarity_photo_fully_auto facial_similarity_video identity_enhanced india_pan known_faces proof_of_address us_driving_licence watchlist_aml watchlist_enhanced watchlist_peps_only watchlist_sanctions_only watchlist_standard", jsonObject.get("name").getAsString()));
                         }
                     }
 
@@ -466,7 +379,7 @@ public class Report extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'DocumentReport'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for DocumentReport failed with `%s`.", e.getMessage()));
+                        errorMessages.add(String.format(Locale.ROOT, "Deserialization for DocumentReport failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'DocumentReport'", e);
                     }
                     // deserialize DocumentVideoReport
@@ -478,7 +391,7 @@ public class Report extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'DocumentVideoReport'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for DocumentVideoReport failed with `%s`.", e.getMessage()));
+                        errorMessages.add(String.format(Locale.ROOT, "Deserialization for DocumentVideoReport failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'DocumentVideoReport'", e);
                     }
                     // deserialize DocumentVideoWithAddressInformationReport
@@ -490,7 +403,7 @@ public class Report extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'DocumentVideoWithAddressInformationReport'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for DocumentVideoWithAddressInformationReport failed with `%s`.", e.getMessage()));
+                        errorMessages.add(String.format(Locale.ROOT, "Deserialization for DocumentVideoWithAddressInformationReport failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'DocumentVideoWithAddressInformationReport'", e);
                     }
                     // deserialize DocumentWithAddressInformationReport
@@ -502,7 +415,7 @@ public class Report extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'DocumentWithAddressInformationReport'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for DocumentWithAddressInformationReport failed with `%s`.", e.getMessage()));
+                        errorMessages.add(String.format(Locale.ROOT, "Deserialization for DocumentWithAddressInformationReport failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'DocumentWithAddressInformationReport'", e);
                     }
                     // deserialize DocumentWithDrivingLicenceInformationReport
@@ -514,7 +427,7 @@ public class Report extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'DocumentWithDrivingLicenceInformationReport'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for DocumentWithDrivingLicenceInformationReport failed with `%s`.", e.getMessage()));
+                        errorMessages.add(String.format(Locale.ROOT, "Deserialization for DocumentWithDrivingLicenceInformationReport failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'DocumentWithDrivingLicenceInformationReport'", e);
                     }
                     // deserialize DocumentWithDriverVerificationReport
@@ -526,7 +439,7 @@ public class Report extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'DocumentWithDriverVerificationReport'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for DocumentWithDriverVerificationReport failed with `%s`.", e.getMessage()));
+                        errorMessages.add(String.format(Locale.ROOT, "Deserialization for DocumentWithDriverVerificationReport failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'DocumentWithDriverVerificationReport'", e);
                     }
                     // deserialize FacialSimilarityPhotoReport
@@ -538,7 +451,7 @@ public class Report extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'FacialSimilarityPhotoReport'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for FacialSimilarityPhotoReport failed with `%s`.", e.getMessage()));
+                        errorMessages.add(String.format(Locale.ROOT, "Deserialization for FacialSimilarityPhotoReport failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'FacialSimilarityPhotoReport'", e);
                     }
                     // deserialize FacialSimilarityPhotoFullyAutoReport
@@ -550,7 +463,7 @@ public class Report extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'FacialSimilarityPhotoFullyAutoReport'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for FacialSimilarityPhotoFullyAutoReport failed with `%s`.", e.getMessage()));
+                        errorMessages.add(String.format(Locale.ROOT, "Deserialization for FacialSimilarityPhotoFullyAutoReport failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'FacialSimilarityPhotoFullyAutoReport'", e);
                     }
                     // deserialize FacialSimilarityVideoReport
@@ -562,7 +475,7 @@ public class Report extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'FacialSimilarityVideoReport'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for FacialSimilarityVideoReport failed with `%s`.", e.getMessage()));
+                        errorMessages.add(String.format(Locale.ROOT, "Deserialization for FacialSimilarityVideoReport failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'FacialSimilarityVideoReport'", e);
                     }
                     // deserialize FacialSimilarityMotionReport
@@ -574,7 +487,7 @@ public class Report extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'FacialSimilarityMotionReport'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for FacialSimilarityMotionReport failed with `%s`.", e.getMessage()));
+                        errorMessages.add(String.format(Locale.ROOT, "Deserialization for FacialSimilarityMotionReport failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'FacialSimilarityMotionReport'", e);
                     }
                     // deserialize KnownFacesReport
@@ -586,7 +499,7 @@ public class Report extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'KnownFacesReport'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for KnownFacesReport failed with `%s`.", e.getMessage()));
+                        errorMessages.add(String.format(Locale.ROOT, "Deserialization for KnownFacesReport failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'KnownFacesReport'", e);
                     }
                     // deserialize IdentityEnhancedReport
@@ -598,7 +511,7 @@ public class Report extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'IdentityEnhancedReport'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for IdentityEnhancedReport failed with `%s`.", e.getMessage()));
+                        errorMessages.add(String.format(Locale.ROOT, "Deserialization for IdentityEnhancedReport failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'IdentityEnhancedReport'", e);
                     }
                     // deserialize WatchlistAmlReport
@@ -610,7 +523,7 @@ public class Report extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'WatchlistAmlReport'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for WatchlistAmlReport failed with `%s`.", e.getMessage()));
+                        errorMessages.add(String.format(Locale.ROOT, "Deserialization for WatchlistAmlReport failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'WatchlistAmlReport'", e);
                     }
                     // deserialize WatchlistEnhancedReport
@@ -622,7 +535,7 @@ public class Report extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'WatchlistEnhancedReport'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for WatchlistEnhancedReport failed with `%s`.", e.getMessage()));
+                        errorMessages.add(String.format(Locale.ROOT, "Deserialization for WatchlistEnhancedReport failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'WatchlistEnhancedReport'", e);
                     }
                     // deserialize WatchlistStandardReport
@@ -634,7 +547,7 @@ public class Report extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'WatchlistStandardReport'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for WatchlistStandardReport failed with `%s`.", e.getMessage()));
+                        errorMessages.add(String.format(Locale.ROOT, "Deserialization for WatchlistStandardReport failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'WatchlistStandardReport'", e);
                     }
                     // deserialize WatchlistPepsOnlyReport
@@ -646,7 +559,7 @@ public class Report extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'WatchlistPepsOnlyReport'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for WatchlistPepsOnlyReport failed with `%s`.", e.getMessage()));
+                        errorMessages.add(String.format(Locale.ROOT, "Deserialization for WatchlistPepsOnlyReport failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'WatchlistPepsOnlyReport'", e);
                     }
                     // deserialize WatchlistSanctionsOnlyReport
@@ -658,7 +571,7 @@ public class Report extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'WatchlistSanctionsOnlyReport'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for WatchlistSanctionsOnlyReport failed with `%s`.", e.getMessage()));
+                        errorMessages.add(String.format(Locale.ROOT, "Deserialization for WatchlistSanctionsOnlyReport failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'WatchlistSanctionsOnlyReport'", e);
                     }
                     // deserialize ProofOfAddressReport
@@ -670,7 +583,7 @@ public class Report extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'ProofOfAddressReport'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for ProofOfAddressReport failed with `%s`.", e.getMessage()));
+                        errorMessages.add(String.format(Locale.ROOT, "Deserialization for ProofOfAddressReport failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'ProofOfAddressReport'", e);
                     }
                     // deserialize UsDrivingLicenceReport
@@ -682,7 +595,7 @@ public class Report extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'UsDrivingLicenceReport'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for UsDrivingLicenceReport failed with `%s`.", e.getMessage()));
+                        errorMessages.add(String.format(Locale.ROOT, "Deserialization for UsDrivingLicenceReport failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'UsDrivingLicenceReport'", e);
                     }
                     // deserialize DeviceIntelligenceReport
@@ -694,7 +607,7 @@ public class Report extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'DeviceIntelligenceReport'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for DeviceIntelligenceReport failed with `%s`.", e.getMessage()));
+                        errorMessages.add(String.format(Locale.ROOT, "Deserialization for DeviceIntelligenceReport failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'DeviceIntelligenceReport'", e);
                     }
                     // deserialize IndiaPanReport
@@ -706,7 +619,7 @@ public class Report extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'IndiaPanReport'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for IndiaPanReport failed with `%s`.", e.getMessage()));
+                        errorMessages.add(String.format(Locale.ROOT, "Deserialization for IndiaPanReport failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'IndiaPanReport'", e);
                     }
 
@@ -716,7 +629,7 @@ public class Report extends AbstractOpenApiSchema {
                         return ret;
                     }
 
-                    throw new IOException(String.format("Failed deserialization for Report: %d classes match result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", match, errorMessages, jsonElement.toString()));
+                    throw new IOException(String.format(Locale.ROOT, "Failed deserialization for Report: %d classes match result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", match, errorMessages, jsonElement.toString()));
                 }
             }.nullSafe();
         }
@@ -724,8 +637,6 @@ public class Report extends AbstractOpenApiSchema {
 
     // store a list of schema names defined in oneOf
     public static final Map<String, Class<?>> schemas = new HashMap<String, Class<?>>();
-
-    private ReportShared reportShared;
 
     public Report() {
         super("oneOf", Boolean.FALSE);
@@ -901,7 +812,6 @@ public class Report extends AbstractOpenApiSchema {
      * @return The actual instance of `DocumentReport`
      * @throws ClassCastException if the instance is not `DocumentReport`
      */
-    @SuppressWarnings("unchecked")
     public DocumentReport getDocumentReport() throws ClassCastException {
         return (DocumentReport)super.getActualInstance();
     }
@@ -913,7 +823,6 @@ public class Report extends AbstractOpenApiSchema {
      * @return The actual instance of `DocumentVideoReport`
      * @throws ClassCastException if the instance is not `DocumentVideoReport`
      */
-    @SuppressWarnings("unchecked")
     public DocumentVideoReport getDocumentVideoReport() throws ClassCastException {
         return (DocumentVideoReport)super.getActualInstance();
     }
@@ -925,7 +834,6 @@ public class Report extends AbstractOpenApiSchema {
      * @return The actual instance of `DocumentVideoWithAddressInformationReport`
      * @throws ClassCastException if the instance is not `DocumentVideoWithAddressInformationReport`
      */
-    @SuppressWarnings("unchecked")
     public DocumentVideoWithAddressInformationReport getDocumentVideoWithAddressInformationReport() throws ClassCastException {
         return (DocumentVideoWithAddressInformationReport)super.getActualInstance();
     }
@@ -937,7 +845,6 @@ public class Report extends AbstractOpenApiSchema {
      * @return The actual instance of `DocumentWithAddressInformationReport`
      * @throws ClassCastException if the instance is not `DocumentWithAddressInformationReport`
      */
-    @SuppressWarnings("unchecked")
     public DocumentWithAddressInformationReport getDocumentWithAddressInformationReport() throws ClassCastException {
         return (DocumentWithAddressInformationReport)super.getActualInstance();
     }
@@ -949,7 +856,6 @@ public class Report extends AbstractOpenApiSchema {
      * @return The actual instance of `DocumentWithDrivingLicenceInformationReport`
      * @throws ClassCastException if the instance is not `DocumentWithDrivingLicenceInformationReport`
      */
-    @SuppressWarnings("unchecked")
     public DocumentWithDrivingLicenceInformationReport getDocumentWithDrivingLicenceInformationReport() throws ClassCastException {
         return (DocumentWithDrivingLicenceInformationReport)super.getActualInstance();
     }
@@ -961,7 +867,6 @@ public class Report extends AbstractOpenApiSchema {
      * @return The actual instance of `DocumentWithDriverVerificationReport`
      * @throws ClassCastException if the instance is not `DocumentWithDriverVerificationReport`
      */
-    @SuppressWarnings("unchecked")
     public DocumentWithDriverVerificationReport getDocumentWithDriverVerificationReport() throws ClassCastException {
         return (DocumentWithDriverVerificationReport)super.getActualInstance();
     }
@@ -973,7 +878,6 @@ public class Report extends AbstractOpenApiSchema {
      * @return The actual instance of `FacialSimilarityPhotoReport`
      * @throws ClassCastException if the instance is not `FacialSimilarityPhotoReport`
      */
-    @SuppressWarnings("unchecked")
     public FacialSimilarityPhotoReport getFacialSimilarityPhotoReport() throws ClassCastException {
         return (FacialSimilarityPhotoReport)super.getActualInstance();
     }
@@ -985,7 +889,6 @@ public class Report extends AbstractOpenApiSchema {
      * @return The actual instance of `FacialSimilarityPhotoFullyAutoReport`
      * @throws ClassCastException if the instance is not `FacialSimilarityPhotoFullyAutoReport`
      */
-    @SuppressWarnings("unchecked")
     public FacialSimilarityPhotoFullyAutoReport getFacialSimilarityPhotoFullyAutoReport() throws ClassCastException {
         return (FacialSimilarityPhotoFullyAutoReport)super.getActualInstance();
     }
@@ -997,7 +900,6 @@ public class Report extends AbstractOpenApiSchema {
      * @return The actual instance of `FacialSimilarityVideoReport`
      * @throws ClassCastException if the instance is not `FacialSimilarityVideoReport`
      */
-    @SuppressWarnings("unchecked")
     public FacialSimilarityVideoReport getFacialSimilarityVideoReport() throws ClassCastException {
         return (FacialSimilarityVideoReport)super.getActualInstance();
     }
@@ -1009,7 +911,6 @@ public class Report extends AbstractOpenApiSchema {
      * @return The actual instance of `FacialSimilarityMotionReport`
      * @throws ClassCastException if the instance is not `FacialSimilarityMotionReport`
      */
-    @SuppressWarnings("unchecked")
     public FacialSimilarityMotionReport getFacialSimilarityMotionReport() throws ClassCastException {
         return (FacialSimilarityMotionReport)super.getActualInstance();
     }
@@ -1021,7 +922,6 @@ public class Report extends AbstractOpenApiSchema {
      * @return The actual instance of `KnownFacesReport`
      * @throws ClassCastException if the instance is not `KnownFacesReport`
      */
-    @SuppressWarnings("unchecked")
     public KnownFacesReport getKnownFacesReport() throws ClassCastException {
         return (KnownFacesReport)super.getActualInstance();
     }
@@ -1033,7 +933,6 @@ public class Report extends AbstractOpenApiSchema {
      * @return The actual instance of `IdentityEnhancedReport`
      * @throws ClassCastException if the instance is not `IdentityEnhancedReport`
      */
-    @SuppressWarnings("unchecked")
     public IdentityEnhancedReport getIdentityEnhancedReport() throws ClassCastException {
         return (IdentityEnhancedReport)super.getActualInstance();
     }
@@ -1045,7 +944,6 @@ public class Report extends AbstractOpenApiSchema {
      * @return The actual instance of `WatchlistAmlReport`
      * @throws ClassCastException if the instance is not `WatchlistAmlReport`
      */
-    @SuppressWarnings("unchecked")
     public WatchlistAmlReport getWatchlistAmlReport() throws ClassCastException {
         return (WatchlistAmlReport)super.getActualInstance();
     }
@@ -1057,7 +955,6 @@ public class Report extends AbstractOpenApiSchema {
      * @return The actual instance of `WatchlistEnhancedReport`
      * @throws ClassCastException if the instance is not `WatchlistEnhancedReport`
      */
-    @SuppressWarnings("unchecked")
     public WatchlistEnhancedReport getWatchlistEnhancedReport() throws ClassCastException {
         return (WatchlistEnhancedReport)super.getActualInstance();
     }
@@ -1069,7 +966,6 @@ public class Report extends AbstractOpenApiSchema {
      * @return The actual instance of `WatchlistStandardReport`
      * @throws ClassCastException if the instance is not `WatchlistStandardReport`
      */
-    @SuppressWarnings("unchecked")
     public WatchlistStandardReport getWatchlistStandardReport() throws ClassCastException {
         return (WatchlistStandardReport)super.getActualInstance();
     }
@@ -1081,7 +977,6 @@ public class Report extends AbstractOpenApiSchema {
      * @return The actual instance of `WatchlistPepsOnlyReport`
      * @throws ClassCastException if the instance is not `WatchlistPepsOnlyReport`
      */
-    @SuppressWarnings("unchecked")
     public WatchlistPepsOnlyReport getWatchlistPepsOnlyReport() throws ClassCastException {
         return (WatchlistPepsOnlyReport)super.getActualInstance();
     }
@@ -1093,7 +988,6 @@ public class Report extends AbstractOpenApiSchema {
      * @return The actual instance of `WatchlistSanctionsOnlyReport`
      * @throws ClassCastException if the instance is not `WatchlistSanctionsOnlyReport`
      */
-    @SuppressWarnings("unchecked")
     public WatchlistSanctionsOnlyReport getWatchlistSanctionsOnlyReport() throws ClassCastException {
         return (WatchlistSanctionsOnlyReport)super.getActualInstance();
     }
@@ -1105,7 +999,6 @@ public class Report extends AbstractOpenApiSchema {
      * @return The actual instance of `ProofOfAddressReport`
      * @throws ClassCastException if the instance is not `ProofOfAddressReport`
      */
-    @SuppressWarnings("unchecked")
     public ProofOfAddressReport getProofOfAddressReport() throws ClassCastException {
         return (ProofOfAddressReport)super.getActualInstance();
     }
@@ -1117,7 +1010,6 @@ public class Report extends AbstractOpenApiSchema {
      * @return The actual instance of `UsDrivingLicenceReport`
      * @throws ClassCastException if the instance is not `UsDrivingLicenceReport`
      */
-    @SuppressWarnings("unchecked")
     public UsDrivingLicenceReport getUsDrivingLicenceReport() throws ClassCastException {
         return (UsDrivingLicenceReport)super.getActualInstance();
     }
@@ -1129,7 +1021,6 @@ public class Report extends AbstractOpenApiSchema {
      * @return The actual instance of `DeviceIntelligenceReport`
      * @throws ClassCastException if the instance is not `DeviceIntelligenceReport`
      */
-    @SuppressWarnings("unchecked")
     public DeviceIntelligenceReport getDeviceIntelligenceReport() throws ClassCastException {
         return (DeviceIntelligenceReport)super.getActualInstance();
     }
@@ -1141,193 +1032,23 @@ public class Report extends AbstractOpenApiSchema {
      * @return The actual instance of `IndiaPanReport`
      * @throws ClassCastException if the instance is not `IndiaPanReport`
      */
-    @SuppressWarnings("unchecked")
     public IndiaPanReport getIndiaPanReport() throws ClassCastException {
         return (IndiaPanReport)super.getActualInstance();
     }
 
+
     /**
-     * Validates the JSON Element and throws an exception if issues found
+     * Validates the JSON Element. When discriminator-based deserialization is enabled,
+     * this method is a no-op as validation is performed during discriminator-based lookup.
      *
      * @param jsonElement JSON Element
      * @throws IOException if the JSON Element is invalid with respect to Report
      */
     public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        // validate oneOf schemas one by one
-        int validCount = 0;
-        ArrayList<String> errorMessages = new ArrayList<>();
-        // validate the json string with DocumentReport
-        try {
-            DocumentReport.validateJsonElement(jsonElement);
-            validCount++;
-        } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for DocumentReport failed with `%s`.", e.getMessage()));
-            // continue to the next one
-        }
-        // validate the json string with DocumentVideoReport
-        try {
-            DocumentVideoReport.validateJsonElement(jsonElement);
-            validCount++;
-        } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for DocumentVideoReport failed with `%s`.", e.getMessage()));
-            // continue to the next one
-        }
-        // validate the json string with DocumentVideoWithAddressInformationReport
-        try {
-            DocumentVideoWithAddressInformationReport.validateJsonElement(jsonElement);
-            validCount++;
-        } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for DocumentVideoWithAddressInformationReport failed with `%s`.", e.getMessage()));
-            // continue to the next one
-        }
-        // validate the json string with DocumentWithAddressInformationReport
-        try {
-            DocumentWithAddressInformationReport.validateJsonElement(jsonElement);
-            validCount++;
-        } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for DocumentWithAddressInformationReport failed with `%s`.", e.getMessage()));
-            // continue to the next one
-        }
-        // validate the json string with DocumentWithDrivingLicenceInformationReport
-        try {
-            DocumentWithDrivingLicenceInformationReport.validateJsonElement(jsonElement);
-            validCount++;
-        } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for DocumentWithDrivingLicenceInformationReport failed with `%s`.", e.getMessage()));
-            // continue to the next one
-        }
-        // validate the json string with DocumentWithDriverVerificationReport
-        try {
-            DocumentWithDriverVerificationReport.validateJsonElement(jsonElement);
-            validCount++;
-        } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for DocumentWithDriverVerificationReport failed with `%s`.", e.getMessage()));
-            // continue to the next one
-        }
-        // validate the json string with FacialSimilarityPhotoReport
-        try {
-            FacialSimilarityPhotoReport.validateJsonElement(jsonElement);
-            validCount++;
-        } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for FacialSimilarityPhotoReport failed with `%s`.", e.getMessage()));
-            // continue to the next one
-        }
-        // validate the json string with FacialSimilarityPhotoFullyAutoReport
-        try {
-            FacialSimilarityPhotoFullyAutoReport.validateJsonElement(jsonElement);
-            validCount++;
-        } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for FacialSimilarityPhotoFullyAutoReport failed with `%s`.", e.getMessage()));
-            // continue to the next one
-        }
-        // validate the json string with FacialSimilarityVideoReport
-        try {
-            FacialSimilarityVideoReport.validateJsonElement(jsonElement);
-            validCount++;
-        } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for FacialSimilarityVideoReport failed with `%s`.", e.getMessage()));
-            // continue to the next one
-        }
-        // validate the json string with FacialSimilarityMotionReport
-        try {
-            FacialSimilarityMotionReport.validateJsonElement(jsonElement);
-            validCount++;
-        } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for FacialSimilarityMotionReport failed with `%s`.", e.getMessage()));
-            // continue to the next one
-        }
-        // validate the json string with KnownFacesReport
-        try {
-            KnownFacesReport.validateJsonElement(jsonElement);
-            validCount++;
-        } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for KnownFacesReport failed with `%s`.", e.getMessage()));
-            // continue to the next one
-        }
-        // validate the json string with IdentityEnhancedReport
-        try {
-            IdentityEnhancedReport.validateJsonElement(jsonElement);
-            validCount++;
-        } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for IdentityEnhancedReport failed with `%s`.", e.getMessage()));
-            // continue to the next one
-        }
-        // validate the json string with WatchlistAmlReport
-        try {
-            WatchlistAmlReport.validateJsonElement(jsonElement);
-            validCount++;
-        } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for WatchlistAmlReport failed with `%s`.", e.getMessage()));
-            // continue to the next one
-        }
-        // validate the json string with WatchlistEnhancedReport
-        try {
-            WatchlistEnhancedReport.validateJsonElement(jsonElement);
-            validCount++;
-        } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for WatchlistEnhancedReport failed with `%s`.", e.getMessage()));
-            // continue to the next one
-        }
-        // validate the json string with WatchlistStandardReport
-        try {
-            WatchlistStandardReport.validateJsonElement(jsonElement);
-            validCount++;
-        } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for WatchlistStandardReport failed with `%s`.", e.getMessage()));
-            // continue to the next one
-        }
-        // validate the json string with WatchlistPepsOnlyReport
-        try {
-            WatchlistPepsOnlyReport.validateJsonElement(jsonElement);
-            validCount++;
-        } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for WatchlistPepsOnlyReport failed with `%s`.", e.getMessage()));
-            // continue to the next one
-        }
-        // validate the json string with WatchlistSanctionsOnlyReport
-        try {
-            WatchlistSanctionsOnlyReport.validateJsonElement(jsonElement);
-            validCount++;
-        } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for WatchlistSanctionsOnlyReport failed with `%s`.", e.getMessage()));
-            // continue to the next one
-        }
-        // validate the json string with ProofOfAddressReport
-        try {
-            ProofOfAddressReport.validateJsonElement(jsonElement);
-            validCount++;
-        } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for ProofOfAddressReport failed with `%s`.", e.getMessage()));
-            // continue to the next one
-        }
-        // validate the json string with UsDrivingLicenceReport
-        try {
-            UsDrivingLicenceReport.validateJsonElement(jsonElement);
-            validCount++;
-        } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for UsDrivingLicenceReport failed with `%s`.", e.getMessage()));
-            // continue to the next one
-        }
-        // validate the json string with DeviceIntelligenceReport
-        try {
-            DeviceIntelligenceReport.validateJsonElement(jsonElement);
-            validCount++;
-        } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for DeviceIntelligenceReport failed with `%s`.", e.getMessage()));
-            // continue to the next one
-        }
-        // validate the json string with IndiaPanReport
-        try {
-            IndiaPanReport.validateJsonElement(jsonElement);
-            validCount++;
-        } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for IndiaPanReport failed with `%s`.", e.getMessage()));
-            // continue to the next one
-        }
-        if (validCount < 1) {
-            throw new IOException(String.format("The JSON string is invalid for Report with oneOf schemas: DeviceIntelligenceReport, DocumentReport, DocumentVideoReport, DocumentVideoWithAddressInformationReport, DocumentWithAddressInformationReport, DocumentWithDriverVerificationReport, DocumentWithDrivingLicenceInformationReport, FacialSimilarityMotionReport, FacialSimilarityPhotoFullyAutoReport, FacialSimilarityPhotoReport, FacialSimilarityVideoReport, IdentityEnhancedReport, IndiaPanReport, KnownFacesReport, ProofOfAddressReport, UsDrivingLicenceReport, WatchlistAmlReport, WatchlistEnhancedReport, WatchlistPepsOnlyReport, WatchlistSanctionsOnlyReport, WatchlistStandardReport. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
-        }
+        // No validation needed when discriminator lookup is enabled
+        // Validation happens during read() via discriminator-based deserialization
     }
+ 
 
     /**
      * Create an instance of Report given an JSON string
@@ -1349,42 +1070,60 @@ public class Report extends AbstractOpenApiSchema {
         return JSON.getGson().toJson(this);
     }
 
-
     /**
-     * Give access to shared properties. Read-only.
-     * @return ReportShared object with common fields
-     **/
-
-    public ReportShared getReportShared() {
-        return reportShared;
+     * Private helper method to invoke a method on the actual instance via reflection.
+     *
+     * @param <T> The expected return type
+     * @param methodName The name of the method to invoke
+     * @param returnType The class of the expected return type
+     * @return The result of invoking the method, cast to the expected type
+     * @throws RuntimeException if the method doesn't exist or invocation fails
+     */
+    @SuppressWarnings("unchecked")
+    private <T> T invokeMethodOnActualInstance(String methodName, Class<T> returnType) {
+        Object instance = getActualInstance();
+        if (instance == null) {
+            return null;
+        }
+        try {
+            java.lang.reflect.Method method = instance.getClass().getMethod(methodName);
+            Object result = method.invoke(instance);
+            return (T) result;
+        } catch (NoSuchMethodException e) {
+            throw new RuntimeException("The actual instance does not have a " + methodName + "() method", e);
+        } catch (IllegalAccessException | java.lang.reflect.InvocationTargetException e) {
+            throw new RuntimeException("Failed to invoke " + methodName + "() on actual instance", e);
+        }
     }
 
     /**
-     * Give access to shared properties. Read-only.
-     * @return id
-     **/
-
-    public UUID getId() {
-        return reportShared.getId();
-    }
-
-    /**
-     * Get name
-     * @return name
-     **/
-
+     * Get the discriminator value from the actual instance without needing to cast.
+     * This is a convenience method that works for all oneOf types in this model.
+     *
+     * @return The discriminator value
+     */
     public ReportName getName() {
-        return reportShared.getName();
+        return invokeMethodOnActualInstance("getName", ReportName.class);
     }
 
     /**
-     * Get status
-     * @return status
-     **/
-
-    public ReportStatus getStatus() {
-        return reportShared.getStatus();
+     * Get the ID from the actual instance without needing to cast.
+     * This is a convenience method that works for all oneOf types that have an id field.
+     *
+     * @return The ID value
+     */
+    public UUID getId() {
+        return invokeMethodOnActualInstance("getId", UUID.class);
     }
 
+    /**
+     * Get the status from the actual instance without needing to cast.
+     * This is a convenience method that works for all oneOf types that have a status field.
+     *
+     * @return The status value
+     */
+    public ReportStatus getStatus() {
+        return invokeMethodOnActualInstance("getStatus", ReportStatus.class);
+    }
 }
 

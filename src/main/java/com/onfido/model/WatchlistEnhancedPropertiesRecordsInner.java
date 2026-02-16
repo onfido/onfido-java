@@ -14,6 +14,7 @@
 package com.onfido.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -50,13 +51,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.onfido.JSON;
 
 /**
  * WatchlistEnhancedPropertiesRecordsInner
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.16.0")
 public class WatchlistEnhancedPropertiesRecordsInner {
   public static final String SERIALIZED_NAME_ADDRESS = "address";
   @SerializedName(SERIALIZED_NAME_ADDRESS)
@@ -447,19 +449,10 @@ public class WatchlistEnhancedPropertiesRecordsInner {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("address");
-    openapiFields.add("alias");
-    openapiFields.add("associate");
-    openapiFields.add("attribute");
-    openapiFields.add("date_of_birth");
-    openapiFields.add("event");
-    openapiFields.add("full_name");
-    openapiFields.add("position");
-    openapiFields.add("source");
+    openapiFields = new HashSet<String>(Arrays.asList("address", "alias", "associate", "attribute", "date_of_birth", "event", "full_name", "position", "source"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -471,7 +464,7 @@ public class WatchlistEnhancedPropertiesRecordsInner {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!WatchlistEnhancedPropertiesRecordsInner.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in WatchlistEnhancedPropertiesRecordsInner is not found in the empty JSON string", WatchlistEnhancedPropertiesRecordsInner.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in WatchlistEnhancedPropertiesRecordsInner is not found in the empty JSON string", WatchlistEnhancedPropertiesRecordsInner.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -480,7 +473,7 @@ public class WatchlistEnhancedPropertiesRecordsInner {
         if (jsonArrayaddress != null) {
           // ensure the json data is an array
           if (!jsonObj.get("address").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `address` to be an array in the JSON string but got `%s`", jsonObj.get("address").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `address` to be an array in the JSON string but got `%s`", jsonObj.get("address").toString()));
           }
 
           // validate the optional field `address` (array)
@@ -494,7 +487,7 @@ public class WatchlistEnhancedPropertiesRecordsInner {
         if (jsonArrayalias != null) {
           // ensure the json data is an array
           if (!jsonObj.get("alias").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `alias` to be an array in the JSON string but got `%s`", jsonObj.get("alias").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `alias` to be an array in the JSON string but got `%s`", jsonObj.get("alias").toString()));
           }
 
           // validate the optional field `alias` (array)
@@ -508,7 +501,7 @@ public class WatchlistEnhancedPropertiesRecordsInner {
         if (jsonArrayassociate != null) {
           // ensure the json data is an array
           if (!jsonObj.get("associate").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `associate` to be an array in the JSON string but got `%s`", jsonObj.get("associate").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `associate` to be an array in the JSON string but got `%s`", jsonObj.get("associate").toString()));
           }
 
           // validate the optional field `associate` (array)
@@ -522,7 +515,7 @@ public class WatchlistEnhancedPropertiesRecordsInner {
         if (jsonArrayattribute != null) {
           // ensure the json data is an array
           if (!jsonObj.get("attribute").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `attribute` to be an array in the JSON string but got `%s`", jsonObj.get("attribute").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `attribute` to be an array in the JSON string but got `%s`", jsonObj.get("attribute").toString()));
           }
 
           // validate the optional field `attribute` (array)
@@ -533,14 +526,14 @@ public class WatchlistEnhancedPropertiesRecordsInner {
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("date_of_birth") != null && !jsonObj.get("date_of_birth").isJsonNull() && !jsonObj.get("date_of_birth").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `date_of_birth` to be an array in the JSON string but got `%s`", jsonObj.get("date_of_birth").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `date_of_birth` to be an array in the JSON string but got `%s`", jsonObj.get("date_of_birth").toString()));
       }
       if (jsonObj.get("event") != null && !jsonObj.get("event").isJsonNull()) {
         JsonArray jsonArrayevent = jsonObj.getAsJsonArray("event");
         if (jsonArrayevent != null) {
           // ensure the json data is an array
           if (!jsonObj.get("event").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `event` to be an array in the JSON string but got `%s`", jsonObj.get("event").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `event` to be an array in the JSON string but got `%s`", jsonObj.get("event").toString()));
           }
 
           // validate the optional field `event` (array)
@@ -550,18 +543,18 @@ public class WatchlistEnhancedPropertiesRecordsInner {
         }
       }
       if ((jsonObj.get("full_name") != null && !jsonObj.get("full_name").isJsonNull()) && !jsonObj.get("full_name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `full_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("full_name").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `full_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("full_name").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("position") != null && !jsonObj.get("position").isJsonNull() && !jsonObj.get("position").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `position` to be an array in the JSON string but got `%s`", jsonObj.get("position").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `position` to be an array in the JSON string but got `%s`", jsonObj.get("position").toString()));
       }
       if (jsonObj.get("source") != null && !jsonObj.get("source").isJsonNull()) {
         JsonArray jsonArraysource = jsonObj.getAsJsonArray("source");
         if (jsonArraysource != null) {
           // ensure the json data is an array
           if (!jsonObj.get("source").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `source` to be an array in the JSON string but got `%s`", jsonObj.get("source").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `source` to be an array in the JSON string but got `%s`", jsonObj.get("source").toString()));
           }
 
           // validate the optional field `source` (array)
@@ -629,7 +622,7 @@ public class WatchlistEnhancedPropertiesRecordsInner {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

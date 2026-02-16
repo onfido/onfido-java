@@ -180,7 +180,7 @@ google-java-format -i $(git ls-files src/test/\*.java)
 
 ## Contributing
 
-This library is automatically generated using [OpenAPI Generator](https://openapi-generator.tech) (version: 7.11.0); therefore, all contributions (except test files) should target the [Onfido OpenAPI specification repository](https://github.com/onfido/onfido-openapi-spec/tree/master) instead of this repository. Please follow the contribution guidelines provided in the OpenAPI specification repository.
+This library is automatically generated using [OpenAPI Generator](https://openapi-generator.tech) (version: 7.16.0); therefore, all contributions (except test files) should target the [Onfido OpenAPI specification repository](https://github.com/onfido/onfido-openapi-spec/tree/master) instead of this repository. Please follow the contribution guidelines provided in the OpenAPI specification repository.
 
 For contributions to the tests instead, please follow the steps below:
 

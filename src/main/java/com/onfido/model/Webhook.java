@@ -14,6 +14,7 @@
 package com.onfido.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -46,13 +47,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.onfido.JSON;
 
 /**
  * Webhook
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.16.0")
 public class Webhook {
   public static final String SERIALIZED_NAME_ENABLED = "enabled";
   @SerializedName(SERIALIZED_NAME_ENABLED)
@@ -499,24 +501,10 @@ public class Webhook {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("enabled");
-    openapiFields.add("events");
-    openapiFields.add("environments");
-    openapiFields.add("payload_version");
-    openapiFields.add("oauth_enabled");
-    openapiFields.add("oauth_server_url");
-    openapiFields.add("oauth_server_client_id");
-    openapiFields.add("oauth_server_client_secret");
-    openapiFields.add("oauth_server_scope");
-    openapiFields.add("id");
-    openapiFields.add("url");
-    openapiFields.add("token");
-    openapiFields.add("href");
+    openapiFields = new HashSet<String>(Arrays.asList("enabled", "events", "environments", "payload_version", "oauth_enabled", "oauth_server_url", "oauth_server_client_id", "oauth_server_client_secret", "oauth_server_scope", "id", "url", "token", "href"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("id");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("id"));
   }
 
   /**
@@ -528,48 +516,48 @@ public class Webhook {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!Webhook.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in Webhook is not found in the empty JSON string", Webhook.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in Webhook is not found in the empty JSON string", Webhook.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : Webhook.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       // ensure the optional json data is an array if present
       if (jsonObj.get("events") != null && !jsonObj.get("events").isJsonNull() && !jsonObj.get("events").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `events` to be an array in the JSON string but got `%s`", jsonObj.get("events").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `events` to be an array in the JSON string but got `%s`", jsonObj.get("events").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("environments") != null && !jsonObj.get("environments").isJsonNull() && !jsonObj.get("environments").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `environments` to be an array in the JSON string but got `%s`", jsonObj.get("environments").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `environments` to be an array in the JSON string but got `%s`", jsonObj.get("environments").toString()));
       }
       if ((jsonObj.get("oauth_server_url") != null && !jsonObj.get("oauth_server_url").isJsonNull()) && !jsonObj.get("oauth_server_url").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `oauth_server_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("oauth_server_url").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `oauth_server_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("oauth_server_url").toString()));
       }
       if ((jsonObj.get("oauth_server_client_id") != null && !jsonObj.get("oauth_server_client_id").isJsonNull()) && !jsonObj.get("oauth_server_client_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `oauth_server_client_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("oauth_server_client_id").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `oauth_server_client_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("oauth_server_client_id").toString()));
       }
       if ((jsonObj.get("oauth_server_client_secret") != null && !jsonObj.get("oauth_server_client_secret").isJsonNull()) && !jsonObj.get("oauth_server_client_secret").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `oauth_server_client_secret` to be a primitive type in the JSON string but got `%s`", jsonObj.get("oauth_server_client_secret").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `oauth_server_client_secret` to be a primitive type in the JSON string but got `%s`", jsonObj.get("oauth_server_client_secret").toString()));
       }
       if ((jsonObj.get("oauth_server_scope") != null && !jsonObj.get("oauth_server_scope").isJsonNull()) && !jsonObj.get("oauth_server_scope").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `oauth_server_scope` to be a primitive type in the JSON string but got `%s`", jsonObj.get("oauth_server_scope").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `oauth_server_scope` to be a primitive type in the JSON string but got `%s`", jsonObj.get("oauth_server_scope").toString()));
       }
       if (!jsonObj.get("id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
       }
       if ((jsonObj.get("url") != null && !jsonObj.get("url").isJsonNull()) && !jsonObj.get("url").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("url").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("url").toString()));
       }
       if ((jsonObj.get("token") != null && !jsonObj.get("token").isJsonNull()) && !jsonObj.get("token").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `token` to be a primitive type in the JSON string but got `%s`", jsonObj.get("token").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `token` to be a primitive type in the JSON string but got `%s`", jsonObj.get("token").toString()));
       }
       if ((jsonObj.get("href") != null && !jsonObj.get("href").isJsonNull()) && !jsonObj.get("href").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `href` to be a primitive type in the JSON string but got `%s`", jsonObj.get("href").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `href` to be a primitive type in the JSON string but got `%s`", jsonObj.get("href").toString()));
       }
   }
 
@@ -630,7 +618,7 @@ public class Webhook {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

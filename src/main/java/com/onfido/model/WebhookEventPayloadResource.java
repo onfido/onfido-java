@@ -14,6 +14,7 @@
 package com.onfido.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -49,13 +50,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.onfido.JSON;
 
 /**
  * The resource affected by this event.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.16.0")
 public class WebhookEventPayloadResource {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -643,28 +645,10 @@ public class WebhookEventPayloadResource {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("id");
-    openapiFields.add("applicant_id");
-    openapiFields.add("created_at");
-    openapiFields.add("updated_at");
-    openapiFields.add("dashboard_url");
-    openapiFields.add("workflow_id");
-    openapiFields.add("workflow_run_id");
-    openapiFields.add("workflow_version_id");
-    openapiFields.add("task_def_id");
-    openapiFields.add("task_def_version");
-    openapiFields.add("input");
-    openapiFields.add("output");
-    openapiFields.add("reasons");
-    openapiFields.add("tags");
-    openapiFields.add("link");
-    openapiFields.add("error");
-    openapiFields.add("customer_user_id");
-    openapiFields.add("timeline_file_download_url");
+    openapiFields = new HashSet<String>(Arrays.asList("id", "applicant_id", "created_at", "updated_at", "dashboard_url", "workflow_id", "workflow_run_id", "workflow_version_id", "task_def_id", "task_def_version", "input", "output", "reasons", "tags", "link", "error", "customer_user_id", "timeline_file_download_url"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -676,38 +660,38 @@ public class WebhookEventPayloadResource {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!WebhookEventPayloadResource.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in WebhookEventPayloadResource is not found in the empty JSON string", WebhookEventPayloadResource.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in WebhookEventPayloadResource is not found in the empty JSON string", WebhookEventPayloadResource.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("id") != null && !jsonObj.get("id").isJsonNull()) && !jsonObj.get("id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
       }
       if ((jsonObj.get("applicant_id") != null && !jsonObj.get("applicant_id").isJsonNull()) && !jsonObj.get("applicant_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `applicant_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("applicant_id").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `applicant_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("applicant_id").toString()));
       }
       if ((jsonObj.get("dashboard_url") != null && !jsonObj.get("dashboard_url").isJsonNull()) && !jsonObj.get("dashboard_url").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `dashboard_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("dashboard_url").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `dashboard_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("dashboard_url").toString()));
       }
       if ((jsonObj.get("workflow_id") != null && !jsonObj.get("workflow_id").isJsonNull()) && !jsonObj.get("workflow_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `workflow_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("workflow_id").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `workflow_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("workflow_id").toString()));
       }
       if ((jsonObj.get("workflow_run_id") != null && !jsonObj.get("workflow_run_id").isJsonNull()) && !jsonObj.get("workflow_run_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `workflow_run_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("workflow_run_id").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `workflow_run_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("workflow_run_id").toString()));
       }
       if ((jsonObj.get("task_def_id") != null && !jsonObj.get("task_def_id").isJsonNull()) && !jsonObj.get("task_def_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `task_def_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("task_def_id").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `task_def_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("task_def_id").toString()));
       }
       if ((jsonObj.get("task_def_version") != null && !jsonObj.get("task_def_version").isJsonNull()) && !jsonObj.get("task_def_version").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `task_def_version` to be a primitive type in the JSON string but got `%s`", jsonObj.get("task_def_version").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `task_def_version` to be a primitive type in the JSON string but got `%s`", jsonObj.get("task_def_version").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("reasons") != null && !jsonObj.get("reasons").isJsonNull() && !jsonObj.get("reasons").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `reasons` to be an array in the JSON string but got `%s`", jsonObj.get("reasons").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `reasons` to be an array in the JSON string but got `%s`", jsonObj.get("reasons").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("tags") != null && !jsonObj.get("tags").isJsonNull() && !jsonObj.get("tags").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
       }
       // validate the optional field `link`
       if (jsonObj.get("link") != null && !jsonObj.get("link").isJsonNull()) {
@@ -718,10 +702,10 @@ public class WebhookEventPayloadResource {
         WorkflowRunError.validateJsonElement(jsonObj.get("error"));
       }
       if ((jsonObj.get("customer_user_id") != null && !jsonObj.get("customer_user_id").isJsonNull()) && !jsonObj.get("customer_user_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `customer_user_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("customer_user_id").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `customer_user_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("customer_user_id").toString()));
       }
       if ((jsonObj.get("timeline_file_download_url") != null && !jsonObj.get("timeline_file_download_url").isJsonNull()) && !jsonObj.get("timeline_file_download_url").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `timeline_file_download_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("timeline_file_download_url").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `timeline_file_download_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("timeline_file_download_url").toString()));
       }
   }
 
@@ -782,7 +766,7 @@ public class WebhookEventPayloadResource {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

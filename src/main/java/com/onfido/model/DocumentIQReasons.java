@@ -14,6 +14,7 @@
 package com.onfido.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -42,13 +43,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.onfido.JSON;
 
 /**
  * DocumentIQReasons
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.16.0")
 public class DocumentIQReasons {
   public static final String SERIALIZED_NAME_DARK_PHOTO = "dark_photo";
   @SerializedName(SERIALIZED_NAME_DARK_PHOTO)
@@ -401,20 +403,10 @@ public class DocumentIQReasons {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("dark_photo");
-    openapiFields.add("glare_on_photo");
-    openapiFields.add("blurred_photo");
-    openapiFields.add("covered_photo");
-    openapiFields.add("other_photo_issue");
-    openapiFields.add("damaged_document");
-    openapiFields.add("incorrect_side");
-    openapiFields.add("cut_off_document");
-    openapiFields.add("no_document_in_image");
-    openapiFields.add("two_documents_uploaded");
+    openapiFields = new HashSet<String>(Arrays.asList("dark_photo", "glare_on_photo", "blurred_photo", "covered_photo", "other_photo_issue", "damaged_document", "incorrect_side", "cut_off_document", "no_document_in_image", "two_documents_uploaded"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -426,39 +418,39 @@ public class DocumentIQReasons {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!DocumentIQReasons.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in DocumentIQReasons is not found in the empty JSON string", DocumentIQReasons.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in DocumentIQReasons is not found in the empty JSON string", DocumentIQReasons.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("dark_photo") != null && !jsonObj.get("dark_photo").isJsonNull()) && !jsonObj.get("dark_photo").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `dark_photo` to be a primitive type in the JSON string but got `%s`", jsonObj.get("dark_photo").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `dark_photo` to be a primitive type in the JSON string but got `%s`", jsonObj.get("dark_photo").toString()));
       }
       if ((jsonObj.get("glare_on_photo") != null && !jsonObj.get("glare_on_photo").isJsonNull()) && !jsonObj.get("glare_on_photo").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `glare_on_photo` to be a primitive type in the JSON string but got `%s`", jsonObj.get("glare_on_photo").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `glare_on_photo` to be a primitive type in the JSON string but got `%s`", jsonObj.get("glare_on_photo").toString()));
       }
       if ((jsonObj.get("blurred_photo") != null && !jsonObj.get("blurred_photo").isJsonNull()) && !jsonObj.get("blurred_photo").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `blurred_photo` to be a primitive type in the JSON string but got `%s`", jsonObj.get("blurred_photo").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `blurred_photo` to be a primitive type in the JSON string but got `%s`", jsonObj.get("blurred_photo").toString()));
       }
       if ((jsonObj.get("covered_photo") != null && !jsonObj.get("covered_photo").isJsonNull()) && !jsonObj.get("covered_photo").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `covered_photo` to be a primitive type in the JSON string but got `%s`", jsonObj.get("covered_photo").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `covered_photo` to be a primitive type in the JSON string but got `%s`", jsonObj.get("covered_photo").toString()));
       }
       if ((jsonObj.get("other_photo_issue") != null && !jsonObj.get("other_photo_issue").isJsonNull()) && !jsonObj.get("other_photo_issue").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `other_photo_issue` to be a primitive type in the JSON string but got `%s`", jsonObj.get("other_photo_issue").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `other_photo_issue` to be a primitive type in the JSON string but got `%s`", jsonObj.get("other_photo_issue").toString()));
       }
       if ((jsonObj.get("damaged_document") != null && !jsonObj.get("damaged_document").isJsonNull()) && !jsonObj.get("damaged_document").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `damaged_document` to be a primitive type in the JSON string but got `%s`", jsonObj.get("damaged_document").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `damaged_document` to be a primitive type in the JSON string but got `%s`", jsonObj.get("damaged_document").toString()));
       }
       if ((jsonObj.get("incorrect_side") != null && !jsonObj.get("incorrect_side").isJsonNull()) && !jsonObj.get("incorrect_side").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `incorrect_side` to be a primitive type in the JSON string but got `%s`", jsonObj.get("incorrect_side").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `incorrect_side` to be a primitive type in the JSON string but got `%s`", jsonObj.get("incorrect_side").toString()));
       }
       if ((jsonObj.get("cut_off_document") != null && !jsonObj.get("cut_off_document").isJsonNull()) && !jsonObj.get("cut_off_document").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `cut_off_document` to be a primitive type in the JSON string but got `%s`", jsonObj.get("cut_off_document").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `cut_off_document` to be a primitive type in the JSON string but got `%s`", jsonObj.get("cut_off_document").toString()));
       }
       if ((jsonObj.get("no_document_in_image") != null && !jsonObj.get("no_document_in_image").isJsonNull()) && !jsonObj.get("no_document_in_image").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `no_document_in_image` to be a primitive type in the JSON string but got `%s`", jsonObj.get("no_document_in_image").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `no_document_in_image` to be a primitive type in the JSON string but got `%s`", jsonObj.get("no_document_in_image").toString()));
       }
       if ((jsonObj.get("two_documents_uploaded") != null && !jsonObj.get("two_documents_uploaded").isJsonNull()) && !jsonObj.get("two_documents_uploaded").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `two_documents_uploaded` to be a primitive type in the JSON string but got `%s`", jsonObj.get("two_documents_uploaded").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `two_documents_uploaded` to be a primitive type in the JSON string but got `%s`", jsonObj.get("two_documents_uploaded").toString()));
       }
   }
 
@@ -519,7 +511,7 @@ public class DocumentIQReasons {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

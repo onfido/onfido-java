@@ -14,6 +14,7 @@
 package com.onfido.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -43,13 +44,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.onfido.JSON;
 
 /**
  * WatchlistEnhancedPropertiesRecordsInnerAddressInner
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.16.0")
 public class WatchlistEnhancedPropertiesRecordsInnerAddressInner {
   public static final String SERIALIZED_NAME_ADDRESS_LINE1 = "address_line1";
   @SerializedName(SERIALIZED_NAME_ADDRESS_LINE1)
@@ -298,16 +300,10 @@ public class WatchlistEnhancedPropertiesRecordsInnerAddressInner {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("address_line1");
-    openapiFields.add("country");
-    openapiFields.add("postal_code");
-    openapiFields.add("state_province");
-    openapiFields.add("town");
-    openapiFields.add("locator_type");
+    openapiFields = new HashSet<String>(Arrays.asList("address_line1", "country", "postal_code", "state_province", "town", "locator_type"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -319,28 +315,28 @@ public class WatchlistEnhancedPropertiesRecordsInnerAddressInner {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!WatchlistEnhancedPropertiesRecordsInnerAddressInner.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in WatchlistEnhancedPropertiesRecordsInnerAddressInner is not found in the empty JSON string", WatchlistEnhancedPropertiesRecordsInnerAddressInner.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in WatchlistEnhancedPropertiesRecordsInnerAddressInner is not found in the empty JSON string", WatchlistEnhancedPropertiesRecordsInnerAddressInner.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("address_line1") != null && !jsonObj.get("address_line1").isJsonNull()) && !jsonObj.get("address_line1").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `address_line1` to be a primitive type in the JSON string but got `%s`", jsonObj.get("address_line1").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `address_line1` to be a primitive type in the JSON string but got `%s`", jsonObj.get("address_line1").toString()));
       }
       // validate the optional field `country`
       if (jsonObj.get("country") != null && !jsonObj.get("country").isJsonNull()) {
         CountryCodes.validateJsonElement(jsonObj.get("country"));
       }
       if ((jsonObj.get("postal_code") != null && !jsonObj.get("postal_code").isJsonNull()) && !jsonObj.get("postal_code").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `postal_code` to be a primitive type in the JSON string but got `%s`", jsonObj.get("postal_code").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `postal_code` to be a primitive type in the JSON string but got `%s`", jsonObj.get("postal_code").toString()));
       }
       if ((jsonObj.get("state_province") != null && !jsonObj.get("state_province").isJsonNull()) && !jsonObj.get("state_province").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `state_province` to be a primitive type in the JSON string but got `%s`", jsonObj.get("state_province").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `state_province` to be a primitive type in the JSON string but got `%s`", jsonObj.get("state_province").toString()));
       }
       if ((jsonObj.get("town") != null && !jsonObj.get("town").isJsonNull()) && !jsonObj.get("town").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `town` to be a primitive type in the JSON string but got `%s`", jsonObj.get("town").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `town` to be a primitive type in the JSON string but got `%s`", jsonObj.get("town").toString()));
       }
       if ((jsonObj.get("locator_type") != null && !jsonObj.get("locator_type").isJsonNull()) && !jsonObj.get("locator_type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `locator_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("locator_type").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `locator_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("locator_type").toString()));
       }
   }
 
@@ -401,7 +397,7 @@ public class WatchlistEnhancedPropertiesRecordsInnerAddressInner {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

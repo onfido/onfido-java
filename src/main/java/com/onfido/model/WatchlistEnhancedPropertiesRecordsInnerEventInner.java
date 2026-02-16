@@ -14,6 +14,7 @@
 package com.onfido.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -44,13 +45,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.onfido.JSON;
 
 /**
  * WatchlistEnhancedPropertiesRecordsInnerEventInner
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.16.0")
 public class WatchlistEnhancedPropertiesRecordsInnerEventInner {
   public static final String SERIALIZED_NAME_CATEGORY = "category";
   @SerializedName(SERIALIZED_NAME_CATEGORY)
@@ -273,15 +275,10 @@ public class WatchlistEnhancedPropertiesRecordsInnerEventInner {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("category");
-    openapiFields.add("event_date");
-    openapiFields.add("event_description");
-    openapiFields.add("source");
-    openapiFields.add("sub_category");
+    openapiFields = new HashSet<String>(Arrays.asList("category", "event_date", "event_description", "source", "sub_category"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -293,22 +290,22 @@ public class WatchlistEnhancedPropertiesRecordsInnerEventInner {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!WatchlistEnhancedPropertiesRecordsInnerEventInner.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in WatchlistEnhancedPropertiesRecordsInnerEventInner is not found in the empty JSON string", WatchlistEnhancedPropertiesRecordsInnerEventInner.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in WatchlistEnhancedPropertiesRecordsInnerEventInner is not found in the empty JSON string", WatchlistEnhancedPropertiesRecordsInnerEventInner.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("category") != null && !jsonObj.get("category").isJsonNull()) && !jsonObj.get("category").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `category` to be a primitive type in the JSON string but got `%s`", jsonObj.get("category").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `category` to be a primitive type in the JSON string but got `%s`", jsonObj.get("category").toString()));
       }
       if ((jsonObj.get("event_description") != null && !jsonObj.get("event_description").isJsonNull()) && !jsonObj.get("event_description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `event_description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("event_description").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `event_description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("event_description").toString()));
       }
       // validate the optional field `source`
       if (jsonObj.get("source") != null && !jsonObj.get("source").isJsonNull()) {
         WatchlistEnhancedPropertiesRecordsInnerEventInnerSource.validateJsonElement(jsonObj.get("source"));
       }
       if ((jsonObj.get("sub_category") != null && !jsonObj.get("sub_category").isJsonNull()) && !jsonObj.get("sub_category").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `sub_category` to be a primitive type in the JSON string but got `%s`", jsonObj.get("sub_category").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `sub_category` to be a primitive type in the JSON string but got `%s`", jsonObj.get("sub_category").toString()));
       }
   }
 
@@ -369,7 +366,7 @@ public class WatchlistEnhancedPropertiesRecordsInnerEventInner {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

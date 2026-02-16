@@ -14,6 +14,7 @@
 package com.onfido.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -51,13 +52,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.onfido.JSON;
 
 /**
  * DocumentBreakdown
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.16.0")
 public class DocumentBreakdown {
   public static final String SERIALIZED_NAME_DATA_COMPARISON = "data_comparison";
   @SerializedName(SERIALIZED_NAME_DATA_COMPARISON)
@@ -384,19 +386,10 @@ public class DocumentBreakdown {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("data_comparison");
-    openapiFields.add("data_validation");
-    openapiFields.add("image_integrity");
-    openapiFields.add("visual_authenticity");
-    openapiFields.add("data_consistency");
-    openapiFields.add("police_record");
-    openapiFields.add("compromised_document");
-    openapiFields.add("age_validation");
-    openapiFields.add("issuing_authority");
+    openapiFields = new HashSet<String>(Arrays.asList("data_comparison", "data_validation", "image_integrity", "visual_authenticity", "data_consistency", "police_record", "compromised_document", "age_validation", "issuing_authority"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -408,7 +401,7 @@ public class DocumentBreakdown {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!DocumentBreakdown.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in DocumentBreakdown is not found in the empty JSON string", DocumentBreakdown.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in DocumentBreakdown is not found in the empty JSON string", DocumentBreakdown.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -507,7 +500,7 @@ public class DocumentBreakdown {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

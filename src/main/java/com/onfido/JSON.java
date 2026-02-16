@@ -27,8 +27,11 @@ import io.gsonfire.TypeSelector;
 import okio.ByteString;
 
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.StringReader;
 import java.lang.reflect.Type;
+import java.nio.charset.StandardCharsets;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.ParsePosition;
@@ -83,27 +86,6 @@ public class JSON {
                         classByDiscriminatorValue.put("watchlist_peps_only", com.onfido.model.WatchlistPepsOnlyReport.class);
                         classByDiscriminatorValue.put("watchlist_sanctions_only", com.onfido.model.WatchlistSanctionsOnlyReport.class);
                         classByDiscriminatorValue.put("watchlist_standard", com.onfido.model.WatchlistStandardReport.class);
-                        classByDiscriminatorValue.put("device_intelligence_report", com.onfido.model.DeviceIntelligenceReport.class);
-                        classByDiscriminatorValue.put("document_report", com.onfido.model.DocumentReport.class);
-                        classByDiscriminatorValue.put("document_video_report", com.onfido.model.DocumentVideoReport.class);
-                        classByDiscriminatorValue.put("document_video_with_address_information_report", com.onfido.model.DocumentVideoWithAddressInformationReport.class);
-                        classByDiscriminatorValue.put("document_with_address_information_report", com.onfido.model.DocumentWithAddressInformationReport.class);
-                        classByDiscriminatorValue.put("document_with_driver_verification_report", com.onfido.model.DocumentWithDriverVerificationReport.class);
-                        classByDiscriminatorValue.put("document_with_driving_licence_information_report", com.onfido.model.DocumentWithDrivingLicenceInformationReport.class);
-                        classByDiscriminatorValue.put("facial_similarity_motion_report", com.onfido.model.FacialSimilarityMotionReport.class);
-                        classByDiscriminatorValue.put("facial_similarity_photo_fully_auto_report", com.onfido.model.FacialSimilarityPhotoFullyAutoReport.class);
-                        classByDiscriminatorValue.put("facial_similarity_photo_report", com.onfido.model.FacialSimilarityPhotoReport.class);
-                        classByDiscriminatorValue.put("facial_similarity_video_report", com.onfido.model.FacialSimilarityVideoReport.class);
-                        classByDiscriminatorValue.put("identity_enhanced_report", com.onfido.model.IdentityEnhancedReport.class);
-                        classByDiscriminatorValue.put("india_pan_report", com.onfido.model.IndiaPanReport.class);
-                        classByDiscriminatorValue.put("known_faces_report", com.onfido.model.KnownFacesReport.class);
-                        classByDiscriminatorValue.put("proof_of_address_report", com.onfido.model.ProofOfAddressReport.class);
-                        classByDiscriminatorValue.put("us_driving_licence_report", com.onfido.model.UsDrivingLicenceReport.class);
-                        classByDiscriminatorValue.put("watchlist_aml_report", com.onfido.model.WatchlistAmlReport.class);
-                        classByDiscriminatorValue.put("watchlist_enhanced_report", com.onfido.model.WatchlistEnhancedReport.class);
-                        classByDiscriminatorValue.put("watchlist_peps_only_report", com.onfido.model.WatchlistPepsOnlyReport.class);
-                        classByDiscriminatorValue.put("watchlist_sanctions_only_report", com.onfido.model.WatchlistSanctionsOnlyReport.class);
-                        classByDiscriminatorValue.put("watchlist_standard_report", com.onfido.model.WatchlistStandardReport.class);
                         classByDiscriminatorValue.put("report", com.onfido.model.Report.class);
                         return getClassByDiscriminator(classByDiscriminatorValue,
                                 getDiscriminatorValue(readElement, "name"));
@@ -499,6 +481,28 @@ public class JSON {
                 return (T) body;
             } else {
                 throw (e);
+            }
+        }
+    }
+
+    /**
+    * Deserialize the given JSON InputStream to a Java object.
+    *
+    * @param <T>         Type
+    * @param inputStream The JSON InputStream
+    * @param returnType  The type to deserialize into
+    * @return The deserialized Java object
+    */
+    @SuppressWarnings("unchecked")
+    public static <T> T deserialize(InputStream inputStream, Type returnType) throws IOException {
+        try (InputStreamReader reader = new InputStreamReader(inputStream, StandardCharsets.UTF_8)) {
+        if (isLenientOnJson) {
+            // see https://google-gson.googlecode.com/svn/trunk/gson/docs/javadocs/com/google/gson/stream/JsonReader.html#setLenient(boolean)
+            JsonReader jsonReader = new JsonReader(reader);
+            jsonReader.setLenient(true);
+            return gson.fromJson(jsonReader, returnType);
+            } else {
+                return gson.fromJson(reader, returnType);
             }
         }
     }

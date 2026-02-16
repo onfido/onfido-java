@@ -14,6 +14,7 @@
 package com.onfido.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import java.util.List;
 
 
@@ -52,7 +53,7 @@ import com.google.gson.JsonParseException;
 
 import com.onfido.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.16.0")
 public class CompleteTaskDataBuilder extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(CompleteTaskDataBuilder.class.getName());
 
@@ -68,8 +69,6 @@ public class CompleteTaskDataBuilder extends AbstractOpenApiSchema {
             final Type typeInstanceListObject = new TypeToken<List<Object>>(){}.getType();
             final TypeAdapter<List<Object>> adapterListObject = (TypeAdapter<List<Object>>) gson.getDelegateAdapter(this, TypeToken.get(typeInstanceListObject));
             final TypeAdapter<Object> adapterObject = gson.getDelegateAdapter(this, TypeToken.get(Object.class));
-
-            final TypeAdapter<ReportShared> adapterReportShared = gson.getDelegateAdapter(this, TypeToken.get(ReportShared.class));
 
             return (TypeAdapter<T>) new TypeAdapter<CompleteTaskDataBuilder>() {
                 @Override
@@ -107,14 +106,14 @@ public class CompleteTaskDataBuilder extends AbstractOpenApiSchema {
                     try {
                         // validate the JSON object to see if any exception is thrown
                         if (!jsonElement.isJsonArray()) {
-                            throw new IllegalArgumentException(String.format("Expected json element to be a array type in the JSON string but got `%s`", jsonElement.toString()));
+                            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected json element to be a array type in the JSON string but got `%s`", jsonElement.toString()));
                         }
 
                         JsonArray array = jsonElement.getAsJsonArray();
                         // validate array items
                         for(JsonElement element : array) {
                             if (!element.getAsJsonPrimitive().isNumber()) {
-                                throw new IllegalArgumentException(String.format("Expected array items to be of type Number in the JSON string but got `%s`", jsonElement.toString()));
+                                throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected array items to be of type Number in the JSON string but got `%s`", jsonElement.toString()));
                             }
                         }
                         actualAdapter = adapterListObject;
@@ -122,21 +121,21 @@ public class CompleteTaskDataBuilder extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'List<Object>'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for List<Object> failed with `%s`.", e.getMessage()));
+                        errorMessages.add(String.format(Locale.ROOT, "Deserialization for List<Object> failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'List<Object>'", e);
                     }
                     // deserialize Object
                     try {
                         // validate the JSON object to see if any exception is thrown
                         if (!jsonElement.getAsJsonPrimitive().isNumber()) {
-                            throw new IllegalArgumentException(String.format("Expected json element to be of type Number in the JSON string but got `%s`", jsonElement.toString()));
+                            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected json element to be of type Number in the JSON string but got `%s`", jsonElement.toString()));
                         }
                         actualAdapter = adapterObject;
                         match++;
                         log.log(Level.FINER, "Input data matches schema 'Object'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for Object failed with `%s`.", e.getMessage()));
+                        errorMessages.add(String.format(Locale.ROOT, "Deserialization for Object failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'Object'", e);
                     }
 
@@ -146,7 +145,7 @@ public class CompleteTaskDataBuilder extends AbstractOpenApiSchema {
                         return ret;
                     }
 
-                    throw new IOException(String.format("Failed deserialization for CompleteTaskDataBuilder: %d classes match result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", match, errorMessages, jsonElement.toString()));
+                    throw new IOException(String.format(Locale.ROOT, "Failed deserialization for CompleteTaskDataBuilder: %d classes match result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", match, errorMessages, jsonElement.toString()));
                 }
             }.nullSafe();
         }
@@ -154,8 +153,6 @@ public class CompleteTaskDataBuilder extends AbstractOpenApiSchema {
 
     // store a list of schema names defined in oneOf
     public static final Map<String, Class<?>> schemas = new HashMap<String, Class<?>>();
-
-    private ReportShared reportShared;
 
     public CompleteTaskDataBuilder() {
         super("oneOf", Boolean.FALSE);
@@ -187,7 +184,7 @@ public class CompleteTaskDataBuilder extends AbstractOpenApiSchema {
     public void setActualInstance(Object instance) {
         if (instance instanceof List<?>) {
             List<?> list = (List<?>) instance;
-            if (list.get(0) instanceof Object) {
+            if (!list.isEmpty() && list.get(0) instanceof Object) {
                 super.setActualInstance(instance);
                 return;
             }
@@ -220,7 +217,6 @@ public class CompleteTaskDataBuilder extends AbstractOpenApiSchema {
      * @return The actual instance of `List<Object>`
      * @throws ClassCastException if the instance is not `List<Object>`
      */
-    @SuppressWarnings("unchecked")
     public List<Object> getListObject() throws ClassCastException {
         return (List<Object>)super.getActualInstance();
     }
@@ -232,52 +228,23 @@ public class CompleteTaskDataBuilder extends AbstractOpenApiSchema {
      * @return The actual instance of `Object`
      * @throws ClassCastException if the instance is not `Object`
      */
-    @SuppressWarnings("unchecked")
     public Object getObject() throws ClassCastException {
         return (Object)super.getActualInstance();
     }
 
+
     /**
-     * Validates the JSON Element and throws an exception if issues found
+     * Validates the JSON Element. When discriminator-based deserialization is enabled,
+     * this method is a no-op as validation is performed during discriminator-based lookup.
      *
      * @param jsonElement JSON Element
      * @throws IOException if the JSON Element is invalid with respect to CompleteTaskDataBuilder
      */
     public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        // validate oneOf schemas one by one
-        int validCount = 0;
-        ArrayList<String> errorMessages = new ArrayList<>();
-        // validate the json string with List<Object>
-        try {
-            if (!jsonElement.isJsonArray()) {
-                throw new IllegalArgumentException(String.format("Expected json element to be a array type in the JSON string but got `%s`", jsonElement.toString()));
-            }
-            JsonArray array = jsonElement.getAsJsonArray();
-            // validate array items
-            for(JsonElement element : array) {
-                if (!element.getAsJsonPrimitive().isNumber()) {
-                    throw new IllegalArgumentException(String.format("Expected array items to be of type Number in the JSON string but got `%s`", jsonElement.toString()));
-                }
-            }
-            validCount++;
-        } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for List<Object> failed with `%s`.", e.getMessage()));
-            // continue to the next one
-        }
-        // validate the json string with Object
-        try {
-            if (!jsonElement.getAsJsonPrimitive().isNumber()) {
-                throw new IllegalArgumentException(String.format("Expected json element to be of type Number in the JSON string but got `%s`", jsonElement.toString()));
-            }
-            validCount++;
-        } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for Object failed with `%s`.", e.getMessage()));
-            // continue to the next one
-        }
-        if (validCount < 1) {
-            throw new IOException(String.format("The JSON string is invalid for CompleteTaskDataBuilder with oneOf schemas: List<Object>, Object. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
-        }
+        // No validation needed when discriminator lookup is enabled
+        // Validation happens during read() via discriminator-based deserialization
     }
+ 
 
     /**
      * Create an instance of CompleteTaskDataBuilder given an JSON string
@@ -297,43 +264,6 @@ public class CompleteTaskDataBuilder extends AbstractOpenApiSchema {
      */
     public String toJson() {
         return JSON.getGson().toJson(this);
-    }
-
-
-    /**
-     * Give access to shared properties. Read-only.
-     * @return ReportShared object with common fields
-     **/
-
-    public ReportShared getReportShared() {
-        return reportShared;
-    }
-
-    /**
-     * Give access to shared properties. Read-only.
-     * @return id
-     **/
-
-    public UUID getId() {
-        return reportShared.getId();
-    }
-
-    /**
-     * Get name
-     * @return name
-     **/
-
-    public ReportName getName() {
-        return reportShared.getName();
-    }
-
-    /**
-     * Get status
-     * @return status
-     **/
-
-    public ReportStatus getStatus() {
-        return reportShared.getStatus();
     }
 
 }

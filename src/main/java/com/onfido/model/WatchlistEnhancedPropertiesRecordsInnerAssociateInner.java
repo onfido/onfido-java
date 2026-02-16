@@ -14,6 +14,7 @@
 package com.onfido.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -42,13 +43,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.onfido.JSON;
 
 /**
  * WatchlistEnhancedPropertiesRecordsInnerAssociateInner
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.16.0")
 public class WatchlistEnhancedPropertiesRecordsInnerAssociateInner {
   public static final String SERIALIZED_NAME_ENTITY_NAME = "entity_name";
   @SerializedName(SERIALIZED_NAME_ENTITY_NAME)
@@ -219,13 +221,10 @@ public class WatchlistEnhancedPropertiesRecordsInnerAssociateInner {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("entity_name");
-    openapiFields.add("relationship_direction");
-    openapiFields.add("relationship_type");
+    openapiFields = new HashSet<String>(Arrays.asList("entity_name", "relationship_direction", "relationship_type"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -237,18 +236,18 @@ public class WatchlistEnhancedPropertiesRecordsInnerAssociateInner {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!WatchlistEnhancedPropertiesRecordsInnerAssociateInner.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in WatchlistEnhancedPropertiesRecordsInnerAssociateInner is not found in the empty JSON string", WatchlistEnhancedPropertiesRecordsInnerAssociateInner.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in WatchlistEnhancedPropertiesRecordsInnerAssociateInner is not found in the empty JSON string", WatchlistEnhancedPropertiesRecordsInnerAssociateInner.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("entity_name") != null && !jsonObj.get("entity_name").isJsonNull()) && !jsonObj.get("entity_name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `entity_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("entity_name").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `entity_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("entity_name").toString()));
       }
       if ((jsonObj.get("relationship_direction") != null && !jsonObj.get("relationship_direction").isJsonNull()) && !jsonObj.get("relationship_direction").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `relationship_direction` to be a primitive type in the JSON string but got `%s`", jsonObj.get("relationship_direction").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `relationship_direction` to be a primitive type in the JSON string but got `%s`", jsonObj.get("relationship_direction").toString()));
       }
       if ((jsonObj.get("relationship_type") != null && !jsonObj.get("relationship_type").isJsonNull()) && !jsonObj.get("relationship_type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `relationship_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("relationship_type").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `relationship_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("relationship_type").toString()));
       }
   }
 
@@ -309,7 +308,7 @@ public class WatchlistEnhancedPropertiesRecordsInnerAssociateInner {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

@@ -6,6 +6,53 @@ major versions of the client library.
 It covers changes in core resources, other endpoints, and the OpenAPI generator,
 ensuring a smooth transition between versions.
 
+## Upgrading from 6.x to 7.x
+
+### Core Resources
+
+- **All API methods**: All API method calls now use request builder pattern with `.execute()`
+  - This change enables backward compatibility when new optional parameters are added
+  - Example migration:
+    ```java
+    // Before (v6.x)
+    List<WorkflowRun> runs = api.listWorkflowRuns(applicantId, status, page, perPage);
+
+    // After (v7.x)
+    List<WorkflowRun> runs = api.listWorkflowRuns()
+        .applicantId(applicantId)
+        .status(status)
+        .page(page)
+        .perPage(perPage)
+        .execute();
+    ```
+- Documents
+  - Driving licence information properties removed from general `DocumentProperties`
+    and moved to new `DocumentPropertiesWithDrivingLicenceInformation` class
+- Workflow Runs
+  - `createdAtGt` and `createdAtLt` parameters in `listWorkflowRuns` changed from
+    date-time format to date format (YYYY-MM-DD)
+
+### Other Endpoints
+
+- Reports
+  - Device Intelligence: Removed deprecated `breakdown` property and related
+    breakdown classes:
+    - `DeviceIntelligenceBreakdownProperties` removed
+    - `DeviceIntelligenceBreakdownPropertiesDevice` → `DeviceIntelligencePropertiesDevice`
+    - `DeviceIntelligenceBreakdownPropertiesGeolocation` → `DeviceIntelligencePropertiesGeolocation`
+    - `DeviceIntelligenceBreakdownPropertiesIp` → `DeviceIntelligencePropertiesIp`
+  - Identity Enhanced: Changed `totalNumberOfSources` and `numberOfMatches` from
+    number to string type
+
+### Security
+
+- SSL certificate validation: Removed support for self-signed certificates unless
+  explicitly configured via `setSslCaCert()`
+
+### OpenAPI generator
+
+- Version upgraded from `7.11.0` to `7.16.0`
+
 ## Upgrading from 5.x to 6.x
 
 ### Core Resources

@@ -257,7 +257,7 @@ public class ReportSchemasTest extends TestBase {
 
     DeviceIntelligenceProperties properties = deviceIntelligenceReport.getProperties();
     Assertions.assertEquals(
-        DeviceIntelligenceBreakdownPropertiesDevice.IpReputationEnum.NOT_ENOUGH_DATA,
+        DeviceIntelligencePropertiesDevice.IpReputationEnum.NOT_ENOUGH_DATA,
         properties.getDevice().getIpReputation());
     Assertions.assertEquals("SM-G991B", properties.getDevice().getRawModel());
   }

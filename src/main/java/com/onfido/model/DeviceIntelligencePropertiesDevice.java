@@ -50,10 +50,10 @@ import java.util.Locale;
 import com.onfido.JSON;
 
 /**
- * DeviceIntelligenceBreakdownPropertiesDevice
+ * DeviceIntelligencePropertiesDevice
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.16.0")
-public class DeviceIntelligenceBreakdownPropertiesDevice {
+public class DeviceIntelligencePropertiesDevice {
   public static final String SERIALIZED_NAME_SDK_VERSION = "sdk_version";
   @SerializedName(SERIALIZED_NAME_SDK_VERSION)
   @javax.annotation.Nullable
@@ -400,10 +400,10 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
   @javax.annotation.Nullable
   private BiometricCaptureEnum biometricCapture;
 
-  public DeviceIntelligenceBreakdownPropertiesDevice() {
+  public DeviceIntelligencePropertiesDevice() {
   }
 
-  public DeviceIntelligenceBreakdownPropertiesDevice sdkVersion(@javax.annotation.Nullable String sdkVersion) {
+  public DeviceIntelligencePropertiesDevice sdkVersion(@javax.annotation.Nullable String sdkVersion) {
     this.sdkVersion = sdkVersion;
     return this;
   }
@@ -422,7 +422,7 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
   }
 
 
-  public DeviceIntelligenceBreakdownPropertiesDevice sdkSource(@javax.annotation.Nullable SdkSourceEnum sdkSource) {
+  public DeviceIntelligencePropertiesDevice sdkSource(@javax.annotation.Nullable SdkSourceEnum sdkSource) {
     this.sdkSource = sdkSource;
     return this;
   }
@@ -441,7 +441,7 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
   }
 
 
-  public DeviceIntelligenceBreakdownPropertiesDevice authenticationType(@javax.annotation.Nullable AuthenticationTypeEnum authenticationType) {
+  public DeviceIntelligencePropertiesDevice authenticationType(@javax.annotation.Nullable AuthenticationTypeEnum authenticationType) {
     this.authenticationType = authenticationType;
     return this;
   }
@@ -460,7 +460,7 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
   }
 
 
-  public DeviceIntelligenceBreakdownPropertiesDevice rawModel(@javax.annotation.Nullable String rawModel) {
+  public DeviceIntelligencePropertiesDevice rawModel(@javax.annotation.Nullable String rawModel) {
     this.rawModel = rawModel;
     return this;
   }
@@ -479,7 +479,7 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
   }
 
 
-  public DeviceIntelligenceBreakdownPropertiesDevice os(@javax.annotation.Nullable String os) {
+  public DeviceIntelligencePropertiesDevice os(@javax.annotation.Nullable String os) {
     this.os = os;
     return this;
   }
@@ -498,7 +498,7 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
   }
 
 
-  public DeviceIntelligenceBreakdownPropertiesDevice browser(@javax.annotation.Nullable String browser) {
+  public DeviceIntelligencePropertiesDevice browser(@javax.annotation.Nullable String browser) {
     this.browser = browser;
     return this;
   }
@@ -517,7 +517,7 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
   }
 
 
-  public DeviceIntelligenceBreakdownPropertiesDevice emulator(@javax.annotation.Nullable Boolean emulator) {
+  public DeviceIntelligencePropertiesDevice emulator(@javax.annotation.Nullable Boolean emulator) {
     this.emulator = emulator;
     return this;
   }
@@ -536,7 +536,7 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
   }
 
 
-  public DeviceIntelligenceBreakdownPropertiesDevice randomizedDevice(@javax.annotation.Nullable Boolean randomizedDevice) {
+  public DeviceIntelligencePropertiesDevice randomizedDevice(@javax.annotation.Nullable Boolean randomizedDevice) {
     this.randomizedDevice = randomizedDevice;
     return this;
   }
@@ -555,7 +555,7 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
   }
 
 
-  public DeviceIntelligenceBreakdownPropertiesDevice fakeNetworkRequest(@javax.annotation.Nullable Boolean fakeNetworkRequest) {
+  public DeviceIntelligencePropertiesDevice fakeNetworkRequest(@javax.annotation.Nullable Boolean fakeNetworkRequest) {
     this.fakeNetworkRequest = fakeNetworkRequest;
     return this;
   }
@@ -574,7 +574,7 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
   }
 
 
-  public DeviceIntelligenceBreakdownPropertiesDevice ipReputation(@javax.annotation.Nullable IpReputationEnum ipReputation) {
+  public DeviceIntelligencePropertiesDevice ipReputation(@javax.annotation.Nullable IpReputationEnum ipReputation) {
     this.ipReputation = ipReputation;
     return this;
   }
@@ -593,7 +593,7 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
   }
 
 
-  public DeviceIntelligenceBreakdownPropertiesDevice deviceFingerprintReuse(@javax.annotation.Nullable BigDecimal deviceFingerprintReuse) {
+  public DeviceIntelligencePropertiesDevice deviceFingerprintReuse(@javax.annotation.Nullable BigDecimal deviceFingerprintReuse) {
     this.deviceFingerprintReuse = deviceFingerprintReuse;
     return this;
   }
@@ -612,7 +612,7 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
   }
 
 
-  public DeviceIntelligenceBreakdownPropertiesDevice singleDeviceUsed(@javax.annotation.Nullable Boolean singleDeviceUsed) {
+  public DeviceIntelligencePropertiesDevice singleDeviceUsed(@javax.annotation.Nullable Boolean singleDeviceUsed) {
     this.singleDeviceUsed = singleDeviceUsed;
     return this;
   }
@@ -631,7 +631,7 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
   }
 
 
-  public DeviceIntelligenceBreakdownPropertiesDevice documentCapture(@javax.annotation.Nullable DocumentCaptureEnum documentCapture) {
+  public DeviceIntelligencePropertiesDevice documentCapture(@javax.annotation.Nullable DocumentCaptureEnum documentCapture) {
     this.documentCapture = documentCapture;
     return this;
   }
@@ -650,7 +650,7 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
   }
 
 
-  public DeviceIntelligenceBreakdownPropertiesDevice biometricCapture(@javax.annotation.Nullable BiometricCaptureEnum biometricCapture) {
+  public DeviceIntelligencePropertiesDevice biometricCapture(@javax.annotation.Nullable BiometricCaptureEnum biometricCapture) {
     this.biometricCapture = biometricCapture;
     return this;
   }
@@ -681,9 +681,9 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
    *
    * @param key name of the property
    * @param value value of the property
-   * @return the DeviceIntelligenceBreakdownPropertiesDevice instance itself
+   * @return the DeviceIntelligencePropertiesDevice instance itself
    */
-  public DeviceIntelligenceBreakdownPropertiesDevice putAdditionalProperty(String key, Object value) {
+  public DeviceIntelligencePropertiesDevice putAdditionalProperty(String key, Object value) {
     if (this.additionalProperties == null) {
         this.additionalProperties = new HashMap<String, Object>();
     }
@@ -722,22 +722,22 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    DeviceIntelligenceBreakdownPropertiesDevice deviceIntelligenceBreakdownPropertiesDevice = (DeviceIntelligenceBreakdownPropertiesDevice) o;
-    return Objects.equals(this.sdkVersion, deviceIntelligenceBreakdownPropertiesDevice.sdkVersion) &&
-        Objects.equals(this.sdkSource, deviceIntelligenceBreakdownPropertiesDevice.sdkSource) &&
-        Objects.equals(this.authenticationType, deviceIntelligenceBreakdownPropertiesDevice.authenticationType) &&
-        Objects.equals(this.rawModel, deviceIntelligenceBreakdownPropertiesDevice.rawModel) &&
-        Objects.equals(this.os, deviceIntelligenceBreakdownPropertiesDevice.os) &&
-        Objects.equals(this.browser, deviceIntelligenceBreakdownPropertiesDevice.browser) &&
-        Objects.equals(this.emulator, deviceIntelligenceBreakdownPropertiesDevice.emulator) &&
-        Objects.equals(this.randomizedDevice, deviceIntelligenceBreakdownPropertiesDevice.randomizedDevice) &&
-        Objects.equals(this.fakeNetworkRequest, deviceIntelligenceBreakdownPropertiesDevice.fakeNetworkRequest) &&
-        Objects.equals(this.ipReputation, deviceIntelligenceBreakdownPropertiesDevice.ipReputation) &&
-        Objects.equals(this.deviceFingerprintReuse, deviceIntelligenceBreakdownPropertiesDevice.deviceFingerprintReuse) &&
-        Objects.equals(this.singleDeviceUsed, deviceIntelligenceBreakdownPropertiesDevice.singleDeviceUsed) &&
-        Objects.equals(this.documentCapture, deviceIntelligenceBreakdownPropertiesDevice.documentCapture) &&
-        Objects.equals(this.biometricCapture, deviceIntelligenceBreakdownPropertiesDevice.biometricCapture)&&
-        Objects.equals(this.additionalProperties, deviceIntelligenceBreakdownPropertiesDevice.additionalProperties);
+    DeviceIntelligencePropertiesDevice deviceIntelligencePropertiesDevice = (DeviceIntelligencePropertiesDevice) o;
+    return Objects.equals(this.sdkVersion, deviceIntelligencePropertiesDevice.sdkVersion) &&
+        Objects.equals(this.sdkSource, deviceIntelligencePropertiesDevice.sdkSource) &&
+        Objects.equals(this.authenticationType, deviceIntelligencePropertiesDevice.authenticationType) &&
+        Objects.equals(this.rawModel, deviceIntelligencePropertiesDevice.rawModel) &&
+        Objects.equals(this.os, deviceIntelligencePropertiesDevice.os) &&
+        Objects.equals(this.browser, deviceIntelligencePropertiesDevice.browser) &&
+        Objects.equals(this.emulator, deviceIntelligencePropertiesDevice.emulator) &&
+        Objects.equals(this.randomizedDevice, deviceIntelligencePropertiesDevice.randomizedDevice) &&
+        Objects.equals(this.fakeNetworkRequest, deviceIntelligencePropertiesDevice.fakeNetworkRequest) &&
+        Objects.equals(this.ipReputation, deviceIntelligencePropertiesDevice.ipReputation) &&
+        Objects.equals(this.deviceFingerprintReuse, deviceIntelligencePropertiesDevice.deviceFingerprintReuse) &&
+        Objects.equals(this.singleDeviceUsed, deviceIntelligencePropertiesDevice.singleDeviceUsed) &&
+        Objects.equals(this.documentCapture, deviceIntelligencePropertiesDevice.documentCapture) &&
+        Objects.equals(this.biometricCapture, deviceIntelligencePropertiesDevice.biometricCapture)&&
+        Objects.equals(this.additionalProperties, deviceIntelligencePropertiesDevice.additionalProperties);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -759,7 +759,7 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class DeviceIntelligenceBreakdownPropertiesDevice {\n");
+    sb.append("class DeviceIntelligencePropertiesDevice {\n");
     sb.append("    sdkVersion: ").append(toIndentedString(sdkVersion)).append("\n");
     sb.append("    sdkSource: ").append(toIndentedString(sdkSource)).append("\n");
     sb.append("    authenticationType: ").append(toIndentedString(authenticationType)).append("\n");
@@ -806,12 +806,12 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to DeviceIntelligenceBreakdownPropertiesDevice
+   * @throws IOException if the JSON Element is invalid with respect to DeviceIntelligencePropertiesDevice
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!DeviceIntelligenceBreakdownPropertiesDevice.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in DeviceIntelligenceBreakdownPropertiesDevice is not found in the empty JSON string", DeviceIntelligenceBreakdownPropertiesDevice.openapiRequiredFields.toString()));
+        if (!DeviceIntelligencePropertiesDevice.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in DeviceIntelligencePropertiesDevice is not found in the empty JSON string", DeviceIntelligencePropertiesDevice.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -868,16 +868,16 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!DeviceIntelligenceBreakdownPropertiesDevice.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'DeviceIntelligenceBreakdownPropertiesDevice' and its subtypes
+       if (!DeviceIntelligencePropertiesDevice.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'DeviceIntelligencePropertiesDevice' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<DeviceIntelligenceBreakdownPropertiesDevice> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(DeviceIntelligenceBreakdownPropertiesDevice.class));
+       final TypeAdapter<DeviceIntelligencePropertiesDevice> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(DeviceIntelligencePropertiesDevice.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<DeviceIntelligenceBreakdownPropertiesDevice>() {
+       return (TypeAdapter<T>) new TypeAdapter<DeviceIntelligencePropertiesDevice>() {
            @Override
-           public void write(JsonWriter out, DeviceIntelligenceBreakdownPropertiesDevice value) throws IOException {
+           public void write(JsonWriter out, DeviceIntelligencePropertiesDevice value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              obj.remove("additionalProperties");
              // serialize additional properties
@@ -905,12 +905,12 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
            }
 
            @Override
-           public DeviceIntelligenceBreakdownPropertiesDevice read(JsonReader in) throws IOException {
+           public DeviceIntelligencePropertiesDevice read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
-             DeviceIntelligenceBreakdownPropertiesDevice instance = thisAdapter.fromJsonTree(jsonObj);
+             DeviceIntelligencePropertiesDevice instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
                if (!openapiFields.contains(entry.getKey())) {
                  if (entry.getValue().isJsonPrimitive()) { // primitive type
@@ -937,18 +937,18 @@ public class DeviceIntelligenceBreakdownPropertiesDevice {
   }
 
   /**
-   * Create an instance of DeviceIntelligenceBreakdownPropertiesDevice given an JSON string
+   * Create an instance of DeviceIntelligencePropertiesDevice given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of DeviceIntelligenceBreakdownPropertiesDevice
-   * @throws IOException if the JSON string is invalid with respect to DeviceIntelligenceBreakdownPropertiesDevice
+   * @return An instance of DeviceIntelligencePropertiesDevice
+   * @throws IOException if the JSON string is invalid with respect to DeviceIntelligencePropertiesDevice
    */
-  public static DeviceIntelligenceBreakdownPropertiesDevice fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, DeviceIntelligenceBreakdownPropertiesDevice.class);
+  public static DeviceIntelligencePropertiesDevice fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, DeviceIntelligencePropertiesDevice.class);
   }
 
   /**
-   * Convert an instance of DeviceIntelligenceBreakdownPropertiesDevice to an JSON string
+   * Convert an instance of DeviceIntelligencePropertiesDevice to an JSON string
    *
    * @return JSON string
    */

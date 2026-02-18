@@ -118,7 +118,7 @@ public class WorkflowRunTest extends TestBase {
                 "findTimelineFile",
                 new UUID[] {workflowRunId, timelineFileId},
                 MAX_RETRIES,
-                SLEEP_TIME);
+                SLEEP_TIME * 2);
 
     byte[] byteArray = download.getByteArray();
 
@@ -140,7 +140,7 @@ public class WorkflowRunTest extends TestBase {
     FileTransfer evidenceFolderDownload =
         (FileTransfer)
             repeatRequestUntilHttpCodeChanges(
-                "downloadEvidenceFolder", new UUID[] {workflowRunId}, MAX_RETRIES, SLEEP_TIME);
+                "downloadEvidenceFolder", new UUID[] {workflowRunId}, MAX_RETRIES, SLEEP_TIME * 2);
 
     byte[] byteArray = evidenceFolderDownload.getByteArray();
 

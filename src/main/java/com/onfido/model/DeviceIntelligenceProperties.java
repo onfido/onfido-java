@@ -20,9 +20,9 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.onfido.model.DeviceIntelligenceBreakdownPropertiesDevice;
-import com.onfido.model.DeviceIntelligenceBreakdownPropertiesGeolocation;
-import com.onfido.model.DeviceIntelligenceBreakdownPropertiesIp;
+import com.onfido.model.DeviceIntelligencePropertiesDevice;
+import com.onfido.model.DeviceIntelligencePropertiesGeolocation;
+import com.onfido.model.DeviceIntelligencePropertiesIp;
 import java.io.IOException;
 import java.util.Arrays;
 
@@ -58,22 +58,22 @@ public class DeviceIntelligenceProperties {
   public static final String SERIALIZED_NAME_DEVICE = "device";
   @SerializedName(SERIALIZED_NAME_DEVICE)
   @javax.annotation.Nullable
-  private DeviceIntelligenceBreakdownPropertiesDevice device;
+  private DeviceIntelligencePropertiesDevice device;
 
   public static final String SERIALIZED_NAME_IP = "ip";
   @SerializedName(SERIALIZED_NAME_IP)
   @javax.annotation.Nullable
-  private DeviceIntelligenceBreakdownPropertiesIp ip;
+  private DeviceIntelligencePropertiesIp ip;
 
   public static final String SERIALIZED_NAME_GEOLOCATION = "geolocation";
   @SerializedName(SERIALIZED_NAME_GEOLOCATION)
   @javax.annotation.Nullable
-  private DeviceIntelligenceBreakdownPropertiesGeolocation geolocation;
+  private DeviceIntelligencePropertiesGeolocation geolocation;
 
   public DeviceIntelligenceProperties() {
   }
 
-  public DeviceIntelligenceProperties device(@javax.annotation.Nullable DeviceIntelligenceBreakdownPropertiesDevice device) {
+  public DeviceIntelligenceProperties device(@javax.annotation.Nullable DeviceIntelligencePropertiesDevice device) {
     this.device = device;
     return this;
   }
@@ -83,16 +83,16 @@ public class DeviceIntelligenceProperties {
    * @return device
    */
   @javax.annotation.Nullable
-  public DeviceIntelligenceBreakdownPropertiesDevice getDevice() {
+  public DeviceIntelligencePropertiesDevice getDevice() {
     return device;
   }
 
-  public void setDevice(@javax.annotation.Nullable DeviceIntelligenceBreakdownPropertiesDevice device) {
+  public void setDevice(@javax.annotation.Nullable DeviceIntelligencePropertiesDevice device) {
     this.device = device;
   }
 
 
-  public DeviceIntelligenceProperties ip(@javax.annotation.Nullable DeviceIntelligenceBreakdownPropertiesIp ip) {
+  public DeviceIntelligenceProperties ip(@javax.annotation.Nullable DeviceIntelligencePropertiesIp ip) {
     this.ip = ip;
     return this;
   }
@@ -102,16 +102,16 @@ public class DeviceIntelligenceProperties {
    * @return ip
    */
   @javax.annotation.Nullable
-  public DeviceIntelligenceBreakdownPropertiesIp getIp() {
+  public DeviceIntelligencePropertiesIp getIp() {
     return ip;
   }
 
-  public void setIp(@javax.annotation.Nullable DeviceIntelligenceBreakdownPropertiesIp ip) {
+  public void setIp(@javax.annotation.Nullable DeviceIntelligencePropertiesIp ip) {
     this.ip = ip;
   }
 
 
-  public DeviceIntelligenceProperties geolocation(@javax.annotation.Nullable DeviceIntelligenceBreakdownPropertiesGeolocation geolocation) {
+  public DeviceIntelligenceProperties geolocation(@javax.annotation.Nullable DeviceIntelligencePropertiesGeolocation geolocation) {
     this.geolocation = geolocation;
     return this;
   }
@@ -121,11 +121,11 @@ public class DeviceIntelligenceProperties {
    * @return geolocation
    */
   @javax.annotation.Nullable
-  public DeviceIntelligenceBreakdownPropertiesGeolocation getGeolocation() {
+  public DeviceIntelligencePropertiesGeolocation getGeolocation() {
     return geolocation;
   }
 
-  public void setGeolocation(@javax.annotation.Nullable DeviceIntelligenceBreakdownPropertiesGeolocation geolocation) {
+  public void setGeolocation(@javax.annotation.Nullable DeviceIntelligencePropertiesGeolocation geolocation) {
     this.geolocation = geolocation;
   }
 
@@ -245,15 +245,15 @@ public class DeviceIntelligenceProperties {
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       // validate the optional field `device`
       if (jsonObj.get("device") != null && !jsonObj.get("device").isJsonNull()) {
-        DeviceIntelligenceBreakdownPropertiesDevice.validateJsonElement(jsonObj.get("device"));
+        DeviceIntelligencePropertiesDevice.validateJsonElement(jsonObj.get("device"));
       }
       // validate the optional field `ip`
       if (jsonObj.get("ip") != null && !jsonObj.get("ip").isJsonNull()) {
-        DeviceIntelligenceBreakdownPropertiesIp.validateJsonElement(jsonObj.get("ip"));
+        DeviceIntelligencePropertiesIp.validateJsonElement(jsonObj.get("ip"));
       }
       // validate the optional field `geolocation`
       if (jsonObj.get("geolocation") != null && !jsonObj.get("geolocation").isJsonNull()) {
-        DeviceIntelligenceBreakdownPropertiesGeolocation.validateJsonElement(jsonObj.get("geolocation"));
+        DeviceIntelligencePropertiesGeolocation.validateJsonElement(jsonObj.get("geolocation"));
       }
   }
 

@@ -48,19 +48,19 @@ import java.util.Locale;
 import com.onfido.JSON;
 
 /**
- * DeviceIntelligenceBreakdownPropertiesIp
+ * DeviceIntelligencePropertiesIp
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.16.0")
-public class DeviceIntelligenceBreakdownPropertiesIp {
+public class DeviceIntelligencePropertiesIp {
   public static final String SERIALIZED_NAME_ADDRESS = "address";
   @SerializedName(SERIALIZED_NAME_ADDRESS)
   @javax.annotation.Nullable
   private String address;
 
-  public DeviceIntelligenceBreakdownPropertiesIp() {
+  public DeviceIntelligencePropertiesIp() {
   }
 
-  public DeviceIntelligenceBreakdownPropertiesIp address(@javax.annotation.Nullable String address) {
+  public DeviceIntelligencePropertiesIp address(@javax.annotation.Nullable String address) {
     this.address = address;
     return this;
   }
@@ -91,9 +91,9 @@ public class DeviceIntelligenceBreakdownPropertiesIp {
    *
    * @param key name of the property
    * @param value value of the property
-   * @return the DeviceIntelligenceBreakdownPropertiesIp instance itself
+   * @return the DeviceIntelligencePropertiesIp instance itself
    */
-  public DeviceIntelligenceBreakdownPropertiesIp putAdditionalProperty(String key, Object value) {
+  public DeviceIntelligencePropertiesIp putAdditionalProperty(String key, Object value) {
     if (this.additionalProperties == null) {
         this.additionalProperties = new HashMap<String, Object>();
     }
@@ -132,9 +132,9 @@ public class DeviceIntelligenceBreakdownPropertiesIp {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    DeviceIntelligenceBreakdownPropertiesIp deviceIntelligenceBreakdownPropertiesIp = (DeviceIntelligenceBreakdownPropertiesIp) o;
-    return Objects.equals(this.address, deviceIntelligenceBreakdownPropertiesIp.address)&&
-        Objects.equals(this.additionalProperties, deviceIntelligenceBreakdownPropertiesIp.additionalProperties);
+    DeviceIntelligencePropertiesIp deviceIntelligencePropertiesIp = (DeviceIntelligencePropertiesIp) o;
+    return Objects.equals(this.address, deviceIntelligencePropertiesIp.address)&&
+        Objects.equals(this.additionalProperties, deviceIntelligencePropertiesIp.additionalProperties);
   }
 
   @Override
@@ -145,7 +145,7 @@ public class DeviceIntelligenceBreakdownPropertiesIp {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class DeviceIntelligenceBreakdownPropertiesIp {\n");
+    sb.append("class DeviceIntelligencePropertiesIp {\n");
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
@@ -179,12 +179,12 @@ public class DeviceIntelligenceBreakdownPropertiesIp {
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to DeviceIntelligenceBreakdownPropertiesIp
+   * @throws IOException if the JSON Element is invalid with respect to DeviceIntelligencePropertiesIp
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!DeviceIntelligenceBreakdownPropertiesIp.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in DeviceIntelligenceBreakdownPropertiesIp is not found in the empty JSON string", DeviceIntelligenceBreakdownPropertiesIp.openapiRequiredFields.toString()));
+        if (!DeviceIntelligencePropertiesIp.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in DeviceIntelligencePropertiesIp is not found in the empty JSON string", DeviceIntelligencePropertiesIp.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -197,16 +197,16 @@ public class DeviceIntelligenceBreakdownPropertiesIp {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!DeviceIntelligenceBreakdownPropertiesIp.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'DeviceIntelligenceBreakdownPropertiesIp' and its subtypes
+       if (!DeviceIntelligencePropertiesIp.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'DeviceIntelligencePropertiesIp' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<DeviceIntelligenceBreakdownPropertiesIp> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(DeviceIntelligenceBreakdownPropertiesIp.class));
+       final TypeAdapter<DeviceIntelligencePropertiesIp> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(DeviceIntelligencePropertiesIp.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<DeviceIntelligenceBreakdownPropertiesIp>() {
+       return (TypeAdapter<T>) new TypeAdapter<DeviceIntelligencePropertiesIp>() {
            @Override
-           public void write(JsonWriter out, DeviceIntelligenceBreakdownPropertiesIp value) throws IOException {
+           public void write(JsonWriter out, DeviceIntelligencePropertiesIp value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              obj.remove("additionalProperties");
              // serialize additional properties
@@ -234,12 +234,12 @@ public class DeviceIntelligenceBreakdownPropertiesIp {
            }
 
            @Override
-           public DeviceIntelligenceBreakdownPropertiesIp read(JsonReader in) throws IOException {
+           public DeviceIntelligencePropertiesIp read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
-             DeviceIntelligenceBreakdownPropertiesIp instance = thisAdapter.fromJsonTree(jsonObj);
+             DeviceIntelligencePropertiesIp instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
                if (!openapiFields.contains(entry.getKey())) {
                  if (entry.getValue().isJsonPrimitive()) { // primitive type
@@ -266,18 +266,18 @@ public class DeviceIntelligenceBreakdownPropertiesIp {
   }
 
   /**
-   * Create an instance of DeviceIntelligenceBreakdownPropertiesIp given an JSON string
+   * Create an instance of DeviceIntelligencePropertiesIp given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of DeviceIntelligenceBreakdownPropertiesIp
-   * @throws IOException if the JSON string is invalid with respect to DeviceIntelligenceBreakdownPropertiesIp
+   * @return An instance of DeviceIntelligencePropertiesIp
+   * @throws IOException if the JSON string is invalid with respect to DeviceIntelligencePropertiesIp
    */
-  public static DeviceIntelligenceBreakdownPropertiesIp fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, DeviceIntelligenceBreakdownPropertiesIp.class);
+  public static DeviceIntelligencePropertiesIp fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, DeviceIntelligencePropertiesIp.class);
   }
 
   /**
-   * Convert an instance of DeviceIntelligenceBreakdownPropertiesIp to an JSON string
+   * Convert an instance of DeviceIntelligencePropertiesIp to an JSON string
    *
    * @return JSON string
    */

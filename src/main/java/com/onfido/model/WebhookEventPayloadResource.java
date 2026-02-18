@@ -20,6 +20,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.onfido.model.WebhookEventResourceStatus;
 import com.onfido.model.WorkflowRunError;
 import com.onfido.model.WorkflowRunLink;
 import java.io.IOException;
@@ -68,6 +69,11 @@ public class WebhookEventPayloadResource {
   @SerializedName(SERIALIZED_NAME_APPLICANT_ID)
   @javax.annotation.Nullable
   private UUID applicantId;
+
+  public static final String SERIALIZED_NAME_STATUS = "status";
+  @SerializedName(SERIALIZED_NAME_STATUS)
+  @javax.annotation.Nullable
+  private WebhookEventResourceStatus status;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
@@ -187,6 +193,25 @@ public class WebhookEventPayloadResource {
 
   public void setApplicantId(@javax.annotation.Nullable UUID applicantId) {
     this.applicantId = applicantId;
+  }
+
+
+  public WebhookEventPayloadResource status(@javax.annotation.Nullable WebhookEventResourceStatus status) {
+    this.status = status;
+    return this;
+  }
+
+  /**
+   * Get status
+   * @return status
+   */
+  @javax.annotation.Nullable
+  public WebhookEventResourceStatus getStatus() {
+    return status;
+  }
+
+  public void setStatus(@javax.annotation.Nullable WebhookEventResourceStatus status) {
+    this.status = status;
   }
 
 
@@ -566,6 +591,7 @@ public class WebhookEventPayloadResource {
     WebhookEventPayloadResource webhookEventPayloadResource = (WebhookEventPayloadResource) o;
     return Objects.equals(this.id, webhookEventPayloadResource.id) &&
         Objects.equals(this.applicantId, webhookEventPayloadResource.applicantId) &&
+        Objects.equals(this.status, webhookEventPayloadResource.status) &&
         Objects.equals(this.createdAt, webhookEventPayloadResource.createdAt) &&
         Objects.equals(this.updatedAt, webhookEventPayloadResource.updatedAt) &&
         Objects.equals(this.dashboardUrl, webhookEventPayloadResource.dashboardUrl) &&
@@ -591,7 +617,7 @@ public class WebhookEventPayloadResource {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, applicantId, createdAt, updatedAt, dashboardUrl, workflowId, workflowRunId, workflowVersionId, taskDefId, taskDefVersion, input, output, reasons, tags, link, error, customerUserId, timelineFileDownloadUrl, additionalProperties);
+    return Objects.hash(id, applicantId, status, createdAt, updatedAt, dashboardUrl, workflowId, workflowRunId, workflowVersionId, taskDefId, taskDefVersion, input, output, reasons, tags, link, error, customerUserId, timelineFileDownloadUrl, additionalProperties);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -607,6 +633,7 @@ public class WebhookEventPayloadResource {
     sb.append("class WebhookEventPayloadResource {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    applicantId: ").append(toIndentedString(applicantId)).append("\n");
+    sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("    dashboardUrl: ").append(toIndentedString(dashboardUrl)).append("\n");
@@ -645,7 +672,7 @@ public class WebhookEventPayloadResource {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("id", "applicant_id", "created_at", "updated_at", "dashboard_url", "workflow_id", "workflow_run_id", "workflow_version_id", "task_def_id", "task_def_version", "input", "output", "reasons", "tags", "link", "error", "customer_user_id", "timeline_file_download_url"));
+    openapiFields = new HashSet<String>(Arrays.asList("id", "applicant_id", "status", "created_at", "updated_at", "dashboard_url", "workflow_id", "workflow_run_id", "workflow_version_id", "task_def_id", "task_def_version", "input", "output", "reasons", "tags", "link", "error", "customer_user_id", "timeline_file_download_url"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -669,6 +696,10 @@ public class WebhookEventPayloadResource {
       }
       if ((jsonObj.get("applicant_id") != null && !jsonObj.get("applicant_id").isJsonNull()) && !jsonObj.get("applicant_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `applicant_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("applicant_id").toString()));
+      }
+      // validate the optional field `status`
+      if (jsonObj.get("status") != null && !jsonObj.get("status").isJsonNull()) {
+        WebhookEventResourceStatus.validateJsonElement(jsonObj.get("status"));
       }
       if ((jsonObj.get("dashboard_url") != null && !jsonObj.get("dashboard_url").isJsonNull()) && !jsonObj.get("dashboard_url").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `dashboard_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("dashboard_url").toString()));

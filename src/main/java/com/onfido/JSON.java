@@ -152,11 +152,10 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.DeviceIntelligenceBreakdown.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.DeviceIntelligenceBreakdownDevice.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.DeviceIntelligenceBreakdownDeviceBreakdown.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.DeviceIntelligenceBreakdownProperties.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.DeviceIntelligenceBreakdownPropertiesDevice.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.DeviceIntelligenceBreakdownPropertiesGeolocation.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.DeviceIntelligenceBreakdownPropertiesIp.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.DeviceIntelligenceProperties.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.DeviceIntelligencePropertiesDevice.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.DeviceIntelligencePropertiesGeolocation.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.DeviceIntelligencePropertiesIp.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.DeviceIntelligenceReport.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.Document.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.DocumentBreakdown.CustomTypeAdapterFactory());

@@ -20,9 +20,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.onfido.model.DeviceIntelligenceBreakdownPropertiesDevice;
-import com.onfido.model.DeviceIntelligenceBreakdownPropertiesGeolocation;
-import com.onfido.model.DeviceIntelligenceBreakdownPropertiesIp;
+import com.onfido.model.CountryCodes;
 import java.io.IOException;
 import java.util.Arrays;
 
@@ -51,84 +49,82 @@ import java.util.Locale;
 import com.onfido.JSON;
 
 /**
- * DeviceIntelligenceBreakdownProperties
- * @deprecated
+ * DeviceIntelligencePropertiesGeolocation
  */
-@Deprecated
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.16.0")
-public class DeviceIntelligenceBreakdownProperties {
-  public static final String SERIALIZED_NAME_DEVICE = "device";
-  @SerializedName(SERIALIZED_NAME_DEVICE)
+public class DeviceIntelligencePropertiesGeolocation {
+  public static final String SERIALIZED_NAME_CITY = "city";
+  @SerializedName(SERIALIZED_NAME_CITY)
   @javax.annotation.Nullable
-  private DeviceIntelligenceBreakdownPropertiesDevice device;
+  private String city;
 
-  public static final String SERIALIZED_NAME_IP = "ip";
-  @SerializedName(SERIALIZED_NAME_IP)
+  public static final String SERIALIZED_NAME_REGION = "region";
+  @SerializedName(SERIALIZED_NAME_REGION)
   @javax.annotation.Nullable
-  private DeviceIntelligenceBreakdownPropertiesIp ip;
+  private String region;
 
-  public static final String SERIALIZED_NAME_GEOLOCATION = "geolocation";
-  @SerializedName(SERIALIZED_NAME_GEOLOCATION)
+  public static final String SERIALIZED_NAME_COUNTRY = "country";
+  @SerializedName(SERIALIZED_NAME_COUNTRY)
   @javax.annotation.Nullable
-  private DeviceIntelligenceBreakdownPropertiesGeolocation geolocation;
+  private CountryCodes country;
 
-  public DeviceIntelligenceBreakdownProperties() {
+  public DeviceIntelligencePropertiesGeolocation() {
   }
 
-  public DeviceIntelligenceBreakdownProperties device(@javax.annotation.Nullable DeviceIntelligenceBreakdownPropertiesDevice device) {
-    this.device = device;
+  public DeviceIntelligencePropertiesGeolocation city(@javax.annotation.Nullable String city) {
+    this.city = city;
     return this;
   }
 
   /**
-   * Get device
-   * @return device
+   * City location of the IP address.
+   * @return city
    */
   @javax.annotation.Nullable
-  public DeviceIntelligenceBreakdownPropertiesDevice getDevice() {
-    return device;
+  public String getCity() {
+    return city;
   }
 
-  public void setDevice(@javax.annotation.Nullable DeviceIntelligenceBreakdownPropertiesDevice device) {
-    this.device = device;
+  public void setCity(@javax.annotation.Nullable String city) {
+    this.city = city;
   }
 
 
-  public DeviceIntelligenceBreakdownProperties ip(@javax.annotation.Nullable DeviceIntelligenceBreakdownPropertiesIp ip) {
-    this.ip = ip;
+  public DeviceIntelligencePropertiesGeolocation region(@javax.annotation.Nullable String region) {
+    this.region = region;
     return this;
   }
 
   /**
-   * Get ip
-   * @return ip
+   * Region location of the IP address.
+   * @return region
    */
   @javax.annotation.Nullable
-  public DeviceIntelligenceBreakdownPropertiesIp getIp() {
-    return ip;
+  public String getRegion() {
+    return region;
   }
 
-  public void setIp(@javax.annotation.Nullable DeviceIntelligenceBreakdownPropertiesIp ip) {
-    this.ip = ip;
+  public void setRegion(@javax.annotation.Nullable String region) {
+    this.region = region;
   }
 
 
-  public DeviceIntelligenceBreakdownProperties geolocation(@javax.annotation.Nullable DeviceIntelligenceBreakdownPropertiesGeolocation geolocation) {
-    this.geolocation = geolocation;
+  public DeviceIntelligencePropertiesGeolocation country(@javax.annotation.Nullable CountryCodes country) {
+    this.country = country;
     return this;
   }
 
   /**
-   * Get geolocation
-   * @return geolocation
+   * Country location of the IP address in a three letter format.
+   * @return country
    */
   @javax.annotation.Nullable
-  public DeviceIntelligenceBreakdownPropertiesGeolocation getGeolocation() {
-    return geolocation;
+  public CountryCodes getCountry() {
+    return country;
   }
 
-  public void setGeolocation(@javax.annotation.Nullable DeviceIntelligenceBreakdownPropertiesGeolocation geolocation) {
-    this.geolocation = geolocation;
+  public void setCountry(@javax.annotation.Nullable CountryCodes country) {
+    this.country = country;
   }
 
   /**
@@ -144,9 +140,9 @@ public class DeviceIntelligenceBreakdownProperties {
    *
    * @param key name of the property
    * @param value value of the property
-   * @return the DeviceIntelligenceBreakdownProperties instance itself
+   * @return the DeviceIntelligencePropertiesGeolocation instance itself
    */
-  public DeviceIntelligenceBreakdownProperties putAdditionalProperty(String key, Object value) {
+  public DeviceIntelligencePropertiesGeolocation putAdditionalProperty(String key, Object value) {
     if (this.additionalProperties == null) {
         this.additionalProperties = new HashMap<String, Object>();
     }
@@ -185,25 +181,25 @@ public class DeviceIntelligenceBreakdownProperties {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    DeviceIntelligenceBreakdownProperties deviceIntelligenceBreakdownProperties = (DeviceIntelligenceBreakdownProperties) o;
-    return Objects.equals(this.device, deviceIntelligenceBreakdownProperties.device) &&
-        Objects.equals(this.ip, deviceIntelligenceBreakdownProperties.ip) &&
-        Objects.equals(this.geolocation, deviceIntelligenceBreakdownProperties.geolocation)&&
-        Objects.equals(this.additionalProperties, deviceIntelligenceBreakdownProperties.additionalProperties);
+    DeviceIntelligencePropertiesGeolocation deviceIntelligencePropertiesGeolocation = (DeviceIntelligencePropertiesGeolocation) o;
+    return Objects.equals(this.city, deviceIntelligencePropertiesGeolocation.city) &&
+        Objects.equals(this.region, deviceIntelligencePropertiesGeolocation.region) &&
+        Objects.equals(this.country, deviceIntelligencePropertiesGeolocation.country)&&
+        Objects.equals(this.additionalProperties, deviceIntelligencePropertiesGeolocation.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(device, ip, geolocation, additionalProperties);
+    return Objects.hash(city, region, country, additionalProperties);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class DeviceIntelligenceBreakdownProperties {\n");
-    sb.append("    device: ").append(toIndentedString(device)).append("\n");
-    sb.append("    ip: ").append(toIndentedString(ip)).append("\n");
-    sb.append("    geolocation: ").append(toIndentedString(geolocation)).append("\n");
+    sb.append("class DeviceIntelligencePropertiesGeolocation {\n");
+    sb.append("    city: ").append(toIndentedString(city)).append("\n");
+    sb.append("    region: ").append(toIndentedString(region)).append("\n");
+    sb.append("    country: ").append(toIndentedString(country)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -226,7 +222,7 @@ public class DeviceIntelligenceBreakdownProperties {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("device", "ip", "geolocation"));
+    openapiFields = new HashSet<String>(Arrays.asList("city", "region", "country"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -236,26 +232,24 @@ public class DeviceIntelligenceBreakdownProperties {
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to DeviceIntelligenceBreakdownProperties
+   * @throws IOException if the JSON Element is invalid with respect to DeviceIntelligencePropertiesGeolocation
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!DeviceIntelligenceBreakdownProperties.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in DeviceIntelligenceBreakdownProperties is not found in the empty JSON string", DeviceIntelligenceBreakdownProperties.openapiRequiredFields.toString()));
+        if (!DeviceIntelligencePropertiesGeolocation.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in DeviceIntelligencePropertiesGeolocation is not found in the empty JSON string", DeviceIntelligencePropertiesGeolocation.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // validate the optional field `device`
-      if (jsonObj.get("device") != null && !jsonObj.get("device").isJsonNull()) {
-        DeviceIntelligenceBreakdownPropertiesDevice.validateJsonElement(jsonObj.get("device"));
+      if ((jsonObj.get("city") != null && !jsonObj.get("city").isJsonNull()) && !jsonObj.get("city").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `city` to be a primitive type in the JSON string but got `%s`", jsonObj.get("city").toString()));
       }
-      // validate the optional field `ip`
-      if (jsonObj.get("ip") != null && !jsonObj.get("ip").isJsonNull()) {
-        DeviceIntelligenceBreakdownPropertiesIp.validateJsonElement(jsonObj.get("ip"));
+      if ((jsonObj.get("region") != null && !jsonObj.get("region").isJsonNull()) && !jsonObj.get("region").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `region` to be a primitive type in the JSON string but got `%s`", jsonObj.get("region").toString()));
       }
-      // validate the optional field `geolocation`
-      if (jsonObj.get("geolocation") != null && !jsonObj.get("geolocation").isJsonNull()) {
-        DeviceIntelligenceBreakdownPropertiesGeolocation.validateJsonElement(jsonObj.get("geolocation"));
+      // validate the optional field `country`
+      if (jsonObj.get("country") != null && !jsonObj.get("country").isJsonNull()) {
+        CountryCodes.validateJsonElement(jsonObj.get("country"));
       }
   }
 
@@ -263,16 +257,16 @@ public class DeviceIntelligenceBreakdownProperties {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!DeviceIntelligenceBreakdownProperties.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'DeviceIntelligenceBreakdownProperties' and its subtypes
+       if (!DeviceIntelligencePropertiesGeolocation.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'DeviceIntelligencePropertiesGeolocation' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<DeviceIntelligenceBreakdownProperties> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(DeviceIntelligenceBreakdownProperties.class));
+       final TypeAdapter<DeviceIntelligencePropertiesGeolocation> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(DeviceIntelligencePropertiesGeolocation.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<DeviceIntelligenceBreakdownProperties>() {
+       return (TypeAdapter<T>) new TypeAdapter<DeviceIntelligencePropertiesGeolocation>() {
            @Override
-           public void write(JsonWriter out, DeviceIntelligenceBreakdownProperties value) throws IOException {
+           public void write(JsonWriter out, DeviceIntelligencePropertiesGeolocation value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              obj.remove("additionalProperties");
              // serialize additional properties
@@ -300,12 +294,12 @@ public class DeviceIntelligenceBreakdownProperties {
            }
 
            @Override
-           public DeviceIntelligenceBreakdownProperties read(JsonReader in) throws IOException {
+           public DeviceIntelligencePropertiesGeolocation read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
-             DeviceIntelligenceBreakdownProperties instance = thisAdapter.fromJsonTree(jsonObj);
+             DeviceIntelligencePropertiesGeolocation instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
                if (!openapiFields.contains(entry.getKey())) {
                  if (entry.getValue().isJsonPrimitive()) { // primitive type
@@ -332,18 +326,18 @@ public class DeviceIntelligenceBreakdownProperties {
   }
 
   /**
-   * Create an instance of DeviceIntelligenceBreakdownProperties given an JSON string
+   * Create an instance of DeviceIntelligencePropertiesGeolocation given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of DeviceIntelligenceBreakdownProperties
-   * @throws IOException if the JSON string is invalid with respect to DeviceIntelligenceBreakdownProperties
+   * @return An instance of DeviceIntelligencePropertiesGeolocation
+   * @throws IOException if the JSON string is invalid with respect to DeviceIntelligencePropertiesGeolocation
    */
-  public static DeviceIntelligenceBreakdownProperties fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, DeviceIntelligenceBreakdownProperties.class);
+  public static DeviceIntelligencePropertiesGeolocation fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, DeviceIntelligencePropertiesGeolocation.class);
   }
 
   /**
-   * Convert an instance of DeviceIntelligenceBreakdownProperties to an JSON string
+   * Convert an instance of DeviceIntelligencePropertiesGeolocation to an JSON string
    *
    * @return JSON string
    */

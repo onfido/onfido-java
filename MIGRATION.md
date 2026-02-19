@@ -13,6 +13,7 @@ ensuring a smooth transition between versions.
 - **All API methods**: All API method calls now use request builder pattern with `.execute()`
   - This change enables backward compatibility when new optional parameters are added
   - Example migration:
+
     ```java
     // Before (v6.x)
     List<WorkflowRun> runs = api.listWorkflowRuns(applicantId, status, page, perPage);
@@ -25,6 +26,7 @@ ensuring a smooth transition between versions.
         .perPage(perPage)
         .execute();
     ```
+
 - Documents
   - Driving licence information properties removed from general `DocumentProperties`
     and moved to new `DocumentPropertiesWithDrivingLicenceInformation` class

@@ -74,7 +74,15 @@ public class WorkflowRunTest extends TestBase {
 
   @Test
   public void evidenceWorkflowRunTest() throws Exception {
-    byte[] byteArray = onfido.downloadSignedEvidenceFile(workflowRunId).execute().getByteArray();
+    FileTransfer evidenceFile =
+        (FileTransfer)
+            repeatRequestUntilHttpCodeChanges(
+                "downloadSignedEvidenceFile",
+                new UUID[] {workflowRunId},
+                MAX_RETRIES,
+                SLEEP_TIME * 2);
+
+    byte[] byteArray = evidenceFile.getByteArray();
 
     Assertions.assertEquals("%PDF", new String(byteArray, 0, 4));
     Assertions.assertTrue(byteArray.length > 0);
@@ -118,7 +126,7 @@ public class WorkflowRunTest extends TestBase {
                 "findTimelineFile",
                 new UUID[] {workflowRunId, timelineFileId},
                 MAX_RETRIES,
-                SLEEP_TIME * 2);
+                SLEEP_TIME);
 
     byte[] byteArray = download.getByteArray();
 

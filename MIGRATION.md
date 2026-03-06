@@ -37,6 +37,26 @@ ensuring a smooth transition between versions.
 ### Other Endpoints
 
 - Reports
+  - **`ReportShared` object removed**: The `ReportShared` object has been dropped.
+    Convenience accessors for common fields (`getName()`, `getStatus()`, `getId()`)
+    have been added to the parent `Report` object. Other properties are now accessed
+    via specific report type accessors
+    - Example migration:
+
+      ```java
+      // Before (v6.x)
+      ReportName name = report.getReportShared().getName();
+      ReportStatus status = report.getReportShared().getStatus();
+      String checkId = report.getReportShared().getCheckId();
+      String result = report.getReportShared().getResult();
+
+      // After (v7.x)
+      ReportName name = report.getName(); // Convenience accessor on parent Report object
+      ReportStatus status = report.getStatus(); // Convenience accessor on parent Report object
+      String checkId = report.getDocumentReport().getCheckId(); // E.g. for document report
+      String result = report.getDocumentReport().getResult(); // E.g. for document report
+      ```
+
   - Device Intelligence: Removed deprecated `breakdown` property and related
     breakdown classes:
     - `DeviceIntelligenceBreakdownProperties` removed

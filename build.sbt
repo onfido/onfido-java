@@ -2,7 +2,7 @@ lazy val root = (project in file(".")).
   settings(
     organization := "com.onfido",
     name := "onfido-api-java",
-    version := "7.0.0",
+    version := "7.1.0",
     scalaVersion := "2.11.12",
     scalacOptions ++= Seq("-feature"),
     compile / javacOptions ++= Seq("-Xlint:deprecation"),

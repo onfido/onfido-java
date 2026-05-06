@@ -612,9 +612,14 @@ public class JSON {
                 case NULL:
                     in.nextNull();
                     return null;
-                default:
+                case STRING:
                     String date = in.nextString();
+                    if (date.isEmpty()) {
+                        return null;
+                    }
                     return LocalDate.parse(date, formatter);
+                default:
+                    throw new IllegalStateException("Expected STRING or NULL but was " + in.peek());
             }
         }
     }

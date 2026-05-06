@@ -1,5 +1,7 @@
 package com.onfido.integration;
 
+import com.onfido.ApiClient;
+import com.onfido.ApiClient.Region;
 import com.onfido.ApiException;
 import com.onfido.Configuration;
 import com.onfido.FileTransfer;
@@ -21,6 +23,9 @@ import org.junit.jupiter.api.TestInstance.Lifecycle;
 public class TestBase {
 
   private static final String apiToken = System.getenv("ONFIDO_API_TOKEN");
+  private static final String oauthClientId = System.getenv("ONFIDO_OAUTH_CLIENT_ID");
+  private static final String oauthClientSecret = System.getenv("ONFIDO_OAUTH_CLIENT_SECRET");
+  private static final String basePath = System.getenv("ONFIDO_BASE_PATH");
 
   protected static final UUID sampleApplicantId =
       UUID.fromString(System.getenv("ONFIDO_SAMPLE_APPLICANT_ID"));
@@ -33,13 +38,23 @@ public class TestBase {
   protected DefaultApi onfido;
 
   public TestBase() {
-    onfido =
-        new DefaultApi(
-            Configuration.getDefaultApiClient()
-                .setApiToken(apiToken)
-                .setConnectTimeout(60_000)
-                .setReadTimeout(60_000)
-                .setWriteTimeout(60_000));
+    ApiClient client = Configuration.getDefaultApiClient();
+
+    if (oauthClientId != null && !oauthClientId.isEmpty()) {
+      client.setOAuthCredentials(oauthClientId, oauthClientSecret);
+    } else {
+      client.setApiToken(apiToken);
+    }
+
+    if (basePath != null && !basePath.isEmpty()) {
+      client.setBasePath(basePath);
+    }
+
+    client.setConnectTimeout(60_000)
+          .setReadTimeout(60_000)
+          .setWriteTimeout(60_000);
+
+    onfido = new DefaultApi(client);
   }
 
   @AfterAll

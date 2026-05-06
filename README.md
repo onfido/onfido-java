@@ -109,6 +109,20 @@ DefaultApi onfido = new DefaultApi(Configuration.getDefaultApiClient()
                       .setProxy(new Proxy(Proxy.Type.HTTP, new InetSocketAddress(host, port))));   // Optionally define a connection proxy with the specified host and port
 ```
 
+You can also authenticate using OAuth2 client credentials instead of an API token:
+
+```java
+DefaultApi onfido = new DefaultApi(Configuration.getDefaultApiClient()
+                      .setOAuthCredentials(System.getenv("ONFIDO_OAUTH_CLIENT_ID"),
+                                           System.getenv("ONFIDO_OAUTH_CLIENT_SECRET"))
+                      .setRegion(Region.EU)  // Supports `EU`, `US` and `CA`
+                      .setConnectTimeout(60_000)
+                      .setReadTimeout(60_000))
+                      .setProxy(new Proxy(Proxy.Type.HTTP, new InetSocketAddress(host, port))));   // Optionally define a connection proxy with the specified host and port
+```
+
+The client will automatically exchange credentials for an access token and refresh it when it expires.
+
 NB: By default, the connection and read timeout values are set to 30 seconds. You can adjust these values as shown in the configuration section.
 
 ### Making a call to the API

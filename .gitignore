@@ -1,4 +1,5 @@
 target
+.gradle
 
 # VSCode
 bin/

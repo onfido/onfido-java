@@ -206,6 +206,16 @@ public class DeviceIntelligencePropertiesDevice {
   @javax.annotation.Nullable
   private Boolean randomizedDevice;
 
+  public static final String SERIALIZED_NAME_NUMBER_OF_IP_REUSE_REPORTS = "number_of_ip_reuse_reports";
+  @SerializedName(SERIALIZED_NAME_NUMBER_OF_IP_REUSE_REPORTS)
+  @javax.annotation.Nullable
+  private BigDecimal numberOfIpReuseReports;
+
+  public static final String SERIALIZED_NAME_NUMBER_OF_SUSPECTED_IP_REUSE_REPORTS = "number_of_suspected_ip_reuse_reports";
+  @SerializedName(SERIALIZED_NAME_NUMBER_OF_SUSPECTED_IP_REUSE_REPORTS)
+  @javax.annotation.Nullable
+  private BigDecimal numberOfSuspectedIpReuseReports;
+
   public static final String SERIALIZED_NAME_FAKE_NETWORK_REQUEST = "fake_network_request";
   @SerializedName(SERIALIZED_NAME_FAKE_NETWORK_REQUEST)
   @javax.annotation.Nullable
@@ -555,6 +565,44 @@ public class DeviceIntelligencePropertiesDevice {
   }
 
 
+  public DeviceIntelligencePropertiesDevice numberOfIpReuseReports(@javax.annotation.Nullable BigDecimal numberOfIpReuseReports) {
+    this.numberOfIpReuseReports = numberOfIpReuseReports;
+    return this;
+  }
+
+  /**
+   * Counts the number of distinct document reports submitted in the last 24 hours that are associated with the applicant’s IP address.
+   * @return numberOfIpReuseReports
+   */
+  @javax.annotation.Nullable
+  public BigDecimal getNumberOfIpReuseReports() {
+    return numberOfIpReuseReports;
+  }
+
+  public void setNumberOfIpReuseReports(@javax.annotation.Nullable BigDecimal numberOfIpReuseReports) {
+    this.numberOfIpReuseReports = numberOfIpReuseReports;
+  }
+
+
+  public DeviceIntelligencePropertiesDevice numberOfSuspectedIpReuseReports(@javax.annotation.Nullable BigDecimal numberOfSuspectedIpReuseReports) {
+    this.numberOfSuspectedIpReuseReports = numberOfSuspectedIpReuseReports;
+    return this;
+  }
+
+  /**
+   * Counts the number of distinct document reports from the last 24 hours associated with the applicant’s IP address that have a result of suspected and other document integrity or authenticity signals have been flagged.
+   * @return numberOfSuspectedIpReuseReports
+   */
+  @javax.annotation.Nullable
+  public BigDecimal getNumberOfSuspectedIpReuseReports() {
+    return numberOfSuspectedIpReuseReports;
+  }
+
+  public void setNumberOfSuspectedIpReuseReports(@javax.annotation.Nullable BigDecimal numberOfSuspectedIpReuseReports) {
+    this.numberOfSuspectedIpReuseReports = numberOfSuspectedIpReuseReports;
+  }
+
+
   public DeviceIntelligencePropertiesDevice fakeNetworkRequest(@javax.annotation.Nullable Boolean fakeNetworkRequest) {
     this.fakeNetworkRequest = fakeNetworkRequest;
     return this;
@@ -731,6 +779,8 @@ public class DeviceIntelligencePropertiesDevice {
         Objects.equals(this.browser, deviceIntelligencePropertiesDevice.browser) &&
         Objects.equals(this.emulator, deviceIntelligencePropertiesDevice.emulator) &&
         Objects.equals(this.randomizedDevice, deviceIntelligencePropertiesDevice.randomizedDevice) &&
+        Objects.equals(this.numberOfIpReuseReports, deviceIntelligencePropertiesDevice.numberOfIpReuseReports) &&
+        Objects.equals(this.numberOfSuspectedIpReuseReports, deviceIntelligencePropertiesDevice.numberOfSuspectedIpReuseReports) &&
         Objects.equals(this.fakeNetworkRequest, deviceIntelligencePropertiesDevice.fakeNetworkRequest) &&
         Objects.equals(this.ipReputation, deviceIntelligencePropertiesDevice.ipReputation) &&
         Objects.equals(this.deviceFingerprintReuse, deviceIntelligencePropertiesDevice.deviceFingerprintReuse) &&
@@ -746,7 +796,7 @@ public class DeviceIntelligencePropertiesDevice {
 
   @Override
   public int hashCode() {
-    return Objects.hash(sdkVersion, sdkSource, authenticationType, rawModel, os, browser, emulator, randomizedDevice, fakeNetworkRequest, ipReputation, deviceFingerprintReuse, singleDeviceUsed, documentCapture, biometricCapture, additionalProperties);
+    return Objects.hash(sdkVersion, sdkSource, authenticationType, rawModel, os, browser, emulator, randomizedDevice, numberOfIpReuseReports, numberOfSuspectedIpReuseReports, fakeNetworkRequest, ipReputation, deviceFingerprintReuse, singleDeviceUsed, documentCapture, biometricCapture, additionalProperties);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -768,6 +818,8 @@ public class DeviceIntelligencePropertiesDevice {
     sb.append("    browser: ").append(toIndentedString(browser)).append("\n");
     sb.append("    emulator: ").append(toIndentedString(emulator)).append("\n");
     sb.append("    randomizedDevice: ").append(toIndentedString(randomizedDevice)).append("\n");
+    sb.append("    numberOfIpReuseReports: ").append(toIndentedString(numberOfIpReuseReports)).append("\n");
+    sb.append("    numberOfSuspectedIpReuseReports: ").append(toIndentedString(numberOfSuspectedIpReuseReports)).append("\n");
     sb.append("    fakeNetworkRequest: ").append(toIndentedString(fakeNetworkRequest)).append("\n");
     sb.append("    ipReputation: ").append(toIndentedString(ipReputation)).append("\n");
     sb.append("    deviceFingerprintReuse: ").append(toIndentedString(deviceFingerprintReuse)).append("\n");
@@ -796,7 +848,7 @@ public class DeviceIntelligencePropertiesDevice {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("sdk_version", "sdk_source", "authentication_type", "raw_model", "os", "browser", "emulator", "randomized_device", "fake_network_request", "ip_reputation", "device_fingerprint_reuse", "single_device_used", "document_capture", "biometric_capture"));
+    openapiFields = new HashSet<String>(Arrays.asList("sdk_version", "sdk_source", "authentication_type", "raw_model", "os", "browser", "emulator", "randomized_device", "number_of_ip_reuse_reports", "number_of_suspected_ip_reuse_reports", "fake_network_request", "ip_reputation", "device_fingerprint_reuse", "single_device_used", "document_capture", "biometric_capture"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

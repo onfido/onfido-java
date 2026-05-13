@@ -241,7 +241,7 @@ public class ApiClient {
         json = new JSON();
 
         // Set default User-Agent.
-        setUserAgent("onfido-java/7.1.0");
+        setUserAgent("onfido-java/7.0.0");
 
         authentications = new HashMap<String, Authentication>();
     }
@@ -497,6 +497,9 @@ public class ApiClient {
      * @return Api client
      */
     public ApiClient setApiToken(String apiToken) {
+        if (this.oauthClientId != null) {
+            throw new IllegalStateException("Cannot set API token when OAuth credentials are already configured");
+        }
         this.setApiKey("Token token=" + apiToken);
 
         return this;
@@ -537,6 +540,10 @@ public class ApiClient {
         if (clientSecret == null || clientSecret.isEmpty()) {
             throw new IllegalArgumentException("OAuth client secret must not be null or empty");
         }
+        Authentication existingAuth = this.authentications.get("Token");
+        if (existingAuth instanceof ApiKeyAuth && ((ApiKeyAuth) existingAuth).getApiKey() != null) {
+            throw new IllegalStateException("Cannot set OAuth credentials when API token is already configured");
+        }
 
         this.oauthClientId = clientId;
         this.oauthClientSecret = clientSecret;
@@ -568,7 +575,6 @@ public class ApiClient {
         String tokenUrl = getEffectiveBasePath() + "/oauth/token";
 
         RequestBody body = new FormBody.Builder()
-            .add("grant_type", "client_credentials")
             .add("client_id", oauthClientId)
             .add("client_secret", oauthClientSecret)
             .build();

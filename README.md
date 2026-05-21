@@ -50,7 +50,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.onfido</groupId>
   <artifactId>onfido-api-java</artifactId>
-  <version>7.1.0</version>
+  <version>7.2.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -66,7 +66,7 @@ Add this dependency to your project's build file:
   }
 
   dependencies {
-     implementation "com.onfido:onfido-api-java:7.1.0"
+     implementation "com.onfido:onfido-api-java:7.2.0"
   }
 ```
 
@@ -80,10 +80,10 @@ mvn clean package
 
 Then manually install the following JARs:
 
-- `target/onfido-api-java-7.1.0.jar`
+- `target/onfido-api-java-7.2.0.jar`
 - `target/lib/*.jar`
 
-The latest version can be found at <https://search.maven.org/artifact/com.onfido/onfido-api-java/7.1.0/jar>.
+The latest version can be found at <https://search.maven.org/artifact/com.onfido/onfido-api-java/7.2.0/jar>.
 
 ## Getting Started
 
@@ -108,6 +108,20 @@ DefaultApi onfido = new DefaultApi(Configuration.getDefaultApiClient()
                       .setReadTimeout(60_000)
                       .setProxy(new Proxy(Proxy.Type.HTTP, new InetSocketAddress(host, port))));   // Optionally define a connection proxy with the specified host and port
 ```
+
+You can also authenticate using OAuth2 client credentials instead of an API token:
+
+```java
+DefaultApi onfido = new DefaultApi(Configuration.getDefaultApiClient()
+                      .setOAuthCredentials(System.getenv("ONFIDO_OAUTH_CLIENT_ID"),
+                                           System.getenv("ONFIDO_OAUTH_CLIENT_SECRET"))
+                      .setRegion(Region.EU)  // Supports `EU`, `US` and `CA`
+                      .setConnectTimeout(60_000)
+                      .setReadTimeout(60_000))
+                      .setProxy(new Proxy(Proxy.Type.HTTP, new InetSocketAddress(host, port))));   // Optionally define a connection proxy with the specified host and port
+```
+
+The client will automatically exchange credentials for an access token and refresh it when it expires.
 
 NB: By default, the connection and read timeout values are set to 30 seconds. You can adjust these values as shown in the configuration section.
 

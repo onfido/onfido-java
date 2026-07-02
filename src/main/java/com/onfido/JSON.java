@@ -141,6 +141,10 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.ApplicantUpdate.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.ApplicantUpdater.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.ApplicantsList.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.BiometricToken.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.BiometricTokenData.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.BiometricTokenUpdater.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.BiometricTokensList.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.Check.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.CheckBuilder.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.CheckRequest.CustomTypeAdapterFactory());
@@ -306,6 +310,9 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.IndiaPanReportAllOfBreakdownDeviceBreakdownPanValid.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.IndiaPanReportAllOfProperties.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.IndiaPanReportAllOfPropertiesDevice.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.InvalidatedBiometricTokenSummary.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.InvalidatedBiometricTokenSummaryDeletedItems.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.InvalidatedBiometricTokensSummary.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.KnownFacesBreakdown.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.KnownFacesBreakdownImageIntegrity.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.KnownFacesBreakdownPreviouslySeenFaces.CustomTypeAdapterFactory());
@@ -356,6 +363,7 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.Task.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.TaskItem.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.TimelineFileReference.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.UpdateBiometricToken200Response.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.UsDrivingLicenceBreakdown.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.UsDrivingLicenceBreakdownAddress.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.onfido.model.UsDrivingLicenceBreakdownAddressBreakdown.CustomTypeAdapterFactory());

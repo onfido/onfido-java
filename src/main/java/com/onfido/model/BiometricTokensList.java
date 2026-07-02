@@ -20,9 +20,11 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.onfido.model.BiometricToken;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.UUID;
+import java.util.List;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -49,130 +51,42 @@ import java.util.Locale;
 import com.onfido.JSON;
 
 /**
- * WebhookResponse
+ * BiometricTokensList
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.16.0")
-public class WebhookResponse {
-  public static final String SERIALIZED_NAME_ID = "id";
-  @SerializedName(SERIALIZED_NAME_ID)
+public class BiometricTokensList {
+  public static final String SERIALIZED_NAME_BIOMETRIC_TOKENS = "biometric_tokens";
+  @SerializedName(SERIALIZED_NAME_BIOMETRIC_TOKENS)
   @javax.annotation.Nonnull
-  private UUID id;
+  private List<BiometricToken> biometricTokens = new ArrayList<>();
 
-  public static final String SERIALIZED_NAME_NAME = "name";
-  @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nullable
-  private String name;
-
-  public static final String SERIALIZED_NAME_URL = "url";
-  @SerializedName(SERIALIZED_NAME_URL)
-  @javax.annotation.Nullable
-  private String url;
-
-  public static final String SERIALIZED_NAME_TOKEN = "token";
-  @SerializedName(SERIALIZED_NAME_TOKEN)
-  @javax.annotation.Nullable
-  private String token;
-
-  public static final String SERIALIZED_NAME_HREF = "href";
-  @SerializedName(SERIALIZED_NAME_HREF)
-  @javax.annotation.Nullable
-  private String href;
-
-  public WebhookResponse() {
+  public BiometricTokensList() {
   }
 
-  public WebhookResponse id(@javax.annotation.Nonnull UUID id) {
-    this.id = id;
+  public BiometricTokensList biometricTokens(@javax.annotation.Nonnull List<BiometricToken> biometricTokens) {
+    this.biometricTokens = biometricTokens;
+    return this;
+  }
+
+  public BiometricTokensList addBiometricTokensItem(BiometricToken biometricTokensItem) {
+    if (this.biometricTokens == null) {
+      this.biometricTokens = new ArrayList<>();
+    }
+    this.biometricTokens.add(biometricTokensItem);
     return this;
   }
 
   /**
-   * The unique identifier of the webhook.
-   * @return id
+   * Get biometricTokens
+   * @return biometricTokens
    */
   @javax.annotation.Nonnull
-  public UUID getId() {
-    return id;
+  public List<BiometricToken> getBiometricTokens() {
+    return biometricTokens;
   }
 
-  public void setId(@javax.annotation.Nonnull UUID id) {
-    this.id = id;
-  }
-
-
-  public WebhookResponse name(@javax.annotation.Nullable String name) {
-    this.name = name;
-    return this;
-  }
-
-  /**
-   * Name of the webhook.
-   * @return name
-   */
-  @javax.annotation.Nullable
-  public String getName() {
-    return name;
-  }
-
-  public void setName(@javax.annotation.Nullable String name) {
-    this.name = name;
-  }
-
-
-  public WebhookResponse url(@javax.annotation.Nullable String url) {
-    this.url = url;
-    return this;
-  }
-
-  /**
-   * The url that will listen to notifications (must be https).
-   * @return url
-   */
-  @javax.annotation.Nullable
-  public String getUrl() {
-    return url;
-  }
-
-  public void setUrl(@javax.annotation.Nullable String url) {
-    this.url = url;
-  }
-
-
-  public WebhookResponse token(@javax.annotation.Nullable String token) {
-    this.token = token;
-    return this;
-  }
-
-  /**
-   * Webhook secret token used to sign the webhook&#39;s payload.
-   * @return token
-   */
-  @javax.annotation.Nullable
-  public String getToken() {
-    return token;
-  }
-
-  public void setToken(@javax.annotation.Nullable String token) {
-    this.token = token;
-  }
-
-
-  public WebhookResponse href(@javax.annotation.Nullable String href) {
-    this.href = href;
-    return this;
-  }
-
-  /**
-   * The API endpoint to retrieve the webhook.
-   * @return href
-   */
-  @javax.annotation.Nullable
-  public String getHref() {
-    return href;
-  }
-
-  public void setHref(@javax.annotation.Nullable String href) {
-    this.href = href;
+  public void setBiometricTokens(@javax.annotation.Nonnull List<BiometricToken> biometricTokens) {
+    this.biometricTokens = biometricTokens;
   }
 
   /**
@@ -188,9 +102,9 @@ public class WebhookResponse {
    *
    * @param key name of the property
    * @param value value of the property
-   * @return the WebhookResponse instance itself
+   * @return the BiometricTokensList instance itself
    */
-  public WebhookResponse putAdditionalProperty(String key, Object value) {
+  public BiometricTokensList putAdditionalProperty(String key, Object value) {
     if (this.additionalProperties == null) {
         this.additionalProperties = new HashMap<String, Object>();
     }
@@ -229,29 +143,21 @@ public class WebhookResponse {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    WebhookResponse webhookResponse = (WebhookResponse) o;
-    return Objects.equals(this.id, webhookResponse.id) &&
-        Objects.equals(this.name, webhookResponse.name) &&
-        Objects.equals(this.url, webhookResponse.url) &&
-        Objects.equals(this.token, webhookResponse.token) &&
-        Objects.equals(this.href, webhookResponse.href)&&
-        Objects.equals(this.additionalProperties, webhookResponse.additionalProperties);
+    BiometricTokensList biometricTokensList = (BiometricTokensList) o;
+    return Objects.equals(this.biometricTokens, biometricTokensList.biometricTokens)&&
+        Objects.equals(this.additionalProperties, biometricTokensList.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, url, token, href, additionalProperties);
+    return Objects.hash(biometricTokens, additionalProperties);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class WebhookResponse {\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    url: ").append(toIndentedString(url)).append("\n");
-    sb.append("    token: ").append(toIndentedString(token)).append("\n");
-    sb.append("    href: ").append(toIndentedString(href)).append("\n");
+    sb.append("class BiometricTokensList {\n");
+    sb.append("    biometricTokens: ").append(toIndentedString(biometricTokens)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -274,63 +180,58 @@ public class WebhookResponse {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("id", "name", "url", "token", "href"));
+    openapiFields = new HashSet<String>(Arrays.asList("biometric_tokens"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(Arrays.asList("id"));
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("biometric_tokens"));
   }
 
   /**
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to WebhookResponse
+   * @throws IOException if the JSON Element is invalid with respect to BiometricTokensList
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!WebhookResponse.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in WebhookResponse is not found in the empty JSON string", WebhookResponse.openapiRequiredFields.toString()));
+        if (!BiometricTokensList.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in BiometricTokensList is not found in the empty JSON string", BiometricTokensList.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : WebhookResponse.openapiRequiredFields) {
+      for (String requiredField : BiometricTokensList.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
           throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if (!jsonObj.get("id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
+      // ensure the json data is an array
+      if (!jsonObj.get("biometric_tokens").isJsonArray()) {
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `biometric_tokens` to be an array in the JSON string but got `%s`", jsonObj.get("biometric_tokens").toString()));
       }
-      if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
-      }
-      if ((jsonObj.get("url") != null && !jsonObj.get("url").isJsonNull()) && !jsonObj.get("url").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("url").toString()));
-      }
-      if ((jsonObj.get("token") != null && !jsonObj.get("token").isJsonNull()) && !jsonObj.get("token").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `token` to be a primitive type in the JSON string but got `%s`", jsonObj.get("token").toString()));
-      }
-      if ((jsonObj.get("href") != null && !jsonObj.get("href").isJsonNull()) && !jsonObj.get("href").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `href` to be a primitive type in the JSON string but got `%s`", jsonObj.get("href").toString()));
-      }
+
+      JsonArray jsonArraybiometricTokens = jsonObj.getAsJsonArray("biometric_tokens");
+      // validate the required field `biometric_tokens` (array)
+      for (int i = 0; i < jsonArraybiometricTokens.size(); i++) {
+        BiometricToken.validateJsonElement(jsonArraybiometricTokens.get(i));
+      };
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!WebhookResponse.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'WebhookResponse' and its subtypes
+       if (!BiometricTokensList.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'BiometricTokensList' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<WebhookResponse> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(WebhookResponse.class));
+       final TypeAdapter<BiometricTokensList> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(BiometricTokensList.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<WebhookResponse>() {
+       return (TypeAdapter<T>) new TypeAdapter<BiometricTokensList>() {
            @Override
-           public void write(JsonWriter out, WebhookResponse value) throws IOException {
+           public void write(JsonWriter out, BiometricTokensList value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              obj.remove("additionalProperties");
              // serialize additional properties
@@ -358,12 +259,12 @@ public class WebhookResponse {
            }
 
            @Override
-           public WebhookResponse read(JsonReader in) throws IOException {
+           public BiometricTokensList read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
-             WebhookResponse instance = thisAdapter.fromJsonTree(jsonObj);
+             BiometricTokensList instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
                if (!openapiFields.contains(entry.getKey())) {
                  if (entry.getValue().isJsonPrimitive()) { // primitive type
@@ -390,18 +291,18 @@ public class WebhookResponse {
   }
 
   /**
-   * Create an instance of WebhookResponse given an JSON string
+   * Create an instance of BiometricTokensList given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of WebhookResponse
-   * @throws IOException if the JSON string is invalid with respect to WebhookResponse
+   * @return An instance of BiometricTokensList
+   * @throws IOException if the JSON string is invalid with respect to BiometricTokensList
    */
-  public static WebhookResponse fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, WebhookResponse.class);
+  public static BiometricTokensList fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, BiometricTokensList.class);
   }
 
   /**
-   * Convert an instance of WebhookResponse to an JSON string
+   * Convert an instance of BiometricTokensList to an JSON string
    *
    * @return JSON string
    */

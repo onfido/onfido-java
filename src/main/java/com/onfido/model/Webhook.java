@@ -106,6 +106,11 @@ public class Webhook {
   @javax.annotation.Nonnull
   private UUID id;
 
+  public static final String SERIALIZED_NAME_NAME = "name";
+  @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nullable
+  private String name;
+
   public static final String SERIALIZED_NAME_URL = "url";
   @SerializedName(SERIALIZED_NAME_URL)
   @javax.annotation.Nullable
@@ -330,6 +335,25 @@ public class Webhook {
   }
 
 
+  public Webhook name(@javax.annotation.Nullable String name) {
+    this.name = name;
+    return this;
+  }
+
+  /**
+   * Name of the webhook.
+   * @return name
+   */
+  @javax.annotation.Nullable
+  public String getName() {
+    return name;
+  }
+
+  public void setName(@javax.annotation.Nullable String name) {
+    this.name = name;
+  }
+
+
   public Webhook url(@javax.annotation.Nullable String url) {
     this.url = url;
     return this;
@@ -451,6 +475,7 @@ public class Webhook {
         Objects.equals(this.oauthServerClientSecret, webhook.oauthServerClientSecret) &&
         Objects.equals(this.oauthServerScope, webhook.oauthServerScope) &&
         Objects.equals(this.id, webhook.id) &&
+        Objects.equals(this.name, webhook.name) &&
         Objects.equals(this.url, webhook.url) &&
         Objects.equals(this.token, webhook.token) &&
         Objects.equals(this.href, webhook.href)&&
@@ -459,7 +484,7 @@ public class Webhook {
 
   @Override
   public int hashCode() {
-    return Objects.hash(enabled, events, environments, payloadVersion, oauthEnabled, oauthServerUrl, oauthServerClientId, oauthServerClientSecret, oauthServerScope, id, url, token, href, additionalProperties);
+    return Objects.hash(enabled, events, environments, payloadVersion, oauthEnabled, oauthServerUrl, oauthServerClientId, oauthServerClientSecret, oauthServerScope, id, name, url, token, href, additionalProperties);
   }
 
   @Override
@@ -476,6 +501,7 @@ public class Webhook {
     sb.append("    oauthServerClientSecret: ").append(toIndentedString(oauthServerClientSecret)).append("\n");
     sb.append("    oauthServerScope: ").append(toIndentedString(oauthServerScope)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    url: ").append(toIndentedString(url)).append("\n");
     sb.append("    token: ").append(toIndentedString(token)).append("\n");
     sb.append("    href: ").append(toIndentedString(href)).append("\n");
@@ -501,7 +527,7 @@ public class Webhook {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("enabled", "events", "environments", "payload_version", "oauth_enabled", "oauth_server_url", "oauth_server_client_id", "oauth_server_client_secret", "oauth_server_scope", "id", "url", "token", "href"));
+    openapiFields = new HashSet<String>(Arrays.asList("enabled", "events", "environments", "payload_version", "oauth_enabled", "oauth_server_url", "oauth_server_client_id", "oauth_server_client_secret", "oauth_server_scope", "id", "name", "url", "token", "href"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("id"));
@@ -549,6 +575,9 @@ public class Webhook {
       }
       if (!jsonObj.get("id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
+      }
+      if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if ((jsonObj.get("url") != null && !jsonObj.get("url").isJsonNull()) && !jsonObj.get("url").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("url").toString()));

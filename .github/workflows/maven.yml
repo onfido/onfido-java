@@ -49,7 +49,8 @@ jobs:
         if: ${{ github.repository_owner == 'onfido' &&
           (github.event_name == 'pull_request' ||
            github.event_name == 'release' ||
-           github.event_name == 'workflow_dispatch') }}
+           github.event_name == 'workflow_dispatch' ||
+           github.event_name == 'schedule') }}
         run: mvn test
         env:
           ONFIDO_API_TOKEN: ${{ secrets.ONFIDO_API_TOKEN }}
@@ -62,7 +63,8 @@ jobs:
         if: ${{ github.repository_owner == 'onfido' &&
           (github.event_name == 'pull_request' ||
            github.event_name == 'release' ||
-           github.event_name == 'workflow_dispatch') }}
+           github.event_name == 'workflow_dispatch' ||
+           github.event_name == 'schedule') }}
         run: mvn test
         env:
           ONFIDO_OAUTH_CLIENT_ID: ${{ secrets.ONFIDO_OAUTH_CLIENT_ID }}

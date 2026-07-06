@@ -52,6 +52,11 @@ import com.onfido.JSON;
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.16.0")
 public class WebhookUpdate {
+  public static final String SERIALIZED_NAME_NAME = "name";
+  @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nullable
+  private String name;
+
   public static final String SERIALIZED_NAME_URL = "url";
   @SerializedName(SERIALIZED_NAME_URL)
   @javax.annotation.Nullable
@@ -59,6 +64,25 @@ public class WebhookUpdate {
 
   public WebhookUpdate() {
   }
+
+  public WebhookUpdate name(@javax.annotation.Nullable String name) {
+    this.name = name;
+    return this;
+  }
+
+  /**
+   * Name of the webhook.
+   * @return name
+   */
+  @javax.annotation.Nullable
+  public String getName() {
+    return name;
+  }
+
+  public void setName(@javax.annotation.Nullable String name) {
+    this.name = name;
+  }
+
 
   public WebhookUpdate url(@javax.annotation.Nullable String url) {
     this.url = url;
@@ -133,19 +157,21 @@ public class WebhookUpdate {
       return false;
     }
     WebhookUpdate webhookUpdate = (WebhookUpdate) o;
-    return Objects.equals(this.url, webhookUpdate.url)&&
+    return Objects.equals(this.name, webhookUpdate.name) &&
+        Objects.equals(this.url, webhookUpdate.url)&&
         Objects.equals(this.additionalProperties, webhookUpdate.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(url, additionalProperties);
+    return Objects.hash(name, url, additionalProperties);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class WebhookUpdate {\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    url: ").append(toIndentedString(url)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
@@ -169,7 +195,7 @@ public class WebhookUpdate {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("url"));
+    openapiFields = new HashSet<String>(Arrays.asList("name", "url"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -188,6 +214,9 @@ public class WebhookUpdate {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+      }
       if ((jsonObj.get("url") != null && !jsonObj.get("url").isJsonNull()) && !jsonObj.get("url").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("url").toString()));
       }

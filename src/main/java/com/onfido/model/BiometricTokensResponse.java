@@ -22,7 +22,9 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.onfido.model.BiometricToken;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -49,34 +51,42 @@ import java.util.Locale;
 import com.onfido.JSON;
 
 /**
- * UpdateBiometricToken200Response
+ * BiometricTokensResponse
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.16.0")
-public class UpdateBiometricToken200Response {
-  public static final String SERIALIZED_NAME_BIOMETRIC_TOKEN = "biometric_token";
-  @SerializedName(SERIALIZED_NAME_BIOMETRIC_TOKEN)
+public class BiometricTokensResponse {
+  public static final String SERIALIZED_NAME_BIOMETRIC_TOKENS = "biometric_tokens";
+  @SerializedName(SERIALIZED_NAME_BIOMETRIC_TOKENS)
   @javax.annotation.Nonnull
-  private BiometricToken biometricToken;
+  private List<BiometricToken> biometricTokens = new ArrayList<>();
 
-  public UpdateBiometricToken200Response() {
+  public BiometricTokensResponse() {
   }
 
-  public UpdateBiometricToken200Response biometricToken(@javax.annotation.Nonnull BiometricToken biometricToken) {
-    this.biometricToken = biometricToken;
+  public BiometricTokensResponse biometricTokens(@javax.annotation.Nonnull List<BiometricToken> biometricTokens) {
+    this.biometricTokens = biometricTokens;
+    return this;
+  }
+
+  public BiometricTokensResponse addBiometricTokensItem(BiometricToken biometricTokensItem) {
+    if (this.biometricTokens == null) {
+      this.biometricTokens = new ArrayList<>();
+    }
+    this.biometricTokens.add(biometricTokensItem);
     return this;
   }
 
   /**
-   * Get biometricToken
-   * @return biometricToken
+   * Get biometricTokens
+   * @return biometricTokens
    */
   @javax.annotation.Nonnull
-  public BiometricToken getBiometricToken() {
-    return biometricToken;
+  public List<BiometricToken> getBiometricTokens() {
+    return biometricTokens;
   }
 
-  public void setBiometricToken(@javax.annotation.Nonnull BiometricToken biometricToken) {
-    this.biometricToken = biometricToken;
+  public void setBiometricTokens(@javax.annotation.Nonnull List<BiometricToken> biometricTokens) {
+    this.biometricTokens = biometricTokens;
   }
 
   /**
@@ -92,9 +102,9 @@ public class UpdateBiometricToken200Response {
    *
    * @param key name of the property
    * @param value value of the property
-   * @return the UpdateBiometricToken200Response instance itself
+   * @return the BiometricTokensResponse instance itself
    */
-  public UpdateBiometricToken200Response putAdditionalProperty(String key, Object value) {
+  public BiometricTokensResponse putAdditionalProperty(String key, Object value) {
     if (this.additionalProperties == null) {
         this.additionalProperties = new HashMap<String, Object>();
     }
@@ -133,21 +143,21 @@ public class UpdateBiometricToken200Response {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    UpdateBiometricToken200Response updateBiometricToken200Response = (UpdateBiometricToken200Response) o;
-    return Objects.equals(this.biometricToken, updateBiometricToken200Response.biometricToken)&&
-        Objects.equals(this.additionalProperties, updateBiometricToken200Response.additionalProperties);
+    BiometricTokensResponse biometricTokensResponse = (BiometricTokensResponse) o;
+    return Objects.equals(this.biometricTokens, biometricTokensResponse.biometricTokens)&&
+        Objects.equals(this.additionalProperties, biometricTokensResponse.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(biometricToken, additionalProperties);
+    return Objects.hash(biometricTokens, additionalProperties);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class UpdateBiometricToken200Response {\n");
-    sb.append("    biometricToken: ").append(toIndentedString(biometricToken)).append("\n");
+    sb.append("class BiometricTokensResponse {\n");
+    sb.append("    biometricTokens: ").append(toIndentedString(biometricTokens)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -170,50 +180,58 @@ public class UpdateBiometricToken200Response {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("biometric_token"));
+    openapiFields = new HashSet<String>(Arrays.asList("biometric_tokens"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(Arrays.asList("biometric_token"));
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("biometric_tokens"));
   }
 
   /**
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to UpdateBiometricToken200Response
+   * @throws IOException if the JSON Element is invalid with respect to BiometricTokensResponse
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!UpdateBiometricToken200Response.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in UpdateBiometricToken200Response is not found in the empty JSON string", UpdateBiometricToken200Response.openapiRequiredFields.toString()));
+        if (!BiometricTokensResponse.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in BiometricTokensResponse is not found in the empty JSON string", BiometricTokensResponse.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : UpdateBiometricToken200Response.openapiRequiredFields) {
+      for (String requiredField : BiometricTokensResponse.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
           throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // validate the required field `biometric_token`
-      BiometricToken.validateJsonElement(jsonObj.get("biometric_token"));
+      // ensure the json data is an array
+      if (!jsonObj.get("biometric_tokens").isJsonArray()) {
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `biometric_tokens` to be an array in the JSON string but got `%s`", jsonObj.get("biometric_tokens").toString()));
+      }
+
+      JsonArray jsonArraybiometricTokens = jsonObj.getAsJsonArray("biometric_tokens");
+      // validate the required field `biometric_tokens` (array)
+      for (int i = 0; i < jsonArraybiometricTokens.size(); i++) {
+        BiometricToken.validateJsonElement(jsonArraybiometricTokens.get(i));
+      };
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!UpdateBiometricToken200Response.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'UpdateBiometricToken200Response' and its subtypes
+       if (!BiometricTokensResponse.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'BiometricTokensResponse' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<UpdateBiometricToken200Response> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(UpdateBiometricToken200Response.class));
+       final TypeAdapter<BiometricTokensResponse> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(BiometricTokensResponse.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<UpdateBiometricToken200Response>() {
+       return (TypeAdapter<T>) new TypeAdapter<BiometricTokensResponse>() {
            @Override
-           public void write(JsonWriter out, UpdateBiometricToken200Response value) throws IOException {
+           public void write(JsonWriter out, BiometricTokensResponse value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              obj.remove("additionalProperties");
              // serialize additional properties
@@ -241,12 +259,12 @@ public class UpdateBiometricToken200Response {
            }
 
            @Override
-           public UpdateBiometricToken200Response read(JsonReader in) throws IOException {
+           public BiometricTokensResponse read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
-             UpdateBiometricToken200Response instance = thisAdapter.fromJsonTree(jsonObj);
+             BiometricTokensResponse instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
                if (!openapiFields.contains(entry.getKey())) {
                  if (entry.getValue().isJsonPrimitive()) { // primitive type
@@ -273,18 +291,18 @@ public class UpdateBiometricToken200Response {
   }
 
   /**
-   * Create an instance of UpdateBiometricToken200Response given an JSON string
+   * Create an instance of BiometricTokensResponse given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of UpdateBiometricToken200Response
-   * @throws IOException if the JSON string is invalid with respect to UpdateBiometricToken200Response
+   * @return An instance of BiometricTokensResponse
+   * @throws IOException if the JSON string is invalid with respect to BiometricTokensResponse
    */
-  public static UpdateBiometricToken200Response fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, UpdateBiometricToken200Response.class);
+  public static BiometricTokensResponse fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, BiometricTokensResponse.class);
   }
 
   /**
-   * Convert an instance of UpdateBiometricToken200Response to an JSON string
+   * Convert an instance of BiometricTokensResponse to an JSON string
    *
    * @return JSON string
    */

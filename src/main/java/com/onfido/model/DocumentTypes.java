@@ -183,6 +183,10 @@ public enum DocumentTypes {
   
   ACCOMMODATION_TENANCY_CERTIFICATE("accommodation_tenancy_certificate"),
   
+  DIPLOMATIC_ID("diplomatic_id"),
+  
+  TRAVEL_DOCUMENT("travel_document"),
+  
   UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
   private String value;

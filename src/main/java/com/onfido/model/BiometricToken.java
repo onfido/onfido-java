@@ -20,8 +20,10 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.onfido.model.BiometricTokenData;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.UUID;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -48,34 +50,58 @@ import java.util.Locale;
 import com.onfido.JSON;
 
 /**
- * BiometricToken
+ * Biometric token.
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.16.0")
 public class BiometricToken {
-  public static final String SERIALIZED_NAME_BIOMETRIC_TOKEN = "biometric_token";
-  @SerializedName(SERIALIZED_NAME_BIOMETRIC_TOKEN)
+  public static final String SERIALIZED_NAME_UUID = "uuid";
+  @SerializedName(SERIALIZED_NAME_UUID)
   @javax.annotation.Nonnull
-  private BiometricToken biometricToken;
+  private UUID uuid;
+
+  public static final String SERIALIZED_NAME_DATA = "data";
+  @SerializedName(SERIALIZED_NAME_DATA)
+  @javax.annotation.Nonnull
+  private BiometricTokenData data;
 
   public BiometricToken() {
   }
 
-  public BiometricToken biometricToken(@javax.annotation.Nonnull BiometricToken biometricToken) {
-    this.biometricToken = biometricToken;
+  public BiometricToken uuid(@javax.annotation.Nonnull UUID uuid) {
+    this.uuid = uuid;
     return this;
   }
 
   /**
-   * Get biometricToken
-   * @return biometricToken
+   * The biometric token&#39;s unique identifier.
+   * @return uuid
    */
   @javax.annotation.Nonnull
-  public BiometricToken getBiometricToken() {
-    return biometricToken;
+  public UUID getUuid() {
+    return uuid;
   }
 
-  public void setBiometricToken(@javax.annotation.Nonnull BiometricToken biometricToken) {
-    this.biometricToken = biometricToken;
+  public void setUuid(@javax.annotation.Nonnull UUID uuid) {
+    this.uuid = uuid;
+  }
+
+
+  public BiometricToken data(@javax.annotation.Nonnull BiometricTokenData data) {
+    this.data = data;
+    return this;
+  }
+
+  /**
+   * Get data
+   * @return data
+   */
+  @javax.annotation.Nonnull
+  public BiometricTokenData getData() {
+    return data;
+  }
+
+  public void setData(@javax.annotation.Nonnull BiometricTokenData data) {
+    this.data = data;
   }
 
   /**
@@ -133,20 +159,22 @@ public class BiometricToken {
       return false;
     }
     BiometricToken biometricToken = (BiometricToken) o;
-    return Objects.equals(this.biometricToken, biometricToken.biometricToken)&&
+    return Objects.equals(this.uuid, biometricToken.uuid) &&
+        Objects.equals(this.data, biometricToken.data)&&
         Objects.equals(this.additionalProperties, biometricToken.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(biometricToken, additionalProperties);
+    return Objects.hash(uuid, data, additionalProperties);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class BiometricToken {\n");
-    sb.append("    biometricToken: ").append(toIndentedString(biometricToken)).append("\n");
+    sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
+    sb.append("    data: ").append(toIndentedString(data)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -169,10 +197,10 @@ public class BiometricToken {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("biometric_token"));
+    openapiFields = new HashSet<String>(Arrays.asList("uuid", "data"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(Arrays.asList("biometric_token"));
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("uuid", "data"));
   }
 
   /**
@@ -195,8 +223,11 @@ public class BiometricToken {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // validate the required field `biometric_token`
-      BiometricToken.validateJsonElement(jsonObj.get("biometric_token"));
+      if (!jsonObj.get("uuid").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `uuid` to be a primitive type in the JSON string but got `%s`", jsonObj.get("uuid").toString()));
+      }
+      // validate the required field `data`
+      BiometricTokenData.validateJsonElement(jsonObj.get("data"));
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

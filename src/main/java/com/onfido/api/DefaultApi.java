@@ -34,9 +34,9 @@ import com.onfido.model.ApplicantBuilder;
 import com.onfido.model.ApplicantConsent;
 import com.onfido.model.ApplicantUpdater;
 import com.onfido.model.ApplicantsList;
-import com.onfido.model.BiometricToken;
+import com.onfido.model.BiometricTokenResponse;
 import com.onfido.model.BiometricTokenUpdater;
-import com.onfido.model.BiometricTokensList;
+import com.onfido.model.BiometricTokensResponse;
 import com.onfido.model.Check;
 import com.onfido.model.CheckBuilder;
 import com.onfido.model.ChecksList;
@@ -52,8 +52,8 @@ import com.onfido.model.Extraction;
 import java.io.File;
 import com.onfido.model.IdPhoto;
 import com.onfido.model.IdPhotosList;
-import com.onfido.model.InvalidatedBiometricTokenSummary;
-import com.onfido.model.InvalidatedBiometricTokensSummary;
+import com.onfido.model.InvalidatedBiometricTokenResponse;
+import com.onfido.model.InvalidatedBiometricTokensResponse;
 import com.onfido.model.LivePhoto;
 import com.onfido.model.LivePhotosList;
 import com.onfido.model.LiveVideo;
@@ -78,7 +78,7 @@ import com.onfido.model.TaskItem;
 import com.onfido.model.TimelineFileReference;
 import java.net.URI;
 import java.util.UUID;
-import com.onfido.model.UpdateBiometricToken200Response;
+import com.onfido.model.UpdatedBiometricTokenResponse;
 import com.onfido.model.WatchlistMonitor;
 import com.onfido.model.WatchlistMonitorBuilder;
 import com.onfido.model.WatchlistMonitorMatchesList;
@@ -5681,16 +5681,16 @@ public class DefaultApi {
     }
 
 
-    private ApiResponse<BiometricToken> findBiometricTokenWithHttpInfo(@javax.annotation.Nonnull String userId, @javax.annotation.Nonnull UUID tokenUuid) throws ApiException {
+    private ApiResponse<BiometricTokenResponse> findBiometricTokenWithHttpInfo(@javax.annotation.Nonnull String userId, @javax.annotation.Nonnull UUID tokenUuid) throws ApiException {
         okhttp3.Call localVarCall = findBiometricTokenValidateBeforeCall(userId, tokenUuid, null);
-        Type localVarReturnType = new TypeToken<BiometricToken>(){}.getType();
+        Type localVarReturnType = new TypeToken<BiometricTokenResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call findBiometricTokenAsync(@javax.annotation.Nonnull String userId, @javax.annotation.Nonnull UUID tokenUuid, final ApiCallback<BiometricToken> _callback) throws ApiException {
+    private okhttp3.Call findBiometricTokenAsync(@javax.annotation.Nonnull String userId, @javax.annotation.Nonnull UUID tokenUuid, final ApiCallback<BiometricTokenResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = findBiometricTokenValidateBeforeCall(userId, tokenUuid, _callback);
-        Type localVarReturnType = new TypeToken<BiometricToken>(){}.getType();
+        Type localVarReturnType = new TypeToken<BiometricTokenResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -5725,7 +5725,7 @@ public class DefaultApi {
 
         /**
          * Execute findBiometricToken request
-         * @return BiometricToken
+         * @return BiometricTokenResponse
          * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
          * @http.response.details
          <table border="1">
@@ -5735,14 +5735,14 @@ public class DefaultApi {
             <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
          </table>
          */
-        public BiometricToken execute() throws ApiException {
-            ApiResponse<BiometricToken> localVarResp = findBiometricTokenWithHttpInfo(userId, tokenUuid);
+        public BiometricTokenResponse execute() throws ApiException {
+            ApiResponse<BiometricTokenResponse> localVarResp = findBiometricTokenWithHttpInfo(userId, tokenUuid);
             return localVarResp.getData();
         }
 
         /**
          * Execute findBiometricToken request with HTTP info returned
-         * @return ApiResponse&lt;BiometricToken&gt;
+         * @return ApiResponse&lt;BiometricTokenResponse&gt;
          * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
          * @http.response.details
          <table border="1">
@@ -5752,7 +5752,7 @@ public class DefaultApi {
             <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
          </table>
          */
-        public ApiResponse<BiometricToken> executeWithHttpInfo() throws ApiException {
+        public ApiResponse<BiometricTokenResponse> executeWithHttpInfo() throws ApiException {
             return findBiometricTokenWithHttpInfo(userId, tokenUuid);
         }
 
@@ -5769,7 +5769,7 @@ public class DefaultApi {
             <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
          </table>
          */
-        public okhttp3.Call executeAsync(final ApiCallback<BiometricToken> _callback) throws ApiException {
+        public okhttp3.Call executeAsync(final ApiCallback<BiometricTokenResponse> _callback) throws ApiException {
             return findBiometricTokenAsync(userId, tokenUuid, _callback);
         }
     }
@@ -8499,16 +8499,16 @@ public class DefaultApi {
     }
 
 
-    private ApiResponse<InvalidatedBiometricTokenSummary> invalidateBiometricTokenWithHttpInfo(@javax.annotation.Nonnull String userId, @javax.annotation.Nonnull UUID tokenUuid) throws ApiException {
+    private ApiResponse<InvalidatedBiometricTokenResponse> invalidateBiometricTokenWithHttpInfo(@javax.annotation.Nonnull String userId, @javax.annotation.Nonnull UUID tokenUuid) throws ApiException {
         okhttp3.Call localVarCall = invalidateBiometricTokenValidateBeforeCall(userId, tokenUuid, null);
-        Type localVarReturnType = new TypeToken<InvalidatedBiometricTokenSummary>(){}.getType();
+        Type localVarReturnType = new TypeToken<InvalidatedBiometricTokenResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call invalidateBiometricTokenAsync(@javax.annotation.Nonnull String userId, @javax.annotation.Nonnull UUID tokenUuid, final ApiCallback<InvalidatedBiometricTokenSummary> _callback) throws ApiException {
+    private okhttp3.Call invalidateBiometricTokenAsync(@javax.annotation.Nonnull String userId, @javax.annotation.Nonnull UUID tokenUuid, final ApiCallback<InvalidatedBiometricTokenResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = invalidateBiometricTokenValidateBeforeCall(userId, tokenUuid, _callback);
-        Type localVarReturnType = new TypeToken<InvalidatedBiometricTokenSummary>(){}.getType();
+        Type localVarReturnType = new TypeToken<InvalidatedBiometricTokenResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -8543,7 +8543,7 @@ public class DefaultApi {
 
         /**
          * Execute invalidateBiometricToken request
-         * @return InvalidatedBiometricTokenSummary
+         * @return InvalidatedBiometricTokenResponse
          * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
          * @http.response.details
          <table border="1">
@@ -8553,14 +8553,14 @@ public class DefaultApi {
             <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
          </table>
          */
-        public InvalidatedBiometricTokenSummary execute() throws ApiException {
-            ApiResponse<InvalidatedBiometricTokenSummary> localVarResp = invalidateBiometricTokenWithHttpInfo(userId, tokenUuid);
+        public InvalidatedBiometricTokenResponse execute() throws ApiException {
+            ApiResponse<InvalidatedBiometricTokenResponse> localVarResp = invalidateBiometricTokenWithHttpInfo(userId, tokenUuid);
             return localVarResp.getData();
         }
 
         /**
          * Execute invalidateBiometricToken request with HTTP info returned
-         * @return ApiResponse&lt;InvalidatedBiometricTokenSummary&gt;
+         * @return ApiResponse&lt;InvalidatedBiometricTokenResponse&gt;
          * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
          * @http.response.details
          <table border="1">
@@ -8570,7 +8570,7 @@ public class DefaultApi {
             <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
          </table>
          */
-        public ApiResponse<InvalidatedBiometricTokenSummary> executeWithHttpInfo() throws ApiException {
+        public ApiResponse<InvalidatedBiometricTokenResponse> executeWithHttpInfo() throws ApiException {
             return invalidateBiometricTokenWithHttpInfo(userId, tokenUuid);
         }
 
@@ -8587,7 +8587,7 @@ public class DefaultApi {
             <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
          </table>
          */
-        public okhttp3.Call executeAsync(final ApiCallback<InvalidatedBiometricTokenSummary> _callback) throws ApiException {
+        public okhttp3.Call executeAsync(final ApiCallback<InvalidatedBiometricTokenResponse> _callback) throws ApiException {
             return invalidateBiometricTokenAsync(userId, tokenUuid, _callback);
         }
     }
@@ -8666,16 +8666,16 @@ public class DefaultApi {
     }
 
 
-    private ApiResponse<InvalidatedBiometricTokensSummary> invalidateBiometricTokensWithHttpInfo(@javax.annotation.Nonnull String userId) throws ApiException {
+    private ApiResponse<InvalidatedBiometricTokensResponse> invalidateBiometricTokensWithHttpInfo(@javax.annotation.Nonnull String userId) throws ApiException {
         okhttp3.Call localVarCall = invalidateBiometricTokensValidateBeforeCall(userId, null);
-        Type localVarReturnType = new TypeToken<InvalidatedBiometricTokensSummary>(){}.getType();
+        Type localVarReturnType = new TypeToken<InvalidatedBiometricTokensResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call invalidateBiometricTokensAsync(@javax.annotation.Nonnull String userId, final ApiCallback<InvalidatedBiometricTokensSummary> _callback) throws ApiException {
+    private okhttp3.Call invalidateBiometricTokensAsync(@javax.annotation.Nonnull String userId, final ApiCallback<InvalidatedBiometricTokensResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = invalidateBiometricTokensValidateBeforeCall(userId, _callback);
-        Type localVarReturnType = new TypeToken<InvalidatedBiometricTokensSummary>(){}.getType();
+        Type localVarReturnType = new TypeToken<InvalidatedBiometricTokensResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -8707,7 +8707,7 @@ public class DefaultApi {
 
         /**
          * Execute invalidateBiometricTokens request
-         * @return InvalidatedBiometricTokensSummary
+         * @return InvalidatedBiometricTokensResponse
          * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
          * @http.response.details
          <table border="1">
@@ -8717,14 +8717,14 @@ public class DefaultApi {
             <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
          </table>
          */
-        public InvalidatedBiometricTokensSummary execute() throws ApiException {
-            ApiResponse<InvalidatedBiometricTokensSummary> localVarResp = invalidateBiometricTokensWithHttpInfo(userId);
+        public InvalidatedBiometricTokensResponse execute() throws ApiException {
+            ApiResponse<InvalidatedBiometricTokensResponse> localVarResp = invalidateBiometricTokensWithHttpInfo(userId);
             return localVarResp.getData();
         }
 
         /**
          * Execute invalidateBiometricTokens request with HTTP info returned
-         * @return ApiResponse&lt;InvalidatedBiometricTokensSummary&gt;
+         * @return ApiResponse&lt;InvalidatedBiometricTokensResponse&gt;
          * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
          * @http.response.details
          <table border="1">
@@ -8734,7 +8734,7 @@ public class DefaultApi {
             <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
          </table>
          */
-        public ApiResponse<InvalidatedBiometricTokensSummary> executeWithHttpInfo() throws ApiException {
+        public ApiResponse<InvalidatedBiometricTokensResponse> executeWithHttpInfo() throws ApiException {
             return invalidateBiometricTokensWithHttpInfo(userId);
         }
 
@@ -8751,7 +8751,7 @@ public class DefaultApi {
             <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
          </table>
          */
-        public okhttp3.Call executeAsync(final ApiCallback<InvalidatedBiometricTokensSummary> _callback) throws ApiException {
+        public okhttp3.Call executeAsync(final ApiCallback<InvalidatedBiometricTokensResponse> _callback) throws ApiException {
             return invalidateBiometricTokensAsync(userId, _callback);
         }
     }
@@ -9030,16 +9030,16 @@ public class DefaultApi {
     }
 
 
-    private ApiResponse<BiometricTokensList> listBiometricTokensWithHttpInfo(@javax.annotation.Nonnull String userId) throws ApiException {
+    private ApiResponse<BiometricTokensResponse> listBiometricTokensWithHttpInfo(@javax.annotation.Nonnull String userId) throws ApiException {
         okhttp3.Call localVarCall = listBiometricTokensValidateBeforeCall(userId, null);
-        Type localVarReturnType = new TypeToken<BiometricTokensList>(){}.getType();
+        Type localVarReturnType = new TypeToken<BiometricTokensResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call listBiometricTokensAsync(@javax.annotation.Nonnull String userId, final ApiCallback<BiometricTokensList> _callback) throws ApiException {
+    private okhttp3.Call listBiometricTokensAsync(@javax.annotation.Nonnull String userId, final ApiCallback<BiometricTokensResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listBiometricTokensValidateBeforeCall(userId, _callback);
-        Type localVarReturnType = new TypeToken<BiometricTokensList>(){}.getType();
+        Type localVarReturnType = new TypeToken<BiometricTokensResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -9071,7 +9071,7 @@ public class DefaultApi {
 
         /**
          * Execute listBiometricTokens request
-         * @return BiometricTokensList
+         * @return BiometricTokensResponse
          * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
          * @http.response.details
          <table border="1">
@@ -9081,14 +9081,14 @@ public class DefaultApi {
             <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
          </table>
          */
-        public BiometricTokensList execute() throws ApiException {
-            ApiResponse<BiometricTokensList> localVarResp = listBiometricTokensWithHttpInfo(userId);
+        public BiometricTokensResponse execute() throws ApiException {
+            ApiResponse<BiometricTokensResponse> localVarResp = listBiometricTokensWithHttpInfo(userId);
             return localVarResp.getData();
         }
 
         /**
          * Execute listBiometricTokens request with HTTP info returned
-         * @return ApiResponse&lt;BiometricTokensList&gt;
+         * @return ApiResponse&lt;BiometricTokensResponse&gt;
          * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
          * @http.response.details
          <table border="1">
@@ -9098,7 +9098,7 @@ public class DefaultApi {
             <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
          </table>
          */
-        public ApiResponse<BiometricTokensList> executeWithHttpInfo() throws ApiException {
+        public ApiResponse<BiometricTokensResponse> executeWithHttpInfo() throws ApiException {
             return listBiometricTokensWithHttpInfo(userId);
         }
 
@@ -9115,7 +9115,7 @@ public class DefaultApi {
             <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
          </table>
          */
-        public okhttp3.Call executeAsync(final ApiCallback<BiometricTokensList> _callback) throws ApiException {
+        public okhttp3.Call executeAsync(final ApiCallback<BiometricTokensResponse> _callback) throws ApiException {
             return listBiometricTokensAsync(userId, _callback);
         }
     }
@@ -12916,16 +12916,16 @@ public class DefaultApi {
     }
 
 
-    private ApiResponse<UpdateBiometricToken200Response> updateBiometricTokenWithHttpInfo(@javax.annotation.Nonnull String userId, @javax.annotation.Nonnull UUID tokenUuid, @javax.annotation.Nonnull BiometricTokenUpdater biometricTokenUpdater) throws ApiException {
+    private ApiResponse<UpdatedBiometricTokenResponse> updateBiometricTokenWithHttpInfo(@javax.annotation.Nonnull String userId, @javax.annotation.Nonnull UUID tokenUuid, @javax.annotation.Nonnull BiometricTokenUpdater biometricTokenUpdater) throws ApiException {
         okhttp3.Call localVarCall = updateBiometricTokenValidateBeforeCall(userId, tokenUuid, biometricTokenUpdater, null);
-        Type localVarReturnType = new TypeToken<UpdateBiometricToken200Response>(){}.getType();
+        Type localVarReturnType = new TypeToken<UpdatedBiometricTokenResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call updateBiometricTokenAsync(@javax.annotation.Nonnull String userId, @javax.annotation.Nonnull UUID tokenUuid, @javax.annotation.Nonnull BiometricTokenUpdater biometricTokenUpdater, final ApiCallback<UpdateBiometricToken200Response> _callback) throws ApiException {
+    private okhttp3.Call updateBiometricTokenAsync(@javax.annotation.Nonnull String userId, @javax.annotation.Nonnull UUID tokenUuid, @javax.annotation.Nonnull BiometricTokenUpdater biometricTokenUpdater, final ApiCallback<UpdatedBiometricTokenResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateBiometricTokenValidateBeforeCall(userId, tokenUuid, biometricTokenUpdater, _callback);
-        Type localVarReturnType = new TypeToken<UpdateBiometricToken200Response>(){}.getType();
+        Type localVarReturnType = new TypeToken<UpdatedBiometricTokenResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -12963,7 +12963,7 @@ public class DefaultApi {
 
         /**
          * Execute updateBiometricToken request
-         * @return UpdateBiometricToken200Response
+         * @return UpdatedBiometricTokenResponse
          * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
          * @http.response.details
          <table border="1">
@@ -12973,14 +12973,14 @@ public class DefaultApi {
             <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
          </table>
          */
-        public UpdateBiometricToken200Response execute() throws ApiException {
-            ApiResponse<UpdateBiometricToken200Response> localVarResp = updateBiometricTokenWithHttpInfo(userId, tokenUuid, biometricTokenUpdater);
+        public UpdatedBiometricTokenResponse execute() throws ApiException {
+            ApiResponse<UpdatedBiometricTokenResponse> localVarResp = updateBiometricTokenWithHttpInfo(userId, tokenUuid, biometricTokenUpdater);
             return localVarResp.getData();
         }
 
         /**
          * Execute updateBiometricToken request with HTTP info returned
-         * @return ApiResponse&lt;UpdateBiometricToken200Response&gt;
+         * @return ApiResponse&lt;UpdatedBiometricTokenResponse&gt;
          * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
          * @http.response.details
          <table border="1">
@@ -12990,7 +12990,7 @@ public class DefaultApi {
             <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
          </table>
          */
-        public ApiResponse<UpdateBiometricToken200Response> executeWithHttpInfo() throws ApiException {
+        public ApiResponse<UpdatedBiometricTokenResponse> executeWithHttpInfo() throws ApiException {
             return updateBiometricTokenWithHttpInfo(userId, tokenUuid, biometricTokenUpdater);
         }
 
@@ -13007,7 +13007,7 @@ public class DefaultApi {
             <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
          </table>
          */
-        public okhttp3.Call executeAsync(final ApiCallback<UpdateBiometricToken200Response> _callback) throws ApiException {
+        public okhttp3.Call executeAsync(final ApiCallback<UpdatedBiometricTokenResponse> _callback) throws ApiException {
             return updateBiometricTokenAsync(userId, tokenUuid, biometricTokenUpdater, _callback);
         }
     }

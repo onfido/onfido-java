@@ -27,14 +27,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Set up JDK 17
+      - name: Set up JDK 21
         uses: actions/setup-java@v4
         with:
-          java-version: "17"
-          distribution: "adopt"
+          java-version: "21"
+          distribution: "temurin"
       - name: Install and run linter over tests
         run: |
-          npm install google-java-format@1.4.0
+          npm install google-java-format@2.3.0
           npx google-java-format --set-exit-if-changed -i $(git ls-files src/test/\*.java)
       - name: Cache local Maven repository
         uses: actions/cache@v4

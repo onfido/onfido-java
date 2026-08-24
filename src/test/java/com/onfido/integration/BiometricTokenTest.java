@@ -17,8 +17,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class BiometricTokenTest extends TestBase {
@@ -120,7 +120,8 @@ public class BiometricTokenTest extends TestBase {
 
   private BiometricTokensResponse waitForBiometricTokens() throws Exception {
     for (int attempt = 0; attempt < 10; attempt++) {
-      BiometricTokensResponse response = onfido.listBiometricTokens(biometricCustomerUserId).execute();
+      BiometricTokensResponse response =
+          onfido.listBiometricTokens(biometricCustomerUserId).execute();
       if (!response.getBiometricTokens().isEmpty()) {
         return response;
       }

@@ -79,6 +79,7 @@ import com.onfido.model.TimelineFileReference;
 import java.net.URI;
 import java.util.UUID;
 import com.onfido.model.UpdatedBiometricTokenResponse;
+import com.onfido.model.WatchlistMeshAlertRisk;
 import com.onfido.model.WatchlistMonitor;
 import com.onfido.model.WatchlistMonitorBuilder;
 import com.onfido.model.WatchlistMonitorMatchesList;
@@ -10957,6 +10958,201 @@ public class DefaultApi {
      */
     public APIlistTasksRequest listTasks(@javax.annotation.Nonnull UUID workflowRunId) {
         return new APIlistTasksRequest(workflowRunId);
+    }
+    private okhttp3.Call listWatchlistMeshAlertRisksCall(@javax.annotation.Nonnull UUID alertId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/complyadvantage_watchlists/alerts/{alert_id}/risks"
+            .replace("{" + "alert_id" + "}", localVarApiClient.escapeString(alertId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (page != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("page", page));
+        }
+
+        if (perPage != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("per_page", perPage));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "OAuth2ClientCredentials", "Token" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call listWatchlistMeshAlertRisksValidateBeforeCall(@javax.annotation.Nonnull UUID alertId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'alertId' is set
+        if (alertId == null) {
+            throw new ApiException("Missing the required parameter 'alertId' when calling listWatchlistMeshAlertRisks(Async)");
+        }
+
+        return listWatchlistMeshAlertRisksCall(alertId, page, perPage, _callback);
+
+    }
+
+
+    private ApiResponse<List<WatchlistMeshAlertRisk>> listWatchlistMeshAlertRisksWithHttpInfo(@javax.annotation.Nonnull UUID alertId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage) throws ApiException {
+        okhttp3.Call localVarCall = listWatchlistMeshAlertRisksValidateBeforeCall(alertId, page, perPage, null);
+        Type localVarReturnType = new TypeToken<List<WatchlistMeshAlertRisk>>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    private okhttp3.Call listWatchlistMeshAlertRisksAsync(@javax.annotation.Nonnull UUID alertId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, final ApiCallback<List<WatchlistMeshAlertRisk>> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = listWatchlistMeshAlertRisksValidateBeforeCall(alertId, page, perPage, _callback);
+        Type localVarReturnType = new TypeToken<List<WatchlistMeshAlertRisk>>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+
+    public class APIlistWatchlistMeshAlertRisksRequest {
+        @javax.annotation.Nonnull
+        private final UUID alertId;
+        @javax.annotation.Nullable
+        private Integer page;
+        @javax.annotation.Nullable
+        private Integer perPage;
+
+        private APIlistWatchlistMeshAlertRisksRequest(@javax.annotation.Nonnull UUID alertId) {
+            this.alertId = alertId;
+        }
+
+        /**
+         * Set page
+         * @param page The page of results to retrieve. (optional, default to 1)
+         * @return APIlistWatchlistMeshAlertRisksRequest
+         */
+        public APIlistWatchlistMeshAlertRisksRequest page(@javax.annotation.Nullable Integer page) {
+            this.page = page;
+            return this;
+        }
+
+        /**
+         * Set perPage
+         * @param perPage The number of risks to return per page. (optional, default to 25)
+         * @return APIlistWatchlistMeshAlertRisksRequest
+         */
+        public APIlistWatchlistMeshAlertRisksRequest perPage(@javax.annotation.Nullable Integer perPage) {
+            this.perPage = perPage;
+            return this;
+        }
+
+        /**
+         * Build call for listWatchlistMeshAlertRisks
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> An array of watchlist alert risks. </td><td>  * X-Total-Count - The total number of risks associated with the alert. <br>  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return listWatchlistMeshAlertRisksCall(alertId, page, perPage, _callback);
+        }
+
+        /**
+         * Execute listWatchlistMeshAlertRisks request
+         * @return List&lt;WatchlistMeshAlertRisk&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> An array of watchlist alert risks. </td><td>  * X-Total-Count - The total number of risks associated with the alert. <br>  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public List<WatchlistMeshAlertRisk> execute() throws ApiException {
+            ApiResponse<List<WatchlistMeshAlertRisk>> localVarResp = listWatchlistMeshAlertRisksWithHttpInfo(alertId, page, perPage);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute listWatchlistMeshAlertRisks request with HTTP info returned
+         * @return ApiResponse&lt;List&lt;WatchlistMeshAlertRisk&gt;&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> An array of watchlist alert risks. </td><td>  * X-Total-Count - The total number of risks associated with the alert. <br>  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public ApiResponse<List<WatchlistMeshAlertRisk>> executeWithHttpInfo() throws ApiException {
+            return listWatchlistMeshAlertRisksWithHttpInfo(alertId, page, perPage);
+        }
+
+        /**
+         * Execute listWatchlistMeshAlertRisks request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> An array of watchlist alert risks. </td><td>  * X-Total-Count - The total number of risks associated with the alert. <br>  </td></tr>
+            <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<List<WatchlistMeshAlertRisk>> _callback) throws ApiException {
+            return listWatchlistMeshAlertRisksAsync(alertId, page, perPage, _callback);
+        }
+    }
+
+    /**
+     * Retrieve watchlist mesh alert risks
+     * Retrieves the detailed risks associated with a watchlist mesh alert. 
+     * @param alertId The unique identifier of the alert whose risks you want to retrieve. (required)
+     * @return APIlistWatchlistMeshAlertRisksRequest
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> An array of watchlist alert risks. </td><td>  * X-Total-Count - The total number of risks associated with the alert. <br>  </td></tr>
+        <tr><td> 0 </td><td> Unexpected error </td><td>  -  </td></tr>
+     </table>
+     */
+    public APIlistWatchlistMeshAlertRisksRequest listWatchlistMeshAlertRisks(@javax.annotation.Nonnull UUID alertId) {
+        return new APIlistWatchlistMeshAlertRisksRequest(alertId);
     }
     private okhttp3.Call listWatchlistMonitorMatchesCall(@javax.annotation.Nonnull UUID monitorId, final ApiCallback _callback) throws ApiException {
         String basePath = null;

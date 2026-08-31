@@ -20,9 +20,9 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.onfido.model.InvalidatedBiometricTokenSummary;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -49,34 +49,58 @@ import java.util.Locale;
 import com.onfido.JSON;
 
 /**
- * InvalidatedBiometricTokenResponse
+ * WatchlistMeshAssociate
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.16.0")
-public class InvalidatedBiometricTokenResponse {
-  public static final String SERIALIZED_NAME_BIOMETRIC_TOKENS = "biometric_tokens";
-  @SerializedName(SERIALIZED_NAME_BIOMETRIC_TOKENS)
-  @javax.annotation.Nonnull
-  private InvalidatedBiometricTokenSummary biometricTokens;
+public class WatchlistMeshAssociate {
+  public static final String SERIALIZED_NAME_NAME = "name";
+  @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nullable
+  private String name;
 
-  public InvalidatedBiometricTokenResponse() {
+  public static final String SERIALIZED_NAME_TYPE = "type";
+  @SerializedName(SERIALIZED_NAME_TYPE)
+  @javax.annotation.Nullable
+  private String type;
+
+  public WatchlistMeshAssociate() {
   }
 
-  public InvalidatedBiometricTokenResponse biometricTokens(@javax.annotation.Nonnull InvalidatedBiometricTokenSummary biometricTokens) {
-    this.biometricTokens = biometricTokens;
+  public WatchlistMeshAssociate name(@javax.annotation.Nullable String name) {
+    this.name = name;
     return this;
   }
 
   /**
-   * Get biometricTokens
-   * @return biometricTokens
+   * Get name
+   * @return name
    */
-  @javax.annotation.Nonnull
-  public InvalidatedBiometricTokenSummary getBiometricTokens() {
-    return biometricTokens;
+  @javax.annotation.Nullable
+  public String getName() {
+    return name;
   }
 
-  public void setBiometricTokens(@javax.annotation.Nonnull InvalidatedBiometricTokenSummary biometricTokens) {
-    this.biometricTokens = biometricTokens;
+  public void setName(@javax.annotation.Nullable String name) {
+    this.name = name;
+  }
+
+
+  public WatchlistMeshAssociate type(@javax.annotation.Nullable String type) {
+    this.type = type;
+    return this;
+  }
+
+  /**
+   * Get type
+   * @return type
+   */
+  @javax.annotation.Nullable
+  public String getType() {
+    return type;
+  }
+
+  public void setType(@javax.annotation.Nullable String type) {
+    this.type = type;
   }
 
   /**
@@ -92,9 +116,9 @@ public class InvalidatedBiometricTokenResponse {
    *
    * @param key name of the property
    * @param value value of the property
-   * @return the InvalidatedBiometricTokenResponse instance itself
+   * @return the WatchlistMeshAssociate instance itself
    */
-  public InvalidatedBiometricTokenResponse putAdditionalProperty(String key, Object value) {
+  public WatchlistMeshAssociate putAdditionalProperty(String key, Object value) {
     if (this.additionalProperties == null) {
         this.additionalProperties = new HashMap<String, Object>();
     }
@@ -133,21 +157,34 @@ public class InvalidatedBiometricTokenResponse {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    InvalidatedBiometricTokenResponse invalidatedBiometricTokenResponse = (InvalidatedBiometricTokenResponse) o;
-    return Objects.equals(this.biometricTokens, invalidatedBiometricTokenResponse.biometricTokens)&&
-        Objects.equals(this.additionalProperties, invalidatedBiometricTokenResponse.additionalProperties);
+    WatchlistMeshAssociate watchlistMeshAssociate = (WatchlistMeshAssociate) o;
+    return Objects.equals(this.name, watchlistMeshAssociate.name) &&
+        Objects.equals(this.type, watchlistMeshAssociate.type)&&
+        Objects.equals(this.additionalProperties, watchlistMeshAssociate.additionalProperties);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(biometricTokens, additionalProperties);
+    return Objects.hash(name, type, additionalProperties);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class InvalidatedBiometricTokenResponse {\n");
-    sb.append("    biometricTokens: ").append(toIndentedString(biometricTokens)).append("\n");
+    sb.append("class WatchlistMeshAssociate {\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -170,50 +207,47 @@ public class InvalidatedBiometricTokenResponse {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("biometric_tokens"));
+    openapiFields = new HashSet<String>(Arrays.asList("name", "type"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(Arrays.asList("biometric_tokens"));
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to InvalidatedBiometricTokenResponse
+   * @throws IOException if the JSON Element is invalid with respect to WatchlistMeshAssociate
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!InvalidatedBiometricTokenResponse.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in InvalidatedBiometricTokenResponse is not found in the empty JSON string", InvalidatedBiometricTokenResponse.openapiRequiredFields.toString()));
-        }
-      }
-
-      // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : InvalidatedBiometricTokenResponse.openapiRequiredFields) {
-        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        if (!WatchlistMeshAssociate.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in WatchlistMeshAssociate is not found in the empty JSON string", WatchlistMeshAssociate.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // validate the required field `biometric_tokens`
-      InvalidatedBiometricTokenSummary.validateJsonElement(jsonObj.get("biometric_tokens"));
+      if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+      }
+      if ((jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) && !jsonObj.get("type").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
+      }
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!InvalidatedBiometricTokenResponse.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'InvalidatedBiometricTokenResponse' and its subtypes
+       if (!WatchlistMeshAssociate.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'WatchlistMeshAssociate' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<InvalidatedBiometricTokenResponse> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(InvalidatedBiometricTokenResponse.class));
+       final TypeAdapter<WatchlistMeshAssociate> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(WatchlistMeshAssociate.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<InvalidatedBiometricTokenResponse>() {
+       return (TypeAdapter<T>) new TypeAdapter<WatchlistMeshAssociate>() {
            @Override
-           public void write(JsonWriter out, InvalidatedBiometricTokenResponse value) throws IOException {
+           public void write(JsonWriter out, WatchlistMeshAssociate value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              obj.remove("additionalProperties");
              // serialize additional properties
@@ -241,12 +275,12 @@ public class InvalidatedBiometricTokenResponse {
            }
 
            @Override
-           public InvalidatedBiometricTokenResponse read(JsonReader in) throws IOException {
+           public WatchlistMeshAssociate read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
-             InvalidatedBiometricTokenResponse instance = thisAdapter.fromJsonTree(jsonObj);
+             WatchlistMeshAssociate instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
                if (!openapiFields.contains(entry.getKey())) {
                  if (entry.getValue().isJsonPrimitive()) { // primitive type
@@ -273,18 +307,18 @@ public class InvalidatedBiometricTokenResponse {
   }
 
   /**
-   * Create an instance of InvalidatedBiometricTokenResponse given an JSON string
+   * Create an instance of WatchlistMeshAssociate given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of InvalidatedBiometricTokenResponse
-   * @throws IOException if the JSON string is invalid with respect to InvalidatedBiometricTokenResponse
+   * @return An instance of WatchlistMeshAssociate
+   * @throws IOException if the JSON string is invalid with respect to WatchlistMeshAssociate
    */
-  public static InvalidatedBiometricTokenResponse fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, InvalidatedBiometricTokenResponse.class);
+  public static WatchlistMeshAssociate fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, WatchlistMeshAssociate.class);
   }
 
   /**
-   * Convert an instance of InvalidatedBiometricTokenResponse to an JSON string
+   * Convert an instance of WatchlistMeshAssociate to an JSON string
    *
    * @return JSON string
    */

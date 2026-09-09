@@ -6,8 +6,10 @@ import com.onfido.model.CheckBuilder;
 import com.onfido.model.Document;
 import com.onfido.model.DocumentReport;
 import com.onfido.model.DocumentTypes;
+import com.onfido.model.IdentityEnhancedBreakdown;
 import com.onfido.model.IdentityEnhancedProperties;
 import com.onfido.model.IdentityEnhancedReport;
+import com.onfido.model.IdrSsnBreakdown;
 import com.onfido.model.Report;
 import com.onfido.model.ReportDocument;
 import com.onfido.model.ReportName;
@@ -83,6 +85,12 @@ public class ReportTest extends TestBase {
 
       Assertions.assertEquals(
           new IdentityEnhancedProperties(), identityEnhancedReport.getProperties());
+
+      IdentityEnhancedBreakdown breakdown = identityEnhancedReport.getBreakdown();
+
+      Assertions.assertNotNull(breakdown);
+      Assertions.assertNull(breakdown.getSsn());
+      Assertions.assertNull(breakdown.getSsn1());
     } else {
       Assertions.fail();
       return;

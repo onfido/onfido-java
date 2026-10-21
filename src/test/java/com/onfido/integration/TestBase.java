@@ -261,24 +261,22 @@ public class TestBase {
       String methodName, Object[] params, int maxRetries, int sleepTime)
       throws NoSuchMethodException, IllegalAccessException, InterruptedException {
     Method method = getMethod(methodName, params);
-    Object instance = null;
+    InvocationTargetException lastException = null;
     int iteration = 0;
 
     while (iteration <= maxRetries) {
       try {
         Object request = method.invoke(onfido, params);
         Method executeMethod = request.getClass().getMethod("execute");
-        instance = executeMethod.invoke(request);
-        break;
+        return executeMethod.invoke(request);
       } catch (InvocationTargetException e) {
+        lastException = e;
         Thread.sleep(sleepTime);
         iteration += 1;
       }
     }
 
-    if (instance == null) {
-      throw new RuntimeException("Method did not execute successfully within the retry limit.");
-    }
-    return instance;
+    throw new RuntimeException(
+        "Method did not execute successfully within the retry limit.", lastException);
   }
 }
